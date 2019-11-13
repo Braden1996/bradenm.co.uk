@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-casper",
-  "description": "Casper for gatsby",
+  "name": "bradenm.co.uk",
+  "description": "Braden Marshall's personal website",
   "version": "0.0.0",
   "private": true,
-  "author": "Scott Cooper <scttcper@gmail.com>",
+  "author": "Braden Marshall <me@bradenm.co.uk>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
