@@ -50,6 +50,14 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: 'types/graphql.d.ts',
+        codegen: true,
+        codegenDelay: 250,
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
     'gatsby-plugin-feed',

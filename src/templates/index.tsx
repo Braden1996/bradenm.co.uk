@@ -1,11 +1,76 @@
+import { graphql } from 'gatsby';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import IndexLayout from '../layouts';
+import IndexLayout, { Props as LayoutProps } from '../layouts';
 import config from '../website-config';
+import { BlogPageQueryQuery } from '../../types/graphql';
 
-const IndexPage: React.FC = props => (
-  <IndexLayout>
+export const pageQuery = graphql`
+  query blogPageQuery($skip: Int!, $limit: Int!) {
+    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      filter: { frontmatter: { draft: { ne: true } } },
+      limit: $limit,
+      skip: $skip
+    ) {
+      edges {
+        node {
+          timeToRead
+          frontmatter {
+            title
+            date
+            tags
+            draft
+            image {
+              childImageSharp {
+                fluid(maxWidth: 3720) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          excerpt
+          fields {
+            layout
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
+
+export interface Props extends LayoutProps {
+  data: BlogPageQueryQuery;
+  pageContext: {
+    limit: number;
+    skip: number;
+    numPages: number;
+    currentPage: number;
+  };
+}
+
+const IndexPage: React.FC<Props> = ({ data, pageContext, ...props }) => (
+  <IndexLayout {...props}>
     <Helmet>
       <html lang={config.lang} />
       <title>{config.title}</title>
@@ -30,7 +95,10 @@ const IndexPage: React.FC = props => (
       <h1>{config.title}</h1>
     </header>
     <main id="site-main">
-      <p>Test</p>
+      <ol>
+        {/* eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion */}
+        {data.allMarkdownRemark.edges.map(post => <li key={post.node.fields!.slug!}>{post.node.frontmatter!.title}</li>)}
+      </ol>
     </main>
     {props.children}
   </IndexLayout>
