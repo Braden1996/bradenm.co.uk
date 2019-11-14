@@ -6,9 +6,6 @@ module.exports = {
     description: 'The professional publishing platform',
     siteUrl: 'https://bradenm.co.uk', // full path to blog - no ending slash
   },
-  mapping: {
-    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
-  },
   plugins: [
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',

@@ -1,10 +1,8 @@
 ---
-layout: post
-title: "Welcome to Ghost"
-author: Ghost
-tags: ["Getting Started"]
+title: "Welcome to My Blog"
 image: img/welcome-to-ghost.jpg
 date: "2018-05-06T23:46:37.121Z"
+tags: ["demo"]
 draft: false
 ---
 
