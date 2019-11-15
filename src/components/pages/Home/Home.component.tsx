@@ -1,11 +1,10 @@
 import * as React from 'react';
-import Helmet from 'react-helmet';
 
-import { Base } from '@templates';
+import { BaseLayout } from '@templates';
 import config from '@config';
 import { BlogPageQuery } from '@gql-types';
 
-export interface Props extends React.ComponentProps<typeof Base> {
+export interface Props extends React.ComponentProps<typeof BaseLayout> {
   data: BlogPageQuery;
   pageContext: {
     limit: number;
@@ -16,27 +15,7 @@ export interface Props extends React.ComponentProps<typeof Base> {
 }
 
 const Home: React.FC<Props> = ({ data, pageContext, ...props }) => (
-  <Base {...props}>
-    <Helmet>
-      <html lang={config.lang} />
-      <title>{config.title}</title>
-      <meta name="description" content={config.description} />
-      <meta property="og:site_name" content={config.title} />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={config.title} />
-      <meta property="og:description" content={config.description} />
-      <meta property="og:url" content={config.siteUrl} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={config.title} />
-      <meta name="twitter:description" content={config.description} />
-      <meta name="twitter:url" content={config.siteUrl} />
-      {config.twitter && (
-        <meta
-          name="twitter:site"
-          content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-        />
-      )}
-    </Helmet>
+  <BaseLayout {...props}>
     <header >
       <h1>{config.title}</h1>
     </header>
@@ -48,7 +27,7 @@ const Home: React.FC<Props> = ({ data, pageContext, ...props }) => (
     </main>
     {props.children}
 
-  </Base>
+  </BaseLayout>
 );
 
 export default Home;
