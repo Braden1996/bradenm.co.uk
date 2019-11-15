@@ -3364,13 +3364,13 @@ export type TagYamlSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>,
 };
 
-export type BlogPageQueryQueryVariables = {
+export type BlogPageQueryVariables = {
   skip: Scalars['Int'],
   limit: Scalars['Int']
 };
 
 
-export type BlogPageQueryQuery = { logo: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, header: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }>, allMarkdownRemark: { edges: Array<{ node: (
+export type BlogPageQuery = { logo: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, header: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }>, allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'timeToRead' | 'excerpt'>
         & { frontmatter: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'tags' | 'draft'>

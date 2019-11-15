@@ -1,5 +1,6 @@
 const path = require('path');
 const _ = require('lodash');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -98,7 +99,7 @@ exports.createPages = async ({ graphql, actions }) => {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? '/' : `/${i + 1}`,
-      component: path.resolve('./src/templates/index.tsx'),
+      component: path.resolve('./src/components/pages/Home/index.ts'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
@@ -124,7 +125,7 @@ exports.createPages = async ({ graphql, actions }) => {
       // template.
       //
       // Note that the template has to exist first, or else the build will fail.
-      component: path.resolve(`./src/templates/${layout || 'post'}.tsx`),
+      component: path.resolve(`./src/components/pages/${layout || 'Post'}/index.ts`),
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug,
@@ -143,4 +144,10 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       devtool: 'eval-source-map',
     });
   }
+
+  actions.setWebpackConfig({
+    resolve: {
+      plugins: [new TsconfigPathsPlugin({})],
+    },
+  });
 };

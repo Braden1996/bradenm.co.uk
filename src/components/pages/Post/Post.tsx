@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import IndexLayout from '../layouts';
-import config from '../website-config';
+import { Base } from '@templates';
+import config from '@config';
 
-const IndexPage: React.FC = props => (
-  <IndexLayout>
+const IndexPage: React.FC<React.ComponentProps<typeof Base>> = props => (
+  <Base {...props}>
     <Helmet>
       <html lang={config.lang} />
       <title>{config.title}</title>
@@ -33,7 +33,7 @@ const IndexPage: React.FC = props => (
       <p>Test</p>
     </main>
     {props.children}
-  </IndexLayout>
+  </Base>
 );
 
 export default IndexPage;

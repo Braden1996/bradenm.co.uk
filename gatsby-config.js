@@ -13,7 +13,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: path.join(__dirname, 'src', 'content'),
+        path: path.join(__dirname, 'content'),
       },
     },
     {
@@ -56,7 +56,7 @@ module.exports = {
         fileName: 'types/graphql.d.ts',
         codegen: true,
         codegenDelay: 250,
-      }
+      },
     },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',

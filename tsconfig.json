@@ -10,7 +10,22 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "baseUrl": "./",
+    "paths": {
+      "@atoms": ["src/components/atoms/index.ts"],
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules": ["src/components/molecules/index.ts"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@organisms": ["src/components/organisms/index.ts"],
+      "@organisms/*": ["src/components/organisms/*"],
+      "@pages/*": ["src/components/pages/*"],
+      "@templates": ["src/components/templates/index.ts"],
+      "@templates/*": ["src/components/templates/*"],
+      "@config": ["src/config/index.ts"],
+      "@config/*": ["src/config/*"],
+      "@gql-types": ["types/graphql.d.ts"]
+    }
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "./types/*"]
 }
