@@ -3441,19 +3441,40 @@ export type TagYamlSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>,
 };
 
-export type BlogPageQueryVariables = {
+export type HomePageQueryVariables = {
   skip: Scalars['Int'],
   limit: Scalars['Int']
 };
 
 
-export type BlogPageQuery = { logo: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, header: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }>, allMarkdownRemark: { edges: Array<{ node: (
+export type HomePageQuery = { logo: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, header: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }>, allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'timeToRead' | 'excerpt'>
         & { frontmatter: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'tags' | 'draft'>
           & { image: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> }
         )>, fields: Maybe<Pick<MarkdownRemarkFields, 'layout' | 'slug'>> }
       ) }> } };
+
+export type PostPageQueryVariables = {
+  slug?: Maybe<Scalars['String']>,
+  primaryTag?: Maybe<Scalars['String']>
+};
+
+
+export type PostPageQuery = { logo: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'html' | 'htmlAst' | 'excerpt' | 'timeToRead'>
+    & { frontmatter: Maybe<(
+      Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'tags'>
+      & { userDate: MarkdownRemarkFrontmatter['date'] }
+      & { image: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> }
+    )> }
+  )>, relatedPosts: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
+        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title'>>, fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
+      ) }> }
+  ) };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

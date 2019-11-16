@@ -5,7 +5,7 @@ import Home from './Home.component';
 export default Home;
 
 export const pageQuery = graphql`
-  query blogPage($skip: Int!, $limit: Int!) {
+  query homePage($skip: Int!, $limit: Int!) {
     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.

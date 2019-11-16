@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 
 import { BaseLayout } from '@templates';
-import { BlogPageQuery } from '@gql-types';
+import { HomePageQuery } from '@gql-types';
 
 export interface Props extends React.ComponentProps<typeof BaseLayout> {
-  data: BlogPageQuery;
+  data: HomePageQuery;
   pageContext: {
     limit: number;
     skip: number;
@@ -20,13 +21,14 @@ const Home: React.FC<Props> = ({ data, pageContext, ...props }) => (
     </header>
     <main id="site-main">
       <ol>
-        {/* eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion */}
-        {data.allMarkdownRemark.edges.map(post => <li key={post.node.fields!.slug!}>{post.node.frontmatter!.title}</li>)}
+        {data.allMarkdownRemark.edges.map(post => (
+          <Link key={post.node.fields!.slug || ''} to={post.node.fields!.slug!}>
+            <li>{post.node.frontmatter!.title}</li>
+          </Link>
+        ))}
         {Array(100).fill(0).map((_, i) => <li key={i as any}>Test line {i}</li>)}
       </ol>
     </main>
-    {props.children}
-
   </BaseLayout>
 );
 
