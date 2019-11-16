@@ -1,6 +1,8 @@
 import { graphql } from 'gatsby';
 
-export { default } from './Home.component';
+import Home from './Home.component';
+
+export default Home;
 
 export const pageQuery = graphql`
   query blogPage($skip: Int!, $limit: Int!) {
