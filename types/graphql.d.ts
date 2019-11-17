@@ -801,6 +801,7 @@ export type FileFieldsEnum =
   'childTagYaml___image___childMarkdownRemark___children' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
+  'childMarkdownRemark___frontmatter___layout' |
   'childMarkdownRemark___frontmatter___image___birthtime' |
   'childMarkdownRemark___frontmatter___image___birthtimeMs' |
   'childMarkdownRemark___frontmatter___image___sourceInstanceName' |
@@ -1607,6 +1608,7 @@ export type MarkdownRemarkFields = {
 export type MarkdownRemarkFieldsEnum = 
   'id' |
   'frontmatter___title' |
+  'frontmatter___layout' |
   'frontmatter___image___birthtime' |
   'frontmatter___image___birthtimeMs' |
   'frontmatter___image___sourceInstanceName' |
@@ -1804,6 +1806,7 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
+  layout?: Maybe<Scalars['String']>,
   image?: Maybe<File>,
   date?: Maybe<Scalars['Date']>,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
@@ -1820,6 +1823,7 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
+  layout?: Maybe<StringQueryOperatorInput>,
   image?: Maybe<FileFilterInput>,
   date?: Maybe<DateQueryOperatorInput>,
   tags?: Maybe<StringQueryOperatorInput>,
@@ -2370,6 +2374,8 @@ export type SitePageContext = {
   numPages?: Maybe<Scalars['Int']>,
   currentPage?: Maybe<Scalars['Int']>,
   slug?: Maybe<Scalars['String']>,
+  prev?: Maybe<SitePageContextPrev>,
+  next?: Maybe<SitePageContextNext>,
   primaryTag?: Maybe<Scalars['String']>,
 };
 
@@ -2379,7 +2385,153 @@ export type SitePageContextFilterInput = {
   numPages?: Maybe<IntQueryOperatorInput>,
   currentPage?: Maybe<IntQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
+  prev?: Maybe<SitePageContextPrevFilterInput>,
+  next?: Maybe<SitePageContextNextFilterInput>,
   primaryTag?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextNext = {
+  excerpt?: Maybe<Scalars['String']>,
+  timeToRead?: Maybe<Scalars['Int']>,
+  frontmatter?: Maybe<SitePageContextNextFrontmatter>,
+  fields?: Maybe<SitePageContextNextFields>,
+};
+
+export type SitePageContextNextFields = {
+  layout?: Maybe<Scalars['String']>,
+  slug?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextNextFieldsFilterInput = {
+  layout?: Maybe<StringQueryOperatorInput>,
+  slug?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextNextFilterInput = {
+  excerpt?: Maybe<StringQueryOperatorInput>,
+  timeToRead?: Maybe<IntQueryOperatorInput>,
+  frontmatter?: Maybe<SitePageContextNextFrontmatterFilterInput>,
+  fields?: Maybe<SitePageContextNextFieldsFilterInput>,
+};
+
+export type SitePageContextNextFrontmatter = {
+  title?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
+  date?: Maybe<Scalars['Date']>,
+  draft?: Maybe<Scalars['Boolean']>,
+  image?: Maybe<SitePageContextNextFrontmatterImage>,
+};
+
+export type SitePageContextNextFrontmatterFilterInput = {
+  title?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
+  date?: Maybe<DateQueryOperatorInput>,
+  draft?: Maybe<BooleanQueryOperatorInput>,
+  image?: Maybe<SitePageContextNextFrontmatterImageFilterInput>,
+};
+
+export type SitePageContextNextFrontmatterImage = {
+  childImageSharp?: Maybe<SitePageContextNextFrontmatterImageChildImageSharp>,
+};
+
+export type SitePageContextNextFrontmatterImageChildImageSharp = {
+  fluid?: Maybe<SitePageContextNextFrontmatterImageChildImageSharpFluid>,
+};
+
+export type SitePageContextNextFrontmatterImageChildImageSharpFilterInput = {
+  fluid?: Maybe<SitePageContextNextFrontmatterImageChildImageSharpFluidFilterInput>,
+};
+
+export type SitePageContextNextFrontmatterImageChildImageSharpFluid = {
+  aspectRatio?: Maybe<Scalars['Float']>,
+  base64?: Maybe<Scalars['String']>,
+  sizes?: Maybe<Scalars['String']>,
+  src?: Maybe<Scalars['String']>,
+  srcSet?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextNextFrontmatterImageChildImageSharpFluidFilterInput = {
+  aspectRatio?: Maybe<FloatQueryOperatorInput>,
+  base64?: Maybe<StringQueryOperatorInput>,
+  sizes?: Maybe<StringQueryOperatorInput>,
+  src?: Maybe<StringQueryOperatorInput>,
+  srcSet?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextNextFrontmatterImageFilterInput = {
+  childImageSharp?: Maybe<SitePageContextNextFrontmatterImageChildImageSharpFilterInput>,
+};
+
+export type SitePageContextPrev = {
+  excerpt?: Maybe<Scalars['String']>,
+  timeToRead?: Maybe<Scalars['Int']>,
+  frontmatter?: Maybe<SitePageContextPrevFrontmatter>,
+  fields?: Maybe<SitePageContextPrevFields>,
+};
+
+export type SitePageContextPrevFields = {
+  layout?: Maybe<Scalars['String']>,
+  slug?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPrevFieldsFilterInput = {
+  layout?: Maybe<StringQueryOperatorInput>,
+  slug?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPrevFilterInput = {
+  excerpt?: Maybe<StringQueryOperatorInput>,
+  timeToRead?: Maybe<IntQueryOperatorInput>,
+  frontmatter?: Maybe<SitePageContextPrevFrontmatterFilterInput>,
+  fields?: Maybe<SitePageContextPrevFieldsFilterInput>,
+};
+
+export type SitePageContextPrevFrontmatter = {
+  title?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
+  date?: Maybe<Scalars['Date']>,
+  draft?: Maybe<Scalars['Boolean']>,
+  image?: Maybe<SitePageContextPrevFrontmatterImage>,
+};
+
+export type SitePageContextPrevFrontmatterFilterInput = {
+  title?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
+  date?: Maybe<DateQueryOperatorInput>,
+  draft?: Maybe<BooleanQueryOperatorInput>,
+  image?: Maybe<SitePageContextPrevFrontmatterImageFilterInput>,
+};
+
+export type SitePageContextPrevFrontmatterImage = {
+  childImageSharp?: Maybe<SitePageContextPrevFrontmatterImageChildImageSharp>,
+};
+
+export type SitePageContextPrevFrontmatterImageChildImageSharp = {
+  fluid?: Maybe<SitePageContextPrevFrontmatterImageChildImageSharpFluid>,
+};
+
+export type SitePageContextPrevFrontmatterImageChildImageSharpFilterInput = {
+  fluid?: Maybe<SitePageContextPrevFrontmatterImageChildImageSharpFluidFilterInput>,
+};
+
+export type SitePageContextPrevFrontmatterImageChildImageSharpFluid = {
+  aspectRatio?: Maybe<Scalars['Float']>,
+  base64?: Maybe<Scalars['String']>,
+  sizes?: Maybe<Scalars['String']>,
+  src?: Maybe<Scalars['String']>,
+  srcSet?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextPrevFrontmatterImageChildImageSharpFluidFilterInput = {
+  aspectRatio?: Maybe<FloatQueryOperatorInput>,
+  base64?: Maybe<StringQueryOperatorInput>,
+  sizes?: Maybe<StringQueryOperatorInput>,
+  src?: Maybe<StringQueryOperatorInput>,
+  srcSet?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePageContextPrevFrontmatterImageFilterInput = {
+  childImageSharp?: Maybe<SitePageContextPrevFrontmatterImageChildImageSharpFilterInput>,
 };
 
 export type SitePageEdge = {
@@ -2485,6 +2637,22 @@ export type SitePageFieldsEnum =
   'context___numPages' |
   'context___currentPage' |
   'context___slug' |
+  'context___prev___excerpt' |
+  'context___prev___timeToRead' |
+  'context___prev___frontmatter___title' |
+  'context___prev___frontmatter___tags' |
+  'context___prev___frontmatter___date' |
+  'context___prev___frontmatter___draft' |
+  'context___prev___fields___layout' |
+  'context___prev___fields___slug' |
+  'context___next___excerpt' |
+  'context___next___timeToRead' |
+  'context___next___frontmatter___title' |
+  'context___next___frontmatter___tags' |
+  'context___next___frontmatter___date' |
+  'context___next___frontmatter___draft' |
+  'context___next___fields___layout' |
+  'context___next___fields___slug' |
   'context___primaryTag' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
@@ -3384,6 +3552,7 @@ export type TagYamlFieldsEnum =
   'image___childTagYaml___image___children' |
   'image___childMarkdownRemark___id' |
   'image___childMarkdownRemark___frontmatter___title' |
+  'image___childMarkdownRemark___frontmatter___layout' |
   'image___childMarkdownRemark___frontmatter___date' |
   'image___childMarkdownRemark___frontmatter___tags' |
   'image___childMarkdownRemark___frontmatter___draft' |
