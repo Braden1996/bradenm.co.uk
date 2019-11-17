@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 
 import config from '@config';
+import { Footer } from '@organisms';
 
 import Base from '../Base';
 
@@ -27,7 +28,6 @@ const Content = styled.main`
   background-color: ${config.colors.use.background.primary};
   width: 100%;
   flex: 1;
-  margin-bottom: ${config.dimensions.use.screen};
   border-radius: ${config.dimensions.use.borderRadius.large};
   padding: ${config.dimensions.use.margin};
 `;
@@ -39,6 +39,7 @@ const BaseLayout: React.FC<React.ComponentProps<typeof Base>> = props => (
         <h1>Braden Marshall</h1>
       </Header>
       <Content>{props.children}</Content>
+      <Footer />
     </Container>
   </Base>
 );
