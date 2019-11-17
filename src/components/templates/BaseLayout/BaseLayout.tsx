@@ -23,6 +23,7 @@ const Header = styled.header`
 `;
 
 const Content = styled.main`
+  ${config.shadows.medium};
   background-color: ${config.colors.use.background.primary};
   width: 100%;
   flex: 1;
