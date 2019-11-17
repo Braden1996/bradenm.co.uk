@@ -1,4 +1,4 @@
-import Color from 'color';
+import { transparentize } from 'polished';
 
 // Colors named according to: http://chir.ag/projects/name-that-color/
 import base from './palette.json';
@@ -18,22 +18,12 @@ const use = {
     warning: base.webOrange,
   },
   text: {
-    blackPrimary: new Color(base.black)
-      .alpha(0.87)
-      .toString(),
-    blackSecondary: new Color(base.black)
-      .alpha(0.54)
-      .toString(),
-    blackTertiary: new Color(base.black)
-      .alpha(0.38)
-      .toString(),
-    whitePrimary: new Color(base.white).toString(),
-    whiteSecondary: new Color(base.white)
-      .alpha(0.7)
-      .toString(),
-    whiteTertiary: new Color(base.white)
-      .alpha(0.5)
-      .toString(),
+    blackPrimary: transparentize(0.87, base.black),
+    blackSecondary: transparentize(0.54, base.black),
+    blackTertiary: transparentize(0.38, base.black),
+    whitePrimary: base.white,
+    whiteSecondary: transparentize(0.7, base.white),
+    whiteTertiary: transparentize(0.5, base.white),
   },
 };
 
