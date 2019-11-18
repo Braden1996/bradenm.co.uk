@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { transparentize } from 'polished';
-import styled from '@emotion/styled';
 
-import config from '@config';
+import styled from '@styled';
 
 import energyDrink from './energyDrink.png';
 
@@ -16,7 +15,7 @@ const Icon = styled.img`
   transition: transform 200ms linear;
 
   &:hover {
-    filter: drop-shadow(1px 1px 1px ${transparentize(0.7, config.colors.base.black)});
+    filter: drop-shadow(1px 1px 1px ${p => transparentize(0.7, p.theme.colors.base.black)});
     transform: translate(-50%) scale(1.33) rotate(15deg);
   }
 `;

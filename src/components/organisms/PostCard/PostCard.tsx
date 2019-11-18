@@ -1,13 +1,10 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import * as _ from 'lodash';
 import * as React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 
-import config from '@config';
+import styled from '@styled';
 
-const PostCardStyles = css`
+const Container = styled.article`
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
@@ -26,42 +23,42 @@ const PostCardStyles = css`
   }
 `;
 
-const PostCardImageLink = css`
+const ImageLink = styled(Link)`
   position: relative;
   display: block;
   overflow: hidden;
   border-radius: 5px 5px 0 0;
 `;
 
-const PostCardImage = styled.div`
+const Image = styled.div`
   width: auto;
   height: 200px;
-  background: ${config.colors.use.background.secondary} no-repeat center center;
+  background: ${p => p.theme.colors.use.background.secondary} no-repeat center center;
   background-size: cover;
 `;
 
-const PostCardContent = styled.div`
+const Content = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-const PostCardContentLink = css`
+const ContentLink = styled(Link)`
   position: relative;
   flex-grow: 1;
   display: block;
   padding: 25px 25px 0;
-  color: ${config.colors.use.text.blackPrimary};
+  color: ${p => p.theme.colors.use.text.blackPrimary};
   :hover {
     text-decoration: none;
   }
 `;
 
-const PostCardTags = styled.span`
+const Tags = styled.span`
   display: block;
   margin-bottom: 4px;
-  color: ${config.colors.use.text.blackTertiary};
+  color: ${p => p.theme.colors.use.text.blackTertiary};
   font-size: 1.2rem;
   line-height: 1.15em;
   font-weight: 500;
@@ -69,15 +66,15 @@ const PostCardTags = styled.span`
   text-transform: uppercase;
 `;
 
-const PostCardTitle = styled.h2`
+const Title = styled.h2`
   margin-top: 0;
 `;
 
-const PostCardExcerpt = styled.section`
+const Excerpt = styled.section`
   font-family: Georgia, serif;
 `;
 
-const PostCardMeta = styled.footer`
+const Meta = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -87,7 +84,7 @@ const PostCardMeta = styled.footer`
 const ReadingTime = styled.span`
   flex-shrink: 0;
   margin-left: 20px;
-  color: ${config.colors.use.text.blackTertiary};
+  color: ${p => p.theme.colors.use.text.blackTertiary};
   font-size: 1.2rem;
   line-height: 33px;
   font-weight: 500;
@@ -95,15 +92,15 @@ const ReadingTime = styled.span`
   text-transform: uppercase;
 `;
 
-export interface PostCardProps {
+export interface Props {
   post: any;
 }
 
-const PostCard: React.FC<PostCardProps> = ({ post }) => (
-  <article className={`post-card ${post.frontmatter.image ? '' : 'no-image'}`} css={PostCardStyles}>
+const PostCard: React.FC<Props> = ({ post }) => (
+  <Container className={`post-card ${post.frontmatter.image ? '' : 'no-image'}`}>
     {post.frontmatter.image && (
-      <Link className="post-card-image-link" css={PostCardImageLink} to={post.fields.slug}>
-        <PostCardImage className="post-card-image">
+      <ImageLink to={post.fields.slug}>
+        <Image>
           {post.frontmatter.image &&
             post.frontmatter.image.childImageSharp &&
             post.frontmatter.image.childImageSharp.fluid && (
@@ -113,24 +110,24 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => (
               fluid={post.frontmatter.image.childImageSharp.fluid}
             />
           )}
-        </PostCardImage>
-      </Link>
+        </Image>
+      </ImageLink>
     )}
-    <PostCardContent className="post-card-content">
-      <Link className="post-card-content-link" css={PostCardContentLink} to={post.fields.slug}>
-        <header className="post-card-header">
-          {post.frontmatter.tags && <PostCardTags>{post.frontmatter.tags[0]}</PostCardTags>}
-          <PostCardTitle>{post.frontmatter.title}</PostCardTitle>
+    <Content>
+      <ContentLink to={post.fields.slug}>
+        <header>
+          {post.frontmatter.tags && <Tags>{post.frontmatter.tags[0]}</Tags>}
+          <Title>{post.frontmatter.title}</Title>
         </header>
-        <PostCardExcerpt>
+        <Excerpt>
           <p>{post.excerpt}</p>
-        </PostCardExcerpt>
-      </Link>
-      <PostCardMeta className="post-card-meta">
+        </Excerpt>
+      </ContentLink>
+      <Meta>
         <ReadingTime>{post.timeToRead} min read</ReadingTime>
-      </PostCardMeta>
-    </PostCardContent>
-  </article>
+      </Meta>
+    </Content>
+  </Container>
 );
 
 export default PostCard;

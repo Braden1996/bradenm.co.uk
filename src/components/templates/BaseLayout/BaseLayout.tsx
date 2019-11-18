@@ -1,8 +1,7 @@
 import * as React from 'react';
-import styled from '@emotion/styled';
 
-import config from '@config';
 import { Footer } from '@organisms';
+import styled from '@styled';
 
 import Base from '../Base';
 
@@ -24,12 +23,12 @@ const Header = styled.header`
 `;
 
 const Content = styled.main`
-  ${config.shadows.medium};
-  background-color: ${config.colors.use.background.primary};
+  ${p => p.theme.shadows.medium};
+  background-color: ${p => p.theme.colors.use.background.primary};
   width: 100%;
   flex: 1;
-  border-radius: ${config.dimensions.use.borderRadius.large};
-  padding: ${config.dimensions.use.margin};
+  border-radius: ${p => p.theme.dimensions.use.borderRadius.large};
+  padding: ${p => p.theme.dimensions.use.margin};
 `;
 
 const BaseLayout: React.FC<React.ComponentProps<typeof Base>> = props => (

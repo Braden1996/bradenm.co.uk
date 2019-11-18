@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styled from '@emotion/styled';
 
+import styled from '@styled';
 import { BaseLayout } from '@templates';
 import { HomePageQuery } from '@gql-types';
 import { PostCard } from '@organisms';

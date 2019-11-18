@@ -1,5 +1,7 @@
 const path = require('path');
 
+const isDev = process.env.NODE_ENV === 'development';
+
 module.exports = {
   siteMetadata: {
     title: 'Braden Marshall',
@@ -47,7 +49,17 @@ module.exports = {
         siteUrl: 'https://bradenm.co.uk',
       },
     },
-    'gatsby-plugin-emotion',
+    {
+      resolve: "gatsby-plugin-styled-components",
+      options: isDev ? {
+        displayName: true,
+      } : {
+        pure: true,
+        minify: true,
+        transpileTemplateLiterals: true,
+        displayName: false,
+      },
+    },
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
     {

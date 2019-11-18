@@ -1,10 +1,10 @@
 import { PageRendererProps } from 'gatsby';
-import { Global, css } from '@emotion/core';
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import normalize from 'normalize.css';
 
 import config from '@config';
+import { theme, createGlobalStyle, ThemeProvider } from '@styled';
 
 import favicon from './favicon.ico';
 import bgTile from './bgTile.png';
@@ -13,11 +13,11 @@ export interface Props extends PageRendererProps {
   className?: string;
 }
 
-const GlobalStyles = css`
+const GlobalStyle = createGlobalStyle`
   ${normalize}
   html {
     box-sizing: border-box;
-    background-color: ${config.colors.use.background.tertiary};
+    background-color: ${theme.colors.use.background.tertiary};
     position: relative;
 
     &::before {
@@ -64,8 +64,10 @@ const Base: React.FC<Props> = props => (
       )}
       <link rel="icon" href={favicon} type="image/x-icon" />
     </Helmet>
-    <Global styles={GlobalStyles} />
-    {props.children}
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {props.children}
+    </ThemeProvider>
   </>
 );
 

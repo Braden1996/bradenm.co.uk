@@ -1,9 +1,8 @@
 import { lighten, setLightness, darken, setSaturation } from 'polished';
 import * as React from 'react';
-import styled from '@emotion/styled';
 import RehypeReact from 'rehype-react';
 
-import config from '@config';
+import styled from '@styled';
 
 export const PostFullContent = styled.section`
   position: relative;
@@ -71,16 +70,16 @@ export const PostFullContent = styled.section`
   a {
     color: #000;
     word-break: break-word;
-    box-shadow: ${config.colors.base.dodgerBlue} 0 -1px 0 inset;
+    box-shadow: ${p => p.theme.colors.base.dodgerBlue} 0 -1px 0 inset;
   }
   a:hover {
-    color: ${config.colors.base.dodgerBlue};
+    color: ${p => p.theme.colors.base.dodgerBlue};
     text-decoration: none;
   }
   strong,
   em {
     /* color: color(var(--darkgrey) l(-5%)); */
-    color: ${darken('0.05', config.colors.base.mirage)};
+    color: ${p => darken('0.05', p.theme.colors.base.mirage)};
   }
   small {
     display: inline-block;
@@ -139,7 +138,7 @@ export const PostFullContent = styled.section`
     font-size: 0.8em;
     line-height: 1em;
     font-weight: 400 !important;
-    background: ${config.colors.base.whisper};
+    background: ${p => p.theme.colors.base.whisper};
     border-radius: 3px;
   }
   p code {
@@ -151,12 +150,12 @@ export const PostFullContent = styled.section`
     padding: 20px;
     max-width: 100%;
     /* border: color(var(--darkgrey) l(-10%)) 1px solid; */
-    border: ${darken('0.01', config.colors.base.mirage)} 1px solid;
-    color: ${config.colors.base.whisper};
+    border: ${p => darken('0.01', p.theme.colors.base.mirage)} 1px solid;
+    color: ${p => p.theme.colors.base.whisper};
     font-size: 1.4rem;
     line-height: 1.5em;
     /* background: color(var(--darkgrey) l(-3%)); */
-    background: ${darken('0.03', config.colors.base.mirage)};
+    background: ${p => darken('0.03', p.theme.colors.base.mirage)};
     border-radius: 5px;
   }
   pre code {
@@ -185,7 +184,7 @@ export const PostFullContent = styled.section`
     width: 1px;
     height: 30px;
     /* background: color(var(--lightgrey) l(+10%)); */
-    background: ${lighten('0.1', config.colors.base.whisper)};
+    background: ${p => lighten('0.1', p.theme.colors.base.whisper)};
     box-shadow: #fff 0 0 0 5px;
     transform: rotate(45deg);
   }
@@ -195,7 +194,7 @@ export const PostFullContent = styled.section`
   h4,
   h5,
   h6 {
-    color: ${setLightness('0.05', config.colors.base.mirage)};
+    color: ${p => setLightness('0.05', p.theme.colors.base.mirage)};
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
   }
@@ -244,7 +243,7 @@ export const PostFullContent = styled.section`
     margin: 0.5em 0;
     padding: 1em 0 1.5em;
     border: 0;
-    color: ${config.colors.base.dodgerBlue};
+    color: ${p => p.theme.colors.base.dodgerBlue};
     font-family: Georgia, serif;
     font-size: 3.2rem;
     line-height: 1.35em;
@@ -315,20 +314,20 @@ export const PostFullContent = styled.section`
     background-repeat: no-repeat;
   }
   table th {
-    color: ${config.colors.base.mirage};
+    color: ${p => p.theme.colors.base.mirage};
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
     /* background-color: color(var(--whitegrey) l(+4%)); */
-    background-color: ${lighten('0.04', config.colors.base.whisper)};
+    background-color: ${p => lighten('0.04', p.theme.colors.base.whisper)};
   }
   table th,
   table td {
     padding: 6px 12px;
     /* border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid; */
-    border: ${setSaturation('0.05', darken('0.01', config.colors.base.whisper))} 1px solid;
+    border: ${p => setSaturation('0.05', darken('0.01', p.theme.colors.base.whisper))} 1px solid;
   }
   @media (max-width: 500px) {
     padding: 0;
