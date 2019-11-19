@@ -11,13 +11,11 @@ const Container = styled.article`
   overflow: hidden;
   margin: 0 20px 40px;
   min-height: 300px;
-  background: #fff center center;
-  background-size: cover;
+  background-color: ${p => p.theme.colors.use.background.primary};
   border-radius: 5px;
-  box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+  box-shadow: rgba(15, 17, 21, 0.35) 0px 6px 9px 0px;
   transition: all 0.5s ease;
   :hover {
-    box-shadow: rgba(39, 44, 49, 0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px;
     transition: all 0.4s ease;
     transform: translate3D(0, -1px, 0) scale(1.02);
   }
@@ -49,7 +47,7 @@ const ContentLink = styled(Link)`
   flex-grow: 1;
   display: block;
   padding: 25px 25px 0;
-  color: ${p => p.theme.colors.use.text.blackPrimary};
+  color: ${p => p.theme.colors.use.text.primary};
   :hover {
     text-decoration: none;
   }
@@ -58,7 +56,7 @@ const ContentLink = styled(Link)`
 const Tags = styled.span`
   display: block;
   margin-bottom: 4px;
-  color: ${p => p.theme.colors.use.text.blackTertiary};
+  color: ${p => p.theme.colors.use.text.tertiary};
   font-size: 1.2rem;
   line-height: 1.15em;
   font-weight: 500;
@@ -84,7 +82,7 @@ const Meta = styled.footer`
 const ReadingTime = styled.span`
   flex-shrink: 0;
   margin-left: 20px;
-  color: ${p => p.theme.colors.use.text.blackTertiary};
+  color: ${p => p.theme.colors.use.text.tertiary};
   font-size: 1.2rem;
   line-height: 33px;
   font-weight: 500;

@@ -1,29 +1,29 @@
 import { transparentize } from 'polished';
 
 // Colors named according to: http://chir.ag/projects/name-that-color/
-import base from './palette.json';
+import palette from './palette.json';
+import nord from './nord.json';
+
+const base = { ...nord, ...palette };
 
 const use = {
   background: {
-    primary: base.white,
-    secondary: base.whisper,
-    tertiary: base.yellowOrange,
+    primary: base.nord1,
+    secondary: base.nord0,
+    tertiary: base.charade,
   },
   accent: {
-    danger: base.radicalRed,
-    info: base.azureRadiance,
-    primary: base.dodgerBlue,
-    secondary: base.electricViolet,
-    success: base.caribbeanGreen,
-    warning: base.webOrange,
+    danger: base.nord11,
+    info: base.nord9,
+    primary: base.nord10,
+    secondary: base.nord15,
+    success: base.nord14,
+    warning: base.nord12,
   },
   text: {
-    blackPrimary: transparentize(0.87, base.black),
-    blackSecondary: transparentize(0.54, base.black),
-    blackTertiary: transparentize(0.38, base.black),
-    whitePrimary: base.white,
-    whiteSecondary: transparentize(0.7, base.white),
-    whiteTertiary: transparentize(0.5, base.white),
+    primary: base.nord6,
+    secondary: transparentize(0.7, base.nord6),
+    tertiary: transparentize(0.5, base.nord6),
   },
 };
 

@@ -397,8 +397,8 @@ export type File = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  childTagYaml?: Maybe<TagYaml>,
   childMarkdownRemark?: Maybe<MarkdownRemark>,
+  childTagYaml?: Maybe<TagYaml>,
 };
 
 
@@ -696,6 +696,101 @@ export type FileFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
+  'childMarkdownRemark___id' |
+  'childMarkdownRemark___frontmatter___title' |
+  'childMarkdownRemark___frontmatter___image___birthtime' |
+  'childMarkdownRemark___frontmatter___image___birthtimeMs' |
+  'childMarkdownRemark___frontmatter___image___sourceInstanceName' |
+  'childMarkdownRemark___frontmatter___image___absolutePath' |
+  'childMarkdownRemark___frontmatter___image___relativePath' |
+  'childMarkdownRemark___frontmatter___image___extension' |
+  'childMarkdownRemark___frontmatter___image___size' |
+  'childMarkdownRemark___frontmatter___image___prettySize' |
+  'childMarkdownRemark___frontmatter___image___modifiedTime' |
+  'childMarkdownRemark___frontmatter___image___accessTime' |
+  'childMarkdownRemark___frontmatter___image___changeTime' |
+  'childMarkdownRemark___frontmatter___image___birthTime' |
+  'childMarkdownRemark___frontmatter___image___root' |
+  'childMarkdownRemark___frontmatter___image___dir' |
+  'childMarkdownRemark___frontmatter___image___base' |
+  'childMarkdownRemark___frontmatter___image___ext' |
+  'childMarkdownRemark___frontmatter___image___name' |
+  'childMarkdownRemark___frontmatter___image___relativeDirectory' |
+  'childMarkdownRemark___frontmatter___image___dev' |
+  'childMarkdownRemark___frontmatter___image___mode' |
+  'childMarkdownRemark___frontmatter___image___nlink' |
+  'childMarkdownRemark___frontmatter___image___uid' |
+  'childMarkdownRemark___frontmatter___image___gid' |
+  'childMarkdownRemark___frontmatter___image___rdev' |
+  'childMarkdownRemark___frontmatter___image___blksize' |
+  'childMarkdownRemark___frontmatter___image___ino' |
+  'childMarkdownRemark___frontmatter___image___blocks' |
+  'childMarkdownRemark___frontmatter___image___atimeMs' |
+  'childMarkdownRemark___frontmatter___image___mtimeMs' |
+  'childMarkdownRemark___frontmatter___image___ctimeMs' |
+  'childMarkdownRemark___frontmatter___image___atime' |
+  'childMarkdownRemark___frontmatter___image___mtime' |
+  'childMarkdownRemark___frontmatter___image___ctime' |
+  'childMarkdownRemark___frontmatter___image___publicURL' |
+  'childMarkdownRemark___frontmatter___image___id' |
+  'childMarkdownRemark___frontmatter___image___children' |
+  'childMarkdownRemark___frontmatter___date' |
+  'childMarkdownRemark___frontmatter___tags' |
+  'childMarkdownRemark___frontmatter___draft' |
+  'childMarkdownRemark___excerpt' |
+  'childMarkdownRemark___rawMarkdownBody' |
+  'childMarkdownRemark___fileAbsolutePath' |
+  'childMarkdownRemark___fields___slug' |
+  'childMarkdownRemark___fields___layout' |
+  'childMarkdownRemark___fields___primaryTag' |
+  'childMarkdownRemark___html' |
+  'childMarkdownRemark___htmlAst' |
+  'childMarkdownRemark___excerptAst' |
+  'childMarkdownRemark___headings' |
+  'childMarkdownRemark___headings___value' |
+  'childMarkdownRemark___headings___depth' |
+  'childMarkdownRemark___timeToRead' |
+  'childMarkdownRemark___tableOfContents' |
+  'childMarkdownRemark___wordCount___paragraphs' |
+  'childMarkdownRemark___wordCount___sentences' |
+  'childMarkdownRemark___wordCount___words' |
+  'childMarkdownRemark___parent___id' |
+  'childMarkdownRemark___parent___parent___id' |
+  'childMarkdownRemark___parent___parent___children' |
+  'childMarkdownRemark___parent___children' |
+  'childMarkdownRemark___parent___children___id' |
+  'childMarkdownRemark___parent___children___children' |
+  'childMarkdownRemark___parent___internal___content' |
+  'childMarkdownRemark___parent___internal___contentDigest' |
+  'childMarkdownRemark___parent___internal___description' |
+  'childMarkdownRemark___parent___internal___fieldOwners' |
+  'childMarkdownRemark___parent___internal___ignoreType' |
+  'childMarkdownRemark___parent___internal___mediaType' |
+  'childMarkdownRemark___parent___internal___owner' |
+  'childMarkdownRemark___parent___internal___type' |
+  'childMarkdownRemark___children' |
+  'childMarkdownRemark___children___id' |
+  'childMarkdownRemark___children___parent___id' |
+  'childMarkdownRemark___children___parent___children' |
+  'childMarkdownRemark___children___children' |
+  'childMarkdownRemark___children___children___id' |
+  'childMarkdownRemark___children___children___children' |
+  'childMarkdownRemark___children___internal___content' |
+  'childMarkdownRemark___children___internal___contentDigest' |
+  'childMarkdownRemark___children___internal___description' |
+  'childMarkdownRemark___children___internal___fieldOwners' |
+  'childMarkdownRemark___children___internal___ignoreType' |
+  'childMarkdownRemark___children___internal___mediaType' |
+  'childMarkdownRemark___children___internal___owner' |
+  'childMarkdownRemark___children___internal___type' |
+  'childMarkdownRemark___internal___content' |
+  'childMarkdownRemark___internal___contentDigest' |
+  'childMarkdownRemark___internal___description' |
+  'childMarkdownRemark___internal___fieldOwners' |
+  'childMarkdownRemark___internal___ignoreType' |
+  'childMarkdownRemark___internal___mediaType' |
+  'childMarkdownRemark___internal___owner' |
+  'childMarkdownRemark___internal___type' |
   'childTagYaml___id' |
   'childTagYaml___parent___id' |
   'childTagYaml___parent___parent___id' |
@@ -785,9 +880,6 @@ export type FileFieldsEnum =
   'childTagYaml___image___internal___mediaType' |
   'childTagYaml___image___internal___owner' |
   'childTagYaml___image___internal___type' |
-  'childTagYaml___image___childTagYaml___id' |
-  'childTagYaml___image___childTagYaml___children' |
-  'childTagYaml___image___childTagYaml___description' |
   'childTagYaml___image___childMarkdownRemark___id' |
   'childTagYaml___image___childMarkdownRemark___excerpt' |
   'childTagYaml___image___childMarkdownRemark___rawMarkdownBody' |
@@ -799,102 +891,9 @@ export type FileFieldsEnum =
   'childTagYaml___image___childMarkdownRemark___timeToRead' |
   'childTagYaml___image___childMarkdownRemark___tableOfContents' |
   'childTagYaml___image___childMarkdownRemark___children' |
-  'childMarkdownRemark___id' |
-  'childMarkdownRemark___frontmatter___title' |
-  'childMarkdownRemark___frontmatter___image___birthtime' |
-  'childMarkdownRemark___frontmatter___image___birthtimeMs' |
-  'childMarkdownRemark___frontmatter___image___sourceInstanceName' |
-  'childMarkdownRemark___frontmatter___image___absolutePath' |
-  'childMarkdownRemark___frontmatter___image___relativePath' |
-  'childMarkdownRemark___frontmatter___image___extension' |
-  'childMarkdownRemark___frontmatter___image___size' |
-  'childMarkdownRemark___frontmatter___image___prettySize' |
-  'childMarkdownRemark___frontmatter___image___modifiedTime' |
-  'childMarkdownRemark___frontmatter___image___accessTime' |
-  'childMarkdownRemark___frontmatter___image___changeTime' |
-  'childMarkdownRemark___frontmatter___image___birthTime' |
-  'childMarkdownRemark___frontmatter___image___root' |
-  'childMarkdownRemark___frontmatter___image___dir' |
-  'childMarkdownRemark___frontmatter___image___base' |
-  'childMarkdownRemark___frontmatter___image___ext' |
-  'childMarkdownRemark___frontmatter___image___name' |
-  'childMarkdownRemark___frontmatter___image___relativeDirectory' |
-  'childMarkdownRemark___frontmatter___image___dev' |
-  'childMarkdownRemark___frontmatter___image___mode' |
-  'childMarkdownRemark___frontmatter___image___nlink' |
-  'childMarkdownRemark___frontmatter___image___uid' |
-  'childMarkdownRemark___frontmatter___image___gid' |
-  'childMarkdownRemark___frontmatter___image___rdev' |
-  'childMarkdownRemark___frontmatter___image___blksize' |
-  'childMarkdownRemark___frontmatter___image___ino' |
-  'childMarkdownRemark___frontmatter___image___blocks' |
-  'childMarkdownRemark___frontmatter___image___atimeMs' |
-  'childMarkdownRemark___frontmatter___image___mtimeMs' |
-  'childMarkdownRemark___frontmatter___image___ctimeMs' |
-  'childMarkdownRemark___frontmatter___image___atime' |
-  'childMarkdownRemark___frontmatter___image___mtime' |
-  'childMarkdownRemark___frontmatter___image___ctime' |
-  'childMarkdownRemark___frontmatter___image___publicURL' |
-  'childMarkdownRemark___frontmatter___image___id' |
-  'childMarkdownRemark___frontmatter___image___children' |
-  'childMarkdownRemark___frontmatter___date' |
-  'childMarkdownRemark___frontmatter___tags' |
-  'childMarkdownRemark___frontmatter___draft' |
-  'childMarkdownRemark___frontmatter___layout' |
-  'childMarkdownRemark___excerpt' |
-  'childMarkdownRemark___rawMarkdownBody' |
-  'childMarkdownRemark___fileAbsolutePath' |
-  'childMarkdownRemark___fields___slug' |
-  'childMarkdownRemark___fields___layout' |
-  'childMarkdownRemark___fields___primaryTag' |
-  'childMarkdownRemark___html' |
-  'childMarkdownRemark___htmlAst' |
-  'childMarkdownRemark___excerptAst' |
-  'childMarkdownRemark___headings' |
-  'childMarkdownRemark___headings___value' |
-  'childMarkdownRemark___headings___depth' |
-  'childMarkdownRemark___timeToRead' |
-  'childMarkdownRemark___tableOfContents' |
-  'childMarkdownRemark___wordCount___paragraphs' |
-  'childMarkdownRemark___wordCount___sentences' |
-  'childMarkdownRemark___wordCount___words' |
-  'childMarkdownRemark___parent___id' |
-  'childMarkdownRemark___parent___parent___id' |
-  'childMarkdownRemark___parent___parent___children' |
-  'childMarkdownRemark___parent___children' |
-  'childMarkdownRemark___parent___children___id' |
-  'childMarkdownRemark___parent___children___children' |
-  'childMarkdownRemark___parent___internal___content' |
-  'childMarkdownRemark___parent___internal___contentDigest' |
-  'childMarkdownRemark___parent___internal___description' |
-  'childMarkdownRemark___parent___internal___fieldOwners' |
-  'childMarkdownRemark___parent___internal___ignoreType' |
-  'childMarkdownRemark___parent___internal___mediaType' |
-  'childMarkdownRemark___parent___internal___owner' |
-  'childMarkdownRemark___parent___internal___type' |
-  'childMarkdownRemark___children' |
-  'childMarkdownRemark___children___id' |
-  'childMarkdownRemark___children___parent___id' |
-  'childMarkdownRemark___children___parent___children' |
-  'childMarkdownRemark___children___children' |
-  'childMarkdownRemark___children___children___id' |
-  'childMarkdownRemark___children___children___children' |
-  'childMarkdownRemark___children___internal___content' |
-  'childMarkdownRemark___children___internal___contentDigest' |
-  'childMarkdownRemark___children___internal___description' |
-  'childMarkdownRemark___children___internal___fieldOwners' |
-  'childMarkdownRemark___children___internal___ignoreType' |
-  'childMarkdownRemark___children___internal___mediaType' |
-  'childMarkdownRemark___children___internal___owner' |
-  'childMarkdownRemark___children___internal___type' |
-  'childMarkdownRemark___internal___content' |
-  'childMarkdownRemark___internal___contentDigest' |
-  'childMarkdownRemark___internal___description' |
-  'childMarkdownRemark___internal___fieldOwners' |
-  'childMarkdownRemark___internal___ignoreType' |
-  'childMarkdownRemark___internal___mediaType' |
-  'childMarkdownRemark___internal___owner' |
-  'childMarkdownRemark___internal___type';
+  'childTagYaml___image___childTagYaml___id' |
+  'childTagYaml___image___childTagYaml___children' |
+  'childTagYaml___image___childTagYaml___description';
 
 export type FileFilterInput = {
   birthtime?: Maybe<DateQueryOperatorInput>,
@@ -936,8 +935,8 @@ export type FileFilterInput = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  childTagYaml?: Maybe<TagYamlFilterInput>,
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
+  childTagYaml?: Maybe<TagYamlFilterInput>,
 };
 
 export type FileGroupConnection = {
@@ -1658,9 +1657,6 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___image___internal___mediaType' |
   'frontmatter___image___internal___owner' |
   'frontmatter___image___internal___type' |
-  'frontmatter___image___childTagYaml___id' |
-  'frontmatter___image___childTagYaml___children' |
-  'frontmatter___image___childTagYaml___description' |
   'frontmatter___image___childMarkdownRemark___id' |
   'frontmatter___image___childMarkdownRemark___excerpt' |
   'frontmatter___image___childMarkdownRemark___rawMarkdownBody' |
@@ -1672,10 +1668,12 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___image___childMarkdownRemark___timeToRead' |
   'frontmatter___image___childMarkdownRemark___tableOfContents' |
   'frontmatter___image___childMarkdownRemark___children' |
+  'frontmatter___image___childTagYaml___id' |
+  'frontmatter___image___childTagYaml___children' |
+  'frontmatter___image___childTagYaml___description' |
   'frontmatter___date' |
   'frontmatter___tags' |
   'frontmatter___draft' |
-  'frontmatter___layout' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
@@ -1810,7 +1808,6 @@ export type MarkdownRemarkFrontmatter = {
   date?: Maybe<Scalars['Date']>,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   draft?: Maybe<Scalars['Boolean']>,
-  layout?: Maybe<Scalars['String']>,
 };
 
 
@@ -1827,7 +1824,6 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   date?: Maybe<DateQueryOperatorInput>,
   tags?: Maybe<StringQueryOperatorInput>,
   draft?: Maybe<BooleanQueryOperatorInput>,
-  layout?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1964,8 +1960,8 @@ export type QueryFileArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  childTagYaml?: Maybe<TagYamlFilterInput>,
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
+  childTagYaml?: Maybe<TagYamlFilterInput>
 };
 
 
@@ -2083,6 +2079,8 @@ export type QuerySiteArgs = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  port?: Maybe<IntQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>
@@ -2169,6 +2167,8 @@ export type Site = Node & {
   children: Array<Node>,
   internal: Internal,
   siteMetadata?: Maybe<SiteSiteMetadata>,
+  port?: Maybe<Scalars['Int']>,
+  host?: Maybe<Scalars['String']>,
   polyfill?: Maybe<Scalars['Boolean']>,
   pathPrefix?: Maybe<Scalars['String']>,
   buildTime?: Maybe<Scalars['Date']>,
@@ -2299,6 +2299,8 @@ export type SiteFieldsEnum =
   'siteMetadata___title' |
   'siteMetadata___description' |
   'siteMetadata___siteUrl' |
+  'port' |
+  'host' |
   'polyfill' |
   'pathPrefix' |
   'buildTime';
@@ -2309,6 +2311,8 @@ export type SiteFilterInput = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
+  port?: Maybe<IntQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
   pathPrefix?: Maybe<StringQueryOperatorInput>,
   buildTime?: Maybe<DateQueryOperatorInput>,
@@ -2701,9 +2705,6 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___maxWidth' |
   'pluginCreator___pluginOptions___quality' |
   'pluginCreator___pluginOptions___siteUrl' |
-  'pluginCreator___pluginOptions___pure' |
-  'pluginCreator___pluginOptions___minify' |
-  'pluginCreator___pluginOptions___transpileTemplateLiterals' |
   'pluginCreator___pluginOptions___displayName' |
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___codegen' |
@@ -2918,9 +2919,6 @@ export type SitePluginFieldsEnum =
   'pluginOptions___maxWidth' |
   'pluginOptions___quality' |
   'pluginOptions___siteUrl' |
-  'pluginOptions___pure' |
-  'pluginOptions___minify' |
-  'pluginOptions___transpileTemplateLiterals' |
   'pluginOptions___displayName' |
   'pluginOptions___fileName' |
   'pluginOptions___codegen' |
@@ -3052,9 +3050,6 @@ export type SitePluginPluginOptions = {
   maxWidth?: Maybe<Scalars['Int']>,
   quality?: Maybe<Scalars['Int']>,
   siteUrl?: Maybe<Scalars['String']>,
-  pure?: Maybe<Scalars['Boolean']>,
-  minify?: Maybe<Scalars['Boolean']>,
-  transpileTemplateLiterals?: Maybe<Scalars['Boolean']>,
   displayName?: Maybe<Scalars['Boolean']>,
   fileName?: Maybe<Scalars['String']>,
   codegen?: Maybe<Scalars['Boolean']>,
@@ -3077,9 +3072,6 @@ export type SitePluginPluginOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>,
   quality?: Maybe<IntQueryOperatorInput>,
   siteUrl?: Maybe<StringQueryOperatorInput>,
-  pure?: Maybe<BooleanQueryOperatorInput>,
-  minify?: Maybe<BooleanQueryOperatorInput>,
-  transpileTemplateLiterals?: Maybe<BooleanQueryOperatorInput>,
   displayName?: Maybe<BooleanQueryOperatorInput>,
   fileName?: Maybe<StringQueryOperatorInput>,
   codegen?: Maybe<BooleanQueryOperatorInput>,
@@ -3430,6 +3422,41 @@ export type TagYamlFieldsEnum =
   'image___internal___mediaType' |
   'image___internal___owner' |
   'image___internal___type' |
+  'image___childMarkdownRemark___id' |
+  'image___childMarkdownRemark___frontmatter___title' |
+  'image___childMarkdownRemark___frontmatter___date' |
+  'image___childMarkdownRemark___frontmatter___tags' |
+  'image___childMarkdownRemark___frontmatter___draft' |
+  'image___childMarkdownRemark___excerpt' |
+  'image___childMarkdownRemark___rawMarkdownBody' |
+  'image___childMarkdownRemark___fileAbsolutePath' |
+  'image___childMarkdownRemark___fields___slug' |
+  'image___childMarkdownRemark___fields___layout' |
+  'image___childMarkdownRemark___fields___primaryTag' |
+  'image___childMarkdownRemark___html' |
+  'image___childMarkdownRemark___htmlAst' |
+  'image___childMarkdownRemark___excerptAst' |
+  'image___childMarkdownRemark___headings' |
+  'image___childMarkdownRemark___headings___value' |
+  'image___childMarkdownRemark___headings___depth' |
+  'image___childMarkdownRemark___timeToRead' |
+  'image___childMarkdownRemark___tableOfContents' |
+  'image___childMarkdownRemark___wordCount___paragraphs' |
+  'image___childMarkdownRemark___wordCount___sentences' |
+  'image___childMarkdownRemark___wordCount___words' |
+  'image___childMarkdownRemark___parent___id' |
+  'image___childMarkdownRemark___parent___children' |
+  'image___childMarkdownRemark___children' |
+  'image___childMarkdownRemark___children___id' |
+  'image___childMarkdownRemark___children___children' |
+  'image___childMarkdownRemark___internal___content' |
+  'image___childMarkdownRemark___internal___contentDigest' |
+  'image___childMarkdownRemark___internal___description' |
+  'image___childMarkdownRemark___internal___fieldOwners' |
+  'image___childMarkdownRemark___internal___ignoreType' |
+  'image___childMarkdownRemark___internal___mediaType' |
+  'image___childMarkdownRemark___internal___owner' |
+  'image___childMarkdownRemark___internal___type' |
   'image___childTagYaml___id' |
   'image___childTagYaml___parent___id' |
   'image___childTagYaml___parent___children' |
@@ -3480,43 +3507,7 @@ export type TagYamlFieldsEnum =
   'image___childTagYaml___image___ctime' |
   'image___childTagYaml___image___publicURL' |
   'image___childTagYaml___image___id' |
-  'image___childTagYaml___image___children' |
-  'image___childMarkdownRemark___id' |
-  'image___childMarkdownRemark___frontmatter___title' |
-  'image___childMarkdownRemark___frontmatter___date' |
-  'image___childMarkdownRemark___frontmatter___tags' |
-  'image___childMarkdownRemark___frontmatter___draft' |
-  'image___childMarkdownRemark___frontmatter___layout' |
-  'image___childMarkdownRemark___excerpt' |
-  'image___childMarkdownRemark___rawMarkdownBody' |
-  'image___childMarkdownRemark___fileAbsolutePath' |
-  'image___childMarkdownRemark___fields___slug' |
-  'image___childMarkdownRemark___fields___layout' |
-  'image___childMarkdownRemark___fields___primaryTag' |
-  'image___childMarkdownRemark___html' |
-  'image___childMarkdownRemark___htmlAst' |
-  'image___childMarkdownRemark___excerptAst' |
-  'image___childMarkdownRemark___headings' |
-  'image___childMarkdownRemark___headings___value' |
-  'image___childMarkdownRemark___headings___depth' |
-  'image___childMarkdownRemark___timeToRead' |
-  'image___childMarkdownRemark___tableOfContents' |
-  'image___childMarkdownRemark___wordCount___paragraphs' |
-  'image___childMarkdownRemark___wordCount___sentences' |
-  'image___childMarkdownRemark___wordCount___words' |
-  'image___childMarkdownRemark___parent___id' |
-  'image___childMarkdownRemark___parent___children' |
-  'image___childMarkdownRemark___children' |
-  'image___childMarkdownRemark___children___id' |
-  'image___childMarkdownRemark___children___children' |
-  'image___childMarkdownRemark___internal___content' |
-  'image___childMarkdownRemark___internal___contentDigest' |
-  'image___childMarkdownRemark___internal___description' |
-  'image___childMarkdownRemark___internal___fieldOwners' |
-  'image___childMarkdownRemark___internal___ignoreType' |
-  'image___childMarkdownRemark___internal___mediaType' |
-  'image___childMarkdownRemark___internal___owner' |
-  'image___childMarkdownRemark___internal___type';
+  'image___childTagYaml___image___children';
 
 export type TagYamlFilterInput = {
   id?: Maybe<StringQueryOperatorInput>,

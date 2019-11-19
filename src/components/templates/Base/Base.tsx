@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
       height: 100%;
       content: '';
       background-image: url(${bgTile});
-      filter: invert(100%);
+      filter: invert(33%);
       opacity: 0.2;
       z-index: -1;
     }

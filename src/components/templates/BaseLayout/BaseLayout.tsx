@@ -23,12 +23,8 @@ const Header = styled.header`
 `;
 
 const Content = styled.main`
-  ${p => p.theme.shadows.medium};
-  background-color: ${p => p.theme.colors.use.background.primary};
   width: 100%;
   flex: 1;
-  border-radius: ${p => p.theme.dimensions.use.borderRadius.large};
-  padding: ${p => p.theme.dimensions.use.margin};
 `;
 
 const BaseLayout: React.FC<React.ComponentProps<typeof Base>> = props => (
