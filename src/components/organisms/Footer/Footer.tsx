@@ -8,6 +8,7 @@ const Container = styled.footer`
   justify-content: center;
   align-items: center;
   margin: ${p => p.theme.dimensions.use.margin} 0;
+  color: ${p => p.theme.colors.use.text.primary};
 `;
 
 const Footer: React.FC = () =>

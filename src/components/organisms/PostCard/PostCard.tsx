@@ -8,7 +8,6 @@ const Container = styled.article`
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   margin: 0 20px 40px;
   min-height: 300px;
   background-color: ${p => p.theme.colors.use.background.primary};
@@ -21,11 +20,19 @@ const Container = styled.article`
   }
 `;
 
-const ImageLink = styled(Link)`
+const CardLink = styled(Link)`
+  color: inherit;
+  flex-grow: 1;
+
+  /* Reset Typography theme */
+  background-image: none;
+`;
+
+const ImageContainer = styled.div`
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 5px 5px 0 0;
+  border-radius: ${p => p.theme.dimensions.use.borderRadius.normal} ${p => p.theme.dimensions.use.borderRadius.normal} 0 0;
 `;
 
 const Image = styled.div`
@@ -40,17 +47,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
-
-const ContentLink = styled(Link)`
-  position: relative;
-  flex-grow: 1;
-  display: block;
-  padding: 25px 25px 0;
-  color: ${p => p.theme.colors.use.text.primary};
-  :hover {
-    text-decoration: none;
-  }
+  padding: ${p => p.theme.dimensions.use.margin};
 `;
 
 const Tags = styled.span`
@@ -76,7 +73,6 @@ const Meta = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 25px 25px;
 `;
 
 const ReadingTime = styled.span`
@@ -96,23 +92,23 @@ export interface Props {
 
 const PostCard: React.FC<Props> = ({ post }) => (
   <Container className={`post-card ${post.frontmatter.image ? '' : 'no-image'}`}>
-    {post.frontmatter.image && (
-      <ImageLink to={post.fields.slug}>
-        <Image>
-          {post.frontmatter.image &&
+    <CardLink to={post.fields.slug}>
+      {post.frontmatter.image && (
+        <ImageContainer>
+          <Image>
+            {post.frontmatter.image &&
             post.frontmatter.image.childImageSharp &&
             post.frontmatter.image.childImageSharp.fluid && (
-            <Img
-              alt={`${post.frontmatter.title} cover image`}
-              style={{ height: '100%' }}
-              fluid={post.frontmatter.image.childImageSharp.fluid}
-            />
-          )}
-        </Image>
-      </ImageLink>
-    )}
-    <Content>
-      <ContentLink to={post.fields.slug}>
+              <Img
+                alt={`${post.frontmatter.title} cover image`}
+                style={{ height: '100%' }}
+                fluid={post.frontmatter.image.childImageSharp.fluid}
+              />
+            )}
+          </Image>
+        </ImageContainer>
+      )}
+      <Content>
         <header>
           {post.frontmatter.tags && <Tags>{post.frontmatter.tags[0]}</Tags>}
           <Title>{post.frontmatter.title}</Title>
@@ -120,11 +116,12 @@ const PostCard: React.FC<Props> = ({ post }) => (
         <Excerpt>
           <p>{post.excerpt}</p>
         </Excerpt>
-      </ContentLink>
-      <Meta>
-        <ReadingTime>{post.timeToRead} min read</ReadingTime>
-      </Meta>
-    </Content>
+        <Meta>
+          <ReadingTime>{post.timeToRead} min read</ReadingTime>
+        </Meta>
+      </Content>
+
+    </CardLink>
   </Container>
 );
 

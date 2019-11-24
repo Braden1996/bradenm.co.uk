@@ -71,6 +71,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/config/typography.ts',
+      },
+    },
     'gatsby-transformer-yaml',
     'gatsby-plugin-feed',
     {

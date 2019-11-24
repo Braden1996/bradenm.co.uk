@@ -6,30 +6,32 @@ import styled from '@styled';
 import energyDrink from './energyDrink.png';
 
 const Icon = styled.img`
-  position: absolute;
-  top: 0;
-  left: 50%;
-  right: 50%;
-  height: 100%;
-  transform: translate(-50%);
+  height: 1em;
   transition: transform 200ms linear;
+  vertical-align: text-top;
+  transform: scale(1.5);
+
+  /* Reset Typography theme */
+  margin-bottom: 0;
 
   &:hover {
     filter: drop-shadow(1px 1px 1px ${p => transparentize(0.7, p.theme.colors.base.black)});
-    transform: translate(-50%) scale(1.33) rotate(15deg);
+    transform: scale(2) rotate(15deg);
   }
 `;
 
 const EnergyDrinkLink = styled.a`
   position: relative;
-  width: 1em;
-  height: 1.5em;
   margin: 0 0.1em;
   cursor: pointer;
+  
+  /* Reset Typography theme */
+  background-image: none;
+  margin-bottom: 0;
 `;
 
 const EnergyDrink = () => (
-  <EnergyDrinkLink rel="nofollow" href="https://examine.com/nutrition/are-energy-drinks-bad-for-you/">
+  <EnergyDrinkLink tabIndex={-1} rel="nofollow" href="https://examine.com/nutrition/are-energy-drinks-bad-for-you/">
     <Icon alt="energy drink" src={energyDrink} />
   </EnergyDrinkLink>
 );

@@ -15,15 +15,15 @@ const use = {
   accent: {
     danger: base.nord11,
     info: base.nord9,
-    primary: base.nord10,
-    secondary: base.nord15,
+    primary: base.nord15,
+    secondary: base.nord10,
     success: base.nord14,
     warning: base.nord12,
   },
   text: {
     primary: base.nord6,
-    secondary: transparentize(0.7, base.nord6),
-    tertiary: transparentize(0.5, base.nord6),
+    secondary: transparentize(0.25, base.nord6),
+    tertiary: transparentize(0.4, base.nord6),
   },
 };
 

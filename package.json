@@ -30,6 +30,7 @@
     "gatsby-plugin-sitemap": "2.2.20",
     "gatsby-plugin-styled-components": "^3.1.13",
     "gatsby-plugin-typescript": "2.1.17",
+    "gatsby-plugin-typography": "^2.3.17",
     "gatsby-remark-abbr": "1.0.0",
     "gatsby-remark-copy-linked-files": "2.1.29",
     "gatsby-remark-images": "3.1.30",
@@ -49,9 +50,13 @@
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-helmet": "5.2.1",
+    "react-typography": "^0.16.19",
     "rehype-react": "4.0.1",
     "rellax": "^1.10.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "typography": "^0.16.19",
+    "typography-plugin-code": "^0.16.19",
+    "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
     "@types/classnames": "2.2.9",
@@ -65,6 +70,7 @@
     "@types/rehype-react": "^3.1.0",
     "@types/rellax": "^1.7.2",
     "@types/styled-components": "^4.4.0",
+    "@types/typography": "^0.16.3",
     "@typescript-eslint/eslint-plugin": "2.7.0",
     "@typescript-eslint/parser": "2.7.0",
     "babel-plugin-styled-components": "^1.10.6",
