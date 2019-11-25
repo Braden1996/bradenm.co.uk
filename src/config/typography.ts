@@ -1,6 +1,7 @@
 import Typography from 'typography';
 import CodePlugin from 'typography-plugin-code';
 import fairyGatesTheme from 'typography-theme-fairy-gates';
+import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
 import colors from './colors';
 
@@ -14,6 +15,11 @@ fairyGatesTheme.overrideThemeStyles = () => {
     },
     blockquote: {
       color: colors.use.text.secondary,
+    },
+    [MOBILE_MEDIA_QUERY]: {
+      blockquote: {
+        color: 'inherit',
+      },
     },
   });
 };

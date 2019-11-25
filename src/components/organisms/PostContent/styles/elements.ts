@@ -9,10 +9,7 @@ const elements = css`
   min-height: 230px;
   background: ${p => p.theme.colors.use.background.primary};
   border-radius: ${p => p.theme.dimensions.use.borderRadius.large};
-
-  @media (max-width: 1170px) {
-    padding: 5vw 7vw 0;
-  }
+  overflow: hidden;
 
   h1,
   h2,

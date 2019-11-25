@@ -22,8 +22,8 @@ const use = {
   },
   text: {
     primary: base.nord6,
-    secondary: transparentize(0.25, base.nord6),
-    tertiary: transparentize(0.4, base.nord6),
+    secondary: transparentize(0.1, base.nord6),
+    tertiary: transparentize(0.2, base.nord6),
   },
 };
 

@@ -16,7 +16,7 @@ export interface Props extends React.ComponentProps<typeof BaseLayout> {
 }
 
 const PostCardList = styled.ol`
-  padding-left: 0;
+  margin-left: 0;
 `;
 
 const Home: React.FC<Props> = ({ data, pageContext, ...props }) => (
