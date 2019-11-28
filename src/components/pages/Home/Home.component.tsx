@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { math } from 'polished';
 
 import styled from '@styled';
 import { BaseLayout } from '@templates';
@@ -17,15 +18,18 @@ export interface Props extends React.ComponentProps<typeof BaseLayout> {
 
 const PostCardList = styled.ol`
   margin-left: 0;
+  margin-bottom: 0;
+
+  & > *:not(:last-child) {
+    margin-bottom: ${p => math(`2 * ${p.theme.dimensions.use.margin}`)};
+  }
 `;
 
 const Home: React.FC<Props> = ({ data, pageContext, ...props }) => (
   <BaseLayout {...props}>
-    <main id="site-main">
-      <PostCardList>
-        {data.allMarkdownRemark.edges.map(({ node }) => <PostCard key={node.fields!.slug || ''} post={node} />)}
-      </PostCardList>
-    </main>
+    <PostCardList>
+      {data.allMarkdownRemark.edges.map(({ node }) => <PostCard key={node.fields!.slug || ''} post={node} />)}
+    </PostCardList>
   </BaseLayout>
 );
 

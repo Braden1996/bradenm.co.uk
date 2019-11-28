@@ -1,19 +1,19 @@
-import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
 import * as React from 'react';
+import { transparentize, math } from 'polished';
 
-import styled from '@styled';
+import styled, { css } from '@styled';
+import { HomePageQuery } from '@gql-types';
 
 const Container = styled.article`
-  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  margin: 0 20px 40px;
-  min-height: 300px;
   background-color: ${p => p.theme.colors.use.background.primary};
-  border-radius: 5px;
-  box-shadow: rgba(15, 17, 21, 0.35) 0px 6px 9px 0px;
+  border-radius: ${p => p.theme.dimensions.use.borderRadius.normal};
+  box-shadow: ${p => transparentize(0.2, p.theme.colors.base.charade)} 0px 6px 9px 0px;
   transition: all 0.5s ease;
+
   :hover {
     transition: all 0.4s ease;
     transform: translate3D(0, -1px, 0) scale(1.02);
@@ -47,18 +47,59 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: ${p => p.theme.dimensions.use.margin};
+  padding: ${p => p.theme.dimensions.use.screen};
+  padding-top: ${p => p.theme.dimensions.use.margin};
 `;
 
-const Tags = styled.span`
-  display: block;
-  margin-bottom: 4px;
+interface TagProps {
+  color: number;
+}
+
+const Tag = styled.li<TagProps>`
+  ${p => css`
+    font-size: ${p.theme.typography.scale(-0.4).fontSize};
+    line-height: ${p.theme.typography.scale(-0.4).fontSize};
+  `}
+  margin-bottom: 0;
+  padding: ${p => math(`0.125 * ${p.theme.dimensions.use.margin}`)} ${p => math(`0.25 * ${p.theme.dimensions.use.margin}`)};
+  border-radius: ${p => p.theme.dimensions.use.borderRadius.normal};
   color: ${p => p.theme.colors.use.text.tertiary};
-  font-size: 1.2rem;
-  line-height: 1.15em;
-  font-weight: 500;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
+
+  ${p => {
+    let color;
+    switch (p.color) {
+      case 0:
+        color = p.theme.colors.base.nord12;
+        break;
+      case 1:
+        color = p.theme.colors.base.nord13;
+        break;
+      case 2:
+        color = p.theme.colors.base.nord14;
+        break;
+      default:
+        color = p.theme.colors.base.nord15;
+        break;
+    }
+
+    return css`
+      background-color: ${transparentize(0.5, color)};
+      border: 1px solid ${color};
+    `;
+  }}
+`;
+
+const Tags = styled.ol`
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 0;
+
+  & > ${Tag}:not(:last-child) {
+    margin-right: ${p => p.theme.dimensions.use.margin};
+  }
 `;
 
 const Title = styled.h2`
@@ -66,63 +107,84 @@ const Title = styled.h2`
 `;
 
 const Excerpt = styled.section`
-  font-family: Georgia, serif;
+  & > p {
+    margin-bottom: 0;
+  }
 `;
 
-const Meta = styled.footer`
+const Meta = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  margin-bottom: ${p => math(`0.5 * ${p.theme.dimensions.use.margin}`)};
 `;
 
 const ReadingTime = styled.span`
-  flex-shrink: 0;
-  margin-left: 20px;
   color: ${p => p.theme.colors.use.text.tertiary};
-  font-size: 1.2rem;
-  line-height: 33px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
 `;
 
 export interface Props {
-  post: any;
+  post: HomePageQuery['allMarkdownRemark']['edges'][0]['node'];
+  className?: string;
 }
 
-const PostCard: React.FC<Props> = ({ post }) => (
-  <Container className={`post-card ${post.frontmatter.image ? '' : 'no-image'}`}>
-    <CardLink to={post.fields.slug}>
-      {post.frontmatter.image && (
-        <ImageContainer>
-          <Image>
-            {post.frontmatter.image &&
-            post.frontmatter.image.childImageSharp &&
-            post.frontmatter.image.childImageSharp.fluid && (
-              <Img
-                alt={`${post.frontmatter.title} cover image`}
-                style={{ height: '100%' }}
-                fluid={post.frontmatter.image.childImageSharp.fluid}
-              />
-            )}
-          </Image>
-        </ImageContainer>
-      )}
-      <Content>
-        <header>
-          {post.frontmatter.tags && <Tags>{post.frontmatter.tags[0]}</Tags>}
-          <Title>{post.frontmatter.title}</Title>
-        </header>
-        <Excerpt>
-          <p>{post.excerpt}</p>
-        </Excerpt>
-        <Meta>
-          <ReadingTime>{post.timeToRead} min read</ReadingTime>
-        </Meta>
-      </Content>
+const PostCard: React.FC<Props> = ({ post, className }) => {
+  const tags = useStaticQuery(graphql`
+    query TagsQuery {
+      allTagYaml {
+        edges {
+          node {
+            id
+            color
+          }
+        }
+      }
+    }
+  `);
 
-    </CardLink>
-  </Container>
-);
+  const tagColors = tags.allTagYaml.edges.reduce((acc, {node}) => ({ ...acc, [node.id]: node.color }), {});
+
+  console.log(tagColors);
+
+  return (
+    <Container className={className}>
+      <CardLink to={post.fields!.slug!}>
+        {post.frontmatter!.image && (
+          <ImageContainer>
+            <Image>
+              {post.frontmatter!.image &&
+            post.frontmatter!.image.childImageSharp &&
+            post.frontmatter!.image.childImageSharp.fluid && (
+                <Img
+              alt={`${post.frontmatter!.title} cover image`}
+              style={{ height: '100%' }}
+              fluid={post.frontmatter!.image.childImageSharp.fluid as FluidObject}
+                />
+              )}
+            </Image>
+          </ImageContainer>
+        )}
+        <Content>
+          <header>
+            <Meta>
+              {post.frontmatter!.tags && (
+                <Tags>{post.frontmatter!.tags.map(tag => (
+                  <Tag key={tag!} color={tagColors[tag!]}>{tag}</Tag>
+                ))}
+                </Tags>
+              )}
+              <ReadingTime>{post.timeToRead} min read</ReadingTime>
+            </Meta>
+            <Title>{post.frontmatter!.title}</Title>
+          </header>
+          <Excerpt>
+            <p>{post.excerpt}</p>
+          </Excerpt>
+        </Content>
+      </CardLink>
+    </Container>
+  );
+};
 
 export default PostCard;

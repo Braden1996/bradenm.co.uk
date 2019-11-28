@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import { CSSObject } from 'styled-components';
 
 import styled, { css } from '@styled';
 
@@ -11,13 +12,7 @@ const Container = styled.header`
 `;
 
 const Title = styled(Link)`
-  ${p => {
-    const f = p.theme.typography.scale(1.2);
-    return css`
-      font-size: ${f.fontSize};
-      line-height: ${f.lineHeight};
-    `;
-  }};
+  ${p => css(p.theme.typography.scale(1.2) as CSSObject)}
   color: ${p => p.theme.colors.use.text.primary};
   text-transform: uppercase;
 
