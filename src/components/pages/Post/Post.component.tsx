@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { BackToTop } from '@atoms';
 import { BaseLayout } from '@templates';
 import { PostContent } from '@organisms';
 import { PostPageQuery } from '@gql-types';
@@ -17,6 +18,7 @@ export interface Props extends React.ComponentProps<typeof BaseLayout> {
 const Post: React.FC<Props> = ({ data, ...props }) => (
   <BaseLayout {...props}>
     <PostContent htmlAst={data.markdownRemark!.htmlAst} />
+    <BackToTop />
   </BaseLayout>
 );
 
