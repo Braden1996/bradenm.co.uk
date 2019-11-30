@@ -56,10 +56,10 @@ const Base: React.FC<Props> = props => (
       <meta name="twitter:title" content={config.site.title} />
       <meta name="twitter:description" content={config.site.description} />
       <meta name="twitter:url" content={config.site.siteUrl} />
-      {config.site.twitter && (
+      {config.site.social.twitter && (
         <meta
           name="twitter:site"
-          content={`@${config.site.twitter.split('https://twitter.com/')[1]}`}
+          content={`@${config.site.social.twitter.split('https://twitter.com/')[1]}`}
         />
       )}
       <link rel="icon" href={favicon} type="image/x-icon" />

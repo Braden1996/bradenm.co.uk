@@ -1,4 +1,5 @@
 const site = {
+  name: 'Braden Marshall',
   title: 'Braden\'s Blog',
   description: 'The personal blog of Braden.',
   /**
@@ -7,7 +8,11 @@ const site = {
    */
   lang: 'en',
   siteUrl: 'https://bradenm.co.uk', // No trailing slash
-  twitter: 'https://twitter.com/SirBraden1996',
+  social: {
+    github: 'https://github.com/Braden1996',
+    linkedIn: 'https://www.linkedin.com/in/braden-marshall/',
+    twitter: 'https://twitter.com/SirBraden1996',
+  },
 };
 
 export default site;

@@ -3,12 +3,22 @@ import { Link } from 'gatsby';
 import { CSSObject } from 'styled-components';
 
 import styled, { css } from '@styled';
+import { SocialIcons } from '@molecules';
+import config from '@config';
+
+const StyledSocialIcons = styled(SocialIcons)``;
 
 const Container = styled.header`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: ${p => p.theme.dimensions.use.screen} 0;
+  margin-top: ${p => p.theme.dimensions.use.screen};
+  margin-bottom: ${p => p.theme.dimensions.base.small};
+
+  & > ${StyledSocialIcons} {
+    align-self: flex-end;
+  }
 `;
 
 const Title = styled(Link)`
@@ -21,7 +31,11 @@ const Title = styled(Link)`
   background-image: none;
 `;
 
-const Header: React.FC = () =>
-  <Container><Title to="/">Braden Marshall</Title></Container>;
+const Header: React.FC = () => (
+  <Container>
+    <Title to="/">{config.site.name}</Title>
+    <StyledSocialIcons {...config.site.social} />
+  </Container>
+);
 
 export default Header;
