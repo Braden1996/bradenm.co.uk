@@ -1,10 +1,12 @@
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import * as React from 'react';
 import { transparentize, math } from 'polished';
 
-import styled, { css } from '@styled';
+import styled from '@styled';
 import { HomePageQuery } from '@gql-types';
+import { useTagKindMap } from '@utils';
+import { Tags } from '@molecules';
 
 const Container = styled.article`
   display: flex;
@@ -51,57 +53,6 @@ const Content = styled.div`
   padding-top: ${p => p.theme.dimensions.use.margin};
 `;
 
-interface TagProps {
-  color: number;
-}
-
-const Tag = styled.li<TagProps>`
-  ${p => css`
-    font-size: ${p.theme.typography.scale(-0.4).fontSize};
-    line-height: ${p.theme.typography.scale(-0.4).fontSize};
-  `}
-  margin-bottom: 0;
-  padding: ${p => math(`0.125 * ${p.theme.dimensions.use.margin}`)} ${p => math(`0.25 * ${p.theme.dimensions.use.margin}`)};
-  border-radius: ${p => p.theme.dimensions.use.borderRadius.normal};
-  color: ${p => p.theme.colors.use.text.tertiary};
-  text-transform: uppercase;
-
-  ${p => {
-    let color;
-    switch (p.color) {
-      case 0:
-        color = p.theme.colors.base.nord12;
-        break;
-      case 1:
-        color = p.theme.colors.base.nord13;
-        break;
-      case 2:
-        color = p.theme.colors.base.nord14;
-        break;
-      default:
-        color = p.theme.colors.base.nord15;
-        break;
-    }
-
-    return css`
-      background-color: ${transparentize(0.5, color)};
-      border: 1px solid ${color};
-    `;
-  }}
-`;
-
-const Tags = styled.ol`
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin-left: 0;
-  margin-bottom: 0;
-
-  & > ${Tag}:not(:last-child) {
-    margin-right: ${p => p.theme.dimensions.use.margin};
-  }
-`;
-
 const Title = styled.h2`
   margin-top: 0;
 `;
@@ -130,22 +81,13 @@ export interface Props {
 }
 
 const PostCard: React.FC<Props> = ({ post, className }) => {
-  const tags = useStaticQuery(graphql`
-    query TagsQuery {
-      allTagYaml {
-        edges {
-          node {
-            id
-            color
-          }
-        }
-      }
-    }
-  `);
+  const tagColors = useTagKindMap();
 
-  const tagColors = tags.allTagYaml.edges.reduce((acc, {node}) => ({ ...acc, [node.id]: node.color }), {});
-
-  console.log(tagColors);
+  const tags = post.frontmatter!.tags!;
+  const tagItems = React.useMemo(() => tags.map(label => ({
+    label: label!,
+    kind: label ? tagColors[label] : undefined,
+  })), [tags, tagColors]);
 
   return (
     <Container className={className}>
@@ -154,12 +96,12 @@ const PostCard: React.FC<Props> = ({ post, className }) => {
           <ImageContainer>
             <Image>
               {post.frontmatter!.image &&
-            post.frontmatter!.image.childImageSharp &&
-            post.frontmatter!.image.childImageSharp.fluid && (
+                post.frontmatter!.image.childImageSharp &&
+                post.frontmatter!.image.childImageSharp.fluid && (
                 <Img
-              alt={`${post.frontmatter!.title} cover image`}
-              style={{ height: '100%' }}
-              fluid={post.frontmatter!.image.childImageSharp.fluid as FluidObject}
+                  alt={`${post.frontmatter!.title} cover image`}
+                  style={{ height: '100%' }}
+                  fluid={post.frontmatter!.image.childImageSharp.fluid as FluidObject}
                 />
               )}
             </Image>
@@ -168,12 +110,7 @@ const PostCard: React.FC<Props> = ({ post, className }) => {
         <Content>
           <header>
             <Meta>
-              {post.frontmatter!.tags && (
-                <Tags>{post.frontmatter!.tags.map(tag => (
-                  <Tag key={tag!} color={tagColors[tag!]}>{tag}</Tag>
-                ))}
-                </Tags>
-              )}
+              {tagItems && <Tags tags={tagItems} />}
               <ReadingTime>{post.timeToRead} min read</ReadingTime>
             </Meta>
             <Title>{post.frontmatter!.title}</Title>

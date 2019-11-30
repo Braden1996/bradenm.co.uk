@@ -1,6 +1,6 @@
 - id: React Native
-  color: 0
+  kind: 0
 - id: TypeScript
-  color: 1
+  kind: 1
 - id: Productivity
-  color: 2
+  kind: 2

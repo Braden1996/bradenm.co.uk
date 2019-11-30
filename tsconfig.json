@@ -13,6 +13,7 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "baseUrl": "./",
+    "skipLibCheck": true,
     "paths": {
       "@atoms": ["src/components/atoms/index.ts"],
       "@atoms/*": ["src/components/atoms/*"],
@@ -31,5 +32,5 @@
       "@gql-types": ["types/graphql.d.ts"]
     }
   },
-  "include": ["./src/**/*", "./types/*"]
+  "include": ["./src/**/*", "./types/*"],
 }
