@@ -1,9 +1,23 @@
 import * as React from 'react';
+import GithubCorner from 'react-github-corner';
 
 import { Footer, Header } from '@organisms';
+import config from '@config';
 import styled from '@styled';
 
 import Base from '../Base';
+
+const StyledGithubCorner = styled(GithubCorner).attrs(p => ({
+  bannerColor: p.theme.colors.use.background.secondary,
+  octoColor: p.theme.colors.use.background.tertiary,
+}))`
+  opacity: 0.6;
+  transition: opacity 200ms linear;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
 
 const Container = styled.article`
   width: 100%;
@@ -26,6 +40,7 @@ const BaseLayout: React.FC<React.ComponentProps<typeof Base>> = props => (
       <Content>{props.children}</Content>
       <Footer />
     </Container>
+    <StyledGithubCorner href={config.site.publicGithubRepo} />
   </Base>
 );
 

@@ -8,6 +8,7 @@ const site = {
    */
   lang: 'en',
   siteUrl: 'https://bradenm.co.uk', // No trailing slash
+  publicGithubRepo: 'https://github.com/Braden1996/bradenm.co.uk',
   social: {
     github: 'https://github.com/Braden1996',
     linkedIn: 'https://www.linkedin.com/in/braden-marshall/',

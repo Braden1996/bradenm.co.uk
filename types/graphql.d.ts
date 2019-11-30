@@ -397,8 +397,8 @@ export type File = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  childrenTagYaml?: Maybe<Array<Maybe<TagYaml>>>,
   childMarkdownRemark?: Maybe<MarkdownRemark>,
+  childrenTagYaml?: Maybe<Array<Maybe<TagYaml>>>,
 };
 
 
@@ -696,46 +696,6 @@ export type FileFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'childrenTagYaml' |
-  'childrenTagYaml___id' |
-  'childrenTagYaml___parent___id' |
-  'childrenTagYaml___parent___parent___id' |
-  'childrenTagYaml___parent___parent___children' |
-  'childrenTagYaml___parent___children' |
-  'childrenTagYaml___parent___children___id' |
-  'childrenTagYaml___parent___children___children' |
-  'childrenTagYaml___parent___internal___content' |
-  'childrenTagYaml___parent___internal___contentDigest' |
-  'childrenTagYaml___parent___internal___description' |
-  'childrenTagYaml___parent___internal___fieldOwners' |
-  'childrenTagYaml___parent___internal___ignoreType' |
-  'childrenTagYaml___parent___internal___mediaType' |
-  'childrenTagYaml___parent___internal___owner' |
-  'childrenTagYaml___parent___internal___type' |
-  'childrenTagYaml___children' |
-  'childrenTagYaml___children___id' |
-  'childrenTagYaml___children___parent___id' |
-  'childrenTagYaml___children___parent___children' |
-  'childrenTagYaml___children___children' |
-  'childrenTagYaml___children___children___id' |
-  'childrenTagYaml___children___children___children' |
-  'childrenTagYaml___children___internal___content' |
-  'childrenTagYaml___children___internal___contentDigest' |
-  'childrenTagYaml___children___internal___description' |
-  'childrenTagYaml___children___internal___fieldOwners' |
-  'childrenTagYaml___children___internal___ignoreType' |
-  'childrenTagYaml___children___internal___mediaType' |
-  'childrenTagYaml___children___internal___owner' |
-  'childrenTagYaml___children___internal___type' |
-  'childrenTagYaml___internal___content' |
-  'childrenTagYaml___internal___contentDigest' |
-  'childrenTagYaml___internal___description' |
-  'childrenTagYaml___internal___fieldOwners' |
-  'childrenTagYaml___internal___ignoreType' |
-  'childrenTagYaml___internal___mediaType' |
-  'childrenTagYaml___internal___owner' |
-  'childrenTagYaml___internal___type' |
-  'childrenTagYaml___kind' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
   'childMarkdownRemark___frontmatter___image___birthtime' |
@@ -831,7 +791,47 @@ export type FileFieldsEnum =
   'childMarkdownRemark___internal___ignoreType' |
   'childMarkdownRemark___internal___mediaType' |
   'childMarkdownRemark___internal___owner' |
-  'childMarkdownRemark___internal___type';
+  'childMarkdownRemark___internal___type' |
+  'childrenTagYaml' |
+  'childrenTagYaml___id' |
+  'childrenTagYaml___parent___id' |
+  'childrenTagYaml___parent___parent___id' |
+  'childrenTagYaml___parent___parent___children' |
+  'childrenTagYaml___parent___children' |
+  'childrenTagYaml___parent___children___id' |
+  'childrenTagYaml___parent___children___children' |
+  'childrenTagYaml___parent___internal___content' |
+  'childrenTagYaml___parent___internal___contentDigest' |
+  'childrenTagYaml___parent___internal___description' |
+  'childrenTagYaml___parent___internal___fieldOwners' |
+  'childrenTagYaml___parent___internal___ignoreType' |
+  'childrenTagYaml___parent___internal___mediaType' |
+  'childrenTagYaml___parent___internal___owner' |
+  'childrenTagYaml___parent___internal___type' |
+  'childrenTagYaml___children' |
+  'childrenTagYaml___children___id' |
+  'childrenTagYaml___children___parent___id' |
+  'childrenTagYaml___children___parent___children' |
+  'childrenTagYaml___children___children' |
+  'childrenTagYaml___children___children___id' |
+  'childrenTagYaml___children___children___children' |
+  'childrenTagYaml___children___internal___content' |
+  'childrenTagYaml___children___internal___contentDigest' |
+  'childrenTagYaml___children___internal___description' |
+  'childrenTagYaml___children___internal___fieldOwners' |
+  'childrenTagYaml___children___internal___ignoreType' |
+  'childrenTagYaml___children___internal___mediaType' |
+  'childrenTagYaml___children___internal___owner' |
+  'childrenTagYaml___children___internal___type' |
+  'childrenTagYaml___internal___content' |
+  'childrenTagYaml___internal___contentDigest' |
+  'childrenTagYaml___internal___description' |
+  'childrenTagYaml___internal___fieldOwners' |
+  'childrenTagYaml___internal___ignoreType' |
+  'childrenTagYaml___internal___mediaType' |
+  'childrenTagYaml___internal___owner' |
+  'childrenTagYaml___internal___type' |
+  'childrenTagYaml___kind';
 
 export type FileFilterInput = {
   birthtime?: Maybe<DateQueryOperatorInput>,
@@ -873,8 +873,8 @@ export type FileFilterInput = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  childrenTagYaml?: Maybe<TagYamlFilterListInput>,
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
+  childrenTagYaml?: Maybe<TagYamlFilterListInput>,
 };
 
 export type FileGroupConnection = {
@@ -1595,10 +1595,6 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___image___internal___mediaType' |
   'frontmatter___image___internal___owner' |
   'frontmatter___image___internal___type' |
-  'frontmatter___image___childrenTagYaml' |
-  'frontmatter___image___childrenTagYaml___id' |
-  'frontmatter___image___childrenTagYaml___children' |
-  'frontmatter___image___childrenTagYaml___kind' |
   'frontmatter___image___childMarkdownRemark___id' |
   'frontmatter___image___childMarkdownRemark___excerpt' |
   'frontmatter___image___childMarkdownRemark___rawMarkdownBody' |
@@ -1610,6 +1606,10 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___image___childMarkdownRemark___timeToRead' |
   'frontmatter___image___childMarkdownRemark___tableOfContents' |
   'frontmatter___image___childMarkdownRemark___children' |
+  'frontmatter___image___childrenTagYaml' |
+  'frontmatter___image___childrenTagYaml___id' |
+  'frontmatter___image___childrenTagYaml___children' |
+  'frontmatter___image___childrenTagYaml___kind' |
   'frontmatter___date' |
   'frontmatter___tags' |
   'frontmatter___draft' |
@@ -1899,8 +1899,8 @@ export type QueryFileArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  childrenTagYaml?: Maybe<TagYamlFilterListInput>,
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
+  childrenTagYaml?: Maybe<TagYamlFilterListInput>
 };
 
 
