@@ -15,6 +15,7 @@ const Title = styled(Link)`
   ${p => css(p.theme.typography.scale(1.2) as CSSObject)}
   color: ${p => p.theme.colors.use.text.primary};
   text-transform: uppercase;
+  text-align: center;
 
   /* Disable shadow from Typography theme. */
   background-image: none;

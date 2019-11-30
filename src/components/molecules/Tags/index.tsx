@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { math } from 'polished';
 
 import { Tag } from '@atoms';
 import styled from '@styled';
@@ -7,11 +8,10 @@ const Container = styled.ol`
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin-left: 0;
-  margin-bottom: 0;
+  margin: -${p => math(`${p.theme.dimensions.use.margin} / 4`)};
 
-  & > ${Tag}:not(:last-child) {
-    margin-right: ${p => p.theme.dimensions.use.margin};
+  & > ${Tag} {
+    margin: ${p => math(`${p.theme.dimensions.use.margin} / 4`)};
   }
 `;
 

@@ -73,6 +73,7 @@ const Meta = styled.div`
 const ReadingTime = styled.span`
   color: ${p => p.theme.colors.use.text.tertiary};
   text-transform: uppercase;
+  text-align: right;
 `;
 
 export interface Props {

@@ -1,9 +1,13 @@
 import * as React from 'react';
 
 import { EnergyDrink } from '@atoms';
-import styled from '@styled';
+import styled, { css } from '@styled';
 
 const Container = styled.footer`
+  ${p => css`
+    font-size: ${p.theme.typography.scale(-0.2).fontSize};
+    line-height: ${p.theme.typography.scale(-0.2).fontSize};
+  `}
   display: flex;
   justify-content: center;
   align-items: center;
