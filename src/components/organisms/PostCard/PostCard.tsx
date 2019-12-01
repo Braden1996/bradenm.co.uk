@@ -3,7 +3,7 @@ import Img, { FluidObject } from 'gatsby-image';
 import * as React from 'react';
 import { transparentize, math } from 'polished';
 
-import styled from '@styled';
+import styled, { media } from '@styled';
 import { HomePageQuery } from '@gql-types';
 import { useTagKindMap } from '@utils';
 import { Tags } from '@molecules';
@@ -27,7 +27,7 @@ const CardLink = styled(Link)`
   flex-grow: 1;
 
   /* Reset Typography theme */
-  background-image: none;
+  border-bottom: none;
 `;
 
 const ImageContainer = styled.div`
@@ -51,6 +51,11 @@ const Content = styled.div`
   justify-content: space-between;
   padding: ${p => p.theme.dimensions.use.screen};
   padding-top: ${p => p.theme.dimensions.use.margin};
+
+  ${p => media.lessThan('mobile')`
+    padding: ${math(`${p.theme.dimensions.use.screen} / 2`)};
+    padding-top: ${math(`${p.theme.dimensions.use.margin} / 2`)};
+  `}
 `;
 
 const Title = styled.h2`

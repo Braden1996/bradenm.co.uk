@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { math } from 'polished';
 
 import styled, { css, theme } from '@styled';
 
@@ -28,7 +29,7 @@ const SocialIcon = styled.li`
 
     /* Reset Typography theme */
     color: inherit;
-    background-image: none;
+    border-bottom: none;
   }
 
   margin-bottom: 0;
@@ -41,8 +42,14 @@ const Container = styled.ol`
   margin-bottom: 0;
   margin-left: 0;
 
-  & > ${SocialIcon}:not(:last-child) {
-    margin-right: ${p => p.theme.dimensions.use.margin};
+  & > ${SocialIcon} {
+    &:not(:first-child) {
+      margin-left: ${p => math(`${p.theme.dimensions.use.margin} / 2`)};
+    }
+
+    &:not(:last-child) {
+      margin-right: ${p => math(`${p.theme.dimensions.use.margin} / 2`)};
+    }
   }
 `;
 

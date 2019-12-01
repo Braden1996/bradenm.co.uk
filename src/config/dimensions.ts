@@ -14,6 +14,13 @@ const use = {
     normal: base.xxSmall,
     large: base.xSmall,
   },
+  breakpoints: {
+    larger: '1600px',
+    large: '1280px',
+    default: '980px',
+    tablet: '768px',
+    mobile: '480px',
+  },
 };
 
 const dimensions = { base, use };

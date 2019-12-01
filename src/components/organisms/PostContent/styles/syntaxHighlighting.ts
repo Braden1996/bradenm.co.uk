@@ -1,4 +1,4 @@
-import { css } from '@styled';
+import { css, media } from '@styled';
 
 const syntaxHighlighting = css`
   code[class*='language-'],
@@ -93,20 +93,20 @@ const syntaxHighlighting = css`
     padding: 1em 0 1em 3em;
     position: relative;
   }
+  .gatsby-highlight-code-line, .gatsby-highlight {
+    margin-right: -1.3125rem;
+    margin-left: -1.3125rem;
+  }
   .gatsby-highlight-code-line {
     background-color: ${p => p.theme.colors.base.nord3};
     display: block;
-    margin-right: -1.3125rem;
-    margin-left: -1.3125rem;
     padding-right: 1em;
     padding-left: 1.25em;
     border-left: 0.25em solid ${p => p.theme.colors.use.accent.primary};
   }
   .gatsby-highlight {
     margin-bottom: 1.75rem;
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
-    background: ${p => p.theme.colors.base.nord0};
+    background-color: ${p => p.theme.colors.base.nord0};
     -webkit-overflow-scrolling: touch;
     overflow: auto;
   }
@@ -114,15 +114,16 @@ const syntaxHighlighting = css`
     border-radius: ${p => p.theme.dimensions.use.borderRadius.large};
   }
 
-  @media (max-width: 672px) {
-    .gatsby-highlight, .gatsby-highlight pre {
-      border-radius: 0;
-    }
-  }
   .gatsby-highlight pre[class*='language-'] {
     float: left;
     min-width: 100%;
   }
+
+  ${media.lessThan('tablet')`
+    .gatsby-highlight, .gatsby-highlight pre {
+      border-radius: 0;
+    }
+  `}
 `;
 
 export default syntaxHighlighting;

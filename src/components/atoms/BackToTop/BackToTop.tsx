@@ -3,7 +3,7 @@ import { useWindowScroll } from 'react-use';
 import { math, transparentize } from 'polished';
 import { FaArrowUp } from 'react-icons/fa';
 
-import styled, { css } from '@styled';
+import styled, { css, media } from '@styled';
 
 const Container = styled.button`
   ${p => css`
@@ -24,6 +24,10 @@ const Container = styled.button`
   cursor: pointer;
   opacity: 0.3;
   transition: opacity 200ms linear;
+
+  ${media.lessThan('default')`
+    opacity: 0.7;
+  `}
 
   &:hover {
     opacity: 1;

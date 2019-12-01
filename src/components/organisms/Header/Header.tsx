@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { CSSObject } from 'styled-components';
 
-import styled, { css } from '@styled';
+import styled, { css, media } from '@styled';
 import { SocialIcons } from '@molecules';
 import config from '@config';
 
@@ -19,20 +18,37 @@ const Container = styled.header`
   & > ${StyledSocialIcons} {
     align-self: flex-end;
   }
+
+  ${media.lessThan('default')`
+    & > ${StyledSocialIcons} {
+      align-self: center;
+    }
+
+    margin-top: ${p => p.theme.dimensions.base.small};
+    margin-bottom: ${p => p.theme.dimensions.base.small};
+  `}
 `;
 
 const Title = styled(Link)`
-  ${p => css(p.theme.typography.scale(1.2) as CSSObject)}
+  ${p => css`
+    font-size: ${p.theme.typography.scale(1.2).fontSize};
+    line-height: ${p.theme.typography.scale(1.2).fontSize};
+  `}
+
   color: ${p => p.theme.colors.use.text.primary};
   text-transform: uppercase;
   text-align: center;
 
-  /* Disable shadow from Typography theme. */
-  background-image: none;
+  /* Reset Typography theme */
+  border-bottom: none;
 `;
 
-const Header: React.FC = () => (
-  <Container>
+interface Props {
+  className?: string;
+}
+
+const Header: React.FC<Props> = ({ className }) => (
+  <Container className={className}>
     <Title to="/">{config.site.name}</Title>
     <StyledSocialIcons {...config.site.social} />
   </Container>

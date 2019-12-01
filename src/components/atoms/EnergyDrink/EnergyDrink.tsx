@@ -26,7 +26,7 @@ const EnergyDrinkLink = styled.a`
   cursor: pointer;
   
   /* Reset Typography theme */
-  background-image: none;
+  border-bottom: none;
   margin-bottom: 0;
 `;
 

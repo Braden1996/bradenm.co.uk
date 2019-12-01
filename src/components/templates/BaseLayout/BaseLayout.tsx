@@ -3,9 +3,16 @@ import GithubCorner from 'react-github-corner';
 
 import { Footer, Header } from '@organisms';
 import config from '@config';
-import styled from '@styled';
+import styled, { media } from '@styled';
 
 import Base from '../Base';
+
+const StyledHeader = styled(Header)<{ size: number }>`
+  ${p => media.lessThan('default')`
+    margin-left: ${p.size}px;
+    margin-right: ${p.size}px;
+  `}
+`;
 
 const StyledGithubCorner = styled(GithubCorner).attrs(p => ({
   bannerColor: p.theme.colors.use.background.secondary,
@@ -21,7 +28,7 @@ const StyledGithubCorner = styled(GithubCorner).attrs(p => ({
 
 const Container = styled.article`
   width: 100%;
-  max-width: 960px;
+  max-width: ${p => p.theme.dimensions.use.breakpoints.default};
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -33,15 +40,21 @@ const Content = styled.main`
   flex: 1;
 `;
 
-const BaseLayout: React.FC<React.ComponentProps<typeof Base>> = props => (
-  <Base {...props}>
-    <Container>
-      <Header />
-      <Content>{props.children}</Content>
-      <Footer />
-    </Container>
-    <StyledGithubCorner href={config.site.publicGithubRepo} />
-  </Base>
-);
+const BaseLayout: React.FC<React.ComponentProps<typeof Base>> = props => {
+  const githubCornerSize = 65;
+  return (
+    <Base {...props}>
+      <Container>
+        <StyledHeader size={githubCornerSize} />
+        <Content>{props.children}</Content>
+        <Footer />
+      </Container>
+      <StyledGithubCorner
+        href={config.site.publicGithubRepo}
+        size={githubCornerSize}
+      />
+    </Base>
+  );
+};
 
 export default BaseLayout;

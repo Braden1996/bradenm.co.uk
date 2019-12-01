@@ -1,6 +1,6 @@
-import { lighten, darken, setSaturation } from 'polished';
+import { lighten, darken, setSaturation, math } from 'polished';
 
-import { css } from '@styled';
+import { css, media } from '@styled';
 
 const elements = css`
   position: relative;
@@ -10,6 +10,14 @@ const elements = css`
   background: ${p => p.theme.colors.use.background.primary};
   border-radius: ${p => p.theme.dimensions.use.borderRadius.large};
   overflow: hidden;
+
+  ${media.lessThan('mobile')`
+    padding: ${p => math(`${p.theme.dimensions.use.screen} / 2`)};
+  `}
+
+  > div > *:last-child {
+    margin-bottom: 0;
+  }
 
   h1,
   h2,
@@ -60,15 +68,12 @@ const elements = css`
   video {
     display: block;
     margin: 1.5em auto;
-    max-width: 1040px;
+    max-width: ${p => p.theme.dimensions.use.breakpoints.default};
     height: auto;
-  }
 
-  @media (max-width: 1040px) {
-    img,
-    video {
+    ${media.lessThan('default')`
       width: 100%;
-    }
+    `}
   }
 
   img[src$='#full'] {
@@ -135,19 +140,7 @@ const elements = css`
     margin: 4vw 0;
   }
 
-  h1 {
-    margin: 0.5em 0 0.2em 0;
-  }
-
-  h2 {
-    margin: 0.5em 0 0.2em 0;
-  }
-
-  h3 {
-    margin: 0.5em 0 0.2em 0;
-  }
-
-  h4 {
+  h1, h2, h3, h4, h6 {
     margin: 0.5em 0 0.2em 0;
   }
 
@@ -157,22 +150,14 @@ const elements = css`
     padding: 1em 0 1.5em;
     border: 0;
     text-align: center;
-  }
 
-  @media (min-width: 1180px) {
-    h5 {
-      max-width: 1060px;
-    }
-  }
-
-  @media (max-width: 500px) {
-    h5 {
+    ${media.greaterThan('mobile')`
       padding: 0 0 0.5em;
-    }
-  }
+    `}
 
-  h6 {
-    margin: 0.5em 0 0.2em 0;
+    ${p => media.lessThan('large')`
+      max-width: ${p.theme.dimensions.use.breakpoints.default};
+    `}
   }
 
   table {
@@ -186,9 +171,6 @@ const elements = css`
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    background-attachment: scroll, scroll;
-    background-size: 10px 100%, 10px 100%;
-    background-repeat: no-repeat;
   }
   table th {
     letter-spacing: 0.2px;
@@ -198,7 +180,7 @@ const elements = css`
   }
   table th,
   table td {
-    padding: 6px 12px;
+    padding: ${p => p.theme.dimensions.base.small} ${p => p.theme.dimensions.base.normal};
     border: ${p => setSaturation('0.05', darken('0.01', p.theme.colors.use.background.secondary))} 1px solid;
   }
 `;
