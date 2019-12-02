@@ -13,6 +13,7 @@ fairyGatesTheme.overrideThemeStyles = () => {
       textShadow: 'none',
       backgroundImage: 'none',
       borderBottom: `1px solid ${linkColor}`,
+      transition: 'color 200ms linear, border-bottom-color 200ms linear',
     },
     blockquote: {
       color: colors.use.text.secondary,
