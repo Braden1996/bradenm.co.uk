@@ -19,9 +19,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
@@ -78,7 +78,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-yaml',
-    'gatsby-plugin-feed',
+    'gatsby-plugin-feed-mdx',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

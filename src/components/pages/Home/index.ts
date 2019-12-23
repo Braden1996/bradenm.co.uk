@@ -6,32 +6,29 @@ export default Home;
 
 export const pageQuery = graphql`
   query homePage($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
+    allMdx (
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip
-    ) {
-      edges {
-        node {
-          timeToRead
-          frontmatter {
-            title
-            date
-            tags
-            image {
-              childImageSharp {
-                fluid(maxWidth: 3720) {
-                  ...GatsbyImageSharpFluid
-                }
+    ){
+      nodes {
+        timeToRead
+        frontmatter {
+          title
+          date
+          tags
+          image {
+            childImageSharp {
+              fluid(maxWidth: 3720) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
-          excerpt
-          fields {
-            layout
-            slug
-          }
+        }
+        excerpt
+        fields {
+          slug
         }
       }
     }

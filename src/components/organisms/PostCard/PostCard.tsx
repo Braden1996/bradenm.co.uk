@@ -82,7 +82,7 @@ const ReadingTime = styled.span`
 `;
 
 export interface Props {
-  post: HomePageQuery['allMarkdownRemark']['edges'][0]['node'];
+  post: HomePageQuery['allMdx']['nodes'][0];
   className?: string;
 }
 

@@ -28,7 +28,7 @@ const PostCardList = styled.ol`
 const Home: React.FC<Props> = ({ data, pageContext, ...props }) => (
   <BaseLayout {...props}>
     <PostCardList>
-      {data.allMarkdownRemark.edges.map(({ node }) => <PostCard key={node.fields!.slug || ''} post={node} />)}
+      {data.allMdx!.nodes!.map(node => <PostCard key={node.fields!.slug || ''} post={node} />)}
     </PostCardList>
   </BaseLayout>
 );

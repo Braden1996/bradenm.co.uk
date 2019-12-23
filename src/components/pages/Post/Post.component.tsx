@@ -17,7 +17,7 @@ export interface Props extends React.ComponentProps<typeof BaseLayout> {
 
 const Post: React.FC<Props> = ({ data, ...props }) => (
   <BaseLayout {...props}>
-    <PostContent htmlAst={data.markdownRemark!.htmlAst} />
+    <PostContent>{data.mdx!.body}</PostContent>
     <BackToTop />
   </BaseLayout>
 );
