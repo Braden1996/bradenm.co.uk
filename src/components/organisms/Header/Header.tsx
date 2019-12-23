@@ -117,7 +117,7 @@ const Header: React.FC<Props> = ({ className, size = 65 }) => (
       <Title to="/">{config.site.name}</Title>
       <Nav>
         <StyledLink to="/">Blog</StyledLink>
-        {/* <StyledLink to="/about">About</StyledLink> */}
+        <StyledLink to="/about">About</StyledLink>
         {/* <StyledLink to="/projects">Projects</StyledLink> */}
       </Nav>
       <StyledSocialIcons {...config.site.social} />
