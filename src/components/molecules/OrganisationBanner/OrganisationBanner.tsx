@@ -83,33 +83,6 @@ const Container = styled.section`
       align-self: flex-end;
     }
   `}
-
-  ${media.greaterThan('tablet')`
-    grid-template-rows: repeat(2, 1fr);
-
-    & > ${ImageContainer} {
-      grid-area: 1 / 1 / 3 / 1;
-    }
-
-    & > ${Name} {
-      grid-area: 1 / 2;
-    }
-
-    & > ${Role} {
-      align-self: flex-end;
-    }
-
-    & > ${Location} {
-      grid-area: 1 / 3;
-      justify-self: flex-end;
-    }
-
-    & > ${StyledDateRange} {
-      grid-area: 2 / 3;
-      justify-self: flex-end;
-      align-self: flex-end;
-    }
-  `}
 `;
 
 interface Props {

@@ -5,8 +5,12 @@ import styled from '@styled';
 
 const Container = styled.div`
   display: flex;
-
+  align-items: center;
   color: ${p => p.theme.colors.use.text.tertiary};
+
+  & > time {
+    text-align: center;
+  }
 `;
 
 const Dash = styled.span`

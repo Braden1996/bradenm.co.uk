@@ -19,23 +19,6 @@ const elements = css`
     margin-bottom: 0;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  dl,
-  pre,
-  blockquote,
-  .post-full-comments,
-  .footnotes {
-    min-width: 100%;
-  }
-
   li {
     word-break: break-word;
   }
