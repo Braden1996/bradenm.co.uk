@@ -43,25 +43,13 @@ const elements = css`
     margin-top: 0;
   }
 
+  /* Revert link style */
   .gatsby-resp-image-link {
-    box-shadow: none;
+    border-bottom: none;
   }
 
-  img,
-  video {
-    display: block;
+  .gatsby-resp-image-wrapper {
     margin: 1.5em auto;
-    max-width: ${p => p.theme.dimensions.use.breakpoints.default};
-    height: auto;
-
-    ${media.lessThan('default')`
-      width: 100%;
-    `}
-  }
-
-  img[src$='#full'] {
-    max-width: none;
-    width: 100vw;
   }
 
   img + br + small {

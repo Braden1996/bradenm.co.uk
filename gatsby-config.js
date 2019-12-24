@@ -40,6 +40,8 @@ module.exports = {
             },
           },
         ],
+        // https://github.com/gatsbyjs/gatsby/issues/15486#issuecomment-510153237
+        plugins: [ 'gatsby-remark-images' ],
       },
     },
     'gatsby-transformer-json',

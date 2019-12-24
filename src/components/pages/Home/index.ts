@@ -8,7 +8,7 @@ export const pageQuery = graphql`
   query homePage($skip: Int!, $limit: Int!) {
     allMdx (
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
+      filter: { frontmatter: { draft: { ne: true }, hidden: { ne: true } } }
       limit: $limit
       skip: $skip
     ){
