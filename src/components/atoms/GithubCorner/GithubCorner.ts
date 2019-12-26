@@ -11,6 +11,9 @@ const StyledGithubCorner = styled(GithubCorner).attrs(p => ({
   opacity: 0.6;
   transition: opacity 200ms linear;
 
+  /* Revert link style */
+  border-bottom: initial;
+
   &:hover {
     opacity: 1;
   }
