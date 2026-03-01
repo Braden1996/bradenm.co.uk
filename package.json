@@ -15,6 +15,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:docker": "docker build --output dist .",
+    "build:fonts": "docker build --target fonts-out --output public/fonts .",
     "check": "bun run check:format && bun run check:types && bun run check:lint && bun run check:spelling",
     "check:format": "prettier --check --experimental-cli .",
     "check:types": "astro check --tsconfig tsconfig.lib.json",

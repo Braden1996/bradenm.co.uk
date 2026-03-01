@@ -1,6 +1,7 @@
-/node_modules
-/dist
-/.astro
+node_modules
+dist
+.astro
+.git
 .DS_Store
 *.tsbuildinfo
 public/fonts/Inter-Regular.subset.woff2
