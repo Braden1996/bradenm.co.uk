@@ -13,37 +13,22 @@
     "url": "https://github.com/braden1996/bradenm.co.uk/issues"
   },
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
-    "start": "next start",
-    "lint": "oxlint --import-plugin --jsx-a11y-plugin --nextjs-plugin --react-perf-plugin",
+    "dev": "astro dev",
+    "build": "astro build",
+    "lint": "oxlint",
     "lint-fix": "bun run lint --write",
     "format-fix": "bun run dprint fmt",
     "format-check": "bun run dprint check",
-    "type-check": "tsc --noEmit",
-    "spell-check": "cspell \"**/*.{js,ts,tsx}\" --no-must-find-files",
+    "type-check": "astro check --tsconfig tsconfig.lib.json",
+    "spell-check": "cspell \"**/*.{js,ts,astro}\" --no-must-find-files",
     "ci-check": "bun run format-check && bun run type-check && bun run lint && bun run spell-check"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-brands-svg-icons": "^6.5.1",
-    "@fortawesome/free-regular-svg-icons": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/react-fontawesome": "0.2.0",
-    "@vercel/analytics": "^1.1.2",
-    "@vercel/speed-insights": "^1.0.9",
-    "clsx": "2.1.0",
-    "next": "14.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "the-new-css-reset": "^1.11.2"
+    "astro": "^5.5.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "14.1.0",
+    "@astrojs/check": "^0.9.0",
     "dprint": "^0.45.0",
-    "@types/node": "20.2.5",
-    "@types/react": "18.2.52",
-    "@types/react-dom": "18.2.18",
     "cspell": "^8.3.2",
     "oxlint": "^0.2.7",
     "typescript": "5.3.3"

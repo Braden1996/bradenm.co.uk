@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout
+  title="Braden Marshall"
+  description="Senior Software Engineer at Attio. Specialising in React Native development for mobile."
+>
+  <main class="main">
+    <Hero />
+  </main>
+</Layout>
+
+<style>
+  .main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+</style>

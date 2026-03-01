@@ -9,8 +9,9 @@
   },
   "excludes": [
     "/node_modules",
-    "/.next/",
-    "/build",
+    "/dist",
+    "/.astro",
+    "/.git",
     ".DS_Store",
     "*.tsbuildinfo"
   ],

@@ -1,7 +1,11 @@
 {
-  "extends": "./tsconfig.json",
-  "include": [
-    "./next.config.js",
-    "./.eslintrc.js"
-  ]
+  "compilerOptions": {
+    "composite": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "esnext",
+    "skipLibCheck": true
+  },
+  "include": []
 }

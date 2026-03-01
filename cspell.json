@@ -14,16 +14,15 @@
   ],
   "dictionaryDefinitions": [],
   "words": [
-    "Analyzer",
+    "astro",
+    "astrojs",
     "attio",
     "Braden",
-    "clsx",
-    "fontawesome",
     "Fontimize",
-    "fortawesome",
-    "loadingdone",
-    "loadingerror",
-    "noscript"
+    "noopener",
+    "noreferrer",
+    "oklch",
+    "woff"
   ],
   "ignoreWords": []
 }
