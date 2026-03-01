@@ -16,12 +16,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "bun run check:format && bun run check:types && bun run check:lint && bun run check:spelling",
-    "check:format": "oxfmt --check",
+    "check:format": "prettier --check --experimental-cli .",
     "check:types": "astro check --tsconfig tsconfig.lib.json",
     "check:lint": "oxlint",
     "check:spelling": "cspell \"**/*.{js,mjs,ts,astro}\" --no-must-find-files",
     "fix": "bun run fix:format && bun run fix:lint",
-    "fix:format": "oxfmt",
+    "fix:format": "prettier --write --experimental-cli .",
     "fix:lint": "oxlint --write"
   },
   "dependencies": {
@@ -30,8 +30,9 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "cspell": "^9.7.0",
-    "oxfmt": "^0.35.0",
     "oxlint": "^1.50.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
     "typescript": "5.9.3"
   }
 }
