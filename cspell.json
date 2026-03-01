@@ -1,17 +1,9 @@
 {
   "version": "0.2",
-  "import": [
-    "@cspell/dict-en-gb/cspell-ext.json"
-  ],
+  "import": ["@cspell/dict-en-gb/cspell-ext.json"],
   "language": "en-GB",
-  "ignorePaths": [
-    "package.json",
-    "dist/*",
-    "node_modules/*"
-  ],
-  "ignoreRegExpList": [
-    "/from\\s+(['\"]).*\\1/"
-  ],
+  "ignorePaths": ["package.json", "dist/*", "node_modules/*"],
+  "ignoreRegExpList": ["/from\\s+(['\"]).*\\1/"],
   "dictionaryDefinitions": [],
   "words": [
     "astro",

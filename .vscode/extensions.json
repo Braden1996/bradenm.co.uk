@@ -1,7 +1,4 @@
 {
-  "recommendations": [
-    "dprint.dprint",
-    "oxc.oxc-vscode"
-  ],
+  "recommendations": ["oxc.oxc-vscode", "streetsidesoftware.code-spell-checker"],
   "unwantedRecommendations": []
 }

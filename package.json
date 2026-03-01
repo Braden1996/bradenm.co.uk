@@ -2,35 +2,36 @@
   "name": "bradenm.co.uk",
   "version": "0.0.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/braden1996/bradenm.co.uk.git"
-  },
-  "author": "Braden Marshall <braden1996@hotmail.co.uk>",
-  "license": "MIT",
   "homepage": "https://github.com/braden1996/bradenm.co.uk",
   "bugs": {
     "url": "https://github.com/braden1996/bradenm.co.uk/issues"
   },
+  "license": "MIT",
+  "author": "Braden Marshall <braden1996@hotmail.co.uk>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braden1996/bradenm.co.uk.git"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "lint": "oxlint",
-    "lint-fix": "bun run lint --write",
-    "format-fix": "bun run dprint fmt",
-    "format-check": "bun run dprint check",
-    "type-check": "astro check --tsconfig tsconfig.lib.json",
-    "spell-check": "cspell \"**/*.{js,ts,astro}\" --no-must-find-files",
-    "ci-check": "bun run format-check && bun run type-check && bun run lint && bun run spell-check"
+    "check": "bun run check:format && bun run check:types && bun run check:lint && bun run check:spelling",
+    "check:format": "oxfmt --check",
+    "check:types": "astro check --tsconfig tsconfig.lib.json",
+    "check:lint": "oxlint",
+    "check:spelling": "cspell \"**/*.{js,mjs,ts,astro}\" --no-must-find-files",
+    "fix": "bun run fix:format && bun run fix:lint",
+    "fix:format": "oxfmt",
+    "fix:lint": "oxlint --write"
   },
   "dependencies": {
-    "astro": "^5.5.0"
+    "astro": "^5.18.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.0",
-    "dprint": "^0.45.0",
-    "cspell": "^8.3.2",
-    "oxlint": "^0.2.7",
-    "typescript": "5.3.3"
+    "@astrojs/check": "^0.9.6",
+    "cspell": "^9.7.0",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
+    "typescript": "5.9.3"
   }
 }

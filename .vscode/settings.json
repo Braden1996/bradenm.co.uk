@@ -1,15 +1,15 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "dprint.dprint",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "[json]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dprint.dprint"
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   }
 }
