@@ -28,6 +28,17 @@ jobs:
       - name: Build
         run: bun run build
 
+      - name: Check for dirty files
+        run: git status --short
+
+      - name: Create Pages project (no-op if exists)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages project create bradenm-co-uk --production-branch=master
+        continue-on-error: true
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
