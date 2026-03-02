@@ -1,14 +1,24 @@
 name: CD
 
 on:
-  push:
-    branches:
-      - master
+  workflow_run:
+    workflows: ["CI"]
+    branches: [master]
+    types: [completed]
+
+  workflow_dispatch: {}
+
+concurrency:
+  group: continuous-deploy-production
+  cancel-in-progress: false
 
 jobs:
   deploy:
     name: Deploy to Cloudflare Pages
     runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
     permissions:
       contents: read
       deployments: write
@@ -25,6 +35,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          packageManager: npm
           command: pages project create bradenm-co-uk --production-branch=master
         continue-on-error: true
 
@@ -33,4 +44,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          packageManager: npm
           command: pages deploy dist/ --project-name=bradenm-co-uk
