@@ -24,7 +24,7 @@
     "check:spelling": "cspell \"**/*.{js,mjs,ts,astro}\" --no-must-find-files",
     "fix": "bun run fix:format && bun run fix:lint",
     "fix:format": "prettier --write --experimental-cli .",
-    "fix:lint": "oxlint --write"
+    "fix:lint": "oxlint --fix"
   },
   "dependencies": {
     "astro": "^5.18.0"
