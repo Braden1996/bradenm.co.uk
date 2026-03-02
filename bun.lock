@@ -9,6 +9,7 @@
       },
       "devDependencies": {
         "@astrojs/check": "^0.9.6",
+        "@cspell/dict-en-gb": "^5.0.23",
         "cspell": "^9.7.0",
         "oxlint": "^1.50.0",
         "prettier": "^3.8.1",
@@ -91,6 +92,8 @@
     "@cspell/dict-elixir": ["@cspell/dict-elixir@4.0.8", "", {}, "sha512-CyfphrbMyl4Ms55Vzuj+mNmd693HjBFr9hvU+B2YbFEZprE5AG+EXLYTMRWrXbpds4AuZcvN3deM2XVB80BN/Q=="],
 
     "@cspell/dict-en-common-misspellings": ["@cspell/dict-en-common-misspellings@2.1.12", "", {}, "sha512-14Eu6QGqyksqOd4fYPuRb58lK1Va7FQK9XxFsRKnZU8LhL3N+kj7YKDW+7aIaAN/0WGEqslGP6lGbQzNti8Akw=="],
+
+    "@cspell/dict-en-gb": ["@cspell/dict-en-gb@5.0.23", "", {}, "sha512-zIjpA66oUwcZHSDtYf+gEvy/EyuCLTeTMmadUD1Kd0c8lXGeTouMRsWhxUPWzkJ/+z9U/KFcz9DMrUtV5ZpLhw=="],
 
     "@cspell/dict-en-gb-mit": ["@cspell/dict-en-gb-mit@3.1.18", "", {}, "sha512-AXaMzbaxhSc32MSzKX0cpwT+Thv1vPfxQz1nTly1VHw3wQcwPqVFSqrLOYwa8VNqAPR45583nnhD6iqJ9YESoQ=="],
 
