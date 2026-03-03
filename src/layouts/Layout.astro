@@ -28,6 +28,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
+    <script is:inline src="/font-loading.js"></script>
+
     <link
       rel="preload"
       href="/fonts/BrutalType-Bold.FontimizeSubset.woff2"
@@ -118,6 +120,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   body {
+    opacity: 1;
+  }
+
+  html.fonts-loading body {
+    opacity: 0;
+  }
+
+  html.fonts-fade-in body {
     animation: fadeIn 300ms ease;
   }
 </style>
