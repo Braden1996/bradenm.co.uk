@@ -4,3 +4,9 @@
 .DS_Store
 *.tsbuildinfo
 public/fonts/Inter-Regular.subset.woff2
+rulesync.local.jsonc
+.rulesync/rules/*.local.md
+.claude/
+.claude/settings.local.json
+.cursor/
+.cursorignore

@@ -35,5 +35,14 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
+      - name: Setup Bun package manager
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Verify Rulesync outputs
+        run: bun run check:rulesync
+
       - name: Build
         run: docker build --output dist .

@@ -17,11 +17,13 @@
     "build": "astro build",
     "build:docker": "docker build --output dist .",
     "build:fonts": "docker build --target fonts-out --output public/fonts .",
-    "check": "bun run check:format && bun run check:types && bun run check:lint && bun run check:spelling",
+    "check": "bun run check:rulesync && bun run check:format && bun run check:types && bun run check:lint && bun run check:spelling",
+    "check:rulesync": "rulesync generate --check",
     "check:format": "prettier --check --experimental-cli .",
     "check:types": "astro check --tsconfig tsconfig.lib.json",
     "check:lint": "oxlint",
     "check:spelling": "cspell \"**/*.{js,mjs,ts,astro}\" --no-must-find-files",
+    "rulesync:generate": "rulesync generate",
     "fix": "bun run fix:format && bun run fix:lint",
     "fix:format": "prettier --write --experimental-cli .",
     "fix:lint": "oxlint --fix"
@@ -36,6 +38,7 @@
     "oxlint": "^1.50.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
+    "rulesync": "^7.21.0",
     "typescript": "5.9.3"
   }
 }
