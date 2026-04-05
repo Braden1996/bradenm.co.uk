@@ -1,0 +1,69 @@
+---
+interface Props {
+  class?: string;
+  initialFade?: "none" | "bottom" | "both";
+  tone?: "default" | "subtle";
+}
+
+const { class: className, initialFade = "none", tone = "default", ...rest } = Astro.props as Props;
+---
+
+<div
+  class:list={[
+    "scroll-fade-frame",
+    tone !== "default" && `scroll-fade-frame--${tone}`,
+    initialFade !== "none" && `scroll-fade-frame--initial-${initialFade}`,
+    className,
+  ]}
+  {...rest}
+  data-scroll-fade-root
+>
+  <slot />
+</div>
+
+<script>
+  import { initScrollFades } from "../scripts/scroll-fade";
+
+  initScrollFades();
+
+  if (!document.documentElement.dataset.scrollFadeBound) {
+    document.documentElement.dataset.scrollFadeBound = "true";
+    document.addEventListener("astro:page-load", () => initScrollFades());
+  }
+</script>
+
+<style>
+  .scroll-fade-frame {
+    --scroll-edge-height: 20px;
+    --scroll-edge-top-strength: 0;
+    --scroll-edge-bottom-strength: 1;
+    --scroll-edge-top-fade-size: 0px;
+    --scroll-edge-bottom-fade-size: 0px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .scroll-fade-frame :global([data-scroll-fade-viewport]) {
+    min-height: 0;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      oklch(0% 0 0) var(--scroll-edge-top-fade-size),
+      oklch(0% 0 0) calc(100% - var(--scroll-edge-bottom-fade-size)),
+      transparent 100%
+    );
+    mask-repeat: no-repeat;
+  }
+
+  .scroll-fade-frame--initial-bottom,
+  .scroll-fade-frame--initial-both {
+    --scroll-edge-bottom-fade-size: var(--scroll-edge-height);
+  }
+
+  .scroll-fade-frame--initial-both {
+    --scroll-edge-top-strength: 1;
+    --scroll-edge-top-fade-size: var(--scroll-edge-height);
+  }
+</style>

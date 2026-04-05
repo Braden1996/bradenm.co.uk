@@ -9,7 +9,7 @@ on:
 
 jobs:
   check:
-    name: Lint and Typecheck
+    name: Checks
     timeout-minutes: 15
     runs-on: ubuntu-latest
 

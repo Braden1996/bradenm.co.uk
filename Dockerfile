@@ -2,9 +2,9 @@
 FROM python:3.13-slim AS fonts
 RUN pip install --no-cache-dir fonttools brotli
 WORKDIR /fonts
-COPY fonts/source/Inter-Regular.woff2 ./Inter-Regular.woff2
-RUN pyftsubset Inter-Regular.woff2 \
-  --output-file=Inter-Regular.subset.woff2 \
+COPY fonts/source/inter-regular.woff2 ./inter-regular.woff2
+RUN pyftsubset inter-regular.woff2 \
+  --output-file=inter-regular.subset.woff2 \
   --flavor=woff2 \
   --unicodes="U+0020-007F,U+00A0-00FF,U+2018-201D,U+2026" \
   --layout-features="kern,liga,calt" \
@@ -12,7 +12,7 @@ RUN pyftsubset Inter-Regular.woff2 \
 
 # Target: extract subset font only (docker build --target fonts-out --output public/fonts .)
 FROM scratch AS fonts-out
-COPY --from=fonts /fonts/Inter-Regular.subset.woff2 /Inter-Regular.subset.woff2
+COPY --from=fonts /fonts/inter-regular.subset.woff2 /inter-regular.subset.woff2
 
 # Stage 2: Build site
 FROM oven/bun:1 AS build
@@ -20,7 +20,7 @@ WORKDIR /app
 COPY package.json bun.lock* ./
 RUN bun install --frozen-lockfile
 COPY . .
-COPY --from=fonts /fonts/Inter-Regular.subset.woff2 public/fonts/Inter-Regular.subset.woff2
+COPY --from=fonts /fonts/inter-regular.subset.woff2 public/fonts/inter-regular.subset.woff2
 RUN bun run build
 
 # Stage 3: Output

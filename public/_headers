@@ -9,6 +9,18 @@
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
+/bookshelf/covers/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/career/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/braden-placeholder.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/braden.webp
+  Cache-Control: public, max-age=31536000, immutable
+
 /favicon.svg
   Cache-Control: public, max-age=604800
 

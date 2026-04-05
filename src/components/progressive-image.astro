@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+
+const {
+  alt,
+  class: imageClass,
+  decoding = "async",
+  fetchpriority,
+  height,
+  loading = "lazy",
+  placeholderClass,
+  placeholderSrc,
+  src,
+  width,
+  ...rest
+} = Astro.props;
+---
+
+{
+  placeholderSrc && (
+    <img
+      class={placeholderClass}
+      src={placeholderSrc}
+      alt=""
+      aria-hidden="true"
+      width={width}
+      height={height}
+      loading="eager"
+      decoding="async"
+    />
+  )
+}
+{
+  src && (
+    <Image
+      class={imageClass}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      decoding={decoding}
+      fetchpriority={fetchpriority}
+      {...rest}
+    />
+  )
+}

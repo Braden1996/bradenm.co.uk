@@ -17,28 +17,38 @@
     "build": "astro build",
     "build:docker": "docker build --output dist .",
     "build:fonts": "docker build --target fonts-out --output public/fonts .",
-    "check": "bun run check:rulesync && bun run check:format && bun run check:types && bun run check:lint && bun run check:spelling",
+    "bookshelf:covers": "node ./scripts/sync-bookshelf-covers.mjs",
+    "bookshelf:covers:force": "node ./scripts/sync-bookshelf-covers.mjs --force",
+    "site:images": "node ./scripts/sync-site-image-metadata.mjs",
+    "check": "bun run check:rulesync && bun run check:format && bun run check:types && bun run check:lint && bun run check:knip && bun run check:spelling",
     "check:rulesync": "rulesync generate --check",
     "check:format": "prettier --check --experimental-cli .",
     "check:types": "astro check --tsconfig tsconfig.lib.json",
-    "check:lint": "oxlint",
+    "check:lint": "bun run check:file-names && oxlint",
+    "check:knip": "knip",
+    "check:file-names": "bun ./scripts/check-file-names.mjs",
     "check:spelling": "cspell \"**/*.{js,mjs,ts,astro}\" --no-must-find-files",
+    "knip": "knip",
     "rulesync:generate": "rulesync generate",
     "fix": "bun run fix:format && bun run fix:lint",
     "fix:format": "prettier --write --experimental-cli .",
     "fix:lint": "oxlint --fix"
   },
   "dependencies": {
-    "astro": "^5.18.0"
+    "@leeoniya/ufuzzy": "^1.0.19",
+    "astro": "^6.0.8"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@cspell/dict-en-gb": "^5.0.23",
+    "@astrojs/check": "^0.9.8",
+    "@cspell/dict-en-gb": "^5.0.25",
     "cspell": "^9.7.0",
-    "oxlint": "^1.50.0",
+    "knip": "^6.0.1",
+    "oxlint": "^1.56.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "rulesync": "^7.21.0",
+    "sharp": "^0.34.5",
+    "thumbhash": "^0.1.1",
     "typescript": "5.9.3"
   }
 }

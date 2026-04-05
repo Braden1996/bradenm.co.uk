@@ -1,11 +1,28 @@
 ---
+import { ClientRouter } from "astro:transitions";
+import FooterSocialLinks from "../components/footer-social-links.astro";
+import ProgressiveImage from "../components/progressive-image.astro";
+import SiteTabs from "../components/site-tabs.astro";
+import profileImage from "../../data/profile-image.json";
+
 interface Props {
   title: string;
   description: string;
+  activeTab?: "about" | "timeline" | "bookshelf";
 }
 
-const { title, description } = Astro.props;
+type ProfileImage = {
+  height: number;
+  placeholderDataUrl?: string;
+  placeholderSrc?: string;
+  src: string;
+  thumbhash: string;
+  width: number;
+};
+
+const { title, description, activeTab = "about" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const headerProfileImage = profileImage as ProfileImage;
 ---
 
 <!doctype html>
@@ -28,11 +45,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <script is:inline src="/font-loading.js"></script>
-
     <link
       rel="preload"
-      href="/fonts/BrutalType-Bold.FontimizeSubset.woff2"
+      href="/fonts/brutal-type-bold.fontimize-subset.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -40,14 +55,69 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
     <link
       rel="preload"
-      href="/fonts/Inter-Regular.subset.woff2"
+      href="/fonts/inter-regular.subset.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
+    <link rel="preload" href={headerProfileImage.src} as="image" fetchpriority="high" />
+    <slot name="head" />
+    <ClientRouter fallback="swap" />
   </head>
   <body>
-    <slot />
+    <div class="page-wrap">
+      <div
+        class:list={[
+          "panel",
+          activeTab === "bookshelf" && "panel--bookshelf",
+          activeTab === "timeline" && "panel--timeline",
+        ]}
+        data-panel
+      >
+        <header class="panel-header">
+          <div class="header-identity">
+            <div class="header-avatar-shell" transition:persist>
+              <ProgressiveImage
+                placeholderClass="header-avatar-placeholder"
+                class="header-avatar"
+                placeholderSrc={headerProfileImage.placeholderDataUrl ??
+                  headerProfileImage.placeholderSrc}
+                src={headerProfileImage.src}
+                alt="Portrait of Braden Marshall"
+                width={headerProfileImage.width}
+                height={headerProfileImage.height}
+                loading="eager"
+                decoding="sync"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="header-copy">
+              <span class="header-name">Braden Marshall</span>
+              <span class="header-role">Senior Software Engineer</span>
+            </div>
+          </div>
+          <div>
+            <SiteTabs activeTab={activeTab} />
+          </div>
+        </header>
+        <div class="panel-body">
+          <main class="panel-main">
+            <slot />
+          </main>
+          <footer class="panel-footer">
+            <div class="panel-footer-center">
+              <slot name="footer-center" />
+            </div>
+            <div class="panel-footer-social">
+              <FooterSocialLinks />
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      import "../scripts/panel-transition";
+    </script>
   </body>
 </html>
 
@@ -62,7 +132,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   @font-face {
     font-family: "BrutalType";
-    src: url("/fonts/BrutalType-Bold.FontimizeSubset.woff2") format("woff2");
+    src: url("/fonts/brutal-type-bold.fontimize-subset.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: block;
@@ -70,40 +140,32 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   @font-face {
     font-family: "Inter";
-    src: url("/fonts/Inter-Regular.subset.woff2") format("woff2");
+    src: url("/fonts/inter-regular.subset.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: block;
     unicode-range: U+0020-007F, U+00A0-00FF, U+2018-201D, U+2026;
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  :root {
+    --bg-primary: oklch(15.46% 0.0066 270.96);
+    --text-accent: oklch(62.57% 0.08 278.83);
+    --text-accent-strong: oklch(62.67% 0.2043 278.74);
+    --text-primary: oklch(96.76% 0.01 273.36);
+    --text-secondary: oklch(36.41% 0.0085 233.89);
+    --text-link: oklch(54.16% 0.014 248.08);
+    --brand-x: oklch(66.71% 0.1615 245.54);
+    --brand-linkedin: oklch(53.13% 0.1301 243.65);
   }
 
   :root {
-    --bg-primary: #0b0c0f;
-    --text-accent: #7d83b8;
-    --text-accent-strong: #7272ff;
-    --text-primary: #f2f4fb;
-    --text-secondary: #3a3f42;
-    --text-link: #697077;
-    --brand-x: #1d9bf0;
-    --brand-linkedin: #0072b1;
+    view-transition-name: none;
+  }
 
-    --bg-primary: oklch(15.46% 0.007 270.96);
-    --text-accent: oklch(62.57% 0.08 278.83);
-    --text-accent-strong: oklch(62.64% 0.2204 278.83);
-    --text-primary: oklch(96.76% 0.01 273.36);
-    --text-secondary: oklch(36.41% 0.008 233.89);
-    --text-link: oklch(54.16% 0.014 248.08);
-    --brand-x: oklch(66.71% 0.161 245.54);
-    --brand-linkedin: oklch(53.13% 0.13 243.65);
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
   }
 
   html {
@@ -111,23 +173,194 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     font-family: "Inter", system-ui, sans-serif;
     background-color: var(--bg-primary);
     color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html,
   body {
-    min-width: 100%;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
   }
 
-  body {
-    opacity: 1;
+  .page-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: 100dvh;
+    padding: 2rem 1.25rem;
+    overflow: hidden;
   }
 
-  html.fonts-loading body {
-    opacity: 0;
+  .panel {
+    --panel-shell-padding: 14px;
+    width: min(100%, 960px);
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    border: 1px solid oklch(100% 0 0 / 0.07);
+    background: linear-gradient(
+      180deg,
+      oklch(19.64% 0.0168 268.77 / 0.95),
+      oklch(16.91% 0.013 270.54 / 0.98)
+    );
+    box-shadow:
+      0 0 0 1px oklch(0% 0 0 / 0.3),
+      0 1rem 3rem oklch(0% 0 0 / 0.28),
+      inset 0 1px 0 oklch(100% 0 0 / 0.04);
+    overflow: hidden;
   }
 
-  html.fonts-fade-in body {
-    animation: fadeIn 300ms ease;
+  .panel--bookshelf,
+  .panel--timeline {
+    height: 100%;
+  }
+
+  .panel[data-panel-animating] {
+    will-change: height;
+  }
+
+  .panel-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--panel-shell-padding);
+    flex-shrink: 0;
+  }
+
+  .header-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .header-avatar-shell {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid oklch(100% 0 0 / 0.08);
+    box-shadow:
+      0 0 0 1px oklch(0% 0 0 / 0.24),
+      0 0.5rem 1.2rem oklch(0% 0 0 / 0.24);
+    background: oklch(29% 0.018 253.5);
+    flex-shrink: 0;
+  }
+
+  .header-avatar-shell .header-avatar-placeholder,
+  .header-avatar-shell .header-avatar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 22%;
+  }
+
+  .header-avatar-shell .header-avatar-placeholder {
+    transform: scale(1.04);
+    filter: blur(4px) saturate(1.18) contrast(1.04);
+  }
+
+  .header-avatar-shell .header-avatar {
+    z-index: 1;
+  }
+
+  .header-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  .header-name {
+    font-family: "BrutalType", system-ui, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .header-role {
+    color: var(--text-secondary);
+    font-size: 0.6rem;
+  }
+
+  .panel-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    --panel-inline-padding: 1.5rem;
+  }
+
+  .panel-main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .panel-footer {
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.85rem;
+    padding: var(--panel-shell-padding);
+  }
+
+  .panel-footer-center {
+    grid-column: 2;
+    min-width: 0;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+  }
+
+  .panel-footer-social {
+    grid-column: 3;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+  }
+
+  @media (max-width: 760px) {
+    .page-wrap {
+      padding: 1rem 0.75rem;
+    }
+
+    .panel-body {
+      --panel-inline-padding: 1rem;
+    }
+
+    .panel-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
+      row-gap: 0.85rem;
+      padding: var(--panel-shell-padding);
+    }
+
+    .panel-header > :last-child {
+      width: 100%;
+    }
+
+    .header-identity {
+      gap: 12px;
+    }
   }
 </style>
