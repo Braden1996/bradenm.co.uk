@@ -1,0 +1,193 @@
+---
+import ProgressiveImage from "../../../components/atoms/progressive-image.astro";
+import TagGroup from "../../../components/molecules/tag-group.astro";
+import type { BookViewModel } from "../lib/bookshelf-data";
+
+interface Props {
+  book: BookViewModel;
+  eager?: boolean;
+}
+
+const { book, eager = false } = Astro.props;
+---
+
+<div class="book-row" data-book-card data-book-id={book.id}>
+  <div class="row-cover" style={`--cover-hue:${book.coverHue};`}>
+    <ProgressiveImage
+      placeholderClass="row-cover-placeholder"
+      class="row-cover-img"
+      placeholderSrc={book.coverPlaceholderDataUrl}
+      src={book.coverSrc}
+      alt=""
+      width={book.coverWidth}
+      height={book.coverHeight}
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      hidden={!book.coverSrc}
+    />
+  </div>
+  <span class="row-title">{book.title}</span>
+  <span class="row-author">
+    {
+      book.authorSegments.map((authorSegment) => (
+        <span class="author-token">
+          <button
+            class="author-filter"
+            type="button"
+            aria-label={`Filter bookshelf by ${authorSegment.label}`}
+            data-author-filter={authorSegment.label}
+          >
+            {authorSegment.label}
+          </button>
+          {authorSegment.separator && (
+            <span class="author-separator" aria-hidden="true">
+              {authorSegment.separator}
+            </span>
+          )}
+        </span>
+      ))
+    }
+  </span>
+  <span class="row-formats">
+    <TagGroup items={book.mediumTags} />
+  </span>
+</div>
+
+<style>
+  .book-row {
+    position: relative;
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: center;
+    padding: 0.28rem 0;
+    font-size: 0.75rem;
+  }
+
+  .book-row:not([hidden]) ~ .book-row:not([hidden])::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: var(--row-divider-inset);
+    right: 0;
+    height: 1px;
+    background: var(--bookshelf-stroke);
+  }
+
+  .row-cover {
+    position: relative;
+    width: 1.6rem;
+    height: 2.25rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background: linear-gradient(
+      160deg,
+      oklch(42% 0.07 var(--cover-hue)),
+      oklch(28% 0.045 var(--cover-hue))
+    );
+    flex-shrink: 0;
+  }
+
+  .row-cover :global(.row-cover-placeholder),
+  .row-cover :global(.row-cover-img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .row-cover :global(.row-cover-placeholder) {
+    transform: scale(1.08);
+    filter: blur(10px) saturate(1.08);
+  }
+
+  .row-cover :global(.row-cover-img) {
+    z-index: 1;
+  }
+
+  .row-title {
+    color: var(--color-text-primary);
+    font-weight: 500;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .row-author {
+    color: var(--bookshelf-text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.12rem;
+    min-width: 0;
+    line-height: 1.35;
+  }
+
+  .author-token {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .author-filter {
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: inherit;
+    margin: -0.08rem -0.22rem;
+    padding: 0.08rem 0.22rem;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.16em;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease,
+      text-decoration-color 180ms ease;
+  }
+
+  .author-filter:is(:hover, :focus-visible) {
+    background: var(--color-surface-interactive);
+    color: var(--color-text-primary);
+    text-decoration-color: currentColor;
+  }
+
+  .author-filter:focus-visible {
+    outline: none;
+  }
+
+  .author-separator {
+    color: var(--bookshelf-text-faint);
+    margin: 0 0.18rem;
+  }
+
+  .row-formats {
+    display: flex;
+    justify-content: flex-end;
+    justify-self: end;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 760px) {
+    .row-cover {
+      grid-row: 1 / 3;
+    }
+
+    .row-author {
+      grid-column: 2;
+      grid-row: 2;
+      font-size: 0.7rem;
+    }
+
+    .row-formats {
+      grid-row: 1 / 3;
+      align-self: center;
+    }
+  }
+</style>

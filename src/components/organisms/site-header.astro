@@ -1,0 +1,135 @@
+---
+import profileImage from "../../../data/profile-image.json";
+import ProgressiveImage from "../atoms/progressive-image.astro";
+import SitePrimaryNav from "./site-primary-nav.astro";
+
+interface Props {
+  activeTab: "about" | "timeline" | "bookshelf";
+}
+
+type ProfileImage = {
+  height: number;
+  placeholderDataUrl?: string;
+  placeholderSrc?: string;
+  src: string;
+  thumbhash: string;
+  width: number;
+};
+
+const { activeTab } = Astro.props;
+const headerProfileImage = profileImage as ProfileImage;
+---
+
+<header class="site-header">
+  <div class="site-header__identity">
+    <div class="site-header__avatar-shell" transition:persist>
+      <ProgressiveImage
+        placeholderClass="site-header__avatar-placeholder"
+        class="site-header__avatar"
+        placeholderSrc={headerProfileImage.placeholderDataUrl ?? headerProfileImage.placeholderSrc}
+        src={headerProfileImage.src}
+        alt="Portrait of Braden Marshall"
+        width={headerProfileImage.width}
+        height={headerProfileImage.height}
+        loading="eager"
+        decoding="sync"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="site-header__copy">
+      <span class="site-header__name">Braden Marshall</span>
+      <span class="site-header__role">Senior Software Engineer</span>
+    </div>
+  </div>
+
+  <div class="site-header__nav">
+    <SitePrimaryNav activeTab={activeTab} />
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--panel-shell-padding);
+    flex-shrink: 0;
+  }
+
+  .site-header__identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .site-header__avatar-shell {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--color-border-strong);
+    box-shadow: var(--shadow-elevated);
+    background: var(--color-surface-elevated);
+    flex-shrink: 0;
+  }
+
+  .site-header__avatar-shell :global(.site-header__avatar-placeholder),
+  .site-header__avatar-shell :global(.site-header__avatar) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 22%;
+  }
+
+  .site-header__avatar-shell :global(.site-header__avatar-placeholder) {
+    transform: scale(1.04);
+    filter: blur(4px) saturate(1.18) contrast(1.04);
+  }
+
+  .site-header__avatar-shell :global(.site-header__avatar) {
+    z-index: 1;
+  }
+
+  .site-header__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  .site-header__name {
+    font-family: "BrutalType", system-ui, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .site-header__role {
+    color: var(--color-text-muted);
+    font-size: 0.6rem;
+  }
+
+  @media (max-width: 760px) {
+    .site-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
+      row-gap: 0.85rem;
+      padding: var(--panel-shell-padding);
+    }
+
+    .site-header__nav {
+      width: 100%;
+    }
+  }
+</style>

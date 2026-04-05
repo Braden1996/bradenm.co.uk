@@ -1,0 +1,150 @@
+---
+import type { TimelineEntryViewModel } from "../lib/timeline-view-model";
+import TimelineDetailPanel from "../organisms/timeline-detail-panel.astro";
+import TimelineNav from "../organisms/timeline-nav.astro";
+
+interface Props {
+  backHref?: string;
+  entries: TimelineEntryViewModel[];
+  mobileView?: "detail" | "list";
+  selectedEntry: TimelineEntryViewModel;
+}
+
+const { entries, selectedEntry, mobileView = "list", backHref = "/timeline" } = Astro.props;
+---
+
+<div
+  class="timeline-page"
+  data-timeline-page
+  data-active-slug={selectedEntry.slug}
+  data-mobile-view={mobileView}
+>
+  <div class="timeline-layout">
+    <TimelineNav entries={entries} activeSlug={selectedEntry.slug} />
+    <section class="timeline-detail">
+      <a href={backHref} class="timeline-back-link">Back</a>
+      <div class="timeline-detail-inner">
+        <TimelineDetailPanel entry={selectedEntry} />
+      </div>
+    </section>
+  </div>
+
+  <script>
+    import "../client/sync-persisted-nav";
+  </script>
+</div>
+
+<style>
+  .timeline-page {
+    flex: 1 1 auto;
+    display: flex;
+    position: relative;
+    min-height: 0;
+  }
+
+  .timeline-layout {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: stretch;
+    gap: 1.4rem;
+    min-height: 0;
+    padding: 0 0 1.45rem var(--panel-inline-padding);
+    overflow: hidden;
+  }
+
+  .timeline-detail {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .timeline-back-link {
+    display: none;
+  }
+
+  .timeline-detail-inner {
+    display: flex;
+    min-height: 0;
+    height: 100%;
+    padding: 0.6rem 0 0.2rem 0.1rem;
+  }
+
+  .timeline-detail-inner :global(.timeline-detail-content) {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .timeline-detail-inner :global(.timeline-detail-body-frame) {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .timeline-detail-inner :global(.timeline-detail-body) {
+    min-height: 0;
+  }
+
+  @media (max-width: 760px) {
+    .timeline-layout {
+      display: flex;
+      flex-direction: column;
+      padding: 0 var(--panel-inline-padding) 1.1rem;
+      overflow: visible;
+    }
+
+    .timeline-page[data-mobile-view="list"] .timeline-detail {
+      display: none;
+    }
+
+    .timeline-page[data-mobile-view="detail"] :global(.timeline-nav) {
+      display: none;
+    }
+
+    .timeline-page[data-mobile-view="detail"] .timeline-detail {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+    }
+
+    .timeline-page[data-mobile-view="detail"] .timeline-back-link {
+      display: block;
+      align-self: flex-start;
+      margin: 0 0 0.45rem 0;
+      padding: 0.32rem 0.72rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: 999px;
+      background: var(--color-surface-interactive);
+      color: var(--color-text-muted);
+      font-size: 0.72rem;
+      line-height: 1;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .timeline-page[data-mobile-view="detail"] .timeline-detail-inner {
+      flex: 1 1 auto;
+      padding: 0;
+    }
+
+    .timeline-page[data-mobile-view="detail"]
+      .timeline-detail-inner
+      :global(.timeline-detail-body) {
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .timeline-page[data-mobile-view="detail"]
+      .timeline-detail-inner
+      :global(.timeline-detail-copy) {
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width: 761px) {
+    .timeline-detail {
+      display: block;
+    }
+  }
+</style>

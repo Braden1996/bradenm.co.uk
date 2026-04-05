@@ -1,0 +1,79 @@
+<section class="about-intro">
+  <p class="about-intro__eyebrow">About</p>
+  <h1 class="about-intro__title">
+    Engineering Lead at Attio, building the world&apos;s most beautiful and powerful CRM.
+  </h1>
+  <p class="about-intro__summary">
+    I joined as a founding product engineer and helped scale the company from pre-launch to a $52
+    million Series B. I now lead the Companion Apps team across mobile, desktop, and browser
+    extension products.
+  </p>
+  <p class="about-intro__summary">
+    Before Attio, I worked at Thought Machine, Theodo UK, and Cardiff University.
+  </p>
+  <a class="about-intro__link" href="/timeline">Open full timeline</a>
+</section>
+
+<style>
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    max-width: 36rem;
+    padding: 0.35rem 0 0.85rem;
+  }
+
+  .about-intro__eyebrow {
+    color: var(--color-text-muted);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .about-intro__title {
+    color: var(--color-text-primary);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .about-intro__summary {
+    color: var(--color-text-primary);
+    opacity: 0.68;
+    font-size: 0.92rem;
+    line-height: 1.72;
+  }
+
+  .about-intro__link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 0.35rem;
+    padding: 0.48rem 0.82rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 999px;
+    background: var(--color-surface-subtle);
+    color: var(--color-text-primary);
+    font-size: 0.74rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      color 200ms ease,
+      border-color 200ms ease,
+      background-color 200ms ease;
+  }
+
+  .about-intro__link:hover {
+    border-color: var(--color-border-strong);
+    background: var(--color-surface-interactive-hover);
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 760px) {
+    .about-intro__title {
+      text-wrap: pretty;
+    }
+  }
+</style>

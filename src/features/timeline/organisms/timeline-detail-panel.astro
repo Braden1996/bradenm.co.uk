@@ -1,0 +1,12 @@
+---
+import type { TimelineEntryViewModel } from "../lib/timeline-view-model";
+import TimelineDetailContent from "./timeline-detail-content.astro";
+
+interface Props {
+  entry: TimelineEntryViewModel;
+}
+
+const { entry } = Astro.props;
+---
+
+<TimelineDetailContent entry={entry} />

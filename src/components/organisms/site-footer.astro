@@ -1,0 +1,79 @@
+---
+import type { IconicIconName } from "../../icons/iconic";
+import IconicIcon from "../atoms/iconic-icon.astro";
+
+const links: { href: string; label: string; icon: IconicIconName }[] = [
+  { href: "https://x.com/SirBraden1996", label: "X", icon: "x" },
+  { href: "https://github.com/Braden1996", label: "GitHub", icon: "github" },
+  { href: "https://www.linkedin.com/in/braden-marshall/", label: "LinkedIn", icon: "linkedin" },
+  { href: "https://steamcommunity.com/id/Braden1996", label: "Steam", icon: "steam" },
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__center">
+    <slot />
+  </div>
+  <nav class="site-footer__social" aria-label="Social links">
+    {
+      links.map(({ href, label, icon }) => (
+        <a
+          href={href}
+          aria-label={label}
+          class="site-footer__link"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <IconicIcon class="site-footer__icon" name={icon} />
+        </a>
+      ))
+    }
+  </nav>
+</footer>
+
+<style>
+  .site-footer {
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.85rem;
+    padding: var(--panel-shell-padding);
+  }
+
+  .site-footer__center {
+    grid-column: 2;
+    min-width: 0;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+  }
+
+  .site-footer__social {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 0.65rem;
+    line-height: 0;
+  }
+
+  .site-footer__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    line-height: 0;
+    transition: color 200ms ease;
+  }
+
+  .site-footer__link:hover {
+    color: var(--color-text-primary);
+  }
+
+  .site-footer__icon {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
+</style>

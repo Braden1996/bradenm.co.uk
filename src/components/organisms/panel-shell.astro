@@ -1,0 +1,93 @@
+---
+import SiteFooter from "./site-footer.astro";
+import SiteHeader from "./site-header.astro";
+
+interface Props {
+  activeTab: "about" | "timeline" | "bookshelf";
+}
+
+const { activeTab } = Astro.props;
+---
+
+<div class="page-wrap">
+  <div
+    class:list={[
+      "panel-shell",
+      activeTab === "bookshelf" && "panel-shell--bookshelf",
+      activeTab === "timeline" && "panel-shell--timeline",
+    ]}
+    data-panel
+  >
+    <SiteHeader activeTab={activeTab} />
+
+    <div class="panel-shell__body">
+      <main class="panel-shell__main">
+        <slot />
+      </main>
+
+      <SiteFooter>
+        <slot name="footer-center" />
+      </SiteFooter>
+    </div>
+  </div>
+</div>
+
+<style>
+  .page-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: 100dvh;
+    padding: 2rem 1.25rem;
+    overflow: hidden;
+  }
+
+  .panel-shell {
+    --panel-shell-padding: 14px;
+    width: min(100%, 960px);
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    border: 1px solid var(--color-border-soft);
+    background: var(--surface-panel-background);
+    box-shadow: var(--shadow-panel);
+    overflow: hidden;
+  }
+
+  .panel-shell--bookshelf,
+  .panel-shell--timeline {
+    height: 100%;
+  }
+
+  .panel-shell[data-panel-animating] {
+    will-change: height;
+  }
+
+  .panel-shell__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    --panel-inline-padding: 1.5rem;
+  }
+
+  .panel-shell__main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  @media (max-width: 760px) {
+    .page-wrap {
+      padding: 1rem 0.75rem;
+    }
+
+    .panel-shell__body {
+      --panel-inline-padding: 1rem;
+    }
+  }
+</style>

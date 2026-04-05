@@ -1,0 +1,52 @@
+---
+import type { BookViewModel } from "../lib/bookshelf-data";
+import BookshelfEmptyState from "../organisms/bookshelf-empty-state.astro";
+import BookshelfHeader from "../organisms/bookshelf-header.astro";
+import BookshelfList from "../organisms/bookshelf-list.astro";
+
+interface Props {
+  books: BookViewModel[];
+}
+
+const { books } = Astro.props;
+---
+
+<div class="bookshelf-page" data-bookshelf-page>
+  <BookshelfHeader />
+  <BookshelfList books={books} />
+  <BookshelfEmptyState />
+</div>
+
+<style>
+  .bookshelf-page {
+    --bookshelf-text-muted: color-mix(in srgb, var(--color-text-primary) 45%, transparent);
+    --bookshelf-text-faint: color-mix(in srgb, var(--color-text-primary) 28%, transparent);
+    --bookshelf-stroke: var(--color-border-soft);
+    --bookshelf-inline-padding: var(--panel-inline-padding);
+    --bookshelf-formats-column-width: 11.2rem;
+    --bookshelf-columns: 1.6rem minmax(0, 1fr) minmax(0, 0.55fr)
+      var(--bookshelf-formats-column-width);
+    --bookshelf-column-gap: 0.65rem;
+    --row-divider-inset: calc(1.6rem + 0.65rem);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .bookshelf-page [hidden] {
+    display: none !important;
+  }
+
+  .bookshelf-page :is(button, input) {
+    font: inherit;
+  }
+
+  @media (max-width: 760px) {
+    .bookshelf-page {
+      --bookshelf-columns: 1.6rem minmax(0, 1fr) auto;
+      --bookshelf-column-gap: 0.4rem;
+      --row-divider-inset: calc(1.6rem + 0.4rem);
+    }
+  }
+</style>

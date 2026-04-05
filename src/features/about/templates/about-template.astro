@@ -1,0 +1,39 @@
+---
+import ScrollFadeFrame from "../../../components/molecules/scroll-fade-frame.astro";
+import AboutIntro from "../organisms/about-intro.astro";
+---
+
+<div class="about-template">
+  <ScrollFadeFrame class="about-template__frame">
+    <div class="about-template__scroll" data-scroll-fade-viewport>
+      <AboutIntro />
+    </div>
+  </ScrollFadeFrame>
+</div>
+
+<style>
+  .about-template {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .about-template__frame {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .about-template__scroll {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow: auto;
+    padding: 1.5rem var(--panel-inline-padding);
+  }
+
+  @media (max-width: 760px) {
+    .about-template__scroll {
+      align-items: flex-start;
+      padding-top: 1.2rem;
+    }
+  }
+</style>

@@ -1,65 +1,25 @@
 import uFuzzy from "@leeoniya/ufuzzy";
-
-type BookRecord = {
-  id: string;
-  title: string;
-  author: string;
-  firstIndex: number;
-  sortAuthor: string;
-  sortTitle: string;
-  coverSrc: string;
-  cacheKey: string;
-};
-
-type BookshelfPayload = {
-  books: BookRecord[];
-};
+import {
+  buildHaystackValue,
+  compareBooks,
+  normalizeNeedle,
+  type BookPayloadRecord,
+  type BookshelfPayload,
+} from "../lib/bookshelf-data";
 
 type BookshelfCard = {
-  book: BookRecord;
+  book: BookPayloadRecord;
   card: HTMLElement;
   haystack: string;
 };
 
-type SortKey = "title" | "author";
+type SortKey = "author" | "title";
 type SortDirection = "asc" | "desc";
 
-// This keeps title/author search forgiving for small typos and omitted spaces/hyphens.
 const fuzzy = new uFuzzy({
   intraMode: 1,
   intraChars: "[a-z\\d' -]",
 });
-const sortCollator = new Intl.Collator("en-GB", {
-  ignorePunctuation: true,
-  numeric: true,
-  sensitivity: "base",
-});
-
-function normalizeNeedle(value: string) {
-  return uFuzzy.latinize(value).replace(/\s+/g, " ").trim();
-}
-
-function buildHaystackValue(book: Pick<BookRecord, "title" | "author">) {
-  return uFuzzy.latinize(`${book.title} ${book.author}`);
-}
-
-function compareBooks(
-  left: Pick<BookRecord, "firstIndex" | "sortAuthor" | "sortTitle">,
-  right: Pick<BookRecord, "firstIndex" | "sortAuthor" | "sortTitle">,
-  sortKey: SortKey,
-  sortDirection: SortDirection,
-) {
-  const comparison =
-    sortKey === "author"
-      ? sortCollator.compare(left.sortAuthor, right.sortAuthor) ||
-        sortCollator.compare(left.sortTitle, right.sortTitle) ||
-        left.firstIndex - right.firstIndex
-      : sortCollator.compare(left.sortTitle, right.sortTitle) ||
-        sortCollator.compare(left.sortAuthor, right.sortAuthor) ||
-        left.firstIndex - right.firstIndex;
-
-  return sortDirection === "asc" ? comparison : -comparison;
-}
 
 function initBookshelf() {
   const payloadElement = document.querySelector<HTMLScriptElement>("#bookshelf-data");
@@ -202,7 +162,7 @@ function initBookshelf() {
   }
 
   function applySearch() {
-    const query = normalizeNeedle(searchInput?.value ?? "");
+    const query = normalizeNeedle(searchInput?.value ?? "").toLowerCase();
     const visibleIndexes = getVisibleIndexes(query).toSorted((leftIndex, rightIndex) =>
       compareBooks(
         cards[leftIndex].book,

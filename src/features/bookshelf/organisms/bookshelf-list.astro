@@ -1,0 +1,45 @@
+---
+import ScrollFadeFrame from "../../../components/molecules/scroll-fade-frame.astro";
+import type { BookViewModel } from "../lib/bookshelf-data";
+import BookshelfRow from "../molecules/bookshelf-row.astro";
+
+interface Props {
+  books: BookViewModel[];
+}
+
+const { books } = Astro.props;
+---
+
+<ScrollFadeFrame class="list-wrap" data-list-wrap initialFade="bottom" tone="subtle">
+  <div class="book-list" data-book-grid data-book-list data-scroll-fade-viewport>
+    {books.map((book, index) => <BookshelfRow book={book} eager={index < 24} />)}
+  </div>
+</ScrollFadeFrame>
+
+<style>
+  .list-wrap {
+    flex: 1;
+    padding-top: 0;
+  }
+
+  .book-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: var(--bookshelf-columns);
+    column-gap: var(--bookshelf-column-gap);
+    align-content: start;
+    overflow-y: auto;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-strong) transparent;
+    overscroll-behavior: contain;
+    padding: 0 var(--bookshelf-inline-padding) 0.45rem;
+  }
+
+  @media (max-width: 760px) {
+    .book-list {
+      grid-template-columns: var(--bookshelf-columns);
+      column-gap: var(--bookshelf-column-gap);
+    }
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  total: number;
+}
+
+const { total } = Astro.props;
+---
+
+<p class="shelf-count">
+  <span data-results-count>{total}</span> of {total} titles
+</p>
+
+<style>
+  .shelf-count {
+    margin: 0;
+    color: var(--bookshelf-text-faint);
+    font-size: 0.68rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    opacity: 1;
+    transform: none;
+  }
+
+  :global(html[data-client-page-swap="true"]) .shelf-count {
+    opacity: 0;
+    transform: translateY(0.24rem);
+    animation: shelf-count-enter 260ms ease 140ms forwards;
+  }
+
+  @keyframes shelf-count-enter {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shelf-count {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+</style>

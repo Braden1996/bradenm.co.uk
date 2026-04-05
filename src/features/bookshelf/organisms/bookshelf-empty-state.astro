@@ -1,0 +1,35 @@
+<div class="empty-state" data-empty-state hidden>
+  <p>No titles match that search.</p>
+  <button class="empty-reset" type="button" data-empty-reset>Clear search</button>
+</div>
+
+<style>
+  .empty-state {
+    padding: 1.5rem var(--bookshelf-inline-padding);
+    text-align: center;
+    color: var(--bookshelf-text-muted);
+    font-size: 0.82rem;
+  }
+
+  .empty-reset {
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.45rem;
+    border: 1px solid var(--bookshelf-stroke);
+    background: var(--color-surface-subtle);
+    color: var(--bookshelf-text-muted);
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: background-color 180ms ease;
+  }
+
+  .empty-reset:hover {
+    background: var(--color-surface-interactive-hover);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .empty-reset {
+      transition: none;
+    }
+  }
+</style>

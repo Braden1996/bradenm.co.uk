@@ -31,7 +31,7 @@ const tabs = [
 </nav>
 
 <script>
-  import { isPlainLeftClick } from "../scripts/utils";
+  import { isPlainLeftClick } from "../../scripts/utils";
 
   const SITE_TAB_TRACK_SELECTOR = "[data-tab-track]";
   const SITE_TAB_LINK_SELECTOR = "[data-tab-link]";
@@ -158,8 +158,8 @@ const tabs = [
     max-width: 100%;
     padding: 3px;
     border-radius: 0.6rem;
-    background: oklch(100% 0 0 / 0.05);
-    border: 1px solid oklch(100% 0 0 / 0.04);
+    background: var(--color-surface-subtle);
+    border: 1px solid var(--color-border-ghost);
     overflow: hidden;
     isolation: isolate;
   }
@@ -175,25 +175,25 @@ const tabs = [
     text-decoration: none;
     font-size: 0.76rem;
     font-weight: 500;
-    color: oklch(100% 0 0 / 0.36);
+    color: var(--color-text-interactive);
     transition: color 220ms ease;
     cursor: pointer;
   }
 
   .tab:hover {
-    color: oklch(100% 0 0 / 0.65);
+    color: var(--color-text-interactive-hover);
   }
 
   .tab.is-active {
-    color: oklch(100% 0 0 / 0.88);
+    color: var(--color-text-interactive-active);
   }
 
   .tab-flight-pill,
   .tab-static-pill {
     border-radius: 0.45rem;
-    background: oklch(100% 0 0 / 0.08);
-    border: 1px solid oklch(100% 0 0 / 0.06);
-    box-shadow: 0 1px 3px oklch(0% 0 0 / 0.12);
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-border-soft);
+    box-shadow: 0 1px 3px var(--color-shadow-subtle);
     pointer-events: none;
   }
 

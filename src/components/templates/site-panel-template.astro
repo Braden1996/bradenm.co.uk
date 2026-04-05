@@ -1,0 +1,282 @@
+---
+import { ClientRouter } from "astro:transitions";
+import profileImage from "../../../data/profile-image.json";
+import PanelShell from "../organisms/panel-shell.astro";
+
+interface Props {
+  activeTab?: "about" | "timeline" | "bookshelf";
+  description: string;
+  title: string;
+}
+
+type ProfileImage = {
+  src: string;
+};
+
+const { title, description, activeTab = "about" } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const headerProfileImage = profileImage as ProfileImage;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link
+      rel="preload"
+      href="/fonts/brutal-type-bold.fontimize-subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href={headerProfileImage.src} as="image" fetchpriority="high" />
+    <slot name="head" />
+    <ClientRouter fallback="swap" />
+  </head>
+
+  <body>
+    <PanelShell activeTab={activeTab}>
+      <slot />
+      <slot name="footer-center" slot="footer-center" />
+    </PanelShell>
+
+    <script>
+      import "../../scripts/panel-transition";
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @font-face {
+    font-family: "BrutalType";
+    src: url("/fonts/brutal-type-bold.fontimize-subset.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter-regular.subset.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007F, U+00A0-00FF, U+2018-201D, U+2026;
+  }
+
+  :root {
+    --palette-neutral-950: oklch(15.46% 0.0066 270.96);
+    --palette-neutral-930: oklch(16.91% 0.013 270.54 / 0.98);
+    --palette-neutral-920: oklch(18.9% 0.015 268.5 / 0.76);
+    --palette-neutral-910: oklch(19.1% 0.015 268.5);
+    --palette-neutral-900: oklch(19.64% 0.0168 268.77 / 0.95);
+    --palette-neutral-840: oklch(29% 0.018 253.5);
+    --palette-neutral-700: oklch(36.41% 0.0085 233.89);
+    --palette-neutral-120: oklch(96.76% 0.0096 273.36 / 0.38);
+    --palette-neutral-110: oklch(96.76% 0.0096 273.36 / 0.45);
+    --palette-neutral-105: oklch(96.76% 0.0096 273.36 / 0.62);
+    --palette-neutral-100: oklch(96.76% 0.01 273.36);
+    --palette-white-96: oklch(100% 0 0 / 0.96);
+    --palette-white-88: oklch(100% 0 0 / 0.88);
+    --palette-white-14: oklch(100% 0 0 / 0.14);
+    --palette-white-12: oklch(100% 0 0 / 0.12);
+    --palette-white-08: oklch(100% 0 0 / 0.08);
+    --palette-white-07: oklch(100% 0 0 / 0.07);
+    --palette-white-06: oklch(100% 0 0 / 0.06);
+    --palette-white-05: oklch(100% 0 0 / 0.05);
+    --palette-white-04: oklch(100% 0 0 / 0.04);
+    --palette-white-03: oklch(100% 0 0 / 0.03);
+    --palette-white-025: oklch(100% 0 0 / 0.025);
+    --palette-white-015: oklch(100% 0 0 / 0.015);
+    --palette-white-012: oklch(100% 0 0 / 0.012);
+    --palette-black-30: oklch(0% 0 0 / 0.3);
+    --palette-black-28: oklch(0% 0 0 / 0.28);
+    --palette-black-24: oklch(0% 0 0 / 0.24);
+    --palette-black-16: oklch(0% 0 0 / 0.16);
+    --palette-black-12: oklch(0% 0 0 / 0.12);
+    --palette-link-500: oklch(54.16% 0.014 248.08);
+    --palette-accent-500: oklch(62.57% 0.08 278.83);
+    --palette-accent-600: oklch(62.67% 0.2043 278.74);
+    --palette-accent-500-42: oklch(62.57% 0.0801 278.83 / 0.42);
+    --palette-accent-500-35: oklch(62.57% 0.0801 278.83 / 0.35);
+    --palette-neutral-920-88: oklch(18.9% 0.015 268.5 / 0.88);
+    --palette-brand-x: oklch(66.71% 0.1615 245.54);
+    --palette-brand-linkedin: oklch(53.13% 0.1301 243.65);
+    --palette-tag-neutral-bg: linear-gradient(
+      180deg,
+      oklch(43.81% 0.0299 265.29),
+      oklch(36.74% 0.0276 265.38)
+    );
+    --palette-tag-neutral-border: oklch(81.27% 0.0272 264.41 / 0.22);
+    --palette-tag-neutral-shadow: oklch(18.35% 0.0191 270.16 / 0.28);
+    --palette-tag-neutral-text: oklch(95.11% 0.0103 261.79 / 0.86);
+    --palette-tag-info-bg: linear-gradient(
+      180deg,
+      oklch(44.49% 0.0695 256.47),
+      oklch(36.09% 0.0567 257.61)
+    );
+    --palette-tag-info-border: oklch(77.93% 0.0653 250.09 / 0.28);
+    --palette-tag-info-shadow: oklch(18.26% 0.0265 263.59 / 0.34);
+    --palette-tag-info-text: oklch(95.1% 0.0155 247.99 / 0.92);
+    --palette-tag-success-bg: linear-gradient(
+      180deg,
+      oklch(45.13% 0.0552 156.55),
+      oklch(37.02% 0.044 158.29)
+    );
+    --palette-tag-success-border: oklch(76.95% 0.0629 160.79 / 0.28);
+    --palette-tag-success-shadow: oklch(19.57% 0.0213 155.95 / 0.32);
+    --palette-tag-success-text: oklch(94.22% 0.019 157.86 / 0.92);
+    --palette-tag-warning-bg: linear-gradient(
+      180deg,
+      oklch(48.48% 0.0822 66.72),
+      oklch(40.07% 0.0702 64.04)
+    );
+    --palette-tag-warning-border: oklch(82.6% 0.0906 77.54 / 0.3);
+    --palette-tag-warning-shadow: oklch(24.35% 0.0415 68.11 / 0.34);
+    --palette-tag-warning-text: oklch(94.55% 0.0367 80.63 / 0.94);
+  }
+
+  :root {
+    --color-bg-canvas: var(--palette-neutral-950);
+    --color-surface-panel: var(--palette-neutral-900);
+    --color-surface-subtle: var(--palette-white-04);
+    --color-surface-elevated: var(--palette-neutral-840);
+    --color-surface-overlay: var(--palette-neutral-920);
+    --color-surface-overlay-strong: var(--palette-neutral-920-88);
+    --color-surface-interactive: color-mix(in srgb, var(--color-surface-subtle) 72%, white 28%);
+    --color-surface-interactive-hover: color-mix(
+      in srgb,
+      var(--color-surface-subtle) 75%,
+      white 25%
+    );
+    --color-surface-interactive-hover-strong: color-mix(
+      in srgb,
+      var(--color-surface-subtle) 70%,
+      white 30%
+    );
+    --color-surface-sheen: var(--palette-white-025);
+    --color-surface-panel-translucent-soft: color-mix(
+      in srgb,
+      var(--color-surface-panel) 42%,
+      transparent
+    );
+    --color-surface-panel-translucent: color-mix(
+      in srgb,
+      var(--color-surface-panel) 82%,
+      transparent
+    );
+    --color-surface-panel-translucent-strong: color-mix(
+      in srgb,
+      var(--color-surface-panel) 94%,
+      transparent
+    );
+    --color-border-soft: var(--palette-white-07);
+    --color-border-strong: var(--palette-white-08);
+    --color-border-ghost: var(--palette-white-04);
+    --color-border-interactive: color-mix(in srgb, var(--color-border-soft) 30%, transparent);
+    --color-border-interactive-soft: color-mix(in srgb, var(--color-border-soft) 20%, transparent);
+    --color-border-accent-soft: color-mix(in srgb, var(--color-accent) 24%, transparent);
+    --color-border-accent-ghost: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    --color-text-primary: var(--palette-neutral-100);
+    --color-text-muted: var(--palette-neutral-110);
+    --color-text-faint: var(--palette-neutral-120);
+    --color-text-placeholder: color-mix(in srgb, var(--color-text-faint) 58%, transparent);
+    --color-text-interactive: color-mix(in srgb, var(--color-text-primary) 36%, transparent);
+    --color-text-interactive-hover: color-mix(in srgb, var(--color-text-primary) 65%, transparent);
+    --color-text-interactive-active: color-mix(in srgb, var(--color-text-primary) 88%, transparent);
+    --color-link: var(--palette-link-500);
+    --color-accent: var(--palette-accent-500);
+    --color-accent-strong: var(--palette-accent-600);
+    --color-focus-ring: var(--palette-accent-500-35);
+    --color-focus-ring-strong: var(--palette-accent-500-42);
+    --color-shadow-subtle: var(--palette-black-12);
+    --color-shadow-strong: var(--palette-black-30);
+    --color-shadow-outline: var(--palette-black-16);
+    --color-surface-highlight-soft: var(--palette-white-06);
+    --color-surface-sheen: var(--palette-white-025);
+    --color-tag-neutral-bg: var(--palette-tag-neutral-bg);
+    --color-tag-neutral-border: var(--palette-tag-neutral-border);
+    --color-tag-neutral-shadow: var(--palette-tag-neutral-shadow);
+    --color-tag-neutral-text: var(--palette-tag-neutral-text);
+    --color-tag-info-bg: var(--palette-tag-info-bg);
+    --color-tag-info-border: var(--palette-tag-info-border);
+    --color-tag-info-shadow: var(--palette-tag-info-shadow);
+    --color-tag-info-text: var(--palette-tag-info-text);
+    --color-tag-success-bg: var(--palette-tag-success-bg);
+    --color-tag-success-border: var(--palette-tag-success-border);
+    --color-tag-success-shadow: var(--palette-tag-success-shadow);
+    --color-tag-success-text: var(--palette-tag-success-text);
+    --color-tag-warning-bg: var(--palette-tag-warning-bg);
+    --color-tag-warning-border: var(--palette-tag-warning-border);
+    --color-tag-warning-shadow: var(--palette-tag-warning-shadow);
+    --color-tag-warning-text: var(--palette-tag-warning-text);
+    --surface-panel-background: linear-gradient(
+      180deg,
+      var(--palette-neutral-900),
+      var(--palette-neutral-930)
+    );
+    --shadow-panel:
+      0 0 0 1px var(--palette-black-30), 0 1rem 3rem var(--palette-black-28),
+      inset 0 1px 0 var(--palette-white-04);
+    --shadow-elevated: 0 0 0 1px var(--palette-black-24), 0 0.5rem 1.2rem var(--palette-black-24);
+  }
+
+  :root {
+    view-transition-name: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  html {
+    font-size: 1.2em;
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: var(--color-bg-canvas);
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+</style>

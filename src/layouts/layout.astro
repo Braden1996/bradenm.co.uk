@@ -1,0 +1,17 @@
+---
+import SitePanelTemplate from "../components/templates/site-panel-template.astro";
+
+interface Props {
+  activeTab?: "about" | "timeline" | "bookshelf";
+  description: string;
+  title: string;
+}
+
+const { title, description, activeTab = "about" } = Astro.props;
+---
+
+<SitePanelTemplate title={title} description={description} activeTab={activeTab}>
+  <slot name="head" slot="head" />
+  <slot />
+  <slot name="footer-center" slot="footer-center" />
+</SitePanelTemplate>
