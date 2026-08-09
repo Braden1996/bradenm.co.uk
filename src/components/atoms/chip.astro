@@ -1,0 +1,145 @@
+---
+import Symbol from "./symbol.astro";
+
+interface Props {
+  active?: boolean;
+  as?: string;
+  class?: string;
+  interactive?: boolean;
+  [key: string]: unknown;
+}
+
+const {
+  active = false,
+  as: Tag = "span",
+  class: className,
+  interactive = false,
+  ...rest
+} = Astro.props as Props & Record<string, unknown>;
+const hasStartSymbol = Astro.slots.has("startSymbol");
+const hasEndSymbol = Astro.slots.has("endSymbol");
+---
+
+<Tag
+  class:list={[
+    "chip",
+    interactive && "chip--interactive",
+    hasStartSymbol && "chip--with-start-symbol",
+    hasEndSymbol && "chip--with-end-symbol",
+    className,
+  ]}
+  data-chip-active={active ? "true" : undefined}
+  {...rest}
+>
+  {
+    hasStartSymbol && (
+      <Symbol class="chip__symbol chip__symbol--start" size="sm">
+        <slot name="startSymbol" />
+      </Symbol>
+    )
+  }
+  <span class="chip__label">
+    <slot />
+  </span>
+  {
+    hasEndSymbol && (
+      <Symbol class="chip__symbol chip__symbol--end" size="sm">
+        <slot name="endSymbol" />
+      </Symbol>
+    )
+  }
+</Tag>
+
+<style>
+  .chip {
+    --chip-padding-block: 0.16rem;
+    --chip-padding-inline-base: 0.38rem;
+    --chip-padding-inline-symbol: 0.26rem;
+    --chip-padding-inline-start: var(--chip-padding-inline-base);
+    --chip-padding-inline-end: var(--chip-padding-inline-base);
+    --chip-gap: 0.22rem;
+    --chip-radius: 999px;
+    --chip-margin-block: calc(var(--chip-padding-block) * -1);
+    --chip-margin-inline-start: calc(var(--chip-padding-inline-start) * -1);
+    --chip-margin-inline-end: calc(var(--chip-padding-inline-end) * -1);
+    --chip-background: transparent;
+    --chip-background-hover: var(--palette-white-05);
+    --chip-background-active: var(--palette-white-06);
+    --chip-background-active-hover: var(--palette-white-07);
+    --chip-color: inherit;
+    --chip-focus-ring: var(--color-focus-ring);
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--chip-gap);
+    min-width: 0;
+    max-width: 100%;
+    margin: var(--chip-margin-block) var(--chip-margin-inline-end) var(--chip-margin-block)
+      var(--chip-margin-inline-start);
+    padding: var(--chip-padding-block) var(--chip-padding-inline-end) var(--chip-padding-block)
+      var(--chip-padding-inline-start);
+    border: 0;
+    border-radius: var(--chip-radius);
+    background: var(--chip-background);
+    color: var(--chip-color);
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    text-decoration: none !important;
+    text-transform: inherit;
+    transition:
+      background-color 180ms ease,
+      box-shadow 180ms ease,
+      color 180ms ease,
+      opacity 180ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .chip--interactive {
+    cursor: pointer;
+  }
+
+  .chip--with-start-symbol {
+    --chip-padding-inline-start: var(--chip-padding-inline-symbol);
+  }
+
+  .chip--with-end-symbol {
+    --chip-padding-inline-end: var(--chip-padding-inline-symbol);
+  }
+
+  .chip__label {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .chip :global(*) {
+    color: inherit;
+    text-decoration: none !important;
+  }
+
+  .chip__symbol {
+    color: inherit;
+  }
+
+  .chip[data-chip-active="true"],
+  .chip[aria-pressed="true"] {
+    background: var(--chip-background-active);
+  }
+
+  .chip--interactive:is(:hover, :focus-visible) {
+    background: var(--chip-background-hover);
+  }
+
+  .chip--interactive[data-chip-active="true"]:is(:hover, :focus-visible),
+  .chip--interactive[aria-pressed="true"]:is(:hover, :focus-visible) {
+    background: var(--chip-background-active-hover);
+  }
+
+  .chip:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--chip-focus-ring);
+  }
+</style>

@@ -14,7 +14,7 @@ type CareerImageMap = Record<
   string,
   {
     height?: number;
-    placeholderDataUrl?: string;
+    src?: string;
     width?: number;
   }
 >;
@@ -23,7 +23,6 @@ export type TimelineEntryViewModel = {
   Content: AstroComponentFactory;
   location: string;
   logoHeight: number;
-  logoPlaceholderDataUrl: string;
   logoSrc?: string;
   logoWidth: number;
   mark: string;
@@ -54,9 +53,18 @@ function getDaysInMonth(year: number, month: number) {
 
 function parseCareerDate(value: string): ParsedCareerDate {
   const [yearPart, monthPart, dayPart] = value.split("-");
+
+  if (!yearPart) {
+    throw new Error(`Invalid career date: ${value}`);
+  }
+
   const year = Number.parseInt(yearPart, 10);
 
   if (dayPart) {
+    if (!monthPart) {
+      throw new Error(`Invalid career date: ${value}`);
+    }
+
     return {
       day: Number.parseInt(dayPart, 10),
       month: Number.parseInt(monthPart, 10),
@@ -171,8 +179,7 @@ export function createTimelineEntryViewModel(
     Content,
     location: entry.data.location,
     logoHeight: image?.height ?? 0,
-    logoPlaceholderDataUrl: image?.placeholderDataUrl ?? "",
-    logoSrc: entry.data.logoSrc,
+    ...(image?.src ? { logoSrc: image.src } : {}),
     logoWidth: image?.width ?? 0,
     mark: entry.data.mark,
     organisation: entry.data.organisation,

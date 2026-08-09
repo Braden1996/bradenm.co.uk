@@ -6,18 +6,24 @@ import Layout from "../layouts/layout.astro";
 const pageDescription =
   "Career timeline covering Braden Marshall's education, research, and product engineering roles.";
 const careerEntries = await loadTimelineEntries();
+const defaultEntry = careerEntries[0];
 
-if (careerEntries.length === 0) {
+if (!defaultEntry) {
   throw new Error("The career collection is empty.");
 }
-
-const defaultEntry = careerEntries[0];
 ---
 
 <Layout title="Timeline | Braden Marshall" description={pageDescription} activeTab="timeline">
   {
     defaultEntry.logoSrc && (
-      <link slot="head" rel="preload" href={defaultEntry.logoSrc} as="image" fetchpriority="high" />
+      <link
+        slot="head"
+        rel="preload"
+        href={defaultEntry.logoSrc}
+        as="image"
+        type="image/webp"
+        fetchpriority="high"
+      />
     )
   }
 

@@ -1,4 +1,5 @@
 ---
+import Chip from "../../../components/atoms/chip.astro";
 import ProgressiveImage from "../../../components/atoms/progressive-image.astro";
 import TagGroup from "../../../components/molecules/tag-group.astro";
 import type { BookViewModel } from "../lib/bookshelf-data";
@@ -14,9 +15,7 @@ const { book, eager = false } = Astro.props;
 <div class="book-row" data-book-card data-book-id={book.id}>
   <div class="row-cover" style={`--cover-hue:${book.coverHue};`}>
     <ProgressiveImage
-      placeholderClass="row-cover-placeholder"
-      class="row-cover-img"
-      placeholderSrc={book.coverPlaceholderDataUrl}
+      class="row-cover-image"
       src={book.coverSrc}
       alt=""
       width={book.coverWidth}
@@ -31,14 +30,16 @@ const { book, eager = false } = Astro.props;
     {
       book.authorSegments.map((authorSegment) => (
         <span class="author-token">
-          <button
+          <Chip
+            as="button"
             class="author-filter"
+            interactive
             type="button"
             aria-label={`Filter bookshelf by ${authorSegment.label}`}
             data-author-filter={authorSegment.label}
           >
             {authorSegment.label}
-          </button>
+          </Chip>
           {authorSegment.separator && (
             <span class="author-separator" aria-hidden="true">
               {authorSegment.separator}
@@ -62,6 +63,10 @@ const { book, eager = false } = Astro.props;
     align-items: center;
     padding: 0.28rem 0;
     font-size: 0.75rem;
+  }
+
+  .book-row[hidden] {
+    display: none !important;
   }
 
   .book-row:not([hidden]) ~ .book-row:not([hidden])::before {
@@ -88,23 +93,12 @@ const { book, eager = false } = Astro.props;
     flex-shrink: 0;
   }
 
-  .row-cover :global(.row-cover-placeholder),
-  .row-cover :global(.row-cover-img) {
+  .row-cover-image {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
-  .row-cover :global(.row-cover-placeholder) {
-    transform: scale(1.08);
-    filter: blur(10px) saturate(1.08);
-  }
-
-  .row-cover :global(.row-cover-img) {
-    z-index: 1;
+    --progressive-image-fit: cover;
   }
 
   .row-title {
@@ -133,33 +127,12 @@ const { book, eager = false } = Astro.props;
   }
 
   .author-filter {
-    appearance: none;
-    border: 0;
-    border-radius: 999px;
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    line-height: inherit;
-    margin: -0.08rem -0.22rem;
-    padding: 0.08rem 0.22rem;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: 0.16em;
-    transition:
-      background-color 180ms ease,
-      color 180ms ease,
-      text-decoration-color 180ms ease;
-  }
-
-  .author-filter:is(:hover, :focus-visible) {
-    background: var(--color-surface-interactive);
-    color: var(--color-text-primary);
-    text-decoration-color: currentColor;
-  }
-
-  .author-filter:focus-visible {
-    outline: none;
+    --chip-padding-block: 0.11rem;
+    --chip-padding-inline: 0.36rem;
+    --chip-gap: 0;
+    --chip-background-hover: var(--palette-white-05);
+    --chip-background-active: var(--palette-white-05);
+    --chip-background-active-hover: var(--palette-white-06);
   }
 
   .author-separator {

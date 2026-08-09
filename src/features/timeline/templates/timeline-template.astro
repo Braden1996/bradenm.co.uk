@@ -1,6 +1,6 @@
 ---
 import type { TimelineEntryViewModel } from "../lib/timeline-view-model";
-import TimelineDetailPanel from "../organisms/timeline-detail-panel.astro";
+import TimelineDetailContent from "../organisms/timeline-detail-content.astro";
 import TimelineNav from "../organisms/timeline-nav.astro";
 
 interface Props {
@@ -20,22 +20,27 @@ const { entries, selectedEntry, mobileView = "list", backHref = "/timeline" } = 
   data-mobile-view={mobileView}
 >
   <div class="timeline-layout">
-    <TimelineNav entries={entries} activeSlug={selectedEntry.slug} />
+    <div class="timeline-nav-pane">
+      <TimelineNav entries={entries} activeSlug={selectedEntry.slug} />
+    </div>
     <section class="timeline-detail">
       <a href={backHref} class="timeline-back-link">Back</a>
       <div class="timeline-detail-inner">
-        <TimelineDetailPanel entry={selectedEntry} />
+        <TimelineDetailContent class="timeline-detail-panel" entry={selectedEntry} />
       </div>
     </section>
   </div>
-
-  <script>
-    import "../client/sync-persisted-nav";
-  </script>
 </div>
 
 <style>
   .timeline-page {
+    --timeline-nav-logo-size: 2.75rem;
+    --timeline-nav-edge-padding: 0.35rem;
+    --timeline-desktop-nav-offset: calc(
+      var(--panel-shell-padding) +
+        ((var(--site-header-avatar-size) - var(--timeline-nav-logo-size)) / 2) -
+        var(--timeline-nav-edge-padding)
+    );
     flex: 1 1 auto;
     display: flex;
     position: relative;
@@ -48,8 +53,14 @@ const { entries, selectedEntry, mobileView = "list", backHref = "/timeline" } = 
     align-items: stretch;
     gap: 1.4rem;
     min-height: 0;
-    padding: 0 0 1.45rem var(--panel-inline-padding);
+    padding: 0 0 1.45rem var(--timeline-desktop-nav-offset);
     overflow: hidden;
+  }
+
+  .timeline-nav-pane {
+    display: flex;
+    min-width: 0;
+    min-height: 0;
   }
 
   .timeline-detail {
@@ -70,19 +81,11 @@ const { entries, selectedEntry, mobileView = "list", backHref = "/timeline" } = 
     padding: 0.6rem 0 0.2rem 0.1rem;
   }
 
-  .timeline-detail-inner :global(.timeline-detail-content) {
+  .timeline-detail-panel {
     flex: 1 1 auto;
     width: 100%;
     min-height: 0;
-  }
-
-  .timeline-detail-inner :global(.timeline-detail-body-frame) {
     height: 100%;
-    min-height: 0;
-  }
-
-  .timeline-detail-inner :global(.timeline-detail-body) {
-    min-height: 0;
   }
 
   @media (max-width: 760px) {
@@ -97,7 +100,7 @@ const { entries, selectedEntry, mobileView = "list", backHref = "/timeline" } = 
       display: none;
     }
 
-    .timeline-page[data-mobile-view="detail"] :global(.timeline-nav) {
+    .timeline-page[data-mobile-view="detail"] .timeline-nav-pane {
       display: none;
     }
 
@@ -125,20 +128,6 @@ const { entries, selectedEntry, mobileView = "list", backHref = "/timeline" } = 
     .timeline-page[data-mobile-view="detail"] .timeline-detail-inner {
       flex: 1 1 auto;
       padding: 0;
-    }
-
-    .timeline-page[data-mobile-view="detail"]
-      .timeline-detail-inner
-      :global(.timeline-detail-body) {
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .timeline-page[data-mobile-view="detail"]
-      .timeline-detail-inner
-      :global(.timeline-detail-copy) {
-      padding-right: 0;
     }
   }
 

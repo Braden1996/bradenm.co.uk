@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/layout.astro";
+
+const pageDescription = "The requested page could not be found.";
+---
+
+<Layout title="Page not found | Braden Marshall" description={pageDescription} activeTab="about">
+  <meta slot="head" name="robots" content="noindex" />
+
+  <section class="not-found" aria-labelledby="not-found-title">
+    <span class="not-found__code" aria-hidden="true">404</span>
+    <h1 id="not-found-title">Page not found</h1>
+    <p>The page may have moved, or the address may be incorrect.</p>
+    <a href="/">Return home</a>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1.4rem var(--panel-inline-padding) 2rem;
+  }
+
+  .not-found__code {
+    color: var(--color-accent);
+    font-family: "BrutalType", system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .not-found h1 {
+    color: var(--color-text-primary);
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .not-found p {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .not-found a {
+    margin-top: 0.3rem;
+    color: var(--color-text-primary);
+    font-size: 0.75rem;
+    text-underline-offset: 0.2em;
+  }
+</style>

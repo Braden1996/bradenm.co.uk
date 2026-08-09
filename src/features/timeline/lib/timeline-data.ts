@@ -11,7 +11,7 @@ type CareerImageMap = Record<
   string,
   {
     height?: number;
-    placeholderDataUrl?: string;
+    src?: string;
     width?: number;
   }
 >;

@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"span"> {
+  size?: "xs" | "sm" | "md" | "lg";
+}
+
+const SIZE_BY_NAME = {
+  xs: "0.75rem",
+  sm: "0.875rem",
+  md: "1rem",
+  lg: "1.25rem",
+} as const;
+
+const { class: className, size = "md", style, ...rest } = Astro.props;
+const symbolStyle = [
+  style,
+  `--symbol-size:${SIZE_BY_NAME[size]};`,
+  "--avatar-size:var(--symbol-size);",
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<span class:list={["symbol", className]} style={symbolStyle} {...rest}>
+  <slot />
+</span>
+
+<style>
+  .symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    min-width: 1em;
+    flex: none;
+    font-size: var(--symbol-size);
+    color: inherit;
+    line-height: 0;
+  }
+
+  .symbol :global(*) {
+    color: inherit;
+  }
+</style>

@@ -21,6 +21,35 @@ const fuzzy = new uFuzzy({
   intraChars: "[a-z\\d' -]",
 });
 
+function isBookPayloadRecord(value: unknown): value is BookPayloadRecord {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "author" in value &&
+    typeof value.author === "string" &&
+    "firstIndex" in value &&
+    typeof value.firstIndex === "number" &&
+    "id" in value &&
+    typeof value.id === "string" &&
+    "sortAuthor" in value &&
+    typeof value.sortAuthor === "string" &&
+    "sortTitle" in value &&
+    typeof value.sortTitle === "string" &&
+    "title" in value &&
+    typeof value.title === "string"
+  );
+}
+
+function isBookshelfPayload(value: unknown): value is BookshelfPayload {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "books" in value &&
+    Array.isArray(value.books) &&
+    value.books.every(isBookPayloadRecord)
+  );
+}
+
 function initBookshelf() {
   const payloadElement = document.querySelector<HTMLScriptElement>("#bookshelf-data");
 
@@ -30,7 +59,13 @@ function initBookshelf() {
 
   payloadElement.dataset.bookshelfInitialized = "true";
 
-  const payload = JSON.parse(payloadElement.textContent) as BookshelfPayload;
+  const parsedPayload: unknown = JSON.parse(payloadElement.textContent);
+
+  if (!isBookshelfPayload(parsedPayload)) {
+    return;
+  }
+
+  const payload = parsedPayload;
   const books = payload.books;
   const rawBookGrid = document.querySelector<HTMLElement>("[data-book-grid]");
 
@@ -41,6 +76,7 @@ function initBookshelf() {
   const bookGrid = rawBookGrid;
   const allCards = Array.from(document.querySelectorAll<HTMLElement>("[data-book-card]"));
   const searchInput = document.querySelector<HTMLInputElement>("[data-search-input]");
+  const searchRoot = searchInput?.closest<HTMLElement>("[data-overlay-search]");
   const clearSearchButton = document.querySelector<HTMLButtonElement>("[data-clear-search]");
   const emptyState = document.querySelector<HTMLElement>("[data-empty-state]");
   const emptyReset = document.querySelector<HTMLButtonElement>("[data-empty-reset]");
@@ -50,6 +86,7 @@ function initBookshelf() {
   );
   let activeSortKey: SortKey = "title";
   let activeSortDirection: SortDirection = "asc";
+  let pendingSearchFrame = 0;
 
   const cardById = new Map(
     allCards
@@ -80,18 +117,31 @@ function initBookshelf() {
   const haystack = cards.map(({ haystack: searchValue }) => searchValue);
 
   function updateResults(count: number) {
-    if (resultsCount) {
-      resultsCount.textContent = String(count);
+    const countText = String(count);
+
+    if (resultsCount && resultsCount.textContent !== countText) {
+      resultsCount.textContent = countText;
     }
 
-    if (emptyState) {
-      emptyState.hidden = count !== 0;
+    const shouldHideEmptyState = count !== 0;
+
+    if (emptyState && emptyState.hidden !== shouldHideEmptyState) {
+      emptyState.hidden = shouldHideEmptyState;
     }
+  }
+
+  function isSearchOpen() {
+    return searchRoot?.dataset.state === "open";
   }
 
   function syncControlState() {
     if (clearSearchButton) {
-      clearSearchButton.hidden = !searchInput || searchInput.value.length === 0;
+      const shouldHideClearButton =
+        !searchInput || (!isSearchOpen() && normalizeNeedle(searchInput.value).length === 0);
+
+      if (clearSearchButton.hidden !== shouldHideClearButton) {
+        clearSearchButton.hidden = shouldHideClearButton;
+      }
     }
   }
 
@@ -121,8 +171,17 @@ function initBookshelf() {
   }
 
   function renderCards(visibleIndexes: number[]) {
-    const fragment = document.createDocumentFragment();
     const visibleIndexSet = new Set(visibleIndexes);
+
+    cards.forEach(({ card }, index) => {
+      const shouldHide = !visibleIndexSet.has(index);
+
+      if (card.hidden !== shouldHide) {
+        card.hidden = shouldHide;
+      }
+    });
+
+    let currentVisibleCard = bookGrid.firstElementChild;
 
     for (const index of visibleIndexes) {
       const card = cards[index]?.card;
@@ -131,20 +190,16 @@ function initBookshelf() {
         continue;
       }
 
-      card.hidden = false;
-      fragment.append(card);
-    }
-
-    cards.forEach(({ card }, index) => {
-      if (visibleIndexSet.has(index)) {
-        return;
+      while (currentVisibleCard instanceof HTMLElement && currentVisibleCard.hidden) {
+        currentVisibleCard = currentVisibleCard.nextElementSibling;
       }
 
-      card.hidden = true;
-      fragment.append(card);
-    });
+      if (currentVisibleCard !== card) {
+        bookGrid.insertBefore(card, currentVisibleCard);
+      }
 
-    bookGrid.append(fragment);
+      currentVisibleCard = card.nextElementSibling;
+    }
   }
 
   function getVisibleIndexes(query: string) {
@@ -162,19 +217,37 @@ function initBookshelf() {
   }
 
   function applySearch() {
+    if (pendingSearchFrame) {
+      cancelAnimationFrame(pendingSearchFrame);
+      pendingSearchFrame = 0;
+    }
+
     const query = normalizeNeedle(searchInput?.value ?? "").toLowerCase();
-    const visibleIndexes = getVisibleIndexes(query).toSorted((leftIndex, rightIndex) =>
-      compareBooks(
-        cards[leftIndex].book,
-        cards[rightIndex].book,
-        activeSortKey,
-        activeSortDirection,
-      ),
-    );
+    const visibleIndexes = getVisibleIndexes(query).toSorted((leftIndex, rightIndex) => {
+      const leftCard = cards[leftIndex];
+      const rightCard = cards[rightIndex];
+
+      if (!leftCard || !rightCard) {
+        return 0;
+      }
+
+      return compareBooks(leftCard.book, rightCard.book, activeSortKey, activeSortDirection);
+    });
 
     renderCards(visibleIndexes);
     updateResults(visibleIndexes.length);
     syncControlState();
+  }
+
+  function scheduleSearch() {
+    if (pendingSearchFrame) {
+      return;
+    }
+
+    pendingSearchFrame = requestAnimationFrame(() => {
+      pendingSearchFrame = 0;
+      applySearch();
+    });
   }
 
   function setSearchValue(nextValue: string) {
@@ -187,11 +260,37 @@ function initBookshelf() {
     searchInput.focus();
   }
 
-  searchInput?.addEventListener("input", applySearch);
-  searchInput?.addEventListener("search", applySearch);
+  function closeSearch() {
+    if (!searchInput) {
+      return;
+    }
 
-  clearSearchButton?.addEventListener("click", () => setSearchValue(""));
+    searchInput.value = "";
+    searchInput.focus();
+    searchInput.dispatchEvent(new KeyboardEvent("keydown", { bubbles: true, key: "Escape" }));
+  }
+
+  searchInput?.addEventListener("input", scheduleSearch);
+  searchInput?.addEventListener("search", scheduleSearch);
+
+  clearSearchButton?.addEventListener("click", () => {
+    if (!searchInput) {
+      return;
+    }
+
+    if (normalizeNeedle(searchInput.value).length === 0) {
+      closeSearch();
+      return;
+    }
+
+    setSearchValue("");
+  });
   emptyReset?.addEventListener("click", () => setSearchValue(""));
+
+  searchRoot?.addEventListener("focusin", syncControlState);
+  searchRoot?.addEventListener("focusout", () => {
+    requestAnimationFrame(syncControlState);
+  });
 
   for (const button of sortButtons) {
     button.addEventListener("click", () => {
@@ -229,9 +328,9 @@ function initBookshelf() {
 
     setSearchValue(authorName);
   });
-
   syncSortState();
-  applySearch();
+  updateResults(cards.length);
+  syncControlState();
 }
 
 initBookshelf();

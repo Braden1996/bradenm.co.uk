@@ -1,14 +1,12 @@
-export type TagVariant = "neutral" | "info" | "success" | "warning";
+type TagVariant = "neutral" | "info" | "success" | "warning";
 
-export type AuthorSegment = {
+type AuthorSegment = {
   label: string;
   separator: string;
 };
 
 export type BookPayloadRecord = {
   author: string;
-  cacheKey: string;
-  coverSrc: string;
   firstIndex: number;
   id: string;
   sortAuthor: string;
@@ -24,7 +22,7 @@ export type BookViewModel = BookPayloadRecord & {
   authorSegments: AuthorSegment[];
   coverHeight: number;
   coverHue: number;
-  coverPlaceholderDataUrl: string;
+  coverSrc: string;
   coverWidth: number;
   mediumTags: {
     label: string;
@@ -42,7 +40,6 @@ type BookshelfCoverMap = Record<
   string,
   {
     height?: number;
-    placeholderDataUrl?: string;
     src?: string;
     width?: number;
   }
@@ -53,6 +50,7 @@ type GroupedBook = Omit<BookViewModel, "authorSegments" | "mediumTags"> & {
 };
 
 const mediumOrder = ["Physical", "Audiobook", "Kindle"] as const;
+const mediumOrderSet = new Set<string>(mediumOrder);
 const sortCollator = new Intl.Collator("en-GB", {
   ignorePunctuation: true,
   numeric: true,
@@ -190,9 +188,7 @@ export function buildBookshelfViewModel(
       coverHue: 28 + (seed % 250),
       coverHeight: coverMap[key]?.height ?? 0,
       coverSrc: coverMap[key]?.src ?? "",
-      coverPlaceholderDataUrl: coverMap[key]?.placeholderDataUrl ?? "",
       coverWidth: coverMap[key]?.width ?? 0,
-      cacheKey: key,
     });
   });
 
@@ -200,7 +196,7 @@ export function buildBookshelfViewModel(
     const orderedMediums = [
       ...mediumOrder.filter((medium) => groupedBook.mediumSet.has(medium)),
       ...[...groupedBook.mediumSet]
-        .filter((medium) => !mediumOrder.includes(medium as (typeof mediumOrder)[number]))
+        .filter((medium) => !mediumOrderSet.has(medium))
         .toSorted((left, right) => left.localeCompare(right)),
     ];
 
@@ -213,10 +209,8 @@ export function buildBookshelfViewModel(
       sortAuthor: groupedBook.sortAuthor,
       coverHue: groupedBook.coverHue,
       coverHeight: groupedBook.coverHeight,
-      coverPlaceholderDataUrl: groupedBook.coverPlaceholderDataUrl,
       coverSrc: groupedBook.coverSrc,
       coverWidth: groupedBook.coverWidth,
-      cacheKey: groupedBook.cacheKey,
       authorSegments: splitAuthorSegments(groupedBook.author),
       mediumTags: orderedMediums.map((medium) => ({
         label: medium,
@@ -237,8 +231,6 @@ export function buildBookshelfViewModel(
         firstIndex: book.firstIndex,
         sortAuthor: book.sortAuthor,
         sortTitle: book.sortTitle,
-        coverSrc: book.coverSrc,
-        cacheKey: book.cacheKey,
       })),
     },
   };

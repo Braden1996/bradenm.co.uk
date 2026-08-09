@@ -1,7 +1,6 @@
 ---
 import type { BookViewModel } from "../lib/bookshelf-data";
 import BookshelfEmptyState from "../organisms/bookshelf-empty-state.astro";
-import BookshelfHeader from "../organisms/bookshelf-header.astro";
 import BookshelfList from "../organisms/bookshelf-list.astro";
 
 interface Props {
@@ -12,7 +11,6 @@ const { books } = Astro.props;
 ---
 
 <div class="bookshelf-page" data-bookshelf-page>
-  <BookshelfHeader />
   <BookshelfList books={books} />
   <BookshelfEmptyState />
 </div>

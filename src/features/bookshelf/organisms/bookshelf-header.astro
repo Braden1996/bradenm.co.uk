@@ -1,5 +1,6 @@
 ---
 import AnimatedChevronIcon from "../../../components/atoms/animated-chevron-icon.astro";
+import Chip from "../../../components/atoms/chip.astro";
 import OverlaySearchBar from "../../../components/molecules/overlay-search-bar.astro";
 
 interface Props {
@@ -11,31 +12,36 @@ const { searchId = "bookshelf-search" } = Astro.props;
 
 <div class="bookshelf-header">
   <div class="bookshelf-column-headings">
-    <OverlaySearchBar
-      class="bookshelf-heading-search"
-      id={searchId}
-      label="Search the shelf"
-      mode="heading"
-      placeholder="Search titles or authors"
-    >
-      <button
-        slot="heading-meta"
-        class="bookshelf-sort-toggle bookshelf-sort-toggle--desktop"
-        type="button"
-        data-sort-toggle="title"
-        data-sort-label="title"
-        data-sort-direction="asc"
-        aria-label="Sort by title. Currently ascending."
-        aria-pressed="true"
+    <div class="bookshelf-heading-search">
+      <OverlaySearchBar
+        id={searchId}
+        label="Search the shelf"
+        mode="heading"
+        placeholder="Search titles or authors"
       >
-        <span class="bookshelf-sort-label-text">Title</span>
-        <AnimatedChevronIcon class="bookshelf-sort-icon" />
-      </button>
-    </OverlaySearchBar>
+        <Chip
+          as="button"
+          slot="heading-meta"
+          class="bookshelf-sort-toggle bookshelf-sort-toggle--desktop"
+          interactive
+          type="button"
+          data-sort-toggle="title"
+          data-sort-label="title"
+          data-sort-direction="asc"
+          aria-label="Sort by title. Currently ascending."
+          aria-pressed="true"
+        >
+          <span class="bookshelf-sort-label-text">Title</span>
+          <AnimatedChevronIcon slot="endSymbol" class="bookshelf-sort-icon" />
+        </Chip>
+      </OverlaySearchBar>
+    </div>
 
     <span class="bookshelf-column-label bookshelf-column-label--title-author">
-      <button
+      <Chip
+        as="button"
         class="bookshelf-sort-toggle bookshelf-sort-toggle--mobile"
+        interactive
         type="button"
         data-sort-toggle="title"
         data-sort-label="title"
@@ -44,10 +50,12 @@ const { searchId = "bookshelf-search" } = Astro.props;
         aria-pressed="true"
       >
         <span class="bookshelf-sort-label-text">Title</span>
-        <AnimatedChevronIcon class="bookshelf-sort-icon" />
-      </button>
-      <button
+        <AnimatedChevronIcon slot="endSymbol" class="bookshelf-sort-icon" />
+      </Chip>
+      <Chip
+        as="button"
         class="bookshelf-sort-toggle bookshelf-sort-toggle--mobile"
+        interactive
         type="button"
         data-sort-toggle="author"
         data-sort-label="author"
@@ -56,13 +64,15 @@ const { searchId = "bookshelf-search" } = Astro.props;
         aria-pressed="false"
       >
         <span class="bookshelf-sort-label-text">Author</span>
-        <AnimatedChevronIcon class="bookshelf-sort-icon" />
-      </button>
+        <AnimatedChevronIcon slot="endSymbol" class="bookshelf-sort-icon" />
+      </Chip>
     </span>
 
     <span class="bookshelf-column-label bookshelf-column-label--author">
-      <button
+      <Chip
+        as="button"
         class="bookshelf-sort-toggle bookshelf-sort-toggle--desktop"
+        interactive
         type="button"
         data-sort-toggle="author"
         data-sort-label="author"
@@ -71,8 +81,8 @@ const { searchId = "bookshelf-search" } = Astro.props;
         aria-pressed="false"
       >
         <span class="bookshelf-sort-label-text">Author</span>
-        <AnimatedChevronIcon class="bookshelf-sort-icon" />
-      </button>
+        <AnimatedChevronIcon slot="endSymbol" class="bookshelf-sort-icon" />
+      </Chip>
     </span>
 
     <span class="bookshelf-column-label bookshelf-column-label--formats">Formats</span>
@@ -81,7 +91,11 @@ const { searchId = "bookshelf-search" } = Astro.props;
 
 <style>
   .bookshelf-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
     padding: 0 var(--bookshelf-inline-padding) 0.55rem;
+    background: var(--surface-panel-background);
   }
 
   .bookshelf-column-headings {
@@ -108,48 +122,19 @@ const { searchId = "bookshelf-search" } = Astro.props;
   }
 
   .bookshelf-sort-toggle {
-    appearance: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.28rem;
-    min-width: 0;
-    margin: -0.14rem -0.18rem;
-    padding: 0.14rem 0.18rem;
-    border: 0;
-    border-radius: 999px;
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    letter-spacing: inherit;
+    --chip-padding-block: 0.18rem;
+    --chip-padding-inline-base: 0.42rem;
+    --chip-padding-inline-symbol: 0.26rem;
+    --chip-gap: 0.24rem;
+    --chip-background-hover: var(--palette-white-05);
+    --chip-background-active: var(--palette-white-06);
+    --chip-background-active-hover: var(--palette-white-07);
+    color: var(--bookshelf-text-muted);
     line-height: 1;
-    opacity: 0.72;
-    text-transform: inherit;
-    transition:
-      background-color 180ms ease,
-      color 180ms ease,
-      opacity 180ms ease;
-  }
-
-  .bookshelf-sort-toggle:is(:hover, :focus-visible) {
-    background: var(--color-surface-interactive);
-    color: var(--color-text-primary);
     opacity: 1;
   }
 
-  .bookshelf-sort-toggle:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 1px var(--color-focus-ring);
-  }
-
-  .bookshelf-sort-toggle[data-sort-direction="asc"],
-  .bookshelf-sort-toggle[data-sort-direction="desc"] {
-    color: var(--color-text-primary);
-    opacity: 1;
-  }
-
-  .bookshelf-sort-toggle[data-sort-direction="asc"] :global(.animated-chevron-icon) {
+  .bookshelf-sort-toggle[data-sort-direction="asc"] {
     --animated-chevron-scale: 1.05;
     --animated-chevron-up-opacity: 1;
     --animated-chevron-down-opacity: 0;
@@ -159,7 +144,7 @@ const { searchId = "bookshelf-search" } = Astro.props;
     --animated-chevron-down-dashoffset: 0.18;
   }
 
-  .bookshelf-sort-toggle[data-sort-direction="desc"] :global(.animated-chevron-icon) {
+  .bookshelf-sort-toggle[data-sort-direction="desc"] {
     --animated-chevron-scale: 1.05;
     --animated-chevron-up-opacity: 0;
     --animated-chevron-down-opacity: 1;
@@ -179,28 +164,27 @@ const { searchId = "bookshelf-search" } = Astro.props;
 
   .bookshelf-sort-icon {
     display: block;
-    width: 1rem;
-    height: 1rem;
     flex: none;
   }
 
-  :global(.bookshelf-heading-search) {
+  .bookshelf-heading-search {
     --overlay-search-heading-gap: var(--bookshelf-column-gap);
     --overlay-search-heading-trigger-column: 1.6rem;
+    --overlay-search-heading-meta-color: var(--bookshelf-text-faint);
+    --overlay-search-heading-meta-font-size: 0.62rem;
+    --overlay-search-heading-meta-font-weight: 600;
+    --overlay-search-heading-meta-letter-spacing: 0.08em;
+    --overlay-search-heading-meta-line-height: 1;
+    --overlay-search-heading-meta-text-transform: uppercase;
+    --overlay-search-heading-meta-white-space: nowrap;
     grid-column: 1 / 3;
     min-width: 0;
     width: 100%;
     justify-self: stretch;
   }
 
-  :global(.bookshelf-heading-search .overlay-search-heading-meta) {
-    color: var(--bookshelf-text-faint);
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    text-transform: uppercase;
-    white-space: nowrap;
+  .bookshelf-heading-search > :first-child {
+    width: 100%;
   }
 
   .bookshelf-column-label--author {
@@ -249,7 +233,7 @@ const { searchId = "bookshelf-search" } = Astro.props;
       grid-row: 1;
     }
 
-    :global(.bookshelf-heading-search) {
+    .bookshelf-heading-search {
       grid-column: 1 / -1;
       grid-row: 2;
     }

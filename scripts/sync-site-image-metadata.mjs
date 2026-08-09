@@ -1,73 +1,85 @@
 #!/usr/bin/env node
 
-import { readdir, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import sharp from "sharp";
-import { rgbaToThumbHash, thumbHashToRGBA } from "thumbhash";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, "..");
+const projectRoot = path.resolve(import.meta.dirname, "..");
+const imageSourceDir = path.join(projectRoot, "images", "source");
+const careerSourceDir = path.join(imageSourceDir, "career");
 const publicDir = path.join(projectRoot, "public");
 const dataDir = path.join(projectRoot, "data");
-const careerDir = path.join(publicDir, "career");
+const careerOutputDir = path.join(publicDir, "career", "generated");
 const careerManifestPath = path.join(dataDir, "career-images.json");
 const profileManifestPath = path.join(dataDir, "profile-image.json");
+const careerMaxEdge = 384;
+const profileMaxEdge = 144;
+const supportedImageExtensions = new Set([".avif", ".jpg", ".jpeg", ".png", ".webp"]);
 
-async function createImageMetadata(inputPath) {
-  const image = sharp(inputPath).rotate();
-  const metadata = await image.metadata();
-  const width = metadata.width ?? 0;
-  const height = metadata.height ?? 0;
+async function createOptimizedWebp(inputPath, maxEdge) {
+  const { data, info } = await sharp(inputPath)
+    .rotate()
+    .resize({
+      width: maxEdge,
+      height: maxEdge,
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .webp({
+      quality: 82,
+      alphaQuality: 100,
+      effort: 6,
+      smartSubsample: true,
+    })
+    .toBuffer({ resolveWithObject: true });
+  const width = info.width;
+  const height = info.height;
 
   if (!width || !height) {
     throw new Error(`Missing dimensions for image: ${inputPath}`);
   }
 
-  const { data, info } = await image
-    .resize({
-      width: 100,
-      height: 100,
-      fit: "inside",
-      withoutEnlargement: true,
-    })
-    .ensureAlpha()
-    .raw()
-    .toBuffer({ resolveWithObject: true });
-
-  const thumbhashBytes = rgbaToThumbHash(info.width, info.height, data);
-  const { w, h, rgba } = thumbHashToRGBA(thumbhashBytes);
-  const placeholderBuffer = await sharp(Buffer.from(rgba), {
-    raw: {
-      width: w,
-      height: h,
-      channels: 4,
-    },
-  })
-    .png({
-      compressionLevel: 9,
-    })
-    .toBuffer();
-
   return {
+    data,
     width,
     height,
-    thumbhash: Buffer.from(thumbhashBytes).toString("base64"),
-    placeholderDataUrl: `data:image/png;base64,${placeholderBuffer.toString("base64")}`,
   };
 }
 
 async function syncCareerImages() {
-  const fileNames = (await readdir(careerDir))
-    .filter((fileName) => !fileName.startsWith("."))
+  const fileNames = (await readdir(careerSourceDir, { withFileTypes: true }))
+    .filter(
+      (entry) =>
+        entry.isFile() && supportedImageExtensions.has(path.extname(entry.name).toLowerCase()),
+    )
+    .map((entry) => entry.name)
     .toSorted((left, right) => left.localeCompare(right));
+
+  await rm(careerOutputDir, { recursive: true, force: true });
+  await mkdir(careerOutputDir, { recursive: true });
+
   const imageEntries = await Promise.all(
     fileNames.map(async (fileName) => {
-      const publicPath = `/career/${fileName}`;
-      const metadata = await createImageMetadata(path.join(careerDir, fileName));
+      // Career content keeps its existing source path as a stable manifest lookup key.
+      const sourceKey = `/career/${fileName}`;
+      const { data, width, height } = await createOptimizedWebp(
+        path.join(careerSourceDir, fileName),
+        careerMaxEdge,
+      );
+      const fingerprint = createHash("sha256").update(data).digest("hex").slice(0, 12);
+      const outputFileName = `${path.parse(fileName).name}.${fingerprint}.webp`;
 
-      return [publicPath, metadata];
+      await writeFile(path.join(careerOutputDir, outputFileName), data);
+
+      return [
+        sourceKey,
+        {
+          src: `/career/generated/${outputFileName}`,
+          width,
+          height,
+        },
+      ];
     }),
   );
   const images = Object.fromEntries(imageEntries);
@@ -76,12 +88,17 @@ async function syncCareerImages() {
 }
 
 async function syncProfileImage() {
-  const src = "/braden.jpg";
-  const metadata = await createImageMetadata(path.join(publicDir, src));
+  const src = "/braden.webp";
+  const { data, width, height } = await createOptimizedWebp(
+    path.join(imageSourceDir, "braden.jpg"),
+    profileMaxEdge,
+  );
+
+  await writeFile(path.join(publicDir, src), data);
 
   await writeFile(
     profileManifestPath,
-    `${JSON.stringify({ src, ...metadata }, null, 2)}\n`,
+    `${JSON.stringify({ src, width, height }, null, 2)}\n`,
     "utf8",
   );
 }

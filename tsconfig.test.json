@@ -1,11 +1,17 @@
 {
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
+    "checkJs": true,
     "composite": true,
-    "strict": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "target": "esnext",
-    "skipLibCheck": true
+    "erasableSyntaxOnly": true,
+    "noUncheckedSideEffectImports": true,
+    "types": ["bun"]
   },
-  "include": []
+  "include": [
+    ".prettierrc.mjs",
+    "astro.config.mjs",
+    "knip.ts",
+    "src/features/bookshelf/lib/bookshelf-data.ts",
+    "tests/**/*.js"
+  ]
 }

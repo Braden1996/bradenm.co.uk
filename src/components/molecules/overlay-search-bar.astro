@@ -95,15 +95,36 @@ const hasHeadingMetaSlot = Astro.slots.has("heading-meta");
 
 <script>
   const HEADING_MOBILE_MEDIA_QUERY = "(max-width: 760px)";
+  const controllers = new WeakMap<HTMLElement, AbortController>();
+
+  const getOverlaySearchRoots = (scope: ParentNode = document) => {
+    const roots =
+      scope instanceof HTMLElement && scope.matches("[data-overlay-search]") ? [scope] : [];
+
+    if ("querySelectorAll" in scope) {
+      roots.push(...scope.querySelectorAll<HTMLElement>("[data-overlay-search]"));
+    }
+
+    return roots;
+  };
+
+  const destroyOverlaySearchBars = (scope: ParentNode = document) => {
+    for (const root of getOverlaySearchRoots(scope)) {
+      controllers.get(root)?.abort();
+      controllers.delete(root);
+    }
+  };
 
   const initializeOverlaySearchBars = () => {
-    const roots = document.querySelectorAll<HTMLElement>("[data-overlay-search]");
-
-    for (const root of roots) {
-      if (root.dataset.overlaySearchInitialized === "true") {
+    for (const root of getOverlaySearchRoots()) {
+      if (controllers.has(root)) {
         continue;
       }
 
+      const controller = new AbortController();
+      const { signal } = controller;
+
+      controllers.set(root, controller);
       root.dataset.overlaySearchInitialized = "true";
 
       const mode = root.dataset.overlaySearchMode ?? "overlay";
@@ -172,38 +193,46 @@ const hasHeadingMetaSlot = Astro.slots.has("heading-meta");
       };
 
       if (trigger) {
-        trigger.addEventListener("click", () => open(true));
+        trigger.addEventListener("click", () => open(true), { signal });
       }
 
-      input.addEventListener("focus", () => open());
-      input.addEventListener("keydown", (event) => {
-        if (event.key !== "Escape") {
-          return;
-        }
-
-        if (input.value.length > 0) {
-          input.value = "";
-          input.dispatchEvent(new Event("input", { bubbles: true }));
-          return;
-        }
-
-        close(true);
-      });
-
-      root.addEventListener("focusout", () => {
-        requestAnimationFrame(() => {
-          if (!root.contains(document.activeElement)) {
-            close();
+      input.addEventListener("focus", () => open(), { signal });
+      input.addEventListener(
+        "keydown",
+        (event) => {
+          if (event.key !== "Escape") {
+            return;
           }
-        });
-      });
+
+          if (input.value.length > 0) {
+            input.value = "";
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+            return;
+          }
+
+          close(true);
+        },
+        { signal },
+      );
+
+      root.addEventListener(
+        "focusout",
+        () => {
+          requestAnimationFrame(() => {
+            if (!root.contains(document.activeElement)) {
+              close();
+            }
+          });
+        },
+        { signal },
+      );
 
       if (mode === "heading" && mobileQuery) {
         const syncWithViewport = () => {
           syncOpenState(input.value.trim() !== "");
         };
 
-        mobileQuery.addEventListener("change", syncWithViewport);
+        mobileQuery.addEventListener("change", syncWithViewport, { signal });
       }
 
       syncOpenState(input.value.trim() !== "");
@@ -222,6 +251,7 @@ const hasHeadingMetaSlot = Astro.slots.has("heading-meta");
 
   if (!document.documentElement.dataset.overlaySearchBarsBound) {
     document.documentElement.dataset.overlaySearchBarsBound = "true";
+    document.addEventListener("astro:before-swap", () => destroyOverlaySearchBars());
     document.addEventListener("astro:page-load", initializeOverlaySearchBars);
   }
 </script>
@@ -395,6 +425,13 @@ const hasHeadingMetaSlot = Astro.slots.has("heading-meta");
     align-items: center;
     gap: var(--overlay-search-heading-label-gap, 0.18rem);
     min-width: 0;
+    color: var(--overlay-search-heading-meta-color, inherit);
+    font-size: var(--overlay-search-heading-meta-font-size, inherit);
+    font-weight: var(--overlay-search-heading-meta-font-weight, inherit);
+    letter-spacing: var(--overlay-search-heading-meta-letter-spacing, normal);
+    line-height: var(--overlay-search-heading-meta-line-height, normal);
+    text-transform: var(--overlay-search-heading-meta-text-transform, none);
+    white-space: var(--overlay-search-heading-meta-white-space, normal);
     transition:
       opacity 140ms ease,
       transform 220ms cubic-bezier(0.22, 1, 0.36, 1);

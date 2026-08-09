@@ -22,12 +22,13 @@ const { class: className, initialFade = "none", tone = "default", ...rest } = As
 </div>
 
 <script>
-  import { initScrollFades } from "../../scripts/scroll-fade";
+  import { destroyScrollFades, initScrollFades } from "../../scripts/scroll-fade";
 
   initScrollFades();
 
   if (!document.documentElement.dataset.scrollFadeBound) {
     document.documentElement.dataset.scrollFadeBound = "true";
+    document.addEventListener("astro:before-swap", () => destroyScrollFades());
     document.addEventListener("astro:page-load", () => initScrollFades());
   }
 </script>

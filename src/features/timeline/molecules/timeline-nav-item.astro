@@ -25,16 +25,13 @@ const isSelected = entry.slug === selectedSlug;
         {
           entry.logoSrc ? (
             <ProgressiveImage
-              placeholderClass="timeline-logo-placeholder"
-              placeholderSrc={entry.logoPlaceholderDataUrl}
               class="timeline-logo"
               src={entry.logoSrc}
               alt={`${entry.organisation} logo`}
               width={entry.logoWidth}
               height={entry.logoHeight}
-              loading="eager"
-              decoding="sync"
-              fetchpriority="high"
+              loading="lazy"
+              decoding="async"
             />
           ) : (
             <span class="timeline-fallback" aria-hidden="true">
@@ -96,7 +93,7 @@ const isSelected = entry.slug === selectedSlug;
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 2.75rem minmax(0, 1fr);
+    grid-template-columns: var(--timeline-nav-logo-size) minmax(0, 1fr);
     gap: 0.9rem;
     align-items: center;
     padding: 0.52rem 0.58rem 0.52rem 0;
@@ -119,8 +116,8 @@ const isSelected = entry.slug === selectedSlug;
     position: relative;
     display: grid;
     place-items: center;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: var(--timeline-nav-logo-size);
+    height: var(--timeline-nav-logo-size);
     padding: 0.08rem;
     border-radius: 0.9rem;
     background: var(--color-surface-panel);
@@ -133,25 +130,17 @@ const isSelected = entry.slug === selectedSlug;
       opacity 180ms ease;
   }
 
-  .timeline-logo-shell :global(.timeline-logo),
-  .timeline-logo-shell :global(.timeline-logo-placeholder),
+  .timeline-logo,
   .timeline-fallback {
     grid-area: 1 / 1;
     width: 100%;
     height: 100%;
-    display: block;
     border-radius: 0.72rem;
   }
 
-  .timeline-logo-shell :global(.timeline-logo-placeholder) {
-    transform: scale(1.04);
-    filter: blur(5px) saturate(1.08) contrast(1.04);
-  }
-
-  .timeline-logo-shell :global(.timeline-logo) {
-    object-fit: contain;
-    position: relative;
-    z-index: 1;
+  .timeline-logo {
+    --progressive-image-fit: contain;
+    --progressive-image-radius: 0.72rem;
   }
 
   .timeline-fallback {
@@ -209,7 +198,7 @@ const isSelected = entry.slug === selectedSlug;
     opacity: 0.58;
   }
 
-  .timeline-entry:has(~ .timeline-entry[data-selected="true"]) :global(.timeline-logo),
+  .timeline-entry:has(~ .timeline-entry[data-selected="true"]) .timeline-logo,
   .timeline-entry:has(~ .timeline-entry[data-selected="true"]) .timeline-fallback {
     opacity: 0.68;
   }

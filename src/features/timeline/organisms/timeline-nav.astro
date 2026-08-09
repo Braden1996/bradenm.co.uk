@@ -11,7 +11,7 @@ interface Props {
 const { entries, activeSlug } = Astro.props;
 ---
 
-<aside class="timeline-nav" data-timeline-nav transition:persist aria-label="Career timeline">
+<aside class="timeline-nav" data-timeline-nav aria-label="Career timeline">
   <ScrollFadeFrame class="timeline-nav-frame" initialFade="bottom" tone="subtle">
     <ol class="timeline-list" data-scroll-fade-viewport>
       {entries.map((entry) => <TimelineNavItem entry={entry} selectedSlug={activeSlug} />)}
@@ -26,6 +26,7 @@ const { entries, activeSlug } = Astro.props;
     min-width: 0;
     min-height: 0;
     position: relative;
+    padding-left: var(--timeline-nav-edge-padding);
     padding-right: 1.1rem;
     border-right: 1px solid var(--color-border-soft);
     overflow: hidden;
@@ -38,7 +39,7 @@ const { entries, activeSlug } = Astro.props;
 
   .timeline-list {
     --timeline-entry-gap: 0.2rem;
-    --timeline-line-left: 1.36rem;
+    --timeline-line-left: calc(var(--timeline-nav-logo-size) / 2);
     --timeline-line-width: 2px;
     list-style: none;
     position: relative;
@@ -57,6 +58,7 @@ const { entries, activeSlug } = Astro.props;
   @media (max-width: 760px) {
     .timeline-nav {
       flex: 1 1 auto;
+      padding-left: 0;
       padding-right: 0;
       border-right: none;
       overflow: visible;

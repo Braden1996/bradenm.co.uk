@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
+import { createHash } from "node:crypto";
 import { mkdir, readFile, readdir, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import sharp from "sharp";
-import { rgbaToThumbHash, thumbHashToRGBA } from "thumbhash";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, "..");
+const projectRoot = path.resolve(import.meta.dirname, "..");
 const csvPath = path.join(projectRoot, "data", "bookshelf.csv");
 const manifestPath = path.join(projectRoot, "data", "bookshelf-covers.json");
-const publicManifestPath = path.join(projectRoot, "public", "bookshelf", "manifest.json");
 const coverDir = path.join(projectRoot, "public", "bookshelf", "covers");
 const publicCoverPrefix = "/bookshelf/covers";
+const coverAssetVersion = 1;
+const coverOutputWidth = 96;
+const coverWebpQuality = 80;
+const coverFingerprintLength = 12;
 const force = process.argv.includes("--force");
 const concurrency = 4;
 
@@ -123,32 +123,6 @@ function buildAuthorVariants(book) {
   return [...variants].filter((value) => value && value !== "Unknown author");
 }
 
-function extensionFromContentType(contentType, fallbackUrl = "") {
-  if (contentType.includes("image/jpeg")) {
-    return ".jpg";
-  }
-
-  if (contentType.includes("image/png")) {
-    return ".png";
-  }
-
-  if (contentType.includes("image/webp")) {
-    return ".webp";
-  }
-
-  if (contentType.includes("image/gif")) {
-    return ".gif";
-  }
-
-  const extension = path.extname(new URL(fallbackUrl).pathname);
-
-  if (extension) {
-    return extension.toLowerCase();
-  }
-
-  return ".jpg";
-}
-
 async function fileExists(targetPath) {
   try {
     await stat(targetPath);
@@ -194,6 +168,7 @@ async function readManifest() {
     const manifest = JSON.parse(raw);
 
     return {
+      assetVersion: Number(manifest.assetVersion ?? 0),
       updatedAt: manifest.updatedAt ?? null,
       coverCount: Number(manifest.coverCount ?? 0),
       missingCount: Number(manifest.missingCount ?? 0),
@@ -202,6 +177,7 @@ async function readManifest() {
     };
   } catch {
     return {
+      assetVersion: 0,
       updatedAt: null,
       coverCount: 0,
       missingCount: 0,
@@ -211,46 +187,41 @@ async function readManifest() {
   }
 }
 
-async function createCoverMetadata(input) {
-  const image = sharp(input).rotate();
-  const metadata = await image.metadata();
-  const width = metadata.width ?? 0;
-  const height = metadata.height ?? 0;
+function buildCoverFileBase(book) {
+  return `${slugify(book.title)}.${slugify(book.author)}`.slice(0, 120);
+}
 
-  if (!width || !height) {
+async function writeOptimizedCover(book, input) {
+  const { data, info } = await sharp(input)
+    .rotate()
+    .resize({
+      width: coverOutputWidth,
+      withoutEnlargement: true,
+    })
+    .webp({
+      effort: 6,
+      quality: coverWebpQuality,
+      smartSubsample: true,
+    })
+    .toBuffer({ resolveWithObject: true });
+
+  if (!info.width || !info.height) {
     throw new Error("Missing dimensions for bookshelf cover");
   }
 
-  const { data, info } = await image
-    .resize({
-      width: 100,
-      height: 100,
-      fit: "inside",
-      withoutEnlargement: true,
-    })
-    .ensureAlpha()
-    .raw()
-    .toBuffer({ resolveWithObject: true });
+  const fingerprint = createHash("sha256")
+    .update(data)
+    .digest("hex")
+    .slice(0, coverFingerprintLength);
+  const filename = `${buildCoverFileBase(book)}.${fingerprint}.webp`;
 
-  const thumbhashBytes = rgbaToThumbHash(info.width, info.height, data);
-  const { w, h, rgba } = thumbHashToRGBA(thumbhashBytes);
-  const placeholderBuffer = await sharp(Buffer.from(rgba), {
-    raw: {
-      width: w,
-      height: h,
-      channels: 4,
-    },
-  })
-    .png({
-      compressionLevel: 9,
-    })
-    .toBuffer();
+  await writeFile(path.join(coverDir, filename), data);
 
   return {
-    width,
-    height,
-    thumbhash: Buffer.from(thumbhashBytes).toString("base64"),
-    placeholderDataUrl: `data:image/png;base64,${placeholderBuffer.toString("base64")}`,
+    filename,
+    src: `${publicCoverPrefix}/${filename}`,
+    width: info.width,
+    height: info.height,
   };
 }
 
@@ -414,21 +385,9 @@ async function downloadCover(book, candidate) {
     throw new Error(`Image download failed with ${response.status}`);
   }
 
-  const contentType = response.headers.get("content-type") ?? "";
-  const extension = extensionFromContentType(contentType, candidate.imageUrl);
-  const fileBase = `${slugify(book.title)}.${slugify(book.author)}`.slice(0, 120);
-  const filename = `${fileBase}${extension}`;
-  const outputPath = path.join(coverDir, filename);
   const bytes = Buffer.from(await response.arrayBuffer());
-  const placeholderMetadata = await createCoverMetadata(bytes);
 
-  await writeFile(outputPath, bytes);
-
-  return {
-    filename,
-    src: `${publicCoverPrefix}/${filename}`,
-    ...placeholderMetadata,
-  };
+  return writeOptimizedCover(book, bytes);
 }
 
 async function removeIfExists(targetPath) {
@@ -437,26 +396,46 @@ async function removeIfExists(targetPath) {
   }
 }
 
-async function reuseExistingCover(book, existingCover) {
-  const extension = path.extname(existingCover.filename) || ".jpg";
-  const fileBase = `${slugify(book.title)}.${slugify(book.author)}`.slice(0, 120);
-  const filename = `${fileBase}${extension}`;
+async function reuseExistingCover(book, existingCover, assetsAreCurrent) {
   const currentPath = path.join(coverDir, existingCover.filename);
-  const nextPath = path.join(coverDir, filename);
+  const fingerprint = existingCover.filename.match(/\.([a-f0-9]{12})\.webp$/)?.[1];
+  const canKeepAsset =
+    assetsAreCurrent &&
+    fingerprint &&
+    Number(existingCover.width) > 0 &&
+    Number(existingCover.height) > 0;
+  let asset;
 
-  if (existingCover.filename !== filename && (await fileExists(currentPath))) {
-    await removeIfExists(nextPath);
-    await rename(currentPath, nextPath);
+  if (canKeepAsset) {
+    const filename = `${buildCoverFileBase(book)}.${fingerprint}.webp`;
+    const nextPath = path.join(coverDir, filename);
+
+    if (existingCover.filename !== filename) {
+      await removeIfExists(nextPath);
+      await rename(currentPath, nextPath);
+    }
+
+    asset = {
+      filename,
+      src: `${publicCoverPrefix}/${filename}`,
+      width: Number(existingCover.width),
+      height: Number(existingCover.height),
+    };
+  } else {
+    asset = await writeOptimizedCover(book, currentPath);
   }
 
+  const metadataMatches =
+    existingCover.title === book.title && existingCover.author === book.author;
+
   return {
-    ...existingCover,
     title: book.title,
     author: book.author,
-    filename,
-    src: `${publicCoverPrefix}/${filename}`,
-    matchedTitle: book.title,
-    matchedAuthor: book.author,
+    ...asset,
+    provider: existingCover.provider,
+    matchedTitle: metadataMatches ? existingCover.matchedTitle : book.title,
+    matchedAuthor: metadataMatches ? existingCover.matchedAuthor : book.author,
+    fetchedAt: existingCover.fetchedAt,
   };
 }
 
@@ -524,6 +503,7 @@ async function main() {
 
   const books = [...groupedBooks.values()].toSorted((left, right) => left.index - right.index);
   const existingManifest = await readManifest();
+  const assetsAreCurrent = existingManifest.assetVersion === coverAssetVersion;
   const existingTitleIndex = buildExistingTitleIndex(existingManifest.covers);
   const nextCovers = {};
   const missing = [];
@@ -539,25 +519,8 @@ async function main() {
     const existingPath = existing?.filename ? path.join(coverDir, existing.filename) : "";
 
     if (!force && existing?.src && existingPath && (await fileExists(existingPath))) {
-      const reusable =
-        existing.title === book.title && existing.author === book.author
-          ? existing
-          : await reuseExistingCover(book, existing);
-      const placeholderMetadata =
-        reusable.width && reusable.height && reusable.thumbhash && reusable.placeholderDataUrl
-          ? {
-              width: reusable.width,
-              height: reusable.height,
-              thumbhash: reusable.thumbhash,
-              placeholderDataUrl: reusable.placeholderDataUrl,
-            }
-          : await createCoverMetadata(path.join(coverDir, reusable.filename));
-
-      nextCovers[book.key] = {
-        ...reusable,
-        ...placeholderMetadata,
-      };
-      console.log(`[bookshelf:covers] ${reusable === existing ? "Keep " : "Reuse"} ${book.title}`);
+      nextCovers[book.key] = await reuseExistingCover(book, existing, assetsAreCurrent);
+      console.log(`[bookshelf:covers] ${assetsAreCurrent ? "Keep " : "Build"} ${book.title}`);
       return;
     }
 
@@ -584,8 +547,8 @@ async function main() {
       author: book.author,
       filename: downloaded.filename,
       src: downloaded.src,
-      thumbhash: downloaded.thumbhash,
-      placeholderDataUrl: downloaded.placeholderDataUrl,
+      width: downloaded.width,
+      height: downloaded.height,
       provider: candidate.provider,
       matchedTitle: candidate.matchedTitle,
       matchedAuthor: candidate.matchedAuthor,
@@ -596,6 +559,7 @@ async function main() {
   });
 
   const manifest = {
+    assetVersion: coverAssetVersion,
     updatedAt: new Date().toISOString(),
     coverCount: Object.keys(nextCovers).length,
     missingCount: missing.length,
@@ -618,10 +582,9 @@ async function main() {
   );
 
   await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
-  await writeFile(publicManifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 
   console.log(
-    `[bookshelf:covers] Complete. Downloaded ${manifest.coverCount} covers, ${manifest.missingCount} still missing.`,
+    `[bookshelf:covers] Complete. ${manifest.coverCount} covers available, ${manifest.missingCount} still missing.`,
   );
 }
 

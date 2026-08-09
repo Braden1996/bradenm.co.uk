@@ -1,4 +1,9 @@
-const controllers = new WeakMap<HTMLElement, { scheduleUpdate: () => void }>();
+type ScrollFadeController = {
+  destroy: () => void;
+  scheduleUpdate: () => void;
+};
+
+const controllers = new WeakMap<HTMLElement, ScrollFadeController>();
 
 function updateScrollFade(root: HTMLElement, viewport: HTMLElement) {
   const edgeFadeDistance =
@@ -39,6 +44,7 @@ function initScrollFadeRoot(root: HTMLElement) {
 
   const viewport = rawViewport;
   let frame = 0;
+  let observer: ResizeObserver | undefined;
 
   function scheduleUpdate() {
     if (frame) {
@@ -51,19 +57,33 @@ function initScrollFadeRoot(root: HTMLElement) {
     });
   }
 
+  const controller: ScrollFadeController = {
+    destroy() {
+      if (frame) {
+        cancelAnimationFrame(frame);
+        frame = 0;
+      }
+
+      viewport.removeEventListener("scroll", scheduleUpdate);
+      observer?.disconnect();
+      controllers.delete(root);
+    },
+    scheduleUpdate,
+  };
+
   viewport.addEventListener("scroll", scheduleUpdate, { passive: true });
 
   if (typeof ResizeObserver !== "undefined") {
-    const observer = new ResizeObserver(scheduleUpdate);
+    observer = new ResizeObserver(scheduleUpdate);
     observer.observe(root);
     observer.observe(viewport);
   }
 
-  controllers.set(root, { scheduleUpdate });
+  controllers.set(root, controller);
   scheduleUpdate();
 }
 
-export function initScrollFades(scope: ParentNode = document) {
+function getScrollFadeRoots(scope: ParentNode) {
   const roots =
     scope instanceof HTMLElement && scope.matches("[data-scroll-fade-root]") ? [scope] : [];
 
@@ -71,7 +91,17 @@ export function initScrollFades(scope: ParentNode = document) {
     roots.push(...scope.querySelectorAll<HTMLElement>("[data-scroll-fade-root]"));
   }
 
-  for (const root of roots) {
+  return roots;
+}
+
+export function initScrollFades(scope: ParentNode = document) {
+  for (const root of getScrollFadeRoots(scope)) {
     initScrollFadeRoot(root);
+  }
+}
+
+export function destroyScrollFades(scope: ParentNode = document) {
+  for (const root of getScrollFadeRoots(scope)) {
+    controllers.get(root)?.destroy();
   }
 }

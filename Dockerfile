@@ -1,6 +1,9 @@
 # Stage 1: Subset fonts
-FROM python:3.13-slim AS fonts
-RUN pip install --no-cache-dir fonttools brotli
+FROM python:3.14.6-slim AS fonts
+RUN python -m pip install --no-cache-dir --root-user-action=ignore --upgrade \
+  pip==26.2.1 \
+  fonttools==4.63.0 \
+  brotli==1.2.0
 WORKDIR /fonts
 COPY fonts/source/inter-regular.woff2 ./inter-regular.woff2
 RUN pyftsubset inter-regular.woff2 \
@@ -15,7 +18,7 @@ FROM scratch AS fonts-out
 COPY --from=fonts /fonts/inter-regular.subset.woff2 /inter-regular.subset.woff2
 
 # Stage 2: Build site
-FROM oven/bun:1 AS build
+FROM oven/bun:1.3.14 AS build
 WORKDIR /app
 COPY package.json bun.lock* ./
 RUN bun install --frozen-lockfile
