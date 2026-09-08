@@ -1,5 +1,5 @@
 # Stage 1: Subset fonts
-FROM python:3.14.6-slim AS fonts
+FROM python:3.14.7-slim AS fonts
 RUN python -m pip install --no-cache-dir --root-user-action=ignore --upgrade \
   pip==26.2.1 \
   fonttools==4.63.0 \
@@ -61,7 +61,7 @@ COPY --from=fonts /fonts/newsreader-regular.subset.woff2 /newsreader-regular.sub
 COPY --from=fonts /fonts/newsreader-italic.subset.woff2 /newsreader-italic.subset.woff2
 
 # Stage 2: Build site
-FROM oven/bun:1.3.14 AS build
+FROM oven/bun:1.4.2 AS build
 WORKDIR /app
 COPY package.json bun.lock* ./
 RUN bun install --frozen-lockfile
