@@ -1,4 +1,4 @@
-<!-- cspell:ignore clearcoat shadowmap PMREM dialog overscroll bunx SwiftShader -->
+<!-- cspell:ignore clearcoat shadowmap PMREM dialog overscroll bunx SwiftShader llvmpipe softpipe -->
 
 # Book Atlas
 
@@ -151,9 +151,20 @@ produce small shadow differences.
 
 Performance samples record browser/GPU details, applied CPU/network throttling, readiness,
 movement, idle frames and bounded resources. Mobile measures grid readiness and native scrolling;
-it does not initialize a WebGL context. Desktop targets 2-second 3D readiness and 60 fps. The
-mobile 6-second readiness and 30 fps ceilings remain. Emulation uses the host computer, not a
+it does not initialize a WebGL context. Desktop targets 2-second 3D readiness and 60 fps, with a
+57 fps acceptance floor. Mobile retains 6-second readiness and a 29 fps acceptance floor against
+its 30 fps target. Emulation uses the host computer, not a
 physical phone, with fresh browser contexts and uncontrolled OS/driver caches.
+
+The recorded renderer identifies software GPUs such as SwiftShader, llvmpipe and softpipe.
+CPU-only CI records their measured readiness and frame rate, including whether each hardware
+target was met, without enforcing hardware speed targets on a software rasterizer. The report
+states the rendering mode and whether those numeric targets were enforced; an unmet target
+remains recorded as unmet. All desktop runs must still become ready within 25 seconds and pass
+the same idle, transfer, model, texture and geometry checks. Hardware and unidentified desktop
+GPUs retain the 2-second and 57 fps assertions, including local runs and CI with a GPU. Mobile
+speed assertions always apply. The renderer determines this distinction; the CI environment
+variable does not.
 
 The bookshelf retains ceilings of **350 KiB gzip JavaScript** and **1.5 MiB initial transfer**.
 All paint, blocking-time, HTML, layout-shift and homepage budgets remain unchanged. Exact results

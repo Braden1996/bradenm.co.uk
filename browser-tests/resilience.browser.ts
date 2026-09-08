@@ -13,7 +13,10 @@ async function settledRoom(page: Page, room: "letter" | "bookshelf") {
 
 test("a lost portrait context returns to the complete accessible print", async ({ page }) => {
   await page.goto("/");
-  await page.locator(".about-portrait").focus();
+  const portrait = page.locator(".about-portrait");
+  // The SSR image becomes keyboard-interactive only when its intent handlers are mounted.
+  await expect(portrait).toHaveAttribute("role", "button");
+  await portrait.focus();
   await page.keyboard.press("Enter");
   await expect(page.locator("[data-about-portrait]")).toHaveAttribute("data-motion-ready", "true");
   await page.waitForLoadState("networkidle");
@@ -24,7 +27,6 @@ test("a lost portrait context returns to the complete accessible print", async (
     if (!extension) throw new Error("The browser must support simulating WebGL context loss");
     extension.loseContext();
   });
-  const portrait = page.locator(".about-portrait");
   await expect(portrait).toHaveAttribute("data-enhancement-unavailable");
   await expect(portrait).toHaveAttribute("role", "img");
   await expect(portrait).not.toHaveAttribute("tabindex");

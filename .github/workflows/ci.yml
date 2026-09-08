@@ -116,11 +116,15 @@ jobs:
           name: site-dist-${{ github.sha }}
           path: dist/
 
-      - name: Browser behavior
-        run: bun run check:browser
-
       - name: Performance budgets
+        id: performance
         run: bun run check:performance
+
+      - name: Browser behavior
+        if: >-
+          !cancelled() &&
+          (steps.performance.outcome == 'success' || steps.performance.outcome == 'failure')
+        run: bun run check:browser
 
       - name: Save browser and performance evidence
         if: always()

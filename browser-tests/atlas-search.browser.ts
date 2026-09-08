@@ -13,6 +13,34 @@ async function centers(page: Page) {
   );
 }
 
+async function focusDuringArrangement(page: Page, pickedIndex: number | null = null) {
+  await page.locator(atlasSelector).evaluate((atlas: HTMLElement, index) => {
+    const search = document.querySelector<HTMLInputElement>("[data-search-input]");
+    const book =
+      index === null
+        ? null
+        : document.querySelectorAll<HTMLButtonElement>("[data-book-open]")[index];
+    if (!search || (index !== null && !book)) throw new Error("Missing search interaction target");
+    return new Promise<void>((resolve, reject) => {
+      // Observe the short transition in the page before another automation round trip can miss it.
+      const observer = new MutationObserver(() => {
+        if (atlas.dataset.atlasArranging !== "true") return;
+        observer.disconnect();
+        clearTimeout(timeout);
+        // Picking here guarantees that the book is selected while the arrangement is still moving.
+        book?.click();
+        resolve();
+      });
+      const timeout = window.setTimeout(() => {
+        observer.disconnect();
+        reject(new Error("Search focus did not start an atlas arrangement within 10 seconds"));
+      }, 10_000);
+      observer.observe(atlas, { attributes: true, attributeFilter: ["data-atlas-arranging"] });
+      search.focus();
+    });
+  }, pickedIndex);
+}
+
 test("focus gathers the live table into rows and an empty blur restores the scatter", async ({
   page,
 }) => {
@@ -20,9 +48,8 @@ test("focus gathers the live table into rows and an empty blur restores the scat
   const atlas = page.locator(atlasSelector);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   const original = await centers(page);
-  await page.locator("[data-search-input]").focus();
+  await focusDuringArrangement(page);
   await expect(atlas).toHaveAttribute("data-atlas-arrangement", "rows");
-  await expect(atlas).toHaveAttribute("data-atlas-arranging", "true");
   await settled(page);
   const rows = await centers(page);
   expect(rows[0]?.y).toBeCloseTo(rows[1]?.y ?? -1, 1);
@@ -87,10 +114,8 @@ test("a book picked up mid-transition returns safely before the layout continues
   await page.goto("/bookshelf");
   const atlas = page.locator(atlasSelector);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
-  await page.locator("[data-search-input]").focus();
-  await expect(atlas).toHaveAttribute("data-atlas-arranging", "true");
   const book = page.locator("[data-book-open]").nth(20);
-  await book.dispatchEvent("click");
+  await focusDuringArrangement(page, 20);
   const dialog = page.locator("[data-book-inspector]");
   await expect(dialog).toHaveAttribute("data-inspector-ready", "true");
   await settled(page);

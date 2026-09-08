@@ -128,6 +128,12 @@ of cold portrait enhancement. The latter records intent-to-ready timing, long ta
 and GPU context without claiming a portable hardware budget. Its browser and resource caches are
 fresh; operating-system and driver caches are uncontrolled.
 
+The atlas report in `artifacts/atlas/` identifies the WebGL renderer. Desktop readiness and frame
+rate targets require hardware acceleration; positively identified software renderers record these
+measurements and target comparisons without treating them as hardware results. Readiness completion,
+idle frames, transfer size and GPU resource limits remain checked on both renderer types. Mobile
+grid budgets and all Lighthouse budgets remain enforced.
+
 The browser suite covers direct and cached routes, loading failures and CSS readiness, rapid reversals,
 metadata, native link behaviour, pre-initialization search, stable ordering, no-JavaScript use,
 blocked scripts and delayed fonts, breakpoints and DPR 1/2/3, reduced motion, Save-Data, unavailable

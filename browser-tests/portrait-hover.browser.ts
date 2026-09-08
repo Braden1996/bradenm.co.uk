@@ -1,4 +1,4 @@
-// cspell:ignore networkidle
+// cspell:ignore networkidle SwiftShader llvmpipe softpipe
 import { expect, test, type Page } from "@playwright/test";
 
 async function displacedDots(page: Page) {
@@ -42,9 +42,24 @@ test("hover parts the portrait dots without pressing, then they spring home", as
   await page.goto("/");
   await page.waitForLoadState("networkidle");
   const portrait = page.locator(".about-portrait");
+  await expect(portrait).toHaveAttribute("role", "button");
   await portrait.focus();
   await page.keyboard.press("Enter");
   await expect(page.locator("[data-about-portrait]")).toHaveAttribute("data-motion-ready", "true");
+  const gpu = await page
+    .locator("[data-about-portrait-canvas]")
+    .evaluate((canvas: HTMLCanvasElement) => {
+      const gl = canvas.getContext("webgl2");
+      const info = gl?.getExtension("WEBGL_debug_renderer_info");
+      return gl ? String(gl.getParameter(info?.UNMASKED_RENDERER_WEBGL ?? gl.RENDERER)) : "";
+    });
+  const softwareGpu =
+    /SwiftShader|llvmpipe|softpipe|software (?:rasterizer|renderer)|Microsoft Basic Render Driver/i.test(
+      gpu,
+    );
+  // Settling needs at least 40 simulated updates; measured software GPU pixel reads
+  // take 2–4 seconds each. Bound eventual rest separately from hardware's 5-second deadline.
+  if (softwareGpu) test.setTimeout(180_000);
   await expect.poll(() => displacedDots(page)).toBe(0);
   const box = await page.locator("[data-about-portrait-canvas]").boundingBox();
   if (!box) throw new Error("Portrait geometry is unavailable");
@@ -52,5 +67,11 @@ test("hover parts the portrait dots without pressing, then they spring home", as
   await page.mouse.move(box.x + box.width * 0.68, box.y + box.height * 0.6, { steps: 12 });
   await expect.poll(() => displacedDots(page)).toBeGreaterThan(20);
   await page.mouse.move(0, 0);
-  await expect.poll(() => displacedDots(page), { timeout: 5_000 }).toBe(0);
+  // Synchronous GPU pixel reads can stall software rendering; leave frames between polls.
+  await expect
+    .poll(
+      () => displacedDots(page),
+      softwareGpu ? { timeout: 120_000, intervals: [10_000] } : { timeout: 5_000 },
+    )
+    .toBe(0);
 });

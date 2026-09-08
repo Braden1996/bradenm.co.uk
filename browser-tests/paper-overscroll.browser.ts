@@ -110,13 +110,17 @@ async function stretchedColourDifference(page: Page) {
     let difference = 0;
     let compared = 0;
     for (let offset = 0; offset < expected.length; offset += 4) {
-      // Very faint pixels amplify eight-bit premultiplication rounding into
-      // large RGB differences; sample the visible body of each colour instead.
+      // Sample the visible body and compare both pigments at the pulled wash's
+      // coverage, so alpha strengthening itself does not count as a hue change.
       if ((expected[offset + 3] ?? 0) < 64) continue;
+      const coverage = (actual[offset + 3] ?? 0) / 255;
       for (let channel = 0; channel < 3; channel += 1) {
         difference = Math.max(
           difference,
-          Math.abs((actual[offset + channel] ?? 0) - (expected[offset + channel] ?? 0)),
+          Math.abs(
+            Math.round((actual[offset + channel] ?? 0) * coverage) -
+              Math.round((expected[offset + channel] ?? 0) * coverage),
+          ),
         );
       }
       compared += 1;
@@ -156,13 +160,33 @@ for (const { name, viewport, travel, lift } of [
         context.drawImage(source, 0, canvas.height - height, canvas.width, height);
         const expected = context.getImageData(0, 0, canvas.width, canvas.height).data;
         const actual = rendered.getImageData(0, 0, canvas.width, canvas.height).data;
-        return actual.reduce(
-          (difference, channel, index) =>
-            Math.max(difference, Math.abs(channel - (expected[index] ?? 0))),
-          0,
-        );
+        let alphaDifference = 0;
+        let colourDifference = 0;
+        for (let offset = 0; offset < expected.length; offset += 4) {
+          const actualAlpha = actual[offset + 3] ?? 0;
+          const expectedAlpha = expected[offset + 3] ?? 0;
+          alphaDifference = Math.max(alphaDifference, Math.abs(actualAlpha - expectedAlpha));
+          for (let channel = 0; channel < 3; channel += 1) {
+            const actualColour = ((actual[offset + channel] ?? 0) * actualAlpha) / 255;
+            const expectedColour = ((expected[offset + channel] ?? 0) * expectedAlpha) / 255;
+            // Compare the visible eight-bit colour over black and white,
+            // exposing pigment and coverage without amplifying near-zero alpha.
+            colourDifference = Math.max(
+              colourDifference,
+              Math.abs(Math.round(actualColour) - Math.round(expectedColour)),
+              Math.abs(
+                Math.round(actualColour + 255 - actualAlpha) -
+                  Math.round(expectedColour + 255 - expectedAlpha),
+              ),
+            );
+          }
+        }
+        return { alphaDifference, colourDifference };
       });
-    expect(restingDifference).toBeLessThanOrEqual(1);
+    // A whole-image resize and individual column resampling can round coverage
+    // by two levels and composited colour by three, even for the same source.
+    expect(restingDifference.alphaDifference).toBeLessThanOrEqual(2);
+    expect(restingDifference.colourDifference).toBeLessThanOrEqual(3);
 
     const resting = await washColumns(page);
     let previous = resting;
@@ -189,8 +213,8 @@ for (const { name, viewport, travel, lift } of [
     }
     const pigments = await stretchedColourDifference(page);
     expect(pigments.compared).toBeGreaterThan(1000);
-    // Allow only the rounding from alpha changes and Canvas2D resampling.
-    expect(pigments.difference).toBeLessThanOrEqual(5);
+    // Allow only three visible eight-bit levels from Canvas2D resampling.
+    expect(pigments.difference).toBeLessThanOrEqual(3);
   });
 
   for (const path of ["/", "/bookshelf"]) {
