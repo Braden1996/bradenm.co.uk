@@ -10,6 +10,8 @@ const {
   loading = "lazy",
   placeholderSrc,
   src,
+  srcset,
+  sizes,
   width,
   ...rest
 } = Astro.props;
@@ -35,6 +37,8 @@ const {
       <Image
         class="progressive-image__image"
         src={src}
+        srcset={srcset}
+        sizes={sizes}
         alt={alt}
         width={width}
         height={height}

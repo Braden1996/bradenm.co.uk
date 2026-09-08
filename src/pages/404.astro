@@ -4,10 +4,10 @@ import Layout from "../layouts/layout.astro";
 const pageDescription = "The requested page could not be found.";
 ---
 
-<Layout title="Page not found | Braden Marshall" description={pageDescription} activeTab="about">
+<Layout title="Page not found | Braden Marshall" description={pageDescription} room="plain">
   <meta slot="head" name="robots" content="noindex" />
 
-  <section class="not-found" aria-labelledby="not-found-title">
+  <section class="not-found" data-overlay-scroll aria-labelledby="not-found-title">
     <span class="not-found__code" aria-hidden="true">404</span>
     <h1 id="not-found-title">Page not found</h1>
     <p>The page may have moved, or the address may be incorrect.</p>
@@ -21,35 +21,64 @@ const pageDescription = "The requested page could not be found.";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    gap: 0.7rem;
-    padding: 1.4rem var(--panel-inline-padding) 2rem;
+    /*
+     * `safe` and nothing else. This is the one content region on the site with
+     * no scroll container, so it has to grow its own — but a plain centred flex
+     * column spills equally above and below, and the overflow past the start
+     * edge is unreachable in every current engine: the scrollbar would appear
+     * while the code and the heading stayed lost above it. `safe` drops the item
+     * back to start alignment the moment it would overflow. Leaving a bare
+     * `center` above this would defeat that, because an engine without the
+     * keyword throws the whole declaration out and falls back to the initial
+     * value — which is `start`, and therefore already safe.
+     */
+    justify-content: safe center;
+    overflow-y: auto;
+    min-height: 0;
+    gap: var(--space-12);
+    padding: var(--panel-gutter-block) var(--panel-gutter);
   }
 
+  /*
+   * A full-caps run, not a small-caps one, so it stays on the label step: the
+   * caps-only floor exists for exactly this — lining figures tracked wide, with
+   * no lowercase to fall below the x-height that step cannot carry.
+   */
   .not-found__code {
     color: var(--color-accent);
-    font-family: "BrutalType", system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    font-size: var(--text-label);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wider);
   }
 
   .not-found h1 {
     color: var(--color-text-primary);
-    font-size: 1.25rem;
-    line-height: 1.2;
+    font-family: var(--font-display);
+    font-size: var(--text-title);
+    /* Recoleta ships only 600, so the UA's undeclared bold would be synthesised. */
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
   }
 
   .not-found p {
     color: var(--color-text-muted);
-    font-size: 0.8rem;
-    line-height: 1.6;
+    font-size: var(--text-body);
+    line-height: var(--leading-loose);
   }
 
   .not-found a {
-    margin-top: 0.3rem;
+    margin-top: var(--space-4);
     color: var(--color-text-primary);
-    font-size: 0.75rem;
+    font-size: var(--text-ui);
     text-underline-offset: 0.2em;
+  }
+
+  @media (max-width: 760px) {
+    .not-found {
+      flex: 0 0 auto;
+      min-height: auto;
+      overflow: visible;
+    }
   }
 </style>

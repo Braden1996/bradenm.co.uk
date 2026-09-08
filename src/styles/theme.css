@@ -1,0 +1,459 @@
+/*
+ * Design tokens for the whole site.
+ *
+ * Colours are authored in OKLCH throughout. Unlike HSL, its lightness is
+ * perceptual and consistent across hues, so a value can be nudged without
+ * silently changing how light a colour reads — which is what makes the paper
+ * and ink scales below predictable to extend.
+ *
+ * Layering: `--palette-*` are raw values and should not be consumed directly by
+ * components. `--color-*`, `--font-*`, `--space-*` and friends are the semantic
+ * layer, and are the only tokens components should reference.
+ */
+
+/* Font faces and metric-matched local fallbacks are emitted by site-fonts.ts.
+   Fallback advances were measured against the site prose, and the original
+   custom-font line-box corrections are preserved independently. */
+:root {
+  /* ---------------------------------------------------------------- palette */
+
+  /* Paper stock, warmest at the top of the scale. */
+  --palette-paper-050: oklch(98.4% 0.011 92);
+  --palette-paper-100: oklch(97.4% 0.015 90);
+  --palette-paper-150: oklch(96.4% 0.018 88);
+  --palette-paper-200: oklch(95.4% 0.022 86);
+  --palette-paper-300: oklch(93% 0.024 85);
+  --palette-paper-400: oklch(89.4% 0.026 84);
+  --palette-paper-050-95: oklch(98.4% 0.011 92 / 0.95);
+  --palette-paper-300-70: oklch(93% 0.024 85 / 0.7);
+
+  /* Ink, as solid marks and as translucent washes over the stock. */
+  --palette-ink-900: oklch(25.5% 0.015 74);
+  --palette-ink-700: oklch(41% 0.016 74);
+  --palette-ink-600: oklch(50% 0.015 74);
+  --palette-ink-16: oklch(28% 0.02 74 / 0.16);
+  --palette-ink-12: oklch(28% 0.02 74 / 0.12);
+  --palette-ink-10: oklch(28% 0.02 74 / 0.1);
+  --palette-ink-08: oklch(28% 0.02 74 / 0.08);
+  --palette-ink-07: oklch(28% 0.02 74 / 0.07);
+  --palette-ink-06: oklch(28% 0.02 74 / 0.06);
+  --palette-ink-05: oklch(28% 0.02 74 / 0.05);
+  --palette-ink-04: oklch(28% 0.02 74 / 0.04);
+
+  /* Specular highlights read as light catching the sheet, so they stay white. */
+  --palette-sheen-70: oklch(100% 0 0 / 0.7);
+  --palette-sheen-55: oklch(100% 0 0 / 0.55);
+
+  --palette-shadow-12: oklch(32% 0.03 70 / 0.12);
+  --palette-shadow-10: oklch(32% 0.03 70 / 0.1);
+  --palette-shadow-08: oklch(32% 0.03 70 / 0.08);
+  --palette-shadow-06: oklch(32% 0.03 70 / 0.06);
+  --palette-shadow-04: oklch(32% 0.03 70 / 0.04);
+
+  --palette-link-500: oklch(44% 0.08 250);
+  --palette-accent-500: oklch(45% 0.086 268);
+  --palette-accent-600: oklch(40% 0.16 270);
+  --palette-accent-500-42: oklch(45% 0.086 268 / 0.42);
+  --palette-accent-500-35: oklch(45% 0.086 268 / 0.35);
+
+  /*
+   * Accent tones: ivory through clay. Amber and clay carry most of the chroma
+   * and the rest sit close to grey, which is what lets a row of them read as
+   * one family rather than as confetti.
+   */
+  --palette-tone-ivory: oklch(96.3% 0.012 80);
+  --palette-tone-sand: oklch(91.4% 0.021 75);
+  --palette-tone-sage: oklch(84.7% 0.014 135);
+  --palette-tone-mist: oklch(77.8% 0.028 238);
+  --palette-tone-steel: oklch(72% 0.043 245);
+  --palette-tone-amber: oklch(84.4% 0.107 75);
+  --palette-tone-clay: oklch(76.9% 0.089 45);
+
+  /*
+   * Tag ramps, one per tone. Every tone uses the same three lightness steps —
+   * surface 94.2%, edge 85.5%, ink 47.5% — so a tag carries the same visual
+   * weight whatever its hue, and ink on its own surface clears 5.5:1 across the
+   * whole set. Only hue and chroma vary. To add a tone, pick a hue and hold
+   * those three lightnesses; chroma is capped just short of the sRGB boundary
+   * so browsers never gamut-map and shift the hue underneath us.
+   *
+   * The tone hues are the swatch hues above, pulled apart where two swatches
+   * shared one (sand and amber both sit at 75) so tags stay tellable apart at
+   * the size they are actually rendered.
+   */
+  --palette-tag-neutral-surface: oklch(94.2% 0.006 74);
+  --palette-tag-neutral-edge: oklch(85.5% 0.011 74);
+  --palette-tag-neutral-ink: oklch(47.5% 0.016 74);
+  --palette-tag-sand-surface: oklch(94.2% 0.024 68);
+  --palette-tag-sand-edge: oklch(85.5% 0.042 68);
+  --palette-tag-sand-ink: oklch(47.5% 0.064 68);
+  --palette-tag-clay-surface: oklch(94.2% 0.03 42);
+  --palette-tag-clay-edge: oklch(85.5% 0.068 42);
+  --palette-tag-clay-ink: oklch(47.5% 0.104 42);
+  --palette-tag-amber-surface: oklch(94.2% 0.042 85);
+  --palette-tag-amber-edge: oklch(85.5% 0.075 85);
+  --palette-tag-amber-ink: oklch(47.5% 0.094 85);
+  --palette-tag-sage-surface: oklch(94.2% 0.022 138);
+  --palette-tag-sage-edge: oklch(85.5% 0.039 138);
+  --palette-tag-sage-ink: oklch(47.5% 0.06 138);
+  --palette-tag-mist-surface: oklch(94.2% 0.025 232);
+  --palette-tag-mist-edge: oklch(85.5% 0.044 232);
+  --palette-tag-mist-ink: oklch(47.5% 0.068 232);
+  --palette-tag-steel-surface: oklch(94.2% 0.027 255);
+  --palette-tag-steel-edge: oklch(85.5% 0.05 255);
+  --palette-tag-steel-ink: oklch(47.5% 0.077 255);
+
+  /* ------------------------------------------------------------ typography */
+
+  /*
+   * Three voices. Recoleta is the display voice and owns `--text-lead` and above;
+   * it ships in one weight (600) and a basic-Latin subset, so it must never be
+   * asked to set body, UI, labels, metadata, tags or controls. Source Sans 3 is
+   * variable across 200–900 and takes everything at `--text-body` and below.
+   * Newsreader is the text voice of the about letter and of its career cards (the
+   * letter's own footnotes, whose role line and body are set in it) — running
+   * prose set like a typed sheet — and must not leak into UI, tags or the motto.
+   */
+  --font-display: "Recoleta", "Recoleta Fallback", ui-serif, Georgia, serif;
+  --font-body: "Source Sans 3", "Source Sans Fallback", system-ui, sans-serif;
+  --font-text:
+    "Newsreader", "Newsreader Fallback", "Newsreader System Fallback", "Iowan Old Style", Georgia,
+    serif;
+  --font-size-root: 1.2em;
+
+  /*
+   * The ladder steps by φ^(1/3) = 1.173985, anchored on 1rem. Cubing the step
+   * gives φ exactly, so three rungs are one golden leap and the ends of the
+   * ladder land on 1/φ rem and φ rem. The ratio is chosen against this UI, not
+   * for its own sake: a gentler step puts adjacent rungs ~1.4px apart down at
+   * label sizes, which is the drift this scale exists to remove, and a coarser
+   * one leaves a single rung between the caps floor and body copy where the
+   * timeline row needs two.
+   *
+   * `--text-label` is a CAPS-ONLY step. Its lowercase x-height is 5.67px, below
+   * what is comfortable to read; its cap band is 7.83px and its small-cap band
+   * 6.05px. Lowercase reaching for this step is a bug.
+   *
+   * There is deliberately no rung between `--text-lead` and `--text-title`,
+   * and none between `--text-hero` and `--text-display`: the masthead sits one
+   * whole golden leap above the hero — φ², six rungs above the anchor — so the
+   * name relates to the title and the lead by the same ratio they relate to
+   * each other. It is for the masthead and nothing else.
+   */
+  --text-label: 0.618rem; /* 11.87px — 1/φ */
+  --text-ui: 0.726rem; /* 13.94px */
+  --text-body: 0.852rem; /* 16.36px */
+  --text-lead: 1rem; /* 19.20px — anchor */
+  --text-title: 1.378rem; /* 26.46px */
+  --text-hero: 1.618rem; /* 31.07px — φ */
+  --text-display: 2.618rem; /* 50.27px — φ² */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /*
+   * `--tracking-tight` is genuinely negative, and only the display steps want
+   * it. `--tracking-loose` carries the old `--tracking-tight` value under a name
+   * that does not contradict it: 0.02em is looser than normal, not tighter.
+   */
+  --tracking-tight: -0.01em;
+  --tracking-loose: 0.02em;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.08em;
+
+  --leading-flush: 1;
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-loose: 1.76;
+
+  /* ---------------------------------------------------------------- symbols */
+
+  /*
+   * Icon box sizes. Shared rather than kept private to `symbol.astro`, because
+   * anything that has to sit level beside an icon — a cap box, say — has to be
+   * able to name the same number instead of guessing at it.
+   */
+  --symbol-size: 0.875rem; /* 16.8px, painting at 16px after the cap box's 2px snap */
+
+  /* --------------------------------------------------------------- spacing */
+
+  /*
+   * Space is LINEAR on a 1.2px base, named in base units. Linear rather than
+   * modular because this codebase composes space by ADDITION — the row divider
+   * inset is `calc(column + gap)`, the author separator's margin is
+   * `calc(chip-padding + separator-gap)`, and a chip cancels its own padding
+   * with a negative margin of the same value. On a modular scale a + b lands
+   * off-scale by construction, so the sums stop being expressible.
+   *
+   * Steps alternate 4:3 and 3:2, so every step above the base pair is the sum
+   * of two lower ones (4+8=12, 8+8=16, 8+16=24, 12+12=24, 16+16=32) and the
+   * average adjacent ratio is √2. All six previous values survive unmoved; the
+   * three new steps land only below 9.6px, the one region where the scale never
+   * existed and where seventeen stray raw values had accumulated.
+   */
+  --space-2: 0.125rem; /* 2.4px */
+  --space-3: 0.1875rem; /* 3.6px */
+  --space-4: 0.25rem; /* 4.8px */
+  --space-6: 0.375rem; /* 7.2px */
+  --space-8: 0.5rem; /* 9.6px */
+  --space-12: 0.75rem; /* 14.4px */
+  --space-16: 1rem; /* 19.2px */
+  --space-24: 1.5rem; /* 28.8px */
+  --space-32: 2rem; /* 38.4px */
+
+  /*
+   * Control heights, at 4× the space base. This is the distinction that stops
+   * the dense end looking like chaos: `--space-*` is the distance BETWEEN
+   * things, `--control-*` is the height OF a thing. Most of the stray sub-5px
+   * values were never gaps at all — they were the padding that establishes a
+   * control's own height, which is why they scattered while real gaps stayed
+   * tidy.
+   *
+   * Only `--control-sm` is safe as a `--cap-box-height`: the cap box snaps to
+   * even pixels, and 24px is the only step that snaps to itself. The others
+   * land 19.2→20, 28.8→28, 33.6→34, 38.4→38, 43.2→44, 52.8→52.
+   */
+  --control-xs: 1rem; /* 19.2px */
+  --control-sm: 1.25rem; /* 24.0px — the only cap-box-safe step */
+  --control-md: 1.5rem; /* 28.8px */
+  --control-lg: 1.75rem; /* 33.6px */
+  --control-xl: 2rem; /* 38.4px */
+  --control-2xl: 2.25rem; /* 43.2px */
+  --control-3xl: 2.75rem; /* 52.8px */
+
+  /*
+   * Radius is derived where it can be. `--radius-md` is a third of the control
+   * it usually wraps, which keeps the curve proportional to the box instead of
+   * being an independent guess.
+   */
+  --radius-xs: 0.25rem; /* 4.8px */
+  --radius-md: calc(var(--control-lg) / 3); /* 11.2px */
+  --radius-lg: 1.25rem; /* 24px */
+  --radius-pill: 999px;
+
+  /* ---------------------------------------------------------------- motion */
+
+  --ease-emphasised: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Gentler than emphasised: it takes a moment to get going and settles over a
+     long tail, so something large travelling under a small opening reads as
+     drifting rather than as being flicked. Mirrored by motion.ts's EASE_GENTLE
+     for the moves the script owns. */
+  --ease-gentle: cubic-bezier(0.36, 0.04, 0.18, 1);
+  --duration-fast: 180ms;
+  --duration-base: 240ms;
+  --duration-slow: 700ms;
+
+  /* -------------------------------------------------------------- surfaces */
+
+  --color-bg-canvas: var(--palette-paper-200);
+  --color-surface-panel: var(--palette-paper-100);
+  /* The colour the panel gradient actually starts at, for anything pinned to its top edge. */
+  --color-surface-panel-top: var(--palette-paper-050);
+  --color-surface-subtle: var(--palette-ink-04);
+  --color-surface-elevated: var(--palette-paper-400);
+  --color-surface-overlay: var(--palette-paper-300-70);
+  --color-surface-overlay-strong: var(--palette-paper-050-95);
+  --color-surface-interactive: var(--palette-ink-06);
+  --color-surface-interactive-hover: var(--palette-ink-08);
+  --color-surface-interactive-hover-strong: var(--palette-ink-10);
+  --color-surface-sheen: var(--palette-sheen-55);
+  --color-surface-panel-translucent-soft: color-mix(
+    in srgb,
+    var(--color-surface-panel) 42%,
+    transparent
+  );
+  --color-surface-panel-translucent: color-mix(
+    in srgb,
+    var(--color-surface-panel) 82%,
+    transparent
+  );
+  --color-surface-panel-translucent-strong: color-mix(
+    in srgb,
+    var(--color-surface-panel) 94%,
+    transparent
+  );
+
+  /* --------------------------------------------------------------- borders */
+
+  --color-border-soft: var(--palette-ink-12);
+  --color-border-strong: var(--palette-ink-16);
+  --color-border-ghost: var(--palette-ink-07);
+  --color-border-interactive: color-mix(in srgb, var(--color-border-soft) 55%, transparent);
+  --color-border-interactive-soft: color-mix(in srgb, var(--color-border-soft) 35%, transparent);
+  --color-border-accent-soft: color-mix(in srgb, var(--color-accent) 32%, transparent);
+  --color-border-accent-ghost: color-mix(in srgb, var(--color-accent) 16%, transparent);
+
+  /* ------------------------------------------------------------------ text */
+
+  --color-text-primary: var(--palette-ink-900);
+  --color-text-muted: var(--palette-ink-700);
+  --color-text-faint: var(--palette-ink-600);
+  --color-text-warm: var(--palette-tag-clay-ink);
+  --color-text-placeholder: color-mix(in srgb, var(--color-text-faint) 58%, transparent);
+  --color-text-interactive: color-mix(in srgb, var(--color-text-primary) 36%, transparent);
+  --color-text-interactive-hover: color-mix(in srgb, var(--color-text-primary) 65%, transparent);
+  --color-text-interactive-active: color-mix(in srgb, var(--color-text-primary) 88%, transparent);
+  --color-link: var(--palette-link-500);
+  --color-accent: var(--palette-accent-500);
+  --color-accent-strong: var(--palette-accent-600);
+  --color-focus-ring: var(--palette-accent-500-35);
+  --color-focus-ring-strong: var(--palette-accent-500-42);
+
+  /* ------------------------------------------------------------------ tags */
+
+  --color-tag-neutral-bg: var(--palette-tag-neutral-surface);
+  --color-tag-neutral-border: var(--palette-tag-neutral-edge);
+  --color-tag-neutral-text: var(--palette-tag-neutral-ink);
+  --color-tag-sand-bg: var(--palette-tag-sand-surface);
+  --color-tag-sand-border: var(--palette-tag-sand-edge);
+  --color-tag-sand-text: var(--palette-tag-sand-ink);
+  --color-tag-clay-bg: var(--palette-tag-clay-surface);
+  --color-tag-clay-border: var(--palette-tag-clay-edge);
+  --color-tag-clay-text: var(--palette-tag-clay-ink);
+  --color-tag-amber-bg: var(--palette-tag-amber-surface);
+  --color-tag-amber-border: var(--palette-tag-amber-edge);
+  --color-tag-amber-text: var(--palette-tag-amber-ink);
+  --color-tag-sage-bg: var(--palette-tag-sage-surface);
+  --color-tag-sage-border: var(--palette-tag-sage-edge);
+  --color-tag-sage-text: var(--palette-tag-sage-ink);
+  --color-tag-mist-bg: var(--palette-tag-mist-surface);
+  --color-tag-mist-border: var(--palette-tag-mist-edge);
+  --color-tag-mist-text: var(--palette-tag-mist-ink);
+  --color-tag-steel-bg: var(--palette-tag-steel-surface);
+  --color-tag-steel-border: var(--palette-tag-steel-edge);
+  --color-tag-steel-text: var(--palette-tag-steel-ink);
+
+  /* ------------------------------------------------------------- elevation */
+
+  --color-shadow-subtle: var(--palette-shadow-04);
+  --color-shadow-strong: var(--palette-shadow-12);
+  --color-shadow-outline: var(--palette-shadow-06);
+  /*
+   * The ramp holds at the top colour before it starts to fall. Anything opaque
+   * pinned to the top of the panel paints `--color-surface-panel-top` as a flat
+   * fill, and a ramp that drops from the very first pixel leaves that fill a
+   * shade lighter than the panel it abuts — a hard line along its bottom edge.
+   * The hold gives those fills a band where the token is exactly right, and the
+   * ramp still reaches the same colour at the foot of the panel.
+   */
+  --surface-panel-background: linear-gradient(
+    180deg,
+    var(--palette-paper-050) 0 30%,
+    var(--palette-paper-150) 100%
+  );
+  --shadow-panel:
+    0 0 0 1px var(--palette-ink-10), 0 1.25rem 2.75rem var(--palette-shadow-10),
+    0 0.25rem 0.75rem var(--palette-shadow-06), inset 0 1px 0 var(--palette-sheen-70);
+  --shadow-elevated:
+    0 0 0 1px var(--palette-ink-10), 0 0.4rem 0.9rem var(--palette-shadow-08),
+    inset 0 1px 0 var(--palette-sheen-55);
+
+  /* --------------------------------------------------------------- backdrop */
+
+  --paper-mottle-warm: oklch(98.6% 0.024 82 / 0.8);
+  --paper-mottle-cool: oklch(93.5% 0.012 226 / 0.28);
+  --paper-sheen: oklch(100% 0 0 / 0.5);
+  --paper-shade: oklch(58% 0.035 70 / 0.12);
+}
+
+/*
+ * Displays that can show more than sRGB get a little more chroma in the accent,
+ * which is the only place on the page saturated enough to benefit.
+ */
+@media (color-gamut: p3) {
+  :root {
+    --palette-accent-500: oklch(45% 0.115 268);
+    --palette-accent-600: oklch(40% 0.21 270);
+    --palette-accent-500-42: oklch(45% 0.115 268 / 0.42);
+    --palette-accent-500-35: oklch(45% 0.115 268 / 0.35);
+    --palette-link-500: oklch(44% 0.105 250);
+  }
+}
+
+/*
+ * Cap boxes: one word, centred in a container, the same way every time.
+ *
+ * Two problems sit on top of each other whenever text has to look centred
+ * inside a pill, a chip or a column heading, and they need different answers.
+ *
+ * The first is that a line box is as tall as the font's ascender plus its
+ * descender, which is not the band the eye reads. `text-box` trims it back to
+ * cap-to-baseline, which is. That much a component can do on its own.
+ *
+ * The second only shows up once there is a page full of them. Every number
+ * involved is fractional — the root is 1.2em, so a 0.62rem label is 11.904px
+ * and its cap is 7.857px — and the browser paints an element's background box
+ * and its baseline against separate whole-pixel grids. Whether the two round
+ * the same way depends on the sub-pixel row the element happens to land on, so
+ * two identical tags paint differently: measured on the bookshelf, the same
+ * "Physical" pill came out 22px tall in one row and 21px in the next, with the
+ * baseline 15px below its top edge in one and 14px in the other.
+ *
+ * Rounding both the box height and the distance from its top edge to the
+ * baseline to whole pixels settles it, because `round(t + k) - round(t)` is
+ * exactly `k` when `k` is whole — wherever `t` falls. The padding either side
+ * absorbs the fraction instead, where nothing can see it.
+ *
+ * The overrides on the faces above are the other half of this, and they come
+ * first: they make centring a line box the same thing as centring the cap band,
+ * everywhere, with no opt-in. What is left for a cap box to do is take that from
+ * optically right to pixel-exact, which needs `text-box` to make the content box
+ * the cap band precisely — so spend these behind the same `@supports`.
+ *
+ * To use: add `cap-box` to the element, set `--cap-box-height` to the height the
+ * box should paint at and `--cap-box-border` if it draws one, then spend
+ * `--cap-box-padding-block` on `padding-block`.
+ *
+ * What this deliberately does not do is nudge the text for descenders. Ink
+ * below the baseline is not a reason to raise a word: doing so puts "Physical"
+ * and "Audiobook" on different baselines when they sit side by side, which is
+ * far more visible than the descender it was correcting for.
+ */
+.cap-box {
+  /*
+   * Even pixels, not whole ones. `1cap` is a shade under 8px at label sizes, so
+   * `(size + 1cap) / 2` lands near an integer when the size is even and near a
+   * half when it is odd — and that half is a permanent offset against anything
+   * the box has to sit level with, like the chevron in a sort heading. Even
+   * heights are also the only ones that survive a fractional device-pixel ratio.
+   */
+  --cap-box-size: round(var(--cap-box-height, 2em), 2px);
+  --cap-box-baseline: round(calc((var(--cap-box-size) + var(--cap-box-band, 1cap)) / 2), 1px);
+  --cap-box-padding-block: calc(
+      var(--cap-box-baseline) - var(--cap-box-band, 1cap) - var(--cap-box-border, 0px)
+    )
+    calc(var(--cap-box-size) - var(--cap-box-baseline) - var(--cap-box-border, 0px));
+}
+
+/*
+ * Small caps are a shorter band than capitals, so a cap box around them has to
+ * centre on that band instead — otherwise the word sits low in its own pill by
+ * half the difference. `1cap` measures the capital band whatever the text does,
+ * so the band has to be named separately from the trim keyword.
+ *
+ * Set `lowercase` rather than leaving the source cased: `font-variant-caps`
+ * only substitutes small caps for LOWERCASE letters, so an already-uppercase
+ * string renders as full capitals and silently ignores the whole treatment.
+ */
+.cap-box--small-caps {
+  /*
+   * The band and the trim have to name the SAME metric or the padding either
+   * side is computed against a box the text does not actually fill, and the
+   * control stops closing on its declared height.
+   *
+   * There is no `text-box-edge` keyword for the small-cap band, and `ex` is the
+   * closest one: measured on the shipped subset the small-cap height is 510/1000
+   * against an x-height of 478/1000, so trimming to `ex` sits 0.032em under the
+   * true band — about 0.1px at label sizes, an order of magnitude below the
+   * whole-pixel snap above. Naming both as `1ex` keeps the arithmetic exact and
+   * spends that tenth of a pixel where nothing can see it.
+   */
+  --cap-box-band: 1ex;
+  --cap-box-trim: ex;
+
+  font-variant-caps: small-caps;
+  text-transform: lowercase;
+}

@@ -1,0 +1,27 @@
+{
+  "affine": [
+    [1.2999999523162842, 0.0, -253.0],
+    [0.0, 1.100000023841858, -12.0]
+  ],
+  "fps": 12,
+  "frame_count": 48,
+  "height": 800,
+  "keyframes": {
+    "frame-00.png": "7ba2ff25a374c0ddce3048a47085eb62e8d9c2936ab3bd8b3f95034b661863f3",
+    "frame-01.png": "c0e6524d83d31a16ed99bf13e030a602e54fbc5ddd92434da37e1431ee9a496f",
+    "frame-02.png": "6325eabde5530d40ef40003be2063d6c94c5db7cf7b3eea099324ed53b9bb2d8",
+    "frame-03.png": "31f2f5dfad760d5ad915e350115f5eb12ba76b3b29bcf4a1f0749b82d0373f6e",
+    "frame-04.png": "aa72fded41ffc5e6864fad75c0bd89c0ffe6e7ecdaa850a2c96823c271cff0de"
+  },
+  "matte_video": {
+    "file": "braden-gelato-clean-matte-loop.mp4",
+    "sha256": "2218f7e15fe3781b9de754a1d32b3fac5e5a32839f205f658774469a291c6450"
+  },
+  "rife_model_revision": "6b650eaa5664aab280119511fe944861491aa15e",
+  "rife_source_revision": "764b89be56497fb26243d1de75f2957f3889e5d3",
+  "source_video": {
+    "file": "braden-gelato-clean-loop.mp4",
+    "sha256": "716f49815938627be1028c497e076bbe1334755e7d8078bd90499786101c245d"
+  },
+  "width": 1200
+}

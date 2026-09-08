@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import PopoverAction from "./popover-action.astro";
+interface Props extends HTMLAttributes<"footer"> {
+  action?: { href: string; label: string; ariaLabel?: string; newTab?: boolean } | undefined;
+  actionClass?: string;
+  divider?: boolean;
+}
+const { class: className, action, actionClass, divider = true, ...rest } = Astro.props;
+---
+
+<footer
+  class:list={["popover-kit__footer", className]}
+  data-popover-footer
+  data-divider={divider || undefined}
+  {...rest}
+>
+  {action && <PopoverAction {...action} class={actionClass} />}
+  <slot />
+  {
+    Astro.slots.has("end") && (
+      <div class="popover-kit__footer-end">
+        <slot name="end" />
+      </div>
+    )
+  }
+</footer>

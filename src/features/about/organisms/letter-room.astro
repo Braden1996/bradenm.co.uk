@@ -1,0 +1,31 @@
+---
+import type { ImageMetadata } from "astro";
+import type { AboutPortraitAssets } from "../lib/about-portrait-data";
+import { getDrainAssets } from "../lib/about-drain-tiles";
+import AboutIntro from "./about-intro.astro";
+
+interface Props {
+  assets: AboutPortraitAssets;
+  poster: ImageMetadata;
+}
+
+const { assets, poster } = Astro.props;
+const drain = getDrainAssets();
+const drainStyle = [
+  `--drain-coarse:url("${drain.coarse.url}")`,
+  `--drain-mid:url("${drain.mid.url}")`,
+  `--drain-fine:url("${drain.fine.url}")`,
+  `--drain-coarse-size:${drain.sizes.coarse}px`,
+  `--drain-mid-size:${drain.sizes.mid}px`,
+  `--drain-fine-size:${drain.sizes.fine}px`,
+].join(";");
+---
+
+<div
+  class="about-template__room about-template__room--letter"
+  data-about-room="letter"
+  data-room-transition-assets={[drain.coarse.url, drain.mid.url, drain.fine.url].join(" ")}
+  style={drainStyle}
+>
+  <AboutIntro poster={poster} assets={assets} initiallyVisible />
+</div>

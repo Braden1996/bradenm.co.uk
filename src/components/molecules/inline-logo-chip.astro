@@ -1,0 +1,250 @@
+---
+import IconicIcon from "../atoms/iconic-icon.astro";
+import InlineLogoMark from "../atoms/inline-logo-mark.astro";
+import type { IconicIconName } from "../../icons/iconic";
+
+interface Props {
+  cardId?: string;
+  external?: boolean;
+  href?: string;
+  icon?: IconicIconName;
+  label: string;
+  logoFit?: "contain" | "cover";
+  logoHeight?: number;
+  logoPosition?: "center" | "left";
+  logoSrc?: string;
+  /** `tile` frames the artwork in a squircle; `glyph` draws a silhouette bare. */
+  logoVariant?: "glyph" | "tile";
+  logoWidth?: number;
+  popoverId?: string;
+  suffix?: string | undefined;
+}
+
+const {
+  cardId,
+  external = false,
+  href,
+  icon,
+  label,
+  logoFit = "cover",
+  logoHeight = 32,
+  logoPosition = "center",
+  logoSrc,
+  logoVariant = "tile",
+  logoWidth = 32,
+  popoverId,
+  suffix,
+} = Astro.props;
+const controlledId = popoverId ?? cardId;
+const isInteractive = Boolean(controlledId || href);
+const Tag = isInteractive ? "a" : "span";
+const hasCustomMark = Astro.slots.has("mark");
+
+if (cardId && popoverId) {
+  throw new Error(`inline-logo-chip ${label} cannot control two disclosures`);
+}
+
+if ([icon, logoSrc, hasCustomMark].filter(Boolean).length !== 1) {
+  throw new Error(`inline-logo-chip ${label} needs exactly one icon, logo or mark slot`);
+}
+
+const resolvedLogoSrc = logoSrc ?? "";
+---
+
+{
+  /* A sort in the line, not a sticker on it: the mark is a cap-high box sitting
+    on the baseline and the chip adds no padding of its own, so the word space
+    before the logo is the paragraph's own and a following comma sits flush.
+    inline-flex is deliberate — it swallows the template's whitespace text nodes
+    that a plain inline would paint as stray spaces before punctuation. The
+    suffix rides inside the chip's no-wrap box (outside the underlined label) so
+    a line can never break between a name and its comma. */
+}
+<Tag
+  class:list={["inline-logo-chip", isInteractive && "inline-logo-chip--interactive"]}
+  href={href ?? (controlledId ? `#${controlledId}` : undefined)}
+  aria-label={external ? `${label} (opens in a new tab)` : undefined}
+  aria-controls={controlledId}
+  aria-expanded={controlledId ? "false" : undefined}
+  aria-haspopup={popoverId ? "dialog" : undefined}
+  data-inline-entity
+  data-career-entity={cardId ? "" : undefined}
+  data-inline-popover-trigger={popoverId ? "" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  target={external ? "_blank" : undefined}
+>
+  <span
+    class:list={[
+      "inline-logo-chip__mark",
+      icon && `inline-logo-chip__mark--${icon}`,
+      hasCustomMark && "inline-logo-chip__mark--custom",
+    ]}
+    aria-hidden="true"
+  >
+    {
+      hasCustomMark ? (
+        <slot name="mark" />
+      ) : icon ? (
+        <IconicIcon name={icon} />
+      ) : (
+        <InlineLogoMark
+          src={resolvedLogoSrc}
+          width={logoWidth}
+          height={logoHeight}
+          fit={logoFit}
+          position={logoPosition}
+          variant={logoVariant}
+        />
+      )
+    }
+  </span>
+  <span class="inline-logo-chip__label">{label}</span>
+  {
+    external && (
+      <span class="inline-logo-chip__end" aria-hidden="true">
+        <IconicIcon name="external" />
+      </span>
+    )
+  }
+  {suffix && <span class="inline-logo-chip__suffix">{suffix}</span>}
+</Tag>
+
+<style>
+  .inline-logo-chip {
+    display: inline-flex;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    vertical-align: baseline;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .inline-logo-chip--interactive {
+    cursor: pointer;
+  }
+
+  .inline-logo-chip__label,
+  .inline-logo-chip__suffix {
+    color: currentColor;
+    font: inherit;
+  }
+
+  /* A pen is on or off: the underline snaps rather than fades. It is a proper
+     underline, not a rule floated under the word: a hairline (one CSS pixel
+     at text sizes, so it renders crisp rather than as a two-pixel smear)
+     tucked just under the baseline, where it sits with the letters and the
+     descenders of y, g and p cross it — which is what lets `skip-ink` carve
+     round them. Light ink, so it annotates the name without underscoring it. */
+  .inline-logo-chip--interactive .inline-logo-chip__label {
+    text-decoration-line: underline;
+    text-decoration-thickness: max(1px, 0.05em);
+    text-decoration-color: transparent;
+    text-underline-offset: 0.08em;
+    text-decoration-skip-ink: auto;
+  }
+
+  .inline-logo-chip--interactive:is(:hover, :focus-visible, [data-state="open"])
+    .inline-logo-chip__label {
+    text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  }
+
+  .inline-logo-chip:focus-visible {
+    outline: 1px solid var(--color-focus-ring-strong);
+    outline-offset: 2px;
+  }
+
+  /* Cap-high and baseline-seated: every label starts with a capital, so the
+     tile is judged against that letter and must share its band exactly. An
+     inline-block with no line boxes baselines on its bottom edge, which is
+     what seats it. `cap` follows whichever face the sentence is set in. */
+  .inline-logo-chip__mark {
+    display: inline-block;
+    flex: none;
+    width: 1cap;
+    height: 1cap;
+    margin-inline-end: 0.18em;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  @supports not (width: 1cap) {
+    .inline-logo-chip__mark {
+      width: 0.67em;
+      height: 0.67em;
+    }
+  }
+
+  /* A custom mark (an emoji, say) sizes its own width and may rise to
+     ascender height — still seated on the baseline — when cap height would
+     draw it too small to read. */
+  .inline-logo-chip__mark--custom {
+    width: auto;
+    height: 1.12cap;
+    overflow: visible;
+  }
+
+  @supports not (width: 1cap) {
+    .inline-logo-chip__mark--custom {
+      height: 0.75em;
+    }
+  }
+
+  .inline-logo-chip__mark--custom > :global(*) {
+    display: block;
+    height: 100%;
+    line-height: 1;
+  }
+
+  .inline-logo-chip__mark :global(.iconic-icon),
+  .inline-logo-chip__end :global(.iconic-icon) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Off-site links carry the ↗ after the name: a small glyph centred on the
+     cap band, so it reads as an annotation of the word, not a word itself. */
+  .inline-logo-chip__end {
+    display: inline-block;
+    flex: none;
+    align-self: center;
+    width: 0.68em;
+    height: 0.68em;
+    margin-inline-start: 0.08em;
+    line-height: 0;
+    opacity: 0.85;
+  }
+
+  /* The filled X silhouette has much more optical mass than the outlined
+     social marks, so it needs a smaller drawing box to read at the same size. */
+  .inline-logo-chip__mark--x :global(.iconic-icon) {
+    transform: scale(0.72);
+  }
+
+  @media (forced-colors: active) {
+    .inline-logo-chip {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    .inline-logo-chip--interactive {
+      color: LinkText;
+    }
+
+    .inline-logo-chip:focus-visible {
+      outline: 2px solid Highlight;
+      outline-offset: 2px;
+      box-shadow: none;
+    }
+  }
+</style>

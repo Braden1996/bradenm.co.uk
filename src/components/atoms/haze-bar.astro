@@ -1,0 +1,109 @@
+---
+/**
+ * A transparent strip that dissolves whatever scrolls under it: strongest at the
+ * edge it hugs, gone a little way in. It paints nothing of its own — no fill,
+ * no tint — only a graduated backdrop blur, so over a still surface it is
+ * invisible and over content it takes the fine detail out before the alpha
+ * ramp beside it takes the luminance.
+ *
+ * Lay it over a `position: relative` ancestor and size it with
+ * `--haze-bar-size` (a length; 0 collapses it and nothing is paid for a
+ * backdrop filter that never shows). The property is read, never declared
+ * here, so the owner can set it on this element through a forwarded class or
+ * an inline style, or let it inherit.
+ *
+ * The strip is only as honest as its backdrop. A backdrop filter reads from
+ * the nearest ancestor that itself filters, fades, masks, clips or blends — the
+ * backdrop root — and the filtered copy is drawn back OVER that ancestor's
+ * content rather than in place of it, so if that ancestor is translucent the
+ * bar composites its fill a second time and shows up as a band a shade more
+ * opaque than its surroundings. Keep the bar's nearest such ancestor opaque:
+ * the page paper, or a glass layer that has no descendants of its own.
+ */
+interface Props {
+  class?: string;
+  /** The edge of the positioned ancestor the bar hugs. */
+  edge: "top" | "bottom";
+  // Passthrough attributes for the root element.
+  [key: string]: string | number | boolean | null | undefined;
+}
+
+const props: Props = Astro.props;
+const { class: className, edge, ...rest } = props;
+---
+
+<div class:list={["haze-bar", `haze-bar--${edge}`, className]} {...rest} aria-hidden="true">
+  <span></span><span></span><span></span>
+</div>
+
+<style>
+  /*
+   * Fading alpha alone dims every spatial frequency by the same amount, so text
+   * keeps its crisp edges all the way down to invisible and reads as ghosting.
+   * These layers low-pass it instead: each blurs harder than the last and is
+   * masked nearer the edge, so the accumulated radius climbs as content
+   * approaches the boundary and fine detail dissolves before the luminance does.
+   */
+  .haze-bar {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: var(--haze-bar-size, 0px);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .haze-bar > span {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .haze-bar--top {
+    --haze-bar-direction: to bottom;
+    top: 0;
+  }
+
+  .haze-bar--bottom {
+    --haze-bar-direction: to top;
+    bottom: 0;
+  }
+
+  /*
+   * Radii are a fraction of the band rather than fixed pixels, so a half-grown
+   * bar is proportionally soft instead of a thin strip under a heavy blur. The
+   * three coefficients land at roughly 0.5px, 1.5px and 4px on a 44px band.
+   */
+  .haze-bar > span:nth-child(1) {
+    -webkit-backdrop-filter: blur(calc(var(--haze-bar-size, 0px) * 0.012));
+    backdrop-filter: blur(calc(var(--haze-bar-size, 0px) * 0.012));
+    mask-image: linear-gradient(
+      var(--haze-bar-direction),
+      rgb(0 0 0 / 1) 0%,
+      rgb(0 0 0 / 1) 38%,
+      rgb(0 0 0 / 0) 78%
+    );
+  }
+
+  .haze-bar > span:nth-child(2) {
+    -webkit-backdrop-filter: blur(calc(var(--haze-bar-size, 0px) * 0.034));
+    backdrop-filter: blur(calc(var(--haze-bar-size, 0px) * 0.034));
+    mask-image: linear-gradient(
+      var(--haze-bar-direction),
+      rgb(0 0 0 / 1) 0%,
+      rgb(0 0 0 / 1) 18%,
+      rgb(0 0 0 / 0) 52%
+    );
+  }
+
+  .haze-bar > span:nth-child(3) {
+    -webkit-backdrop-filter: blur(calc(var(--haze-bar-size, 0px) * 0.09));
+    backdrop-filter: blur(calc(var(--haze-bar-size, 0px) * 0.09));
+    mask-image: linear-gradient(
+      var(--haze-bar-direction),
+      rgb(0 0 0 / 1) 0%,
+      rgb(0 0 0 / 1) 4%,
+      rgb(0 0 0 / 0) 26%
+    );
+  }
+</style>

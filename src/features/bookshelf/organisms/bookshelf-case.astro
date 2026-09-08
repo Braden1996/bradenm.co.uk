@@ -1,0 +1,71 @@
+---
+import type { BookViewModel } from "../lib/bookshelf-data";
+import { ATLAS } from "../lib/atlas-layout";
+import { atlasSheets } from "../lib/atlas-previews";
+import { ATLAS_SHEET } from "../lib/atlas-sheet";
+import BookshelfResultsCount from "../molecules/bookshelf-results-count.astro";
+import BookshelfShelves from "./bookshelf-shelves.astro";
+import BookInspector from "./book-inspector.astro";
+import PopoverKit from "../../../components/popover-kit/popover-kit.astro";
+import InkArrow from "../../../components/atoms/ink-arrow.astro";
+import { paperWashAccents, paperWashTints } from "../../../components/lib/paper-accents";
+interface Props {
+  books: BookViewModel[];
+  eagerCoverCount?: number;
+  instanceId?: string;
+}
+const { books, eagerCoverCount = 6, instanceId = "bookshelf" } = Astro.props;
+const worldStyle = `--atlas-sprite:${ATLAS.sprite};--atlas-preview-sheet:url(${atlasSheets.previews});--atlas-sheet-columns:${ATLAS_SHEET.columns};--atlas-sheet-rows:${Math.ceil(atlasSheets.count / ATLAS_SHEET.columns)}`;
+---
+
+<div
+  class="case-wrap book-atlas"
+  style={worldStyle}
+  data-atlas
+  data-atlas-sheet={atlasSheets.covers}
+  data-atlas-sheet-count={atlasSheets.count}
+>
+  <div class="atlas-stage" data-atlas-stage>
+    <div
+      class="case-content atlas-scroll"
+      role="region"
+      aria-label="Bookshelf, scroll to zoom and drag to move"
+      tabindex="0"
+      data-atlas-scroll
+      data-no-drag
+    >
+      <BookshelfShelves books={books} eagerCoverCount={eagerCoverCount} />
+    </div>
+    <canvas class="atlas-canvas" data-atlas-canvas aria-hidden="true"></canvas>
+    <canvas class="atlas-frozen" data-atlas-frozen aria-hidden="true" hidden></canvas>
+    <InkArrow
+      class="atlas-tooltip-arrow"
+      inkId={`${instanceId}-tooltip-ink`}
+      ink={paperWashAccents.blue}
+      tail={paperWashTints.slate}
+      data-atlas-tooltip-arrow
+      hidden
+    >
+      <path data-tooltip-arrow-line pathLength="1" d=""></path>
+      <path data-tooltip-arrow-head d=""></path>
+    </InkArrow>
+    <PopoverKit
+      as="div"
+      surface="notebook"
+      class="atlas-tooltip"
+      role="tooltip"
+      id={`${instanceId}-tooltip`}
+      data-atlas-tooltip
+      hidden
+    >
+      <strong data-tooltip-title></strong>
+      <div class="atlas-tooltip__byline">
+        <span data-tooltip-author></span>
+        <small data-tooltip-date hidden></small>
+        <small data-tooltip-pages hidden></small>
+      </div>
+    </PopoverKit>
+  </div>
+  <BookshelfResultsCount instanceId={instanceId} total={books.length} />
+  <BookInspector instanceId={instanceId} />
+</div>

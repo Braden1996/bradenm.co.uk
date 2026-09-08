@@ -1,0 +1,28 @@
+---
+import InlineEntity from "../../../components/molecules/inline-entity.astro";
+import { careerCardId, careerCards } from "../lib/career-card-index";
+
+interface Props {
+  /** Visible name — may differ from the card's organisation ("Theodo" vs "Theodo UK"). */
+  label: string;
+  /** The entry this name discloses: its slug in career-card-index. */
+  slug: string;
+  /** The painted underline (a data URI from the build's bake). */
+  stroke?: string | undefined;
+  /** Punctuation rendered immediately after the link. */
+  suffix?: string;
+}
+
+const { label, slug, stroke, suffix } = Astro.props;
+
+if (!careerCards.some((card) => card.slug === slug)) {
+  throw new Error(`career-entity ${label} names no career card: ${slug}`);
+}
+---
+
+{
+  /* A real in-page link: without JS a click jumps to the card in the appendix,
+    footnote-style. With JS that same card lifts into the margin as a
+    hover/focus/press disclosure. */
+}
+<InlineEntity cardId={careerCardId(slug)} label={label} stroke={stroke} suffix={suffix} />

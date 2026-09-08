@@ -1,4 +1,5 @@
-type TagVariant = "neutral" | "info" | "success" | "warning";
+import type { TagTone } from "../../../components/lib/tag-tones";
+import { atlasProfile, type AtlasBook } from "./atlas-layout";
 
 type AuthorSegment = {
   label: string;
@@ -14,8 +15,29 @@ export type BookPayloadRecord = {
   title: string;
 };
 
+type BookshelfSearchRecord = {
+  id: string;
+  text: string;
+  details?:
+    | {
+        firstPublished?: string | undefined;
+        pages?: string | undefined;
+        categories?: string[] | undefined;
+      }
+    | undefined;
+};
+
 export type BookshelfPayload = {
-  books: BookPayloadRecord[];
+  books: BookshelfSearchRecord[];
+  atlas: AtlasBook[];
+};
+
+export type BookshelfSortKey = "author" | "title";
+export type BookshelfSortDirection = "asc" | "desc";
+
+export type BookshelfSortState = {
+  direction: BookshelfSortDirection;
+  key: BookshelfSortKey;
 };
 
 export type BookViewModel = BookPayloadRecord & {
@@ -23,10 +45,12 @@ export type BookViewModel = BookPayloadRecord & {
   coverHeight: number;
   coverHue: number;
   coverSrc: string;
+  coverSrcSet: string;
   coverWidth: number;
+  coverCandidates: { src: string; width: number; height: number }[];
   mediumTags: {
     label: string;
-    variant: TagVariant;
+    variant: TagTone;
   }[];
 };
 
@@ -39,6 +63,7 @@ type BookshelfSourceRow = {
 type BookshelfCoverMap = Record<
   string,
   {
+    candidates?: { src: string; width: number; height: number }[];
     height?: number;
     src?: string;
     width?: number;
@@ -51,11 +76,7 @@ type GroupedBook = Omit<BookViewModel, "authorSegments" | "mediumTags"> & {
 
 const mediumOrder = ["Physical", "Audiobook", "Kindle"] as const;
 const mediumOrderSet = new Set<string>(mediumOrder);
-const sortCollator = new Intl.Collator("en-GB", {
-  ignorePunctuation: true,
-  numeric: true,
-  sensitivity: "base",
-});
+let sortCollator: Intl.Collator | undefined;
 
 export function normalizeNeedle(value: string) {
   return value
@@ -90,19 +111,19 @@ function stripLeadingArticle(value: string) {
   return withoutArticle || withoutLeadingMarks || trimmed;
 }
 
-function mapMediumToVariant(medium: string): TagVariant {
+function mapMediumToVariant(medium: string): TagTone {
   const normalized = medium.trim().toLowerCase();
 
   if (normalized === "audiobook") {
-    return "info";
+    return "steel";
   }
 
   if (normalized === "kindle") {
-    return "warning";
+    return "amber";
   }
 
   if (normalized === "physical") {
-    return "success";
+    return "sage";
   }
 
   return "neutral";
@@ -138,12 +159,38 @@ export function buildHaystackValue(book: Pick<BookPayloadRecord, "author" | "tit
   return `${normalizeNeedle(book.title)} ${normalizeNeedle(book.author)}`.trim();
 }
 
+export function formatBookshelfResultsCount(visible: number, total: number, filtered = false) {
+  const noun = total === 1 ? "title" : "titles";
+
+  return filtered ? `${visible} of ${total} ${noun}` : `${total} ${noun}`;
+}
+
+export function getNextBookshelfSortState(
+  activeKey: BookshelfSortKey,
+  activeDirection: BookshelfSortDirection,
+  requestedKey: BookshelfSortKey,
+): BookshelfSortState {
+  if (requestedKey !== activeKey) {
+    return { direction: "asc", key: requestedKey };
+  }
+
+  return {
+    direction: activeDirection === "asc" ? "desc" : "asc",
+    key: activeKey,
+  };
+}
+
 export function compareBooks(
   left: Pick<BookPayloadRecord, "firstIndex" | "sortAuthor" | "sortTitle">,
   right: Pick<BookPayloadRecord, "firstIndex" | "sortAuthor" | "sortTitle">,
-  sortKey: "author" | "title",
-  sortDirection: "asc" | "desc",
+  sortKey: BookshelfSortKey,
+  sortDirection: BookshelfSortDirection,
 ) {
+  sortCollator ??= new Intl.Collator("en-GB", {
+    ignorePunctuation: true,
+    numeric: true,
+    sensitivity: "base",
+  });
   const comparison =
     sortKey === "author"
       ? sortCollator.compare(left.sortAuthor, right.sortAuthor) ||
@@ -156,13 +203,15 @@ export function compareBooks(
   return sortDirection === "asc" ? comparison : -comparison;
 }
 
+export type BookshelfViewModel = {
+  books: BookViewModel[];
+  payload: BookshelfPayload;
+};
+
 export function buildBookshelfViewModel(
   sourceRows: BookshelfSourceRow[],
   coverMap: BookshelfCoverMap,
-): {
-  books: BookViewModel[];
-  payload: BookshelfPayload;
-} {
+): BookshelfViewModel {
   const groupedBooks = new Map<string, GroupedBook>();
 
   sourceRows.forEach((row, index) => {
@@ -188,7 +237,11 @@ export function buildBookshelfViewModel(
       coverHue: 28 + (seed % 250),
       coverHeight: coverMap[key]?.height ?? 0,
       coverSrc: coverMap[key]?.src ?? "",
+      coverSrcSet: (coverMap[key]?.candidates ?? [])
+        .map((candidate) => `${candidate.src} ${candidate.width}w`)
+        .join(", "),
       coverWidth: coverMap[key]?.width ?? 0,
+      coverCandidates: coverMap[key]?.candidates ?? [],
     });
   });
 
@@ -210,7 +263,9 @@ export function buildBookshelfViewModel(
       coverHue: groupedBook.coverHue,
       coverHeight: groupedBook.coverHeight,
       coverSrc: groupedBook.coverSrc,
+      coverSrcSet: groupedBook.coverSrcSet,
       coverWidth: groupedBook.coverWidth,
+      coverCandidates: groupedBook.coverCandidates,
       authorSegments: splitAuthorSegments(groupedBook.author),
       mediumTags: orderedMediums.map((medium) => ({
         label: medium,
@@ -224,13 +279,23 @@ export function buildBookshelfViewModel(
   return {
     books,
     payload: {
-      books: books.map((book) => ({
+      atlas: books.map((book, atlasIndex) => ({
         id: book.id,
+        atlasIndex,
         title: book.title,
         author: book.author,
-        firstIndex: book.firstIndex,
-        sortAuthor: book.sortAuthor,
-        sortTitle: book.sortTitle,
+        formats: book.mediumTags.map((tag) => tag.label),
+        cover: {
+          src: book.coverSrc,
+          width: book.coverWidth,
+          height: book.coverHeight,
+          candidates: book.coverCandidates,
+        },
+        profile: atlasProfile(book.title, book.author, book.coverWidth, book.coverHeight),
+      })),
+      books: books.map((book) => ({
+        id: book.id,
+        text: buildHaystackValue(book),
       })),
     },
   };

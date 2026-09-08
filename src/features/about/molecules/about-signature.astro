@@ -1,0 +1,156 @@
+---
+import { getSignatureAssets } from "../lib/signature-assets";
+
+const assets = await getSignatureAssets();
+const sizes =
+  "(min-width: 1000px) calc(14 * clamp(0.76rem, 2.89vh - 0.465rem, 1.05rem)), min(14.7rem, calc((100vw - 2.4rem) * 0.6))";
+---
+
+<div class="signature" data-signature>
+  <picture>
+    <source
+      type="image/svg+xml"
+      media="screen and (prefers-reduced-motion: no-preference)"
+      srcset={`${assets.drawn480.url} 480w, ${assets.drawn640.url} 640w, ${assets.drawn800.url} 800w, ${assets.drawn1000.url} 1000w`}
+      sizes={sizes}
+    />
+    <img
+      class="signature__art"
+      src={assets.still1000.url}
+      srcset={`${assets.still480.url} 480w, ${assets.still640.url} 640w, ${assets.still800.url} 800w, ${assets.still1000.url} 1000w`}
+      sizes={sizes}
+      width="1000"
+      height="334"
+      alt="Braden Marshall"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low"
+    />
+  </picture>
+  <button
+    class="signature__dog"
+    type="button"
+    data-signature-dog
+    data-dog-state="seated"
+    data-dog-pose="seated"
+    data-dog-radius="180"
+    data-dog-seated={assets.seated.url}
+    data-dog-lying={assets.lying.url}
+    data-dog-transition={assets.transition.url}
+    data-dog-motion={assets.motion.url}
+    style={`--dog-seated-fallback:url("${assets.seatedFallback.url}");--dog-lying-fallback:url("${assets.lyingFallback.url}")`}
+    aria-label="Ask the dog to lie down"
+    aria-pressed="false"
+  >
+    <span class="signature__sprite" data-dog-sprite aria-hidden="true"></span>
+    <canvas class="signature__canvas" data-dog-canvas width="300" height="360" aria-hidden="true"
+    ></canvas>
+  </button>
+</div>
+
+<style>
+  .signature {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1000 / 334;
+  }
+
+  .signature__art {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1000 / 334;
+    overflow: visible;
+  }
+
+  .signature__dog {
+    position: absolute;
+    top: 1.2%;
+    /* Leave room for the full muzzle, including its intermediate turns. */
+    left: 82.8%;
+    width: 21%;
+    aspect-ratio: 300 / 360;
+    padding: 0;
+    border: 0;
+    border-radius: 30%;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .signature__dog::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    min-width: 44px;
+    min-height: 44px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .signature__dog::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 30%;
+    width: 40%;
+    height: 2px;
+    margin-top: 2px;
+    border-radius: 1px;
+    background: var(--color-focus-ring-strong);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .signature__dog:focus-visible:not([data-dog-pointer-focus])::before {
+    opacity: 1;
+  }
+
+  .signature__sprite,
+  .signature__canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .signature__sprite {
+    background-image: var(--dog-seated-fallback);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .signature__dog[data-dog-static-pose="lying"] .signature__sprite {
+    background-image: var(--dog-lying-fallback);
+  }
+
+  .signature__canvas {
+    opacity: 0;
+  }
+
+  .signature__dog[data-dog-canvas="ready"] .signature__sprite {
+    visibility: hidden;
+  }
+
+  .signature__dog[data-dog-canvas="ready"] .signature__canvas {
+    opacity: 1;
+  }
+
+  @media print {
+    .signature__dog::before {
+      display: none;
+    }
+    .signature__dog[data-dog-canvas] .signature__sprite {
+      visibility: visible;
+    }
+    .signature__canvas {
+      display: none;
+    }
+  }
+</style>

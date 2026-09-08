@@ -1,0 +1,354 @@
+---
+import type { ImageMetadata } from "astro";
+import {
+  frontAboutStrokes,
+  MEDIA_TO_STAGE_X,
+  rearAboutBlocks,
+  type AboutBlock,
+} from "../lib/about-blocks";
+import type { AboutPortraitAssets } from "../lib/about-portrait-data";
+import { PORTRAIT_SILHOUETTE } from "../lib/portrait-silhouette";
+
+interface Props {
+  assets: AboutPortraitAssets;
+  initiallyVisible?: boolean;
+  poster: ImageMetadata;
+}
+
+const { assets, initiallyVisible = true, poster } = Astro.props;
+
+const blockImages = assets.paint;
+
+// Optical centring: the drawn composition (body union plus collage blocks)
+// does not sit centred inside the 1440 stage, so centring the stage box
+// leaves the artwork biased left. Measure the composition's true bounds and
+// shift by the difference — in stage px, so the CSS can scale it with the
+// stage at any viewport. Derived, not tuned: it follows the blocks and the
+// silhouette wherever they go. The foot wash is left out: its ends are
+// tapers that thin to nothing, and counting them would drag the figure
+// left of where the eye puts it.
+const allBlocks = Object.values(rearAboutBlocks);
+let compositionLeft = Math.min(...allBlocks.map((block) => block.rect.left + MEDIA_TO_STAGE_X));
+let compositionRight = Math.max(
+  ...allBlocks.map((block) => block.rect.left + block.rect.width + MEDIA_TO_STAGE_X),
+);
+
+for (const intervals of PORTRAIT_SILHOUETTE.rows) {
+  for (const [left, right] of intervals) {
+    compositionLeft = Math.min(compositionLeft, left ?? compositionLeft);
+    compositionRight = Math.max(compositionRight, right ?? compositionRight);
+  }
+}
+
+const compositionShift =
+  PORTRAIT_SILHOUETTE.stage.width / 2 - (compositionLeft + compositionRight) / 2;
+const portraitStyle = `--about-composition-shift:${Number(compositionShift.toFixed(1))}`;
+
+// The shared block spec is media-space (1200x800), the same frame the packed
+// matte lives in; here it becomes percentage geometry of the media band.
+const mediaSize = { height: 800, width: 1200 };
+
+const pct = (value: number) => `${Number(value.toFixed(4))}%`;
+
+// The painted bake carries each layer's colour, alpha and edges itself.
+function paintBaseStyle(rect: AboutBlock["rect"], image: string) {
+  return [
+    `top:${pct((rect.top / mediaSize.height) * 100)}`,
+    `left:${pct((rect.left / mediaSize.width) * 100)}`,
+    `width:${pct((rect.width / mediaSize.width) * 100)}`,
+    `height:${pct((rect.height / mediaSize.height) * 100)}`,
+    `background-image:url("${image}")`,
+    "background-size:100% 100%",
+  ];
+}
+
+// Front paint is never cut by the matte: it lies over the print.
+const frontPaintStyle = (rect: AboutBlock["rect"], image: string) =>
+  paintBaseStyle(rect, image).join(";");
+---
+
+<figure
+  class="about-portrait"
+  style={portraitStyle}
+  role="img"
+  aria-label="Braden smiling while eating gelato, rendered as a typographic portrait."
+>
+  <div
+    class="about-portrait__frame"
+    data-packed-src={assets.packedVideo}
+    data-still-src={assets.packedStill}
+    data-atlas-src={assets.glyphAtlas}
+    data-correspondence-src={assets.correspondence}
+    data-prop-src={assets.propSupport}
+    data-green-src={blockImages.green}
+    data-blue-src={blockImages.blue}
+    data-poster-time={6.5 / 12}
+  >
+    {
+      /* The poster includes the rear paint, subject cut-out, and shadow from
+        the production renderer. Canvas and poster therefore swap one complete
+        composition, with no separate CSS mask to change around the face.
+        The foot wash keeps its own foreground clip. */
+    }
+    <div class="about-portrait__media-clip">
+      <canvas
+        class="about-portrait__canvas"
+        width={poster.width}
+        height={poster.height}
+        aria-hidden="true"
+        data-about-portrait-canvas></canvas>
+
+      <div class="about-portrait__media">
+        <picture>
+          <source type="image/avif" srcset={assets.posterAvifSrcSet} sizes={assets.posterSizes} />
+          <img
+            class="about-portrait__poster"
+            src={poster.src}
+            srcset={assets.posterSrcSet}
+            sizes={assets.posterSizes}
+            width={poster.width}
+            height={poster.height}
+            alt=""
+            loading={initiallyVisible ? "eager" : "lazy"}
+            decoding="sync"
+            fetchpriority={initiallyVisible ? "high" : "auto"}
+          />
+        </picture>
+      </div>
+    </div>
+
+    {
+      /* The foot wash lives in a sibling of the clip with the clip's exact
+        stage geometry but NO vignette: it is paint laid over the print, and
+        the print's own long bottom dissolve runs out underneath it — so the
+        figure sinks into the wash rather than the wash fading with the ink. */
+    }
+    <div class="about-portrait__foot-clip" aria-hidden="true">
+      <div class="about-portrait__blocks about-portrait__blocks--front">
+        <span
+          class="about-portrait__block about-portrait__block--foot"
+          data-paint-src={blockImages.foot}
+          style={frontPaintStyle(frontAboutStrokes.foot.rect, blockImages.foot)}></span>
+      </div>
+    </div>
+  </div>
+
+  <figcaption class="about-portrait__caption">
+    Braden smiling while eating gelato, rendered as a typographic portrait that plays as the cursor
+    moves across it. Move through the dots to part them, or gently smear the edges of the coloured
+    blocks. Click or press Enter to reset.
+  </figcaption>
+</figure>
+
+<style>
+  .about-portrait:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .about-portrait,
+  .about-portrait__frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .about-portrait {
+    /* Vertical swipes and pinch zoom stay native; horizontal swipes move the dots. */
+    touch-action: pan-y pinch-zoom;
+    /* Optically centred: 50% centres the stage BOX, and the composition
+       shift (baked from the silhouette and block bounds, in stage units of
+       stage-height/800) corrects for the artwork sitting left of the box's
+       geometric centre. */
+    --about-stage-center-x: calc(
+      50% + var(--about-composition-shift, 0) * var(--about-stage-height) / 800
+    );
+    /*
+     * The stage is the 1440x800 composition; the box it sits in has to hold
+     * the foot wash too, which is painted to media y 860 in an 800-tall band
+     * (about-blocks) — 7.5% of the stage hanging BELOW it, on the paper. The
+     * height term gives that fraction back, so a box sized to the stage still
+     * ends at the wash's last feathered pixel rather than cutting the tail off
+     * square against its own clip. The width term needs no allowance: when it
+     * binds, the stage is already shorter than the box.
+     *
+     * 1.075 is (800 + 60) / 800. Re-derive it if the foot stroke's rect moves.
+     */
+    --about-stage-height: min(calc(100cqh / 1.075), calc(200cqw / 3));
+    /* Vertical anchoring of the stage in its box: centred by default; a
+       parent may pin it to the box's top by setting the anchor properties
+       (about-intro does, so a taller box gives all its spare height to the
+       foot wash hanging under the media band). */
+    --about-stage-top: var(--about-stage-anchor-top, 50%);
+    --about-stage-translate-y: var(--about-stage-anchor-translate-y, -50%);
+  }
+
+  .about-portrait__frame {
+    overflow: hidden;
+  }
+
+  /* Soft vignette on every edge so the artwork sits in the page instead of
+     ending sharply. The bottom ramp is much longer than the others: the
+     subject's elbow runs off the media's bottom edge, and a short dissolve
+     reads as a hard amputation. It starts where the foot wash's core begins
+     (~84%) and runs out under it, so the ink thins into the wash and the
+     wash — unmasked, in its own clip — is what finishes the composition. It
+     lives on the STAGE box, not the frame, so the fades track the artwork's
+     own edges at every viewport aspect. */
+  .about-portrait__media-clip {
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(0 0 0 / 55%) 1.5%,
+        black 4%,
+        black 82%,
+        rgb(0 0 0 / 85%) 87%,
+        rgb(0 0 0 / 55%) 91%,
+        rgb(0 0 0 / 25%) 94.5%,
+        rgb(0 0 0 / 8%) 97%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgb(0 0 0 / 55%) 1.5%,
+        black 4.5%,
+        black 95.5%,
+        rgb(0 0 0 / 55%) 98.5%,
+        transparent 100%
+      );
+    mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(0 0 0 / 55%) 1.5%,
+        black 4%,
+        black 82%,
+        rgb(0 0 0 / 85%) 87%,
+        rgb(0 0 0 / 55%) 91%,
+        rgb(0 0 0 / 25%) 94.5%,
+        rgb(0 0 0 / 8%) 97%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgb(0 0 0 / 55%) 1.5%,
+        black 4.5%,
+        black 95.5%,
+        rgb(0 0 0 / 55%) 98.5%,
+        transparent 100%
+      );
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  /* The 1440x800 composition stage is centred and sized so its central
+     1200-wide portrait band contain-fits the visible frame. At narrower
+     aspects its empty sides overflow, while the portrait itself never
+     shrinks. */
+  .about-portrait__media-clip,
+  .about-portrait__foot-clip {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .about-portrait__media-clip {
+    isolation: isolate;
+  }
+
+  /* Paint only — the pointer reads the print beneath it. */
+  .about-portrait__foot-clip {
+    pointer-events: none;
+  }
+
+  @supports (height: 1cqh) {
+    .about-portrait__media-clip,
+    .about-portrait__foot-clip {
+      inset: auto;
+      top: var(--about-stage-top);
+      left: var(--about-stage-center-x);
+      width: auto;
+      height: var(--about-stage-height);
+      aspect-ratio: 1440 / 800;
+      transform: translate(-50%, var(--about-stage-translate-y));
+    }
+  }
+
+  .about-portrait__media {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  /* The foreground wash shares the portrait's media band, keeping its
+     authored geometry registered through every responsive stage crop. */
+  .about-portrait__blocks {
+    position: absolute;
+    inset: 0 8.3333%;
+    pointer-events: none;
+  }
+
+  .about-portrait__block {
+    position: absolute;
+    display: block;
+  }
+
+  /* Swap the complete print in the frame that the canvas is ready. Fading
+     two translucent ink layers together briefly prints the ink twice. */
+
+  .about-portrait__poster,
+  .about-portrait__canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+  }
+
+  .about-portrait__canvas {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .about-portrait__poster {
+    /* The poster is 1200x800 media: it fills the central band of the stage
+       box (120/1440 inset each side) so it registers with the canvas. */
+    inset: 0 8.3333%;
+    width: 83.3334%;
+    /* Responsive encodes round their pixel heights. Keep the stage geometry
+       rather than deriving a slightly different width from each candidate. */
+    object-fit: fill;
+  }
+
+  :global([data-about-portrait][data-motion-ready="true"]) .about-portrait__canvas {
+    opacity: 1;
+  }
+
+  :global([data-about-portrait][data-motion-ready="true"]) .about-portrait__poster {
+    opacity: 0;
+  }
+
+  .about-portrait__caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>

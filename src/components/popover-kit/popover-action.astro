@@ -1,0 +1,21 @@
+---
+import IconicIcon from "../atoms/iconic-icon.astro";
+interface Props {
+  href: string;
+  label: string;
+  ariaLabel?: string;
+  newTab?: boolean;
+  class?: string | undefined;
+}
+const { href, label, ariaLabel, newTab = false, class: className } = Astro.props;
+---
+
+<a
+  class:list={["popover-kit__action", className]}
+  href={href}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noopener noreferrer" : undefined}
+  aria-label={ariaLabel}
+>
+  <span>{label}</span>{newTab && <IconicIcon name="external" />}
+</a>

@@ -1,79 +1,132 @@
-<section class="about-intro">
-  <p class="about-intro__eyebrow">About</p>
-  <h1 class="about-intro__title">
-    Engineering Lead at Attio, building the world&apos;s most beautiful and powerful CRM.
-  </h1>
-  <p class="about-intro__summary">
-    I joined as a founding product engineer and helped scale the company from pre-launch to a $52
-    million Series B. I now lead the Companion Apps team across mobile, desktop, and browser
-    extension products.
-  </p>
-  <p class="about-intro__summary">
-    Before Attio, I worked at Thought Machine, Theodo UK, and Cardiff University.
-  </p>
-  <a class="about-intro__link" href="/timeline">Open full timeline</a>
+---
+import type { ImageMetadata } from "astro";
+import type { AboutPortraitAssets } from "../lib/about-portrait-data";
+import AboutPortrait from "../molecules/about-portrait.astro";
+import AboutPassage from "./about-passage.astro";
+
+interface Props {
+  assets: AboutPortraitAssets;
+  initiallyVisible?: boolean;
+  poster: ImageMetadata;
+}
+
+const { assets, initiallyVisible = true, poster } = Astro.props;
+---
+
+{
+  /* The letter and the print above it. The name is the page's heading for the
+    machine only: on the sheet, the letter introduces itself in its first line. */
+}
+<section class="about-intro" aria-labelledby="about-intro-title" data-about-portrait>
+  <h1 id="about-intro-title" class="about-intro__title">Braden Marshall</h1>
+
+  <div class="about-intro__visual">
+    <AboutPortrait poster={poster} assets={assets} initiallyVisible={initiallyVisible} />
+  </div>
+
+  <div class="about-intro__letter">
+    <AboutPassage />
+  </div>
 </section>
 
 <style>
+  /* Stacked by default: the print, then the letter beneath it. */
   .about-intro {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    gap: 0.9rem;
-    max-width: 36rem;
-    padding: 0.35rem 0 0.85rem;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
   }
 
-  .about-intro__eyebrow {
-    color: var(--color-text-muted);
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+  /* The box IS the media band: the stage inside is sized in cq units of it
+     (min(100cqh, 200cqw/3), cropped to 1440:800), so a 3:2 box is exactly
+     filled and nothing is left over. The air between the drawing and the
+     letter is the layout's gap, not a band of empty paper inside the print —
+     one place owns that distance instead of two. Keep aspect-ratio and
+     container-type: the portrait sizes itself in cq units of this box. */
+  .about-intro__visual {
+    --about-stage-anchor-top: 0;
+    --about-stage-anchor-translate-y: 0;
+    position: relative;
+    flex: 0 0 auto;
+    aspect-ratio: 3 / 2;
+    width: 100%;
+    margin-inline: auto;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    /* The portrait's stage box sizes itself in cq units of this box. */
+    container-type: size;
+  }
+
+  .about-intro__visual > :global(.about-portrait) {
+    position: absolute;
+    inset: 0;
+  }
+
+  .about-intro__letter {
+    min-width: 0;
+  }
+
+  /* Wide: one column, one screen. The drawing hangs above the letter and
+     takes whatever height the letter leaves it in the viewport (the stage is
+     the viewport tall on this side of the breakpoint — see about-template);
+     the letter keeps its measure and both sit centred. The drawing's row can
+     shrink but never below a floor, past which the page scrolls rather than
+     losing the print. Below 1000px the stacked, scrolling page above stands. */
+  @media (min-width: 1000px) {
+    .about-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: minmax(12rem, 1fr) auto;
+      justify-items: center;
+      /* The header clearance and footer space belong to this same viewport
+         budget. The drawing takes the remaining height; shorter screens
+         scroll once it reaches its minimum, keeping the letter readable. */
+      min-height: calc(
+        100dvh - var(--about-stage-padding-top) - var(--about-letterhead-clearance) -
+          var(--about-stage-padding-bottom)
+      );
+      /* The whole distance between the drawing's foot and the letter's first
+         line: the print used to carry part of it as spare paper inside its own
+         box, which meant the gap could not be tuned without resizing the
+         drawing. Wider than the token ladder's top step on purpose — the
+         drawing's foot dissolves into the wash rather than ending on an edge,
+         so the greeting needs more clear paper than a hard-edged print would
+         to read as set below it rather than hung off it. */
+      row-gap: calc(var(--space-32) + var(--space-8));
+    }
+
+    /* Height from the row, width from the aspect ratio: the box sizes itself
+       to the room left above the letter. `width: auto` and `justify-self`
+       (not stretch) are what let the ratio set the width; max-width caps it
+       on narrow-but-tall viewports, where the portrait inside then fits by
+       width instead (its stage is min(cqh, cqw)-bound). */
+    .about-intro__visual {
+      grid-row: 1;
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+    }
+
+    .about-intro__letter {
+      grid-row: 2;
+      width: 100%;
+    }
   }
 
   .about-intro__title {
-    color: var(--color-text-primary);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 500;
-    line-height: 1.2;
-    text-wrap: balance;
-  }
-
-  .about-intro__summary {
-    color: var(--color-text-primary);
-    opacity: 0.68;
-    font-size: 0.92rem;
-    line-height: 1.72;
-  }
-
-  .about-intro__link {
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-    margin-top: 0.35rem;
-    padding: 0.48rem 0.82rem;
-    border: 1px solid var(--color-border-strong);
-    border-radius: 999px;
-    background: var(--color-surface-subtle);
-    color: var(--color-text-primary);
-    font-size: 0.74rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition:
-      color 200ms ease,
-      border-color 200ms ease,
-      background-color 200ms ease;
-  }
-
-  .about-intro__link:hover {
-    border-color: var(--color-border-strong);
-    background: var(--color-surface-interactive-hover);
-    color: var(--color-text-primary);
-  }
-
-  @media (max-width: 760px) {
-    .about-intro__title {
-      text-wrap: pretty;
-    }
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 </style>

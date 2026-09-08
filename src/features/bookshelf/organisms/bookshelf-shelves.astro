@@ -1,0 +1,30 @@
+---
+import type { BookViewModel } from "../lib/bookshelf-data";
+import { atlasProfile } from "../lib/atlas-layout";
+import { atlasTableLayout, atlasTableStyle, atlasBookStyle } from "../lib/atlas-camera";
+import BookVolume from "../molecules/book-volume.astro";
+interface Props {
+  books: BookViewModel[];
+  eagerCoverCount?: number;
+}
+const { books, eagerCoverCount = 6 } = Astro.props;
+const layout = atlasTableLayout(
+  books.map((book) => ({
+    profile: atlasProfile(book.title, book.author, book.coverWidth, book.coverHeight),
+  })),
+);
+---
+
+<ul class="atlas-track" style={atlasTableStyle(layout)} data-book-grid data-shelf-run>
+  {
+    books.map((book, index) => (
+      <BookVolume
+        book={book}
+        index={index}
+        placement={atlasBookStyle(layout, index)}
+        eager={index < eagerCoverCount}
+        priority={index === 0}
+      />
+    ))
+  }
+</ul>

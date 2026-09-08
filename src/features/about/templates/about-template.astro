@@ -1,39 +1,19 @@
 ---
-import ScrollFadeFrame from "../../../components/molecules/scroll-fade-frame.astro";
-import AboutIntro from "../organisms/about-intro.astro";
+import type { AboutRoom } from "../lib/about-room";
+
+interface Props {
+  room?: AboutRoom;
+}
+
+const { room = "letter" } = Astro.props;
 ---
 
 <div class="about-template">
-  <ScrollFadeFrame class="about-template__frame">
-    <div class="about-template__scroll" data-scroll-fade-viewport>
-      <AboutIntro />
+  <!-- The route supplies only its own room and feature CSS. The other room
+       retains a real URL and is fetched on intent, then cached in this sheet. -->
+  <div class="about-template__stage" data-room={room} data-about-rooms>
+    <div class="about-template__scene" data-room-scene>
+      <slot />
     </div>
-  </ScrollFadeFrame>
+  </div>
 </div>
-
-<style>
-  .about-template {
-    flex: 1;
-    min-height: 0;
-  }
-
-  .about-template__frame {
-    flex: 1;
-    min-height: 0;
-  }
-
-  .about-template__scroll {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    overflow: auto;
-    padding: 1.5rem var(--panel-inline-padding);
-  }
-
-  @media (max-width: 760px) {
-    .about-template__scroll {
-      align-items: flex-start;
-      padding-top: 1.2rem;
-    }
-  }
-</style>

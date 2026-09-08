@@ -1,0 +1,93 @@
+---
+import OverlaySearchBar from "../../../components/molecules/overlay-search-bar.astro";
+import { formatBookshelfResultsCount } from "../lib/bookshelf-data";
+import { siteMarkStrokeStyle } from "../../../components/lib/site-mark-stroke";
+
+interface Props {
+  searchId?: string;
+  total: number;
+}
+
+const { searchId = "bookshelf-search", total } = Astro.props;
+const placeholder = `Search ${formatBookshelfResultsCount(total, total, false)}`;
+const categoryMark = await siteMarkStrokeStyle();
+---
+
+<div class="shelf-search" data-no-drag data-bookshelf-toolbar>
+  <button class="shelf-category" data-category-clear type="button" style={categoryMark} hidden>
+    <span data-category-label></span>
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8 M12 4l-8 8"></path></svg>
+  </button>
+  <OverlaySearchBar
+    id={searchId}
+    label="Search the shelf"
+    placeholder={placeholder}
+    width="13rem"
+  />
+</div>
+
+<style>
+  .shelf-search {
+    position: relative;
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    max-width: 100%;
+  }
+  .shelf-category {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    max-width: 12rem;
+    min-height: 36px;
+    padding: 0 0 4px;
+    border: 0;
+    background: none;
+    color: #3e596d;
+    font: italic 0.85rem/1.25 var(--font-text);
+    cursor: pointer;
+  }
+  .shelf-category[hidden] {
+    display: none;
+  }
+  .shelf-category span {
+    overflow-wrap: anywhere;
+  }
+  .shelf-category::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 4px;
+    background: var(--site-mark-stroke) center / 100% 100% no-repeat;
+  }
+  .shelf-category svg {
+    width: 12px;
+    height: 12px;
+    flex: none;
+  }
+  .shelf-category path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+  }
+  .shelf-category:focus-visible {
+    outline: 1px solid var(--color-focus-ring-strong);
+    outline-offset: 4px;
+  }
+  @media (max-width: 760px) {
+    .shelf-search {
+      gap: var(--space-8);
+    }
+    .shelf-category {
+      max-width: 8rem;
+      font-size: 0.75rem;
+    }
+    .shelf-search :global(.overlay-search-bar) {
+      flex: 1;
+      min-width: 7rem;
+    }
+  }
+</style>

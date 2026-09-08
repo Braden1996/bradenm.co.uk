@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { getPopoverAsset } from "./popover-assets";
+import notebookEdge from "./notebook-edge.svg?url";
+import "./popover-kit.css";
+interface Props extends HTMLAttributes<"section"> {
+  as?: "section" | "div";
+  surface?: "paper" | "bare" | "notebook";
+}
+const { as: Tag = "section", surface = "paper", class: className, style, ...rest } = Astro.props;
+const divider = await getPopoverAsset();
+---
+
+<Tag
+  class:list={["popover-kit", className]}
+  data-popover-kit
+  data-surface={surface}
+  style={`--popover-divider-image:url("${divider.url}");${surface === "notebook" ? `--notebook-edge:url("${notebookEdge}");` : ""}${style ?? ""}`}
+  {...rest}
+>
+  <slot />
+</Tag>

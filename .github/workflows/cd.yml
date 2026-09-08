@@ -6,79 +6,104 @@ on:
     branches: [master]
     types: [completed]
 
-  workflow_dispatch: {}
-
 concurrency:
   group: continuous-deploy-production
   cancel-in-progress: false
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
-  verify-rulesync:
-    name: Verify Rulesync outputs
-    runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      github.event.workflow_run.conclusion == 'success'
-
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v6.0.2
-        with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-
-      - name: Setup Bun package manager
-        uses: oven-sh/setup-bun@v2.2.0
-
-      - name: Install dependencies
-        run: bun ci
-
-      - name: Check Rulesync outputs
-        run: bun run check:rulesync
-
   deploy:
     name: Deploy to Cloudflare Pages
     runs-on: ubuntu-latest
-    needs: verify-rulesync
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      github.event.workflow_run.conclusion == 'success'
-    permissions:
-      contents: read
-      deployments: write
+    timeout-minutes: 15
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      (github.event.workflow_run.event == 'push' ||
+       github.event.workflow_run.event == 'workflow_dispatch') &&
+      github.event.workflow_run.head_branch == 'master' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
 
     steps:
-      - name: Check out code
+      - name: Check that the tested commit is still current
+        id: current
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CI_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          latest_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/master" --jq .object.sha)
+          if [ "$CI_SHA" = "$latest_sha" ]; then
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Skipping an older build because master has advanced."
+          fi
+
+      - name: Check out tested configuration
+        if: steps.current.outputs.deploy == 'true'
         uses: actions/checkout@v6.0.2
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+
+      - name: Setup Node.js
+        if: steps.current.outputs.deploy == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
 
       - name: Setup Bun package manager
+        if: steps.current.outputs.deploy == 'true'
         uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version-file: package.json
 
-      - name: Install dependencies
-        run: bun ci
+      - name: Download the exact output tested by CI
+        if: steps.current.outputs.deploy == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist-${{ github.event.workflow_run.head_sha }}
+          path: ${{ runner.temp }}/pages-deployment/dist/
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
 
-      - name: Build
-        run: docker build --output dist .
+      - name: Validate downloaded output
+        if: steps.current.outputs.deploy == 'true'
+        run: bun scripts/check-deployment.mjs "$RUNNER_TEMP/pages-deployment/dist"
 
-      - name: Create Pages project (no-op if exists)
+      - name: Verify deployment credentials
+        if: steps.current.outputs.deploy == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "::error::Missing CLOUDFLARE_API_TOKEN secret"; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "::error::Missing CLOUDFLARE_ACCOUNT_ID variable"; exit 1; }
+
+      - name: Deploy tested output
+        if: steps.current.outputs.deploy == 'true'
+        id: deployment
         uses: cloudflare/wrangler-action@v4.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: ${{ runner.temp }}/pages-deployment
           packageManager: bun
           wranglerVersion: "4.120.0"
-          command: pages project create bradenm-co-uk --production-branch=master
-        continue-on-error: true
+          command: >-
+            pages deploy dist/ --project-name=bradenm-co-uk
+            --branch=master --commit-hash=${{ github.event.workflow_run.head_sha }}
 
-      - name: Deploy
-        uses: cloudflare/wrangler-action@v4.0.0
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          packageManager: bun
-          wranglerVersion: "4.120.0"
-          command: pages deploy dist/ --project-name=bradenm-co-uk
+      - name: Record deployment
+        if: steps.current.outputs.deploy == 'true'
+        env:
+          DEPLOYMENT_URL: ${{ steps.deployment.outputs.deployment-url }}
+          CI_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<EOF
+          Deployed commit: $CI_SHA
+          Preview: $DEPLOYMENT_URL
+          Production: https://bradenm.co.uk
+          EOF

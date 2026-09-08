@@ -1,0 +1,39 @@
+up-30
+
+Use case: identity-preserve. Asset: one horizontal row of 7 coherent SEATED dog animation sprites. Match this reference chocolate brown Newfoundland with white chest and vintage watercolor/pencil fur, sitting upright on a tiny grass island. Plain pure flat white background.
+Composition: exactly SEVEN equally sized COMPLETE full-body dogs arranged side by side in ONE HORIZONTAL ROW on a wide 3:1 canvas. Equal spacing, identical scale, all paws on the same horizontal baseline. No dog may be clipped. Same body position, paws, tail, shoulders and scale in all seven pictures. Only head and neck turn. No torso rotation, no crouching, no leaning, no body changes, no repeated poses. No text, boxes, grid lines or labels.
+The seven HEAD orientations from LEFT TO RIGHT must show a full smooth turn: 1 nose points fully to the LEFT edge of canvas in profile; 2 nose points three-quarter LEFT; 3 nose points slightly LEFT of the viewer; 4 face looks straight toward viewer; 5 nose points slightly RIGHT of viewer; 6 nose points three-quarter RIGHT; 7 nose points fully to RIGHT edge of canvas in profile. Distinct incremental yaw angles -75,-50,-25,0,+25,+50,+75 degrees. Rightmost three MUST face RIGHT, opposite the first three. Frame 4 is exactly frontal. The complete torso and legs remain the same front-three-quarter-left pose in every frame.
+
+HEAD PITCH for this entire row: All seven heads tilt the chin UP noticeably by 30 degrees, following something overhead. Only neck/head tilts; dog remains sitting tall.
+
+up-15
+
+Use case: identity-preserve. Asset: one horizontal row of 7 coherent SEATED dog animation sprites. Match this reference chocolate brown Newfoundland with white chest and vintage watercolor/pencil fur, sitting upright on a tiny grass island. Plain pure flat white background.
+Composition: exactly SEVEN equally sized COMPLETE full-body dogs arranged side by side in ONE HORIZONTAL ROW on a wide 3:1 canvas. Equal spacing, identical scale, all paws on the same horizontal baseline. No dog may be clipped. Same body position, paws, tail, shoulders and scale in all seven pictures. Only head and neck turn. No torso rotation, no crouching, no leaning, no body changes, no repeated poses. No text, boxes, grid lines or labels.
+The seven HEAD orientations from LEFT TO RIGHT must show a full smooth turn: 1 nose points fully to the LEFT edge of canvas in profile; 2 nose points three-quarter LEFT; 3 nose points slightly LEFT of the viewer; 4 face looks straight toward viewer; 5 nose points slightly RIGHT of viewer; 6 nose points three-quarter RIGHT; 7 nose points fully to RIGHT edge of canvas in profile. Distinct incremental yaw angles -75,-50,-25,0,+25,+50,+75 degrees. Rightmost three MUST face RIGHT, opposite the first three. Frame 4 is exactly frontal. The complete torso and legs remain the same front-three-quarter-left pose in every frame.
+
+HEAD PITCH for this entire row: All seven heads tilt the chin slightly UP by 15 degrees, following something just above eye level. Only neck/head tilts; dog remains sitting tall.
+
+level
+
+Use case: identity-preserve. Asset: one horizontal row of 7 coherent SEATED dog animation sprites. Match this reference chocolate brown Newfoundland with white chest and vintage watercolor/pencil fur, sitting upright on a tiny grass island. Plain pure flat white background.
+Composition: exactly SEVEN equally sized COMPLETE full-body dogs arranged side by side in ONE HORIZONTAL ROW on a wide 3:1 canvas. Equal spacing, identical scale, all paws on the same horizontal baseline. No dog may be clipped. Same body position, paws, tail, shoulders and scale in all seven pictures. Only head and neck turn. No torso rotation, no crouching, no leaning, no body changes, no repeated poses. No text, boxes, grid lines or labels.
+The seven HEAD orientations from LEFT TO RIGHT must show a full smooth turn: 1 nose points fully to the LEFT edge of canvas in profile; 2 nose points three-quarter LEFT; 3 nose points slightly LEFT of the viewer; 4 face looks straight toward viewer; 5 nose points slightly RIGHT of viewer; 6 nose points three-quarter RIGHT; 7 nose points fully to RIGHT edge of canvas in profile. Distinct incremental yaw angles -75,-50,-25,0,+25,+50,+75 degrees. Rightmost three MUST face RIGHT, opposite the first three. Frame 4 is exactly frontal. The complete torso and legs remain the same front-three-quarter-left pose in every frame.
+
+HEAD PITCH for this entire row: All seven heads stay at LEVEL pitch 0 degrees, following something at eye height.
+
+down-15
+
+Use case: identity-preserve. Asset: one horizontal row of 7 coherent SEATED dog animation sprites. Match this reference chocolate brown Newfoundland with white chest and vintage watercolor/pencil fur, sitting upright on a tiny grass island. Plain pure flat white background.
+Composition: exactly SEVEN equally sized COMPLETE full-body dogs arranged side by side in ONE HORIZONTAL ROW on a wide 3:1 canvas. Equal spacing, identical scale, all paws on the same horizontal baseline. No dog may be clipped. Same body position, paws, tail, shoulders and scale in all seven pictures. Only head and neck turn. No torso rotation, no crouching, no leaning, no body changes, no repeated poses. No text, boxes, grid lines or labels.
+The seven HEAD orientations from LEFT TO RIGHT must show a full smooth turn: 1 nose points fully to the LEFT edge of canvas in profile; 2 nose points three-quarter LEFT; 3 nose points slightly LEFT of the viewer; 4 face looks straight toward viewer; 5 nose points slightly RIGHT of viewer; 6 nose points three-quarter RIGHT; 7 nose points fully to RIGHT edge of canvas in profile. Distinct incremental yaw angles -75,-50,-25,0,+25,+50,+75 degrees. Rightmost three MUST face RIGHT, opposite the first three. Frame 4 is exactly frontal. The complete torso and legs remain the same front-three-quarter-left pose in every frame.
+
+HEAD PITCH for this entire row: All seven heads tilt slightly DOWN by 15 degrees, following something just below eye level. Keep the entire sitting body upright at full original height; only neck/head tilts, never crouch.
+
+down-30
+
+Use case: identity-preserve. Asset: one horizontal row of 7 coherent SEATED dog animation sprites. Match this reference chocolate brown Newfoundland with white chest and vintage watercolor/pencil fur, sitting upright on a tiny grass island. Plain pure flat white background.
+Composition: exactly SEVEN equally sized COMPLETE full-body dogs arranged side by side in ONE HORIZONTAL ROW on a wide 3:1 canvas. Equal spacing, identical scale, all paws on the same horizontal baseline. No dog may be clipped. Same body position, paws, tail, shoulders and scale in all seven pictures. Only head and neck turn. No torso rotation, no crouching, no leaning, no body changes, no repeated poses. No text, boxes, grid lines or labels.
+The seven HEAD orientations from LEFT TO RIGHT must show a full smooth turn: 1 nose points fully to the LEFT edge of canvas in profile; 2 nose points three-quarter LEFT; 3 nose points slightly LEFT of the viewer; 4 face looks straight toward viewer; 5 nose points slightly RIGHT of viewer; 6 nose points three-quarter RIGHT; 7 nose points fully to RIGHT edge of canvas in profile. Distinct incremental yaw angles -75,-50,-25,0,+25,+50,+75 degrees. Rightmost three MUST face RIGHT, opposite the first three. Frame 4 is exactly frontal. The complete torso and legs remain the same front-three-quarter-left pose in every frame.
+
+HEAD PITCH for this entire row: All seven heads tilt noticeably DOWN by 30 degrees, following something below eye level. Keep the entire sitting body upright at full original height; only neck/head tilts, never crouch or shrink the body.

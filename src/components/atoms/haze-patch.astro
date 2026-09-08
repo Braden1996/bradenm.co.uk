@@ -1,0 +1,132 @@
+---
+/**
+ * A transparent patch that softens whatever lies under it: full blur through
+ * its middle, none at all by its edges, and the change spread over a band so
+ * there is no line anywhere to find. Over a still surface it is barely there;
+ * over content it takes the detail out and hands back a quiet ground to print
+ * on.
+ *
+ * `haze-bar` does this along ONE edge of a scroller. This does it around a
+ * free-standing box — a menu, a card, a caption dropped over artwork — so the
+ * softening reads as a patch of haze rather than a pane of glass with a border.
+ *
+ * Lay it inside a positioned owner and size the effect with two properties,
+ * both read here and never declared:
+ *
+ *   --haze-patch-blur     the radius the middle accumulates to; 0 renders
+ *                         nothing, but it does not render nothing FOR FREE —
+ *                         a backdrop filter still snapshots everything beneath
+ *                         it at radius zero, so an owner that leaves the patch
+ *                         in place while it is off should also take it out of
+ *                         painting (`visibility: hidden`), especially over a
+ *                         scroller, where that snapshot is per frame
+ *   --haze-patch-feather  the width of the ramp, and how far the patch bleeds
+ *                         past its owner on every side — so the ramp happens
+ *                         OUTSIDE the owner's box and whatever the owner holds
+ *                         always sits over the full blur
+ *
+ * `--haze-patch-blur` is the one to animate: it feeds the radii directly, so
+ * moving it moves a real Gaussian instead of cross-fading a blurred copy over
+ * a sharp one. `--haze-patch-duration` and `--haze-patch-easing` time that.
+ *
+ * NEVER fade this patch with an opacity of its own. An element with opacity
+ * below 1 is a backdrop root for its descendants, and the layers below ARE
+ * descendants: their backdrop would become this element's own empty content,
+ * and every one of them would blur nothing. Take the radius to 0 instead. The
+ * same reasoning applies upwards — keep the patch's nearest filtering, fading,
+ * masking or blending ancestor opaque, or it composites that ancestor's fill a
+ * second time and shows up as a lighter block.
+ */
+interface Props {
+  class?: string;
+  // Passthrough attributes for the root element.
+  [key: string]: string | number | boolean | null | undefined;
+}
+
+const props: Props = Astro.props;
+const { class: className, ...rest } = props;
+---
+
+<div class:list={["haze-patch", className]} {...rest} aria-hidden="true">
+  <span></span><span></span><span></span>
+</div>
+
+<style>
+  /*
+   * Masking one blur to a soft edge does not soften the blur — it cross-fades
+   * a fully blurred copy over the sharp original, and half of each is a ghost,
+   * not a haze. These three layers ramp the RADIUS instead: each blurs harder
+   * than the last and reaches full strength further in from the edge, and
+   * because a backdrop filter reads everything painted beneath it — its own
+   * earlier siblings included — the radii accumulate towards the middle. The
+   * band nearest the edge carries only the first layer, the one inside it the
+   * first two, and the core all three.
+   */
+  .haze-patch {
+    position: absolute;
+    inset: calc(-1 * var(--haze-patch-feather, 0px));
+    pointer-events: none;
+  }
+
+  /*
+   * One ramp per axis, intersected: alpha multiplies, so the corners come away
+   * softer than the sides and the patch has no corners to speak of. The stops
+   * are lengths rather than percentages because the ramp is a fixed band — it
+   * must not stretch or crowd as the owner's box changes size.
+   */
+  .haze-patch > span {
+    position: absolute;
+    inset: 0;
+    display: block;
+    --haze-patch-ramp:
+      transparent var(--haze-patch-ramp-start), black var(--haze-patch-ramp-end),
+      black calc(100% - var(--haze-patch-ramp-end)),
+      transparent calc(100% - var(--haze-patch-ramp-start));
+    -webkit-mask-image:
+      linear-gradient(to right, var(--haze-patch-ramp)),
+      linear-gradient(to bottom, var(--haze-patch-ramp));
+    mask-image:
+      linear-gradient(to right, var(--haze-patch-ramp)),
+      linear-gradient(to bottom, var(--haze-patch-ramp));
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    /* Both spellings: the engines that only know the prefixed property would
+       otherwise snap the haze on instead of drawing it in. */
+    transition:
+      backdrop-filter var(--haze-patch-duration, 0s) var(--haze-patch-easing, linear),
+      -webkit-backdrop-filter var(--haze-patch-duration, 0s) var(--haze-patch-easing, linear);
+  }
+
+  /*
+   * Radii in quadrature: three Gaussians at 0.25, 0.45 and 0.8 of the named
+   * blur compose to 0.95 of it, so `--haze-patch-blur` is very nearly the
+   * radius the middle actually gets rather than a number the layers scale from.
+   */
+  .haze-patch > span:nth-child(1) {
+    --haze-patch-ramp-start: 0px;
+    --haze-patch-ramp-end: calc(var(--haze-patch-feather, 0px) * 0.34);
+    -webkit-backdrop-filter: blur(calc(var(--haze-patch-blur, 0px) * 0.25));
+    backdrop-filter: blur(calc(var(--haze-patch-blur, 0px) * 0.25));
+  }
+
+  .haze-patch > span:nth-child(2) {
+    --haze-patch-ramp-start: calc(var(--haze-patch-feather, 0px) * 0.28);
+    --haze-patch-ramp-end: calc(var(--haze-patch-feather, 0px) * 0.68);
+    -webkit-backdrop-filter: blur(calc(var(--haze-patch-blur, 0px) * 0.45));
+    backdrop-filter: blur(calc(var(--haze-patch-blur, 0px) * 0.45));
+  }
+
+  .haze-patch > span:nth-child(3) {
+    --haze-patch-ramp-start: calc(var(--haze-patch-feather, 0px) * 0.6);
+    --haze-patch-ramp-end: var(--haze-patch-feather, 0px);
+    -webkit-backdrop-filter: blur(calc(var(--haze-patch-blur, 0px) * 0.8));
+    backdrop-filter: blur(calc(var(--haze-patch-blur, 0px) * 0.8));
+  }
+
+  /* Paper takes no backdrop with it, and a forced palette has no use for one. */
+  @media (forced-colors: active), print {
+    .haze-patch {
+      display: none;
+    }
+  }
+</style>

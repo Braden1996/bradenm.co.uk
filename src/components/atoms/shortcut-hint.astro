@@ -1,0 +1,263 @@
+---
+/*
+ * A key cap for a keyboard shortcut, e.g. `⌘K` on macOS and `Ctrl+K` elsewhere.
+ *
+ * Pass `as="button"` to make the cap the control it advertises — the hint and
+ * the thing you can click become one target rather than two competing for the
+ * same corner. The `action` slot adds a trailing icon behind a partial divider,
+ * for when the shortcut has an obvious pointer equivalent (Esc / close).
+ */
+import { resolveShortcutDisplay } from "../lib/hotkey-display";
+
+interface Props {
+  as?: string;
+  class?: string;
+  /** Canonical hotkey, e.g. `Mod+K` or `Escape`. `Mod` is ⌘ on macOS, Ctrl elsewhere. */
+  hotkey: string;
+  /** Accessible name. Required when `as="button"`, where the cap alone reads as "Esc". */
+  label?: string;
+  /** Override the platform-native token separator. */
+  separator?: string | null;
+  // Passthrough HTML attributes for the dynamic tag.
+  [key: string]: string | number | boolean | null | undefined;
+}
+
+// SAFETY: Astro types Astro.props as a loose record; Props is this
+// component's declared contract and Astro validates required props at the
+// call site, so the assertion only restores the declared shape.
+const props = Astro.props as Props;
+const { as: Tag = "span", class: className, hotkey, label, separator, ...rest } = props;
+
+const { ariaKeyShortcuts, variants } = resolveShortcutDisplay(hotkey, separator);
+const hasAction = Astro.slots.has("action");
+const isInteractive = Tag === "button" || Tag === "a";
+---
+
+<Tag
+  class:list={[
+    "shortcut-hint",
+    isInteractive && "shortcut-hint--interactive",
+    hasAction && "shortcut-hint--with-action",
+    className,
+  ]}
+  aria-keyshortcuts={ariaKeyShortcuts}
+  aria-label={label}
+  {...rest}
+>
+  <kbd class="shortcut-hint__keys cap-box">
+    {
+      variants.map(({ display, platforms }) => (
+        <span class="shortcut-hint__key" data-platform={platforms}>
+          {display}
+        </span>
+      ))
+    }
+  </kbd>
+  {
+    hasAction && (
+      <span class="shortcut-hint__action">
+        <slot name="action" />
+      </span>
+    )
+  }
+</Tag>
+
+<style>
+  .shortcut-hint {
+    --shortcut-hint-font-size: var(--text-label);
+    /*
+     * The cap stands one `--control-xs` tall, which is the height it already
+     * had to within 0.08px, now named. The text follows the compact tag recipe:
+     * its tight line box is the fallback content height, and the rounded cap
+     * box replaces that height when text-box trimming is available.
+     */
+    --shortcut-hint-content-height: calc(var(--shortcut-hint-font-size) * var(--leading-tight));
+    --shortcut-hint-padding-block: calc(
+      (var(--control-xs) - var(--shortcut-hint-content-height) - 2px) / 2
+    );
+    --shortcut-hint-padding-inline-start: var(--space-6);
+    --shortcut-hint-padding-inline-end: var(--space-6);
+    /*
+     * The gap and the divider stay resolved lengths, never `em`: both are also
+     * read inside `.shortcut-hint__action`, which sets its own font size, and an
+     * `em` would resolve there on the wrong basis and put the divider off-centre.
+     */
+    --shortcut-hint-gap: var(--space-4);
+    --shortcut-hint-radius: var(--radius-xs);
+    /*
+     * Safe as a bare `em`, unlike the two above: it is consumed as `font-size`
+     * on a child, so it resolves against this element's own size — the icon box
+     * is one em of the text beside it.
+     */
+    --shortcut-hint-action-size: 1em;
+    --shortcut-hint-divider-height: var(--space-12);
+    /*
+     * The cap paints an opaque paper base, so its states are that base with ink
+     * mixed in rather than the translucent ink washes used elsewhere — washed
+     * over near-white paper those barely register at this size.
+     */
+    --shortcut-hint-background: var(--color-surface-panel-top);
+    --shortcut-hint-background-hover: color-mix(
+      in srgb,
+      var(--color-surface-panel-top) 93%,
+      var(--color-text-primary)
+    );
+    --shortcut-hint-background-active: color-mix(
+      in srgb,
+      var(--color-surface-panel-top) 87%,
+      var(--color-text-primary)
+    );
+    --shortcut-hint-border: var(--color-border-soft);
+    --shortcut-hint-border-hover: var(--color-border-strong);
+    --shortcut-hint-color: var(--color-text-faint);
+    --shortcut-hint-color-hover: var(--color-text-muted);
+    --shortcut-hint-divider: var(--color-border-soft);
+    --shortcut-hint-sheen: var(--color-surface-sheen);
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--shortcut-hint-gap);
+    flex: none;
+    padding: var(--shortcut-hint-padding-block) var(--shortcut-hint-padding-inline-end)
+      var(--shortcut-hint-padding-block) var(--shortcut-hint-padding-inline-start);
+    border: 1px solid var(--shortcut-hint-border);
+    border-radius: var(--shortcut-hint-radius);
+    background: var(--shortcut-hint-background);
+    box-shadow: inset 0 1px 0 var(--shortcut-hint-sheen);
+    color: var(--shortcut-hint-color);
+    font-family: inherit;
+    font-size: var(--shortcut-hint-font-size);
+    font-weight: var(--weight-medium);
+    /*
+     * `case` lifts punctuation to cap height, which is what the `+` in `Ctrl+K`
+     * wants beside an all-caps run. There is no high-level property for it, so
+     * it is written longhand. This is the only place it belongs: the cap is the
+     * one full-caps run left on the site.
+     */
+    font-feature-settings: "case";
+    letter-spacing: var(--tracking-wide);
+    line-height: var(--leading-flush);
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+      background-color var(--duration-fast) ease,
+      border-color var(--duration-fast) ease,
+      box-shadow var(--duration-fast) ease,
+      color var(--duration-fast) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /*
+   * The component sets a display, which would otherwise win over the user agent's
+   * rule for the attribute and leave a hidden cap on screen.
+   */
+  .shortcut-hint[hidden] {
+    display: none;
+  }
+
+  .shortcut-hint__keys {
+    --cap-box-height: var(--shortcut-hint-font-size);
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: var(--leading-tight);
+    align-self: center;
+  }
+
+  @supports (text-box: trim-both cap alphabetic) and (width: round(1px, 2px)) {
+    .shortcut-hint {
+      --shortcut-hint-content-height: round(var(--shortcut-hint-font-size), 2px);
+    }
+
+    .shortcut-hint__keys {
+      display: inline-block;
+      padding-block: var(--cap-box-padding-block);
+      text-box: trim-both var(--cap-box-trim, cap) alphabetic;
+    }
+  }
+
+  /*
+   * Every platform's label ships in the markup and CSS keeps the one that
+   * matches, because the platform is only knowable in the browser. `data-platform`
+   * is stamped on the document by a blocking script in the head, so the correct
+   * cap is the one that paints — resolving it after hydration would resize
+   * whatever the cap is nested inside.
+   */
+  .shortcut-hint__key {
+    display: none;
+  }
+
+  /* No platform resolved (scripting off): fall back to the first label. */
+  .shortcut-hint__key:first-child {
+    display: inline;
+  }
+
+  :global(:root[data-platform]) .shortcut-hint__key {
+    display: none;
+  }
+
+  :global(:root[data-platform="mac"]) .shortcut-hint__key[data-platform~="mac"],
+  :global(:root[data-platform="windows"]) .shortcut-hint__key[data-platform~="windows"],
+  :global(:root[data-platform="linux"]) .shortcut-hint__key[data-platform~="linux"] {
+    display: inline;
+  }
+
+  .shortcut-hint__action {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding-left: var(--shortcut-hint-gap);
+    font-size: var(--shortcut-hint-action-size);
+    line-height: 0;
+  }
+
+  /*
+   * A partial rule rather than a full-height divider: it separates the shortcut
+   * from its pointer equivalent without cutting the cap in two.
+   */
+  .shortcut-hint__action::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: var(--shortcut-hint-divider-height);
+    border-left: 1px solid var(--shortcut-hint-divider);
+    translate: 0 -50%;
+  }
+
+  /* The trailing icon carries its own optical margin, so the cap ends tighter. */
+  .shortcut-hint--with-action {
+    --shortcut-hint-padding-inline-end: var(--space-4);
+  }
+
+  .shortcut-hint--interactive {
+    cursor: pointer;
+  }
+
+  /*
+   * Keyboard focus lands on the same treatment as hover rather than a ring: the
+   * cap is small enough that an outline around it reads as a halo.
+   */
+  .shortcut-hint--interactive:is(:hover, :focus-visible) {
+    border-color: var(--shortcut-hint-border-hover);
+    background: var(--shortcut-hint-background-hover);
+    color: var(--shortcut-hint-color-hover);
+  }
+
+  .shortcut-hint:focus-visible {
+    outline: none;
+  }
+
+  /* Pressing sinks the cap by taking the top sheen off and deepening the fill. */
+  .shortcut-hint--interactive:active {
+    background: var(--shortcut-hint-background-active);
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shortcut-hint {
+      transition: none;
+    }
+  }
+</style>

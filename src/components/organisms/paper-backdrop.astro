@@ -1,0 +1,59 @@
+---
+import sharp from "sharp";
+import { getPaperAssets } from "../lib/paper-assets";
+import { paperSheetTileSize, renderPaperSheet } from "../lib/paper-texture";
+
+// The sheet is baked HERE, at build time, and travels in the markup: it is
+// on screen with the first paint, and nothing repaints it later. Lossy WebP:
+// soft grayscale grain compresses to a fraction of PNG with no visible cost.
+const sheet = renderPaperSheet();
+const webp = await sharp(Buffer.from(sheet), {
+  raw: { channels: 4, height: paperSheetTileSize, width: paperSheetTileSize },
+})
+  .webp({ quality: 82 })
+  .toBuffer();
+// The bottom-edge gradient wash, baked the same way. Its strength is folded
+// into the alpha channel because a background layer cannot carry an opacity.
+const washImage = (await getPaperAssets()).wash.url;
+const sheetVariable = `:root{--paper-sheet:url("data:image/webp;base64,${webp.toString("base64")}");--paper-sheet-size:${paperSheetTileSize}px;--paper-wash:url("${washImage}")}`;
+---
+
+<style is:inline set:html={sheetVariable}></style>
+
+<style is:global>
+  /* The grain and mottling share the sheet's resistance correction, so native
+     scrolling and the spring both keep them attached to the content. Lighting
+     stays fixed to the viewport. The root supplies the same paper as a fallback
+     behind the mobile document scroller. */
+  html,
+  .page-wrap {
+    background-color: var(--color-bg-canvas);
+    background-image:
+      radial-gradient(120% 90% at 50% 0%, var(--paper-sheen) 0%, transparent 58%),
+      radial-gradient(120% 100% at 50% 100%, transparent 42%, var(--paper-shade) 100%),
+      var(--paper-sheet),
+      radial-gradient(62rem 44rem at 12% 8%, var(--paper-mottle-warm) 0%, transparent 68%),
+      radial-gradient(48rem 38rem at 88% 22%, var(--paper-mottle-cool) 0%, transparent 70%),
+      radial-gradient(70rem 40rem at 74% 96%, var(--paper-mottle-warm) 0%, transparent 72%),
+      radial-gradient(36rem 30rem at 34% 62%, var(--paper-mottle-cool) 0%, transparent 74%);
+    background-repeat: no-repeat, no-repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed, fixed, local, local, local, local, local;
+    background-position:
+      0 0,
+      0 0,
+      center calc(50% + var(--paper-scroll-compensation, 0px)),
+      0 var(--paper-scroll-compensation, 0px),
+      0 var(--paper-scroll-compensation, 0px),
+      0 var(--paper-scroll-compensation, 0px),
+      0 var(--paper-scroll-compensation, 0px);
+    background-size:
+      auto,
+      auto,
+      var(--paper-sheet-size) var(--paper-sheet-size),
+      auto,
+      auto,
+      auto,
+      auto;
+    background-blend-mode: normal, normal, multiply, normal, normal, normal, normal;
+  }
+</style>

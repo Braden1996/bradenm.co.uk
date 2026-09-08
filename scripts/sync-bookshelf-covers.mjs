@@ -10,12 +10,34 @@ const csvPath = path.join(projectRoot, "data", "bookshelf.csv");
 const manifestPath = path.join(projectRoot, "data", "bookshelf-covers.json");
 const coverDir = path.join(projectRoot, "public", "bookshelf", "covers");
 const publicCoverPrefix = "/bookshelf/covers";
-const coverAssetVersion = 1;
-const coverOutputWidth = 96;
-const coverWebpQuality = 80;
+/*
+ * Bump to have every stored cover re-examined on the next run (no network
+ * needed). v2: Google Books' drawn page-curl is painted out of the assets that
+ * carry one, and new fetches ask for curl-free, larger scans. v3 retains source
+ * provenance and downloads genuine portrait scans at up to 480px with --force.
+ * v4 adds smaller responsive candidates derived locally from the stored master.
+ */
+const coverAssetVersion = 5;
+/*
+ * Keep enough detail for high-density displays and browser zoom, without
+ * ever enlarging a small source. --force upgrades old assets.
+ * Store the original URL and dimensions so a later refresh can reuse the source
+ * directly instead of repeating an ambiguous title search.
+ */
+const coverOutputWidth = 1536;
+const coverCandidateWidths = [128, 256, 384, 512, 768];
+const coverSourceWidth = 1536;
+const coverMinimumWidth = 300;
+const coverWebpQuality = 84;
 const coverFingerprintLength = 12;
-const force = process.argv.includes("--force");
+const upgrade = process.argv.includes("--upgrade");
+const force = process.argv.includes("--force") || upgrade;
+const onlyIndex = process.argv.indexOf("--only");
+const titleFilter = onlyIndex >= 0 ? normalizeText(process.argv[onlyIndex + 1] ?? "") : "";
 const concurrency = 4;
+const requestTimeout = 15_000;
+const unavailableProviders = new Set();
+let nextOpenLibraryRequest = 0;
 
 function splitCsvLine(line) {
   const parts = line.split(",");
@@ -90,6 +112,12 @@ function scoreMatch(candidate, target) {
 
 function buildTitleVariants(title) {
   const variants = new Set([title.trim()]);
+
+  const withoutEdition = title.replace(/\s+\d+(?:st|nd|rd|th)\s+edition$/i, "");
+
+  if (withoutEdition !== title) {
+    variants.add(withoutEdition.trim());
+  }
 
   if (title.includes(":")) {
     variants.add(title.split(":")[0].trim());
@@ -191,13 +219,250 @@ function buildCoverFileBase(book) {
   return `${slugify(book.title)}.${slugify(book.author)}`.slice(0, 120);
 }
 
-async function writeOptimizedCover(book, input) {
-  const { data, info } = await sharp(input)
-    .rotate()
-    .resize({
-      width: coverOutputWidth,
-      withoutEnlargement: true,
-    })
+/*
+ * Google's `edge=curl` thumbnails carry a drawn page-curl in the bottom-right
+ * corner: a white lobe of turned-up page with a grey shadow along its upper-
+ * left edge. Measured by diffing a thumbnail against its curl-free twin, the
+ * lobe is about 0.23w tall and bulges to 0.20w wide a little above the foot.
+ * `curlExtent(v)` is that outline, with a pixel or two to spare: for a row v
+ * (in widths) above the bottom edge, how far in from the right edge (also in
+ * widths) the curl reaches. Zero above the lobe.
+ */
+const curlProfile = [
+  [0, 0.145],
+  [0.03, 0.175],
+  [0.07, 0.185],
+  [0.1, 0.19],
+  [0.115, 0.16],
+  [0.13, 0.12],
+  [0.145, 0.09],
+  [0.16, 0.07],
+  [0.19, 0.05],
+  [0.21, 0.035],
+  [0.235, 0.02],
+  [0.26, 0],
+];
+
+function curlExtent(v) {
+  for (let index = 1; index < curlProfile.length; index += 1) {
+    const [v0, e0] = curlProfile[index - 1];
+    const [v1, e1] = curlProfile[index];
+
+    if (v <= v1) {
+      return e0 + ((v - v0) / (v1 - v0)) * (e1 - e0);
+    }
+  }
+
+  return 0;
+}
+
+function buildCurlMask(width, height) {
+  const mask = new Uint8Array(width * height);
+  const rows = Math.min(height, Math.ceil(width * curlProfile.at(-1)[0]));
+
+  for (let y = height - rows; y < height; y += 1) {
+    const extent = Math.ceil(width * curlExtent((height - 1 - y) / width));
+
+    for (let x = Math.max(0, width - extent); x < width; x += 1) {
+      mask[y * width + x] = 1;
+    }
+  }
+
+  return mask;
+}
+
+function luminanceAt(data, offset) {
+  return (data[offset] * 299 + data[offset + 1] * 587 + data[offset + 2] * 114) / 1000;
+}
+
+/*
+ * Not every thumbnail the API hands out with `edge=curl` in its URL actually
+ * has one drawn — publisher-supplied images come back as they are. So look
+ * before painting. The drawn curl is the same picture every time, scaled with
+ * the thumbnail: on each row up from the bottom edge there is a run of near-
+ * white paper in from the right edge, 0.118w long at the foot and shrinking by
+ * 0.62px a row until it is gone at about 0.18w up, with a step down into grey
+ * shadow right after it. Measured on the shipped 96px assets the runs are
+ * 11, 10, 9, 9, 8, 8, 7, 7, 6, 5, 5, 4, 3, 3, 2, 2, 1. So test each row for
+ * paper where the ramp says paper and a step right after it: a white cover
+ * has the paper but no step (unless the curl is drawn on it, when the step is
+ * its only trace); text in a white corner steps, but not along that ramp row
+ * after row; a dark or coloured cover has no paper at all.
+ */
+function hasPageCurl(data, width, height, channels) {
+  if (width < 24 || height < Math.round(width * 0.26)) {
+    return false;
+  }
+
+  const sample = (x, y) => luminanceAt(data, (y * width + Math.max(0, x)) * channels);
+  let checked = 0;
+  let matched = 0;
+
+  for (let row = 1; row <= Math.round(width * 0.18); row += 1) {
+    const run = Math.round(width * 0.1177 - 0.62 * row);
+
+    if (run < 1) {
+      break;
+    }
+
+    const y = height - 1 - row;
+    let paper = 0;
+
+    /* The paper zone: everything the ramp says is turned page on this row. */
+    for (let x = width - run; x < width; x += 1) {
+      paper += sample(x, y);
+    }
+
+    const paperMean = paper / run;
+
+    checked += 1;
+
+    if (paperMean < 212) {
+      continue;
+    }
+
+    /* And the shadow zone right after it: a step down within four pixels. */
+    for (let x = width - run - 1; x >= Math.max(0, width - run - 4); x -= 1) {
+      const luminance = sample(x, y);
+
+      if (luminance <= 214 && luminance <= paperMean - 26) {
+        matched += 1;
+        break;
+      }
+    }
+  }
+
+  return checked > 0 && matched / checked >= 0.75;
+}
+
+/*
+ * Paint the curl out by diffusion: every masked pixel settles to the average
+ * of its neighbours, with the cover's own pixels around the lobe held fixed, so
+ * flat fields stay flat, gradients carry on, and anything crossing the edge
+ * softens into the corner instead of being dragged across it in streaks.
+ */
+function paintOutPageCurl(data, width, height, channels) {
+  const mask = buildCurlMask(width, height);
+  const output = Float32Array.from(data);
+  const targets = [];
+
+  for (let index = 0; index < mask.length; index += 1) {
+    if (mask[index]) {
+      targets.push(index);
+    }
+  }
+
+  if (targets.length === 0) {
+    return Buffer.from(data);
+  }
+
+  const neighbourOffsets = [-1, 1, -width, width];
+  const seeds = new Float32Array(channels);
+  let seedCount = 0;
+
+  for (const index of targets) {
+    for (const step of neighbourOffsets) {
+      const neighbour = index + step;
+      const sameRow =
+        step === -1 || step === 1
+          ? Math.floor(neighbour / width) === Math.floor(index / width)
+          : true;
+
+      if (neighbour < 0 || neighbour >= mask.length || !sameRow || mask[neighbour]) {
+        continue;
+      }
+
+      for (let channel = 0; channel < channels; channel += 1) {
+        seeds[channel] += data[neighbour * channels + channel];
+      }
+
+      seedCount += 1;
+    }
+  }
+
+  for (const index of targets) {
+    for (let channel = 0; channel < channels; channel += 1) {
+      output[index * channels + channel] = seedCount ? seeds[channel] / seedCount : 255;
+    }
+  }
+
+  const next = Float32Array.from(output);
+
+  for (let iteration = 0; iteration < 400; iteration += 1) {
+    for (const index of targets) {
+      const x = index % width;
+      let count = 0;
+      const sums = [0, 0, 0, 0];
+
+      for (const step of neighbourOffsets) {
+        const neighbour = index + step;
+
+        if (neighbour < 0 || neighbour >= mask.length) {
+          continue;
+        }
+
+        if ((step === -1 && x === 0) || (step === 1 && x === width - 1)) {
+          continue;
+        }
+
+        for (let channel = 0; channel < channels; channel += 1) {
+          sums[channel] += output[neighbour * channels + channel];
+        }
+
+        count += 1;
+      }
+
+      for (let channel = 0; channel < channels; channel += 1) {
+        next[index * channels + channel] = sums[channel] / count;
+      }
+    }
+
+    for (const index of targets) {
+      for (let channel = 0; channel < channels; channel += 1) {
+        output[index * channels + channel] = next[index * channels + channel];
+      }
+    }
+  }
+
+  const result = Buffer.from(data);
+
+  for (const index of targets) {
+    for (let channel = 0; channel < channels; channel += 1) {
+      result[index * channels + channel] = Math.round(
+        Math.min(255, Math.max(0, output[index * channels + channel])),
+      );
+    }
+  }
+
+  return result;
+}
+
+/*
+ * `removeCurl` says the source MAY carry Google's page-curl; it is painted out
+ * only where one is actually found, and the asset is clean either way.
+ */
+async function writeOptimizedCover(book, input, { removeCurl = false } = {}) {
+  let pipeline = sharp(input).rotate().resize({
+    width: coverOutputWidth,
+    height: coverOutputWidth,
+    fit: "inside",
+    withoutEnlargement: true,
+  });
+
+  if (removeCurl) {
+    const raw = await pipeline.ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+    const { channels, height, width } = raw.info;
+
+    if (hasPageCurl(raw.data, width, height, channels)) {
+      pipeline = sharp(paintOutPageCurl(raw.data, width, height, channels), {
+        raw: { channels, height, width },
+      });
+    } else {
+      pipeline = sharp(raw.data, { raw: { channels, height, width } });
+    }
+  }
+
+  const { data, info } = await pipeline
     .webp({
       effort: 6,
       quality: coverWebpQuality,
@@ -225,8 +490,57 @@ async function writeOptimizedCover(book, input) {
   };
 }
 
+/** Derive responsive copies locally, retaining the stored master byte for byte. */
+async function addCoverCandidates(book, asset, existingCandidates = []) {
+  const input = path.join(coverDir, asset.filename);
+  const candidates = await Promise.all(
+    coverCandidateWidths
+      .filter((candidateWidth) => candidateWidth < asset.width)
+      .map(async (width) => {
+        const existing = existingCandidates.find((candidate) => candidate.width === width);
+        if (existing && (await fileExists(path.join(coverDir, existing.filename)))) return existing;
+        const { data, info } = await sharp(input)
+          .resize({ width, withoutEnlargement: true })
+          .webp({ effort: 6, quality: coverWebpQuality, smartSubsample: true })
+          .toBuffer({ resolveWithObject: true });
+        const fingerprint = createHash("sha256")
+          .update(data)
+          .digest("hex")
+          .slice(0, coverFingerprintLength);
+        const filename = `${buildCoverFileBase(book)}.${width}.${fingerprint}.webp`;
+        await writeFile(path.join(coverDir, filename), data);
+        return {
+          filename,
+          src: `${publicCoverPrefix}/${filename}`,
+          width: info.width,
+          height: info.height,
+        };
+      }),
+  );
+  candidates.push({
+    filename: asset.filename,
+    src: asset.src,
+    width: asset.width,
+    height: asset.height,
+  });
+  return { ...asset, candidates };
+}
+
 async function fetchJson(url) {
+  const host = new URL(url).hostname;
+
+  if (unavailableProviders.has(host)) {
+    throw new Error(`${host} is unavailable for this sync`);
+  }
+
+  if (host === "openlibrary.org") {
+    const wait = Math.max(0, nextOpenLibraryRequest - Date.now());
+    nextOpenLibraryRequest = Date.now() + wait + 1_000;
+    await new Promise((resolve) => setTimeout(resolve, wait));
+  }
+
   const response = await fetch(url, {
+    signal: AbortSignal.timeout(requestTimeout),
     headers: {
       "user-agent": "bradenm.co.uk bookshelf cover sync",
       accept: "application/json",
@@ -234,6 +548,10 @@ async function fetchJson(url) {
   });
 
   if (!response.ok) {
+    if (response.status === 429) {
+      unavailableProviders.add(host);
+    }
+
     throw new Error(`Request failed with ${response.status} for ${url}`);
   }
 
@@ -260,6 +578,7 @@ async function searchOpenLibrary(book) {
       title: attempt.title,
       limit: "8",
       fields: "title,author_name,cover_i",
+      language: "eng",
     });
 
     if (attempt.author) {
@@ -270,13 +589,19 @@ async function searchOpenLibrary(book) {
     // eslint-disable-next-line no-await-in-loop
     const data = await fetchJson(`https://openlibrary.org/search.json?${params.toString()}`);
     const candidate = (data.docs ?? [])
-      .filter((entry) => entry.cover_i)
+      .filter(
+        (entry) =>
+          entry.cover_i &&
+          scoreMatch(normalizeText(entry.title ?? ""), expectedTitle) >= 4 &&
+          (book.author === "Unknown author" ||
+            scoreMatch(normalizeText((entry.author_name ?? []).join(" ")), expectedAuthor) >= 0.5),
+      )
       .map((entry) => ({
         provider: "openlibrary",
         score:
           scoreMatch(normalizeText(entry.title ?? ""), expectedTitle) +
           scoreMatch(normalizeText((entry.author_name ?? []).join(" ")), expectedAuthor),
-        imageUrl: `https://covers.openlibrary.org/b/id/${entry.cover_i}-L.jpg?default=false`,
+        imageUrl: `https://covers.openlibrary.org/b/id/${entry.cover_i}.jpg?default=false`,
         matchedTitle: entry.title ?? "",
         matchedAuthor: (entry.author_name ?? []).join(", "),
       }))
@@ -338,6 +663,8 @@ async function searchGoogleBooks(book) {
           imageUrl: imageUrl.replace("http://", "https://"),
           matchedTitle: volumeInfo.title ?? "",
           matchedAuthor: (volumeInfo.authors ?? []).join(", "),
+          /* The API hands out `edge=curl` thumbnails; the download asks for better. */
+          edge: "curl",
         };
       })
       .filter((entry) => entry.imageUrl)
@@ -351,43 +678,155 @@ async function searchGoogleBooks(book) {
   return null;
 }
 
-async function resolveCoverCandidate(book) {
-  const providers = [searchGoogleBooks, searchOpenLibrary];
+/*
+ * Try the original Open Library scan before the 500px-tall preview. Google's
+ * thumbnail parameters need upgrading even when the URL has no page-curl.
+ */
+function buildImageAttempts(candidate) {
+  let url;
 
-  for (const provider of providers) {
-    try {
-      // Keep provider preference stable so the first preferred source wins.
-      // eslint-disable-next-line no-await-in-loop
-      const candidate = await provider(book);
-
-      if (candidate) {
-        return candidate;
-      }
-    } catch (error) {
-      console.warn(
-        `[bookshelf:covers] Provider failed for "${book.title}" (${book.author}): ${String(error)}`,
-      );
-    }
+  try {
+    url = new URL(candidate.imageUrl);
+  } catch {
+    return [{ edge: candidate.edge === "curl" ? "curl" : "clean", url: candidate.imageUrl }];
   }
 
-  return null;
+  if (url.hostname === "covers.openlibrary.org") {
+    const original = new URL(url);
+    original.pathname = original.pathname.replace(/-[SML]\.jpg$/, ".jpg");
+    const large = new URL(original);
+    large.pathname = large.pathname.replace(/\.jpg$/, "-L.jpg");
+
+    return [
+      { edge: "clean", url: original.toString() },
+      { edge: "clean", url: large.toString() },
+    ];
+  }
+
+  if (candidate.provider !== "google-books") {
+    return [{ edge: "clean", url: candidate.imageUrl }];
+  }
+
+  const clean = new URL(url);
+  clean.searchParams.delete("edge");
+  const large = new URL(clean);
+  large.searchParams.set("fife", `w${coverSourceWidth}`);
+
+  return [
+    { edge: "clean", url: large.toString() },
+    { edge: "clean", url: clean.toString() },
+    { edge: candidate.edge === "curl" ? "curl" : "clean", url: candidate.imageUrl },
+  ];
 }
 
 async function downloadCover(book, candidate) {
-  const response = await fetch(candidate.imageUrl, {
-    headers: {
-      "user-agent": "bradenm.co.uk bookshelf cover sync",
-      accept: "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-    },
-  });
+  let lastError = null;
+  let best = null;
 
-  if (!response.ok) {
-    throw new Error(`Image download failed with ${response.status}`);
+  for (const attempt of buildImageAttempts(candidate)) {
+    try {
+      // Each URL is a fallback for the previous one, including low-resolution responses.
+      // eslint-disable-next-line no-await-in-loop
+      const response = await fetch(attempt.url, {
+        signal: AbortSignal.timeout(requestTimeout),
+        headers: {
+          "user-agent": "bradenm.co.uk bookshelf cover sync",
+          accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Image download failed with ${response.status}`);
+      }
+
+      // eslint-disable-next-line no-await-in-loop
+      const bytes = Buffer.from(await response.arrayBuffer());
+      // eslint-disable-next-line no-await-in-loop
+      const metadata = await sharp(bytes).metadata();
+      const sourceWidth = metadata.autoOrient?.width ?? metadata.width ?? 0;
+      const sourceHeight = metadata.autoOrient?.height ?? metadata.height ?? 0;
+
+      // Reject provider placeholders and avoid stretching audiobook squares into books.
+      if (sourceWidth < 80 || sourceHeight / sourceWidth < 1.15) {
+        throw new Error("Source is too small or is not a portrait book cover");
+      }
+
+      if (!best || sourceWidth > best.sourceWidth) {
+        best = { bytes, attempt, sourceWidth, sourceHeight };
+      }
+
+      if (sourceWidth >= coverOutputWidth) {
+        break;
+      }
+    } catch (error) {
+      lastError = error;
+    }
   }
 
-  const bytes = Buffer.from(await response.arrayBuffer());
+  if (!best) {
+    throw lastError instanceof Error ? lastError : new Error("Image download failed");
+  }
 
-  return writeOptimizedCover(book, bytes);
+  return {
+    ...(await writeOptimizedCover(book, best.bytes, {
+      removeCurl: best.attempt.edge === "curl",
+    })),
+    sourceUrl: best.attempt.url,
+    sourceWidth: best.sourceWidth,
+    sourceHeight: best.sourceHeight,
+  };
+}
+
+async function resolveCoverAsset(book, existing) {
+  let best = null;
+  const attempts = [];
+
+  if (existing?.sourceUrl) {
+    attempts.push(async () => ({
+      provider: existing.provider,
+      imageUrl: existing.sourceUrl,
+      edge: new URL(existing.sourceUrl).searchParams.get("edge") === "curl" ? "curl" : "clean",
+      matchedTitle: existing.matchedTitle,
+      matchedAuthor: existing.matchedAuthor,
+    }));
+  }
+
+  // An atlas upgrade preserves the chosen edition instead of repeating title searches.
+  if (!upgrade) attempts.push(searchOpenLibrary, searchGoogleBooks);
+
+  for (const provider of attempts) {
+    if (
+      (provider === searchGoogleBooks && unavailableProviders.has("www.googleapis.com")) ||
+      (provider === searchOpenLibrary && unavailableProviders.has("openlibrary.org"))
+    ) {
+      continue;
+    }
+
+    try {
+      // A fallback provider is only queried when the preferred source is insufficient.
+      // eslint-disable-next-line no-await-in-loop
+      const candidate = await provider(book);
+
+      if (!candidate) {
+        continue;
+      }
+
+      // eslint-disable-next-line no-await-in-loop
+      const downloaded = await downloadCover(book, candidate);
+
+      if (!best || downloaded.width > best.downloaded.width) {
+        best = { candidate, downloaded };
+      }
+
+      if (downloaded.width >= coverMinimumWidth) {
+        return best;
+      }
+    } catch (error) {
+      console.warn(`[bookshelf:covers] Source failed for "${book.title}": ${String(error)}`);
+    }
+  }
+
+  return best;
 }
 
 async function removeIfExists(targetPath) {
@@ -396,17 +835,34 @@ async function removeIfExists(targetPath) {
   }
 }
 
+async function fileHasPageCurl(filePath) {
+  const { data, info } = await sharp(filePath)
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+
+  return hasPageCurl(data, info.width, info.height, info.channels);
+}
+
+/*
+ * A stored cover is kept byte for byte unless something has to change: its
+ * metadata is missing, or it predates v2 and carries Google's curl, in which
+ * case it is painted out and the asset re-encoded. Covers from before the edge
+ * was recorded are treated as possibly curled; each is looked at, and the
+ * manifest records it clean from then on whether or not paint was needed.
+ */
 async function reuseExistingCover(book, existingCover, assetsAreCurrent) {
   const currentPath = path.join(coverDir, existingCover.filename);
   const fingerprint = existingCover.filename.match(/\.([a-f0-9]{12})\.webp$/)?.[1];
-  const canKeepAsset =
-    assetsAreCurrent &&
-    fingerprint &&
-    Number(existingCover.width) > 0 &&
-    Number(existingCover.height) > 0;
+  const hasMetadata =
+    Boolean(fingerprint) && Number(existingCover.width) > 0 && Number(existingCover.height) > 0;
+  const storedEdge =
+    existingCover.edge ?? (existingCover.provider === "google-books" ? "curl" : "clean");
+  const mustPaint =
+    !assetsAreCurrent && storedEdge === "curl" && (await fileHasPageCurl(currentPath));
   let asset;
 
-  if (canKeepAsset) {
+  if (hasMetadata && !mustPaint) {
     const filename = `${buildCoverFileBase(book)}.${fingerprint}.webp`;
     const nextPath = path.join(coverDir, filename);
 
@@ -422,7 +878,7 @@ async function reuseExistingCover(book, existingCover, assetsAreCurrent) {
       height: Number(existingCover.height),
     };
   } else {
-    asset = await writeOptimizedCover(book, currentPath);
+    asset = await writeOptimizedCover(book, currentPath, { removeCurl: mustPaint });
   }
 
   const metadataMatches =
@@ -431,11 +887,19 @@ async function reuseExistingCover(book, existingCover, assetsAreCurrent) {
   return {
     title: book.title,
     author: book.author,
-    ...asset,
+    ...(await addCoverCandidates(
+      book,
+      asset,
+      assetsAreCurrent ? (existingCover.candidates ?? []) : [],
+    )),
     provider: existingCover.provider,
     matchedTitle: metadataMatches ? existingCover.matchedTitle : book.title,
     matchedAuthor: metadataMatches ? existingCover.matchedAuthor : book.author,
     fetchedAt: existingCover.fetchedAt,
+    sourceUrl: existingCover.sourceUrl,
+    sourceWidth: existingCover.sourceWidth,
+    sourceHeight: existingCover.sourceHeight,
+    edge: assetsAreCurrent ? storedEdge : "clean",
   };
 }
 
@@ -512,50 +976,84 @@ async function main() {
     `[bookshelf:covers] Syncing ${books.length} unique titles${force ? " with force refresh" : ""}...`,
   );
 
+  /*
+   * A cover already on disk is never given up for a failed fetch: with --force
+   * a book that cannot be refetched today (the Google Books API has a shared
+   * daily quota and 429s when it is spent) keeps the asset it has, and a
+   * download that fails on every URL is a miss for that one book rather than
+   * the end of the run — the manifest and the stale-file sweep below only ever
+   * see a complete picture.
+   */
   await mapWithConcurrency(books, concurrency, async (book) => {
     const existing =
       existingManifest.covers[book.key] ??
       findReusableExistingEntry(book, existingTitleIndex)?.cover;
     const existingPath = existing?.filename ? path.join(coverDir, existing.filename) : "";
+    const hasExistingAsset = Boolean(
+      existing?.src && existingPath && (await fileExists(existingPath)),
+    );
 
-    if (!force && existing?.src && existingPath && (await fileExists(existingPath))) {
+    const refresh = force && (!titleFilter || normalizeText(book.title).includes(titleFilter));
+
+    if (!refresh && hasExistingAsset) {
+      const previousFilename = existing.filename;
+
       nextCovers[book.key] = await reuseExistingCover(book, existing, assetsAreCurrent);
-      console.log(`[bookshelf:covers] ${assetsAreCurrent ? "Keep " : "Build"} ${book.title}`);
+      console.log(
+        `[bookshelf:covers] ${nextCovers[book.key].filename === previousFilename ? "Keep " : "Build"} ${book.title}`,
+      );
       return;
     }
 
-    const candidate = await resolveCoverCandidate(book);
+    const keepExisting = async (reason) => {
+      if (hasExistingAsset) {
+        nextCovers[book.key] = await reuseExistingCover(book, existing, assetsAreCurrent);
+        console.log(`[bookshelf:covers] Kept  ${book.title} (${reason})`);
+        return;
+      }
 
-    if (!candidate) {
       missing.push({
         key: book.key,
         title: book.title,
         author: book.author,
       });
-      console.log(`[bookshelf:covers] Miss  ${book.title}`);
+      console.log(`[bookshelf:covers] Miss  ${book.title} (${reason})`);
+    };
+
+    const resolved = await resolveCoverAsset(book, existing);
+
+    if (!resolved) {
+      await keepExisting("no usable source found");
       return;
     }
 
-    const downloaded = await downloadCover(book, candidate);
+    const { candidate, downloaded } = resolved;
 
-    if (existing?.filename && existing.filename !== downloaded.filename) {
-      await removeIfExists(path.join(coverDir, existing.filename));
+    if (hasExistingAsset && downloaded.width < existing.width) {
+      await keepExisting("available source is smaller than the stored cover");
+      return;
     }
 
-    nextCovers[book.key] = {
+    nextCovers[book.key] = await addCoverCandidates(book, {
       title: book.title,
       author: book.author,
       filename: downloaded.filename,
       src: downloaded.src,
       width: downloaded.width,
       height: downloaded.height,
+      sourceUrl: downloaded.sourceUrl,
+      sourceWidth: downloaded.sourceWidth,
+      sourceHeight: downloaded.sourceHeight,
       provider: candidate.provider,
       matchedTitle: candidate.matchedTitle,
       matchedAuthor: candidate.matchedAuthor,
       fetchedAt: new Date().toISOString(),
-    };
+      edge: "clean",
+    });
 
-    console.log(`[bookshelf:covers] Saved ${book.title} <- ${candidate.provider}`);
+    console.log(
+      `[bookshelf:covers] Saved ${book.title} <- ${candidate.provider} (${downloaded.width}×${downloaded.height})`,
+    );
   });
 
   const manifest = {
@@ -569,7 +1067,9 @@ async function main() {
 
   const referencedFiles = new Set(
     Object.values(nextCovers)
-      .map((entry) => entry.filename)
+      .flatMap((entry) =>
+        [entry.filename].concat((entry.candidates ?? []).map((candidate) => candidate.filename)),
+      )
       .filter(Boolean),
   );
 
@@ -577,11 +1077,27 @@ async function main() {
     (entry) => entry.isFile() && !referencedFiles.has(entry.name),
   );
 
+  // Publish the complete manifest before removing assets that it supersedes.
+  const temporaryManifestPath = `${manifestPath}.tmp`;
+  await writeFile(temporaryManifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  await rename(temporaryManifestPath, manifestPath);
+  const lowResolution = Object.values(nextCovers)
+    .filter((cover) => cover.height < 1000)
+    .map((cover) => ({
+      title: cover.title,
+      author: cover.author,
+      width: cover.width,
+      height: cover.height,
+      sourceUrl: cover.sourceUrl ?? null,
+    }));
+  await writeFile(
+    path.join(projectRoot, "data", "bookshelf-cover-quality.json"),
+    `${JSON.stringify({ targetHeight: 1000, coverCount: manifest.coverCount, unresolved: lowResolution }, null, 2)}\n`,
+  );
+
   await Promise.all(
     staleEntries.map((entry) => rm(path.join(coverDir, entry.name), { force: true })),
   );
-
-  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 
   console.log(
     `[bookshelf:covers] Complete. ${manifest.coverCount} covers available, ${manifest.missingCount} still missing.`,

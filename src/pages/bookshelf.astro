@@ -1,39 +1,45 @@
 ---
-import bookshelfData from "../../data/bookshelf.json";
-import bookshelfCoverManifestJson from "../../data/bookshelf-covers.json?raw";
-import BookshelfResultsCount from "../features/bookshelf/molecules/bookshelf-results-count.astro";
-import { buildBookshelfViewModel } from "../features/bookshelf/lib/bookshelf-data";
+import { loadBookshelfSource } from "../features/bookshelf/lib/bookshelf-source";
+import { atlasSheets } from "../features/bookshelf/lib/atlas-previews";
 import BookshelfTemplate from "../features/bookshelf/templates/bookshelf-template.astro";
+import BookshelfToolbar from "../features/bookshelf/organisms/bookshelf-toolbar.astro";
+import AboutTemplate from "../features/about/templates/about-template.astro";
+import AboutLetterhead from "../features/about/organisms/about-letterhead.astro";
 import Layout from "../layouts/layout.astro";
 
-const bookshelfCoverManifest = JSON.parse(String(bookshelfCoverManifestJson)) as {
-  covers?: Record<
-    string,
-    {
-      height?: number;
-      src?: string;
-      width?: number;
-    }
-  >;
-};
-
-const { books, payload } = buildBookshelfViewModel(
-  bookshelfData as { author: string; medium: string; title: string }[],
-  bookshelfCoverManifest.covers ?? {},
+// The bookshelf is the same sheet as the letter, with the writing taken off
+// it. This route renders that room directly, so the address the scrub writes
+// still means something on a reload or a share — and so a reader with no
+// scripting has somewhere real to land.
+const { books, payload } = loadBookshelfSource();
+const firstCover = books.find(
+  (book) => book.coverSrc && book.coverWidth > 0 && book.coverHeight > 0,
 );
-const payloadJson = JSON.stringify(payload);
-
 const pageDescription =
   "Search Braden Marshall's personal bookshelf across physical, audiobook, and Kindle editions.";
 ---
 
-<Layout title="Bookshelf | Braden Marshall" description={pageDescription} activeTab="bookshelf">
-  <BookshelfTemplate books={books} />
-
-  <BookshelfResultsCount slot="footer-center" total={books.length} />
-
-  <script id="bookshelf-data" type="application/json" is:inline set:html={payloadJson} />
-  <script>
-    import "../features/bookshelf/client/bookshelf";
-  </script>
+<Layout title="Bookshelf | Braden Marshall" description={pageDescription}>
+  <Fragment slot="head">
+    {
+      firstCover && (
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href={atlasSheets.previews}
+          media="(min-width: 761px)"
+          fetchpriority="high"
+        />
+      )
+    }
+  </Fragment>
+  <AboutLetterhead slot="header">
+    <BookshelfToolbar total={books.length} />
+  </AboutLetterhead>
+  <AboutTemplate room="bookshelf">
+    <div class="about-template__room about-template__room--shelf" data-about-room="bookshelf">
+      <BookshelfTemplate books={books} payloadJson={JSON.stringify(payload)} eagerCoverCount={6} />
+    </div>
+  </AboutTemplate>
 </Layout>

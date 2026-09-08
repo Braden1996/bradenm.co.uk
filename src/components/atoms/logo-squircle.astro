@@ -1,0 +1,221 @@
+---
+import ProgressiveImage from "./progressive-image.astro";
+import { createLogoBezelRim, type LogoBezel } from "../lib/logo-bezel";
+
+interface Props {
+  alt: string;
+  /* `| undefined` on the two that come straight off an entry: an entry without a
+   * logo has neither, and `exactOptionalPropertyTypes` treats a missing property
+   * and an explicitly undefined one as different things. */
+  bezel?: LogoBezel | undefined;
+  class?: string;
+  decoding?: "async" | "auto" | "sync";
+  fetchpriority?: "auto" | "high" | "low";
+  height?: number;
+  loading?: "eager" | "lazy";
+  mark?: string;
+  src?: string | undefined;
+  width?: number;
+}
+
+const {
+  alt,
+  bezel,
+  class: className,
+  decoding = "async",
+  fetchpriority,
+  height,
+  loading = "lazy",
+  mark,
+  src,
+  width,
+} = Astro.props;
+
+const rim = bezel ? createLogoBezelRim(bezel.rim) : undefined;
+/*
+ * The sampled colour is written onto the element rather than into the stylesheet
+ * because it varies per logo. It ships in the SSR markup so the ring is the
+ * right colour at first paint — there is no measuring pass to wait for.
+ */
+const style = [
+  bezel && `--logo-squircle-edge: ${bezel.edge}`,
+  bezel && `--logo-squircle-fill: ${bezel.fill}`,
+  rim && `--logo-squircle-rim-image: ${rim}`,
+]
+  .filter(Boolean)
+  .join("; ");
+---
+
+<span class:list={["logo-squircle", className]} style={style || undefined}>
+  <span class="logo-squircle__well">
+    {
+      src ? (
+        <ProgressiveImage
+          class="logo-squircle__media"
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading={loading}
+          decoding={decoding}
+          fetchpriority={fetchpriority}
+        />
+      ) : (
+        <span class="logo-squircle__fallback" aria-hidden="true">
+          {mark}
+        </span>
+      )
+    }
+  </span>
+</span>
+
+<style>
+  /*
+   * A company logo held in a glass ring: the logo fills its own squircle edge to
+   * edge, and the ring wrapping it is painted with colour sampled out of the
+   * logo at build time. Nothing is ever drawn over the image — the ring is the
+   * shell's own visible border of background, and the logo sits inset within it.
+   *
+   * `--logo-squircle-size`, `--logo-squircle-rim-width` and
+   * `--logo-squircle-ring` are the knobs a caller turns, and they are read
+   * through `var()` fallbacks rather than declared here with defaults. Astro scopes a parent's styles to that parent's own markup,
+   * and this element belongs to no parent's markup, so a caller cannot select
+   * it — it can only set a custom property further up and let it inherit down.
+   * A default declared on this element would outrank anything inherited and
+   * quietly discard every one of those overrides.
+   */
+  .logo-squircle {
+    /* A length, not a percentage: every other measure derives from it. */
+    --logo-squircle-frame: var(--logo-squircle-size, 2.75rem);
+    --logo-squircle-radius: calc(var(--logo-squircle-frame) * 0.31);
+    /*
+     * Ring thickness scales with the frame between hard stops: never thinner
+     * than a visible band at nav size, never a slab at detail size. The
+     * timeline's connector pipe uses this same measure so tube and ring meet
+     * at matching widths. A caller that wants a finer band than the scale
+     * gives — the career card's caption mark, where the ring is furniture
+     * beside the name rather than the subject — sets
+     * `--logo-squircle-rim-width` instead.
+     */
+    --logo-squircle-band: var(
+      --logo-squircle-rim-width,
+      clamp(3px, calc(var(--logo-squircle-frame) * 0.065), 8px)
+    );
+    --logo-squircle-rim-image: none;
+    --logo-squircle-edge: var(--color-border-strong);
+    --logo-squircle-fill: var(--color-surface-subtle);
+
+    position: relative;
+    display: block;
+    flex: none;
+    width: var(--logo-squircle-frame);
+    height: var(--logo-squircle-frame);
+    border-radius: var(--logo-squircle-radius);
+    /*
+     * The ring's material: the sampled conic sweep, with the specular sweep
+     * over it. Lit from the top left to agree with the paper texture's own
+     * light source; the sweep is what makes the band read as glass catching
+     * light rather than as printed colour.
+     */
+    background:
+      linear-gradient(
+        148deg,
+        var(--color-surface-sheen) 0%,
+        color-mix(in srgb, var(--color-surface-sheen) 25%, transparent) 30%,
+        transparent 52%,
+        color-mix(in srgb, var(--color-shadow-strong) 80%, transparent) 100%
+      ),
+      var(--logo-squircle-rim-image) var(--logo-squircle-fill);
+    /*
+     * Outer hairline sampled from the logo, so a near-white icon is separated
+     * from the ivory sheet by something that belongs to it. The inset pair is
+     * the glass edge: light along the top, shade gathering under the bottom.
+     */
+    box-shadow:
+      inset 0 1px 1px color-mix(in srgb, var(--color-surface-sheen) 90%, transparent),
+      inset 0 -1px 1px var(--color-shadow-strong),
+      var(--logo-squircle-ring, 0 0 transparent),
+      0 0 0 1px color-mix(in srgb, var(--logo-squircle-edge) 42%, transparent),
+      0 1px 2px var(--color-shadow-outline),
+      0 2px 6px var(--color-shadow-subtle);
+    transition:
+      box-shadow var(--duration-fast) ease,
+      opacity var(--duration-fast) ease;
+  }
+
+  /*
+   * A true superellipse where the browser can draw one. The rounded-rect radius
+   * above is deliberately tighter: a squircle carries its curve further along
+   * each edge, so matching radii would read as two different shapes rather than
+   * as the same frame drawn two ways.
+   */
+  @supports (corner-shape: squircle) {
+    .logo-squircle {
+      --logo-squircle-radius: calc(var(--logo-squircle-frame) * 0.36);
+
+      corner-shape: squircle;
+    }
+  }
+
+  /*
+   * The well the logo sits in. Inset by the ring width with a radius reduced by
+   * the same amount — a parallel curve, so the band keeps an even thickness
+   * around the corners instead of pooling in them. The contact hairline is
+   * drawn outward into the band, never over the image.
+   */
+  .logo-squircle__well {
+    position: absolute;
+    inset: var(--logo-squircle-band);
+    border-radius: calc(var(--logo-squircle-radius) - var(--logo-squircle-band));
+    corner-shape: inherit;
+    overflow: hidden;
+    background: var(--logo-squircle-fill);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--logo-squircle-edge) 30%, transparent);
+  }
+
+  .logo-squircle__media {
+    position: absolute;
+    inset: 0;
+    /*
+     * `cover`, so the logo reaches all four edges of its well. Icons arrive
+     * with their own padding, their own rounded mask, and in Cardiff's case not
+     * quite square — filling the well is what makes a row of them read as one
+     * set.
+     */
+    --progressive-image-fit: cover;
+  }
+
+  .logo-squircle__fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    font-size: calc(var(--logo-squircle-frame) * 0.26);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wider);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-squircle {
+      transition: none;
+    }
+  }
+
+  /*
+   * In a forced palette the sampled colour is thrown away anyway. Drop the
+   * glass and keep a plain border, which the palette is allowed to recolour.
+   */
+  @media (forced-colors: active) {
+    .logo-squircle {
+      background: Canvas;
+      border: 1px solid CanvasText;
+      box-shadow: none;
+    }
+
+    .logo-squircle__well {
+      box-shadow: none;
+    }
+  }
+</style>

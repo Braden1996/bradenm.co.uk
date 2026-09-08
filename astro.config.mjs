@@ -5,11 +5,16 @@ export default defineConfig({
   output: "static",
   compressHTML: true,
   build: {
-    inlineStylesheets: "always",
+    inlineStylesheets: "auto",
   },
   vite: {
     build: {
-      assetsInlineLimit: 0,
+      // Put shared layout CSS in the document to remove a first-paint request.
+      // Route styles, media, and scripts keep separate cache identities.
+      assetsInlineLimit: (filePath, content) =>
+        filePath.endsWith(".css") &&
+        (content.byteLength <= 6 * 1024 ||
+          (/\/layout\.[^/]+\.css$/.test(filePath) && content.byteLength <= 32 * 1024)),
     },
   },
 });

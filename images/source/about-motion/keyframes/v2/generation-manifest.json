@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-08-15",
+  "identityReference": {
+    "path": "images/source/braden-portrait.png",
+    "sha256": "04d3969b6bc8a9728d99249064efa37f135fb8eaac77e6886be7e3bafcee036e"
+  },
+  "immutablePlate": {
+    "path": "images/source/about-motion/keyframes/frame-00.png",
+    "sha256": "7ba2ff25a374c0ddce3048a47085eb62e8d9c2936ab3bd8b3f95034b661863f3"
+  },
+  "method": "OpenAI ImageGen supplied tightly constrained, composition-locked pose anchors for the clean hand/spoon motion. The accepted pose anchors are used whole to preserve their internally coherent anatomy. The depleted-gelato output is the exception: only a feathered cavity patch is used, after motion synthesis, so it cannot alter the approved hand, spoon, glasses, face, or timing.",
+  "selected": [
+    {
+      "generatedId": "exec-ffcce3f3-efc1-47c3-8bda-5ac89fafb740",
+      "output": "images/source/about-motion/keyframes/v2/raw/mid-spoon.png",
+      "sha256": "816a30bf6c76262f2831996a65d1ebbdbc96836c702fd3f19df0838d8d8d6575",
+      "promptSummary": "Exact midpoint between loaded mid-chest and raised-spoon poses; preserve identity, camera, glasses, cup and background; exactly one coherent hand and one straight spoon."
+    },
+    {
+      "generatedId": "exec-bfc90b9f-9563-4a6b-b84a-58e163daa35a",
+      "output": "images/source/about-motion/keyframes/v2/raw/contact.png",
+      "sha256": "a69120bbe13c9955be4d5469c631f5a434b021c3911f201bc1f0f5d15a10db0e",
+      "promptSummary": "Subtle bite contact with spoon bowl just inside the lips, hand left of and separate from the sunglasses; exactly one arm, hand and spoon."
+    },
+    {
+      "generatedId": "exec-56c2e502-cf6c-473c-9fc3-d8a6ba69e525",
+      "output": "images/source/about-motion/keyframes/v2/raw/withdrawal.png",
+      "sha256": "e00bad704706af5538a306ff94c89359227489e67496425cf6b3f1fb4c248e72",
+      "promptSummary": "Early withdrawal with an empty spoon just below the lower lip, coherent grip and a clean gap from the sunglasses."
+    },
+    {
+      "generatedId": "exec-36c217c7-1afd-483d-a38e-d66598b62a3e",
+      "output": "images/source/about-motion/keyframes/v2/raw/withdrawal-low.png",
+      "sha256": "936f9b3bf130af696be470c7a14809cfc3f5bf3de5ab8ee4ebe4d27b95a9e681",
+      "promptSummary": "Later empty-spoon withdrawal toward the upper chest; preserve all non-moving elements and single connected anatomy."
+    },
+    {
+      "generatedId": "exec-828494c2-3c9b-43c3-b867-e4901f5575c7",
+      "output": "images/source/about-motion/keyframes/v2/raw/approach-close.png",
+      "sha256": "de83b574ec92a5a74ca529935b66eddeb55aa01bfe29ae9600658ac394cea494",
+      "promptSummary": "Close approach midpoint between the near-mouth and bite-contact poses; preserve a single coherent chocolate-loaded spoon and a clean gap from the sunglasses."
+    },
+    {
+      "generatedId": "exec-a93cb300-bcdb-4fdf-b47a-1ea9b2d52ddd",
+      "output": "images/source/about-motion/keyframes/v2/raw/exit-close.png",
+      "sha256": "f76a1ebcdfbc364d216240d7ec4be722b45d4b379c824f2d8a3b32438fbfee35",
+      "promptSummary": "Immediate post-bite pose with the empty spoon only a few centimetres from the lower lip and well above the hanging sunglasses."
+    },
+    {
+      "generatedId": "exec-f4a4adb1-d861-46a0-b0ba-3304a7f634f8",
+      "output": "images/source/about-motion/keyframes/v2/raw/withdrawal-mid.png",
+      "sha256": "2a0f3157c1754d8dc78c364aa43b9cdc7c87d34291e4f35f00512a510c87565d",
+      "promptSummary": "Mid-withdrawal pose between the high and chest-level empty-spoon keys, with one coherent hand and no sunglasses overlap."
+    },
+    {
+      "generatedId": "exec-1f9ee767-225f-460f-a6b8-a35d1f9bd1e5",
+      "output": "images/source/about-motion/keyframes/v2/raw/withdrawal-between.png",
+      "sha256": "951e7c0745a95db6df260d346446b4bd6cd77e8f779f27a0e600c626b1d3a2cd",
+      "promptSummary": "Exact clean midpoint between the high and mid-withdrawal keys, replacing the only remaining ghosted RIFE frame."
+    },
+    {
+      "generatedId": "exec-03ae4913-eb85-4e59-9592-6a5929e91cfb",
+      "output": "images/source/about-motion/keyframes/v2/raw/cup-depleted.png",
+      "sha256": "e1e99ffd507aec98162672255f5012a8adbfad627e842a7a80be70b8ced0f153",
+      "promptSummary": "Close-up local edit removing one spoonful from the chocolate mound as a clearly scraped cavity; preserve the loaded spoon, other flavours, cup and scene. Only the cavity patch is used."
+    }
+  ]
+}

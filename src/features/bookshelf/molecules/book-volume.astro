@@ -1,0 +1,86 @@
+---
+import type { BookViewModel } from "../lib/bookshelf-data";
+import { atlasProfile, atlasCoverSource } from "../lib/atlas-layout";
+import { atlasSheets } from "../lib/atlas-previews";
+import { ATLAS_SHEET } from "../lib/atlas-sheet";
+import PopoverKit from "../../../components/popover-kit/popover-kit.astro";
+import PopoverHeader from "../../../components/popover-kit/popover-header.astro";
+import PopoverBody from "../../../components/popover-kit/popover-body.astro";
+import PopoverFooter from "../../../components/popover-kit/popover-footer.astro";
+interface Props {
+  book: BookViewModel;
+  index: number;
+  placement: string;
+  eager?: boolean;
+  priority?: boolean;
+}
+const { book, index, placement, eager = false, priority = false } = Astro.props;
+const profile = atlasProfile(book.title, book.author, book.coverWidth, book.coverHeight);
+const label = `${book.title} — ${book.author}`;
+const columns = ATLAS_SHEET.columns;
+const rows = Math.ceil(atlasSheets.count / columns);
+const cover = atlasCoverSource(
+  {
+    src: book.coverSrc,
+    width: book.coverWidth,
+    height: book.coverHeight,
+    candidates: book.coverCandidates,
+  },
+  256,
+);
+const blank = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+---
+
+<li
+  class="book atlas-book"
+  data-book-card
+  data-book-id={book.id}
+  style={`--book-width:${profile.width};--book-height:${profile.height};--book-angle:${profile.rotation}rad;--sprite-x:${((index % columns) / (columns - 1)) * 100}%;--sprite-y:${(Math.floor(index / columns) / (rows - 1)) * 100}%;${placement}`}
+>
+  <button
+    class="book__volume atlas-book__button"
+    type="button"
+    aria-label={label}
+    data-book-open
+    popovertarget={`${book.id}-details`}
+  >
+    <span class="atlas-book__preview" aria-hidden="true"></span>
+    <picture class="atlas-book__mobile">
+      <source media="(min-width: 761px)" srcset={blank} />
+      <img
+        src={cover}
+        width={book.coverWidth}
+        height={book.coverHeight}
+        alt=""
+        loading={eager ? "eager" : "lazy"}
+        fetchpriority={priority ? "high" : "low"}
+        decoding="async"
+        draggable="false"
+      />
+    </picture>
+    <span class="atlas-book__caption"><strong>{book.title}</strong><span>{book.author}</span></span>
+  </button>
+  <PopoverKit
+    as="div"
+    class="atlas-book__fallback"
+    popover
+    id={`${book.id}-details`}
+    role="dialog"
+    aria-labelledby={`${book.id}-fallback-title`}
+  >
+    <PopoverHeader
+      ><h2 id={`${book.id}-fallback-title`}>{book.title}</h2><p>{book.author}</p></PopoverHeader
+    >
+    <PopoverBody>
+      {book.mediumTags.map((tag) => tag.label).join(" · ")}
+    </PopoverBody>
+    <PopoverFooter
+      ><button
+        class="popover-kit__action"
+        type="button"
+        popovertarget={`${book.id}-details`}
+        popovertargetaction="hide">Return to books</button
+      ></PopoverFooter
+    >
+  </PopoverKit>
+</li>

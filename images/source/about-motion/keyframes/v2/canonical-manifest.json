@@ -1,0 +1,157 @@
+{
+  "base": "images/source/about-motion/keyframes/frame-00.png",
+  "baseSha256": "7ba2ff25a374c0ddce3048a47085eb62e8d9c2936ab3bd8b3f95034b661863f3",
+  "depletedTubSource": "images/source/about-motion/keyframes/v2/raw/cup-depleted.png",
+  "depletedTubSourceSha256": "e1e99ffd507aec98162672255f5012a8adbfad627e842a7a80be70b8ced0f153",
+  "dimensions": {
+    "height": 1023,
+    "width": 1537
+  },
+  "notes": "Only the moving viewer-left arm/hand/spoon and small contact patches are taken from each pose. Protected full/partial/depleted tub states are composited before the arm so the spoonful has a matching cavity and pose sources cannot repaint it.",
+  "poses": [
+    {
+      "frame": 0,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-00.png",
+      "outputSha256": "e1931a5c11fbff9b16532b725c125d43b846bfae6ef31e27fcfe9256ab6759c3",
+      "patches": [],
+      "source": "images/source/about-motion/keyframes/frame-00.png",
+      "sourceSha256": "7ba2ff25a374c0ddce3048a47085eb62e8d9c2936ab3bd8b3f95034b661863f3",
+      "tubState": "partial"
+    },
+    {
+      "frame": 6,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-06.png",
+      "outputSha256": "fd52868447f1004ca0775b6bde245c9c216bb22b1578538b7cfd638a9126953c",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/frame-02.png",
+      "sourceSha256": "6325eabde5530d40ef40003be2063d6c94c5db7cf7b3eea099324ed53b9bb2d8",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 9,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-09.png",
+      "outputSha256": "175d981329873dbdf98caff74bb6b39deb5434e1ed17c0fc1b4d1776d057f6eb",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/v2/raw/mid-spoon.png",
+      "sourceSha256": "816a30bf6c76262f2831996a65d1ebbdbc96836c702fd3f19df0838d8d8d6575",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 12,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-12.png",
+      "outputSha256": "ab13e3de765f88010c1d90d796ae2761742339f47944028f90ebd99a4fec82e9",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/frame-03.png",
+      "sourceSha256": "31f2f5dfad760d5ad915e350115f5eb12ba76b3b29bcf4a1f0749b82d0373f6e",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 18,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-18.png",
+      "outputSha256": "da42c2ee54779f3818a0d50763e4e67df80db22b3a7f57ce24eb464712310fa4",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/frame-08.png",
+      "sourceSha256": "8e81ecb28c3a41c2636dbc739d7b71146935536d9a75e30d95c2a551af0ffa50",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 20,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-20.png",
+      "outputSha256": "1c68efb9a0ae0bd9b98358d36645b8f40490a73fa99a12751e07a17d8444e778",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/v2/raw/approach-close.png",
+      "sourceSha256": "de83b574ec92a5a74ca529935b66eddeb55aa01bfe29ae9600658ac394cea494",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 21,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-21.png",
+      "outputSha256": "bbe136dc0387105c37c823471d351d2554d6b7e074b07efa63375eb15187132b",
+      "patches": ["arm", "mouth"],
+      "source": "images/source/about-motion/keyframes/v2/raw/contact.png",
+      "sourceSha256": "a69120bbe13c9955be4d5469c631f5a434b021c3911f201bc1f0f5d15a10db0e",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 23,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-23.png",
+      "outputSha256": "18f83f7ed435d0b5fbf5304aa6de3e2a7dd0199ead8e711e20647ae8b8ef4cd9",
+      "patches": ["arm", "mouth"],
+      "source": "images/source/about-motion/keyframes/v2/raw/exit-close.png",
+      "sourceSha256": "f76a1ebcdfbc364d216240d7ec4be722b45d4b379c824f2d8a3b32438fbfee35",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 24,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-24.png",
+      "outputSha256": "686b297e235c60c2738d2757d46dcee6293086c71c244240020d1f76fa014f48",
+      "patches": ["arm", "mouth"],
+      "source": "images/source/about-motion/keyframes/v2/raw/withdrawal.png",
+      "sourceSha256": "e00bad704706af5538a306ff94c89359227489e67496425cf6b3f1fb4c248e72",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 25,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-25.png",
+      "outputSha256": "1388af429e62726ff3285929f2f8d3c528b50a973854caf6ef4ea7da0f8477da",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/v2/raw/withdrawal-between.png",
+      "sourceSha256": "951e7c0745a95db6df260d346446b4bd6cd77e8f779f27a0e600c626b1d3a2cd",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 26,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-26.png",
+      "outputSha256": "33e14cecfc1c42d7919e874da5fbf5b65f7e31c00c1be41fc750393e91ab3750",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/v2/raw/withdrawal-mid.png",
+      "sourceSha256": "2a0f3157c1754d8dc78c364aa43b9cdc7c87d34291e4f35f00512a510c87565d",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 27,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-27.png",
+      "outputSha256": "50f26ba18e63d2693ecf58a95fb36ca79d5ba8b1f13da4159bd87f70f598365f",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/v2/raw/withdrawal-low.png",
+      "sourceSha256": "936f9b3bf130af696be470c7a14809cfc3f5bf3de5ab8ee4ebe4d27b95a9e681",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 30,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-30.png",
+      "outputSha256": "91b46e7325cb1f74cdc8c8855c0e5cecb06b15b284c2403b29c477fcfb1c94d7",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/frame-05.png",
+      "sourceSha256": "474b854ccec347205f3f9cea71bc2e7eb758a5a3e3f9a7938a46449b586e3bec",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 36,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-36.png",
+      "outputSha256": "41f178ed8244ebd09ef026c0831097ee30a0245d0eb8f5330295a579ed466948",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/frame-09.png",
+      "sourceSha256": "31a3ec5bcb453cc50c67c8763abfc268c13b7e82df707b4aeb5c16d7daf9ac5c",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 42,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-42.png",
+      "outputSha256": "be1749d3b7003f4ebcc56073a125425c25bec9fda6d1c8c63ac0d55e7849c96a",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/frame-06.png",
+      "sourceSha256": "95e4c499a88be249d85f4aeed6e429382e7ced1a28b17e007fcfcd55244a8972",
+      "tubState": "depleted"
+    },
+    {
+      "frame": 45,
+      "output": "images/source/about-motion/keyframes/v2/canonical/frame-45.png",
+      "outputSha256": "af115cffea412a2a41af64bc31d2348bed11b4319b8d47d1362a9eea247d7800",
+      "patches": ["arm"],
+      "source": "images/source/about-motion/keyframes/frame-01.png",
+      "sourceSha256": "c0e6524d83d31a16ed99bf13e030a602e54fbc5ddd92434da37e1431ee9a496f",
+      "tubState": "full"
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+---
+import HazePatch from "../atoms/haze-patch.astro";
+import IconicIcon from "../atoms/iconic-icon.astro";
+import { siteMarkStrokeStyle } from "../lib/site-mark-stroke";
+import { normaliseMenuPath, siteMenuPlaces, siteMenuRooms } from "../lib/site-menu";
+
+const currentPath = normaliseMenuPath(Astro.url.pathname);
+const rooms = await Promise.all(
+  siteMenuRooms.map(async ({ href, label, pigments }) => ({
+    href,
+    label,
+    markStyle: await siteMarkStrokeStyle(pigments),
+  })),
+);
+---
+
+{
+  /* The letterhead: the way around the site, printed in the sheet's top-left
+    corner in 12px capitals. The rooms stand as tabs — the one naming the
+    address the reader is at wears the painted line, and every tab reserves
+    that line's room whether or not it is the one wearing it — and Connect,
+    set in the warm ink, unfolds the rest of the places under itself. */
+}
+<nav class="site-menu" aria-label="Site">
+  <ul class="site-menu__group">
+    {
+      rooms.map((room) => {
+        const path = normaliseMenuPath(room.href);
+
+        return (
+          <li class="site-menu__item">
+            <a
+              class="site-menu__link"
+              href={room.href}
+              style={room.markStyle}
+              aria-current={path === currentPath ? "page" : undefined}
+              data-site-menu-path={path}
+            >
+              {room.label}
+            </a>
+          </li>
+        );
+      })
+    }
+
+    <li class="site-menu__item site-menu__item--connect" data-site-menu-connect>
+      <button
+        class="site-menu__link site-menu__link--connect"
+        type="button"
+        aria-expanded="false"
+        data-site-menu-connect-trigger
+      >
+        Connect
+      </button>
+
+      {
+        /* Every place, in full. The list is laid out under the mark and taken
+          out of the flow, so unfolding it never moves the strip; each line
+          comes up blurred and a hair high, one after another, the way ink
+          settles onto paper. The haze shares the list's box — it is sized by
+          the names, and bleeds past them on its own — so the paper under the
+          list goes quiet without anything being drawn around it. */
+      }
+      <div class="site-menu__unfold">
+        <HazePatch class="site-menu__haze" />
+
+        <ul class="site-menu__places">
+          {
+            siteMenuPlaces.map((place) => {
+              const isEmail = place.href.startsWith("mailto:");
+
+              return (
+                <li class="site-menu__place">
+                  <a
+                    class="site-menu__link site-menu__link--place"
+                    href={place.href}
+                    aria-label={
+                      isEmail
+                        ? `${place.label} ${place.href.slice("mailto:".length)}`
+                        : `${place.label} (opens in a new tab)`
+                    }
+                    rel={isEmail ? undefined : "noopener noreferrer"}
+                    target={isEmail ? undefined : "_blank"}
+                  >
+                    <span class="site-menu__place-label">{place.label}</span>
+                    {!isEmail && (
+                      <span class="site-menu__away" aria-hidden="true">
+                        <IconicIcon name="external" />
+                      </span>
+                    )}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .site-menu {
+    /* The line's box, named once: the tabs reserve exactly this much room
+       under themselves so marking one current never moves the strip. */
+    --site-menu-line: 0.4em;
+    --site-menu-place-rise: 0.5em;
+    --site-menu-place-blur: 5px;
+    --site-menu-place-beat: 55ms;
+    /* The haze under the unfolded list: how deep it goes, and how wide the
+       band is that it comes out of. The band is also how far the haze bleeds
+       past the names, so the ramp lives entirely off the list and every name
+       sits over the full blur. */
+    --site-menu-haze-blur: 12px;
+    --site-menu-haze-feather: 32px;
+    display: flex;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: var(--text-label);
+    font-weight: var(--weight-bold);
+    /* 12px capitals want positive tracking to read as a printed letterhead mark. */
+    letter-spacing: var(--tracking-wide);
+    line-height: 1.08;
+    text-transform: uppercase;
+    /* The band this hangs in lets presses fall through to the sheet; the marks
+       on it take their own back (pointer-events inherits, so the band cannot
+       reach in here to do it — see about-template). */
+    pointer-events: auto;
+  }
+
+  .site-menu__group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-6) var(--space-16);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* The unfolded list hangs off this. */
+  .site-menu__item--connect {
+    position: relative;
+  }
+
+  .site-menu__link {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    padding-block-end: calc(var(--space-3) + var(--site-menu-line));
+    border: 0;
+    border-radius: var(--radius-xs);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* The strip's own three marks stand clear of the haze that hangs beneath
+     them. The haze bleeds up past the list to meet the letterhead — which is
+     what makes the softening read as one patch rather than a panel starting
+     somewhere — and a backdrop filter takes in everything painted below it, so
+     without this the word that opened the list would be blurred by it. The
+     places' own links are inside the haze's box and unaffected: it is a
+     stacking context, and their order is settled within it. */
+  .site-menu__item > .site-menu__link {
+    z-index: 2;
+  }
+
+  /* A tab is on or off, like the pen: no fade between the two inks. */
+  .site-menu__link:is(:hover, :focus-visible, [aria-current="page"]) {
+    color: var(--color-text-primary);
+  }
+
+  /* Connect is the warm mark on the strip — the one word in orange ink, and
+     the only one that opens something. It keeps its colour through every
+     state: the list unfolding is the whole of what hovering it does. */
+  .site-menu__link--connect,
+  .site-menu__link--connect:is(:hover, :focus-visible) {
+    color: var(--color-text-warm);
+  }
+
+  /* The current tab wears the letterhead's line — the painted stroke baked by
+     site-mark-stroke, stretched to this word. */
+  .site-menu__link[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: var(--site-menu-line);
+    background-image: var(
+      --site-mark-stroke,
+      linear-gradient(90deg, var(--site-mark-start) 0%, var(--site-mark-end) 100%)
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  /* Reveal the painted stroke without stretching its texture. Each newly
+     current tab draws its own line; the reserved space never changes. */
+  @media (prefers-reduced-motion: no-preference) {
+    .site-menu__link[aria-current="page"]::after {
+      animation: site-menu-line-draw 400ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    }
+  }
+
+  @keyframes site-menu-line-draw {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+      clip-path: inset(0);
+    }
+  }
+
+  .site-menu__link:focus-visible {
+    outline: 2px solid var(--color-focus-ring-strong);
+    outline-offset: var(--space-2);
+  }
+
+  /*
+   * The places. Out of the flow and hung under the mark, closed by default:
+   * each line sits a little high, blurred, and with no ink at all, and comes
+   * down into focus on its own beat. Only the ink moves — the sheet under it
+   * is untouched.
+   *
+   * A closed list is transparent rather than hidden: `visibility: hidden` and
+   * `display: none` both take the links out of the tab order, and these have
+   * to stay in it — tabbing to one is what opens the list for a reader with no
+   * pointer (`:focus-within`). Only the pointer is turned away while closed.
+   */
+  /* The box the unfolded list hangs in, sized by the longest name. The haze
+     and the names share it, so the softening tracks the list at any length
+     without a measurement. */
+  .site-menu__unfold {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .site-menu__places {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* No gap: each line carries its own room instead (see the link below), so
+       the targets touch rather than leaving 7px of dead paper between
+       them — a 13px target with a 7px gap is under the 24px step this codebase
+       treats as the smallest thing a thumb can be asked to find. */
+    gap: 0;
+    margin: 0;
+    padding: var(--space-2) 0 0;
+    list-style: none;
+  }
+
+  .site-menu__item--connect:is(:hover, :focus-within) .site-menu__unfold {
+    pointer-events: auto;
+  }
+
+  /* Put away with Escape while the pointer is still resting on the mark
+     (site-menu.ts); the flag goes when the pointer or focus does. */
+  .site-menu__item--connect[data-dismissed] .site-menu__unfold {
+    pointer-events: none;
+  }
+
+  /*
+   * The paper under the names, taken quiet. Nothing is drawn here — no fill,
+   * no edge, no corner — only a blur that is full behind the list and gone a
+   * feather's width outside it. Over the letter's bare corner that is almost
+   * nothing; over the shelf it dissolves the covers the names would otherwise
+   * have to be read against, and because the strength runs out gradually
+   * there is no shape to notice, only softer paper.
+   *
+   * The RADIUS is what opens and closes, never an opacity: an opacity on this
+   * element would make it a backdrop root and its layers would then blur its
+   * own empty content instead (haze-patch). Closed, it is hidden outright
+   * rather than merely clear — a backdrop filter that shows nothing still
+   * costs a snapshot of everything beneath it on every frame, and the shelf
+   * scrolls under this corner.
+   */
+  .site-menu__haze {
+    --haze-patch-feather: var(--site-menu-haze-feather);
+    --haze-patch-blur: 0px;
+    --haze-patch-duration: 160ms;
+    --haze-patch-easing: ease;
+    /* Under the names whatever the paint order of the lines above it. */
+    z-index: -1;
+    visibility: hidden;
+    transition: visibility 0s linear 160ms;
+  }
+
+  .site-menu__item--connect:is(:hover, :focus-within):not([data-dismissed]) .site-menu__haze {
+    --haze-patch-blur: var(--site-menu-haze-blur);
+    --haze-patch-duration: 340ms;
+    --haze-patch-easing: ease-out;
+    visibility: visible;
+    transition: visibility 0s;
+  }
+
+  .site-menu__place {
+    opacity: 0;
+    filter: blur(var(--site-menu-place-blur));
+    transform: translateY(calc(-1 * var(--site-menu-place-rise)));
+    /* Closing runs together and quickly; opening is the staggered one. */
+    transition:
+      opacity 160ms ease,
+      filter 160ms ease,
+      transform 160ms ease;
+  }
+
+  .site-menu__item--connect[data-dismissed] .site-menu__place {
+    opacity: 0;
+    filter: blur(var(--site-menu-place-blur));
+    transform: translateY(calc(-1 * var(--site-menu-place-rise)));
+  }
+
+  .site-menu__item--connect:is(:hover, :focus-within):not([data-dismissed]) .site-menu__place {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+    transition:
+      opacity 340ms ease-out var(--site-menu-place-delay, 0ms),
+      filter 340ms ease-out var(--site-menu-place-delay, 0ms),
+      transform 420ms var(--ease-emphasised) var(--site-menu-place-delay, 0ms);
+  }
+
+  /* The beat comes from source order, not from an index in the markup. */
+  .site-menu__place:nth-child(2) {
+    --site-menu-place-delay: var(--site-menu-place-beat);
+  }
+
+  .site-menu__place:nth-child(3) {
+    --site-menu-place-delay: calc(2 * var(--site-menu-place-beat));
+  }
+
+  .site-menu__place:nth-child(4) {
+    --site-menu-place-delay: calc(3 * var(--site-menu-place-beat));
+  }
+
+  .site-menu__place:nth-child(5) {
+    --site-menu-place-delay: calc(4 * var(--site-menu-place-beat));
+  }
+
+  /* A cap-box-tall target (--control-sm, the one step that snaps to itself)
+     with the type still on the same 1.08 rhythm: the padding is what is left
+     of 24px once the line box has had its share. */
+  .site-menu__link--place {
+    padding-block: calc((var(--control-sm) - 1.08em) / 2);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .site-menu__link--place:is(:hover, :focus-visible) {
+    color: var(--color-text-primary);
+  }
+
+  /* Off-site marks carry the ↗ after the name, centred on the cap band: an
+     annotation of the word, not a word of its own. */
+  .site-menu__away {
+    display: inline-block;
+    flex: none;
+    align-self: center;
+    width: 0.68em;
+    height: 0.68em;
+    margin-inline-start: 0.12em;
+    line-height: 0;
+    opacity: 0.72;
+  }
+
+  .site-menu__away :global(.iconic-icon) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /*
+   * No taste for motion: the list is simply there or not.
+   *
+   * Every state above has to be named again here, at ITS specificity, or the
+   * media query changes nothing — a media query adds no weight of its own, and
+   * the open rule carries a `:not([data-dismissed])` that the obvious
+   * `:is(:hover, :focus-within)` selector is one compound short of. Matched
+   * exactly, these win on source order instead.
+   */
+  @media (prefers-reduced-motion: reduce) {
+    .site-menu__place,
+    .site-menu__item--connect[data-dismissed] .site-menu__place,
+    .site-menu__item--connect:is(:hover, :focus-within):not([data-dismissed]) .site-menu__place {
+      filter: none;
+      transform: none;
+      transition: opacity 60ms linear;
+    }
+
+    /* The haze arrives with them, on the same short beat. */
+    .site-menu__haze,
+    .site-menu__item--connect:is(:hover, :focus-within):not([data-dismissed]) .site-menu__haze {
+      --haze-patch-duration: 60ms;
+    }
+  }
+
+  /* No painted line to be had: the current tab says so in ink instead. */
+  @media (forced-colors: active), print {
+    .site-menu__link[aria-current="page"] {
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+
+    .site-menu__link[aria-current="page"]::after {
+      content: none;
+    }
+  }
+
+  /* Print takes the whole letterhead as a list — nothing hovers on paper. */
+  @media print {
+    .site-menu__unfold {
+      position: static;
+    }
+
+    .site-menu__place {
+      opacity: 1;
+      filter: none;
+      transform: none;
+    }
+  }
+</style>

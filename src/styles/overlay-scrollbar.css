@@ -1,0 +1,127 @@
+/*
+ * The dress for the site's own scrollbars. Behaviour lives in
+ * src/components/lib/overlay-scrollbar.ts.
+ *
+ * One mark, everywhere: a soft ink thumb lying on the content with nothing
+ * behind it — no track, no groove, no gutter. It is the same ink the rest of
+ * the page's quiet marks are drawn in, at the same weight as the bar this
+ * replaces, so the change is that the strip beside the page is gone rather
+ * than that the page gained a new colour.
+ */
+
+/*
+ * The native bars go only where ours can take over. An engine too old for the
+ * `scripting` feature keeps its system bar and its gutter, which is a worse
+ * page but never a page with no way to scroll — and it is the same gate the
+ * client modules use, so the two can never disagree.
+ */
+@media (scripting: enabled) {
+  html,
+  body,
+  [data-overlay-scroll],
+  [data-overlay-scrolled] {
+    scrollbar-width: none;
+  }
+
+  /* Older WebKit, which has no scrollbar-width. */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*
+ * The rail is the scroller's own box, traced by the script. It takes no
+ * pointer events itself — only the thumb does — so the paper under it stays
+ * live all the way to the edge.
+ */
+[data-overlay-scrollbar] {
+  --overlay-scrollbar-track: 12px;
+  --overlay-scrollbar-thickness: 6px;
+  --overlay-scrollbar-inset: 3px;
+  position: absolute;
+  z-index: 9;
+  pointer-events: none;
+}
+
+[data-overlay-scrollbar-viewport] {
+  position: fixed;
+}
+
+/*
+ * A pill with a transparent border and a padding-box background: the ink is
+ * the thickness the eye sees, the border is the extra reach the hand gets —
+ * the same trick the native thumb used, kept so the target does not shrink
+ * when the mark does.
+ */
+[data-overlay-scrollbar-thumb] {
+  position: absolute;
+  border: calc((var(--overlay-scrollbar-track) - var(--overlay-scrollbar-thickness)) / 2) solid
+    transparent;
+  border-radius: var(--radius-pill);
+  background-color: color-mix(in srgb, var(--color-text-muted) 42%, transparent);
+  background-clip: padding-box;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--duration-fast) ease,
+    background-color var(--duration-fast) ease;
+}
+
+[data-overlay-scrollbar-thumb="vertical"] {
+  top: 0;
+  right: var(--overlay-scrollbar-inset);
+  width: var(--overlay-scrollbar-track);
+}
+
+[data-overlay-scrollbar-thumb="horizontal"] {
+  bottom: var(--overlay-scrollbar-inset);
+  left: 0;
+  height: var(--overlay-scrollbar-track);
+}
+
+[data-overlay-scrollbar-thumb][data-active="false"] {
+  display: none;
+}
+
+[data-overlay-scrollbar][data-visible="true"] [data-overlay-scrollbar-thumb] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+[data-overlay-scrollbar][data-visible="true"] [data-overlay-scrollbar-thumb]:hover,
+[data-overlay-scrollbar][data-dragging="true"] [data-overlay-scrollbar-thumb] {
+  background-color: color-mix(in srgb, var(--color-text-muted) 66%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-overlay-scrollbar-thumb] {
+    transition: none;
+  }
+}
+
+/*
+ * High contrast has its own scrollbar, and it is not ours to replace: give the
+ * native bar back and take this one away.
+ */
+@media (forced-colors: active) {
+  html,
+  body,
+  [data-overlay-scroll],
+  [data-overlay-scrolled] {
+    scrollbar-width: auto;
+  }
+
+  ::-webkit-scrollbar {
+    display: block;
+  }
+
+  [data-overlay-scrollbar] {
+    display: none;
+  }
+}
+
+@media print {
+  [data-overlay-scrollbar] {
+    display: none;
+  }
+}

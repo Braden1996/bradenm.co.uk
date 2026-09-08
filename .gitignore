@@ -3,10 +3,16 @@
 /.astro
 .DS_Store
 *.tsbuildinfo
-public/fonts/Inter-Regular.subset.woff2
+__pycache__/
+*.py[cod]
 rulesync.local.jsonc
 .rulesync/rules/*.local.md
 .claude/
 .claude/settings.local.json
 .cursor/
 .cursorignore
+
+/artifacts/
+/test-results/
+/playwright-report/
+/images/source/about-motion/rendered/poster-preview.png

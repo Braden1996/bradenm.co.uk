@@ -5,9 +5,17 @@ on:
     branches:
       - master
   pull_request: {}
+  workflow_dispatch: {}
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
+
+env:
+  BOOKSHELF_METADATA_OFFLINE: "1"
 
 jobs:
   check:
@@ -19,8 +27,15 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v6.0.2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
       - name: Setup Bun package manager
         uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version-file: package.json
 
       - name: Install dependencies
         run: bun ci
@@ -37,8 +52,15 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v6.0.2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
       - name: Setup Bun package manager
         uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version-file: package.json
 
       - name: Install dependencies
         run: bun ci
@@ -47,4 +69,64 @@ jobs:
         run: bun run check:rulesync
 
       - name: Build
-        run: docker build --output dist .
+        run: bun run build
+
+      - name: Validate Cloudflare Pages output
+        run: bun run check:deployment
+
+      - name: Save production output
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist-${{ github.sha }}
+          path: dist/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+          overwrite: true
+
+  performance:
+    name: Browser and performance budgets
+    needs: build
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
+      - name: Setup Bun package manager
+        uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version-file: package.json
+
+      - name: Install dependencies
+        run: bun ci
+
+      - name: Install Chromium
+        run: bunx playwright install --with-deps chromium
+
+      - name: Download production output
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist-${{ github.sha }}
+          path: dist/
+
+      - name: Browser behavior
+        run: bun run check:browser
+
+      - name: Performance budgets
+        run: bun run check:performance
+
+      - name: Save browser and performance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance
+          path: artifacts/
+          retention-days: 14
+          overwrite: true

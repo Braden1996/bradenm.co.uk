@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"header"> {
+  divider?: boolean;
+}
+const { class: className, divider = true, ...rest } = Astro.props;
+---
+
+<header
+  class:list={["popover-kit__header", className]}
+  data-popover-header
+  data-divider={divider || undefined}
+  {...rest}
+>
+  <slot />
+</header>

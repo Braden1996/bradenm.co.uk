@@ -5,20 +5,24 @@
 
 <style>
   .empty-state {
-    padding: 1.5rem var(--bookshelf-inline-padding);
+    padding: var(--space-24) var(--bookshelf-inline-padding);
     text-align: center;
     color: var(--bookshelf-text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-body);
   }
 
   .empty-reset {
-    margin-top: 0.5rem;
-    padding: 0.3rem 0.7rem;
-    border-radius: 0.45rem;
+    display: inline-flex;
+    align-items: center;
+    height: var(--control-lg);
+    margin-top: var(--space-8);
+    padding: 0 var(--space-12);
+    /* A third of the control it wraps, which is exactly --control-lg tall. */
+    border-radius: var(--radius-md);
     border: 1px solid var(--bookshelf-stroke);
     background: var(--color-surface-subtle);
     color: var(--bookshelf-text-muted);
-    font-size: 0.72rem;
+    font-size: var(--text-ui);
     cursor: pointer;
     transition: background-color 180ms ease;
   }

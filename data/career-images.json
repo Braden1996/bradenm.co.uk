@@ -1,29 +1,463 @@
 {
   "images": {
+    "/career/attio-explainer.png": {
+      "bezel": {
+        "edge": "#a3a6b2",
+        "fill": "#f4f5fa",
+        "rim": [
+          "#d5d1e3",
+          "#d0d3e4",
+          "#cdd4e4",
+          "#ced4e4",
+          "#cfd3e4",
+          "#d0d3e4",
+          "#cfd3e4",
+          "#cdd4e4",
+          "#cdd4e4",
+          "#ced3e4",
+          "#ced4e4",
+          "#ccd4e4"
+        ]
+      },
+      "height": 176,
+      "palette": ["#f9f9fa", "#badbc5", "#6c9eff"],
+      "src": "/career/generated/attio-explainer.ad54a313d878.webp",
+      "width": 384,
+      "viewerHeight": 852,
+      "viewerSrc": "/career/generated/attio-explainer.viewer.e8be154bac53.webp",
+      "viewerWidth": 1855
+    },
     "/career/attio.webp": {
+      "bezel": {
+        "edge": "#5b606a",
+        "fill": "#3b3e43",
+        "rim": [
+          "#858d9c",
+          "#848d9c",
+          "#848e9c",
+          "#848d9c",
+          "#858d9c",
+          "#848e9c",
+          "#848e9c",
+          "#858d9c",
+          "#848d9c",
+          "#848e9c",
+          "#848d9c",
+          "#858d9c"
+        ]
+      },
+      "height": 364,
+      "palette": ["#24272a", "#f3f4f4", "#525558"],
       "src": "/career/generated/attio.a2a55d94ae4b.webp",
-      "width": 364,
-      "height": 364
+      "width": 364
+    },
+    "/career/cardiff-university-explainer.png": {
+      "bezel": {
+        "edge": "#cf4954",
+        "fill": "#d5555e",
+        "rim": [
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#d26d70",
+          "#d16c6f"
+        ]
+      },
+      "height": 216,
+      "palette": ["#de5b63", "#e6828d", "#eeabb3"],
+      "src": "/career/generated/cardiff-university-explainer.d9b920ab2cee.webp",
+      "width": 384,
+      "viewerHeight": 864,
+      "viewerSrc": "/career/generated/cardiff-university-explainer.viewer.c9249142fc5a.webp",
+      "viewerWidth": 1536
     },
     "/career/cardiff-university.png": {
+      "bezel": {
+        "edge": "#d6404f",
+        "fill": "#dd4f5a",
+        "rim": [
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d",
+          "#cf6a6d"
+        ]
+      },
+      "height": 371,
+      "palette": ["#d83a4b", "#e78892", "#f4c7cc"],
       "src": "/career/generated/cardiff-university.2f722638f5f2.webp",
+      "width": 384
+    },
+    "/career/cleo-explainer.png": {
+      "bezel": {
+        "edge": "#815a55",
+        "fill": "#63413d",
+        "rim": [
+          "#ac807b",
+          "#ad807a",
+          "#ae807a",
+          "#ad807b",
+          "#ac817b",
+          "#ac807b",
+          "#ae807a",
+          "#af7f79",
+          "#ae7f7a",
+          "#ac807b",
+          "#ab817c",
+          "#ac817b"
+        ]
+      },
+      "height": 216,
+      "palette": ["#694743", "#471f1a", "#f2efed"],
+      "src": "/career/generated/cleo-explainer.927e5cca72f7.webp",
       "width": 384,
-      "height": 371
+      "viewerHeight": 864,
+      "viewerSrc": "/career/generated/cleo-explainer.viewer.3ee4e4dca467.webp",
+      "viewerWidth": 1536
+    },
+    "/career/contentsquare-explainer.png": {
+      "bezel": {
+        "edge": "#a63e5a",
+        "fill": "#862843",
+        "rim": [
+          "#cd6880",
+          "#cd6880",
+          "#cd6880",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd6880",
+          "#cd6880",
+          "#cd6880",
+          "#cd6880"
+        ]
+      },
+      "height": 216,
+      "palette": ["#892844", "#c1889f", "#dbbac7"],
+      "src": "/career/generated/contentsquare-explainer.da5ff0022ef3.webp",
+      "width": 384,
+      "viewerHeight": 864,
+      "viewerSrc": "/career/generated/contentsquare-explainer.viewer.3a80e364721d.webp",
+      "viewerWidth": 1536
+    },
+    "/career/garrys-mod-explainer.png": {
+      "bezel": {
+        "edge": "#2a80e7",
+        "fill": "#3d90f3",
+        "rim": [
+          "#6697d5",
+          "#6595d3",
+          "#608fcd",
+          "#5e8fcd",
+          "#5d8fcd",
+          "#5d8fcd",
+          "#5e8fcd",
+          "#5f8fcd",
+          "#6292d0",
+          "#6697d5",
+          "#6999d8",
+          "#6899d7"
+        ]
+      },
+      "height": 216,
+      "palette": ["#3e93f9", "#266ec4", "#b2d8ff"],
+      "src": "/career/generated/garrys-mod-explainer.515e6a0e0572.webp",
+      "width": 384,
+      "viewerHeight": 864,
+      "viewerSrc": "/career/generated/garrys-mod-explainer.viewer.c02b1278b4a0.webp",
+      "viewerWidth": 1536
     },
     "/career/garrys-mod.png": {
+      "bezel": {
+        "edge": "#187ff4",
+        "fill": "#3491ff",
+        "rim": [
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd",
+          "#608fcd"
+        ]
+      },
+      "height": 384,
+      "palette": ["#0482ff", "#feffff", "#bcdeff"],
       "src": "/career/generated/garrys-mod.339545461f95.webp",
+      "width": 384
+    },
+    "/career/isembard-explainer.jpeg": {
+      "bezel": {
+        "edge": "#7a717e",
+        "fill": "#746c78",
+        "rim": [
+          "#898c9c",
+          "#8e8a9b",
+          "#9b8595",
+          "#a08683",
+          "#9b8880",
+          "#9c8880",
+          "#9e8685",
+          "#9b8690",
+          "#8e8a9a",
+          "#888c9e",
+          "#888c9e",
+          "#898c9c"
+        ]
+      },
+      "height": 216,
+      "palette": ["#a29783", "#9195a4", "#181a23"],
+      "src": "/career/generated/isembard-explainer.680cdfebbf5b.webp",
       "width": 384,
-      "height": 384
+      "viewerHeight": 900,
+      "viewerSrc": "/career/generated/isembard-explainer.viewer.aefc6f923376.webp",
+      "viewerWidth": 1600
+    },
+    "/career/minecraft-explainer.png": {
+      "bezel": {
+        "edge": "#498f31",
+        "fill": "#51923a",
+        "rim": [
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58",
+          "#699d58"
+        ]
+      },
+      "height": 216,
+      "palette": ["#599d42", "#0f1b0b", "#000000"],
+      "src": "/career/generated/minecraft-explainer.f922c5761b82.webp",
+      "width": 384,
+      "viewerHeight": 864,
+      "viewerSrc": "/career/generated/minecraft-explainer.viewer.cef5dab854d3.webp",
+      "viewerWidth": 1536
+    },
+    "/career/theodo-explainer.png": {
+      "bezel": {
+        "edge": "#b29b95",
+        "fill": "#f2dad4",
+        "rim": [
+          "#e8cdc7",
+          "#e8cdc7",
+          "#e4c8c2",
+          "#d2b9b3",
+          "#c2aaa5",
+          "#c6ada8",
+          "#d6bbb5",
+          "#e3c7c0",
+          "#e8ccc6",
+          "#e7cdc7",
+          "#e7cdc8",
+          "#e7cdc7"
+        ]
+      },
+      "height": 216,
+      "palette": ["#f5ded8", "#c5a49d"],
+      "src": "/career/generated/theodo-explainer.bb1595fd320b.webp",
+      "width": 384,
+      "viewerHeight": 864,
+      "viewerSrc": "/career/generated/theodo-explainer.viewer.f08e5d207637.webp",
+      "viewerWidth": 1536
     },
     "/career/theodo.png": {
+      "bezel": {
+        "edge": "#bb9e97",
+        "fill": "#ffe5df",
+        "rim": [
+          "#e6cec8",
+          "#e7cdcc",
+          "#e7cdcc",
+          "#e6cec8",
+          "#ebccc5",
+          "#efc6bc",
+          "#e9cdc6",
+          "#e6cec8",
+          "#e5cec7",
+          "#e6cec8",
+          "#e6cec8",
+          "#e6cec8"
+        ]
+      },
+      "height": 200,
+      "palette": ["#ff451b", "#ffffff", "#ffd6cb"],
       "src": "/career/generated/theodo.beaaa4ffda70.webp",
-      "width": 200,
-      "height": 200
+      "width": 200
+    },
+    "/career/thought-machine-explainer.png": {
+      "bezel": {
+        "edge": "#625e5a",
+        "fill": "#323232",
+        "rim": [
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87"
+        ]
+      },
+      "height": 216,
+      "palette": ["#272727", "#a6a6a6", "#eaeaea"],
+      "src": "/career/generated/thought-machine-explainer.90c6f5b5f773.webp",
+      "width": 384,
+      "viewerHeight": 864,
+      "viewerSrc": "/career/generated/thought-machine-explainer.viewer.f51fefcb22db.webp",
+      "viewerWidth": 1536
     },
     "/career/thought-machine.png": {
+      "bezel": {
+        "edge": "#625e5a",
+        "fill": "#2c2c2c",
+        "rim": [
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87"
+        ]
+      },
+      "height": 200,
+      "palette": ["#0e0e0e", "#f6f6f6", "#535353"],
       "src": "/career/generated/thought-machine.7eb9dfdf1c66.webp",
-      "width": 200,
-      "height": 200
+      "width": 200
+    },
+    "/career/cleo.png": {
+      "bezel": {
+        "edge": "#825852",
+        "fill": "#613c38",
+        "rim": [
+          "#b57c74",
+          "#b47d75",
+          "#b17e77",
+          "#b17e77",
+          "#b47d75",
+          "#b57c74",
+          "#b57c74",
+          "#b47d75",
+          "#b17e77",
+          "#b27e77",
+          "#b47d75",
+          "#b57c74"
+        ]
+      },
+      "height": 384,
+      "palette": ["#461f1b", "#faf8f6", "#705350"],
+      "src": "/career/generated/cleo.043cc45cf38a.webp",
+      "width": 384
+    },
+    "/career/contentsquare.png": {
+      "bezel": {
+        "edge": "#a93657",
+        "fill": "#861c3e",
+        "rim": [
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f",
+          "#cd687f"
+        ]
+      },
+      "height": 384,
+      "palette": ["#7c0033", "#99395f", "#bb7a94"],
+      "src": "/career/generated/contentsquare.beba51298b14.webp",
+      "width": 384
+    },
+    "/career/isembard.png": {
+      "bezel": {
+        "edge": "#625e5a",
+        "fill": "#161616",
+        "rim": [
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87",
+          "#908c87"
+        ]
+      },
+      "height": 256,
+      "palette": ["#161616"],
+      "src": "/career/generated/isembard.4ca5fd5fa71e.webp",
+      "width": 256
+    },
+    "/career/minecraft.png": {
+      "bezel": {
+        "edge": "#429125",
+        "fill": "#4c9532",
+        "rim": [
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58",
+          "#689d58"
+        ]
+      },
+      "height": 192,
+      "palette": ["#53a536", "#366a24", "#000000"],
+      "src": "/career/generated/minecraft.3f3b36003a78.webp",
+      "width": 192
     }
   }
 }

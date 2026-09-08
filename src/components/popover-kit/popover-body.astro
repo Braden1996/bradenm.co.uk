@@ -1,0 +1,7 @@
+---
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"div"> {}
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["popover-kit__body", className]} data-popover-body {...rest}><slot /></div>

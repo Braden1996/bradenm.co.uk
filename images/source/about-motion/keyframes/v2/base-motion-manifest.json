@@ -1,0 +1,41 @@
+{
+  "affine": [
+    [1.2999999523162842, 0.0, -253.0],
+    [0.0, 1.100000023841858, -12.0]
+  ],
+  "fps": 12,
+  "frame_count": 48,
+  "height": 800,
+  "keyframes": {
+    "frame-00.png": "ec869420acc1bc2393b4a1307dfcdd5a261519912ae28d7eac90d1f58957365e",
+    "frame-06.png": "ce9e4380ac5282fc9dff9e3c6497cca8093f769506e608a56af141ea17df8676",
+    "frame-09.png": "e72edaaedd0f59ed6199b1e24f870d2abb82a4508927ff22068d5d609c81b942",
+    "frame-12.png": "86f1c35305c7ff27be44daefa5829c1ce7b19253f3c5b1f484cc3aba09933cf6",
+    "frame-18.png": "0eda8dd9cb1cc5a136d93802c724f3386529a906ec3f87ab178ce40b3a753520",
+    "frame-20.png": "70bcd49d7be4ae39c9f43408566930a8683d854ff3abaed5e67d69842f8241a1",
+    "frame-21.png": "0bc5313733ee09a9d75e1d5440259a0c8bd9abfceaf51e38b1d64581d3be0e58",
+    "frame-23.png": "dae75abcbb17b5441c1a4d79a429dc96b8f6f86307682b889324fc4776be9027",
+    "frame-24.png": "48ec65e33d1ab39e2e9828cc8b921d1420790fb51a13d693fc6a1a61544ebd94",
+    "frame-25.png": "7849679056c83c206b0d4a70a5fdda0a36575e1fb89c0d0d7e94f869217d8432",
+    "frame-26.png": "f644d65255aa94e06c085d9e155488a284fd3ffb420155be6c6758cc68250240",
+    "frame-27.png": "5b42ae86dd43bc0eff772162605141c677da3527c2c4f5a3a780e1da5784e74e",
+    "frame-30.png": "ae89a51699d549c78bf7d2e31ea0c221ee4e2f8a57e3c6c815e64bdbaa3faf32",
+    "frame-36.png": "8f5f0c472c1cd8140686244f980e80b6045189bd52703eedb301cc38e3b51de9",
+    "frame-42.png": "ce20f0217fd298b95cafe375b530cf5ae1fd94cf7936a4cc34974702c79d3d2d",
+    "frame-45.png": "f9570a26f6dd32b2028d633d721455dbd28f477630061092efa416f194cd00b3",
+    "frame-48.png": "ec869420acc1bc2393b4a1307dfcdd5a261519912ae28d7eac90d1f58957365e"
+  },
+  "matte_video": {
+    "file": "braden-gelato-clean-matte-loop-v2.mp4",
+    "sha256": "350775cd4420951c43da4394eb6aa08d5a7005c4b11ad4ec0f36d8919c04ae1d"
+  },
+  "method": "piecewise RIFE with dense canonical local-edit anchors around occlusions",
+  "rife_model_revision": "6b650eaa5664aab280119511fe944861491aa15e",
+  "rife_source_revision": "764b89be56497fb26243d1de75f2957f3889e5d3",
+  "schedule": [0, 6, 9, 12, 18, 20, 21, 23, 24, 25, 26, 27, 30, 36, 42, 45, 48],
+  "source_video": {
+    "file": "braden-gelato-clean-loop-v2.mp4",
+    "sha256": "cde3361f291aa95d70dadb0e2dbae0773fc57baf3724410453e04843692e09fb"
+  },
+  "width": 1200
+}

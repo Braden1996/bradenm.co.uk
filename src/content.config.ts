@@ -6,7 +6,7 @@ const careerDateSchema = z
   .string()
   .regex(/^\d{4}(?:-\d{2}){0,2}$/, "Use YYYY, YYYY-MM, or YYYY-MM-DD.");
 
-export const collections: Record<string, ReturnType<typeof defineCollection>> = {
+export const collections = {
   career: defineCollection({
     loader: glob({
       base: "./src/content/career",
@@ -18,8 +18,13 @@ export const collections: Record<string, ReturnType<typeof defineCollection>> = 
       location: z.string(),
       startDate: careerDateSchema,
       endDate: careerDateSchema.optional(),
+      summary: z.string().optional(),
+      website: z.url().optional(),
+      explainerAlt: z.string().optional(),
+      /** Every card carries a cover; the hover card's top band is the same size for all of them. */
+      explainerSrc: z.string(),
       logoSrc: z.string().optional(),
       mark: z.string().min(1).max(4),
     }),
   }),
-};
+} satisfies Record<string, ReturnType<typeof defineCollection>>;

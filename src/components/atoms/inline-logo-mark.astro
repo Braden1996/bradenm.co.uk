@@ -1,0 +1,72 @@
+---
+interface Props {
+  fit?: "contain" | "cover";
+  height: number;
+  position?: "center" | "left";
+  src: string;
+  variant?: "glyph" | "tile";
+  width: number;
+}
+
+const { fit = "contain", height, position = "center", src, variant = "glyph", width } = Astro.props;
+---
+
+<span
+  class:list={[
+    "inline-logo-mark",
+    `inline-logo-mark--${fit}`,
+    `inline-logo-mark--${position}`,
+    `inline-logo-mark--${variant}`,
+  ]}
+  aria-hidden="true"
+>
+  <img
+    class="inline-logo-mark__image"
+    src={src}
+    alt=""
+    width={width}
+    height={height}
+    loading="eager"
+    decoding="async"
+  />
+</span>
+
+<style>
+  /* The parent tag owns the fixed .78em rail; this atom only normalises the
+     artwork inside it, so changing a crop never changes text flow. */
+  .inline-logo-mark {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+  }
+
+  .inline-logo-mark--tile {
+    overflow: hidden;
+    border-radius: 18%;
+    background: var(--color-surface-subtle);
+  }
+
+  @supports (corner-shape: squircle) {
+    .inline-logo-mark--tile {
+      border-radius: 24%;
+      corner-shape: squircle;
+    }
+  }
+
+  .inline-logo-mark__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .inline-logo-mark--cover > .inline-logo-mark__image {
+    object-fit: cover;
+  }
+
+  .inline-logo-mark--left > .inline-logo-mark__image {
+    object-position: left center;
+  }
+</style>

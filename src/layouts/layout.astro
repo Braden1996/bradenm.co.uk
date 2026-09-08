@@ -1,17 +1,24 @@
 ---
 import SitePanelTemplate from "../components/templates/site-panel-template.astro";
+import type { SiteRoom } from "../components/lib/site-room";
+import roomShellStyles from "../features/about/styles/room-shell.css?inline";
 
 interface Props {
-  activeTab?: "about" | "timeline" | "bookshelf";
   description: string;
+  /** Which room the shell dresses; the letter's rooms are the default. */
+  room?: SiteRoom;
   title: string;
 }
 
-const { title, description, activeTab = "about" } = Astro.props;
+const { title, description, room = "about" } = Astro.props;
 ---
 
-<SitePanelTemplate title={title} description={description} activeTab={activeTab}>
-  <slot name="head" slot="head" />
+<SitePanelTemplate title={title} description={description} room={room}>
+  <Fragment slot="head">
+    <slot name="head" />
+    {/* Shared room geometry is available before any room markup can paint. */}
+    {room === "about" && <style is:inline set:html={roomShellStyles} />}
+  </Fragment>
+  <slot name="header" slot="header" />
   <slot />
-  <slot name="footer-center" slot="footer-center" />
 </SitePanelTemplate>

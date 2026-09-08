@@ -1,0 +1,55 @@
+---
+import { getPaperAssets } from "../lib/paper-assets";
+
+const image = (await getPaperAssets()).wash.url;
+---
+
+<canvas class="paper-overscroll" data-paper-occlusion width="240" height="212" aria-hidden="true"
+></canvas>
+<canvas
+  class="paper-overscroll"
+  data-paper-overscroll
+  data-overscroll-src={image}
+  width="240"
+  height="212"
+  aria-hidden="true"></canvas>
+
+<style>
+  .paper-overscroll {
+    position: fixed;
+    z-index: 2;
+    inset: auto 0 0;
+    width: 100%;
+    height: 212px;
+    color: var(--color-bg-canvas);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @media (max-width: 760px) {
+    .paper-overscroll {
+      height: 182px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce), (forced-colors: active) {
+    .paper-overscroll {
+      display: none;
+    }
+  }
+
+  @media print {
+    .paper-overscroll {
+      display: none;
+    }
+  }
+</style>
+
+<style is:global>
+  /* The page keeps native scrolling; only its boundary bounce is replaced.
+     Wait until the ornament is bound so a script-free page keeps its affordance. */
+  html[data-paper-overscroll-ready],
+  html[data-paper-overscroll-ready] .page-wrap {
+    overscroll-behavior-y: none;
+  }
+</style>

@@ -1,44 +1,80 @@
 ---
-import type { IconicIconName } from "../../icons/iconic";
-import IconicIcon from "../atoms/iconic-icon.astro";
-
-const links: { href: string; label: string; icon: IconicIconName }[] = [
-  { href: "https://x.com/SirBraden1996", label: "X", icon: "x" },
-  { href: "https://github.com/Braden1996", label: "GitHub", icon: "github" },
-  { href: "https://www.linkedin.com/in/braden-marshall/", label: "LinkedIn", icon: "linkedin" },
-  { href: "https://steamcommunity.com/id/Braden1996", label: "Steam", icon: "steam" },
-];
+import githubLogo from "../../../images/source/brands/github.png";
+import linkedinLogo from "../../../images/source/brands/linkedin.png";
+import steamLogo from "../../../images/source/brands/steam.png";
+import xLogo from "../../../images/source/brands/x.png";
+import InlineLogoChip from "../molecules/inline-logo-chip.astro";
 ---
 
 <footer class="site-footer">
   <div class="site-footer__center">
     <slot />
   </div>
-  <nav class="site-footer__social" aria-label="Social links">
-    {
-      links.map(({ href, label, icon }) => (
-        <a
-          href={href}
-          aria-label={label}
-          class="site-footer__link"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <IconicIcon class="site-footer__icon" name={icon} />
-        </a>
-      ))
-    }
+  {
+    /* One sentence, each place a mark-and-name chip: the same entity language
+      the about letter uses for companies, in the footer's quiet voice. */
+  }
+  <nav class="site-footer__social" aria-label="Elsewhere">
+    <p>
+      Find me on <InlineLogoChip
+        external
+        href="https://x.com/SirBraden1996"
+        label="X"
+        logoSrc={xLogo.src}
+        logoWidth={xLogo.width}
+        logoHeight={xLogo.height}
+        logoFit="contain"
+        logoVariant="glyph"
+        suffix=","
+      />
+      <InlineLogoChip
+        external
+        href="https://www.linkedin.com/in/braden-marshall/"
+        label="LinkedIn"
+        logoSrc={linkedinLogo.src}
+        logoWidth={linkedinLogo.width}
+        logoHeight={linkedinLogo.height}
+        logoPosition="left"
+        suffix=","
+      />
+      <InlineLogoChip
+        external
+        href="https://github.com/Braden1996"
+        label="GitHub"
+        logoSrc={githubLogo.src}
+        logoWidth={githubLogo.width}
+        logoHeight={githubLogo.height}
+        logoFit="contain"
+        logoVariant="glyph"
+      /> or <InlineLogoChip
+        external
+        href="https://steamcommunity.com/id/Braden1996"
+        label="Steam"
+        logoSrc={steamLogo.src}
+        logoWidth={steamLogo.width}
+        logoHeight={steamLogo.height}
+        logoFit="contain"
+        logoVariant="glyph"
+        suffix="."
+      />
+    </p>
   </nav>
 </footer>
 
 <style>
+  /* The bottom-edge wash itself is painted by the page shell (see
+     paper-backdrop); the footer only reserves its height so the copy sits
+     clear of it. */
   .site-footer {
+    --footer-wash-height: var(--paper-wash-height, 45px);
     flex-shrink: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
-    gap: 0.85rem;
-    padding: var(--panel-shell-padding);
+    gap: var(--space-16);
+    min-height: calc(var(--control-lg) + 2 * var(--panel-gutter-block) + var(--footer-wash-height));
+    padding: var(--panel-gutter-block) var(--panel-gutter)
+      calc(var(--panel-gutter-block) + var(--footer-wash-height));
   }
 
   .site-footer__center {
@@ -49,31 +85,40 @@ const links: { href: string; label: string; icon: IconicIconName }[] = [
     text-align: center;
   }
 
+  /* Sits on the right rail, under the about letter's column; the first
+     track is left empty so the two ends still balance on the same gutter. */
   .site-footer__social {
     grid-column: 3;
-    display: flex;
-    align-items: center;
-    justify-self: end;
-    gap: 0.65rem;
-    line-height: 0;
+    min-width: 0;
+    justify-self: stretch;
+    color: var(--color-text-faint);
+    font-size: var(--text-ui);
+    letter-spacing: var(--tracking-loose);
+    line-height: var(--leading-snug);
+    text-align: right;
+    text-wrap: balance;
   }
 
-  .site-footer__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  .site-footer__social :global(.inline-logo-chip:is(:hover, :focus-visible, [data-state="open"])) {
     color: var(--color-text-muted);
-    line-height: 0;
-    transition: color 200ms ease;
   }
 
-  .site-footer__link:hover {
-    color: var(--color-text-primary);
-  }
+  @media (max-width: 760px) {
+    .site-footer {
+      grid-template-columns: minmax(0, 1fr) auto;
+      row-gap: var(--space-8);
+    }
 
-  .site-footer__icon {
-    display: block;
-    width: 1rem;
-    height: 1rem;
+    .site-footer__center {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+      text-align: right;
+    }
+
+    .site-footer__social {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
   }
 </style>

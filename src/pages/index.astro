@@ -1,11 +1,32 @@
 ---
+import {
+  aboutPageDescription,
+  aboutPortraitAssets,
+  aboutPoster,
+  aboutPreloads,
+} from "../features/about/lib/about-page-assets";
 import AboutTemplate from "../features/about/templates/about-template.astro";
+import AboutLetterhead from "../features/about/organisms/about-letterhead.astro";
+import LetterRoom from "../features/about/organisms/letter-room.astro";
 import Layout from "../layouts/layout.astro";
-
-const pageDescription =
-  "Engineering lead building cross-platform product experiences across mobile, desktop, and web.";
+import { getFontAssets } from "../components/lib/site-fonts";
+const fonts = await getFontAssets();
 ---
 
-<Layout title="Braden Marshall" description={pageDescription} activeTab="about">
-  <AboutTemplate />
+<Layout title="Braden Marshall" description={aboutPageDescription}>
+  <Fragment slot="head">
+    {aboutPreloads.map((preload) => <link rel="preload" {...preload} />)}
+    <link
+      rel="preload"
+      href={fonts.newsreader.url}
+      as="font"
+      type="font/woff2"
+      fetchpriority="low"
+      crossorigin
+    />
+  </Fragment>
+  <AboutLetterhead slot="header" />
+  <AboutTemplate>
+    <LetterRoom poster={aboutPoster} assets={aboutPortraitAssets} />
+  </AboutTemplate>
 </Layout>

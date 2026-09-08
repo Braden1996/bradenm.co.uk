@@ -1,0 +1,647 @@
+---
+import IconicIcon from "../../../components/atoms/iconic-icon.astro";
+import LogoSquircle from "../../../components/atoms/logo-squircle.astro";
+import ProgressiveImage from "../../../components/atoms/progressive-image.astro";
+import ScrollFadeFrame from "../../../components/molecules/scroll-fade-frame.astro";
+import type { CareerEntryViewModel } from "../lib/career-view-model";
+import PopoverKit from "../../../components/popover-kit/popover-kit.astro";
+import PopoverHeader from "../../../components/popover-kit/popover-header.astro";
+import PopoverBody from "../../../components/popover-kit/popover-body.astro";
+import PopoverFooter from "../../../components/popover-kit/popover-footer.astro";
+
+interface Props {
+  /** The entry this card prints. */
+  entry: CareerEntryViewModel;
+  id: string;
+  accent: string;
+  accentTail: string;
+  stroke: string;
+  /** Card heading — may differ from the entry's organisation ("Garry's Mod" for a self-employed entry). */
+  organisation?: string;
+}
+
+const { entry, id, accent, accentTail, stroke, organisation } = Astro.props;
+const heading = organisation ?? entry.organisation;
+const coverAlt = entry.explainerAlt ?? `${heading} cover image`;
+---
+
+{
+  /* One career entry, printed once. Without scripting this is the readable
+    appendix the inline names link into, picture and all. With scripting the
+    selected card becomes the content plane inside the page's one persistent
+    popover; no second copy of its heading, note, or footer is manufactured on
+    the client. The cover belongs to the appendix and stays hidden in popover
+    mode. */
+}
+<PopoverKit
+  surface="bare"
+  class="career-card"
+  id={id}
+  style={`--career-note-accent:${accent};--career-note-accent-tail:${accentTail};--career-note-stroke:url("${stroke}")`}
+  data-career-card
+  data-career-slug={entry.slug}
+  aria-labelledby={`${id}-title`}
+>
+  {
+    entry.explainerSrc && (
+      <div class="career-card__cover">
+        <ProgressiveImage
+          src={entry.explainerSrc}
+          alt={coverAlt}
+          width={entry.explainerWidth}
+          height={entry.explainerHeight}
+        />
+      </div>
+    )
+  }
+
+  <PopoverHeader class="career-card__identity" data-career-card-identity>
+    <h3 class="career-card__org" id={`${id}-title`} tabindex="-1">{heading}</h3>
+    <span class="career-card__tenure" title={`${entry.period} · ${entry.duration}`}>
+      <span class="career-card__visually-hidden">{entry.period}, {entry.duration}</span>
+      <span class="career-card__years" aria-hidden="true">{entry.years}</span>
+      <span class="career-card__compact-duration" aria-hidden="true">
+        {entry.compactDuration}
+      </span>
+    </span>
+    <button
+      class="career-card__close"
+      type="button"
+      data-career-modal-close
+      aria-label="Close note"
+    >
+      <IconicIcon name="close" />
+    </button>
+  </PopoverHeader>
+
+  <ScrollFadeFrame class="career-card__scroll-frame" mobile smooth>
+    <PopoverBody
+      class="career-card__body"
+      data-career-card-body
+      data-scroll-fade-viewport
+      tabindex="-1"
+    >
+      {entry.summary && <p class="career-card__summary">{entry.summary}</p>}
+      <div class="career-card__detail"><entry.Content /></div>
+    </PopoverBody>
+  </ScrollFadeFrame>
+
+  <PopoverFooter
+    class="career-card__footer"
+    actionClass="career-card__visit"
+    action={entry.website
+      ? {
+          href: entry.website,
+          label: "Website",
+          newTab: true,
+          ariaLabel: `Visit ${heading} (opens in a new tab)`,
+        }
+      : undefined}
+  >
+    {/* One line under the note: the mark, then the dates pushed to the far end. */}
+    <div class="career-card__meta">
+      <span class="career-card__logo" aria-hidden="true">
+        <LogoSquircle
+          src={entry.logoSrc}
+          bezel={entry.logoBezel}
+          mark={entry.mark}
+          alt=""
+          width={entry.logoWidth}
+          height={entry.logoHeight}
+        />
+      </span>
+      <dl class="career-card__facts" aria-label={`${heading} dates`}>
+        <dt class="career-card__visually-hidden">Dates</dt>
+        <dd>{entry.period}</dd>
+        <dt class="career-card__visually-hidden">Duration</dt>
+        <dd class="career-card__duration">{entry.duration}</dd>
+      </dl>
+    </div>
+  </PopoverFooter>
+</PopoverKit>
+
+<style>
+  /*
+   * The appendix card is a clipping cut from the same stock as the sheet — the
+   * sheet's own grain multiplied onto its ivory, a hairline edge, corners cut
+   * rather than rounded — and it speaks the letter's voice: Newsreader for the
+   * body, one step under the letter's own size; Recoleta only for the name;
+   * Source Sans only for the facts line, which is how the rest of the site
+   * sets metadata. With scripting this same element becomes a content plane
+   * in the popover, so the appendix and the enhanced view cannot drift apart.
+   */
+  .career-card {
+    --popover-divider-display: none;
+    --career-card-inline-gutter: var(--space-12);
+    --career-card-text: var(--text-body);
+    --logo-squircle-size: 1.15rem;
+    --logo-squircle-rim-width: 1.5px;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 2px;
+    background-color: var(--color-surface-panel-top);
+    background-image: var(--paper-sheet);
+    background-size: var(--paper-sheet-size) var(--paper-sheet-size);
+    background-blend-mode: multiply;
+    color: var(--color-text-primary);
+    box-shadow:
+      0 1px 2px var(--color-shadow-subtle),
+      0 6px 18px var(--color-shadow-outline);
+    font-family: var(--font-text);
+  }
+
+  /* The cover is a print pasted at the top of the clipping: a fixed 16:9 band,
+     cropped to fit, with nothing but a hairline round it, so the image meets
+     the paper directly rather than sitting in a mount. */
+  .career-card__cover {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    margin: var(--space-8) var(--space-8) 0;
+    overflow: hidden;
+    border-radius: 1px;
+    background-color: var(--color-surface-subtle);
+    box-shadow: 0 0 0 1px var(--color-border-ghost);
+  }
+
+  /* The name alone, set beneath the print like a caption. The mark and dates
+     share the footer. */
+  .career-card__identity {
+    min-width: 0;
+    padding: var(--space-8) var(--career-card-inline-gutter) 0;
+  }
+
+  .career-card__footer {
+    display: block;
+  }
+
+  .career-card__org {
+    overflow: hidden;
+    color: var(--color-text-primary);
+    font-family: var(--font-display);
+    font-size: var(--text-lead);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .career-card__body {
+    padding: var(--space-4) var(--career-card-inline-gutter) 0;
+    color: var(--color-text-primary);
+    font-size: var(--career-card-text);
+    font-weight: var(--weight-regular);
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  .career-card__body:focus-visible {
+    outline: 1px solid var(--color-focus-ring-strong);
+    outline-offset: -1px;
+  }
+
+  .career-card__body :global(* + *) {
+    margin-top: 0.6em;
+  }
+
+  .career-card__body :global(ul) {
+    padding-left: 1.1em;
+    list-style: disc;
+  }
+
+  .career-card__body :global(li + li) {
+    margin-top: 0.65em;
+  }
+
+  .career-card__body :global(li::marker) {
+    color: var(--career-note-accent);
+  }
+
+  .career-card__body :global(h3) {
+    font: inherit;
+    font-weight: var(--weight-semibold);
+  }
+
+  .career-card__body :global(a) {
+    color: color-mix(in srgb, var(--career-note-accent) 55%, var(--color-text-primary));
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .career-card__body :global(a:focus-visible) {
+    outline: 2px solid var(--color-focus-ring-strong);
+    outline-offset: 1px;
+  }
+
+  /*
+   * One quiet line: the mark, then the far end for when the work ran and how
+   * long it lasted. Nothing wraps — the duration is already compact
+   * ("2 yrs 2 mos", "<1 mo") and the months drop their full stops.
+   */
+  .career-card__meta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+    padding: var(--space-12) var(--career-card-inline-gutter) var(--space-4);
+    white-space: nowrap;
+  }
+
+  /* The pencil rule, run between the two gutters rather than wall to wall, and
+     hung over the footer's own top padding so it costs the line no height. */
+  .career-card__meta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: var(--career-card-inline-gutter);
+    left: var(--career-card-inline-gutter);
+    height: var(--career-card-rule-height);
+    background-image: var(--career-card-rule);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+  }
+
+  .career-card__logo {
+    display: block;
+    flex: none;
+  }
+
+  .career-card__facts {
+    flex: none;
+    margin: 0 0 0 auto;
+    color: var(--color-text-faint);
+    font-family: var(--font-body);
+    font-size: var(--text-ui);
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--weight-regular);
+    letter-spacing: var(--tracking-loose);
+    line-height: var(--leading-snug);
+  }
+
+  .career-card__facts dd {
+    display: inline;
+    margin: 0;
+  }
+
+  /* The labels the screen reader needs must not take a slot on the line; they
+     are already lifted out of flow by the clip below. */
+  .career-card__facts dt {
+    position: absolute;
+  }
+
+  .career-card__duration::before {
+    content: "·";
+    margin-inline: var(--space-4);
+  }
+
+  .career-card__visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .career-card__tenure,
+  .career-card__close,
+  .career-card__summary {
+    display: none;
+  }
+
+  .career-card :global(.career-card__visit) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.35em;
+    margin: var(--space-12) var(--career-card-inline-gutter);
+    padding-bottom: 0.22em;
+    color: color-mix(
+      in srgb,
+      var(--career-note-accent, currentColor) 55%,
+      var(--color-text-primary)
+    );
+    font-size: var(--career-note-text, 1rem);
+    font-style: italic;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .career-card :global(.career-card__visit)::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 0.2em;
+    background: var(--career-note-stroke) left bottom / 100% 100% no-repeat;
+    opacity: 0.65;
+  }
+
+  .career-card :global(.career-card__visit) :global(.career-card__visit-icon) {
+    width: 1em;
+    height: 1em;
+    align-self: center;
+    transition: transform 240ms var(--ease-emphasised);
+  }
+
+  .career-card :global(.career-card__visit) :global(path) {
+    stroke-width: 1.5;
+  }
+
+  .career-card :global(.career-card__visit):hover :global(.career-card__visit-icon) {
+    transform: translate(2px, -2px);
+  }
+
+  .career-card :global(.career-card__visit):focus-visible {
+    outline: 2px solid var(--color-focus-ring-strong);
+    outline-offset: 4px;
+  }
+
+  /* The same SSR card becomes a compact annotation; the full entry remains
+     available in the unscripted appendix. Only the shared wrapper moves. */
+  @media (scripting: enabled) {
+    .career-card {
+      --career-card-inline-gutter: 0px;
+      display: none;
+    }
+
+    .career-card[data-popover-layer] {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+      min-width: 0;
+      min-height: 0;
+      overflow: visible;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      pointer-events: none;
+    }
+
+    .career-card[data-popover-layer="active"] {
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    :global([data-placement="modal"]) .career-card[data-popover-layer="active"] {
+      position: relative;
+      inset: auto;
+      max-height: calc(100dvh - 34px);
+    }
+
+    .career-card__cover,
+    .career-card__meta,
+    .career-card__body:has(.career-card__summary) .career-card__detail {
+      display: none;
+    }
+
+    .career-card__identity {
+      display: flex;
+      flex-wrap: wrap;
+      flex: none;
+      align-items: baseline;
+      column-gap: 0.6rem;
+      padding: 0 0 0.5rem;
+    }
+
+    .career-card__org {
+      position: relative;
+      overflow: visible;
+      max-width: 100%;
+      padding-bottom: 0.5rem;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      font-size: 0.75rem;
+      font-weight: var(--weight-semibold);
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+      white-space: normal;
+      text-transform: uppercase;
+    }
+
+    .career-card__org::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 68px;
+      height: 0.4rem;
+      background-image: var(--career-note-stroke);
+      background-position: left center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .career-card__tenure {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.35em;
+      margin-inline-start: auto;
+      color: var(--color-text-faint);
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.4;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .career-card__compact-duration {
+      font-size: 0.65rem;
+      letter-spacing: 0.02em;
+    }
+
+    .career-card__compact-duration::before {
+      content: "·";
+      margin-inline-end: 0.35em;
+    }
+
+    .career-card__footer {
+      flex: none;
+      padding: 0.7rem 0 0;
+    }
+
+    .career-card__body {
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+      color: var(--color-text-muted);
+      font-size: var(--career-note-text, max(16px, 0.85rem));
+      line-height: 1.45;
+      text-wrap: wrap;
+    }
+
+    .career-card__summary {
+      display: block;
+    }
+
+    .career-card[data-popover-layer] .career-card__scroll-frame {
+      --scroll-edge-height: 28px;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+
+    .career-card :global(.career-card__visit) {
+      flex: none;
+      min-height: 0;
+      margin: 0 0 0.3rem;
+      font-size: var(--career-note-text, max(16px, 0.85rem));
+    }
+
+    /* The dialog is one sheet: a header, a scrolling middle and a footer,
+       all sharing an inset. The gutter annotation keeps its lighter layout. */
+    :global([data-placement="modal"]) .career-card {
+      --career-modal-inset: 1.5rem;
+      --popover-inset: var(--career-modal-inset);
+      --popover-divider-display: block;
+    }
+
+    :global([data-placement="modal"]) .career-card__identity {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto 44px;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem var(--career-modal-inset);
+    }
+
+    :global([data-placement="modal"]) .career-card__org {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      letter-spacing: var(--tracking-tight);
+      line-height: 1.3;
+      text-transform: none;
+      outline: none;
+    }
+
+    :global([data-placement="modal"]) .career-card__org::after {
+      width: 56px;
+      height: 0.3rem;
+      opacity: 0.8;
+    }
+
+    :global([data-placement="modal"]) .career-card__tenure {
+      margin: 0;
+    }
+
+    :global([data-placement="modal"]) .career-card__close {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      border-radius: 3px;
+      background: transparent;
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition:
+        background-color 180ms ease,
+        color 180ms ease;
+    }
+
+    .career-card__close:hover {
+      background-color: var(--color-surface-subtle);
+      color: var(--color-text-primary);
+    }
+
+    .career-card__close:focus-visible {
+      outline: 2px solid var(--color-focus-ring-strong);
+      outline-offset: -4px;
+    }
+
+    :global([data-placement="modal"]) .career-card__scroll-frame {
+      margin: 1rem var(--career-modal-inset);
+    }
+
+    :global([data-placement="modal"]) .career-card__footer {
+      padding: 0.45rem var(--career-modal-inset);
+    }
+
+    :global([data-placement="modal"]) .career-card :global(.career-card__visit) {
+      min-height: 44px;
+      margin: 0;
+      padding: 0;
+    }
+
+    :global([data-placement="modal"]) .career-card :global(.career-card__visit)::after {
+      display: none;
+    }
+  }
+
+  @media (scripting: enabled) and (max-width: 440px) {
+    :global([data-placement="modal"]) .career-card__identity {
+      grid-template-columns: minmax(0, 1fr) 44px;
+      column-gap: 0.75rem;
+      row-gap: 0.35rem;
+    }
+
+    :global([data-placement="modal"]) .career-card__org {
+      grid-column: 1;
+    }
+
+    :global([data-placement="modal"]) .career-card__tenure {
+      grid-column: 1;
+      justify-self: start;
+    }
+
+    :global([data-placement="modal"]) .career-card__close {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .career-card__close,
+    .career-card :global(.career-card__visit) :global(.career-card__visit-icon),
+    .career-card :global(.career-card__visit):hover :global(.career-card__visit-icon) {
+      transition: none;
+      transform: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .career-card :global(.career-card__visit),
+    .career-card__body :global(a) {
+      color: LinkText;
+    }
+
+    .career-card {
+      border: 1px solid CanvasText;
+      background: Canvas;
+      background-image: none;
+      box-shadow: none;
+    }
+
+    .career-card__cover {
+      border: 1px solid CanvasText;
+      box-shadow: none;
+    }
+
+    .career-card__meta {
+      border-top: 1px solid CanvasText;
+    }
+
+    .career-card[data-popover-layer] {
+      border: 0;
+      background: transparent;
+      background-image: none;
+      box-shadow: none;
+      filter: none !important;
+    }
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+import HazeBar from "../../../components/atoms/haze-bar.astro";
+import SiteMenu from "../../../components/molecules/site-menu.astro";
+---
+
+<header class="about-template__letterhead">
+  <div class="about-template__veil" aria-hidden="true">
+    <HazeBar edge="top" class="about-template__haze" />
+  </div>
+  <SiteMenu />
+  <div class="about-template__search" data-room-toolbar>
+    <slot />
+  </div>
+  <p class="about-template__status" data-room-status role="status" aria-live="polite" hidden></p>
+</header>

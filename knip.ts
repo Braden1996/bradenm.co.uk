@@ -32,9 +32,13 @@ function compileAstro(source: string) {
 }
 
 const config = {
-  // Rulesync's JSON-schema converter expects applications to provide this peer dependency.
-  ignoreDependencies: ["valibot"],
-  project: ["src/**/*.{astro,js,mjs,ts}", "scripts/**/*.{js,mjs,ts}", "tests/**/*.{js,mjs,ts}"],
+  entry: ["images/source/signature/export-layers.mjs", "scripts/lib/atlas-preview-renderer.ts"],
+  project: [
+    "src/**/*.{astro,js,mjs,ts}",
+    "scripts/**/*.{js,mjs,ts}",
+    "tests/**/*.{js,mjs,ts}",
+    "browser-tests/**/*.ts",
+  ],
   compilers: {
     astro: compileAstro,
   },

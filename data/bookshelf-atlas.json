@@ -1,0 +1,1001 @@
+{
+  "version": 1,
+  "fingerprint": "0c93af63ed28e08b6498b5eeb8a4db1ef91c3cab5e5fbd317914924b8297293a",
+  "books": [
+    {
+      "id": "book-163",
+      "src": "/bookshelf/atlas/book-163.827dd6bb8106.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-56",
+      "src": "/bookshelf/atlas/book-56.ca88c7c6c371.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-104",
+      "src": "/bookshelf/atlas/book-104.09286ab405ab.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-78",
+      "src": "/bookshelf/atlas/book-78.29d68226c37d.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-15",
+      "src": "/bookshelf/atlas/book-15.70ebaf26cf90.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-27",
+      "src": "/bookshelf/atlas/book-27.402cdd1e0e1e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-28",
+      "src": "/bookshelf/atlas/book-28.db739996487a.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-105",
+      "src": "/bookshelf/atlas/book-105.fe58e3d915b0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-14",
+      "src": "/bookshelf/atlas/book-14.1f872642f32c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-137",
+      "src": "/bookshelf/atlas/book-137.0be42f480dd0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-62",
+      "src": "/bookshelf/atlas/book-62.8de92fa81637.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-6",
+      "src": "/bookshelf/atlas/book-6.7c40b3cbf4e6.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-116",
+      "src": "/bookshelf/atlas/book-116.0203d1c1e997.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-152",
+      "src": "/bookshelf/atlas/book-152.82fae003a9aa.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-113",
+      "src": "/bookshelf/atlas/book-113.868a870f978c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-19",
+      "src": "/bookshelf/atlas/book-19.730870f21a34.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-73",
+      "src": "/bookshelf/atlas/book-73.b9e971675521.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-138",
+      "src": "/bookshelf/atlas/book-138.9dc9fa9367f0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-85",
+      "src": "/bookshelf/atlas/book-85.67dae563ef55.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-115",
+      "src": "/bookshelf/atlas/book-115.43f3c7d66532.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-72",
+      "src": "/bookshelf/atlas/book-72.3948f1332f93.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-30",
+      "src": "/bookshelf/atlas/book-30.f00bcdc7eeb5.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-63",
+      "src": "/bookshelf/atlas/book-63.9ad209cf26c4.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-80",
+      "src": "/bookshelf/atlas/book-80.337457fd4324.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-57",
+      "src": "/bookshelf/atlas/book-57.4bf94a03ac8f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-4",
+      "src": "/bookshelf/atlas/book-4.e2721036503f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-120",
+      "src": "/bookshelf/atlas/book-120.f4810ecebcd7.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-106",
+      "src": "/bookshelf/atlas/book-106.63c98009baf1.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-91",
+      "src": "/bookshelf/atlas/book-91.6801f3cb27ac.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-45",
+      "src": "/bookshelf/atlas/book-45.4a0f0fe8d4f1.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-13",
+      "src": "/bookshelf/atlas/book-13.32ed71a5ba00.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-12",
+      "src": "/bookshelf/atlas/book-12.1b1cf1e803c0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-11",
+      "src": "/bookshelf/atlas/book-11.a8395038c906.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-51",
+      "src": "/bookshelf/atlas/book-51.ccadb6638e9c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-50",
+      "src": "/bookshelf/atlas/book-50.e97a2f584b06.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-144",
+      "src": "/bookshelf/atlas/book-144.41eec4fcf690.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-129",
+      "src": "/bookshelf/atlas/book-129.308f2e5c2165.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-61",
+      "src": "/bookshelf/atlas/book-61.216089a7e7b9.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-128",
+      "src": "/bookshelf/atlas/book-128.46afaa35b4b3.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-10",
+      "src": "/bookshelf/atlas/book-10.04ced8df3be1.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-149",
+      "src": "/bookshelf/atlas/book-149.33ccee7af6bd.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-29",
+      "src": "/bookshelf/atlas/book-29.184b3c9f6663.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-109",
+      "src": "/bookshelf/atlas/book-109.776e9c5ebb95.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-153",
+      "src": "/bookshelf/atlas/book-153.b0e54575764e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-83",
+      "src": "/bookshelf/atlas/book-83.f5337938542b.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-101",
+      "src": "/bookshelf/atlas/book-101.79aa35fd34f0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-70",
+      "src": "/bookshelf/atlas/book-70.93484695a757.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-164",
+      "src": "/bookshelf/atlas/book-164.2ac973506acf.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-143",
+      "src": "/bookshelf/atlas/book-143.69b8f2d15ab2.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-77",
+      "src": "/bookshelf/atlas/book-77.91c3cb97f792.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-81",
+      "src": "/bookshelf/atlas/book-81.9b0637997b05.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-132",
+      "src": "/bookshelf/atlas/book-132.3e277a1e5b51.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-124",
+      "src": "/bookshelf/atlas/book-124.52fcdb07e8b2.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-165",
+      "src": "/bookshelf/atlas/book-165.1e39f5989470.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-145",
+      "src": "/bookshelf/atlas/book-145.f246139699c5.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-36",
+      "src": "/bookshelf/atlas/book-36.5e6cdf42ef29.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-24",
+      "src": "/bookshelf/atlas/book-24.e8d65e82fb9c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-125",
+      "src": "/bookshelf/atlas/book-125.6e15577903c1.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-133",
+      "src": "/bookshelf/atlas/book-133.ddb6de1139b8.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-98",
+      "src": "/bookshelf/atlas/book-98.026d9fc379b0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-39",
+      "src": "/bookshelf/atlas/book-39.968e0661abd9.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-114",
+      "src": "/bookshelf/atlas/book-114.6abffe354ffb.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-34",
+      "src": "/bookshelf/atlas/book-34.b28a79ff63b6.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-117",
+      "src": "/bookshelf/atlas/book-117.7a23285711f6.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-158",
+      "src": "/bookshelf/atlas/book-158.fdbb5abaa1cb.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-112",
+      "src": "/bookshelf/atlas/book-112.90fcc034eab8.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-53",
+      "src": "/bookshelf/atlas/book-53.dbb738516fd3.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-148",
+      "src": "/bookshelf/atlas/book-148.ed517f501f67.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-134",
+      "src": "/bookshelf/atlas/book-134.a12970b1d2c0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-69",
+      "src": "/bookshelf/atlas/book-69.52afe5e090b2.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-66",
+      "src": "/bookshelf/atlas/book-66.5a2de43cafa1.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-67",
+      "src": "/bookshelf/atlas/book-67.7338aba4b7ce.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-118",
+      "src": "/bookshelf/atlas/book-118.e78d764997a9.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-142",
+      "src": "/bookshelf/atlas/book-142.9b6ba55da3c6.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-46",
+      "src": "/bookshelf/atlas/book-46.8785455ef2d1.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-41",
+      "src": "/bookshelf/atlas/book-41.470830570aeb.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-97",
+      "src": "/bookshelf/atlas/book-97.9c61adca61d3.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-48",
+      "src": "/bookshelf/atlas/book-48.321df90f47eb.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-37",
+      "src": "/bookshelf/atlas/book-37.54c24424ba0b.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-94",
+      "src": "/bookshelf/atlas/book-94.db0aabc9667b.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-95",
+      "src": "/bookshelf/atlas/book-95.3a8766c53fff.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-16",
+      "src": "/bookshelf/atlas/book-16.3c949adec1d3.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-8",
+      "src": "/bookshelf/atlas/book-8.3a86e8602602.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-47",
+      "src": "/bookshelf/atlas/book-47.0e61147b09a1.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-68",
+      "src": "/bookshelf/atlas/book-68.229199c2f61f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-90",
+      "src": "/bookshelf/atlas/book-90.babd54b1df8c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-26",
+      "src": "/bookshelf/atlas/book-26.bc36d8a8c8a0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-64",
+      "src": "/bookshelf/atlas/book-64.e4968d169e56.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-42",
+      "src": "/bookshelf/atlas/book-42.220d50acf48e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-33",
+      "src": "/bookshelf/atlas/book-33.4de78700cc08.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-93",
+      "src": "/bookshelf/atlas/book-93.cd185b7d62c9.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-5",
+      "src": "/bookshelf/atlas/book-5.3d61acdd8244.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-38",
+      "src": "/bookshelf/atlas/book-38.d79b194c5f1a.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-35",
+      "src": "/bookshelf/atlas/book-35.de3453d89a66.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-162",
+      "src": "/bookshelf/atlas/book-162.1345c0e74b56.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-140",
+      "src": "/bookshelf/atlas/book-140.3ced666967f7.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-17",
+      "src": "/bookshelf/atlas/book-17.01fcebe0573c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-123",
+      "src": "/bookshelf/atlas/book-123.0ee352f58fcb.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-2",
+      "src": "/bookshelf/atlas/book-2.531d25a689ca.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-99",
+      "src": "/bookshelf/atlas/book-99.b49afc13b913.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-52",
+      "src": "/bookshelf/atlas/book-52.3a4c3a58d7d5.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-84",
+      "src": "/bookshelf/atlas/book-84.5f4d49d5f00a.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-150",
+      "src": "/bookshelf/atlas/book-150.e35afe10245d.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-131",
+      "src": "/bookshelf/atlas/book-131.136df55b1bd7.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-111",
+      "src": "/bookshelf/atlas/book-111.697bc54b54ce.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-89",
+      "src": "/bookshelf/atlas/book-89.b9d014b023a8.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-139",
+      "src": "/bookshelf/atlas/book-139.c3b4c1a25970.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-75",
+      "src": "/bookshelf/atlas/book-75.12833bb28646.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-7",
+      "src": "/bookshelf/atlas/book-7.afe256071694.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-126",
+      "src": "/bookshelf/atlas/book-126.9da795f1461c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-88",
+      "src": "/bookshelf/atlas/book-88.e66964c50c64.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-96",
+      "src": "/bookshelf/atlas/book-96.6581c1795870.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-74",
+      "src": "/bookshelf/atlas/book-74.0c42b9f31c8f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-43",
+      "src": "/bookshelf/atlas/book-43.e38c2ea15d0a.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-136",
+      "src": "/bookshelf/atlas/book-136.cf5599452860.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-82",
+      "src": "/bookshelf/atlas/book-82.f2ce40847e02.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-147",
+      "src": "/bookshelf/atlas/book-147.011ac9e07fca.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-23",
+      "src": "/bookshelf/atlas/book-23.b2f59620c53e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-102",
+      "src": "/bookshelf/atlas/book-102.8bd5bc858c41.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-119",
+      "src": "/bookshelf/atlas/book-119.dc2875b4b465.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-154",
+      "src": "/bookshelf/atlas/book-154.7afa7003768b.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-100",
+      "src": "/bookshelf/atlas/book-100.a110d6f176c4.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-151",
+      "src": "/bookshelf/atlas/book-151.0a0ef0a4ed69.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-107",
+      "src": "/bookshelf/atlas/book-107.d09e36a4abe2.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-110",
+      "src": "/bookshelf/atlas/book-110.95712e2a4806.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-146",
+      "src": "/bookshelf/atlas/book-146.cf3b7e90816e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-159",
+      "src": "/bookshelf/atlas/book-159.1ec83f1351d7.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-155",
+      "src": "/bookshelf/atlas/book-155.56e91fe29a30.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-32",
+      "src": "/bookshelf/atlas/book-32.7f05d48f3633.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-25",
+      "src": "/bookshelf/atlas/book-25.7f9f388fe89a.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-103",
+      "src": "/bookshelf/atlas/book-103.e6470a59d31d.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-58",
+      "src": "/bookshelf/atlas/book-58.904c68d81bce.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-44",
+      "src": "/bookshelf/atlas/book-44.eabd50c342d8.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-160",
+      "src": "/bookshelf/atlas/book-160.ac2a47142853.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-3",
+      "src": "/bookshelf/atlas/book-3.15f8881322a0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-65",
+      "src": "/bookshelf/atlas/book-65.35f9a193fec2.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-54",
+      "src": "/bookshelf/atlas/book-54.728bc79ca86c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-9",
+      "src": "/bookshelf/atlas/book-9.a817f50e8efa.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-121",
+      "src": "/bookshelf/atlas/book-121.80fc0ac97fbd.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-79",
+      "src": "/bookshelf/atlas/book-79.49ea244b1523.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-60",
+      "src": "/bookshelf/atlas/book-60.a3209e81f5a5.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-122",
+      "src": "/bookshelf/atlas/book-122.958bc013d27e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-127",
+      "src": "/bookshelf/atlas/book-127.c45e4f369815.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-40",
+      "src": "/bookshelf/atlas/book-40.3a759fdcf7db.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-92",
+      "src": "/bookshelf/atlas/book-92.258c99964b74.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-156",
+      "src": "/bookshelf/atlas/book-156.80285efb3345.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-49",
+      "src": "/bookshelf/atlas/book-49.b74cc08c6f44.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-59",
+      "src": "/bookshelf/atlas/book-59.aebb6e289110.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-141",
+      "src": "/bookshelf/atlas/book-141.510eb6c0e2e7.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-135",
+      "src": "/bookshelf/atlas/book-135.48ddaa578eee.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-31",
+      "src": "/bookshelf/atlas/book-31.ddcb17801b02.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-76",
+      "src": "/bookshelf/atlas/book-76.8c470bd6bea7.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-86",
+      "src": "/bookshelf/atlas/book-86.b39079843cc8.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-1",
+      "src": "/bookshelf/atlas/book-1.8db7a2229cc4.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-130",
+      "src": "/bookshelf/atlas/book-130.7c348666b27f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-21",
+      "src": "/bookshelf/atlas/book-21.8d0f80a9ce28.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-55",
+      "src": "/bookshelf/atlas/book-55.a852f5f5e8f8.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-18",
+      "src": "/bookshelf/atlas/book-18.6a22ea5841b7.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-108",
+      "src": "/bookshelf/atlas/book-108.dc86b7bca980.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-20",
+      "src": "/bookshelf/atlas/book-20.2822b502f276.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-157",
+      "src": "/bookshelf/atlas/book-157.7d26f8ebc067.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-71",
+      "src": "/bookshelf/atlas/book-71.4cec512f510f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-22",
+      "src": "/bookshelf/atlas/book-22.2be1d7a2173e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-87",
+      "src": "/bookshelf/atlas/book-87.02be1a782f8e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-161",
+      "src": "/bookshelf/atlas/book-161.3127c06958b1.webp",
+      "width": 640,
+      "height": 640
+    }
+  ],
+  "sheets": {
+    "covers": "/bookshelf/atlas/covers.7528fe22c1a6.webp",
+    "previews": "/bookshelf/atlas/previews.f07bbd72a54b.webp",
+    "count": 165
+  }
+}

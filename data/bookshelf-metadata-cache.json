@@ -1,0 +1,3284 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "title": "12 Rules for Life",
+      "author": "Jordan B. Peterson",
+      "checkedAt": "2026-09-08T20:30:57.376Z",
+      "status": "matched",
+      "work": "/works/OL17837119W",
+      "edition": "/books/OL26424098M",
+      "details": {
+        "title": "12 Rules for Life",
+        "author": "Jordan B. Peterson",
+        "firstPublished": "2015",
+        "publisher": "Random House Canada",
+        "released": "2018",
+        "pages": "448",
+        "categories": ["Philosophy", "Psychology", "Personal growth"],
+        "sources": [
+          "https://openlibrary.org/works/OL17837119W",
+          "https://openlibrary.org/books/OL26424098M"
+        ]
+      }
+    },
+    {
+      "title": "A Programmer's Geometry",
+      "author": "Bowyer & Woodwark",
+      "checkedAt": "2026-09-08T20:30:57.376Z",
+      "status": "matched",
+      "work": "/works/OL8013590W",
+      "edition": "/books/OL15182712M",
+      "details": {
+        "title": "A Programmer's Geometry",
+        "author": "Bowyer & Woodwark",
+        "firstPublished": "1983",
+        "publisher": "Butterworths",
+        "released": "1983",
+        "pages": "140",
+        "categories": ["Technology", "Mathematics"],
+        "sources": [
+          "https://openlibrary.org/works/OL8013590W",
+          "https://openlibrary.org/books/OL15182712M"
+        ]
+      }
+    },
+    {
+      "title": "A Short History of Nearly Everything",
+      "author": "Bill Bryson",
+      "checkedAt": "2026-09-08T20:31:03.196Z",
+      "status": "matched",
+      "work": "/works/OL74128W",
+      "edition": "/books/OL37824980M",
+      "details": {
+        "title": "A Short History of Nearly Everything",
+        "author": "Bill Bryson",
+        "description": "A Short History of Nearly Everything by American author Bill Bryson is a popular science book that explains some areas of science, using easily…",
+        "excerptSource": "https://openlibrary.org/works/OL74128W",
+        "firstPublished": "2003",
+        "publisher": "Broadway Books",
+        "released": "2003",
+        "categories": ["Philosophy", "History", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL74128W",
+          "https://openlibrary.org/books/OL37824980M"
+        ]
+      }
+    },
+    {
+      "title": "Age Later",
+      "author": "Nir Barzilai M.D.",
+      "checkedAt": "2026-09-08T20:31:04.407Z",
+      "status": "matched",
+      "work": "/works/OL20834083W",
+      "details": {
+        "title": "Age Later",
+        "author": "Nir Barzilai M.D.",
+        "description": "\"How do some people avoid the slowing down, deteriorating, and weakening that plagues many of their peers decades earlier? Are they just lucky? Or…",
+        "excerptSource": "https://openlibrary.org/works/OL20834083W",
+        "firstPublished": "2020",
+        "categories": ["Psychology", "Health"],
+        "sources": ["https://openlibrary.org/works/OL20834083W"]
+      }
+    },
+    {
+      "title": "Alpha Trader",
+      "author": "Brent Donnelly",
+      "checkedAt": "2026-09-08T20:31:06.068Z",
+      "status": "matched",
+      "work": "/works/OL24819584W",
+      "details": {
+        "title": "Alpha Trader",
+        "author": "Brent Donnelly",
+        "firstPublished": "2021",
+        "sources": ["https://openlibrary.org/works/OL24819584W"]
+      }
+    },
+    {
+      "title": "An Introduction to Database Systems",
+      "author": "C.J. Date",
+      "checkedAt": "2026-09-08T20:31:06.420Z",
+      "status": "matched",
+      "work": "/works/OL8019360W",
+      "edition": "/books/OL9422130M",
+      "details": {
+        "title": "An Introduction to Database Systems",
+        "author": "C.J. Date",
+        "firstPublished": "2003",
+        "publisher": "Addison Wesley",
+        "released": "July 22, 2003",
+        "pages": "1024",
+        "categories": ["Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL8019360W",
+          "https://openlibrary.org/books/OL9422130M"
+        ]
+      }
+    },
+    {
+      "title": "Anabolics 11th Edition",
+      "author": "William Llewellyn",
+      "checkedAt": "2026-09-08T20:35:34.474Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Apple in China",
+      "author": "Patrick McGee",
+      "checkedAt": "2026-09-08T20:31:09.205Z",
+      "status": "matched",
+      "work": "/works/OL42444717W",
+      "edition": "/books/OL57594946M",
+      "details": {
+        "title": "Apple in China",
+        "author": "Patrick McGee",
+        "firstPublished": "2025",
+        "publisher": "Scribner",
+        "released": "May 13, 2025",
+        "pages": "448",
+        "categories": ["Technology"],
+        "sources": [
+          "https://openlibrary.org/works/OL42444717W",
+          "https://openlibrary.org/books/OL57594946M"
+        ]
+      }
+    },
+    {
+      "title": "Aroused: The History of Hormones and How They Control Just About Everything",
+      "author": "Randi Hutter Epstein",
+      "checkedAt": "2026-09-08T20:35:42.878Z",
+      "status": "error",
+      "reason": "The operation timed out."
+    },
+    {
+      "title": "Atlas Obscura",
+      "author": "Joshua Foer & Dylan Thuras & Ella Morton",
+      "checkedAt": "2026-09-08T20:31:10.957Z",
+      "status": "matched",
+      "work": "/works/OL19095009W",
+      "edition": "/books/OL26764283M",
+      "details": {
+        "title": "Atlas Obscura",
+        "author": "Joshua Foer & Dylan Thuras & Ella Morton",
+        "description": "A collection of Earth's most mysterious world wonders.",
+        "excerptSource": "https://openlibrary.org/works/OL19095009W",
+        "firstPublished": "2016",
+        "publisher": "Workman Publishing Co., Inc",
+        "released": "2016",
+        "pages": "470",
+        "categories": ["History", "Travel"],
+        "sources": [
+          "https://openlibrary.org/works/OL19095009W",
+          "https://openlibrary.org/books/OL26764283M"
+        ]
+      }
+    },
+    {
+      "title": "Atlas Shrugged",
+      "author": "Ayn Rand",
+      "checkedAt": "2026-09-08T20:35:40.449Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Balancing Acts",
+      "author": "Lamarre",
+      "checkedAt": "2026-09-08T20:31:13.508Z",
+      "status": "matched",
+      "work": "/works/OL25912217W",
+      "details": {
+        "title": "Balancing Acts",
+        "author": "Lamarre",
+        "firstPublished": "2022",
+        "sources": ["https://openlibrary.org/works/OL25912217W"]
+      }
+    },
+    {
+      "title": "Becoming a Supple Leopard",
+      "author": "Dr. Kelly Starrett & Glen Cordoza",
+      "checkedAt": "2026-09-08T20:31:14.162Z",
+      "status": "matched",
+      "work": "/works/OL17078341W",
+      "edition": "/books/OL25648165M",
+      "details": {
+        "title": "Becoming a Supple Leopard",
+        "author": "Dr. Kelly Starrett & Glen Cordoza",
+        "description": "Based on the premise that dysfunctional movement patterns impede athletic performance, the author presents the construction and function of his own movement and mobility…",
+        "excerptSource": "https://openlibrary.org/works/OL17078341W",
+        "firstPublished": "2013",
+        "publisher": "Victory Belt Publishing",
+        "released": "April 23, 2013",
+        "pages": "400",
+        "categories": ["Health"],
+        "sources": [
+          "https://openlibrary.org/works/OL17078341W",
+          "https://openlibrary.org/books/OL25648165M"
+        ]
+      }
+    },
+    {
+      "title": "Bertrand Russell Autobiography",
+      "author": "Bertrand Russell",
+      "checkedAt": "2026-09-08T20:35:40.915Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Beyond Order",
+      "author": "Jordan B. Peterson",
+      "checkedAt": "2026-09-08T20:31:16.465Z",
+      "status": "matched",
+      "work": "/works/OL23612724W",
+      "details": {
+        "title": "Beyond Order",
+        "author": "Jordan B. Peterson",
+        "firstPublished": "2021",
+        "sources": ["https://openlibrary.org/works/OL23612724W"]
+      }
+    },
+    {
+      "title": "Bird Songs",
+      "author": "Les Beletsky",
+      "checkedAt": "2026-09-08T20:31:17.142Z",
+      "status": "matched",
+      "work": "/works/OL20191905W",
+      "details": {
+        "title": "Bird Songs",
+        "author": "Les Beletsky",
+        "firstPublished": "2018",
+        "categories": ["Nature"],
+        "sources": ["https://openlibrary.org/works/OL20191905W"]
+      }
+    },
+    {
+      "title": "Blindsight",
+      "author": "Matt Johnson & Prince Ghuman",
+      "checkedAt": "2026-09-08T20:31:17.821Z",
+      "status": "matched",
+      "work": "/works/OL22449422W",
+      "details": {
+        "title": "Blindsight",
+        "author": "Matt Johnson & Prince Ghuman",
+        "firstPublished": "2020",
+        "sources": ["https://openlibrary.org/works/OL22449422W"]
+      }
+    },
+    {
+      "title": "BOOM",
+      "author": "Hobart & Huber",
+      "checkedAt": "2026-09-08T20:31:19.094Z",
+      "status": "matched",
+      "work": "/works/OL37938070W",
+      "details": {
+        "title": "BOOM",
+        "author": "Hobart & Huber",
+        "firstPublished": "2024",
+        "categories": ["History", "Economics"],
+        "sources": ["https://openlibrary.org/works/OL37938070W"]
+      }
+    },
+    {
+      "title": "Boyd",
+      "author": "Robert Coram",
+      "checkedAt": "2026-09-08T20:31:19.229Z",
+      "status": "matched",
+      "work": "/works/OL4311885W",
+      "edition": "/books/OL9399186M",
+      "details": {
+        "title": "Boyd",
+        "author": "Robert Coram",
+        "description": "John Boyd may be the most remarkable unsung hero in all of American military history. Some remember him as the greatest U.S. fighter pilot…",
+        "excerptSource": "https://openlibrary.org/works/OL4311885W",
+        "firstPublished": "2002",
+        "publisher": "Back Bay Books",
+        "released": "May 10, 2004",
+        "pages": "504",
+        "categories": ["Biography", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL4311885W",
+          "https://openlibrary.org/books/OL9399186M"
+        ]
+      }
+    },
+    {
+      "title": "Breath",
+      "author": "James Nestor",
+      "checkedAt": "2026-09-08T20:31:20.360Z",
+      "status": "matched",
+      "work": "/works/OL20799952W",
+      "edition": "/books/OL28156341M",
+      "details": {
+        "title": "Breath",
+        "author": "James Nestor",
+        "description": "There is nothing more essential to our health and wellbeing than breathing: take air in, let it out, repeat 25,000 times a day. Yet…",
+        "excerptSource": "https://openlibrary.org/works/OL20799952W",
+        "firstPublished": "2020",
+        "publisher": "Riverhead Books",
+        "released": "May 26, 2020",
+        "pages": "304",
+        "categories": ["Health"],
+        "sources": [
+          "https://openlibrary.org/works/OL20799952W",
+          "https://openlibrary.org/books/OL28156341M"
+        ]
+      }
+    },
+    {
+      "title": "Brunel: The Man Who Built the World",
+      "author": "Steven Brindle",
+      "checkedAt": "2026-09-08T20:35:41.419Z",
+      "status": "matched",
+      "work": "/works/OL8355007W",
+      "details": {
+        "title": "Brunel: The Man Who Built the World",
+        "author": "Steven Brindle",
+        "firstPublished": "2005",
+        "categories": ["Biography"],
+        "sources": ["https://openlibrary.org/works/OL8355007W"]
+      }
+    },
+    {
+      "title": "Built to Move",
+      "author": "Kelly Starrett & Juliet Starrett",
+      "checkedAt": "2026-09-08T20:31:23.663Z",
+      "status": "matched",
+      "work": "/works/OL28623468W",
+      "edition": "/books/OL39377234M",
+      "details": {
+        "title": "Built to Move",
+        "author": "Kelly Starrett & Juliet Starrett",
+        "firstPublished": "2023",
+        "publisher": "Knopf Doubleday Publishing Group",
+        "released": "2023",
+        "sources": [
+          "https://openlibrary.org/works/OL28623468W",
+          "https://openlibrary.org/books/OL39377234M"
+        ]
+      }
+    },
+    {
+      "title": "Collapse",
+      "author": "Jared Diamond",
+      "checkedAt": "2026-09-08T20:31:23.664Z",
+      "status": "matched",
+      "work": "/works/OL276557W",
+      "edition": "/books/OL15564492M",
+      "details": {
+        "title": "Collapse",
+        "author": "Jared Diamond",
+        "description": "\"In his Pulitzer Prize-winning bestseller Guns, Germs, and Steel, Jared Diamond examined how and why Western civilizations developed the technologies and immunities that allowed…",
+        "excerptSource": "https://openlibrary.org/works/OL276557W",
+        "firstPublished": "2004",
+        "publisher": "Viking",
+        "released": "2005",
+        "pages": "575",
+        "categories": ["Philosophy", "History", "Nature"],
+        "sources": [
+          "https://openlibrary.org/works/OL276557W",
+          "https://openlibrary.org/books/OL15564492M"
+        ]
+      }
+    },
+    {
+      "title": "Counter-Clock World",
+      "author": "Philip K. Dick",
+      "checkedAt": "2026-09-08T20:31:27.020Z",
+      "status": "matched",
+      "work": "/works/OL2172429W",
+      "details": {
+        "title": "Counter-Clock World",
+        "author": "Philip K. Dick",
+        "description": "In Counter-Clock World Philip K. Dick expands on the idea of time reversal that was developed in the story \"Your Appointment Will Be Yesterday\"…",
+        "excerptSource": "https://openlibrary.org/works/OL2172429W",
+        "firstPublished": "1967",
+        "categories": ["Science fiction"],
+        "sources": ["https://openlibrary.org/works/OL2172429W"]
+      }
+    },
+    {
+      "title": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "checkedAt": "2026-09-08T20:31:27.635Z",
+      "status": "matched",
+      "work": "/works/OL16816263W",
+      "edition": "/books/OL25442597M",
+      "details": {
+        "title": "Cracking the Coding Interview",
+        "author": "Gayle Laakmann McDowell",
+        "description": "I am not a recruiter. I am a software engineer. And as such, I know what it's like to be asked to whip up…",
+        "excerptSource": "https://openlibrary.org/works/OL16816263W",
+        "firstPublished": "2010",
+        "publisher": "CarrerCup, LLC",
+        "released": "2012",
+        "pages": "500",
+        "categories": ["Technology", "Health"],
+        "sources": [
+          "https://openlibrary.org/works/OL16816263W",
+          "https://openlibrary.org/books/OL25442597M"
+        ]
+      }
+    },
+    {
+      "title": "Craft Pizza",
+      "author": "Maxine Clark",
+      "checkedAt": "2026-09-08T20:31:28.911Z",
+      "status": "matched",
+      "work": "/works/OL21132233W",
+      "details": {
+        "title": "Craft Pizza",
+        "author": "Maxine Clark",
+        "firstPublished": "2016",
+        "sources": ["https://openlibrary.org/works/OL21132233W"]
+      }
+    },
+    {
+      "title": "Dark Fire",
+      "author": "C.J. Sansom",
+      "checkedAt": "2026-09-08T20:31:30.443Z",
+      "status": "matched",
+      "work": "/works/OL17719162W",
+      "edition": "/books/OL26320538M",
+      "details": {
+        "title": "Dark Fire",
+        "author": "C.J. Sansom",
+        "description": "It is 1540 and the hottest summer of the sixteenth cantury. Matthew Shardlake, believing himself out of favour with Thomas Cromwell, is busy trying…",
+        "excerptSource": "https://openlibrary.org/works/OL17719162W",
+        "firstPublished": "2001",
+        "publisher": "Macmillan",
+        "released": "2007",
+        "pages": "579",
+        "categories": ["History", "Mystery"],
+        "sources": [
+          "https://openlibrary.org/works/OL17719162W",
+          "https://openlibrary.org/books/OL26320538M"
+        ]
+      }
+    },
+    {
+      "title": "Death by Black Hole",
+      "author": "Neil deGrasse Tyson",
+      "checkedAt": "2026-09-08T20:31:30.814Z",
+      "status": "matched",
+      "work": "/works/OL2744497W",
+      "details": {
+        "title": "Death by Black Hole",
+        "author": "Neil deGrasse Tyson",
+        "firstPublished": "2007",
+        "categories": ["Science"],
+        "sources": ["https://openlibrary.org/works/OL2744497W"]
+      }
+    },
+    {
+      "title": "Death's End",
+      "author": "Cixin Liu",
+      "checkedAt": "2026-09-08T20:35:42.676Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Dominion",
+      "author": "Tom Holland",
+      "checkedAt": "2026-09-08T20:31:34.058Z",
+      "status": "matched",
+      "work": "/works/OL20428369W",
+      "edition": "/books/OL27650194M",
+      "details": {
+        "title": "Dominion",
+        "author": "Tom Holland",
+        "description": "Christianity is the most enduring and influential legacy of the ancient world, and its emergence the single most transformative development in Western history. Even…",
+        "excerptSource": "https://openlibrary.org/works/OL20428369W",
+        "firstPublished": "2019",
+        "publisher": "Little, Brown and Company",
+        "released": "2019",
+        "categories": ["History"],
+        "sources": [
+          "https://openlibrary.org/works/OL20428369W",
+          "https://openlibrary.org/books/OL27650194M"
+        ]
+      }
+    },
+    {
+      "title": "Drayton and Mackenzie",
+      "author": "Alexander Starritt",
+      "checkedAt": "2026-09-08T20:34:59.851Z",
+      "status": "matched",
+      "work": "/works/OL44594626W",
+      "details": {
+        "title": "Drayton and Mackenzie",
+        "author": "Alexander Starritt",
+        "firstPublished": "2025",
+        "sources": ["https://openlibrary.org/works/OL44594626W"]
+      }
+    },
+    {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "checkedAt": "2026-09-08T20:31:36.436Z",
+      "status": "matched",
+      "work": "/works/OL893414W",
+      "edition": "/books/OL32848840M",
+      "details": {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an…",
+        "excerptSource": "https://openlibrary.org/works/OL893414W",
+        "firstPublished": "1965",
+        "publisher": "Hodder",
+        "released": "Jul 22, 2006",
+        "pages": "604",
+        "categories": ["Science fiction", "Fantasy", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL893414W",
+          "https://openlibrary.org/books/OL32848840M"
+        ]
+      }
+    },
+    {
+      "title": "Economics for Dummies",
+      "author": "Sean Masaki Flynn",
+      "checkedAt": "2026-09-08T20:31:38.599Z",
+      "status": "matched",
+      "work": "/works/OL5894759W",
+      "edition": "/books/OL3480215M",
+      "details": {
+        "title": "Economics for Dummies",
+        "author": "Sean Masaki Flynn",
+        "firstPublished": "2005",
+        "publisher": "Wiley",
+        "released": "2005",
+        "pages": "362",
+        "categories": ["Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL5894759W",
+          "https://openlibrary.org/books/OL3480215M"
+        ]
+      }
+    },
+    {
+      "title": "Everything You Need to Know About Fat Loss",
+      "author": "Chris Aceto",
+      "checkedAt": "2026-09-08T20:31:41.022Z",
+      "status": "matched",
+      "work": "/works/OL8820949W",
+      "edition": "/books/OL8555199M",
+      "details": {
+        "title": "Everything You Need to Know About Fat Loss",
+        "author": "Chris Aceto",
+        "firstPublished": "1997",
+        "publisher": "Nutramedia",
+        "released": "June 2, 2001",
+        "pages": "170",
+        "sources": [
+          "https://openlibrary.org/works/OL8820949W",
+          "https://openlibrary.org/books/OL8555199M"
+        ]
+      }
+    },
+    {
+      "title": "Five Rules for Successful Stock Investing",
+      "author": "Pat Dorsey",
+      "checkedAt": "2026-09-08T20:31:42.492Z",
+      "status": "matched",
+      "work": "/works/OL12465033W",
+      "edition": "/books/OL23040746M",
+      "details": {
+        "title": "Five Rules for Successful Stock Investing",
+        "author": "Pat Dorsey",
+        "firstPublished": "2004",
+        "publisher": "John Wiley",
+        "released": "2004",
+        "pages": "364",
+        "categories": ["Finance"],
+        "sources": [
+          "https://openlibrary.org/works/OL12465033W",
+          "https://openlibrary.org/books/OL23040746M"
+        ]
+      }
+    },
+    {
+      "title": "Flash Crash",
+      "author": "Liam Vaughan",
+      "checkedAt": "2026-09-08T20:31:43.220Z",
+      "status": "matched",
+      "work": "/works/OL20733027W",
+      "edition": "/books/OL28040536M",
+      "details": {
+        "title": "Flash Crash",
+        "author": "Liam Vaughan",
+        "firstPublished": "2020",
+        "publisher": "Doubleday",
+        "released": "May 12, 2020",
+        "pages": "272",
+        "categories": ["Finance"],
+        "sources": [
+          "https://openlibrary.org/works/OL20733027W",
+          "https://openlibrary.org/books/OL28040536M"
+        ]
+      }
+    },
+    {
+      "title": "Fooled by Randomness",
+      "author": "Nassim Nicholas Taleb",
+      "checkedAt": "2026-09-08T20:31:45.872Z",
+      "status": "matched",
+      "work": "/works/OL3295029W",
+      "edition": "/books/OL3597262M",
+      "details": {
+        "title": "Fooled by Randomness",
+        "author": "Nassim Nicholas Taleb",
+        "description": "\"[Taleb is] Wall Street's principal dissident. . . . [Fooled By Randomness] is to conventional Wall Street wisdom approximately what Martin Luther's ninety-nine theses…",
+        "excerptSource": "https://openlibrary.org/works/OL3295029W",
+        "firstPublished": "2001",
+        "publisher": "Texere",
+        "released": "2001",
+        "pages": "203",
+        "categories": ["Finance", "Business", "Mathematics"],
+        "sources": [
+          "https://openlibrary.org/works/OL3295029W",
+          "https://openlibrary.org/books/OL3597262M"
+        ]
+      }
+    },
+    {
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "checkedAt": "2026-09-08T20:31:46.488Z",
+      "status": "matched",
+      "work": "/works/OL46125W",
+      "edition": "/books/OL51565403M",
+      "details": {
+        "title": "Foundation",
+        "author": "Isaac Asimov",
+        "description": "One of the great masterworks of science fiction, the Foundation novels of Isaac Asimov are unsurpassed for their unique blend of nonstop action, daring…",
+        "excerptSource": "https://openlibrary.org/works/OL46125W",
+        "firstPublished": "1951",
+        "publisher": "Panther",
+        "released": "1962",
+        "pages": "189",
+        "categories": ["Science fiction", "Fantasy", "Psychology"],
+        "sources": [
+          "https://openlibrary.org/works/OL46125W",
+          "https://openlibrary.org/books/OL51565403M"
+        ]
+      }
+    },
+    {
+      "title": "Four Thousand Weeks",
+      "author": "Oliver Burkeman",
+      "checkedAt": "2026-09-08T20:31:49.172Z",
+      "status": "matched",
+      "work": "/works/OL22355777W",
+      "edition": "/books/OL32962994M",
+      "details": {
+        "title": "Four Thousand Weeks",
+        "author": "Oliver Burkeman",
+        "description": "The average human lifespan is absurdly, outrageously, insultingly brief: if you live to 80, you have about four thousand weeks on earth. How should…",
+        "excerptSource": "https://openlibrary.org/works/OL22355777W",
+        "firstPublished": "2021",
+        "publisher": "Picador",
+        "released": "Aug 09, 2022",
+        "pages": "288",
+        "categories": ["Psychology", "Economics", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL22355777W",
+          "https://openlibrary.org/books/OL32962994M"
+        ]
+      }
+    },
+    {
+      "title": "Freedom Evolves",
+      "author": "Daniel C. Dennett",
+      "checkedAt": "2026-09-08T20:31:49.711Z",
+      "status": "matched",
+      "work": "/works/OL2463716W",
+      "edition": "/books/OL22518497M",
+      "details": {
+        "title": "Freedom Evolves",
+        "author": "Daniel C. Dennett",
+        "description": "\"Four billion years ago, there was no freedom on our planet, because there was no life. What kinds of freedom have evolved since the…",
+        "excerptSource": "https://openlibrary.org/works/OL2463716W",
+        "firstPublished": "2002",
+        "publisher": "Viking",
+        "released": "2002",
+        "pages": "347",
+        "sources": [
+          "https://openlibrary.org/works/OL2463716W",
+          "https://openlibrary.org/books/OL22518497M"
+        ]
+      }
+    },
+    {
+      "title": "Freedom's Forge",
+      "author": "Arthur Herman",
+      "checkedAt": "2026-09-08T20:31:52.389Z",
+      "status": "matched",
+      "work": "/works/OL16184489W",
+      "edition": "/books/OL25061346M",
+      "details": {
+        "title": "Freedom's Forge",
+        "author": "Arthur Herman",
+        "description": "Remarkable as it may seem today, there once was a time when the president of the United States could pick up the phone and…",
+        "excerptSource": "https://openlibrary.org/works/OL16184489W",
+        "firstPublished": "2012",
+        "publisher": "Random House",
+        "released": "2012",
+        "pages": "428",
+        "categories": ["History", "Economics", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL16184489W",
+          "https://openlibrary.org/books/OL25061346M"
+        ]
+      }
+    },
+    {
+      "title": "From Third World to First",
+      "author": "Lee Kuan Yew",
+      "checkedAt": "2026-09-08T20:31:52.904Z",
+      "status": "matched",
+      "work": "/works/OL273573W",
+      "edition": "/books/OL9230669M",
+      "details": {
+        "title": "From Third World to First",
+        "author": "Lee Kuan Yew",
+        "firstPublished": "2000",
+        "publisher": "HarperCollins",
+        "released": "October 1, 2000",
+        "pages": "752",
+        "categories": ["History", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL273573W",
+          "https://openlibrary.org/books/OL9230669M"
+        ]
+      }
+    },
+    {
+      "title": "Galaxy in Flames",
+      "author": "Ben Counter",
+      "checkedAt": "2026-09-08T20:31:55.152Z",
+      "status": "matched",
+      "work": "/works/OL20773550W",
+      "details": {
+        "title": "Galaxy in Flames",
+        "author": "Ben Counter",
+        "description": "Warmaster Horus leads the Imperial forces against the rebel world of Isstvan III, but the victory is tainted after Horus's treachery is revealed when…",
+        "excerptSource": "https://openlibrary.org/works/OL20773550W",
+        "firstPublished": "2012",
+        "sources": ["https://openlibrary.org/works/OL20773550W"]
+      }
+    },
+    {
+      "title": "Game Engine Architecture",
+      "author": "Jason Gregory",
+      "checkedAt": "2026-09-08T20:31:56.570Z",
+      "status": "matched",
+      "work": "/works/OL13771949W",
+      "details": {
+        "title": "Game Engine Architecture",
+        "author": "Jason Gregory",
+        "firstPublished": "2009",
+        "categories": ["Technology", "Art & design"],
+        "sources": ["https://openlibrary.org/works/OL13771949W"]
+      }
+    },
+    {
+      "title": "Get Together",
+      "author": "Bailey Richardson & Kevin Huynh & Kai Elmer Sotto",
+      "checkedAt": "2026-09-08T20:31:56.711Z",
+      "status": "matched",
+      "work": "/works/OL20870862W",
+      "edition": "/books/OL28262233M",
+      "details": {
+        "title": "Get Together",
+        "author": "Bailey Richardson & Kevin Huynh & Kai Elmer Sotto",
+        "firstPublished": "2019",
+        "publisher": "Stripe Press",
+        "released": "Aug 20, 2019",
+        "pages": "192",
+        "categories": ["History", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL20870862W",
+          "https://openlibrary.org/books/OL28262233M"
+        ]
+      }
+    },
+    {
+      "title": "Gold Warriors",
+      "author": "Sterling Seagrave & Peggy Seagrave",
+      "checkedAt": "2026-09-08T20:31:58.798Z",
+      "status": "matched",
+      "work": "/works/OL28779212W",
+      "edition": "/books/OL8956254M",
+      "details": {
+        "title": "Gold Warriors",
+        "author": "Sterling Seagrave & Peggy Seagrave",
+        "firstPublished": "2005",
+        "publisher": "Verso",
+        "released": "December 26, 2005",
+        "pages": "352",
+        "categories": ["History", "Politics"],
+        "sources": [
+          "https://openlibrary.org/works/OL28779212W",
+          "https://openlibrary.org/books/OL8956254M"
+        ]
+      }
+    },
+    {
+      "title": "Heroes",
+      "author": "Stephen Fry",
+      "checkedAt": "2026-09-08T20:32:00.013Z",
+      "status": "matched",
+      "work": "/works/OL19850785W",
+      "edition": "/books/OL27039418M",
+      "details": {
+        "title": "Heroes",
+        "author": "Stephen Fry",
+        "firstPublished": "2018",
+        "publisher": "Penguin",
+        "released": "Jun 27, 2019",
+        "pages": "496",
+        "sources": [
+          "https://openlibrary.org/works/OL19850785W",
+          "https://openlibrary.org/books/OL27039418M"
+        ]
+      }
+    },
+    {
+      "title": "High Growth Handbook",
+      "author": "Elad Gil",
+      "checkedAt": "2026-09-08T20:32:02.018Z",
+      "status": "matched",
+      "work": "/works/OL20564340W",
+      "edition": "/books/OL27809497M",
+      "details": {
+        "title": "High Growth Handbook",
+        "author": "Elad Gil",
+        "description": "Well-known technology executive and angel investor Elad Gil has worked with high growth tech companies like Airbnb, Twitter, Google, Instacart, Coinbase, Stripe, and Square…",
+        "excerptSource": "https://openlibrary.org/works/OL20564340W",
+        "firstPublished": "2018",
+        "publisher": "Stripe Press",
+        "released": "Jul 17, 2018",
+        "pages": "344",
+        "categories": ["History", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL20564340W",
+          "https://openlibrary.org/books/OL27809497M"
+        ]
+      }
+    },
+    {
+      "title": "Horus Rising",
+      "author": "Dan Abnett",
+      "checkedAt": "2026-09-08T20:32:04.427Z",
+      "status": "matched",
+      "work": "/works/OL5843391W",
+      "edition": "/books/OL8953760M",
+      "details": {
+        "title": "Horus Rising",
+        "author": "Dan Abnett",
+        "description": "A Horus Heresy Novel - Book 1 After thousands of years of expansion and conquest, the human Imperium is at its height. His dream…",
+        "excerptSource": "https://openlibrary.org/works/OL5843391W",
+        "firstPublished": "2006",
+        "publisher": "Black Library",
+        "released": "2006-04-25",
+        "pages": "416",
+        "sources": [
+          "https://openlibrary.org/works/OL5843391W",
+          "https://openlibrary.org/books/OL8953760M"
+        ]
+      }
+    },
+    {
+      "title": "How Not to Die",
+      "author": "Michael Greger M.D. & Gene Stone",
+      "checkedAt": "2026-09-08T20:32:04.986Z",
+      "status": "matched",
+      "work": "/works/OL17319629W",
+      "edition": "/books/OL25894601M",
+      "details": {
+        "title": "How Not to Die",
+        "author": "Michael Greger M.D. & Gene Stone",
+        "description": "From the physician behind the wildly popular website NutritionFacts.org, How Not to Die reveals the groundbreaking scientific evidence behind the only diet that can…",
+        "excerptSource": "https://openlibrary.org/works/OL17319629W",
+        "firstPublished": "2015",
+        "publisher": "Flatiron Books",
+        "released": "2015",
+        "categories": ["Health", "Food & cooking"],
+        "sources": [
+          "https://openlibrary.org/works/OL17319629W",
+          "https://openlibrary.org/books/OL25894601M"
+        ]
+      }
+    },
+    {
+      "title": "How to Lie with Statistics",
+      "author": "Darrell Huff",
+      "checkedAt": "2026-09-08T20:32:08.093Z",
+      "status": "matched",
+      "work": "/works/OL2975846W",
+      "edition": "/books/OL6138576M",
+      "details": {
+        "title": "How to Lie with Statistics",
+        "author": "Darrell Huff",
+        "description": "Both charming and informative about how statistics are misused. Published long ago, but the tricks haven't changed.",
+        "excerptSource": "https://openlibrary.org/works/OL2975846W",
+        "firstPublished": "1954",
+        "publisher": "Norton",
+        "released": "1954",
+        "pages": "142",
+        "categories": ["Mathematics", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL2975846W",
+          "https://openlibrary.org/books/OL6138576M"
+        ]
+      }
+    },
+    {
+      "title": "How to Take Smart Notes",
+      "author": "Sönke Ahrens",
+      "checkedAt": "2026-09-08T20:32:08.543Z",
+      "status": "matched",
+      "work": "/works/OL18635700W",
+      "edition": "/books/OL26697312M",
+      "details": {
+        "title": "How to Take Smart Notes",
+        "author": "Sönke Ahrens",
+        "description": "An informational book that describes and advocates for the note taking system of the German sociologist Niklas Luhmann. The author's primary claim is that…",
+        "excerptSource": "https://openlibrary.org/works/OL18635700W",
+        "firstPublished": "2017",
+        "publisher": "CreateSpace Independent Publishing Platform",
+        "released": "Feb 24, 2017",
+        "pages": "176",
+        "categories": ["Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL18635700W",
+          "https://openlibrary.org/books/OL26697312M"
+        ]
+      }
+    },
+    {
+      "title": "How to Win Friends and Influence People",
+      "author": "Dale Carnegie",
+      "checkedAt": "2026-09-08T20:32:11.119Z",
+      "status": "matched",
+      "work": "/works/OL1063267W",
+      "details": {
+        "title": "How to Win Friends and Influence People",
+        "author": "Dale Carnegie",
+        "description": "Available for the first time ever in trade paperback, Dale Carnegie's enduring classic, the inspirational personal development guide that shows how to achieve lifelong…",
+        "excerptSource": "https://openlibrary.org/works/OL1063267W",
+        "firstPublished": "1936",
+        "categories": ["Philosophy", "Psychology", "History"],
+        "sources": ["https://openlibrary.org/works/OL1063267W"]
+      }
+    },
+    {
+      "title": "Influence",
+      "author": "Robert B. Cialdini",
+      "checkedAt": "2026-09-08T20:32:11.338Z",
+      "status": "matched",
+      "work": "/works/OL3902892W",
+      "edition": "/books/OL7726679M",
+      "details": {
+        "title": "Influence",
+        "author": "Robert B. Cialdini",
+        "description": "Influence, the classic book on persuasion, explains the psychology of why people say \"yes\"—and how to apply these understandings. Dr. Robert Cialdini is the…",
+        "excerptSource": "https://openlibrary.org/works/OL3902892W",
+        "firstPublished": "1983",
+        "publisher": "Collins",
+        "released": "October 7, 1998",
+        "pages": "336",
+        "categories": ["Psychology", "History", "Communication"],
+        "sources": [
+          "https://openlibrary.org/works/OL3902892W",
+          "https://openlibrary.org/books/OL7726679M"
+        ]
+      }
+    },
+    {
+      "title": "Inside of a Dog: What Dogs See Smell and Know",
+      "author": "Alexandra Horowitz",
+      "checkedAt": "2026-09-08T20:32:13.921Z",
+      "status": "matched",
+      "work": "/works/OL13648875W",
+      "edition": "/books/OL22665767M",
+      "details": {
+        "title": "Inside of a Dog: What Dogs See Smell and Know",
+        "author": "Alexandra Horowitz",
+        "description": "The 1 New York Times bestselling book from the author of The Year of the Puppy that asks what dogs know and how they…",
+        "excerptSource": "https://openlibrary.org/works/OL13648875W",
+        "firstPublished": "2009",
+        "publisher": "Scribner",
+        "released": "2009",
+        "categories": ["Psychology", "Science", "Nature"],
+        "sources": [
+          "https://openlibrary.org/works/OL13648875W",
+          "https://openlibrary.org/books/OL22665767M"
+        ]
+      }
+    },
+    {
+      "title": "Introduction to Magic Vol. I",
+      "author": "Julius Evola",
+      "checkedAt": "2026-09-08T20:32:16.019Z",
+      "status": "matched",
+      "work": "/works/OL21854612W",
+      "details": {
+        "title": "Introduction to Magic Vol. I",
+        "author": "Julius Evola",
+        "firstPublished": "2018",
+        "categories": ["Fantasy"],
+        "sources": ["https://openlibrary.org/works/OL21854612W"]
+      }
+    },
+    {
+      "title": "It Didn't Start With You",
+      "author": "Mark Wolynn",
+      "checkedAt": "2026-09-08T20:32:16.243Z",
+      "status": "matched",
+      "work": "/works/OL20029303W",
+      "edition": "/books/OL27386936M",
+      "details": {
+        "title": "It Didn't Start With You",
+        "author": "Mark Wolynn",
+        "description": "\"A groundbreaking approach to transforming traumatic legacies passed down in families over generations, by an acclaimed expert in the field Depression. Anxiety. Chronic Pain.…",
+        "excerptSource": "https://openlibrary.org/works/OL20029303W",
+        "firstPublished": "2016",
+        "publisher": "Penguin Books",
+        "released": "Apr 25, 2017",
+        "pages": "256",
+        "categories": ["Psychology", "Health", "Personal growth"],
+        "sources": [
+          "https://openlibrary.org/works/OL20029303W",
+          "https://openlibrary.org/books/OL27386936M"
+        ]
+      }
+    },
+    {
+      "title": "Life on Svalbard",
+      "author": "Cecilia Blomdahl",
+      "checkedAt": "2026-09-08T20:32:17.760Z",
+      "status": "matched",
+      "work": "/works/OL37875967W",
+      "details": {
+        "title": "Life on Svalbard",
+        "author": "Cecilia Blomdahl",
+        "firstPublished": "2024",
+        "sources": ["https://openlibrary.org/works/OL37875967W"]
+      }
+    },
+    {
+      "title": "London for Dogs",
+      "author": "Sarah Guy",
+      "checkedAt": "2026-09-08T20:32:18.831Z",
+      "status": "matched",
+      "work": "/works/OL19715366W",
+      "details": {
+        "title": "London for Dogs",
+        "author": "Sarah Guy",
+        "firstPublished": "2017",
+        "categories": ["Nature", "Travel"],
+        "sources": ["https://openlibrary.org/works/OL19715366W"]
+      }
+    },
+    {
+      "title": "Manufacturing Consent",
+      "author": "Edward S. Herman & Noam Chomsky",
+      "checkedAt": "2026-09-08T20:32:20.655Z",
+      "status": "matched",
+      "work": "/works/OL31013W",
+      "edition": "/books/OL2061192M",
+      "details": {
+        "title": "Manufacturing Consent",
+        "author": "Edward S. Herman & Noam Chomsky",
+        "description": "Discusses the ways in which the mass media are manipulated to present the news according to an underlying elite consenus which affects the manner…",
+        "excerptSource": "https://openlibrary.org/works/OL31013W",
+        "firstPublished": "1988",
+        "publisher": "Pantheon Books",
+        "released": "1988",
+        "pages": "412",
+        "categories": ["Politics"],
+        "sources": [
+          "https://openlibrary.org/works/OL31013W",
+          "https://openlibrary.org/books/OL2061192M"
+        ]
+      }
+    },
+    {
+      "title": "Maps of Meaning",
+      "author": "Jordan B. Peterson",
+      "checkedAt": "2026-09-08T20:32:21.127Z",
+      "status": "matched",
+      "work": "/works/OL1954267W",
+      "edition": "/books/OL375600M",
+      "details": {
+        "title": "Maps of Meaning",
+        "author": "Jordan B. Peterson",
+        "description": "Why have people from different cultures and eras formulated myths and stories with similar structures? What does this similarity tell us about the mind…",
+        "excerptSource": "https://openlibrary.org/works/OL1954267W",
+        "firstPublished": "1999",
+        "publisher": "Routledge",
+        "released": "1999",
+        "pages": "563",
+        "categories": ["Psychology"],
+        "sources": [
+          "https://openlibrary.org/works/OL1954267W",
+          "https://openlibrary.org/books/OL375600M"
+        ]
+      }
+    },
+    {
+      "title": "Material World",
+      "author": "Ed Conway",
+      "checkedAt": "2026-09-08T20:32:23.673Z",
+      "status": "matched",
+      "work": "/works/OL29046628W",
+      "edition": "/books/OL48265899M",
+      "details": {
+        "title": "Material World",
+        "author": "Ed Conway",
+        "firstPublished": "2023",
+        "publisher": "Knopf Doubleday Publishing Group",
+        "released": "2023",
+        "categories": ["History", "Politics", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL29046628W",
+          "https://openlibrary.org/books/OL48265899M"
+        ]
+      }
+    },
+    {
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "checkedAt": "2026-09-08T20:32:24.159Z",
+      "status": "matched",
+      "work": "/works/OL1317211W",
+      "edition": "/books/OL9863622M",
+      "details": {
+        "title": "Meditations",
+        "author": "Marcus Aurelius",
+        "description": "Meditations is a collection of personal reflections and notes by the Roman Emperor Marcus Aurelius (reigned 161 to 180 AD), offering a profound look…",
+        "excerptSource": "https://openlibrary.org/works/OL1317211W",
+        "firstPublished": "1626",
+        "publisher": "Modern Library",
+        "released": "November 23, 2004",
+        "pages": "226",
+        "categories": ["Philosophy", "Personal growth"],
+        "sources": [
+          "https://openlibrary.org/works/OL1317211W",
+          "https://openlibrary.org/books/OL9863622M"
+        ]
+      }
+    },
+    {
+      "title": "Mighty Monty",
+      "author": "M.T. Sanders",
+      "checkedAt": "2026-09-08T20:35:51.079Z",
+      "status": "error",
+      "reason": "The operation timed out."
+    },
+    {
+      "title": "Millennium",
+      "author": "Tom Holland",
+      "checkedAt": "2026-09-08T20:32:28.062Z",
+      "status": "matched",
+      "work": "/works/OL25116284W",
+      "edition": "/books/OL34582453M",
+      "details": {
+        "title": "Millennium",
+        "author": "Tom Holland",
+        "firstPublished": "2008",
+        "publisher": "Little, Brown Book Group Limited",
+        "released": "2008",
+        "pages": "464",
+        "categories": ["History"],
+        "sources": [
+          "https://openlibrary.org/works/OL25116284W",
+          "https://openlibrary.org/books/OL34582453M"
+        ]
+      }
+    },
+    {
+      "title": "My Dog's First Year: A Journal",
+      "author": "Pop Press",
+      "checkedAt": "2026-09-08T20:35:43.147Z",
+      "status": "matched",
+      "work": "/works/OL28747927W",
+      "details": {
+        "title": "My Dog's First Year: A Journal",
+        "author": "Pop Press",
+        "firstPublished": "2023",
+        "sources": ["https://openlibrary.org/works/OL28747927W"]
+      }
+    },
+    {
+      "title": "My Heart & Other Black Holes",
+      "author": "Jasmine Warga",
+      "checkedAt": "2026-09-08T20:32:29.146Z",
+      "status": "matched",
+      "work": "/works/OL17356810W",
+      "details": {
+        "title": "My Heart & Other Black Holes",
+        "author": "Jasmine Warga",
+        "description": "it's a debut young-adult novel by Jasmine Warga",
+        "excerptSource": "https://openlibrary.org/works/OL17356810W",
+        "firstPublished": "2015",
+        "categories": ["Communication"],
+        "sources": ["https://openlibrary.org/works/OL17356810W"]
+      }
+    },
+    {
+      "title": "Mythos",
+      "author": "Stephen Fry",
+      "checkedAt": "2026-09-08T20:32:30.742Z",
+      "status": "matched",
+      "work": "/works/OL17916664W",
+      "edition": "/books/OL26491074M",
+      "details": {
+        "title": "Mythos",
+        "author": "Stephen Fry",
+        "description": "Here are the thrills, grandeur, and unabashed fun of the Greek myths, stylishly retold by Stephen Fry. The legendary writer, actor, and comedian breathes…",
+        "excerptSource": "https://openlibrary.org/works/OL17916664W",
+        "firstPublished": "2017",
+        "publisher": "Penguin Books",
+        "released": "2018",
+        "pages": "441",
+        "sources": [
+          "https://openlibrary.org/works/OL17916664W",
+          "https://openlibrary.org/books/OL26491074M"
+        ]
+      }
+    },
+    {
+      "title": "Neuromancer",
+      "author": "William Gibson",
+      "checkedAt": "2026-09-08T20:32:31.538Z",
+      "status": "matched",
+      "work": "/works/OL27258W",
+      "edition": "/books/OL3963678M",
+      "details": {
+        "title": "Neuromancer",
+        "author": "William Gibson",
+        "description": "The first of William Gibson's Sprawl trilogy, Neuromancer is the classic cyberpunk novel. The winner of the Hugo, Nebula, and Philip K. Dick Awards…",
+        "excerptSource": "https://openlibrary.org/works/OL27258W",
+        "firstPublished": "1984",
+        "publisher": "Ace Books",
+        "released": "July 2000",
+        "pages": "276",
+        "categories": ["Science fiction", "History", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL27258W",
+          "https://openlibrary.org/books/OL3963678M"
+        ]
+      }
+    },
+    {
+      "title": "Nineteen Eighty-Four",
+      "author": "George Orwell",
+      "checkedAt": "2026-09-08T20:32:34.153Z",
+      "status": "matched",
+      "work": "/works/OL1168083W",
+      "edition": "/books/OL21733390M",
+      "details": {
+        "title": "Nineteen Eighty-Four",
+        "author": "George Orwell",
+        "description": "Nineteen Eighty-Four: A Novel, often referred to as 1984, is a dystopian social science fiction novel by the English novelist George Orwell (the pen…",
+        "excerptSource": "https://openlibrary.org/works/OL1168083W",
+        "firstPublished": "1949",
+        "publisher": "Harcourt, Brace and Company",
+        "released": "1949",
+        "pages": "314",
+        "categories": ["Science fiction", "Fantasy", "Psychology"],
+        "sources": [
+          "https://openlibrary.org/works/OL1168083W",
+          "https://openlibrary.org/books/OL21733390M"
+        ]
+      }
+    },
+    {
+      "title": "Oathbringer",
+      "author": "Brandon Sanderson",
+      "checkedAt": "2026-09-08T20:32:34.453Z",
+      "status": "matched",
+      "work": "/works/OL17834026W",
+      "edition": "/books/OL26421466M",
+      "details": {
+        "title": "Oathbringer",
+        "author": "Brandon Sanderson",
+        "description": "The eagerly awaited sequel to the 1 New York Times bestselling Words of Radiance, from epic fantasy author Brandon Sanderson, at the top of…",
+        "excerptSource": "https://openlibrary.org/works/OL17834026W",
+        "firstPublished": "2017",
+        "publisher": "Tor Fantasy",
+        "released": "2017",
+        "pages": "1243",
+        "categories": ["Fantasy"],
+        "sources": [
+          "https://openlibrary.org/works/OL17834026W",
+          "https://openlibrary.org/books/OL26421466M"
+        ]
+      }
+    },
+    {
+      "title": "On the Edge",
+      "author": "Nate Silver",
+      "checkedAt": "2026-09-08T20:32:37.364Z",
+      "status": "matched",
+      "work": "/works/OL37768334W",
+      "edition": "/books/OL50965787M",
+      "details": {
+        "title": "On the Edge",
+        "author": "Nate Silver",
+        "description": "How some people — including poker players, hedge fund managers and venture capitalists — analyze and navigate risk, and why it’s important.",
+        "excerptSource": "https://openlibrary.org/works/OL37768334W",
+        "firstPublished": "2024",
+        "publisher": "Penguin Publishing Group",
+        "released": "2024",
+        "pages": "559",
+        "categories": ["Mathematics"],
+        "sources": [
+          "https://openlibrary.org/works/OL37768334W",
+          "https://openlibrary.org/books/OL50965787M"
+        ]
+      }
+    },
+    {
+      "title": "On the Origin of Species",
+      "author": "Charles Darwin",
+      "checkedAt": "2026-09-08T20:32:37.686Z",
+      "status": "matched",
+      "work": "/works/OL21347460W",
+      "edition": "/books/OL29818151M",
+      "details": {
+        "title": "On the Origin of Species",
+        "author": "Charles Darwin",
+        "firstPublished": "2013",
+        "publisher": "Blurb, Incorporated",
+        "released": "2019",
+        "pages": "178",
+        "sources": [
+          "https://openlibrary.org/works/OL21347460W",
+          "https://openlibrary.org/books/OL29818151M"
+        ]
+      }
+    },
+    {
+      "title": "Option Volatility and Pricing",
+      "author": "Sheldon Natenberg",
+      "checkedAt": "2026-09-08T20:35:44.944Z",
+      "status": "matched",
+      "work": "/works/OL18174880W",
+      "details": {
+        "title": "Option Volatility and Pricing",
+        "author": "Sheldon Natenberg",
+        "categories": ["Finance"],
+        "sources": ["https://openlibrary.org/works/OL18174880W"]
+      }
+    },
+    {
+      "title": "Pandemia",
+      "author": "Alex Berenson",
+      "checkedAt": "2026-09-08T20:32:40.832Z",
+      "status": "matched",
+      "work": "/works/OL25307403W",
+      "edition": "/books/OL33892430M",
+      "details": {
+        "title": "Pandemia",
+        "author": "Alex Berenson",
+        "firstPublished": "2021",
+        "publisher": "Regnery Publishing",
+        "released": "Nov 30, 2021",
+        "pages": "350",
+        "sources": [
+          "https://openlibrary.org/works/OL25307403W",
+          "https://openlibrary.org/books/OL33892430M"
+        ]
+      }
+    },
+    {
+      "title": "Pandora's Star",
+      "author": "Peter F. Hamilton",
+      "checkedAt": "2026-09-08T20:32:41.919Z",
+      "status": "matched",
+      "work": "/works/OL474061W",
+      "edition": "/books/OL26245588M",
+      "details": {
+        "title": "Pandora's Star",
+        "author": "Peter F. Hamilton",
+        "description": "Critics have compared the engrossing space operas of Peter F. Hamilton to the classic sagas of such sf giants as Isaac Asimov and Frank…",
+        "excerptSource": "https://openlibrary.org/works/OL474061W",
+        "firstPublished": "2004",
+        "publisher": "Pan Macmillan",
+        "released": "2004",
+        "pages": "1144",
+        "categories": ["Science fiction"],
+        "sources": [
+          "https://openlibrary.org/works/OL474061W",
+          "https://openlibrary.org/books/OL26245588M"
+        ]
+      }
+    },
+    {
+      "title": "Poor Charlie's Almanack",
+      "author": "Peter D. Kaufman (ed.)",
+      "checkedAt": "2026-09-08T20:35:45.743Z",
+      "status": "matched",
+      "work": "/works/OL20791443W",
+      "details": {
+        "title": "Poor Charlie's Almanack",
+        "author": "Peter D. Kaufman (ed.)",
+        "firstPublished": "2010",
+        "categories": ["History"],
+        "sources": ["https://openlibrary.org/works/OL20791443W"]
+      }
+    },
+    {
+      "title": "Principles of Economics",
+      "author": "N. Gregory Mankiw",
+      "checkedAt": "2026-09-08T20:32:44.020Z",
+      "status": "matched",
+      "work": "/works/OL3361621W",
+      "edition": "/books/OL1017368M",
+      "details": {
+        "title": "Principles of Economics",
+        "author": "N. Gregory Mankiw",
+        "firstPublished": "1998",
+        "publisher": "Dryden Press",
+        "released": "1998",
+        "pages": "797",
+        "categories": ["Economics", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL3361621W",
+          "https://openlibrary.org/books/OL1017368M"
+        ]
+      }
+    },
+    {
+      "title": "Principles",
+      "author": "Ray Dalio",
+      "checkedAt": "2026-09-08T20:32:47.368Z",
+      "status": "matched",
+      "work": "/works/OL18147675W",
+      "edition": "/books/OL26631780M",
+      "details": {
+        "title": "Principles",
+        "author": "Ray Dalio",
+        "description": "Bridgewater Associates founder, Ray Dalio, offers a five-step process to getting what you want out of life, which involves systemizing everything to run like…",
+        "excerptSource": "https://openlibrary.org/works/OL18147675W",
+        "firstPublished": "2017",
+        "publisher": "Simon & Schuster",
+        "released": "Sep 19, 2017",
+        "pages": "592",
+        "categories": ["Philosophy", "Biography", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL18147675W",
+          "https://openlibrary.org/books/OL26631780M"
+        ]
+      }
+    },
+    {
+      "title": "Programming Game AI by Example",
+      "author": "Mat Buckland",
+      "checkedAt": "2026-09-08T20:32:48.676Z",
+      "status": "matched",
+      "work": "/works/OL5965994W",
+      "edition": "/books/OL8594200M",
+      "details": {
+        "title": "Programming Game AI by Example",
+        "author": "Mat Buckland",
+        "firstPublished": "2004",
+        "publisher": "Wordware Publishing, Inc.",
+        "released": "November 25, 2004",
+        "pages": "500",
+        "categories": ["Technology", "Art & design"],
+        "sources": [
+          "https://openlibrary.org/works/OL5965994W",
+          "https://openlibrary.org/books/OL8594200M"
+        ]
+      },
+      "subjects": [
+        "Computer games, programming",
+        "Computer games",
+        "Design",
+        "Programming",
+        "Computer graphics",
+        "Computer games--design",
+        "Computer games--programming",
+        "Qa76.76.c672 b85 2005"
+      ]
+    },
+    {
+      "title": "Rather Splendid London Walks",
+      "author": "Julian McDonnell",
+      "checkedAt": "2026-09-08T20:32:50.913Z",
+      "status": "matched",
+      "work": "/works/OL29193022W",
+      "details": {
+        "title": "Rather Splendid London Walks",
+        "author": "Julian McDonnell",
+        "firstPublished": "2023",
+        "sources": ["https://openlibrary.org/works/OL29193022W"]
+      }
+    },
+    {
+      "title": "Redwall",
+      "author": "Brian Jacques",
+      "checkedAt": "2026-09-08T20:32:53.010Z",
+      "status": "matched",
+      "work": "/works/OL465952W",
+      "details": {
+        "title": "Redwall",
+        "author": "Brian Jacques",
+        "description": "When the peaceful life of ancient Redwall Abbey is shattered by the arrival of the evil rat Cluny and his villainous hordes, Matthias, a…",
+        "excerptSource": "https://openlibrary.org/works/OL465952W",
+        "firstPublished": "1986",
+        "categories": ["Science fiction", "Fantasy", "Nature"],
+        "sources": ["https://openlibrary.org/works/OL465952W"]
+      }
+    },
+    {
+      "title": "Reminiscences of a Stock Operator",
+      "author": "Edwin Lefèvre",
+      "checkedAt": "2026-09-08T20:32:53.240Z",
+      "status": "matched",
+      "work": "/works/OL3472215W",
+      "edition": "/books/OL1087786M",
+      "details": {
+        "title": "Reminiscences of a Stock Operator",
+        "author": "Edwin Lefèvre",
+        "description": "Based on interviews with trader Jesse Livermore, called Larry Livingston in the book.",
+        "excerptSource": "https://openlibrary.org/works/OL3472215W",
+        "firstPublished": "1923",
+        "publisher": "J. Wiley",
+        "released": "1994",
+        "pages": "299",
+        "categories": ["Finance", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL3472215W",
+          "https://openlibrary.org/books/OL1087786M"
+        ]
+      }
+    },
+    {
+      "title": "Rhythm of War",
+      "author": "Brandon Sanderson",
+      "checkedAt": "2026-09-08T20:32:56.734Z",
+      "status": "matched",
+      "work": "/works/OL20842226W",
+      "edition": "/books/OL28217699M",
+      "details": {
+        "title": "Rhythm of War",
+        "author": "Brandon Sanderson",
+        "description": "The eagerly awaited sequel to the 1 New York Times bestselling Oathbringer, from epic fantasy author Brandon Sanderson After forming a coalition of human…",
+        "excerptSource": "https://openlibrary.org/works/OL20842226W",
+        "firstPublished": "2011",
+        "publisher": "Tor Fantasy",
+        "released": "2020",
+        "pages": "1088",
+        "categories": ["Fantasy"],
+        "sources": [
+          "https://openlibrary.org/works/OL20842226W",
+          "https://openlibrary.org/books/OL28217699M"
+        ]
+      }
+    },
+    {
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "checkedAt": "2026-09-08T20:32:57.694Z",
+      "status": "matched",
+      "work": "/works/OL17075811W",
+      "edition": "/books/OL26234146M",
+      "details": {
+        "title": "Sapiens",
+        "author": "Yuval Noah Harari",
+        "description": "From a renowned historian comes a groundbreaking narrative of humanity’s creation and evolution—a 1 international bestseller—that explores the ways in which biology and history…",
+        "excerptSource": "https://openlibrary.org/works/OL17075811W",
+        "firstPublished": "2011",
+        "publisher": "Vintage Books",
+        "released": "2015-04-30",
+        "pages": "498",
+        "categories": ["Psychology", "History", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL17075811W",
+          "https://openlibrary.org/books/OL26234146M"
+        ]
+      }
+    },
+    {
+      "title": "Scaling People",
+      "author": "Claire Hughes Johnson",
+      "checkedAt": "2026-09-08T20:33:00.531Z",
+      "status": "matched",
+      "work": "/works/OL27630278W",
+      "edition": "/books/OL37674315M",
+      "details": {
+        "title": "Scaling People",
+        "author": "Claire Hughes Johnson",
+        "firstPublished": "2022",
+        "publisher": "Stripe Matter Inc",
+        "released": "2022",
+        "pages": "480",
+        "categories": ["History", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL27630278W",
+          "https://openlibrary.org/books/OL37674315M"
+        ]
+      }
+    },
+    {
+      "title": "Scientific Freedom: The Elixir of Civilization",
+      "author": "Donald W. Braben",
+      "checkedAt": "2026-09-08T20:33:00.692Z",
+      "status": "matched",
+      "work": "/works/OL8230545W",
+      "edition": "/books/OL10295135M",
+      "details": {
+        "title": "Scientific Freedom: The Elixir of Civilization",
+        "author": "Donald W. Braben",
+        "firstPublished": "2008",
+        "publisher": "Wiley-Interscience",
+        "released": "February 15, 2008",
+        "pages": "200",
+        "categories": ["History", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL8230545W",
+          "https://openlibrary.org/books/OL10295135M"
+        ]
+      }
+    },
+    {
+      "title": "Shardlake: The Complete BBC Radio Collection",
+      "author": "C.J. Sansom",
+      "checkedAt": "2026-09-08T20:35:46.815Z",
+      "status": "matched",
+      "work": "/works/OL28593807W",
+      "details": {
+        "title": "Shardlake: The Complete BBC Radio Collection",
+        "author": "C.J. Sansom",
+        "firstPublished": "2016",
+        "sources": ["https://openlibrary.org/works/OL28593807W"]
+      }
+    },
+    {
+      "title": "Sherlock Holmes: The Definitive Collection",
+      "author": "Arthur Conan Doyle (narrated by Stephen Fry)",
+      "checkedAt": "2026-09-08T20:33:03.967Z",
+      "status": "matched",
+      "work": "/works/OL16067222W",
+      "edition": "/books/OL24964988M",
+      "details": {
+        "title": "Sherlock Holmes: The Definitive Collection",
+        "author": "Arthur Conan Doyle (narrated by Stephen Fry)",
+        "publisher": "Simon and Schuster",
+        "released": "1957",
+        "pages": "96",
+        "categories": ["Mystery"],
+        "sources": [
+          "https://openlibrary.org/works/OL16067222W",
+          "https://openlibrary.org/books/OL24964988M"
+        ]
+      }
+    },
+    {
+      "title": "Skunk Works",
+      "author": "Ben R. Rich & Leo Janos",
+      "checkedAt": "2026-09-08T20:33:04.250Z",
+      "status": "matched",
+      "work": "/works/OL3466236W",
+      "details": {
+        "title": "Skunk Works",
+        "author": "Ben R. Rich & Leo Janos",
+        "description": "From the development of the U-2 to the Stealth fighter, the never-before-told story behind America's high-stakes quest to dominate the skies Skunk Works is…",
+        "excerptSource": "https://openlibrary.org/works/OL3466236W",
+        "firstPublished": "1994",
+        "categories": ["Biography", "History"],
+        "sources": ["https://openlibrary.org/works/OL3466236W"]
+      }
+    },
+    {
+      "title": "Sprint",
+      "author": "Jake Knapp & John Zeratsky & Braden Kowitz",
+      "checkedAt": "2026-09-08T20:33:06.782Z",
+      "status": "matched",
+      "work": "/works/OL17353358W",
+      "edition": "/books/OL25931127M",
+      "details": {
+        "title": "Sprint",
+        "author": "Jake Knapp & John Zeratsky & Braden Kowitz",
+        "description": "From three partners at Google Ventures, a unique five-day process for solving tough problems, proven at more than a hundred companies. Entrepreneurs and leaders…",
+        "excerptSource": "https://openlibrary.org/works/OL17353358W",
+        "firstPublished": "2001",
+        "publisher": "Simon & Schuster",
+        "released": "March 8, 2016",
+        "pages": "288",
+        "categories": ["Business", "Art & design"],
+        "sources": [
+          "https://openlibrary.org/works/OL17353358W",
+          "https://openlibrary.org/books/OL25931127M"
+        ]
+      },
+      "subjects": [
+        "prototyping",
+        "design thinking",
+        "sprint",
+        "design",
+        "Creative ability in business",
+        "Management",
+        "Problem solving",
+        "nyt:business-books=2016-04-10",
+        "New York Times bestseller",
+        "Organizational innovation",
+        "Hd30.29 .k63 2016",
+        "658.4/03",
+        "Success in business",
+        "Strategic planning",
+        "Entrepreneurship"
+      ]
+    },
+    {
+      "title": "Stuff Matters",
+      "author": "Mark Miodownik",
+      "checkedAt": "2026-09-08T20:33:06.936Z",
+      "status": "matched",
+      "work": "/works/OL17778974W",
+      "details": {
+        "title": "Stuff Matters",
+        "author": "Mark Miodownik",
+        "description": "\"Why is glass see-through? What makes elastic stretchy? Why does a paperclip bend? Why does any material look and behave the way it does?With…",
+        "excerptSource": "https://openlibrary.org/works/OL17778974W",
+        "firstPublished": "2013",
+        "categories": ["History", "Science"],
+        "sources": ["https://openlibrary.org/works/OL17778974W"]
+      }
+    },
+    {
+      "title": "Superforecasting: The Art and Science of Prediction",
+      "author": "Philip Tetlock & Dan Gardner",
+      "checkedAt": "2026-09-08T20:33:09.975Z",
+      "status": "matched",
+      "work": "/works/OL18233878W",
+      "edition": "/books/OL27706706M",
+      "details": {
+        "title": "Superforecasting: The Art and Science of Prediction",
+        "author": "Philip Tetlock & Dan Gardner",
+        "description": "Everyone would benefit from seeing further into the future, whether buying stocks, crafting policy, launching a new product, or simply planning the week’s meals.…",
+        "excerptSource": "https://openlibrary.org/works/OL18233878W",
+        "firstPublished": "2015",
+        "publisher": "Broadway Books",
+        "released": "Sep 13, 2016",
+        "pages": "352",
+        "categories": ["Psychology", "Economics", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL18233878W",
+          "https://openlibrary.org/books/OL27706706M"
+        ]
+      }
+    },
+    {
+      "title": "Superintelligence",
+      "author": "Nick Bostrom",
+      "checkedAt": "2026-09-08T20:33:10.492Z",
+      "status": "matched",
+      "work": "/works/OL17319280W",
+      "edition": "/books/OL26355628M",
+      "details": {
+        "title": "Superintelligence",
+        "author": "Nick Bostrom",
+        "description": "The human brain has some capabilities that the brains of other animals lack. It is to these distinctive capabilities that our species owes its…",
+        "excerptSource": "https://openlibrary.org/works/OL17319280W",
+        "firstPublished": "2014",
+        "publisher": "Oxford University Press",
+        "released": "2016",
+        "categories": ["Philosophy", "Psychology", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL17319280W",
+          "https://openlibrary.org/books/OL26355628M"
+        ]
+      }
+    },
+    {
+      "title": "Taliesin's Map: The Comparative Guide to Celtic Mythology",
+      "author": "J. Dolan",
+      "checkedAt": "2026-09-08T20:35:47.919Z",
+      "status": "matched",
+      "work": "/works/OL27586129W",
+      "details": {
+        "title": "Taliesin's Map: The Comparative Guide to Celtic Mythology",
+        "author": "J. Dolan",
+        "firstPublished": "2022",
+        "sources": ["https://openlibrary.org/works/OL27586129W"]
+      }
+    },
+    {
+      "title": "Talking to Strangers",
+      "author": "Malcolm Gladwell",
+      "checkedAt": "2026-09-08T20:33:13.782Z",
+      "status": "matched",
+      "work": "/works/OL20126964W",
+      "edition": "/books/OL27306938M",
+      "details": {
+        "title": "Talking to Strangers",
+        "author": "Malcolm Gladwell",
+        "description": "The routine traffic stop that ends in tragedy. The spy who spends years undetected at the highest levels of the Pentagon. The false conviction…",
+        "excerptSource": "https://openlibrary.org/works/OL20126964W",
+        "firstPublished": "2019",
+        "publisher": "Little, Brown and Company",
+        "released": "2019",
+        "pages": "386",
+        "categories": ["Psychology", "Communication"],
+        "sources": [
+          "https://openlibrary.org/works/OL20126964W",
+          "https://openlibrary.org/books/OL27306938M"
+        ]
+      },
+      "subjects": [
+        "Interpersonal communication",
+        "Strangers",
+        "nyt:combined-print-and-e-book-nonfiction=2019-09-29",
+        "New York Times bestseller",
+        "New York Times reviewed",
+        "Social psychology",
+        "Applied Psychology",
+        "Threat (Psychology)",
+        "Conduct of life",
+        "Miscellanea",
+        "Interpersonal relations",
+        "Trust",
+        "LANGUAGE ARTS & DISCIPLINES / Communication",
+        "nyt:paperback-nonfiction=2021-10-17"
+      ]
+    },
+    {
+      "title": "Technological Slavery",
+      "author": "Theodore John Kaczynski",
+      "checkedAt": "2026-09-08T20:35:48.820Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Alignment Problem",
+      "author": "Brian Christian",
+      "checkedAt": "2026-09-08T20:33:15.293Z",
+      "status": "matched",
+      "work": "/works/OL20781447W",
+      "details": {
+        "title": "The Alignment Problem",
+        "author": "Brian Christian",
+        "description": "\"A jaw-dropping exploration of everything that goes wrong when we build AI systems-and the movement to fix them. Today's \"machine-learning\" systems, trained by data…",
+        "excerptSource": "https://openlibrary.org/works/OL20781447W",
+        "firstPublished": "2020",
+        "categories": ["Philosophy", "Psychology", "Technology"],
+        "sources": ["https://openlibrary.org/works/OL20781447W"]
+      }
+    },
+    {
+      "title": "The Anarchy",
+      "author": "William Dalrymple",
+      "checkedAt": "2026-09-08T20:33:16.149Z",
+      "status": "matched",
+      "work": "/works/OL20470129W",
+      "edition": "/books/OL27698142M",
+      "details": {
+        "title": "The Anarchy",
+        "author": "William Dalrymple",
+        "firstPublished": "2019",
+        "publisher": "Bloomsbury Publishing",
+        "released": "2019",
+        "categories": ["History", "Politics", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL20470129W",
+          "https://openlibrary.org/books/OL27698142M"
+        ]
+      }
+    },
+    {
+      "title": "The Big Score",
+      "author": "Michael S. Malone",
+      "checkedAt": "2026-09-08T20:33:17.807Z",
+      "status": "matched",
+      "work": "/works/OL1881367W",
+      "details": {
+        "title": "The Big Score",
+        "author": "Michael S. Malone",
+        "description": "Starting with the birth of Hewlett-Packard in the 1930s, Malone illustrates how decades of technological innovation, driven by the need for better hardware, laid…",
+        "excerptSource": "https://openlibrary.org/works/OL1881367W",
+        "firstPublished": "1985",
+        "categories": ["Business", "Technology"],
+        "sources": ["https://openlibrary.org/works/OL1881367W"]
+      }
+    },
+    {
+      "title": "The Bitcoin Standard",
+      "author": "Saifedean Ammous",
+      "checkedAt": "2026-09-08T20:33:19.709Z",
+      "status": "matched",
+      "work": "/works/OL19737774W",
+      "edition": "/books/OL26950854M",
+      "details": {
+        "title": "The Bitcoin Standard",
+        "author": "Saifedean Ammous",
+        "description": "\"Bitcoin is the digital age's novel, decentralized, and automated solution to the problem of money: accessible worldwide, controlled by nobody. Can this young upstart…",
+        "excerptSource": "https://openlibrary.org/works/OL19737774W",
+        "firstPublished": "2018",
+        "publisher": "John Wiley & Sons, Inc.",
+        "released": "2018",
+        "pages": "286",
+        "categories": ["Politics", "Finance"],
+        "sources": [
+          "https://openlibrary.org/works/OL19737774W",
+          "https://openlibrary.org/books/OL26950854M"
+        ]
+      }
+    },
+    {
+      "title": "The Changing World Order",
+      "author": "Ray Dalio",
+      "checkedAt": "2026-09-08T20:35:49.464Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Circadian Code",
+      "author": "Dr. Satchin Panda",
+      "checkedAt": "2026-09-08T20:33:20.653Z",
+      "status": "matched",
+      "work": "/works/OL20570639W",
+      "details": {
+        "title": "The Circadian Code",
+        "author": "Dr. Satchin Panda",
+        "firstPublished": "2018",
+        "sources": ["https://openlibrary.org/works/OL20570639W"]
+      }
+    },
+    {
+      "title": "The City and the Stars",
+      "author": "Arthur C. Clarke",
+      "checkedAt": "2026-09-08T20:33:21.930Z",
+      "status": "matched",
+      "work": "/works/OL17400W",
+      "edition": "/books/OL14561451M",
+      "details": {
+        "title": "The City and the Stars",
+        "author": "Arthur C. Clarke",
+        "firstPublished": "1956",
+        "publisher": "New American Library",
+        "released": "December 1957",
+        "pages": "191",
+        "categories": ["Science fiction"],
+        "sources": [
+          "https://openlibrary.org/works/OL17400W",
+          "https://openlibrary.org/books/OL14561451M"
+        ]
+      }
+    },
+    {
+      "title": "The Conscious Mind",
+      "author": "David Chalmers",
+      "checkedAt": "2026-09-08T20:33:22.715Z",
+      "status": "matched",
+      "work": "/works/OL2954764W",
+      "edition": "/books/OL799767M",
+      "details": {
+        "title": "The Conscious Mind",
+        "author": "David Chalmers",
+        "description": "The Conscious Mind: In Search of a Fundamental Theory is an extended study of the problem of consciousness. After setting up the problem, David…",
+        "excerptSource": "https://openlibrary.org/works/OL2954764W",
+        "firstPublished": "1996",
+        "publisher": "Oxford University Press",
+        "released": "1996",
+        "pages": "414",
+        "categories": ["Philosophy", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL2954764W",
+          "https://openlibrary.org/books/OL799767M"
+        ]
+      }
+    },
+    {
+      "title": "The Curry Guy Easy",
+      "author": "Dan Toombs",
+      "checkedAt": "2026-09-08T20:33:25.217Z",
+      "status": "matched",
+      "work": "/works/OL20559325W",
+      "details": {
+        "title": "The Curry Guy Easy",
+        "author": "Dan Toombs",
+        "categories": ["Food & cooking"],
+        "sources": ["https://openlibrary.org/works/OL20559325W"]
+      }
+    },
+    {
+      "title": "The Curry Guy",
+      "author": "Dan Toombs",
+      "checkedAt": "2026-09-08T20:33:25.772Z",
+      "status": "matched",
+      "work": "/works/OL19748153W",
+      "edition": "/books/OL46535203M",
+      "details": {
+        "title": "The Curry Guy",
+        "author": "Dan Toombs",
+        "description": "\"Dan Toombs has perfected the art of Indian restaurant cooking after traveling around sampling and refining recipes at home. In other words, The Curry…",
+        "excerptSource": "https://openlibrary.org/works/OL19748153W",
+        "firstPublished": "2017",
+        "publisher": "Good Cook B.V.",
+        "released": "Jan 30, 2018",
+        "categories": ["Food & cooking"],
+        "sources": [
+          "https://openlibrary.org/works/OL19748153W",
+          "https://openlibrary.org/books/OL46535203M"
+        ]
+      }
+    },
+    {
+      "title": "The Daily Stoic Journal",
+      "author": "Ryan Holiday & Stephen Hanselman",
+      "checkedAt": "2026-09-08T20:33:27.563Z",
+      "status": "matched",
+      "work": "/works/OL20934912W",
+      "edition": "/books/OL28362712M",
+      "details": {
+        "title": "The Daily Stoic Journal",
+        "author": "Ryan Holiday & Stephen Hanselman",
+        "firstPublished": "2017",
+        "publisher": "Profile Books",
+        "released": "Nov 02, 2017",
+        "pages": "384",
+        "sources": [
+          "https://openlibrary.org/works/OL20934912W",
+          "https://openlibrary.org/books/OL28362712M"
+        ]
+      },
+      "subjects": [
+        "Stoics",
+        "Authorship",
+        "Diaries -- Authorship",
+        "Stoïcisme",
+        "Art d'écrire",
+        "Journaux intimes -- Art d'écrire",
+        "stoicism",
+        "authorship"
+      ]
+    },
+    {
+      "title": "The Daily Stoic",
+      "author": "Ryan Holiday & Stephen Hanselman",
+      "checkedAt": "2026-09-08T20:33:28.399Z",
+      "status": "matched",
+      "work": "/works/OL20119819W",
+      "details": {
+        "title": "The Daily Stoic",
+        "author": "Ryan Holiday & Stephen Hanselman",
+        "firstPublished": "2016",
+        "sources": ["https://openlibrary.org/works/OL20119819W"]
+      }
+    },
+    {
+      "title": "The Dark Forest",
+      "author": "Cixin Liu",
+      "checkedAt": "2026-09-08T20:35:50.211Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Dog Encyclopedia",
+      "author": "DK",
+      "checkedAt": "2026-09-08T20:35:51.080Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Dream Machine",
+      "author": "M. Mitchell Waldrop",
+      "checkedAt": "2026-09-08T20:33:31.546Z",
+      "status": "matched",
+      "work": "/works/OL4300550W",
+      "edition": "/books/OL7643779M",
+      "details": {
+        "title": "The Dream Machine",
+        "author": "M. Mitchell Waldrop",
+        "description": "\"The year is 1962. More than a decade will pass before personal computers emerge from the garages of Silicon Valley, and a full thirty…",
+        "excerptSource": "https://openlibrary.org/works/OL4300550W",
+        "firstPublished": "2001",
+        "publisher": "Viking Adult",
+        "released": "August 23, 2001",
+        "pages": "528",
+        "categories": ["Biography", "History", "Technology"],
+        "sources": [
+          "https://openlibrary.org/works/OL4300550W",
+          "https://openlibrary.org/books/OL7643779M"
+        ]
+      }
+    },
+    {
+      "title": "The Elephant in the Brain",
+      "author": "Kevin Simler & Robin Hanson",
+      "checkedAt": "2026-09-08T20:33:31.994Z",
+      "status": "matched",
+      "work": "/works/OL19728362W",
+      "edition": "/books/OL26941468M",
+      "details": {
+        "title": "The Elephant in the Brain",
+        "author": "Kevin Simler & Robin Hanson",
+        "description": "\"This book exposes our unconscious selfish motives, those we're reluctant to discuss or even think about. These motives drive our body language, laughter, and…",
+        "excerptSource": "https://openlibrary.org/works/OL19728362W",
+        "firstPublished": "2018",
+        "publisher": "Oxford University Press",
+        "released": "2018",
+        "pages": "397",
+        "categories": ["Philosophy", "Psychology"],
+        "sources": [
+          "https://openlibrary.org/works/OL19728362W",
+          "https://openlibrary.org/books/OL26941468M"
+        ]
+      }
+    },
+    {
+      "title": "The Eye of the World",
+      "author": "Robert Jordan",
+      "checkedAt": "2026-09-08T20:33:34.427Z",
+      "status": "matched",
+      "work": "/works/OL7924103W",
+      "details": {
+        "title": "The Eye of the World",
+        "author": "Robert Jordan",
+        "description": "The Wheel of Time turns and Ages come and go, leaving memories that become legend. Legend fades to myth, and even myth is long…",
+        "excerptSource": "https://openlibrary.org/works/OL7924103W",
+        "firstPublished": "1990",
+        "categories": ["Science fiction", "Fantasy"],
+        "sources": ["https://openlibrary.org/works/OL7924103W"]
+      }
+    },
+    {
+      "title": "The Fellowship of the Ring",
+      "author": "J.R.R. Tolkien",
+      "checkedAt": "2026-09-08T20:33:35.302Z",
+      "status": "matched",
+      "work": "/works/OL27513W",
+      "edition": "/books/OL51708686M",
+      "details": {
+        "title": "The Fellowship of the Ring",
+        "author": "J.R.R. Tolkien",
+        "description": "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them. “A…",
+        "excerptSource": "https://openlibrary.org/works/OL27513W",
+        "firstPublished": "1954",
+        "publisher": "George Allen & Unwin Ltd",
+        "released": "1963",
+        "pages": "423",
+        "categories": ["Fantasy", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL27513W",
+          "https://openlibrary.org/books/OL51708686M"
+        ]
+      },
+      "subjects": [
+        "Elves",
+        "Dwarves",
+        "evil",
+        "fear",
+        "hope",
+        "young adult fiction",
+        "Ficción",
+        "Ficción fantástica inglesa",
+        "Fantastic fiction",
+        "The Lord of the Rings",
+        "English Fantasy fiction",
+        "Open Library Staff Picks",
+        "Fiction",
+        "Fantasy",
+        "Fairy tales",
+        "Adventure stories",
+        "Fantasy fiction",
+        "Middle Earth (Imaginary place)",
+        "History and criticism",
+        "FICTION / Fantasy / Epic",
+        "Adventure fiction",
+        "English fiction",
+        "Translations in Chinese",
+        "Fiction, fantasy, epic",
+        "Middle earth (imaginary place), fiction",
+        "Baggins, frodo (fictitious character), fiction",
+        "Gandalf (fictitious character), fiction",
+        "British and irish fiction (fictional works by one author)",
+        "Baggins, bilbo (fictitious character), fiction",
+        "Fiction, media tie-in",
+        "Children's fiction",
+        "English literature",
+        "Roman",
+        "Français (langue)",
+        "Lectures et morceaux choisis",
+        "Vol. 1.",
+        "Lord of the rings (Tolkien, J.R.R.)",
+        "Gandolf (Fictitious character)",
+        "Terre du Milieu (Lieu imaginaire)",
+        "Romans, nouvelles",
+        "Frodo Baggins (Fictitious character)",
+        "Fiction, fantasy, general",
+        "Translations into Yiddish"
+      ]
+    },
+    {
+      "title": "The Flight of the Eisenstein",
+      "author": "James Swallow",
+      "checkedAt": "2026-09-08T20:33:35.670Z",
+      "status": "matched",
+      "work": "/works/OL8933992W",
+      "edition": "/books/OL8953859M",
+      "details": {
+        "title": "The Flight of the Eisenstein",
+        "author": "James Swallow",
+        "firstPublished": "2007",
+        "publisher": "Games Workshop",
+        "released": "March 27, 2007",
+        "pages": "416",
+        "categories": ["Science fiction"],
+        "sources": [
+          "https://openlibrary.org/works/OL8933992W",
+          "https://openlibrary.org/books/OL8953859M"
+        ]
+      }
+    },
+    {
+      "title": "The Genius of Dogs",
+      "author": "Brian Hare & Vanessa Woods",
+      "checkedAt": "2026-09-08T20:35:59.482Z",
+      "status": "error",
+      "reason": "The operation timed out."
+    },
+    {
+      "title": "The Gulag Archipelago",
+      "author": "Aleksandr Solzhenitsyn",
+      "checkedAt": "2026-09-08T20:35:51.580Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Highly Sensitive Person",
+      "author": "Elaine N. Aron",
+      "checkedAt": "2026-09-08T20:33:39.930Z",
+      "status": "matched",
+      "work": "/works/OL856010W",
+      "edition": "/books/OL656843M",
+      "details": {
+        "title": "The Highly Sensitive Person",
+        "author": "Elaine N. Aron",
+        "description": "A national best-seller in hardcover, this book identifies and defines a new personality type -- and shows readers how to overcome its limitations and…",
+        "excerptSource": "https://openlibrary.org/works/OL856010W",
+        "firstPublished": "1996",
+        "publisher": "Broadway Books",
+        "released": "1997",
+        "pages": "251",
+        "categories": ["Psychology", "Business", "Personal growth"],
+        "sources": [
+          "https://openlibrary.org/works/OL856010W",
+          "https://openlibrary.org/books/OL656843M"
+        ]
+      }
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "checkedAt": "2026-09-08T20:33:41.280Z",
+      "status": "matched",
+      "work": "/works/OL27482W",
+      "edition": "/books/OL51711263M",
+      "details": {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "description": "The Hobbit is a tale of high adventure, undertaken by a company of dwarves in search of dragon-guarded gold. A reluctant partner in this…",
+        "excerptSource": "https://openlibrary.org/works/OL27482W",
+        "firstPublished": "1937",
+        "publisher": "Ballantine Books",
+        "released": "1967-08",
+        "pages": "287",
+        "categories": ["Science fiction", "Fantasy"],
+        "sources": [
+          "https://openlibrary.org/works/OL27482W",
+          "https://openlibrary.org/books/OL51711263M"
+        ]
+      },
+      "subjects": [
+        "Fantasy",
+        "Arkenstone",
+        "Battle of Five Armies",
+        "invisibility",
+        "thrushes",
+        "eagles",
+        "hobbits",
+        "wizards",
+        "dragons",
+        "dwarves",
+        "elves",
+        "men",
+        "trolls",
+        "goblins",
+        "giant spiders",
+        "the one ring",
+        "juvenile fantasy",
+        "YOUNG ADULT FICTION",
+        "Fantasy fiction",
+        "Juvenile fiction",
+        "Fiction",
+        "Classics",
+        "General",
+        "Media Tie-In",
+        "children's books",
+        "juvenile works",
+        "Teen & Young Adult literature",
+        "English Fantasy fiction",
+        "Specimens",
+        "Juvenile Fantasy fiction",
+        "Toy and movable books",
+        "Magic in fiction",
+        "Open Library Staff Picks",
+        "juvenile literature",
+        "Pictorial works",
+        "Magic",
+        "Quests (Expeditions)",
+        "Graphic novels",
+        "Dragons in fiction",
+        "Children's stories",
+        "Ficción fantástica inglesa",
+        "Fantasy in fiction",
+        "Translations into Russian",
+        "Ficción",
+        "Middle Earth (Imaginary place)",
+        "Tierra Media (Lugar imaginario)",
+        "Bilbo Baggins (Fictitious character)",
+        "Dwarfs",
+        "Comic books, strips",
+        "Reading Level-Grade 11",
+        "Reading Level-Grade 12",
+        "British and irish fiction (fictional works by one author)",
+        "Fiction, fantasy, general",
+        "Middle earth (imaginary place), fiction",
+        "Comics & graphic novels, fantasy",
+        "Science fiction, fantasy, horror",
+        "Child and youth fiction",
+        "Gollum (Fictitious character)",
+        "Hobbits (Fictitious characters)",
+        "Baggins, bilbo (fictitious character), fiction",
+        "Children's fiction",
+        "Gandalf (fictitious character), fiction",
+        "Baggins, frodo (fictitious character), fiction",
+        "Characters",
+        "Characters and characteristics",
+        "Hobbit, an unexpected journey (Motion picture)",
+        "Hobbit (Tolkien, J.R.R.)",
+        "YOUNG ADULT FICTION / Classics",
+        "YOUNG ADULT FICTION / Fantasy / General",
+        "YOUNG ADULT FICTION / Media Tie-In",
+        "Motion pictures",
+        "Fiction, fantasy, epic",
+        "English literature",
+        "Fiction, media tie-in",
+        "Courage",
+        "Literatura angielska dla młodzieży",
+        "Tłumaczenia polskie",
+        "Novela Inglesa",
+        "Spanish language materials",
+        "Untranslated",
+        "Terre du Milieu (Lieu imaginaire)",
+        "Romans, nouvelles",
+        "Hobbits (Personnages fictifs)",
+        "Novela fantástica",
+        "Magiciens",
+        "Schultheater",
+        "Fiction, fairy tales, folk tales, legends & mythology",
+        "Fiction, fantasy, dragons & mythical creatures",
+        "Comics & graphic novels, fantasy, general",
+        "Good and evil",
+        "English Fantasy literature",
+        "English fiction",
+        "Adventure stories"
+      ]
+    },
+    {
+      "title": "The Immortality Key",
+      "author": "Brian C. Muraresku & Graham Hancock",
+      "checkedAt": "2026-09-08T20:35:53.062Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Inventions That Will Transform Our Lives",
+      "author": "Michio Kaku",
+      "checkedAt": "2026-09-08T20:33:44.015Z",
+      "status": "matched",
+      "work": "/works/OL15688567W",
+      "details": {
+        "title": "The Inventions That Will Transform Our Lives",
+        "author": "Michio Kaku",
+        "firstPublished": "2011",
+        "categories": ["History", "Science"],
+        "sources": ["https://openlibrary.org/works/OL15688567W"]
+      }
+    },
+    {
+      "title": "The Lean Startup",
+      "author": "Eric Ries",
+      "checkedAt": "2026-09-08T20:33:44.779Z",
+      "status": "matched",
+      "work": "/works/OL16086010W",
+      "edition": "/books/OL24982481M",
+      "details": {
+        "title": "The Lean Startup",
+        "author": "Eric Ries",
+        "description": "\"Most startups are built to fail. But those failures, according to entrepreneur Eric Ries, are preventable. Startups don't fail because of bad execution, or…",
+        "excerptSource": "https://openlibrary.org/works/OL16086010W",
+        "firstPublished": "2011",
+        "publisher": "Crown Business",
+        "released": "September 13, 2011",
+        "pages": "336",
+        "categories": ["History", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL16086010W",
+          "https://openlibrary.org/books/OL24982481M"
+        ]
+      }
+    },
+    {
+      "title": "The Madness of Crowds",
+      "author": "Douglas Murray",
+      "checkedAt": "2026-09-08T20:33:46.127Z",
+      "status": "matched",
+      "work": "/works/OL20745822W",
+      "edition": "/books/OL28060335M",
+      "details": {
+        "title": "The Madness of Crowds",
+        "author": "Douglas Murray",
+        "firstPublished": "2019",
+        "publisher": "Bloomsbury Continuum",
+        "released": "Sep 17, 2019",
+        "pages": "288",
+        "categories": ["Philosophy", "Politics"],
+        "sources": [
+          "https://openlibrary.org/works/OL20745822W",
+          "https://openlibrary.org/books/OL28060335M"
+        ]
+      }
+    },
+    {
+      "title": "The Moon is a Harsh Mistress",
+      "author": "Robert A. Heinlein",
+      "checkedAt": "2026-09-08T20:33:47.166Z",
+      "status": "matched",
+      "work": "/works/OL59704W",
+      "edition": "/books/OL28265289M",
+      "details": {
+        "title": "The Moon is a Harsh Mistress",
+        "author": "Robert A. Heinlein",
+        "description": "It is the late 21st Century and the Moon has been colonized -- as a giant, open, prison. Every aspect of life is overseen…",
+        "excerptSource": "https://openlibrary.org/works/OL59704W",
+        "firstPublished": "1965",
+        "publisher": "G. P. Putnam's Sons",
+        "released": "1966",
+        "pages": "383",
+        "categories": ["Science fiction", "History", "Technology"],
+        "sources": [
+          "https://openlibrary.org/works/OL59704W",
+          "https://openlibrary.org/books/OL28265289M"
+        ]
+      }
+    },
+    {
+      "title": "The Moon",
+      "author": "Oliver Morton",
+      "checkedAt": "2026-09-08T20:33:49.819Z",
+      "status": "matched",
+      "work": "/works/OL20670243W",
+      "edition": "/books/OL27950659M",
+      "details": {
+        "title": "The Moon",
+        "author": "Oliver Morton",
+        "firstPublished": "2019",
+        "publisher": "The Economist",
+        "released": "Jun 04, 2019",
+        "pages": "352",
+        "sources": [
+          "https://openlibrary.org/works/OL20670243W",
+          "https://openlibrary.org/books/OL27950659M"
+        ]
+      }
+    },
+    {
+      "title": "The New Encyclopedia of Modern Bodybuilding",
+      "author": "Arnold Schwarzenegger",
+      "checkedAt": "2026-09-08T20:33:49.991Z",
+      "status": "matched",
+      "work": "/works/OL893218W",
+      "edition": "/books/OL118233M",
+      "details": {
+        "title": "The New Encyclopedia of Modern Bodybuilding",
+        "author": "Arnold Schwarzenegger",
+        "description": "From elite bodybuilding competitors to gymnasts, from golfers to fitness gurus, anyone who works out with weights must own this book -- a book…",
+        "excerptSource": "https://openlibrary.org/works/OL893218W",
+        "firstPublished": "1998",
+        "publisher": "Simon & Schuster",
+        "released": "1999",
+        "pages": "800",
+        "categories": ["Health"],
+        "sources": [
+          "https://openlibrary.org/works/OL893218W",
+          "https://openlibrary.org/books/OL118233M"
+        ]
+      }
+    },
+    {
+      "title": "The Pragmatic Programmer",
+      "author": "David Thomas & Andrew Hunt",
+      "checkedAt": "2026-09-08T20:35:53.600Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Price of Time",
+      "author": "Edward Chancellor",
+      "checkedAt": "2026-09-08T20:33:53.503Z",
+      "status": "matched",
+      "work": "/works/OL29247621W",
+      "details": {
+        "title": "The Price of Time",
+        "author": "Edward Chancellor",
+        "firstPublished": "2023",
+        "sources": ["https://openlibrary.org/works/OL29247621W"]
+      }
+    },
+    {
+      "title": "The Problems of Philosophy",
+      "author": "Bertrand Russell",
+      "checkedAt": "2026-09-08T20:33:53.889Z",
+      "status": "matched",
+      "work": "/works/OL1088577W",
+      "details": {
+        "title": "The Problems of Philosophy",
+        "author": "Bertrand Russell",
+        "description": "In the following pages I have confined myself in the main to those problems of philosophy in regard to which I thought it possible…",
+        "excerptSource": "https://openlibrary.org/works/OL1088577W",
+        "firstPublished": "1900",
+        "categories": ["Philosophy", "Psychology", "Politics"],
+        "sources": ["https://openlibrary.org/works/OL1088577W"]
+      }
+    },
+    {
+      "title": "The Psychology of Money",
+      "author": "Morgan Housel",
+      "checkedAt": "2026-09-08T20:33:55.576Z",
+      "status": "matched",
+      "work": "/works/OL21640039W",
+      "edition": "/books/OL29412746M",
+      "details": {
+        "title": "The Psychology of Money",
+        "author": "Morgan Housel",
+        "description": "Timeless lessons on wealth, greed, and happiness doing well with money isn’t necessarily about what you know. It’s about how you behave. And behavior…",
+        "excerptSource": "https://openlibrary.org/works/OL21640039W",
+        "firstPublished": "2020",
+        "publisher": "Harriman House",
+        "released": "Sep 08, 2020",
+        "pages": "256",
+        "categories": ["Philosophy", "Psychology", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL21640039W",
+          "https://openlibrary.org/books/OL29412746M"
+        ]
+      }
+    },
+    {
+      "title": "The Return of the King",
+      "author": "J.R.R. Tolkien",
+      "checkedAt": "2026-09-08T20:33:55.729Z",
+      "status": "matched",
+      "work": "/works/OL27455W",
+      "edition": "/books/OL51708706M",
+      "details": {
+        "title": "The Return of the King",
+        "author": "J.R.R. Tolkien",
+        "description": "THE RETURN OF THE KING, which brings to a close the great epic of war and adventure begun in The Fellowship of the Ring…",
+        "excerptSource": "https://openlibrary.org/works/OL27455W",
+        "firstPublished": "1950",
+        "publisher": "Houghton Mifflin Company",
+        "released": "xxxx",
+        "pages": "416",
+        "categories": ["Fantasy"],
+        "sources": [
+          "https://openlibrary.org/works/OL27455W",
+          "https://openlibrary.org/books/OL51708706M"
+        ]
+      },
+      "subjects": [
+        "Elves",
+        "Hobbits",
+        "The Lord of the Rings",
+        "hope",
+        "fear",
+        "magic",
+        "Fiction",
+        "Fantasy",
+        "English Fantasy fiction",
+        "Juvenile fiction",
+        "Fantastic fiction",
+        "Textual Criticism",
+        "Middle Earth (Imaginary place)",
+        "Chinese language materials",
+        "Adventure",
+        "Fantasy fiction",
+        "Frodo Baggins (Fictional character)",
+        "Frodo Baggins (Fictitious character)",
+        "Fiction, fantasy, epic",
+        "Middle earth (imaginary place), fiction",
+        "Baggins, frodo (fictitious character), fiction",
+        "British and irish fiction (fictional works by one author)",
+        "Gandalf (fictitious character), fiction",
+        "English literature",
+        "Translations into French",
+        "Children's fiction",
+        "Quests (Expeditions)",
+        "Wizards",
+        "Large type books",
+        "Spanish language edition",
+        "Roman",
+        "Français (langue)",
+        "Lectures et morceaux choisis",
+        "Bolsón, Frodo (Personaje literario)",
+        "Novela",
+        "Tierra Media (Lugar imaginario)",
+        "Historia de aventuras",
+        "Novela fantástica",
+        "Literatura inglesa",
+        "Novela inglesa",
+        "Fiction, media tie-in",
+        "Fiction, fantasy, general",
+        "Śródziemie (miejsce fikcyjne)",
+        "Powieści",
+        "Hobbits (Fictitious characters)"
+      ]
+    },
+    {
+      "title": "The Ride of a Lifetime",
+      "author": "Robert Iger",
+      "checkedAt": "2026-09-08T20:33:58.523Z",
+      "status": "matched",
+      "work": "/works/OL20140592W",
+      "edition": "/books/OL27320435M",
+      "details": {
+        "title": "The Ride of a Lifetime",
+        "author": "Robert Iger",
+        "description": "Robert Iger shares the lessons he's learned while running Disney and leading its 200,000 employees, and he explores the principles that are necessary for…",
+        "excerptSource": "https://openlibrary.org/works/OL20140592W",
+        "firstPublished": "2019",
+        "publisher": "Random House",
+        "released": "2019",
+        "pages": "246",
+        "categories": ["Biography", "History", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL20140592W",
+          "https://openlibrary.org/books/OL27320435M"
+        ]
+      }
+    },
+    {
+      "title": "The Righteous Mind",
+      "author": "Jonathan Haidt",
+      "checkedAt": "2026-09-08T20:33:59.093Z",
+      "status": "matched",
+      "work": "/works/OL16568840W",
+      "details": {
+        "title": "The Righteous Mind",
+        "author": "Jonathan Haidt",
+        "description": "A groundbreaking investigation into the origins of morality, which turns out to be the basis for religion and politics. The book explains the American…",
+        "excerptSource": "https://openlibrary.org/works/OL16568840W",
+        "firstPublished": "2012",
+        "categories": ["Philosophy", "Psychology", "Politics"],
+        "sources": ["https://openlibrary.org/works/OL16568840W"]
+      }
+    },
+    {
+      "title": "The Rise and Fall of the Third Reich",
+      "author": "William L. Shirer",
+      "checkedAt": "2026-09-08T20:34:01.640Z",
+      "status": "matched",
+      "work": "/works/OL47181W",
+      "edition": "/books/OL5794925M",
+      "details": {
+        "title": "The Rise and Fall of the Third Reich",
+        "author": "William L. Shirer",
+        "description": "Since it's publication five decades ago, William L. Shirer's monumental study of Hitler's empire has been widely acclaimed as the definitive record of the…",
+        "excerptSource": "https://openlibrary.org/works/OL47181W",
+        "firstPublished": "1901",
+        "publisher": "Simon and Schuster",
+        "released": "1960",
+        "pages": "1245",
+        "categories": ["History"],
+        "sources": [
+          "https://openlibrary.org/works/OL47181W",
+          "https://openlibrary.org/books/OL5794925M"
+        ]
+      }
+    },
+    {
+      "title": "The Rise of Carry",
+      "author": "Tim Lee & Jamie Lee & Kevin Coldiron",
+      "checkedAt": "2026-09-08T20:35:53.970Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Silmarillion",
+      "author": "J.R.R. Tolkien",
+      "checkedAt": "2026-09-08T20:34:02.915Z",
+      "status": "matched",
+      "work": "/works/OL27495W",
+      "edition": "/books/OL18768117M",
+      "details": {
+        "title": "The Silmarillion",
+        "author": "J.R.R. Tolkien",
+        "description": "A number-one New York Times bestseller when it was originally published, The Silmarillion is the core of J.R.R. Tolkien's imaginative writing, a work whose…",
+        "excerptSource": "https://openlibrary.org/works/OL27495W",
+        "firstPublished": "1977",
+        "publisher": "Book Club Associates",
+        "released": "1978",
+        "pages": "414",
+        "categories": ["Fantasy"],
+        "sources": [
+          "https://openlibrary.org/works/OL27495W",
+          "https://openlibrary.org/books/OL18768117M"
+        ]
+      },
+      "subjects": [
+        "Fantasy fiction",
+        "Short stories",
+        "Middle Earth (Imaginary place)",
+        "Elves",
+        "Fiction",
+        "British and irish fiction (fictional works by one author)",
+        "Fiction, fantasy, epic",
+        "Middle earth (imaginary place), fiction",
+        "English Fantasy fiction",
+        "English literature",
+        "Engelse fiksie",
+        "fantasy",
+        "Bilbo Baggins (Fictitious character)",
+        "silmaril",
+        "Fiction, fairy tales, folk tales, legends & mythology",
+        "Fiction, fantasy, dragons & mythical creatures",
+        "Fiction, fantasy, action & adventure",
+        "English fiction"
+      ]
+    },
+    {
+      "title": "The Status Game",
+      "author": "Will Storr",
+      "checkedAt": "2026-09-08T20:34:04.172Z",
+      "status": "matched",
+      "work": "/works/OL37812846W",
+      "details": {
+        "title": "The Status Game",
+        "author": "Will Storr",
+        "firstPublished": "2021",
+        "sources": ["https://openlibrary.org/works/OL37812846W"]
+      }
+    },
+    {
+      "title": "The Subtle Art of Not Giving a F*ck",
+      "author": "Mark Manson",
+      "checkedAt": "2026-09-08T20:34:05.331Z",
+      "status": "matched",
+      "work": "/works/OL17590212W",
+      "details": {
+        "title": "The Subtle Art of Not Giving a F*ck",
+        "author": "Mark Manson",
+        "description": "In this book, blogger and former internet entrepreneur Mark Manson explains in simple, no expletives barred terms how to achieve happiness by caring more…",
+        "excerptSource": "https://openlibrary.org/works/OL17590212W",
+        "firstPublished": "2016",
+        "categories": ["History"],
+        "sources": ["https://openlibrary.org/works/OL17590212W"]
+      }
+    },
+    {
+      "title": "The Sugar Barons: Family Corruption Empire and War",
+      "author": "Matthew Parker",
+      "checkedAt": "2026-09-08T20:34:06.752Z",
+      "status": "matched",
+      "work": "/works/OL19359028W",
+      "edition": "/books/OL26815289M",
+      "details": {
+        "title": "The Sugar Barons: Family Corruption Empire and War",
+        "author": "Matthew Parker",
+        "description": "Historian Matthew Parker discusses the history behind one of the greatest power struggles of the 17th to 19th centuries as Europeans made and lost…",
+        "excerptSource": "https://openlibrary.org/works/OL19359028W",
+        "firstPublished": "2011",
+        "publisher": "Walker Books",
+        "released": "Aug 16, 2011",
+        "pages": "464",
+        "categories": ["History", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL19359028W",
+          "https://openlibrary.org/books/OL26815289M"
+        ]
+      }
+    },
+    {
+      "title": "The Technological Republic",
+      "author": "Alexander C. Karp & Nicholas W. Zamiska",
+      "checkedAt": "2026-09-08T20:35:55.287Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Three-Body Problem",
+      "author": "Cixin Liu",
+      "checkedAt": "2026-09-08T20:35:56.108Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Tipping Point",
+      "author": "Malcolm Gladwell",
+      "checkedAt": "2026-09-08T20:34:10.423Z",
+      "status": "matched",
+      "work": "/works/OL5749848W",
+      "edition": "/books/OL9591816M",
+      "details": {
+        "title": "The Tipping Point",
+        "author": "Malcolm Gladwell",
+        "description": "\"New Yorker writer Malcolm Gladwell looks at why major changes in our society so often happen suddenly and unexpectedly. Ideas, behavior, messages, and products…",
+        "excerptSource": "https://openlibrary.org/works/OL5749848W",
+        "firstPublished": "2000",
+        "publisher": "Little, Brown and Company",
+        "released": "February 2000",
+        "pages": "288",
+        "categories": ["Psychology", "Economics", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL5749848W",
+          "https://openlibrary.org/books/OL9591816M"
+        ]
+      }
+    },
+    {
+      "title": "The Trap",
+      "author": "James Goldsmith",
+      "checkedAt": "2026-09-08T20:34:10.484Z",
+      "status": "matched",
+      "work": "/works/OL2350186W",
+      "details": {
+        "title": "The Trap",
+        "author": "James Goldsmith",
+        "description": "Essays on the major social, economic, and environmental issues threatening our society. The answers to these questions, and the solutions proposed, will determine the…",
+        "excerptSource": "https://openlibrary.org/works/OL2350186W",
+        "firstPublished": "1994",
+        "categories": ["Economics"],
+        "sources": ["https://openlibrary.org/works/OL2350186W"]
+      }
+    },
+    {
+      "title": "The Two Towers",
+      "author": "J.R.R. Tolkien",
+      "checkedAt": "2026-09-08T20:34:12.862Z",
+      "status": "matched",
+      "work": "/works/OL27479W",
+      "edition": "/books/OL51711454M",
+      "details": {
+        "title": "The Two Towers",
+        "author": "J.R.R. Tolkien",
+        "description": "The Lord of the Rings, J.R.R. Tolkien's three-volume epic, is set in the imaginary world of Middle-earth -- home to many strange beings, and…",
+        "excerptSource": "https://openlibrary.org/works/OL27479W",
+        "firstPublished": "1954",
+        "publisher": "Houghton Mifflin Company",
+        "released": "xxxx",
+        "pages": "352",
+        "categories": ["Fantasy", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL27479W",
+          "https://openlibrary.org/books/OL51711454M"
+        ]
+      },
+      "subjects": [
+        "Ents",
+        "Orcs",
+        "hobbits",
+        "magic",
+        "Ficción fantástica inglesa",
+        "Ficción",
+        "translations into Spanish",
+        "readers for new literates",
+        "The Lord of the Rings",
+        "English Fantasy fiction",
+        "Open Library Staff Picks",
+        "Fiction",
+        "Fantasy",
+        "Popular Carousel",
+        "Middle Earth (Imaginary place)",
+        "Tierra Media (Lugar imaginario)",
+        "Baggins, Frodo (Personaje literario)",
+        "Chinese language materials",
+        "Translations into Chinese",
+        "English fiction",
+        "Frodo Baggins (Fictitious character)",
+        "Fantasy fiction",
+        "Adventure fiction",
+        "Fiction, fantasy, epic",
+        "Middle earth (imaginary place), fiction",
+        "Baggins, frodo (fictitious character), fiction",
+        "Gandalf (fictitious character), fiction",
+        "Fantasmes",
+        "Roman fantastique",
+        "Spanish: Adult Nonfiction",
+        "Gondolf (Fictitious character)",
+        "Epic fiction",
+        "FICTION / Fantasy / Epic",
+        "Fantastic fiction",
+        "Fiction, fantasy, general",
+        "Science-fiction anglaise",
+        "English Fantastic fiction",
+        "Translations into French",
+        "French language materials",
+        "Terre du Milieu (Lieu imaginaire)",
+        "Romans, nouvelles",
+        "Hobbits (Fictitious characters)",
+        "Hobbits (Personnages fictifs)",
+        "Littérature britannique",
+        "Fantasy anglaise",
+        "Baggins, Frodo (Personaje ficticio)",
+        "Novela",
+        "Geographical myths",
+        "Children's fiction",
+        "Baggins, bilbo (fictitious character), fiction",
+        "Lord of the rings (Tolkien, J.R.R.)",
+        "Gandalf (Fictitious character)",
+        "English literature",
+        "Quests (Expeditions)",
+        "English Fantasy literature",
+        "Mythology",
+        "Wizards"
+      ]
+    },
+    {
+      "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
+      "author": "Adam Tooze",
+      "checkedAt": "2026-09-08T20:34:13.614Z",
+      "status": "matched",
+      "work": "/works/OL8254841W",
+      "edition": "/books/OL7641441M",
+      "details": {
+        "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
+        "author": "Adam Tooze",
+        "description": "The Wages of Destruction is a non-fiction book detailing the economic history of Nazi Germany. Written by Adam Tooze, it was first published by…",
+        "excerptSource": "https://openlibrary.org/works/OL8254841W",
+        "firstPublished": "2006",
+        "publisher": "Viking Adult",
+        "released": "March 22, 2007",
+        "pages": "832",
+        "categories": ["History", "Politics", "Economics"],
+        "sources": [
+          "https://openlibrary.org/works/OL8254841W",
+          "https://openlibrary.org/books/OL7641441M"
+        ]
+      }
+    },
+    {
+      "title": "The Wandering Earth",
+      "author": "Cixin Liu",
+      "checkedAt": "2026-09-08T20:35:57.035Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Way of Kings",
+      "author": "Brandon Sanderson",
+      "checkedAt": "2026-09-08T20:34:17.111Z",
+      "status": "matched",
+      "work": "/works/OL15358691W",
+      "edition": "/books/OL24345134M",
+      "details": {
+        "title": "The Way of Kings",
+        "author": "Brandon Sanderson",
+        "description": "Widely acclaimed for his work completing Robert Jordan’s Wheel of Time saga, Brandon Sanderson now begins a grand cycle of his own, one every…",
+        "excerptSource": "https://openlibrary.org/works/OL15358691W",
+        "firstPublished": "2010",
+        "publisher": "Tor Fantasy",
+        "released": "2010",
+        "pages": "1008",
+        "categories": ["Fantasy"],
+        "sources": [
+          "https://openlibrary.org/works/OL15358691W",
+          "https://openlibrary.org/books/OL24345134M"
+        ]
+      }
+    },
+    {
+      "title": "The Wealth of Nations",
+      "author": "Adam Smith",
+      "checkedAt": "2026-09-08T20:34:17.284Z",
+      "status": "matched",
+      "work": "/works/OL76827W",
+      "edition": "/books/OL38580611M",
+      "details": {
+        "title": "The Wealth of Nations",
+        "author": "Adam Smith",
+        "description": "Adam Smith's The Wealth of Nations was recognized as a landmark of human thought upon its publication in 1776. As the first scientific argument…",
+        "excerptSource": "https://openlibrary.org/works/OL76827W",
+        "firstPublished": "1776",
+        "publisher": "Thrifty Books",
+        "released": "2009",
+        "pages": "692",
+        "categories": ["Philosophy", "History", "Politics"],
+        "sources": [
+          "https://openlibrary.org/works/OL76827W",
+          "https://openlibrary.org/books/OL38580611M"
+        ]
+      }
+    },
+    {
+      "title": "The Wim Hof Method",
+      "author": "Wim Hof",
+      "checkedAt": "2026-09-08T20:34:19.802Z",
+      "status": "matched",
+      "work": "/works/OL21648378W",
+      "details": {
+        "title": "The Wim Hof Method",
+        "author": "Wim Hof",
+        "firstPublished": "2020",
+        "categories": ["Psychology"],
+        "sources": ["https://openlibrary.org/works/OL21648378W"]
+      }
+    },
+    {
+      "title": "The World: A Family History",
+      "author": "Simon Sebag Montefiore",
+      "checkedAt": "2026-09-08T20:35:57.399Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The X-Files: Cold Cases",
+      "author": "Joe Harris & Chris Carter & Dirk Maggs",
+      "checkedAt": "2026-09-08T20:35:58.416Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Thinking Fast and Slow",
+      "author": "Daniel Kahneman",
+      "checkedAt": "2026-09-08T20:34:21.989Z",
+      "status": "matched",
+      "work": "/works/OL15992072W",
+      "edition": "/books/OL38090969M",
+      "details": {
+        "title": "Thinking Fast and Slow",
+        "author": "Daniel Kahneman",
+        "description": "In his mega bestseller, Thinking, Fast and Slow, Daniel Kahneman, world-famous psychologist and winner of the Nobel Prize in Economics, takes us on a…",
+        "excerptSource": "https://openlibrary.org/works/OL15992072W",
+        "firstPublished": "2011",
+        "publisher": "Farrar, Straus & Giroux",
+        "released": "2013",
+        "pages": "230",
+        "categories": ["Psychology", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL15992072W",
+          "https://openlibrary.org/books/OL38090969M"
+        ]
+      }
+    },
+    {
+      "title": "Time Out Country Walks: 52 Walks Near London",
+      "author": "Peter Conway & David Cooke",
+      "checkedAt": "2026-09-08T20:35:59.179Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Total Recall",
+      "author": "Arnold Schwarzenegger",
+      "checkedAt": "2026-09-08T20:34:23.512Z",
+      "status": "matched",
+      "work": "/works/OL19907427W",
+      "edition": "/books/OL27092413M",
+      "details": {
+        "title": "Total Recall",
+        "author": "Arnold Schwarzenegger",
+        "description": "Born in the small city of Thai, Austria in 1947, Arnold Schwarzenegger moved to Los Angeles at the age of twenty-one. Within ten years…",
+        "excerptSource": "https://openlibrary.org/works/OL19907427W",
+        "firstPublished": "2001",
+        "publisher": "Presses de la Cité",
+        "released": "2012",
+        "pages": "656",
+        "categories": ["Biography", "Politics"],
+        "sources": [
+          "https://openlibrary.org/works/OL19907427W",
+          "https://openlibrary.org/books/OL27092413M"
+        ]
+      }
+    },
+    {
+      "title": "Tryptamine Palace",
+      "author": "James Oroc",
+      "checkedAt": "2026-09-08T20:34:24.512Z",
+      "status": "matched",
+      "work": "/works/OL13765085W",
+      "details": {
+        "title": "Tryptamine Palace",
+        "author": "James Oroc",
+        "description": "\"A journey from Burning Man to the Akashic Field that suggests how 5-MeO-DMT triggers the human capacity for higher knowledge through direct contact with…",
+        "excerptSource": "https://openlibrary.org/works/OL13765085W",
+        "firstPublished": "2009",
+        "sources": ["https://openlibrary.org/works/OL13765085W"]
+      }
+    },
+    {
+      "title": "Unbreakable",
+      "author": "Ronnie O'Sullivan",
+      "checkedAt": "2026-09-08T20:34:26.139Z",
+      "status": "matched",
+      "work": "/works/OL34336388W",
+      "details": {
+        "title": "Unbreakable",
+        "author": "Ronnie O'Sullivan",
+        "firstPublished": "2023",
+        "sources": ["https://openlibrary.org/works/OL34336388W"]
+      }
+    },
+    {
+      "title": "Unfinished Tales",
+      "author": "J.R.R. Tolkien",
+      "checkedAt": "2026-09-08T20:34:26.733Z",
+      "status": "matched",
+      "work": "/works/OL14926099W",
+      "details": {
+        "title": "Unfinished Tales",
+        "author": "J.R.R. Tolkien",
+        "firstPublished": "2003",
+        "categories": ["Fantasy"],
+        "sources": ["https://openlibrary.org/works/OL14926099W"]
+      }
+    },
+    {
+      "title": "Unknown Market Wizards",
+      "author": "Jack D. Schwager",
+      "checkedAt": "2026-09-08T20:34:28.207Z",
+      "status": "matched",
+      "work": "/works/OL22600365W",
+      "edition": "/books/OL30627843M",
+      "details": {
+        "title": "Unknown Market Wizards",
+        "author": "Jack D. Schwager",
+        "firstPublished": "2020",
+        "publisher": "Harriman House",
+        "released": "Nov 03, 2020",
+        "categories": ["Finance"],
+        "sources": [
+          "https://openlibrary.org/works/OL22600365W",
+          "https://openlibrary.org/books/OL30627843M"
+        ]
+      }
+    },
+    {
+      "title": "Unsettled?",
+      "author": "Steven E. Koonin",
+      "checkedAt": "2026-09-08T20:34:29.494Z",
+      "status": "matched",
+      "work": "/works/OL26040240W",
+      "edition": "/books/OL35144605M",
+      "details": {
+        "title": "Unsettled?",
+        "author": "Steven E. Koonin",
+        "description": "\"Surging sea levels are inundating the coasts.\" \"Hurricanes and tornadoes are becoming fiercer and more frequent.\" \"Climate change will be an economic disaster.\" You've…",
+        "excerptSource": "https://openlibrary.org/works/OL26040240W",
+        "firstPublished": "2021",
+        "publisher": "BenBella Books",
+        "released": "April 27, 2021",
+        "pages": "320",
+        "categories": ["Mathematics", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL26040240W",
+          "https://openlibrary.org/books/OL35144605M"
+        ]
+      },
+      "subjects": [
+        "Rivers in Earth Science",
+        "Weather",
+        "Climatology",
+        "Science & Technology Public Policy",
+        "Atmospheric Sciences",
+        "Climate Change",
+        "Popular works",
+        "Statistics",
+        "Interpretation",
+        "Climatic changes",
+        "Global warming"
+      ]
+    },
+    {
+      "title": "What Would Arnie Do?",
+      "author": "Pop Press",
+      "checkedAt": "2026-09-08T20:35:59.482Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Where Is My Flying Car?",
+      "author": "J. Storrs Hall",
+      "checkedAt": "2026-09-08T20:34:32.441Z",
+      "status": "matched",
+      "work": "/works/OL25190572W",
+      "details": {
+        "title": "Where Is My Flying Car?",
+        "author": "J. Storrs Hall",
+        "description": "Back in the 60s we were all sure there would be flying cars in our future. Were the futurists and SF writers of the…",
+        "excerptSource": "https://openlibrary.org/works/OL25190572W",
+        "firstPublished": "2018",
+        "sources": ["https://openlibrary.org/works/OL25190572W"]
+      }
+    },
+    {
+      "title": "White Heat 25",
+      "author": "Marco Pierre White",
+      "checkedAt": "2026-09-08T20:36:00.114Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Why We Sleep",
+      "author": "Matthew Walker",
+      "checkedAt": "2026-09-08T20:34:34.311Z",
+      "status": "matched",
+      "work": "/works/OL20168133W",
+      "edition": "/books/OL27350689M",
+      "details": {
+        "title": "Why We Sleep",
+        "author": "Matthew Walker",
+        "description": "With two appearances on CBS This Morning and Fresh Air's most popular interview of 2017, Matthew Walker has made abundantly clear that sleep is…",
+        "excerptSource": "https://openlibrary.org/works/OL20168133W",
+        "firstPublished": "2017",
+        "publisher": "Scribner",
+        "released": "Jun 19, 2018",
+        "pages": "368",
+        "categories": ["Psychology", "Science", "Health"],
+        "sources": [
+          "https://openlibrary.org/works/OL20168133W",
+          "https://openlibrary.org/books/OL27350689M"
+        ]
+      }
+    },
+    {
+      "title": "Words of Radiance",
+      "author": "Brandon Sanderson",
+      "checkedAt": "2026-09-08T20:34:35.151Z",
+      "status": "matched",
+      "work": "/works/OL16813053W",
+      "edition": "/books/OL25438720M",
+      "details": {
+        "title": "Words of Radiance",
+        "author": "Brandon Sanderson",
+        "description": "The eagerly awaited sequel to the New York Times bestselling The Way of Kings. Six years ago, the Assassin in White, a hireling of…",
+        "excerptSource": "https://openlibrary.org/works/OL16813053W",
+        "firstPublished": "2012",
+        "publisher": "Tor Fantasy",
+        "released": "2014",
+        "pages": "1087",
+        "categories": ["Fantasy"],
+        "sources": [
+          "https://openlibrary.org/works/OL16813053W",
+          "https://openlibrary.org/books/OL25438720M"
+        ]
+      }
+    }
+  ]
+}

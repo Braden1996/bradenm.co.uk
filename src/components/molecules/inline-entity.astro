@@ -1,0 +1,199 @@
+---
+import IconicIcon from "../atoms/iconic-icon.astro";
+
+interface Props {
+  /** Career entry this name discloses; also the no-JS hash target (#<cardId>). */
+  cardId?: string;
+  external?: boolean;
+  href?: string;
+  label: string;
+  /** Popover this entity opens; href stays the real destination. */
+  popoverId?: string;
+  /** The painted underline — an image URL (a data URI from the build's bake). */
+  stroke?: string | undefined;
+  /** Punctuation set immediately after the link, outside the stroke. */
+  suffix?: string | undefined;
+}
+
+const { cardId, external = false, href, label, popoverId, stroke, suffix } = Astro.props;
+const controlledId = popoverId ?? cardId;
+
+if (cardId && popoverId) {
+  throw new Error(`inline-entity ${label} cannot control two disclosures`);
+}
+
+if (!href && !controlledId) {
+  throw new Error(`inline-entity ${label} needs an href or a disclosure`);
+}
+
+if (stroke?.includes('"')) {
+  throw new Error(`inline-entity ${label} stroke must be a plain URL (no quotes)`);
+}
+---
+
+{
+  /* A name in the line, not a sticker on it: the entity adds no padding of its
+    own, so the word space before it is the paragraph's own and a following
+    comma sits flush. inline-flex is deliberate — it swallows the template's
+    whitespace text nodes that a plain inline would paint as stray spaces before
+    punctuation. The suffix rides inside the no-wrap box (outside the painted
+    label) so a line can never break between a name and its comma. The stroke
+    is set as a custom property on this root so the label's style can read it. */
+}
+<a
+  class:list={["inline-entity", stroke && "inline-entity--stroked"]}
+  href={href ?? `#${controlledId}`}
+  aria-label={external ? `${label} (opens in a new tab)` : undefined}
+  aria-controls={controlledId}
+  aria-expanded={controlledId ? "false" : undefined}
+  aria-haspopup={popoverId ? "dialog" : undefined}
+  data-inline-entity
+  data-career-entity={cardId ? "" : undefined}
+  data-inline-popover-trigger={popoverId ? "" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  target={external ? "_blank" : undefined}
+  style={stroke ? `--entity-stroke:url("${stroke}")` : undefined}
+>
+  <span class="inline-entity__label">{label}</span>
+  {
+    external && (
+      <span class="inline-entity__end" aria-hidden="true">
+        <IconicIcon name="external" />
+      </span>
+    )
+  }
+  {suffix && <span class="inline-entity__suffix">{suffix}</span>}
+</a>
+
+<style>
+  .inline-entity {
+    display: inline-flex;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    vertical-align: baseline;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Without a painted stroke: a pen is on or off, so the underline snaps rather
+     than fades. It is a proper underline, not a rule floated under the word —
+     a hairline tucked just under the baseline, where it sits with the letters
+     and `skip-ink` carves round the descenders. Light ink: it annotates the
+     name without underscoring it. */
+  .inline-entity__label {
+    text-decoration-line: underline;
+    text-decoration-thickness: max(1px, 0.05em);
+    text-decoration-color: transparent;
+    text-underline-offset: 0.08em;
+    text-decoration-skip-ink: auto;
+  }
+
+  .inline-entity:is(:hover, :focus-visible, [data-state="open"]) .inline-entity__label {
+    text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  }
+
+  /* With a painted stroke: the bake is painted UNDER the glyphs,
+     so descenders print over the paint the way the portrait's ink prints over
+     its blocks. Newsreader's descent is 0.165em, so the content box ends
+     0.165em under the baseline; 0.05em of padding takes the painting area to
+     0.215em, and a 0.34em box pinned to the bottom puts the stroke's core a few
+     hundredths of an em below the baseline. Hand strokes overshoot the word,
+     so the label grows 0.08em each side and gives it back as margin — net
+     zero layout. */
+  .inline-entity--stroked .inline-entity__label {
+    position: relative;
+    isolation: isolate;
+    padding-block-end: 0.05em;
+    padding-inline: 0.08em;
+    margin-inline: -0.08em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-decoration-line: none;
+  }
+
+  .inline-entity--stroked .inline-entity__label::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    z-index: -1;
+    height: 0.34em;
+    background-image: var(--entity-stroke);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: var(--entity-stroke-opacity, 1);
+    pointer-events: none;
+    transition: opacity 180ms ease-out;
+  }
+
+  /* On: a second coat of the same stroke — denser where it is dense, ragged
+     where it is ragged, no shape change, and no transition (it snaps). */
+  .inline-entity--stroked:is(:hover, :focus-visible, [data-state="open"])
+    .inline-entity__label::before {
+    background-image: var(--entity-stroke), var(--entity-stroke);
+  }
+
+  .inline-entity:focus-visible {
+    outline: 1px solid var(--color-focus-ring-strong);
+    outline-offset: 2px;
+  }
+
+  /* Off-site links carry the ↗ after the name: a small glyph centred on the
+     cap band, so it reads as an annotation of the word, not a word itself. */
+  .inline-entity__end {
+    display: inline-block;
+    flex: none;
+    align-self: center;
+    width: 0.68em;
+    height: 0.68em;
+    margin-inline-start: 0.08em;
+    line-height: 0;
+    opacity: 0.85;
+  }
+
+  .inline-entity__end :global(.iconic-icon) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (forced-colors: active), print {
+    .inline-entity--stroked .inline-entity__label::before {
+      display: none;
+    }
+
+    .inline-entity__label,
+    .inline-entity--stroked .inline-entity__label {
+      padding: 0;
+      margin: 0;
+      background-image: none;
+      text-decoration-line: underline;
+      text-decoration-color: currentColor;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .inline-entity--stroked .inline-entity__label::before {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .inline-entity {
+      color: LinkText;
+    }
+
+    .inline-entity:focus-visible {
+      outline: 2px solid Highlight;
+      outline-offset: 2px;
+    }
+  }
+</style>

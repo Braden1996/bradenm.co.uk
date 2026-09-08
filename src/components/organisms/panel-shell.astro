@@ -1,78 +1,136 @@
 ---
+import type { SiteRoom } from "../lib/site-room";
 import SiteFooter from "./site-footer.astro";
 import SiteHeader from "./site-header.astro";
 
 interface Props {
-  activeTab: "about" | "timeline" | "bookshelf";
+  room: SiteRoom;
 }
 
-const { activeTab } = Astro.props;
+const { room } = Astro.props;
+const isAbout = room === "about";
 ---
 
-<div class="page-wrap">
-  <div
-    class:list={[
-      "panel-shell",
-      activeTab === "bookshelf" && "panel-shell--bookshelf",
-      activeTab === "timeline" && "panel-shell--timeline",
-    ]}
-    data-panel
-  >
-    <SiteHeader activeTab={activeTab} />
-
+<div class:list={["page-wrap", isAbout && "page-wrap--about"]} data-overlay-scroll="viewport">
+  <slot name="header" />
+  <div class:list={["panel-shell", isAbout && "panel-shell--about"]}>
+    {
+      /* The header and footer are INSIDE the body: the body is the sheet, so
+        the masthead and its rule share the sheet's rails with the content at
+        every width. The about rooms carry neither — the letter is the whole
+        sheet, with a separate letterhead that stays above the moving paper,
+        and the shell paints the sheet's foot itself. */
+    }
     <div class="panel-shell__body">
+      {!isAbout && <SiteHeader />}
+
       <main class="panel-shell__main">
         <slot />
       </main>
 
-      <SiteFooter>
-        <slot name="footer-center" />
-      </SiteFooter>
+      {!isAbout && <SiteFooter />}
     </div>
   </div>
+  <div class="paper-foot-wash" data-paper-foot-wash aria-hidden="true"></div>
+  <div class="paper-scroll-tail" data-paper-scroll-tail aria-hidden="true"></div>
 </div>
 
 <style>
   .page-wrap {
+    --panel-gutter: var(--space-24);
+    --panel-gutter-block: var(--space-16);
+    --paper-tail-height: 0px;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
     height: 100vh;
     height: 100dvh;
-    padding: 2rem 1.25rem;
     overflow: hidden;
   }
 
+  /*
+   * This is a layout shell, not a surface. The paper backdrop is the page: no
+   * second fill, outline, shadow or clipping boundary sits between it and the
+   * content. The shell only provides the shared editorial rail and viewport
+   * rhythm used by each section. The one mark it carries is the letterhead's
+   * rule under the header — a pencil line across the sheet, drawn by the
+   * header on the body's own rails, not a boundary around anything.
+   */
   .panel-shell {
-    --panel-shell-padding: 14px;
-    --site-header-avatar-size: 72px;
-    width: min(100%, 960px);
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: none;
     display: flex;
     flex-direction: column;
-    border-radius: 1.25rem;
-    border: 1px solid var(--color-border-soft);
-    background: var(--surface-panel-background);
-    box-shadow: var(--shadow-panel);
     overflow: hidden;
+    position: relative;
+    /* The separate foot layer owns this wash, including its fade on a pull. */
+    background: none;
   }
 
-  .panel-shell--bookshelf,
-  .panel-shell--timeline {
-    height: 100%;
+  .paper-foot-wash {
+    --paper-foot-height: 45px;
+    /* Keep the wash on the viewport even when the sheet is taller. It shares
+       the stretch canvas's bottom edge without changing the scroll range or
+       moving with the paper's resistance transform. */
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 2;
+    height: var(--paper-foot-height);
+    pointer-events: none;
   }
 
-  .panel-shell[data-panel-animating] {
-    will-change: height;
+  .paper-foot-wash::before,
+  .paper-foot-wash::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  /* The paint is translucent, but the edge of the paper is not. Hide the
+     passing content before it reaches the wash, with a short fade above it. */
+  .paper-foot-wash::before {
+    top: -12px;
+    background: var(--color-bg-canvas);
+    mask-image: linear-gradient(to bottom, transparent, #000 12px);
+  }
+
+  .paper-foot-wash::after {
+    background: var(--paper-wash) center bottom / 100% 100% no-repeat;
+  }
+
+  .paper-scroll-tail {
+    display: none;
+  }
+
+  @media (scripting: enabled) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+    .page-wrap {
+      --paper-tail-height: 480px;
+      overflow-y: auto;
+    }
+
+    .panel-shell {
+      flex-shrink: 0;
+    }
+
+    .paper-scroll-tail {
+      display: block;
+      flex: 0 0 var(--paper-tail-height);
+      pointer-events: none;
+      overflow-anchor: none;
+    }
   }
 
   .panel-shell__body {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
+    width: min(100%, 72rem);
+    margin-inline: auto;
     min-height: 0;
-    --panel-inline-padding: 1.5rem;
   }
 
   .panel-shell__main {
@@ -84,11 +142,41 @@ const { activeTab } = Astro.props;
 
   @media (max-width: 760px) {
     .page-wrap {
-      padding: 1rem 0.75rem;
+      --panel-gutter: var(--space-16);
+      --panel-gutter-block: var(--space-12);
+      justify-content: flex-start;
+      min-height: 100vh;
+      min-height: 100dvh;
+      height: auto;
+      overflow: visible;
     }
 
-    .panel-shell__body {
-      --panel-inline-padding: 1rem;
+    .panel-shell {
+      flex: 0 0 auto;
+      height: auto;
+      max-height: none;
+      min-height: 100dvh;
+    }
+
+    .panel-shell__body,
+    .panel-shell__main {
+      flex: 1 0 auto;
+      min-height: auto;
+    }
+
+    @media (scripting: enabled) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+      .page-wrap {
+        --paper-tail-height: 410px;
+      }
+    }
+  }
+
+  @media print {
+    .page-wrap {
+      --paper-tail-height: 0px;
+    }
+    .paper-scroll-tail {
+      display: none;
     }
   }
 </style>

@@ -1,0 +1,71 @@
+---
+import { bakeStrokeImage } from "../../../components/lib/paper-stroke-image";
+import PopoverKit from "../../../components/popover-kit/popover-kit.astro";
+import PopoverHeader from "../../../components/popover-kit/popover-header.astro";
+import PopoverBody from "../../../components/popover-kit/popover-body.astro";
+import PopoverFooter from "../../../components/popover-kit/popover-footer.astro";
+interface Props {
+  instanceId: string;
+}
+const { instanceId } = Astro.props;
+const categoryMark = await bakeStrokeImage(
+  {
+    width: 360,
+    height: 96,
+    thickness: 62,
+    scale: 2,
+    seed: 319,
+    alpha: 1,
+    load: 1.25,
+    softness: 0.3,
+    pigments: ["#25333b", "#25333b"],
+  },
+  2,
+);
+---
+
+<dialog class="book-inspector" data-book-inspector aria-labelledby={`${instanceId}-book-title`}>
+  <div class="book-inspector__canvas" data-inspector-canvas></div>
+  <div class="book-inspector__layout">
+    <div class="book-inspector__visual" data-inspect-anchor>
+      <img class="book-inspector__cover" data-inspect-cover alt="" />
+      <div
+        class="book-inspector__rotation"
+        role="group"
+        tabindex="0"
+        aria-label="Rotate book. Drag or use the arrow keys."
+        data-inspect-rotation
+      >
+      </div>
+    </div>
+    <div class="book-inspector__details-home" data-inspect-details-home>
+      <PopoverKit
+        class="book-inspector__details"
+        surface="notebook"
+        data-inspect-details
+        style={`--category-mark:url("${categoryMark}")`}
+      >
+        <PopoverHeader>
+          <div class="book-inspector__heading">
+            <h2 id={`${instanceId}-book-title`} data-inspect-title></h2>
+            <span class="book-inspector__audio" data-inspect-audio hidden>Audiobook</span>
+          </div>
+          <p class="book-inspector__author" data-inspect-author></p>
+          <ul
+            class="book-inspector__categories"
+            data-inspect-categories
+            aria-label="Categories"
+            hidden
+          >
+          </ul>
+        </PopoverHeader>
+        <PopoverBody data-inspect-extra hidden>
+          <p class="book-inspector__description" data-inspect-description hidden></p>
+        </PopoverBody>
+        <PopoverFooter data-inspect-footer hidden>
+          <dl class="book-inspector__facts" data-inspect-facts hidden></dl>
+        </PopoverFooter>
+      </PopoverKit>
+    </div>
+  </div>
+</dialog>

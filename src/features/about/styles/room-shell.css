@@ -1,0 +1,417 @@
+.about-template {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: auto;
+  min-height: 0;
+}
+
+/* The stage is the scrolling sheet. Its rooms own their content height and
+   header clearance; the fixed letterhead lives beside the moving paper. */
+.about-template__stage {
+  /* Shared paper rails. The letter adds its header clearance inside its own
+     room, so the shelf's starting position stays independent of the artwork. */
+  --about-stage-padding-top: var(--space-24);
+  /* Clear of the wash at the sheet's foot: the signature floats a hand's
+     width above it rather than sitting on it. */
+  --about-stage-padding-bottom: calc(var(--space-12) + var(--paper-wash-height, 45px));
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  height: auto;
+  min-height: 0;
+  padding: var(--about-stage-padding-top) var(--panel-gutter) var(--about-stage-padding-bottom);
+}
+
+/* Wide: the stage OFFERS the viewport's height (the intro's grid fills it
+   via min-height) but never forces it — when the letter is taller than the
+   screen leaves room for, the stage grows and the page scrolls, with the
+   foot padding intact. A fixed height here would instead let the grid
+   overflow into the padding and set the signature down on the wash. */
+@media (min-width: 1000px) {
+  .about-template__stage {
+    flex: none;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .about-template__stage[data-room="letter"] {
+    --about-stage-padding-bottom: calc(var(--space-32) + var(--paper-wash-height, 45px));
+  }
+}
+
+/* Mobile books extend the sheet; the desktop atlas occupies a fixed viewport. */
+.about-template__stage[data-room="bookshelf"] {
+  flex: 1 0 auto;
+  height: auto;
+  min-height: 0;
+}
+
+/* The active room sizes the sheet. During the scrub only, the shelf is laid
+   over the letter so its full height cannot change the transition's canvas. */
+.about-template__scene {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.about-template__room--letter {
+  /* Reserve real space below the fixed header and its fading edge. The
+     desktop intro includes this clearance in its viewport height budget. */
+  --about-letterhead-clearance: max(
+    0px,
+    var(--panel-gutter-block) + var(--about-letterhead-control-height) +
+      var(--about-header-fade-depth) - var(--about-stage-padding-top)
+  );
+  position: relative;
+  /* Above the shelf: the ink is what the reader is looking through. */
+  z-index: 1;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding-top: var(--about-letterhead-clearance);
+}
+
+.about-template__room--shelf {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  /* The shelf starts just below the fixed controls. The letter reserves its
+     deeper fade clearance separately, keeping these rails independent. */
+  padding-top: calc(
+    var(--panel-gutter-block) + var(--about-letterhead-control-height) +
+      var(--bookshelf-top-gap, var(--space-8)) - var(--about-stage-padding-top)
+  );
+}
+
+.about-template__stage[data-room="letter"] .about-template__room--shelf,
+.about-template__stage[data-room="bookshelf"] .about-template__room--letter {
+  display: none;
+}
+
+/* While the ink is coming off, both rooms are on the sheet: the letter has
+   to be, or there would be nothing to scrub, and the shelf is already under
+   it. The stage stays in the letter's room for the length of the run
+   (about-rooms) precisely so the letter goes on sizing the sheet — these
+   rules match the pair above and win on source order. */
+.about-template__stage[data-scrub] .about-template__room--letter,
+.about-template__stage[data-scrub] .about-template__room--shelf {
+  display: flex;
+}
+
+.about-template__stage[data-scrub] .about-template__room--shelf {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* Under the ink: no presses until the ink has gone, and it comes up only
+     once the letter has started to lift. The clock writes opacity directly
+     so animating the room does not recalculate styles across every book. */
+  pointer-events: none;
+  opacity: 0;
+}
+
+/*
+ * THE SCRUB. The ink of the letter room — the drawing and the writing both,
+ * masked together on one element so a single field runs across the whole
+ * sheet rather than two elements dissolving in parallel.
+ *
+ * Seven layers, read top to bottom: a ramp, the coarse field, a ramp, the
+ * mid field, a ramp, the fine field, a ramp. Each ramp keeps the ink BELOW
+ * its line, and each line sits `--drain-lead` higher than the last, so a
+ * band of the page has only the coarse holes open, the band above it has
+ * coarse AND mid, the one above that all three, and above that nothing is
+ * left. The whole stack slides down the sheet as `--drain` goes 0 → 1
+ * (about-rooms drives it, one write per frame).
+ *
+ * `add` and `intersect` and nothing else: both are commutative in alpha, so
+ * the construction cannot be broken by an engine's reading of which operand
+ * is source and which is destination — `subtract` and `exclude` are exactly
+ * where implementations and mental models diverge. No `-webkit-mask-*`
+ * either: the legacy keyword vocabulary is not this one, and a prefixed
+ * declaration would win the cascade in Chromium and composite it wrongly.
+ *
+ * The front's travel is measured to the RAMPS' FEATHERS, not to their lines.
+ * A ramp is clear above `front - k·lead - soft` and solid below
+ * `front - k·lead`, so:
+ *   at `--drain: 0` the first ramp must be solid across the sheet — its line
+ *   at or above the top edge, hence a start of -soft;
+ *   at 1 the last ramp must be clear across it — its FEATHER past the bottom,
+ *   hence an end of 1 + 3·lead + soft.
+ * The travel is the difference: 1 + 3·lead + 2·soft = 1.92 at the values
+ * below. Reading the end off the line rather than the feather leaves the
+ * bottom `soft` of the sheet still carrying `coarse ∧ mid ∧ fine` — about a
+ * fifth of its ink, which on the wide layout is exactly where the sign-off
+ * and the signature sit. RE-SOLVE THIS if either length changes.
+ */
+.about-template__room--letter {
+  --drain-lead: 22%;
+  --drain-soft: 13%;
+  --drain-front: calc((var(--drain, 0) * 1.92 - 0.13) * 100%);
+}
+
+@supports (mask-composite: intersect) {
+  .about-template__stage[data-room-transition="scrub"] .about-template__room--letter {
+    mask-image:
+      linear-gradient(
+        to bottom,
+        #0000 calc(var(--drain-front) - var(--drain-soft)),
+        #000 var(--drain-front)
+      ),
+      var(--drain-coarse),
+      linear-gradient(
+        to bottom,
+        #0000 calc(var(--drain-front) - var(--drain-lead) - var(--drain-soft)),
+        #000 calc(var(--drain-front) - var(--drain-lead))
+      ),
+      var(--drain-mid),
+      linear-gradient(
+        to bottom,
+        #0000 calc(var(--drain-front) - 2 * var(--drain-lead) - var(--drain-soft)),
+        #000 calc(var(--drain-front) - 2 * var(--drain-lead))
+      ),
+      var(--drain-fine),
+      linear-gradient(
+        to bottom,
+        #0000 calc(var(--drain-front) - 3 * var(--drain-lead) - var(--drain-soft)),
+        #000 calc(var(--drain-front) - 3 * var(--drain-lead))
+      );
+    mask-size:
+      100% 100%,
+      var(--drain-coarse-size) var(--drain-coarse-size),
+      100% 100%,
+      var(--drain-mid-size) var(--drain-mid-size),
+      100% 100%,
+      var(--drain-fine-size) var(--drain-fine-size),
+      100% 100%;
+    mask-repeat: no-repeat, repeat, no-repeat, repeat, no-repeat, repeat, no-repeat;
+    mask-composite: add, intersect, add, intersect, add, intersect, add;
+  }
+}
+
+/* No taste for motion: the rooms simply swap, with no ink coming off
+   anything. about-rooms takes the same branch and skips its clock. */
+@media (prefers-reduced-motion: reduce) {
+  .about-template__stage[data-scrub] .about-template__room--letter {
+    mask-image: none;
+  }
+
+  .about-template__stage[data-scrub] .about-template__room--shelf {
+    opacity: 1;
+  }
+}
+
+/* Outside the translated sheet, the letterhead stays on the viewport through
+   both native scrolling and the spring return. Its rails match the content. */
+.about-template__letterhead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  width: min(100%, var(--about-sheet-width));
+  min-height: calc(var(--panel-gutter-block) + var(--about-letterhead-control-height));
+  margin-inline: auto;
+  padding: var(--panel-gutter-block) var(--panel-gutter) 0;
+  pointer-events: none;
+}
+
+/* Only the passing content is softened. Keeping the veil separate from the
+   controls also lets Connect's own backdrop blur sample the page beneath it. */
+.about-template__veil {
+  position: absolute;
+  inset: 0 calc((100% - 100vw) / 2) calc(-1 * var(--about-header-fade-depth));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-template__veil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--color-bg-canvas);
+  mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - var(--about-header-fade-depth) * 1.25),
+    rgb(0 0 0 / 0.844) calc(100% - var(--about-header-fade-depth)),
+    rgb(0 0 0 / 0.5) calc(100% - var(--about-header-fade-depth) * 0.625),
+    rgb(0 0 0 / 0.156) calc(100% - var(--about-header-fade-depth) * 0.25),
+    transparent 100%
+  );
+}
+
+.about-template__veil .about-template__haze {
+  --haze-bar-size: 112px;
+  height: 100%;
+}
+
+.about-template__letterhead > .site-menu,
+.about-template__letterhead > .about-template__search {
+  position: relative;
+  z-index: 1;
+}
+
+.about-template__status {
+  position: absolute;
+  z-index: 6;
+  top: calc(100% + var(--space-8));
+  left: var(--panel-gutter);
+  max-width: calc(100% - 2 * var(--panel-gutter));
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-bg-canvas);
+  color: var(--color-text-muted);
+  font-size: var(--text-ui);
+}
+
+.about-template__status[hidden] {
+  display: none;
+}
+
+.about-template__search {
+  min-width: 0;
+  pointer-events: auto;
+}
+
+.page-wrap:has([data-about-rooms][data-room="letter"]) .about-template__search {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* One scrolling page at every width; this also keeps the server-rendered
+   career appendix reachable as a real hash target without scripting. */
+body .page-wrap.page-wrap--about {
+  --about-sheet-width: 88rem;
+  --about-header-fade-depth: var(--space-32);
+  /* Shared by the shelf clearance and header before either can paint. */
+  --about-letterhead-control-height: var(--control-lg);
+  height: 100dvh;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.page-wrap.page-wrap--about > .panel-shell.panel-shell--about {
+  flex: 0 0 auto;
+  height: auto;
+  min-height: 100dvh;
+  overflow: visible;
+}
+
+/* The body and main grow to the sheet's full height so the footer sits at
+   its foot on tall viewports and follows the letter on short ones. The
+   about sheet may run wider than the other pages: two columns want the room. */
+.panel-shell.panel-shell--about .panel-shell__body {
+  flex: 1 0 auto;
+  width: min(100%, var(--about-sheet-width));
+  min-height: auto;
+}
+
+.panel-shell.panel-shell--about .panel-shell__main {
+  flex: 1 0 auto;
+  min-height: auto;
+}
+
+@media (min-width: 761px) {
+  /* The table must keep its final clearance while the letter still owns the
+     transition's sheet height. Its local rails also size the printed atlas. */
+  .about-template__room--shelf {
+    --bookshelf-top-gap: var(--space-8);
+    --about-stage-padding-bottom: var(--space-4);
+  }
+
+  body .page-wrap.page-wrap--about:has([data-about-rooms][data-room="bookshelf"]) {
+    --paper-tail-height: 0px;
+    overflow: clip;
+    overscroll-behavior: none;
+  }
+
+  .about-template__stage[data-room="bookshelf"] {
+    --bookshelf-top-gap: var(--space-8);
+    --about-stage-padding-bottom: var(--space-4);
+  }
+}
+
+@media (max-width: 760px) {
+  /* Below the shared shell's mobile breakpoint, hand scrolling back to the
+     document instead of retaining a nested viewport-height scroller. */
+  body .page-wrap.page-wrap--about {
+    height: auto;
+    min-height: calc(100dvh + var(--paper-tail-height));
+    overflow: visible;
+  }
+
+  /* The header keeps its real, possibly wrapped height in the page's flex
+     layout. Its sticky boundary includes the tail, so even a short landscape
+     viewport keeps the controls in place throughout the full stretch. */
+  .about-template__letterhead {
+    position: sticky;
+    min-height: calc(var(--space-24) + var(--about-letterhead-control-height) + var(--space-8));
+    padding-block: var(--space-24) var(--space-8);
+    flex-wrap: wrap;
+    gap: var(--space-8) var(--space-12);
+  }
+
+  .page-wrap:has([data-about-rooms][data-room="letter"]) .about-template__search {
+    display: none;
+  }
+
+  .page-wrap.page-wrap--about > .panel-shell.panel-shell--about {
+    flex: 1 0 auto;
+    min-height: 0;
+  }
+
+  .about-template__stage {
+    padding-top: 0;
+  }
+
+  .about-template__room--letter {
+    /* The mobile header already occupies its own row above the sheet. */
+    --about-letterhead-clearance: var(--about-header-fade-depth);
+  }
+
+  .about-template__search {
+    margin-inline-start: auto;
+  }
+
+  /* In flow up there, the letterhead has already taken its own room. */
+  .about-template__room--shelf {
+    padding-top: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  .about-template__veil {
+    background: Canvas;
+    bottom: 0;
+  }
+
+  .about-template__veil::after,
+  .about-template__haze {
+    display: none;
+  }
+}
+
+@media print {
+  .about-template__letterhead {
+    position: static;
+  }
+
+  .about-template__veil {
+    display: none;
+  }
+}

@@ -1,0 +1,386 @@
+[
+  {
+    "from": 1,
+    "to": 2,
+    "baselineTemporalMAE": 0.7926,
+    "finalTemporalMAE": 1.9393,
+    "editTemporalDelta": 1.1467,
+    "cavityMagnitudeFromBaseline": 5.3476
+  },
+  {
+    "from": 2,
+    "to": 3,
+    "baselineTemporalMAE": 1.1154,
+    "finalTemporalMAE": 1.9941,
+    "editTemporalDelta": 0.8788,
+    "cavityMagnitudeFromBaseline": 6.9838
+  },
+  {
+    "from": 3,
+    "to": 4,
+    "baselineTemporalMAE": 3.3113,
+    "finalTemporalMAE": 2.3231,
+    "editTemporalDelta": 0.9882,
+    "cavityMagnitudeFromBaseline": 8.5385
+  },
+  {
+    "from": 4,
+    "to": 5,
+    "baselineTemporalMAE": 1.2257,
+    "finalTemporalMAE": 0.5458,
+    "editTemporalDelta": 0.6799,
+    "cavityMagnitudeFromBaseline": 9.9629
+  },
+  {
+    "from": 5,
+    "to": 6,
+    "baselineTemporalMAE": 0.6932,
+    "finalTemporalMAE": 0.2679,
+    "editTemporalDelta": 0.4253,
+    "cavityMagnitudeFromBaseline": 10.1664
+  },
+  {
+    "from": 6,
+    "to": 7,
+    "baselineTemporalMAE": 0.552,
+    "finalTemporalMAE": 0.1826,
+    "editTemporalDelta": 0.3694,
+    "cavityMagnitudeFromBaseline": 10.3002
+  },
+  {
+    "from": 7,
+    "to": 8,
+    "baselineTemporalMAE": 1.5005,
+    "finalTemporalMAE": 0.5206,
+    "editTemporalDelta": 0.9798,
+    "cavityMagnitudeFromBaseline": 10.4861
+  },
+  {
+    "from": 8,
+    "to": 9,
+    "baselineTemporalMAE": 7.548,
+    "finalTemporalMAE": 3.0167,
+    "editTemporalDelta": 4.5314,
+    "cavityMagnitudeFromBaseline": 10.6221
+  },
+  {
+    "from": 9,
+    "to": 10,
+    "baselineTemporalMAE": 1.3153,
+    "finalTemporalMAE": 0.4663,
+    "editTemporalDelta": 0.849,
+    "cavityMagnitudeFromBaseline": 12.462
+  },
+  {
+    "from": 10,
+    "to": 11,
+    "baselineTemporalMAE": 1.2832,
+    "finalTemporalMAE": 0.4261,
+    "editTemporalDelta": 0.8571,
+    "cavityMagnitudeFromBaseline": 12.9932
+  },
+  {
+    "from": 11,
+    "to": 12,
+    "baselineTemporalMAE": 4.4316,
+    "finalTemporalMAE": 1.8893,
+    "editTemporalDelta": 2.5423,
+    "cavityMagnitudeFromBaseline": 12.6025
+  },
+  {
+    "from": 12,
+    "to": 13,
+    "baselineTemporalMAE": 1.5844,
+    "finalTemporalMAE": 0.5185,
+    "editTemporalDelta": 1.0658,
+    "cavityMagnitudeFromBaseline": 11.6938
+  },
+  {
+    "from": 13,
+    "to": 14,
+    "baselineTemporalMAE": 0.5315,
+    "finalTemporalMAE": 0.1575,
+    "editTemporalDelta": 0.374,
+    "cavityMagnitudeFromBaseline": 11.5424
+  },
+  {
+    "from": 14,
+    "to": 15,
+    "baselineTemporalMAE": 0.784,
+    "finalTemporalMAE": 0.2503,
+    "editTemporalDelta": 0.5337,
+    "cavityMagnitudeFromBaseline": 11.4588
+  },
+  {
+    "from": 15,
+    "to": 16,
+    "baselineTemporalMAE": 1.6048,
+    "finalTemporalMAE": 0.6198,
+    "editTemporalDelta": 0.9851,
+    "cavityMagnitudeFromBaseline": 11.3452
+  },
+  {
+    "from": 16,
+    "to": 17,
+    "baselineTemporalMAE": 1.4531,
+    "finalTemporalMAE": 0.5134,
+    "editTemporalDelta": 0.9397,
+    "cavityMagnitudeFromBaseline": 11.227
+  },
+  {
+    "from": 17,
+    "to": 18,
+    "baselineTemporalMAE": 0.8982,
+    "finalTemporalMAE": 0.3017,
+    "editTemporalDelta": 0.5966,
+    "cavityMagnitudeFromBaseline": 11.2335
+  },
+  {
+    "from": 18,
+    "to": 19,
+    "baselineTemporalMAE": 0.4216,
+    "finalTemporalMAE": 0.1215,
+    "editTemporalDelta": 0.3001,
+    "cavityMagnitudeFromBaseline": 11.2054
+  },
+  {
+    "from": 19,
+    "to": 20,
+    "baselineTemporalMAE": 6.2969,
+    "finalTemporalMAE": 2.3816,
+    "editTemporalDelta": 3.9153,
+    "cavityMagnitudeFromBaseline": 11.285
+  },
+  {
+    "from": 20,
+    "to": 21,
+    "baselineTemporalMAE": 3.1076,
+    "finalTemporalMAE": 1.2515,
+    "editTemporalDelta": 1.856,
+    "cavityMagnitudeFromBaseline": 11.4237
+  },
+  {
+    "from": 21,
+    "to": 22,
+    "baselineTemporalMAE": 6.6096,
+    "finalTemporalMAE": 2.4165,
+    "editTemporalDelta": 4.1931,
+    "cavityMagnitudeFromBaseline": 12.0416
+  },
+  {
+    "from": 22,
+    "to": 23,
+    "baselineTemporalMAE": 10.333,
+    "finalTemporalMAE": 3.6278,
+    "editTemporalDelta": 6.7052,
+    "cavityMagnitudeFromBaseline": 13.0461
+  },
+  {
+    "from": 23,
+    "to": 24,
+    "baselineTemporalMAE": 2.4202,
+    "finalTemporalMAE": 0.9628,
+    "editTemporalDelta": 1.4574,
+    "cavityMagnitudeFromBaseline": 14.8309
+  },
+  {
+    "from": 24,
+    "to": 25,
+    "baselineTemporalMAE": 11.8647,
+    "finalTemporalMAE": 4.4312,
+    "editTemporalDelta": 7.4336,
+    "cavityMagnitudeFromBaseline": 15.5939
+  },
+  {
+    "from": 25,
+    "to": 26,
+    "baselineTemporalMAE": 8.1109,
+    "finalTemporalMAE": 3.0669,
+    "editTemporalDelta": 5.044,
+    "cavityMagnitudeFromBaseline": 13.4586
+  },
+  {
+    "from": 26,
+    "to": 27,
+    "baselineTemporalMAE": 6.1337,
+    "finalTemporalMAE": 2.2788,
+    "editTemporalDelta": 3.8549,
+    "cavityMagnitudeFromBaseline": 13.147
+  },
+  {
+    "from": 27,
+    "to": 28,
+    "baselineTemporalMAE": 10.495,
+    "finalTemporalMAE": 3.7588,
+    "editTemporalDelta": 6.7362,
+    "cavityMagnitudeFromBaseline": 14.2162
+  },
+  {
+    "from": 28,
+    "to": 29,
+    "baselineTemporalMAE": 1.2724,
+    "finalTemporalMAE": 0.4339,
+    "editTemporalDelta": 0.8385,
+    "cavityMagnitudeFromBaseline": 11.5121
+  },
+  {
+    "from": 29,
+    "to": 30,
+    "baselineTemporalMAE": 3.6576,
+    "finalTemporalMAE": 1.5343,
+    "editTemporalDelta": 2.1233,
+    "cavityMagnitudeFromBaseline": 11.4463
+  },
+  {
+    "from": 30,
+    "to": 31,
+    "baselineTemporalMAE": 1.5035,
+    "finalTemporalMAE": 0.4842,
+    "editTemporalDelta": 1.0193,
+    "cavityMagnitudeFromBaseline": 11.6598
+  },
+  {
+    "from": 31,
+    "to": 32,
+    "baselineTemporalMAE": 0.5316,
+    "finalTemporalMAE": 0.1537,
+    "editTemporalDelta": 0.3779,
+    "cavityMagnitudeFromBaseline": 11.9145
+  },
+  {
+    "from": 32,
+    "to": 33,
+    "baselineTemporalMAE": 0.8145,
+    "finalTemporalMAE": 0.279,
+    "editTemporalDelta": 0.5354,
+    "cavityMagnitudeFromBaseline": 11.8279
+  },
+  {
+    "from": 33,
+    "to": 34,
+    "baselineTemporalMAE": 1.7535,
+    "finalTemporalMAE": 0.6854,
+    "editTemporalDelta": 1.0681,
+    "cavityMagnitudeFromBaseline": 11.719
+  },
+  {
+    "from": 34,
+    "to": 35,
+    "baselineTemporalMAE": 2.0231,
+    "finalTemporalMAE": 0.6994,
+    "editTemporalDelta": 1.3237,
+    "cavityMagnitudeFromBaseline": 11.5182
+  },
+  {
+    "from": 35,
+    "to": 36,
+    "baselineTemporalMAE": 0.8822,
+    "finalTemporalMAE": 0.3034,
+    "editTemporalDelta": 0.5788,
+    "cavityMagnitudeFromBaseline": 11.5567
+  },
+  {
+    "from": 36,
+    "to": 37,
+    "baselineTemporalMAE": 0.5447,
+    "finalTemporalMAE": 0.1708,
+    "editTemporalDelta": 0.3739,
+    "cavityMagnitudeFromBaseline": 11.6148
+  },
+  {
+    "from": 37,
+    "to": 38,
+    "baselineTemporalMAE": 0.7212,
+    "finalTemporalMAE": 0.3068,
+    "editTemporalDelta": 0.4144,
+    "cavityMagnitudeFromBaseline": 11.6881
+  },
+  {
+    "from": 38,
+    "to": 39,
+    "baselineTemporalMAE": 0.8577,
+    "finalTemporalMAE": 0.3945,
+    "editTemporalDelta": 0.4632,
+    "cavityMagnitudeFromBaseline": 11.6177
+  },
+  {
+    "from": 39,
+    "to": 40,
+    "baselineTemporalMAE": 3.7413,
+    "finalTemporalMAE": 1.7926,
+    "editTemporalDelta": 1.9487,
+    "cavityMagnitudeFromBaseline": 11.6543
+  },
+  {
+    "from": 40,
+    "to": 41,
+    "baselineTemporalMAE": 3.7253,
+    "finalTemporalMAE": 1.2769,
+    "editTemporalDelta": 2.4484,
+    "cavityMagnitudeFromBaseline": 12.1724
+  },
+  {
+    "from": 41,
+    "to": 42,
+    "baselineTemporalMAE": 4.7292,
+    "finalTemporalMAE": 0.7986,
+    "editTemporalDelta": 3.9306,
+    "cavityMagnitudeFromBaseline": 12.7536
+  },
+  {
+    "from": 42,
+    "to": 43,
+    "baselineTemporalMAE": 2.7643,
+    "finalTemporalMAE": 2.4786,
+    "editTemporalDelta": 0.2856,
+    "cavityMagnitudeFromBaseline": 14.809
+  },
+  {
+    "from": 43,
+    "to": 44,
+    "baselineTemporalMAE": 9.6548,
+    "finalTemporalMAE": 5.3353,
+    "editTemporalDelta": 4.3196,
+    "cavityMagnitudeFromBaseline": 14.2967
+  },
+  {
+    "from": 44,
+    "to": 45,
+    "baselineTemporalMAE": 11.6487,
+    "finalTemporalMAE": 7.2894,
+    "editTemporalDelta": 4.3593,
+    "cavityMagnitudeFromBaseline": 10.9939
+  },
+  {
+    "from": 45,
+    "to": 46,
+    "baselineTemporalMAE": 3.1226,
+    "finalTemporalMAE": 3.0918,
+    "editTemporalDelta": 0.0308,
+    "cavityMagnitudeFromBaseline": 8.1751
+  },
+  {
+    "from": 46,
+    "to": 47,
+    "baselineTemporalMAE": 1.6678,
+    "finalTemporalMAE": 1.3751,
+    "editTemporalDelta": 0.2927,
+    "cavityMagnitudeFromBaseline": 7.1284
+  },
+  {
+    "from": 47,
+    "to": 48,
+    "baselineTemporalMAE": 5.0177,
+    "finalTemporalMAE": 3.3645,
+    "editTemporalDelta": 1.6532,
+    "cavityMagnitudeFromBaseline": 6.1608
+  },
+  {
+    "from": 48,
+    "to": 1,
+    "baselineTemporalMAE": 1.6207,
+    "finalTemporalMAE": 1.0459,
+    "editTemporalDelta": 0.5748,
+    "cavityMagnitudeFromBaseline": 5.4099
+  }
+]

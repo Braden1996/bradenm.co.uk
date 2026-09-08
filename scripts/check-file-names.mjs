@@ -10,15 +10,24 @@ const allowedPaths = new Set([
   "Dockerfile",
   "README.md",
   "public/_headers",
+  "public/_redirects",
+  "touchdesigner/README.md",
 ]);
 const kebabSegmentPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+// Astro's dynamic route files name their parameter in brackets: [slug].astro, [...rest].astro.
+const routeParamPattern = /^\[(?:\.\.\.)?[a-z0-9]+(?:-[a-z0-9]+)*\]$/;
 
 function isHiddenPath(filePath) {
   return filePath.split("/").some((segment) => segment.startsWith("."));
 }
 
 function isLowerKebabFileName(fileName) {
-  return fileName.split(".").every((segment) => kebabSegmentPattern.test(segment));
+  const [stem, ...extensions] = fileName.split(".");
+
+  return (
+    (kebabSegmentPattern.test(stem) || routeParamPattern.test(stem)) &&
+    extensions.every((segment) => kebabSegmentPattern.test(segment))
+  );
 }
 
 function existsWithExactCase(filePath) {

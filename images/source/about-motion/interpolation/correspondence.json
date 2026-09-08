@@ -1,0 +1,1224 @@
+{
+  "version": 1,
+  "sourceSHA256": "ea8470d7562c2e3c4bba19d478db876b6db21152071fb4487a78f9753948dd36",
+  "supportSHA256": "73f0e6b0a8dc74978ce396a1cbf77292c0f2e4b828305e756492a5b7594d6535",
+  "opencvVersion": "4.11.0",
+  "numpyVersion": "1.26.4",
+  "flowParameters": {
+    "algorithm": "OpenCV DIS",
+    "preset": "MEDIUM",
+    "width": 600,
+    "height": 400,
+    "finestScale": 0,
+    "gradientDescentIterations": 40,
+    "patchSize": 8,
+    "patchStride": 3,
+    "variationalRefinementIterations": 10,
+    "variationalRefinementAlpha": 20.0,
+    "variationalRefinementDelta": 5.0,
+    "variationalRefinementGamma": 10.0,
+    "useMeanNormalization": true,
+    "useSpatialPropagation": true,
+    "grayscaleBeforeResize": true,
+    "resize": "INTER_AREA",
+    "threads": 1
+  },
+  "grid": [400, 207],
+  "tileGrid": [8, 6],
+  "atlasSize": [3200, 1242],
+  "frameCount": 48,
+  "fps": 12,
+  "referenceFrame": 6,
+  "pitchStagePixels": [3.6, 3.87],
+  "sourceDimensions": [1200, 800],
+  "sourceCoordinateFormula": "source=(stage-[720,400])/1.03+[590.4,400]",
+  "encoding": {
+    "channels": "opaque RGBA8",
+    "integer": "R + 256*G + 65536*B",
+    "targetCode": "integer % 131072; 0 unmatched, otherwise targetIndex+1",
+    "incomingMatched": "floor(integer / 131072) % 2",
+    "targetIndex": "targetRow*400+targetColumn",
+    "alpha": 255
+  },
+  "maximumPredictionResidualCells": 1.5,
+  "bytes": 285881,
+  "elapsedSeconds": 3.745347023010254,
+  "pairs": [
+    {
+      "pair": 0,
+      "visibleSource": 34446,
+      "visibleTarget": 34444,
+      "visibleMatched": 34024,
+      "visibleMatchedFraction": 0.9877489403704349,
+      "movingRegionMatchedFraction": 0.9324122479462286,
+      "movingDots": 4884,
+      "backgroundIdentities": 48353,
+      "quietVisibleIdentities": 28480,
+      "fadeOutDots": 422,
+      "fadeInDots": 420,
+      "endpointResidualCells": [
+        0.0023810192426643017, 0.46560008488740146, 0.5783178259245638, 1.4509977527644515
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 12.155332163293604, 13.661335952241274, 15.893092839343764
+      ],
+      "uniqueTargetCount": 82377,
+      "mappedCount": 82377,
+      "candidateEdges": 40751,
+      "denseForwardBackwardP95SourcePixels": 0.3004836216568947,
+      "densePhotometricResidual": 0.00203662816377762,
+      "transport": true
+    },
+    {
+      "pair": 1,
+      "visibleSource": 34444,
+      "visibleTarget": 34426,
+      "visibleMatched": 33964,
+      "visibleMatchedFraction": 0.9860643363140169,
+      "movingRegionMatchedFraction": 0.9228224917309813,
+      "movingDots": 4816,
+      "backgroundIdentities": 48353,
+      "quietVisibleIdentities": 26914,
+      "fadeOutDots": 480,
+      "fadeInDots": 462,
+      "endpointResidualCells": [
+        0.014140298593841298, 0.4635000037402233, 0.5533028092195273, 1.0003565608299267
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 13.661335952241274, 15.893092839343764, 15.893092839343764
+      ],
+      "uniqueTargetCount": 82317,
+      "mappedCount": 82317,
+      "candidateEdges": 51651,
+      "denseForwardBackwardP95SourcePixels": 0.4816181883215896,
+      "densePhotometricResidual": 0.0029142438539012014,
+      "transport": true
+    },
+    {
+      "pair": 2,
+      "visibleSource": 34426,
+      "visibleTarget": 34407,
+      "visibleMatched": 33812,
+      "visibleMatchedFraction": 0.9821646430023819,
+      "movingRegionMatchedFraction": 0.9070651235101054,
+      "movingDots": 5117,
+      "backgroundIdentities": 48367,
+      "quietVisibleIdentities": 27355,
+      "fadeOutDots": 614,
+      "fadeInDots": 595,
+      "endpointResidualCells": [
+        0.06648662497883688, 0.4773232868297843, 0.5974537888115429, 1.4950855540925205
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 17.072504209986302, 17.072504209986302, 19.682034955766134
+      ],
+      "uniqueTargetCount": 82179,
+      "mappedCount": 82179,
+      "candidateEdges": 46473,
+      "denseForwardBackwardP95SourcePixels": 0.8324792385101318,
+      "densePhotometricResidual": 0.006208615245000196,
+      "transport": true
+    },
+    {
+      "pair": 3,
+      "visibleSource": 34407,
+      "visibleTarget": 34399,
+      "visibleMatched": 33795,
+      "visibleMatchedFraction": 0.9822129217891709,
+      "movingRegionMatchedFraction": 0.9119946764265513,
+      "movingDots": 5288,
+      "backgroundIdentities": 48368,
+      "quietVisibleIdentities": 26447,
+      "fadeOutDots": 612,
+      "fadeInDots": 604,
+      "endpointResidualCells": [
+        0.10931264969248573, 0.48736429762203815, 0.6103635817738304, 1.483838866191464
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 13.661335952241274, 17.072504209986302, 18.875126489642394
+      ],
+      "uniqueTargetCount": 82163,
+      "mappedCount": 82163,
+      "candidateEdges": 51692,
+      "denseForwardBackwardP95SourcePixels": 0.8258661627769425,
+      "densePhotometricResidual": 0.009369983201066004,
+      "transport": true
+    },
+    {
+      "pair": 4,
+      "visibleSource": 34399,
+      "visibleTarget": 34388,
+      "visibleMatched": 33876,
+      "visibleMatchedFraction": 0.9847960696531876,
+      "movingRegionMatchedFraction": 0.9192073170731707,
+      "movingDots": 5184,
+      "backgroundIdentities": 48396,
+      "quietVisibleIdentities": 26849,
+      "fadeOutDots": 523,
+      "fadeInDots": 512,
+      "endpointResidualCells": [
+        0.002483435989521771, 0.4845371903262675, 0.5922045153547892, 1.497413539216636
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 12.155332163293604, 13.661335952241274, 17.072504209986302
+      ],
+      "uniqueTargetCount": 82272,
+      "mappedCount": 82272,
+      "candidateEdges": 50103,
+      "denseForwardBackwardP95SourcePixels": 0.6729387938976288,
+      "densePhotometricResidual": 0.0023422390276771825,
+      "transport": true
+    },
+    {
+      "pair": 5,
+      "visibleSource": 34388,
+      "visibleTarget": 34382,
+      "visibleMatched": 33869,
+      "visibleMatchedFraction": 0.9849075258811213,
+      "movingRegionMatchedFraction": 0.9173625608907446,
+      "movingDots": 5177,
+      "backgroundIdentities": 48410,
+      "quietVisibleIdentities": 27877,
+      "fadeOutDots": 519,
+      "fadeInDots": 513,
+      "endpointResidualCells": [
+        0.0036370818434937322, 0.4775630036674972, 0.5914902018003692, 1.4860065293680635
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 15.893092839343764, 15.893092839343764, 15.893092839343764
+      ],
+      "uniqueTargetCount": 82279,
+      "mappedCount": 82279,
+      "candidateEdges": 42409,
+      "denseForwardBackwardP95SourcePixels": 0.4321712419390676,
+      "densePhotometricResidual": 0.001818350884505202,
+      "transport": true
+    },
+    {
+      "pair": 6,
+      "visibleSource": 34382,
+      "visibleTarget": 34383,
+      "visibleMatched": 33553,
+      "visibleMatchedFraction": 0.9758885463323832,
+      "movingRegionMatchedFraction": 0.9136525433459639,
+      "movingDots": 7761,
+      "backgroundIdentities": 48392,
+      "quietVisibleIdentities": 24635,
+      "fadeOutDots": 829,
+      "fadeInDots": 830,
+      "endpointResidualCells": [
+        0.020313597065512674, 0.5056617872222762, 0.6238642322664458, 1.4689086385027397
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 20.646125544518032, 20.646125544518032, 20.646125544518032
+      ],
+      "uniqueTargetCount": 81945,
+      "mappedCount": 81945,
+      "candidateEdges": 63526,
+      "denseForwardBackwardP95SourcePixels": 0.8331331014633179,
+      "densePhotometricResidual": 0.003492932649746447,
+      "transport": true
+    },
+    {
+      "pair": 7,
+      "visibleSource": 34383,
+      "visibleTarget": 34391,
+      "visibleMatched": 33106,
+      "visibleMatchedFraction": 0.9628595526859204,
+      "movingRegionMatchedFraction": 0.8796429304329981,
+      "movingDots": 8193,
+      "backgroundIdentities": 48367,
+      "quietVisibleIdentities": 21605,
+      "fadeOutDots": 1277,
+      "fadeInDots": 1285,
+      "endpointResidualCells": [
+        0.22005542657655536, 0.5008360801434091, 0.6058518290748472, 1.493980729164337
+      ],
+      "movementStagePixels": [
+        10.571073739218736, 17.072504209986302, 17.072504209986302, 17.072504209986302
+      ],
+      "uniqueTargetCount": 81473,
+      "mappedCount": 81473,
+      "candidateEdges": 82131,
+      "denseForwardBackwardP95SourcePixels": 2.417216181755066,
+      "densePhotometricResidual": 0.015629332506124773,
+      "transport": true
+    },
+    {
+      "pair": 8,
+      "visibleSource": 34391,
+      "visibleTarget": 34392,
+      "visibleMatched": 33751,
+      "visibleMatchedFraction": 0.9813904800674595,
+      "movingRegionMatchedFraction": 0.9228083785880528,
+      "movingDots": 6860,
+      "backgroundIdentities": 48396,
+      "quietVisibleIdentities": 25512,
+      "fadeOutDots": 640,
+      "fadeInDots": 641,
+      "endpointResidualCells": [
+        0.004035288676241355, 0.49168678787428427, 0.591565421844811, 1.4253131701823374
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 15.893092839343764, 15.893092839343764, 15.893092839343764
+      ],
+      "uniqueTargetCount": 82147,
+      "mappedCount": 82147,
+      "candidateEdges": 59397,
+      "denseForwardBackwardP95SourcePixels": 0.43843399435281755,
+      "densePhotometricResidual": 0.0026892939149972678,
+      "transport": true
+    },
+    {
+      "pair": 9,
+      "visibleSource": 34392,
+      "visibleTarget": 34387,
+      "visibleMatched": 34042,
+      "visibleMatchedFraction": 0.9898232147010932,
+      "movingRegionMatchedFraction": 0.9462830533843339,
+      "movingDots": 5621,
+      "backgroundIdentities": 48398,
+      "quietVisibleIdentities": 27745,
+      "fadeOutDots": 350,
+      "fadeInDots": 345,
+      "endpointResidualCells": [
+        0.000779479826347376, 0.45514896502541397, 0.559238241048768, 1.1314318627894462
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 13.287121584451615, 13.287121584451615, 13.287121584451615
+      ],
+      "uniqueTargetCount": 82440,
+      "mappedCount": 82440,
+      "candidateEdges": 45602,
+      "denseForwardBackwardP95SourcePixels": 0.2352680079638958,
+      "densePhotometricResidual": 0.0018708577858142846,
+      "transport": true
+    },
+    {
+      "pair": 10,
+      "visibleSource": 34387,
+      "visibleTarget": 34383,
+      "visibleMatched": 33755,
+      "visibleMatchedFraction": 0.9816209614098351,
+      "movingRegionMatchedFraction": 0.918961335425881,
+      "movingDots": 6222,
+      "backgroundIdentities": 48391,
+      "quietVisibleIdentities": 25965,
+      "fadeOutDots": 632,
+      "fadeInDots": 628,
+      "endpointResidualCells": [
+        0.10168664161920615, 0.5012179910129779, 0.6045346551012765, 1.4923137145830567
+      ],
+      "movementStagePixels": [7.2, 13.287121584451615, 16.348321014709736, 18.497353864809963],
+      "uniqueTargetCount": 82146,
+      "mappedCount": 82146,
+      "candidateEdges": 55519,
+      "denseForwardBackwardP95SourcePixels": 0.9499563246965408,
+      "densePhotometricResidual": 0.01056988304027019,
+      "transport": true
+    },
+    {
+      "pair": 11,
+      "visibleSource": 34383,
+      "visibleTarget": 34374,
+      "visibleMatched": 33883,
+      "visibleMatchedFraction": 0.985457929790885,
+      "movingRegionMatchedFraction": 0.9381964046946962,
+      "movingDots": 6238,
+      "backgroundIdentities": 48400,
+      "quietVisibleIdentities": 26991,
+      "fadeOutDots": 500,
+      "fadeInDots": 491,
+      "endpointResidualCells": [
+        0.042229779868310814, 0.47547569471092666, 0.6419232097378942, 1.2437431348538122
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 16.348321014709736, 16.348321014709736, 18.497353864809963
+      ],
+      "uniqueTargetCount": 82283,
+      "mappedCount": 82283,
+      "candidateEdges": 48687,
+      "denseForwardBackwardP95SourcePixels": 0.6815485000610308,
+      "densePhotometricResidual": 0.007646511015092606,
+      "transport": true
+    },
+    {
+      "pair": 12,
+      "visibleSource": 34374,
+      "visibleTarget": 34352,
+      "visibleMatched": 33877,
+      "visibleMatchedFraction": 0.9855413975679292,
+      "movingRegionMatchedFraction": 0.9432192648922687,
+      "movingDots": 7173,
+      "backgroundIdentities": 48421,
+      "quietVisibleIdentities": 23709,
+      "fadeOutDots": 497,
+      "fadeInDots": 475,
+      "endpointResidualCells": [
+        5.7594215145027015e-5, 0.5338050676884653, 0.6084661950462159, 1.419998872388443
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 15.893092839343764, 15.893092839343764, 15.893092839343764
+      ],
+      "uniqueTargetCount": 82298,
+      "mappedCount": 82298,
+      "candidateEdges": 73221,
+      "denseForwardBackwardP95SourcePixels": 0.3962110877037046,
+      "densePhotometricResidual": 0.0027141325609965827,
+      "transport": true
+    },
+    {
+      "pair": 13,
+      "visibleSource": 34352,
+      "visibleTarget": 34324,
+      "visibleMatched": 33704,
+      "visibleMatchedFraction": 0.9811364694923148,
+      "movingRegionMatchedFraction": 0.9373668512995313,
+      "movingDots": 8373,
+      "backgroundIdentities": 48426,
+      "quietVisibleIdentities": 22843,
+      "fadeOutDots": 648,
+      "fadeInDots": 620,
+      "endpointResidualCells": [
+        0.004932781438751345, 0.5226802725565678, 0.6041890594304788, 1.4408163512120487
+      ],
+      "movementStagePixels": [8.536252104993151, 15.893092839343764, 19.35, 19.682034955766134],
+      "uniqueTargetCount": 82130,
+      "mappedCount": 82130,
+      "candidateEdges": 78956,
+      "denseForwardBackwardP95SourcePixels": 0.5983564972877499,
+      "densePhotometricResidual": 0.0034345361786018752,
+      "transport": true
+    },
+    {
+      "pair": 14,
+      "visibleSource": 34324,
+      "visibleTarget": 34287,
+      "visibleMatched": 32758,
+      "visibleMatchedFraction": 0.9543759468593404,
+      "movingRegionMatchedFraction": 0.8631203677643307,
+      "movingDots": 8512,
+      "backgroundIdentities": 48457,
+      "quietVisibleIdentities": 21976,
+      "fadeOutDots": 1566,
+      "fadeInDots": 1529,
+      "endpointResidualCells": [
+        0.08277200981303606, 0.5483255278807877, 0.638127565065165, 1.485105176274258
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 19.682034955766134, 22.159930054041237, 27.322671904482547
+      ],
+      "uniqueTargetCount": 81215,
+      "mappedCount": 81215,
+      "candidateEdges": 76889,
+      "denseForwardBackwardP95SourcePixels": 2.881913089752176,
+      "densePhotometricResidual": 0.009812358169594197,
+      "transport": true
+    },
+    {
+      "pair": 15,
+      "visibleSource": 34287,
+      "visibleTarget": 34253,
+      "visibleMatched": 33308,
+      "visibleMatchedFraction": 0.9714469040744306,
+      "movingRegionMatchedFraction": 0.9100412101718766,
+      "movingDots": 8496,
+      "backgroundIdentities": 48487,
+      "quietVisibleIdentities": 22756,
+      "fadeOutDots": 979,
+      "fadeInDots": 945,
+      "endpointResidualCells": [
+        0.09516169972325979, 0.5497072675037981, 0.6528956969354142, 1.4977176017923304
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 15.893092839343764, 19.682034955766134, 20.646125544518032
+      ],
+      "uniqueTargetCount": 81795,
+      "mappedCount": 81795,
+      "candidateEdges": 75467,
+      "denseForwardBackwardP95SourcePixels": 1.4198299646377561,
+      "densePhotometricResidual": 0.00981091851387142,
+      "transport": true
+    },
+    {
+      "pair": 16,
+      "visibleSource": 34253,
+      "visibleTarget": 34202,
+      "visibleMatched": 33508,
+      "visibleMatchedFraction": 0.9782500802849385,
+      "movingRegionMatchedFraction": 0.923513986013986,
+      "movingDots": 7918,
+      "backgroundIdentities": 48540,
+      "quietVisibleIdentities": 23362,
+      "fadeOutDots": 745,
+      "fadeInDots": 694,
+      "endpointResidualCells": [
+        0.002601800007219878, 0.5242929699633182, 0.6366802272332314, 1.4289876612827714
+      ],
+      "movementStagePixels": [
+        8.536252104993151, 15.893092839343764, 15.893092839343764, 19.682034955766134
+      ],
+      "uniqueTargetCount": 82048,
+      "mappedCount": 82048,
+      "candidateEdges": 71830,
+      "denseForwardBackwardP95SourcePixels": 0.6015197843313198,
+      "densePhotometricResidual": 0.00279491306676139,
+      "transport": true
+    },
+    {
+      "pair": 17,
+      "visibleSource": 34202,
+      "visibleTarget": 34163,
+      "visibleMatched": 33602,
+      "visibleMatchedFraction": 0.9824571662475878,
+      "movingRegionMatchedFraction": 0.9344183820009574,
+      "movingDots": 7562,
+      "backgroundIdentities": 48594,
+      "quietVisibleIdentities": 23476,
+      "fadeOutDots": 600,
+      "fadeInDots": 561,
+      "endpointResidualCells": [
+        0.0016771630491504493, 0.5218458274033878, 0.6070158852670642, 1.4020276516512802
+      ],
+      "movementStagePixels": [7.74, 15.893092839343764, 19.35, 19.35],
+      "uniqueTargetCount": 82196,
+      "mappedCount": 82196,
+      "candidateEdges": 72207,
+      "denseForwardBackwardP95SourcePixels": 0.5228233277797681,
+      "densePhotometricResidual": 0.002232534965776703,
+      "transport": true
+    },
+    {
+      "pair": 18,
+      "visibleSource": 34163,
+      "visibleTarget": 34339,
+      "visibleMatched": 32117,
+      "visibleMatchedFraction": 0.9401106460205485,
+      "movingRegionMatchedFraction": 0.8310890422487797,
+      "movingDots": 9628,
+      "backgroundIdentities": 48404,
+      "quietVisibleIdentities": 21379,
+      "fadeOutDots": 2046,
+      "fadeInDots": 2222,
+      "endpointResidualCells": [
+        0.09721798997392897, 0.5366503474646319, 0.6450270158096121, 1.490023006490999
+      ],
+      "movementStagePixels": [
+        16.348321014709736, 29.574827133898854, 29.574827133898854, 31.77203959458694
+      ],
+      "uniqueTargetCount": 80521,
+      "mappedCount": 80521,
+      "candidateEdges": 76083,
+      "denseForwardBackwardP95SourcePixels": 4.410387754440304,
+      "densePhotometricResidual": 0.009463482319144099,
+      "transport": true
+    },
+    {
+      "pair": 19,
+      "visibleSource": 34339,
+      "visibleTarget": 34524,
+      "visibleMatched": 32784,
+      "visibleMatchedFraction": 0.9547162118873584,
+      "movingRegionMatchedFraction": 0.8691774891774892,
+      "movingDots": 9796,
+      "backgroundIdentities": 48217,
+      "quietVisibleIdentities": 21589,
+      "fadeOutDots": 1555,
+      "fadeInDots": 1740,
+      "endpointResidualCells": [
+        0.12055976563981236, 0.5550559567462932, 0.6403141080309845, 1.4940677154979305
+      ],
+      "movementStagePixels": [
+        14.910965763490976, 26.57424316890323, 29.574827133898854, 31.77203959458694
+      ],
+      "uniqueTargetCount": 81001,
+      "mappedCount": 81001,
+      "candidateEdges": 78168,
+      "denseForwardBackwardP95SourcePixels": 3.253948950767514,
+      "densePhotometricResidual": 0.011563067325474512,
+      "transport": true
+    },
+    {
+      "pair": 20,
+      "visibleSource": 34524,
+      "visibleTarget": 34121,
+      "visibleMatched": 27737,
+      "visibleMatchedFraction": 0.8034121191055498,
+      "movingRegionMatchedFraction": 0.6493820526598603,
+      "movingDots": 12011,
+      "backgroundIdentities": 48084,
+      "quietVisibleIdentities": 12713,
+      "fadeOutDots": 6787,
+      "fadeInDots": 6384,
+      "endpointResidualCells": [
+        0.26380584879169494, 0.5664778938234785, 0.7025707935255778, 1.4931795277771356
+      ],
+      "movementStagePixels": [15.893092839343764, 50.31, 54.28752264960234, 75.37874766802642],
+      "uniqueTargetCount": 75821,
+      "mappedCount": 75821,
+      "candidateEdges": 103691,
+      "denseForwardBackwardP95SourcePixels": 22.274358749389613,
+      "densePhotometricResidual": 0.02313394207806386,
+      "transport": false
+    },
+    {
+      "pair": 21,
+      "visibleSource": 34121,
+      "visibleTarget": 34103,
+      "visibleMatched": 33196,
+      "visibleMatchedFraction": 0.9728905952346063,
+      "movingRegionMatchedFraction": 0.9035611854684512,
+      "movingDots": 7262,
+      "backgroundIdentities": 48608,
+      "quietVisibleIdentities": 18488,
+      "fadeOutDots": 925,
+      "fadeInDots": 907,
+      "endpointResidualCells": [
+        0.2669308844900895, 0.4990558659900821, 0.6153856272614584, 1.4820235759437275
+      ],
+      "movementStagePixels": [
+        10.571073739218736, 29.574827133898854, 32.69664202941947, 32.69664202941947
+      ],
+      "uniqueTargetCount": 81804,
+      "mappedCount": 81804,
+      "candidateEdges": 103820,
+      "denseForwardBackwardP95SourcePixels": 1.1559175193309756,
+      "densePhotometricResidual": 0.01213246944487111,
+      "transport": true
+    },
+    {
+      "pair": 22,
+      "visibleSource": 34103,
+      "visibleTarget": 34099,
+      "visibleMatched": 33338,
+      "visibleMatchedFraction": 0.977567955898308,
+      "movingRegionMatchedFraction": 0.8965216125745888,
+      "movingDots": 5969,
+      "backgroundIdentities": 48658,
+      "quietVisibleIdentities": 26346,
+      "fadeOutDots": 765,
+      "fadeInDots": 761,
+      "endpointResidualCells": [
+        0.0510104763260482, 0.49135651893948834, 0.6150533003709245, 1.4960791344965634
+      ],
+      "movementStagePixels": [
+        10.571073739218736, 31.05208688639139, 32.69664202941947, 35.908082655580486
+      ],
+      "uniqueTargetCount": 81996,
+      "mappedCount": 81996,
+      "candidateEdges": 50675,
+      "denseForwardBackwardP95SourcePixels": 0.8070621132850646,
+      "densePhotometricResidual": 0.005828868160389448,
+      "transport": true
+    },
+    {
+      "pair": 23,
+      "visibleSource": 34099,
+      "visibleTarget": 34425,
+      "visibleMatched": 25325,
+      "visibleMatchedFraction": 0.7426904014780492,
+      "movingRegionMatchedFraction": 0.5981321569363619,
+      "movingDots": 12479,
+      "backgroundIdentities": 48040,
+      "quietVisibleIdentities": 6661,
+      "fadeOutDots": 8774,
+      "fadeInDots": 9100,
+      "endpointResidualCells": [
+        0.3370675311357586, 0.5922855714544777, 0.782500027612069, 1.4999472666378983
+      ],
+      "movementStagePixels": [
+        15.893092839343764, 78.14985604593268, 98.93947695434821, 104.00449221067328
+      ],
+      "uniqueTargetCount": 73365,
+      "mappedCount": 73365,
+      "candidateEdges": 128456,
+      "denseForwardBackwardP95SourcePixels": 30.699841022491455,
+      "densePhotometricResidual": 0.0275343567844714,
+      "transport": false
+    },
+    {
+      "pair": 24,
+      "visibleSource": 34425,
+      "visibleTarget": 34344,
+      "visibleMatched": 29166,
+      "visibleMatchedFraction": 0.8472331154684096,
+      "movingRegionMatchedFraction": 0.43880008758484784,
+      "movingDots": 3802,
+      "backgroundIdentities": 48327,
+      "quietVisibleIdentities": 23472,
+      "fadeOutDots": 5259,
+      "fadeInDots": 5178,
+      "endpointResidualCells": [
+        0.12192279701838665, 0.4784873931199393, 0.6500564430139916, 1.497338053483954
+      ],
+      "movementStagePixels": [
+        13.287121584451615, 83.23949122862297, 89.66281336206221, 93.98965049408365
+      ],
+      "uniqueTargetCount": 77493,
+      "mappedCount": 77493,
+      "candidateEdges": 37883,
+      "denseForwardBackwardP95SourcePixels": 24.113210296630854,
+      "densePhotometricResidual": 0.020992694097397138,
+      "transport": false
+    },
+    {
+      "pair": 25,
+      "visibleSource": 34344,
+      "visibleTarget": 34335,
+      "visibleMatched": 31897,
+      "visibleMatchedFraction": 0.9287502911716748,
+      "movingRegionMatchedFraction": 0.6368501529051988,
+      "movingDots": 4120,
+      "backgroundIdentities": 48399,
+      "quietVisibleIdentities": 26617,
+      "fadeOutDots": 2447,
+      "fadeInDots": 2438,
+      "endpointResidualCells": [
+        0.11054334072228669, 0.44080349555531917, 0.6115377023880025, 1.4991716549489447
+      ],
+      "movementStagePixels": [
+        37.825812615197044, 75.69898876471206, 77.16858428142893, 77.16858428142893
+      ],
+      "uniqueTargetCount": 80296,
+      "mappedCount": 80296,
+      "candidateEdges": 36773,
+      "denseForwardBackwardP95SourcePixels": 6.725964283943175,
+      "densePhotometricResidual": 0.011937322521441257,
+      "transport": false
+    },
+    {
+      "pair": 26,
+      "visibleSource": 34335,
+      "visibleTarget": 34325,
+      "visibleMatched": 32946,
+      "visibleMatchedFraction": 0.9595456531236348,
+      "movingRegionMatchedFraction": 0.7557407031091241,
+      "movingDots": 3586,
+      "backgroundIdentities": 48383,
+      "quietVisibleIdentities": 24952,
+      "fadeOutDots": 1389,
+      "fadeInDots": 1379,
+      "endpointResidualCells": [
+        0.21481718472717665, 0.4403211260396873, 0.5622045648552734, 1.498584567068431
+      ],
+      "movementStagePixels": [
+        25.608756314979452, 35.81231073248416, 37.75025297928479, 39.91943887381184
+      ],
+      "uniqueTargetCount": 81329,
+      "mappedCount": 81329,
+      "candidateEdges": 56133,
+      "denseForwardBackwardP95SourcePixels": 1.1808448135852814,
+      "densePhotometricResidual": 0.011550059376385823,
+      "transport": true
+    },
+    {
+      "pair": 27,
+      "visibleSource": 34325,
+      "visibleTarget": 34356,
+      "visibleMatched": 34140,
+      "visibleMatchedFraction": 0.9946103423160961,
+      "movingRegionMatchedFraction": 0.9559870550161812,
+      "movingDots": 2904,
+      "backgroundIdentities": 48427,
+      "quietVisibleIdentities": 30599,
+      "fadeOutDots": 185,
+      "fadeInDots": 216,
+      "endpointResidualCells": [
+        0.03861600534500288, 0.4181358672012152, 0.5407870946469308, 1.0615278779547952
+      ],
+      "movementStagePixels": [3.87, 7.74, 12.155332163293604, 12.155332163293604],
+      "uniqueTargetCount": 82567,
+      "mappedCount": 82567,
+      "candidateEdges": 24944,
+      "denseForwardBackwardP95SourcePixels": 0.2486053317785263,
+      "densePhotometricResidual": 0.00732426597216418,
+      "transport": true
+    },
+    {
+      "pair": 28,
+      "visibleSource": 34356,
+      "visibleTarget": 34385,
+      "visibleMatched": 34063,
+      "visibleMatchedFraction": 0.9914716497846082,
+      "movingRegionMatchedFraction": 0.9409704852426213,
+      "movingDots": 3418,
+      "backgroundIdentities": 48391,
+      "quietVisibleIdentities": 27973,
+      "fadeOutDots": 293,
+      "fadeInDots": 322,
+      "endpointResidualCells": [
+        0.10621172371144064, 0.46361371255655404, 0.5782783008862976, 1.4977775700699723
+      ],
+      "movementStagePixels": [3.87, 8.536252104993151, 12.155332163293604, 12.155332163293604],
+      "uniqueTargetCount": 82454,
+      "mappedCount": 82454,
+      "candidateEdges": 42183,
+      "denseForwardBackwardP95SourcePixels": 0.3090241163969035,
+      "densePhotometricResidual": 0.00872337568999271,
+      "transport": true
+    },
+    {
+      "pair": 29,
+      "visibleSource": 34385,
+      "visibleTarget": 34397,
+      "visibleMatched": 34179,
+      "visibleMatchedFraction": 0.99400901555911,
+      "movingRegionMatchedFraction": 0.9505714285714286,
+      "movingDots": 3293,
+      "backgroundIdentities": 48393,
+      "quietVisibleIdentities": 30335,
+      "fadeOutDots": 206,
+      "fadeInDots": 218,
+      "endpointResidualCells": [
+        0.018392748899073937, 0.3932211099945826, 0.48897798070289955, 1.4960826499809246
+      ],
+      "movementStagePixels": [3.87, 8.174160507354868, 12.155332163293604, 12.155332163293604],
+      "uniqueTargetCount": 82572,
+      "mappedCount": 82572,
+      "candidateEdges": 27418,
+      "denseForwardBackwardP95SourcePixels": 0.16636264324188232,
+      "densePhotometricResidual": 0.0029288059921837284,
+      "transport": true
+    },
+    {
+      "pair": 30,
+      "visibleSource": 34397,
+      "visibleTarget": 34414,
+      "visibleMatched": 33823,
+      "visibleMatchedFraction": 0.983312498182981,
+      "movingRegionMatchedFraction": 0.8882893685051958,
+      "movingDots": 4378,
+      "backgroundIdentities": 48384,
+      "quietVisibleIdentities": 28734,
+      "fadeOutDots": 574,
+      "fadeInDots": 591,
+      "endpointResidualCells": [
+        0.005221454385312586, 0.4402666708563672, 0.5659215397911131, 1.4759790655555651
+      ],
+      "movementStagePixels": [
+        11.472440891109443, 22.944881782218886, 22.944881782218886, 27.745848338084745
+      ],
+      "uniqueTargetCount": 82207,
+      "mappedCount": 82207,
+      "candidateEdges": 37157,
+      "denseForwardBackwardP95SourcePixels": 0.36169547587633133,
+      "densePhotometricResidual": 0.002079109864427489,
+      "transport": true
+    },
+    {
+      "pair": 31,
+      "visibleSource": 34414,
+      "visibleTarget": 34416,
+      "visibleMatched": 33634,
+      "visibleMatchedFraction": 0.9773348056023712,
+      "movingRegionMatchedFraction": 0.8709565217391304,
+      "movingDots": 4873,
+      "backgroundIdentities": 48361,
+      "quietVisibleIdentities": 27569,
+      "fadeOutDots": 780,
+      "fadeInDots": 782,
+      "endpointResidualCells": [
+        0.03420501596811398, 0.4646055233129846, 0.5769059703688886, 1.4451386247072815
+      ],
+      "movementStagePixels": [
+        11.472440891109443, 22.944881782218886, 24.522481522064606, 27.745848338084745
+      ],
+      "uniqueTargetCount": 81995,
+      "mappedCount": 81995,
+      "candidateEdges": 44534,
+      "denseForwardBackwardP95SourcePixels": 0.7013560295104967,
+      "densePhotometricResidual": 0.007834911071473587,
+      "transport": true
+    },
+    {
+      "pair": 32,
+      "visibleSource": 34416,
+      "visibleTarget": 34433,
+      "visibleMatched": 33233,
+      "visibleMatchedFraction": 0.9656264528126453,
+      "movingRegionMatchedFraction": 0.7986741102581996,
+      "movingDots": 4409,
+      "backgroundIdentities": 48360,
+      "quietVisibleIdentities": 27810,
+      "fadeOutDots": 1183,
+      "fadeInDots": 1200,
+      "endpointResidualCells": [
+        0.02177357637260152, 0.47613415751327604, 0.6055473433133809, 1.4948009322123326
+      ],
+      "movementStagePixels": [
+        16.348321014709736, 27.745848338084745, 31.05208688639139, 35.908082655580486
+      ],
+      "uniqueTargetCount": 81593,
+      "mappedCount": 81593,
+      "candidateEdges": 38550,
+      "denseForwardBackwardP95SourcePixels": 1.787018597126007,
+      "densePhotometricResidual": 0.0062251607562401785,
+      "transport": true
+    },
+    {
+      "pair": 33,
+      "visibleSource": 34433,
+      "visibleTarget": 34477,
+      "visibleMatched": 33231,
+      "visibleMatchedFraction": 0.9650916272180757,
+      "movingRegionMatchedFraction": 0.8012295081967213,
+      "movingDots": 4633,
+      "backgroundIdentities": 48314,
+      "quietVisibleIdentities": 27913,
+      "fadeOutDots": 1202,
+      "fadeInDots": 1246,
+      "endpointResidualCells": [
+        0.03645686251314615, 0.46623118470843516, 0.5874609434396887, 1.483028994265321
+      ],
+      "movementStagePixels": [
+        14.910965763490976, 24.522481522064606, 26.36185881154817, 26.36185881154817
+      ],
+      "uniqueTargetCount": 81545,
+      "mappedCount": 81545,
+      "candidateEdges": 37928,
+      "denseForwardBackwardP95SourcePixels": 1.9724458694457996,
+      "densePhotometricResidual": 0.006684925304831661,
+      "transport": true
+    },
+    {
+      "pair": 34,
+      "visibleSource": 34477,
+      "visibleTarget": 34493,
+      "visibleMatched": 33509,
+      "visibleMatchedFraction": 0.9719233111929693,
+      "movingRegionMatchedFraction": 0.8170521888740203,
+      "movingDots": 4140,
+      "backgroundIdentities": 48301,
+      "quietVisibleIdentities": 27828,
+      "fadeOutDots": 968,
+      "fadeInDots": 984,
+      "endpointResidualCells": [
+        0.011864830977008915, 0.4785663674997585, 0.6059822286104132, 1.4268074409749436
+      ],
+      "movementStagePixels": [
+        13.287121584451615, 27.745848338084745, 29.574827133898854, 29.821931526981952
+      ],
+      "uniqueTargetCount": 81810,
+      "mappedCount": 81810,
+      "candidateEdges": 39527,
+      "denseForwardBackwardP95SourcePixels": 1.133342778682696,
+      "densePhotometricResidual": 0.0032220256669782733,
+      "transport": true
+    },
+    {
+      "pair": 35,
+      "visibleSource": 34493,
+      "visibleTarget": 34507,
+      "visibleMatched": 33666,
+      "visibleMatchedFraction": 0.9760241208361117,
+      "movingRegionMatchedFraction": 0.8327835051546392,
+      "movingDots": 3878,
+      "backgroundIdentities": 48287,
+      "quietVisibleIdentities": 28364,
+      "fadeOutDots": 827,
+      "fadeInDots": 841,
+      "endpointResidualCells": [
+        0.03234574072572034, 0.46568916543308797, 0.5809298226531414, 1.482228102150073
+      ],
+      "movementStagePixels": [
+        14.910965763490976, 24.522481522064606, 27.745848338084745, 29.821931526981952
+      ],
+      "uniqueTargetCount": 81953,
+      "mappedCount": 81953,
+      "candidateEdges": 36691,
+      "denseForwardBackwardP95SourcePixels": 0.7184460133314123,
+      "densePhotometricResidual": 0.007196491274841543,
+      "transport": true
+    },
+    {
+      "pair": 36,
+      "visibleSource": 34507,
+      "visibleTarget": 34491,
+      "visibleMatched": 34333,
+      "visibleMatchedFraction": 0.9949575448459733,
+      "movingRegionMatchedFraction": 0.9498970487302677,
+      "movingDots": 2262,
+      "backgroundIdentities": 48291,
+      "quietVisibleIdentities": 30696,
+      "fadeOutDots": 174,
+      "fadeInDots": 158,
+      "endpointResidualCells": [
+        0.0004767304475929177, 0.46524045339761294, 0.5997719331187524, 1.4970658594240231
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 5.285536869609368, 5.285536869609368, 8.536252104993151
+      ],
+      "uniqueTargetCount": 82624,
+      "mappedCount": 82624,
+      "candidateEdges": 25373,
+      "denseForwardBackwardP95SourcePixels": 0.13266945779323558,
+      "densePhotometricResidual": 0.0015134121073116567,
+      "transport": true
+    },
+    {
+      "pair": 37,
+      "visibleSource": 34491,
+      "visibleTarget": 34446,
+      "visibleMatched": 34137,
+      "visibleMatchedFraction": 0.9897364529877359,
+      "movingRegionMatchedFraction": 0.9286384976525821,
+      "movingDots": 2813,
+      "backgroundIdentities": 48299,
+      "quietVisibleIdentities": 27951,
+      "fadeOutDots": 354,
+      "fadeInDots": 309,
+      "endpointResidualCells": [
+        0.05025951596776984, 0.43955688755053857, 0.6010032983216752, 1.3816090911600827
+      ],
+      "movementStagePixels": [3.87, 8.536252104993151, 8.536252104993151, 10.571073739218736],
+      "uniqueTargetCount": 82436,
+      "mappedCount": 82436,
+      "candidateEdges": 42136,
+      "denseForwardBackwardP95SourcePixels": 0.2612743183970451,
+      "densePhotometricResidual": 0.00420818267160189,
+      "transport": true
+    },
+    {
+      "pair": 38,
+      "visibleSource": 34446,
+      "visibleTarget": 34411,
+      "visibleMatched": 34133,
+      "visibleMatchedFraction": 0.9909133135922894,
+      "movingRegionMatchedFraction": 0.9252890601838126,
+      "movingDots": 2916,
+      "backgroundIdentities": 48334,
+      "quietVisibleIdentities": 27096,
+      "fadeOutDots": 313,
+      "fadeInDots": 278,
+      "endpointResidualCells": [
+        0.18798066787284676, 0.4490557447246044, 0.5447369403339254, 1.494782287844798
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 8.174160507354868, 10.571073739218736, 10.571073739218736
+      ],
+      "uniqueTargetCount": 82467,
+      "mappedCount": 82467,
+      "candidateEdges": 48458,
+      "denseForwardBackwardP95SourcePixels": 0.3068460077047348,
+      "densePhotometricResidual": 0.008713722880056904,
+      "transport": true
+    },
+    {
+      "pair": 39,
+      "visibleSource": 34411,
+      "visibleTarget": 34350,
+      "visibleMatched": 34086,
+      "visibleMatchedFraction": 0.9905553456743483,
+      "movingRegionMatchedFraction": 0.9386056191467221,
+      "movingDots": 3182,
+      "backgroundIdentities": 48370,
+      "quietVisibleIdentities": 24436,
+      "fadeOutDots": 325,
+      "fadeInDots": 264,
+      "endpointResidualCells": [
+        0.21809858401495175, 0.46400979479723037, 0.6002932268582046, 1.4919787143567296
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 8.536252104993151, 10.571073739218736, 13.661335952241274
+      ],
+      "uniqueTargetCount": 82456,
+      "mappedCount": 82456,
+      "candidateEdges": 65385,
+      "denseForwardBackwardP95SourcePixels": 0.6304882496595379,
+      "densePhotometricResidual": 0.012630220858049511,
+      "transport": true
+    },
+    {
+      "pair": 40,
+      "visibleSource": 34350,
+      "visibleTarget": 34310,
+      "visibleMatched": 34091,
+      "visibleMatchedFraction": 0.9924599708879185,
+      "movingRegionMatchedFraction": 0.9472190692395006,
+      "movingDots": 3269,
+      "backgroundIdentities": 48425,
+      "quietVisibleIdentities": 28607,
+      "fadeOutDots": 259,
+      "fadeInDots": 219,
+      "endpointResidualCells": [
+        0.04378368649848351, 0.4101251561351183, 0.5394879292007234, 1.4995494314087883
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 8.536252104993151, 12.155332163293604, 12.155332163293604
+      ],
+      "uniqueTargetCount": 82516,
+      "mappedCount": 82516,
+      "candidateEdges": 38571,
+      "denseForwardBackwardP95SourcePixels": 0.2634081214666366,
+      "densePhotometricResidual": 0.0031247526473430487,
+      "transport": true
+    },
+    {
+      "pair": 41,
+      "visibleSource": 34310,
+      "visibleTarget": 34310,
+      "visibleMatched": 34112,
+      "visibleMatchedFraction": 0.9942290877295249,
+      "movingRegionMatchedFraction": 0.9445314948292072,
+      "movingDots": 2840,
+      "backgroundIdentities": 48478,
+      "quietVisibleIdentities": 29815,
+      "fadeOutDots": 198,
+      "fadeInDots": 198,
+      "endpointResidualCells": [
+        0.005575999516268841, 0.4432023265422902, 0.5723090443736182, 1.4908327805068893
+      ],
+      "movementStagePixels": [
+        5.285536869609368, 8.174160507354868, 8.536252104993151, 10.571073739218736
+      ],
+      "uniqueTargetCount": 82590,
+      "mappedCount": 82590,
+      "candidateEdges": 29791,
+      "denseForwardBackwardP95SourcePixels": 0.19243258088827128,
+      "densePhotometricResidual": 0.001963298358592121,
+      "transport": true
+    },
+    {
+      "pair": 42,
+      "visibleSource": 34310,
+      "visibleTarget": 34321,
+      "visibleMatched": 33865,
+      "visibleMatchedFraction": 0.9870300204022151,
+      "movingRegionMatchedFraction": 0.9374800637958532,
+      "movingDots": 5490,
+      "backgroundIdentities": 48426,
+      "quietVisibleIdentities": 23791,
+      "fadeOutDots": 445,
+      "fadeInDots": 456,
+      "endpointResidualCells": [
+        0.03909212948016614, 0.48954575774806836, 0.596021694891275, 1.490693717176907
+      ],
+      "movementStagePixels": [
+        8.174160507354868, 19.593560166544517, 22.944881782218886, 22.944881782218886
+      ],
+      "uniqueTargetCount": 82291,
+      "mappedCount": 82291,
+      "candidateEdges": 70919,
+      "denseForwardBackwardP95SourcePixels": 0.44406917691230763,
+      "densePhotometricResidual": 0.003763607671472928,
+      "transport": true
+    },
+    {
+      "pair": 43,
+      "visibleSource": 34321,
+      "visibleTarget": 34406,
+      "visibleMatched": 33552,
+      "visibleMatchedFraction": 0.9775938929518371,
+      "movingRegionMatchedFraction": 0.9312917157440126,
+      "movingDots": 7239,
+      "backgroundIdentities": 48355,
+      "quietVisibleIdentities": 9711,
+      "fadeOutDots": 769,
+      "fadeInDots": 854,
+      "endpointResidualCells": [
+        0.36430560399232537, 0.5770650669063059, 0.6629930630404683, 1.4980369462433238
+      ],
+      "movementStagePixels": [7.2, 19.593560166544517, 22.944881782218886, 22.944881782218886],
+      "uniqueTargetCount": 81907,
+      "mappedCount": 81907,
+      "candidateEdges": 165421,
+      "denseForwardBackwardP95SourcePixels": 1.0101717829704269,
+      "densePhotometricResidual": 0.01925337026827857,
+      "transport": true
+    },
+    {
+      "pair": 44,
+      "visibleSource": 34406,
+      "visibleTarget": 34445,
+      "visibleMatched": 34081,
+      "visibleMatchedFraction": 0.990553973144219,
+      "movingRegionMatchedFraction": 0.9464088397790055,
+      "movingDots": 4982,
+      "backgroundIdentities": 48336,
+      "quietVisibleIdentities": 26944,
+      "fadeOutDots": 325,
+      "fadeInDots": 364,
+      "endpointResidualCells": [
+        0.016370472347956515, 0.4993111758307831, 0.6295580499737501, 1.4754012021030283
+      ],
+      "movementStagePixels": [
+        8.174160507354868, 13.287121584451615, 14.910965763490976, 16.348321014709736
+      ],
+      "uniqueTargetCount": 82417,
+      "mappedCount": 82417,
+      "candidateEdges": 49946,
+      "denseForwardBackwardP95SourcePixels": 0.37917347550392133,
+      "densePhotometricResidual": 0.0033698585875967797,
+      "transport": true
+    },
+    {
+      "pair": 45,
+      "visibleSource": 34445,
+      "visibleTarget": 34446,
+      "visibleMatched": 34382,
+      "visibleMatchedFraction": 0.99817099724198,
+      "movingRegionMatchedFraction": 0.9509594882729211,
+      "movingDots": 780,
+      "backgroundIdentities": 48348,
+      "quietVisibleIdentities": 32802,
+      "fadeOutDots": 63,
+      "fadeInDots": 64,
+      "endpointResidualCells": [
+        0.0017284039411936466, 0.27445216355983876, 0.48976303024617673, 1.0311340071026576
+      ],
+      "movementStagePixels": [3.6, 5.285536869609368, 5.285536869609368, 5.285536869609368],
+      "uniqueTargetCount": 82730,
+      "mappedCount": 82730,
+      "candidateEdges": 10790,
+      "denseForwardBackwardP95SourcePixels": 0.09324915520846834,
+      "densePhotometricResidual": 0.0012193197133558537,
+      "transport": true
+    },
+    {
+      "pair": 46,
+      "visibleSource": 34446,
+      "visibleTarget": 34442,
+      "visibleMatched": 34237,
+      "visibleMatchedFraction": 0.9939325320791964,
+      "movingRegionMatchedFraction": 0.9367147510469986,
+      "movingDots": 1648,
+      "backgroundIdentities": 48320,
+      "quietVisibleIdentities": 30642,
+      "fadeOutDots": 209,
+      "fadeInDots": 205,
+      "endpointResidualCells": [
+        0.13884216933590102, 0.434560303381669, 0.5541125235025366, 1.4925742392950052
+      ],
+      "movementStagePixels": [3.6, 5.285536869609368, 5.285536869609368, 8.536252104993151],
+      "uniqueTargetCount": 82557,
+      "mappedCount": 82557,
+      "candidateEdges": 24732,
+      "denseForwardBackwardP95SourcePixels": 0.22996366769075358,
+      "densePhotometricResidual": 0.008738253979248514,
+      "transport": true
+    },
+    {
+      "pair": 47,
+      "visibleSource": 34442,
+      "visibleTarget": 34446,
+      "visibleMatched": 34362,
+      "visibleMatchedFraction": 0.9976772545148366,
+      "movingRegionMatchedFraction": 0.9534081104400345,
+      "movingDots": 1032,
+      "backgroundIdentities": 48342,
+      "quietVisibleIdentities": 32305,
+      "fadeOutDots": 80,
+      "fadeInDots": 84,
+      "endpointResidualCells": [
+        0.050207640883754893, 0.2995405857142226, 0.48308823659406513, 0.7018228958908209
+      ],
+      "movementStagePixels": [3.87, 5.285536869609368, 5.285536869609368, 5.285536869609368],
+      "uniqueTargetCount": 82704,
+      "mappedCount": 82704,
+      "candidateEdges": 14151,
+      "denseForwardBackwardP95SourcePixels": 0.2759629562497139,
+      "densePhotometricResidual": 0.008499527891799674,
+      "transport": true
+    }
+  ]
+}

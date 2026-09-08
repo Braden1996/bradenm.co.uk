@@ -1,0 +1,537 @@
+---
+import { careerCardId } from "../lib/career-card-index";
+import { CAREER_RULE_HEIGHT } from "../lib/career-rule";
+import { loadCareerEntries, requireCareerEntry } from "../lib/career-data";
+import { getLetterGeneratedAssets } from "../lib/letter-generated-assets";
+import CareerCard from "../molecules/career-card.astro";
+import CareerEntity from "../molecules/career-entity.astro";
+import AboutSignature from "../molecules/about-signature.astro";
+import InkArrow from "../../../components/atoms/ink-arrow.astro";
+
+const [careerEntries, { paintedCards, strokes, signatureTooth, careerRule }] = await Promise.all([
+  loadCareerEntries(),
+  getLetterGeneratedAssets(),
+]);
+const careerRuleStyle = [
+  `--career-card-rule:url("${careerRule.url}")`,
+  `--career-card-rule-height:${CAREER_RULE_HEIGHT}px`,
+].join(";");
+---
+
+{
+  /* An open letter, set like a typed sheet: prose in one ink on one line
+    grid. It knows it lives on a website — it greets whoever finds it and
+    thanks them at the end — but wears none of the postal props (no address
+    block, no dateline): the greeting and the signature are the letter's, the
+    page is the web's. Where to find more is the letterhead's business, not
+    the letter's — the menu across the top of the sheet names those places.
+    Names here are plain words in the line — no marks — each with a painted
+    stroke under it. */
+}
+<div class="about-passage" data-about-passage>
+  {
+    /* Inline spans retain natural prose wrapping. The complete letter is
+      visible on the first paint. */
+  }
+  <p>
+    <span class="about-passage__sentence">Hello internet,<br /><br /></span>
+    <span class="about-passage__sentence">
+      I’m Braden, a product engineer based in London, currently at <CareerEntity
+        slug="isembard"
+        label="Isembard"
+        stroke={strokes.isembard}
+        suffix=","
+      /> building software to orchestrate manufacturing across hundreds of factories.
+    </span>
+  </p>
+  <p>
+    <span class="about-passage__sentence">
+      Before that, I spent six years as a founding engineer and engineering lead at <CareerEntity
+        slug="attio"
+        label="Attio"
+        stroke={strokes.attio}
+        suffix=","
+      /> where we built a beautiful yet powerful CRM.
+    </span>
+    <span class="about-passage__sentence">
+      Earlier roles took me to <CareerEntity
+        slug="thought-machine"
+        label="Thought Machine"
+        stroke={strokes.thoughtMachine}
+        suffix=","
+      />
+      <CareerEntity slug="cleo" label="Cleo" stroke={strokes.cleo} suffix="," />
+      <CareerEntity
+        slug="contentsquare"
+        label="Contentsquare"
+        stroke={strokes.contentsquare}
+        suffix=","
+      /> and others via <CareerEntity
+        slug="theodo-uk"
+        label="Theodo"
+        stroke={strokes.theodo}
+        suffix="."
+      />
+    </span>
+  </p>
+  <p>
+    <span class="about-passage__sentence">
+      I studied Computer Science at <CareerEntity
+        slug="cardiff-university"
+        label="Cardiff University"
+        stroke={strokes.cardiff}
+        suffix=","
+      /> but I fell in love with software much earlier in life when I built and sold video game mods to
+      thousands of
+      <CareerEntity slug="garrys-mod" label="Garry’s Mod" stroke={strokes.garrysMod} /> servers and running
+      communities for <CareerEntity
+        slug="minecraft"
+        label="Minecraft"
+        stroke={strokes.minecraft}
+        suffix="."
+      />
+    </span>
+  </p>
+
+  {
+    /* The close: a written line leads the hand into the signature. Multiply
+      sinks the signature's white ground into the paper, so it reads as signed
+      on the sheet, not pasted. */
+  }
+  <p class="about-passage__valediction">
+    <span class="about-passage__sentence">Have a lovely day,</span>
+  </p>
+
+  <div
+    class="about-passage__signature"
+    style={`--about-signature-tooth:url("${signatureTooth.url}")`}
+  >
+    <AboutSignature />
+  </div>
+</div>
+
+<span hidden data-career-popover-home></span>
+<div class="about-passage__cards" data-career-cards data-career-popover style={careerRuleStyle}>
+  <InkArrow
+    class="about-passage__connector"
+    data-career-connector
+    inkId="career-note-connector-ink"
+    ink="var(--career-note-accent)"
+    tail="var(--career-note-accent-tail)"
+  >
+    <path data-career-connector-line pathLength="1" d="M 74 8 C 46 10 43 43 10 45"></path>
+    <path class="about-passage__arrowhead" d="m 16 39 -7 6 8 4"></path>
+  </InkArrow>
+  <h2 class="about-passage__cards-title">Career and education</h2>
+  {
+    paintedCards.map(({ card, noteStroke, paint }) => {
+      const entry = requireCareerEntry(careerEntries, card.entry);
+
+      return (
+        <CareerCard
+          id={careerCardId(card.slug)}
+          organisation={card.organisation}
+          entry={entry}
+          accent={paint.pigments[0]}
+          accentTail={paint.pigments.at(-1) ?? paint.pigments[0]}
+          stroke={noteStroke.url}
+        />
+      );
+    })
+  }
+</div>
+
+<dialog class="about-passage__modal" data-career-modal>
+  <div data-career-modal-mount></div>
+</dialog>
+
+<style>
+  :global(
+    .about-passage:has([data-career-entity][aria-expanded="true"])
+      [data-career-entity]:not([aria-expanded="true"])
+  ) {
+    --entity-stroke-opacity: 0.6;
+  }
+
+  /*
+   * One sheet, one beat. The letter's size is a rem/vw clamp with no em in it,
+   * so `--about-letter-line` resolves to the same length on every descendant
+   * whatever its own font-size — every pause below is a whole number of lines.
+   * The measure is in em of the letter's own size, never `ch`, so a face change
+   * cannot silently move the column.
+   */
+  .about-passage {
+    --about-letter-size: clamp(0.9rem, 0.8rem + 0.33vw, 1.05rem);
+    --about-letter-line: calc(var(--about-letter-size) * 1.5);
+    z-index: 3;
+    flex: none;
+    width: min(100%, 31em);
+    margin-inline: auto;
+    /* No inline padding: the measure is the column. Half again a line of air
+       above, three below (stacked); the wide sheet trims that below and sets
+       its own distance from the drawing as the grid's row gap. */
+    padding: calc(1.5 * var(--about-letter-line)) 0 calc(3 * var(--about-letter-line));
+    font-family: var(--font-text);
+    font-size: var(--about-letter-size);
+    font-weight: var(--weight-regular);
+    font-synthesis: none;
+    line-height: var(--about-letter-line);
+    color: var(--color-text-primary);
+    text-wrap: pretty;
+  }
+
+  /* A little over two thirds of a line between paragraphs, not a whole blank
+     one. At a full line the gap was twice the leading, which broke the column
+     into detached slabs — and because every paragraph here happens to end on a
+     short line, the white notch left beside that ending adds to the gap and
+     widens it further than the number says. The closing sets its own two
+     pauses further down — a sign-off is not another paragraph. */
+  .about-passage > :not(:first-child) {
+    margin-block-start: calc(0.7 * var(--about-letter-line));
+  }
+
+  /* The complete letter is readable on first paint. Room changes own their
+     optional transition; the prose never waits for an entrance animation. */
+  /* The closing hangs on the RAG, not on the measure. A ragged-right column
+     has no hard right edge: the box runs to the full measure, but no line of
+     this letter reaches it — the longest ("…lead at Attio,") stops 1.24em
+     short. Set flush to the box, the closing therefore read as sticking out
+     past a body that visibly ends further left, so both it and the hand below
+     pull in by that distance and land on the rag instead.
+
+     The distance is a property of THIS copy at THIS measure, but a stable one
+     per measure: the measure is in em, so the letter scales whole and the
+     breaks are proportionally identical at every size — the slack held at
+     0.43em across the 31em measure and 1.24em across the 34em one, at every
+     font size in their clamps. Hence one value here and another in the wide
+     block. Re-measure both (the longest line's inked right edge against the
+     column's) whenever the letter's words or either measure change, since a
+     reflow moves them.
+
+     Below about 34rem the container, not the measure, sets the column and the
+     slack drifts between 0.1em and 0.25em; the 31em value is a slight
+     over-correction there, worth ~6px of the closing sitting inside the body's
+     edge rather than past it — the kinder of the two errors.
+
+     Comma to comma: the line the closing aligns with also ends in one, so both
+     hang their punctuation past the rail and their letterforms agree. */
+  .about-passage {
+    --about-closing-rail: calc(0.43 * var(--about-letter-size));
+  }
+
+  /* Vertically the closing takes half a line more than a paragraph does. At the
+     paragraph's own two lines it sat the same distance from the body as from
+     the hand below and so belonged to neither, reading as one more paragraph
+     that happened to be right-aligned. */
+  .about-passage > .about-passage__valediction {
+    margin-block-start: calc(1.5 * var(--about-letter-line));
+  }
+
+  .about-passage__valediction {
+    padding-inline-end: var(--about-closing-rail);
+    text-align: right;
+  }
+
+  /* The pause before the hand, measured to the INK rather than the box.
+     signature.webp carries 53 of its 334 rows as clear space above the drawn
+     line (and 55 below), which is 53/1000 of the image's WIDTH — so the box
+     is pulled up by exactly that and this rule, not the asset's trim, sets
+     the gap. Re-measure the fraction if the file is ever re-exported.
+
+     This has to out-specify the shared paragraph spacing above so the
+     signature's own clear space is counted only once. */
+  .about-passage > * + .about-passage__signature {
+    margin-block-start: calc(0.24 * var(--about-letter-line) - var(--about-signature-clear-top));
+  }
+
+  .about-passage__signature {
+    --about-signature-width: min(14em, 60%);
+    --about-signature-clear-top: calc(var(--about-signature-width) * 53 / 1000);
+    /* The hand runs past the column's right edge rather than stopping on it,
+       far enough that the dog clears the column entirely and the `ll` of
+       "Marshall" takes its place on the rail — the written name ends where the
+       closing line ends, and the animal sits out on the open sheet beside it.
+       132/1000 is where the script's last stroke gives way to the dog in the
+       asset (its solid mass starts at column 874 of 1000), so the overhang
+       tracks the image's own geometry and holds at any width. Re-measure with
+       the column ink profile if the file is ever re-drawn.
+
+       The overhang is measured from the closing's rail, not from the measure,
+       so the `ll` lands on the same line the sign-off does — hence the rail is
+       added back before the overhang is taken off.
+
+       On a phone the column fills its container and only the shell's gutter is
+       left to hang into, so the mobile block below cuts this back; the ink
+       would otherwise cross the viewport edge, where `overflow-x` is visible
+       and the page would scroll sideways. Everywhere else there is room. */
+    --about-signature-overhang: calc(var(--about-signature-width) * 132 / 1000);
+    display: block;
+    width: var(--about-signature-width);
+    height: auto;
+    aspect-ratio: 1000 / 334;
+    margin-inline-start: auto;
+    margin-inline-end: calc(var(--about-closing-rail) - var(--about-signature-overhang));
+    opacity: 0.92;
+    /* Patina before the blend: sepia warms the calligraphy's dead neutral
+       toward the site's ink, and the desaturation knocks the little
+       paintings back toward the sheet's muted palette — then multiply and
+       the tooth mask sink the lot into the paper. */
+    filter: saturate(0.82) sepia(0.18);
+    mix-blend-mode: multiply;
+    -webkit-mask-image: var(--about-signature-tooth);
+    mask-image: var(--about-signature-tooth);
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    /* The interactive dog can extend past the original signature canvas. */
+    -webkit-mask-clip: no-clip;
+    mask-clip: no-clip;
+    -webkit-mask-size: 160px 160px;
+    mask-size: 160px 160px;
+  }
+
+  /*
+   * The scrub, as the WRITING feels it. The mask that takes the ink off the
+   * sheet is the room's (about-template); this is the beat before it — the ink
+   * paling toward a warm stain as the paper starts to drink it, so the letter
+   * is already going before the first hole opens.
+   *
+   * Mixed in oklab, and toward a warm tint rather than toward the paper: an
+   * sRGB ramp from this brown to ivory goes muddy through the middle, which is
+   * exactly the part of it the eye is watching, and a cool residue reads as a
+   * shadow where a warm one reads as a stain. `--drain` inherits from the
+   * letter room, where the clock writes it (about-rooms); the links
+   * take it for nothing, their ink being `inherit`.
+   */
+  .about-passage {
+    --about-drain-stain: oklch(72% 0.045 72);
+  }
+
+  :global([data-scrub]) .about-passage {
+    color: color-mix(
+      in oklab,
+      var(--color-text-primary),
+      var(--about-drain-stain) calc(min(1, var(--drain, 0) * 1.5) * 62%)
+    );
+  }
+
+  @media (max-width: 760px) {
+    .about-passage {
+      padding-block: calc(1.5 * var(--about-letter-line)) calc(2 * var(--about-letter-line));
+    }
+
+    /* Only the gutter to hang into here — see the note on the overhang. The
+       `ll` falls short of the rail as a result, which is the price of keeping
+       the sheet from scrolling sideways. */
+    .about-passage__signature {
+      --about-signature-overhang: calc(var(--about-signature-width) * 60 / 1000);
+    }
+  }
+
+  /* Wide: the letter shares one screen with the drawing (about-intro) and
+     every line of air it carries is a line the drawing loses, so it carries
+     none — the grid's gap and the stage's foot padding are its margins.
+     A wider measure here than the stacked sheet's: the wide layout has the
+     room, and each line it saves is a line the drawing gets back.
+
+     The hand follows the room. A smaller sheet takes a smaller hand, so the
+     letter's size is READ FROM THE HEIGHT it has to fill rather than held at
+     one value and allowed to run off the bottom of the screen. The slope is
+     the sheet's own arithmetic and not a taste: at a fixed measure the letter
+     is a fixed number of lines, so its height is a constant multiple of this
+     size, and everything else in the column — the stage's padding, the
+     drawing's floor, the grid gap — is a fixed length. Solving the two
+     against 100vh gives the line below, held a few percent under the exact
+     fit so the drawing keeps a little more than its floor. Outside the
+     readable range the clamp takes over and the page scrolls again, which is
+     the honest failure.
+
+     The line below was solved when the letter still carried a closing
+     paragraph of links, at a multiple of ~33.6. Losing that paragraph took
+     the multiple to 26.16 (measured: force --about-letter-size to several
+     values and divide the passage's height by each; the ratio is invariant),
+     against a fixed part of 328.2px — 14.4 padding above, 73.8 below, the
+     48 grid gap and the drawing's 10rem floor. The exact fit is now
+     3.82vh - 0.65rem, i.e. clamp(0.76rem, 3.71vh - 0.634rem, 1.05rem) at the
+     same few percent under.
+
+     That line is deliberately NOT the one below. A stale slope misplaces
+     nothing — it sets the letter smaller than the sheet can now afford and
+     gives the slack to the drawing, which on this page is the side worth
+     giving it to: re-solved, the letter meets its 1.05rem ceiling on any
+     screen over ~870px tall and the print drops to a little above its floor.
+     Paste the solved line in to hand that room back to the letter. */
+  @media (min-width: 1000px) {
+    .about-passage {
+      --about-letter-size: clamp(0.76rem, 2.89vh - 0.465rem, 1.05rem);
+      /* The wider measure breaks the letter differently, so the closing's rail
+         sits further in than the stacked sheet's — see the note above it. */
+      --about-closing-rail: calc(1.24 * var(--about-letter-size));
+      width: min(100%, 34em);
+      padding-block: 0;
+    }
+  }
+
+  .about-passage__cards {
+    display: grid;
+    gap: var(--space-12);
+    max-width: 30rem;
+    margin: var(--space-24) auto 0;
+    padding: 0 0 var(--space-24);
+  }
+
+  .about-passage__cards-title {
+    font-family: var(--font-display);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-title);
+    color: var(--color-text-primary);
+  }
+
+  .about-passage__connector {
+    display: none;
+  }
+
+  .about-passage__modal {
+    position: fixed;
+    inset: 0;
+    width: min(24rem, calc(100vw - 32px));
+    max-width: none;
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: contain;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 3px;
+    background-color: var(--color-surface-panel-top);
+    background-image: var(--paper-sheet);
+    background-size: var(--paper-sheet-size) var(--paper-sheet-size);
+    background-blend-mode: multiply;
+    color: var(--color-text-primary);
+    box-shadow:
+      0 3px 10px rgb(45 38 27 / 8%),
+      0 24px 70px rgb(45 38 27 / 18%);
+  }
+
+  .about-passage__modal::backdrop {
+    background: rgb(40 36 29 / 28%);
+  }
+
+  .about-passage__modal:is([data-state="opening"], [data-state="open"])::backdrop {
+    animation: career-modal-backdrop-in 240ms ease both;
+  }
+
+  .about-passage__modal[data-state="closing"]::backdrop {
+    animation: career-modal-backdrop-out 180ms ease both;
+  }
+
+  :global(html[data-career-modal-open]),
+  :global(html[data-career-modal-open] body),
+  :global(html[data-career-modal-open] .page-wrap.page-wrap--about) {
+    overflow: hidden;
+  }
+
+  @keyframes career-modal-backdrop-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes career-modal-backdrop-out {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  /* The note stays in either gutter when there is room. Smaller sheets use
+     the same content in a modal, leaving the letter's layout untouched. */
+  @media (scripting: enabled) {
+    .about-passage__cards {
+      display: none;
+    }
+
+    .about-passage__cards[data-state] {
+      position: fixed;
+      z-index: 6;
+      isolation: isolate;
+      display: block;
+      width: min(11.5rem, calc(100vw - 48px));
+      /* Reserve 28px above and 64px below, clear of the paper's footer fade. */
+      height: max(0px, calc(100dvh - 92px));
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      pointer-events: auto;
+    }
+
+    .about-passage__cards[data-state="measuring"] {
+      visibility: hidden;
+    }
+
+    .about-passage__cards:is([data-state="closing"], [data-state="switching"]) {
+      pointer-events: none;
+    }
+
+    .about-passage__cards :global([data-overlay-scrollbar]) {
+      --overlay-scrollbar-inset: -24px;
+    }
+
+    /* The thumb has its own clear gutter, so it can wake under the pointer
+       even while its ink is hidden, without covering links or text. */
+    .about-passage__cards :global([data-overlay-scrollbar-thumb="vertical"][data-active="true"]) {
+      pointer-events: auto;
+    }
+
+    .about-passage__cards:is([data-placement="right"], [data-placement="left"])
+      .about-passage__connector {
+      position: absolute;
+      display: block;
+      overflow: visible;
+      color: var(--career-note-accent);
+      pointer-events: none;
+    }
+
+    .about-passage__cards[data-placement="modal"] {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .about-passage__cards-title {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-passage__modal::backdrop {
+      animation: none !important;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .about-passage__modal {
+      border-color: CanvasText;
+      background: Canvas;
+      box-shadow: none;
+    }
+
+    .about-passage__cards[data-state]::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -8px;
+      border: 1px solid CanvasText;
+      background: Canvas;
+      box-shadow: none;
+    }
+  }
+</style>

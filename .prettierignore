@@ -1,0 +1,10 @@
+# Generated bundle of the vendored anti-slop oxlint plugin (see
+# tools/oxlint/anti-slop/readme.md for the regeneration command).
+tools/oxlint/anti-slop/dist
+
+# Baked by scripts/sync-portrait-*.mjs (compact, deterministic).
+data/portrait-silhouette.json
+data/portrait-occlusion.json
+
+# Browser traces and measurement reports.
+artifacts/

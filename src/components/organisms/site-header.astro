@@ -1,44 +1,23 @@
 ---
-import Avatar from "../atoms/avatar.astro";
-import profileImage from "../../../data/profile-image.json";
-import SitePrimaryNav from "./site-primary-nav.astro";
-
-interface Props {
-  activeTab: "about" | "timeline" | "bookshelf";
-}
-
-const { activeTab } = Astro.props;
-const headerProfileImage = profileImage;
-const headerAvatarSize = "var(--site-header-avatar-size, 72px)";
+import SiteMenu from "../molecules/site-menu.astro";
 ---
 
+{
+  /* The letterhead for the plain rooms (the about rooms carry the menu alone,
+    in the sheet's corner): the name on the left rail as the way home, the menu
+    on the right, and the rule under both from rail to rail. The rule is the
+    row's own border, so it can only ever be as wide as the sheet the row heads
+    — the header sits inside the shell's body, which IS the sheet. */
+}
 <header class="site-header">
-  <div class="site-header__identity">
-    <div
-      class="site-header__avatar-shell"
-      style={`width:${headerAvatarSize};height:${headerAvatarSize};`}
-      transition:persist
-    >
-      <Avatar
-        class="site-header__avatar"
-        style={`--avatar-size:${headerAvatarSize};`}
-        src={headerProfileImage.src}
-        alt="Portrait of Braden Marshall"
-        width={headerProfileImage.width}
-        height={headerProfileImage.height}
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-      />
+  <div class="site-header__row">
+    <div class="site-header__name">
+      <a href="/" class="site-header__name-link">Braden Marshall</a>
     </div>
-    <div class="site-header__copy">
-      <span class="site-header__name">Braden Marshall</span>
-      <span class="site-header__role">Senior Software Engineer</span>
-    </div>
-  </div>
 
-  <div class="site-header__nav">
-    <SitePrimaryNav activeTab={activeTab} />
+    <div class="site-header__aside">
+      <SiteMenu />
+    </div>
   </div>
 </header>
 
@@ -46,61 +25,110 @@ const headerAvatarSize = "var(--site-header-avatar-size, 72px)";
   .site-header {
     position: relative;
     z-index: 2;
+    flex-shrink: 0;
+    min-width: 0;
+    padding: var(--space-12) var(--panel-gutter) var(--space-8);
+  }
+
+  /* One footprint in every room: the row is never shorter than the name's
+     line, so the rule lands on the same line whether the motto or the name is
+     the taller of the two. */
+  .site-header__row {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: var(--panel-shell-padding);
-    flex-shrink: 0;
+    gap: var(--space-8) var(--space-16);
+    min-height: var(--control-3xl);
+    padding-bottom: var(--space-8);
+    /* Transparent, but still 1px: the rule is DRAWN below, and this is what
+       goes on holding the line's room in the row's box. */
+    border-bottom: 1px solid transparent;
   }
 
-  .site-header__identity {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
+  /*
+   * The rule itself, lifted off the row's own border.
+   *
+   * Connect's list hangs from inside this row and its haze bleeds a feather's
+   * width past it in every direction (site-menu) — and a backdrop filter takes
+   * in everything painted beneath it. A border paints with its own box, before
+   * any positioned descendant, so the row's border sat squarely in that
+   * backdrop and a 1px line under a 12px blur is not softened, it is gone: the
+   * rule broke off short of the right rail for as long as the list was open.
+   * Drawn here instead, it paints in the header's positioned layer ABOVE the
+   * haze, on the 1px the transparent border still holds, and the list opening
+   * cannot reach it.
+   *
+   * The row stays `z-index: auto` on purpose. Making it a stacking context
+   * would only re-parent the haze into it and leave the rule underneath again;
+   * what puts the rule on top is being a positioned box in the same context as
+   * the haze, one step higher.
+   */
+  .site-header__row::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    inset-inline: 0;
+    bottom: -1px;
+    height: 1px;
+    background: var(--color-border-soft);
+    pointer-events: none;
   }
 
-  .site-header__avatar-shell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    line-height: 0;
+  /* A forced palette drops backgrounds and takes the haze with it (haze-patch),
+     so the border is both safe and the only one of the two that survives. */
+  @media (forced-colors: active) {
+    .site-header__row {
+      border-bottom-color: var(--color-border-soft);
+    }
+
+    .site-header__row::after {
+      content: none;
+    }
   }
 
-  .site-header__copy {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    min-width: 0;
-  }
-
+  /* Flush leading: Recoleta's metric overrides centre the line box on the cap
+     band, so centring this row against the motto centres the caps. */
   .site-header__name {
-    font-family: "BrutalType", system-ui, sans-serif;
-    font-size: 0.88rem;
-    font-weight: 700;
+    flex: 0 1 auto;
+    margin: 0;
+    min-width: 0;
     color: var(--color-text-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 1;
+    font-family: var(--font-display);
+    font-size: var(--text-display);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-flush);
+    white-space: nowrap;
   }
 
-  .site-header__role {
-    color: var(--color-text-muted);
-    font-size: 0.6rem;
+  .site-header__name-link {
+    display: inline-block;
+    border-radius: var(--radius-xs);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header__name-link:focus-visible {
+    outline: 2px solid var(--color-focus-ring-strong);
+    outline-offset: var(--space-2);
+  }
+
+  /* The right bookend. The auto start margin keeps it on the right rail when
+     it wraps onto a line of its own. */
+  .site-header__aside {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
+    margin-inline-start: auto;
   }
 
   @media (max-width: 760px) {
-    .site-header {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      align-items: start;
-      row-gap: 0.85rem;
-      padding: var(--panel-shell-padding);
-    }
-
-    .site-header__nav {
-      width: 100%;
+    .site-header__name {
+      font-size: var(--text-hero);
     }
   }
 </style>

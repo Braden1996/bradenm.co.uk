@@ -1,0 +1,35 @@
+[
+  {
+    "title": "12 Rules for Life",
+    "author": "Jordan B. Peterson",
+    "description": "Twelve essays on responsibility, meaning and everyday conduct, drawing on psychology, philosophy and stories.",
+    "firstPublished": "2018",
+    "categories": ["Psychology", "Philosophy"],
+    "sources": [
+      "https://www.penguin.co.uk/books/309610/12-rules-for-life-by-peterson-jordan-b/9780141988511"
+    ]
+  },
+  {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "description": "A practical guide to understanding other people, communicating with care and building better personal and working relationships.",
+    "firstPublished": "1936",
+    "categories": ["Communication", "Personal development"],
+    "sources": [
+      "https://www.simonandschuster.com/books/How-to-Win-Friends-and-Influence-People/Dale-Carnegie/Dale-Carnegie-Books/9781982171452"
+    ]
+  },
+  {
+    "title": "Foundation",
+    "author": "Isaac Asimov",
+    "description": "As a galactic empire declines, a mathematician's plan to preserve knowledge becomes a struggle over the shape of the future.",
+    "categories": ["Science fiction"],
+    "sources": ["https://www.penguinrandomhouse.com/books/5655/foundation-by-isaac-asimov/"]
+  },
+  {
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "firstPublished": "",
+    "sources": ["https://openlibrary.org/works/OL1317211W"]
+  }
+]

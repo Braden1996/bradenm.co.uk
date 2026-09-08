@@ -1,44 +1,38 @@
 ---
+import { formatBookshelfResultsCount } from "../lib/bookshelf-data";
+
 interface Props {
+  instanceId?: string;
   total: number;
 }
 
-const { total } = Astro.props;
+const { instanceId, total } = Astro.props;
+const label = formatBookshelfResultsCount(total, total, false);
 ---
 
-<p class="shelf-count">
-  <span data-results-count>{total}</span> of {total} titles
+<p
+  class="shelf-count"
+  aria-atomic="true"
+  aria-live="polite"
+  data-bookshelf-results-for={instanceId}
+  data-results-count
+  data-results-total={total}
+>
+  {label}
 </p>
 
 <style>
+  /* Announce filtering without adding a visible footer or taking any shelf space. */
   .shelf-count {
-    margin: 0;
-    color: var(--bookshelf-text-faint);
-    font-size: 0.68rem;
-    letter-spacing: 0.01em;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
     white-space: nowrap;
-    opacity: 1;
-    transform: none;
-  }
-
-  :global(html[data-client-page-swap="true"]) .shelf-count {
-    opacity: 0;
-    transform: translateY(0.24rem);
-    animation: shelf-count-enter 260ms ease 140ms forwards;
-  }
-
-  @keyframes shelf-count-enter {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .shelf-count {
-      opacity: 1;
-      transform: none;
-      animation: none;
-    }
   }
 </style>

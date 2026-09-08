@@ -1,11 +1,22 @@
 ---
+import HazeBar from "../atoms/haze-bar.astro";
+
 interface Props {
   class?: string;
   initialFade?: "none" | "bottom" | "both";
   tone?: "default" | "subtle";
+  mobile?: boolean;
+  smooth?: boolean;
 }
 
-const { class: className, initialFade = "none", tone = "default", ...rest } = Astro.props as Props;
+const {
+  class: className,
+  initialFade = "none",
+  tone = "default",
+  mobile = false,
+  smooth = false,
+  ...rest
+} = Astro.props;
 ---
 
 <div
@@ -17,25 +28,30 @@ const { class: className, initialFade = "none", tone = "default", ...rest } = As
   ]}
   {...rest}
   data-scroll-fade-root
+  data-scroll-fade-mobile={mobile || undefined}
+  data-scroll-fade-smooth={smooth || undefined}
 >
   <slot />
+
+  <HazeBar edge="top" class="scroll-fade-frame__haze scroll-fade-frame__haze--top" />
+  <HazeBar edge="bottom" class="scroll-fade-frame__haze scroll-fade-frame__haze--bottom" />
 </div>
 
-<script>
-  import { destroyScrollFades, initScrollFades } from "../../scripts/scroll-fade";
-
-  initScrollFades();
-
-  if (!document.documentElement.dataset.scrollFadeBound) {
-    document.documentElement.dataset.scrollFadeBound = "true";
-    document.addEventListener("astro:before-swap", () => destroyScrollFades());
-    document.addEventListener("astro:page-load", () => initScrollFades());
-  }
-</script>
-
 <style>
+  @property --scroll-edge-top-fade-size {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 0px;
+  }
+
+  @property --scroll-edge-bottom-fade-size {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 0px;
+  }
+
   .scroll-fade-frame {
-    --scroll-edge-height: 20px;
+    --scroll-edge-height: 44px;
     --scroll-edge-top-strength: 0;
     --scroll-edge-bottom-strength: 1;
     --scroll-edge-top-fade-size: 0px;
@@ -46,16 +62,71 @@ const { class: className, initialFade = "none", tone = "default", ...rest } = As
     min-height: 0;
   }
 
+  .scroll-fade-frame[data-scroll-fade-smooth] {
+    transition:
+      --scroll-edge-top-fade-size 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      --scroll-edge-bottom-fade-size 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /*
+   * The stops trace smoothstep (3t² − 2t³) rather than a straight line.
+   *
+   * A linear ramp holds its slope constant and then drops it to zero at each
+   * end, and the eye's lateral inhibition turns that kink in the first
+   * derivative into a visible band — which is what reads as a hard edge on an
+   * otherwise gradual fade. Smoothstep arrives at both ends with zero slope, so
+   * there is no kink left to exaggerate.
+   *
+   * One gradient per edge, intersected, so each reads as its own ramp instead of
+   * a single stop list that has to describe both.
+   */
   .scroll-fade-frame :global([data-scroll-fade-viewport]) {
     min-height: 0;
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      oklch(0% 0 0) var(--scroll-edge-top-fade-size),
-      oklch(0% 0 0) calc(100% - var(--scroll-edge-bottom-fade-size)),
-      transparent 100%
-    );
+    mask-image:
+      linear-gradient(
+        to bottom,
+        rgb(0 0 0 / 0) 0,
+        rgb(0 0 0 / 0.043) calc(var(--scroll-edge-top-fade-size) * 0.125),
+        rgb(0 0 0 / 0.156) calc(var(--scroll-edge-top-fade-size) * 0.25),
+        rgb(0 0 0 / 0.316) calc(var(--scroll-edge-top-fade-size) * 0.375),
+        rgb(0 0 0 / 0.5) calc(var(--scroll-edge-top-fade-size) * 0.5),
+        rgb(0 0 0 / 0.684) calc(var(--scroll-edge-top-fade-size) * 0.625),
+        rgb(0 0 0 / 0.844) calc(var(--scroll-edge-top-fade-size) * 0.75),
+        rgb(0 0 0 / 0.957) calc(var(--scroll-edge-top-fade-size) * 0.875),
+        rgb(0 0 0 / 1) var(--scroll-edge-top-fade-size)
+      ),
+      linear-gradient(
+        to top,
+        rgb(0 0 0 / 0) 0,
+        rgb(0 0 0 / 0.043) calc(var(--scroll-edge-bottom-fade-size) * 0.125),
+        rgb(0 0 0 / 0.156) calc(var(--scroll-edge-bottom-fade-size) * 0.25),
+        rgb(0 0 0 / 0.316) calc(var(--scroll-edge-bottom-fade-size) * 0.375),
+        rgb(0 0 0 / 0.5) calc(var(--scroll-edge-bottom-fade-size) * 0.5),
+        rgb(0 0 0 / 0.684) calc(var(--scroll-edge-bottom-fade-size) * 0.625),
+        rgb(0 0 0 / 0.844) calc(var(--scroll-edge-bottom-fade-size) * 0.75),
+        rgb(0 0 0 / 0.957) calc(var(--scroll-edge-bottom-fade-size) * 0.875),
+        rgb(0 0 0 / 1) var(--scroll-edge-bottom-fade-size)
+      );
+    mask-composite: intersect;
     mask-repeat: no-repeat;
+  }
+
+  /*
+   * The haze bars take their height from the same variables that drive the alpha
+   * ramp, so the blur band and the fade band are always the same band. It also
+   * makes the whole thing self-disabling: a pane that cannot scroll leaves the
+   * size at zero, the strip collapses, and nothing pays for a backdrop filter it
+   * never shows.
+   *
+   * These rules reach the bars' root elements because HazeBar spreads its rest
+   * props onto that root, which is what carries this component's scope onto it.
+   */
+  .scroll-fade-frame__haze--top {
+    --haze-bar-size: var(--scroll-edge-top-fade-size);
+  }
+
+  .scroll-fade-frame__haze--bottom {
+    --haze-bar-size: var(--scroll-edge-bottom-fade-size);
   }
 
   .scroll-fade-frame--initial-bottom,
@@ -66,5 +137,31 @@ const { class: className, initialFade = "none", tone = "default", ...rest } = As
   .scroll-fade-frame--initial-both {
     --scroll-edge-top-strength: 1;
     --scroll-edge-top-fade-size: var(--scroll-edge-height);
+  }
+
+  @media (max-width: 760px) {
+    .scroll-fade-frame:not([data-scroll-fade-mobile]) :global([data-scroll-fade-viewport]) {
+      mask-image: none;
+    }
+
+    .scroll-fade-frame:not([data-scroll-fade-mobile]) .scroll-fade-frame__haze {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-fade-frame[data-scroll-fade-smooth] {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .scroll-fade-frame :global([data-scroll-fade-viewport]) {
+      mask-image: none;
+    }
+
+    .scroll-fade-frame__haze {
+      display: none;
+    }
   }
 </style>
