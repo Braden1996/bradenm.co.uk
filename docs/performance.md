@@ -1,4 +1,4 @@
-<!-- cspell:ignore bunx overscroll -->
+<!-- cspell:ignore bunx overscroll devtoolslog -->
 
 # Rendering and performance
 
@@ -122,7 +122,9 @@ initial transfer. The desktop run is checked against the same paint and stabilit
 Initial transfer includes the resources requested without interaction, including native lazy
 loading's nearby covers. JavaScript size is the sum of gzip sizes of the requested script files.
 
-`artifacts/performance/` contains the Lighthouse reports and budget summary.
+`artifacts/performance/` contains the Lighthouse reports and budget summary. Each report has matching
+`.trace.json` and `.devtoolslog.json` files with Lighthouse's existing raw trace and DevTools network log,
+saved after the audit for diagnosing task and request timings without changing the measured run.
 `artifacts/browser/report/` contains the browser report, screenshots, and a separate JSON record
 of cold portrait enhancement. The latter records intent-to-ready timing, long tasks, and browser
 and GPU context without claiming a portable hardware budget. Its browser and resource caches are

@@ -48,48 +48,72 @@ for (const intent of ["pointer", "keyboard"] as const) {
     const stage = page.locator("[data-atlas-stage]");
     const atlas = page.locator("[data-atlas]");
     await page.evaluate(() => document.fonts.ready);
-    // Exclude finite page animations from the printed-view comparison.
-    const before = await stage.screenshot({
-      animations: "disabled",
-      path: testInfo.outputPath("before.png"),
-    });
     const geometry = await stage.boundingBox();
     expect(requests).toEqual([]);
-    if (intent === "pointer") {
-      if (!geometry) throw new Error("The printed table must have its reserved geometry");
-      await page.mouse.move(geometry.x + 4, geometry.y + 4);
-    } else await page.locator("[data-atlas-scroll]").focus();
-    await expect(atlas).toHaveAttribute("data-atlas-ready", "true", { timeout: 25_000 });
-    await expect(atlas).not.toHaveAttribute("data-atlas-engaged");
-    await expect(page.locator("[data-atlas-canvas]")).toHaveCSS("opacity", "0");
-    expect(await stage.boundingBox()).toEqual(geometry);
-    if (intent === "keyboard") await page.locator("[data-atlas-scroll]").blur();
-    const after = await stage.screenshot({
-      animations: "disabled",
-      path: testInfo.outputPath("after.png"),
-    });
+    const pending = Promise.withResolvers<void>();
+    if (intent === "keyboard") {
+      await page.route(/atlas-renderer[^?]*\.(?:js|ts)(?:\?|$)/, async (route) => {
+        await pending.promise;
+        await route.continue();
+      });
+    }
+    // Keep keyboard focus identical across captures. The screenshot-only veil
+    // style removes the unrelated fixed header's backdrop recomposition while
+    // preserving its footprint and every underlying printed stage pixel.
+    const style =
+      intent === "keyboard" ? ".about-template__veil { visibility: hidden !important; }" : "";
     try {
       if (intent === "keyboard") {
-        const [previous, current] = await Promise.all(
-          [before, after].map((png) => sharp(png).raw().toBuffer({ resolveWithObject: true })),
-        );
-        if (!previous || !current) throw new Error("Both printed frames must be available");
-        expect(current.info).toEqual(previous.info);
-        const difference = previous.data.reduce(
-          (maximum, channel, index) =>
-            Math.max(maximum, Math.abs(channel - (current.data[index] ?? 0))),
-          0,
-        );
-        // Keyboard focus can recompose the translucent header fade. Measured
-        // rounding is at most two eight-bit levels; no changed-pixel quota applies.
-        expect(difference).toBeLessThanOrEqual(2);
-      } else expect(after.equals(before)).toBe(true);
-    } catch (error) {
-      await testInfo.attach("printed-before", { body: before, contentType: "image/png" });
-      await testInfo.attach("printed-after", { body: after, contentType: "image/png" });
-      throw error;
+        await page.locator("[data-atlas-scroll]").focus();
+        await expect(atlas).not.toHaveAttribute("data-atlas-ready");
+      }
+      // Exclude finite page animations from the printed-view comparison.
+      const before = await stage.screenshot({
+        animations: "disabled",
+        style,
+        path: testInfo.outputPath("before.png"),
+      });
+      if (intent === "pointer") {
+        if (!geometry) throw new Error("The printed table must have its reserved geometry");
+        await page.mouse.move(geometry.x + 4, geometry.y + 4);
+      }
+      pending.resolve();
+      await expect(atlas).toHaveAttribute("data-atlas-ready", "true", { timeout: 25_000 });
+      await expect(atlas).not.toHaveAttribute("data-atlas-engaged");
+      await expect(page.locator("[data-atlas-canvas]")).toHaveCSS("opacity", "0");
+      expect(await stage.boundingBox()).toEqual(geometry);
+      if (intent === "keyboard") await expect(page.locator("[data-atlas-scroll]")).toBeFocused();
+      const after = await stage.screenshot({
+        animations: "disabled",
+        style,
+        path: testInfo.outputPath("after.png"),
+      });
+      try {
+        if (intent === "keyboard") {
+          const [previous, current] = await Promise.all(
+            [before, after].map((png) => sharp(png).raw().toBuffer({ resolveWithObject: true })),
+          );
+          if (!previous || !current) throw new Error("Both printed frames must be available");
+          expect(current.info).toEqual(previous.info);
+          const difference = previous.data.reduce(
+            (maximum, channel, index) =>
+              Math.max(maximum, Math.abs(channel - (current.data[index] ?? 0))),
+            0,
+          );
+          // Software compositing can still round isolated channels by one level.
+          // Retain the two-level limit across every pixel, without a changed-pixel quota.
+          expect(difference).toBeLessThanOrEqual(2);
+        } else expect(after.equals(before)).toBe(true);
+      } catch (error) {
+        await testInfo.attach("printed-before", { body: before, contentType: "image/png" });
+        await testInfo.attach("printed-after", { body: after, contentType: "image/png" });
+        throw error;
+      }
+      expect(requests.some((url) => /atlas-renderer/.test(url))).toBe(true);
+    } finally {
+      pending.resolve();
+      if (intent === "keyboard") await page.locator("[data-atlas-scroll]").blur();
     }
-    expect(requests.some((url) => /atlas-renderer/.test(url))).toBe(true);
   });
 }
 

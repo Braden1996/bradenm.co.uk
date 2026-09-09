@@ -7,6 +7,12 @@ import { initPaperOverscroll } from "./paper-overscroll";
 export function initializeSite() {
   bindSiteMenu();
   bindAboutRooms();
-  initOverlayScrollbars();
-  initPaperOverscroll();
+  // The sheet already has its final geometry. Measure decorative controls only
+  // after its first paint so they do not force layout during the entry task.
+  requestAnimationFrame(() => {
+    window.setTimeout(() => {
+      initOverlayScrollbars();
+      initPaperOverscroll();
+    }, 0);
+  });
 }

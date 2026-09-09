@@ -1,3 +1,4 @@
+// cspell:ignore devtoolslog
 import { chromium } from "@playwright/test";
 import lighthouse from "lighthouse";
 import { userAgents } from "lighthouse/core/config/constants.js";
@@ -56,6 +57,12 @@ async function auditRoute(route, formFactor, index) {
   if (!result) throw new Error("Lighthouse did not return a result");
   const name = `${route === "/" ? "home" : "bookshelf"}-${formFactor}-${index}`;
   await writeFile(path.join(output, `${name}.json`), JSON.stringify(result.lhr, null, 2));
+  // Persist the evidence Lighthouse already gathered, after the measured audit has finished.
+  await writeFile(path.join(output, `${name}.trace.json`), JSON.stringify(result.artifacts.Trace));
+  await writeFile(
+    path.join(output, `${name}.devtoolslog.json`),
+    JSON.stringify(result.artifacts.DevtoolsLog),
+  );
   if (result.lhr.runtimeError) throw new Error(JSON.stringify(result.lhr.runtimeError));
   const metrics = Object.fromEntries(
     Object.entries(auditNames).map(([key, audit]) => [
