@@ -4,7 +4,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   X-XSS-Protection: 0
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-Ral5La2PCgZvTE6tGH5K0QE+wHahHIWptOPLEsdkszk='; style-src 'self' 'unsafe-inline'; connect-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-Ral5La2PCgZvTE6tGH5K0QE+wHahHIWptOPLEsdkszk=' https://static.cloudflareinsights.com/beacon.min.js https://static.cloudflareinsights.com/beacon.min.js/; style-src 'self' 'unsafe-inline'; connect-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable

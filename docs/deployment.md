@@ -1,4 +1,4 @@
-<!-- cspell:ignore bunx -->
+<!-- cspell:ignore bunx cloudflareinsights -->
 
 # Deployment
 
@@ -10,6 +10,13 @@ The Cloudflare dashboard was verified on 8 September 2026: this is a Direct Uplo
 production branch `master`, and both `bradenm.co.uk` and `www.bradenm.co.uk` are active with SSL.
 GitHub has the deployment secret and matching account variable. The CD run records the tested
 commit and deployment URL after each successful upload.
+
+The domain's existing Cloudflare Web Analytics injects an integrity-checked beacon. The content
+security policy permits only its canonical script path and versioned children on
+`static.cloudflareinsights.com`; its automatic reports use the same-origin `/cdn-cgi/rum` endpoint.
+Cloudflare also rewrites email links and injects its same-origin email decoder. Live HTML checks
+must account for these specific edge transformations while comparing application markup and assets
+with the tested artifact. See the [Web Analytics CSP guidance](https://developers.cloudflare.com/web-analytics/faq/).
 
 ## Build and CI
 
