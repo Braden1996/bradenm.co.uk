@@ -3,7 +3,7 @@ import { parseBookDetails, type BookDetails } from "../lib/book-details";
 let records: Promise<BookDetails[]> | undefined;
 
 export function loadBookDetails() {
-  records ??= fetch("/bookshelf/details.json", { signal: AbortSignal.timeout(5000) })
+  records ??= fetch("/bookshelf/details.json")
     .then(async (response) => (response.ok ? parseBookDetails(await response.text()) : []))
     .catch(() => []);
   return records;

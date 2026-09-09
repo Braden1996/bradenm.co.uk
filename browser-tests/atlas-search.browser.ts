@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { warmAtlas } from "./helpers/atlas";
 const atlasSelector = "[data-atlas]";
 const visibleSelector = "[data-book-card]:not([hidden])";
 async function settled(page: Page) {
@@ -46,6 +47,7 @@ test("focus gathers the live table into rows and an empty blur restores the scat
 }) => {
   await page.goto("/bookshelf");
   const atlas = page.locator(atlasSelector);
+  await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   const original = await centers(page);
   await focusDuringArrangement(page);
@@ -75,6 +77,7 @@ test("rapid queries keep relevance order through inspection, clear and keyboard 
   await page.goto("/bookshelf");
   const atlas = page.locator(atlasSelector);
   const search = page.locator("[data-search-input]");
+  await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
@@ -113,6 +116,7 @@ test("a book picked up mid-transition returns safely before the layout continues
 }) => {
   await page.goto("/bookshelf");
   const atlas = page.locator(atlasSelector);
+  await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   const book = page.locator("[data-book-open]").nth(20);
   await focusDuringArrangement(page, 20);

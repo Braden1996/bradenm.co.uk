@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { warmAtlas } from "./helpers/atlas";
 
 for (const profile of [
   { name: "desktop", width: 1350, height: 940, reduced: false },
@@ -95,6 +96,7 @@ test("tooltip metadata sits alongside the author without fetching the inspection
     if (request.url().endsWith("/bookshelf/details.json")) requests.push(request.url());
   });
   await page.goto("/bookshelf");
+  await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
   await page.locator("[data-book-open]").first().hover();
   const note = page.getByRole("tooltip");

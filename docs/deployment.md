@@ -32,7 +32,9 @@ separately when changing the bookshelf; see [bookshelf metadata](bookshelf-metad
 [CI](../.github/workflows/ci.yml) runs for pull requests, pushes to `master`, and manual runs. It
 runs repository checks and produces one static build. The `site-dist-<commit SHA>` artifact contains
 `dist/`; browser behaviour and performance checks download and test that exact output. Build output
-and browser/performance evidence are retained for 14 days.
+and browser/performance evidence are retained for 14 days. Lighthouse runs separately from three
+browser shards, each with one browser worker on its own machine. All jobs must succeed before
+deployment. Diagnostic artifacts are named `lighthouse` and `browser-1` through `browser-3`.
 
 The deployment output check verifies required pages and headers, rejects non-regular files, and
 enforces the [Pages Free plan asset limits](https://developers.cloudflare.com/pages/platform/limits/)

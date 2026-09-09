@@ -1,6 +1,7 @@
 // cspell:ignore domcontentloaded networkidle cixin describedby
 import { expect, test } from "@playwright/test";
 import { mkdir } from "node:fs/promises";
+import { warmAtlas } from "./helpers/atlas";
 
 for (const viewport of [
   { width: 1350, height: 940 },
@@ -31,6 +32,7 @@ for (const viewport of [
       const before = await stage.screenshot();
       const geometry = await stage.boundingBox();
       scripts.resolve();
+      await warmAtlas(page);
       await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
       await expect(page.locator("[data-atlas-canvas]")).toHaveCSS("opacity", "0");
       await expect(page.locator("[data-atlas]")).not.toHaveAttribute("data-atlas-engaged");
@@ -53,10 +55,13 @@ for (const viewport of [
       await expect(page.getByRole("tooltip")).toBeVisible();
       // A stationary pointer left over a book must not activate 3D on reload.
       await page.reload();
-      await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
       await expect(page.locator("[data-atlas]")).not.toHaveAttribute("data-atlas-engaged");
       await expect(page.locator("[data-atlas-canvas]")).toHaveCSS("opacity", "0");
       await expect(page.getByRole("tooltip")).not.toBeVisible();
+      await warmAtlas(page);
+      await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
+      await expect(page.locator("[data-atlas]")).not.toHaveAttribute("data-atlas-engaged");
+      await expect(page.locator("[data-atlas-canvas]")).toHaveCSS("opacity", "0");
     } finally {
       scripts.resolve();
     }
@@ -120,6 +125,7 @@ for (const profile of [
         resolve();
         const atlas = page.locator("[data-atlas]");
         if (profile.width > 760) {
+          await warmAtlas(page);
           await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
           await expect(page.locator("[data-atlas-canvas]")).toHaveCSS("opacity", "0");
           const stage = await page.locator("[data-atlas-stage]").boundingBox();
@@ -166,6 +172,7 @@ test("desktop opens with every book fitted, zooms around the pointer and returns
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/bookshelf");
   const atlas = page.locator("[data-atlas]");
+  await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   await expect(atlas).toHaveAttribute("data-atlas-models", "165");
   await expect(atlas).toHaveAttribute("data-atlas-zoom", "1.0000");
@@ -212,6 +219,7 @@ for (const live of [false, true]) {
     await page.goto("/bookshelf");
     const atlas = page.locator("[data-atlas]");
     const stage = page.locator("[data-atlas-stage]");
+    await warmAtlas(page);
     await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
     if (live) {
       await stage.hover({ position: { x: 4, y: 4 } });
@@ -242,6 +250,7 @@ for (const live of [false, true]) {
 
 test("hover and keyboard focus show metadata in a tooltip above the canvas", async ({ page }) => {
   await page.goto("/bookshelf");
+  await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
   const book = page.locator("[data-book-open]").nth(82);
   await book.hover();

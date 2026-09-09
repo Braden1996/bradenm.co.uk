@@ -85,9 +85,9 @@ jobs:
           overwrite: true
 
   performance:
-    name: Browser and performance budgets
+    name: Performance budgets
     needs: build
-    timeout-minutes: 30
+    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     steps:
@@ -117,20 +117,61 @@ jobs:
           path: dist/
 
       - name: Performance budgets
-        id: performance
         run: bun run check:performance
 
-      - name: Browser behavior
-        if: >-
-          !cancelled() &&
-          (steps.performance.outcome == 'success' || steps.performance.outcome == 'failure')
-        run: bun run check:browser
-
-      - name: Save browser and performance evidence
+      - name: Save performance evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: performance
+          name: lighthouse
+          path: artifacts/
+          retention-days: 14
+          overwrite: true
+
+  browser:
+    name: Browser behavior (${{ matrix.shard }}/3)
+    needs: build
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3]
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
+      - name: Setup Bun package manager
+        uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version-file: package.json
+
+      - name: Install dependencies
+        run: bun ci
+
+      - name: Install Chromium
+        run: bunx playwright install --with-deps chromium
+
+      - name: Download production output
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist-${{ github.sha }}
+          path: dist/
+
+      - name: Browser behavior
+        run: bun run check:browser --shard=${{ matrix.shard }}/3
+
+      - name: Save browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-${{ matrix.shard }}
           path: artifacts/
           retention-days: 14
           overwrite: true

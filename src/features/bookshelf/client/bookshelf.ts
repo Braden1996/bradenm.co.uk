@@ -126,6 +126,7 @@ export function mountBookshelf(root: HTMLElement) {
   }
   let visible = cards;
   let renderer: AtlasRenderer | null = null;
+  let rendererRequested = false;
   let loading: Promise<void> | null = null;
   let generation = 0;
   let selected: BookCard | null = null;
@@ -245,9 +246,10 @@ export function mountBookshelf(root: HTMLElement) {
     renderer?.setView(view);
   }
   function engageAtlas() {
-    // Keep the first printed frame unchanged while the renderer prepares offscreen.
+    // Keep the printed frame unchanged while an intended interaction prepares 3D.
     // Reveal live materials for navigation and pickup, never for a passing hover.
     elements.atlas.dataset.atlasEngaged = "true";
+    requestRenderer();
   }
   function setCamera(next: AtlasCamera, immediate = false) {
     camera = atlasClampCamera(next, view.width, view.height);
@@ -431,12 +433,23 @@ export function mountBookshelf(root: HTMLElement) {
     elements.atlas.dataset.atlasUnavailable = "true";
     reportWebGLFailure();
   }
+  function requestRenderer() {
+    if (!active()) return;
+    rendererRequested = true;
+    void ensureRenderer();
+  }
+  function requestRendererFromPointerMove() {
+    if (!active()) return;
+    requestRenderer();
+    elements.stage.removeEventListener("pointermove", requestRendererFromPointerMove);
+  }
   async function ensureRenderer() {
     if (
       renderer ||
       loading ||
       failed ||
       !active() ||
+      (!rendererRequested && !selected) ||
       (!desktop.matches && !selected) ||
       !motion() ||
       forcedColors.matches
@@ -662,8 +675,12 @@ export function mountBookshelf(root: HTMLElement) {
 
   search?.addEventListener("input", scheduleSearch, { signal });
   search?.addEventListener("search", scheduleSearch, { signal });
+  search?.addEventListener("focus", requestRenderer, { signal });
   search?.addEventListener("focus", scheduleSearch, { signal });
   search?.addEventListener("blur", scheduleSearch, { signal });
+  stage.addEventListener("pointerenter", requestRenderer, { signal });
+  stage.addEventListener("pointermove", requestRendererFromPointerMove, { signal });
+  stage.addEventListener("focusin", requestRenderer, { signal });
   root.querySelector("[data-empty-reset]")?.addEventListener(
     "click",
     () => {

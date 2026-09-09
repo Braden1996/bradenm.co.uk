@@ -302,6 +302,47 @@ test("the printed book uses the same desktop composition without motion", async 
   await expect(dialog).not.toBeVisible();
 });
 
+test("metadata arriving after five seconds fills the already-open inspection", async ({ page }) => {
+  const { promise: gate, resolve: release } = Promise.withResolvers<void>();
+  await page.route("**/bookshelf/details.json", async (route) => {
+    await gate;
+    await route.fulfill({
+      json: [
+        {
+          title: "12 Rules for Life",
+          author: "Jordan B. Peterson",
+          description: "Twelve essays about everyday life.",
+          categories: ["Psychology"],
+          sources: [],
+        },
+      ],
+    });
+  });
+  try {
+    const request = page.waitForRequest("**/bookshelf/details.json");
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/bookshelf");
+    await page.locator("[data-book-open]").first().click();
+    const dialog = page.locator("[data-book-inspector]");
+    await expect(dialog).toBeVisible();
+    await expect(dialog.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
+    await expect(dialog.locator("[data-inspect-cover]")).toBeVisible();
+    await expect(dialog.locator("[data-inspect-extra]")).toBeHidden();
+    await request;
+    // Hold the real response beyond the former five-second fetch deadline.
+    await page.waitForTimeout(5_500);
+    release();
+    await expect(dialog.locator("[data-inspect-description]")).toHaveText(
+      "Twelve essays about everyday life.",
+    );
+    await expect(dialog.getByRole("button", { name: "Show books in Psychology" })).toBeVisible();
+    await expect(dialog.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
+    await expect(dialog.locator("[data-inspect-cover]")).toBeVisible();
+  } finally {
+    release();
+  }
+});
+
 test("late metadata never replaces the next book and missing records stay quiet", async ({
   page,
 }) => {

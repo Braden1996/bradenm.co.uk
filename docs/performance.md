@@ -60,8 +60,8 @@ The generated reports are intentionally ignored by Git and uploaded by CI.
   sizing expression. The current assets use AVIF quality 60 and WebP quality 90 for fine
   lettering; the earlier measurements above used quality 50 and 82. Visible paint loads with
   the artwork; pigment data and GPU resources wait for interaction.
-- Desktop books share a pre-rendered image sheet, with Three.js and one shared cover sheet loading
-  after first paint for the active room. Zooming loads larger 256/512/768px candidates near the
+- Desktop books share a pre-rendered image sheet. Three.js and the shared cover sheet wait for
+  pointer or keyboard intent in the active bookshelf. Zooming loads larger 256/512/768px candidates near the
   viewport; inspection originals are capped at 1536px without upscaling. Mobile uses ordinary
   cover images in a grid, with the first six eager and the remainder lazy loaded.
 - Generated textures, fonts, and signature assets carry content hashes and immutable caching.
@@ -118,7 +118,7 @@ lab measurements, not production field data or a simulation of Cloudflare's enti
 The enforced limits are mobile median FCP ≤1.8 s, LCP ≤2.5 s, blocking time ≤200 ms, and CLS ≤0.02;
 HTML ≤100 KiB gzip; homepage JavaScript ≤35 KiB gzip and transfer ≤500 KiB mobile or
 ≤600 KiB desktop. The bookshelf has explicit ceilings of 350 KiB gzip JavaScript and 1.5 MiB
-initial transfer, including automatic 3D enhancement. The desktop run is checked against the same paint and stability ceilings.
+initial transfer. The desktop run is checked against the same paint and stability ceilings.
 Initial transfer includes the resources requested without interaction, including native lazy
 loading's nearby covers. JavaScript size is the sum of gzip sizes of the requested script files.
 
@@ -128,11 +128,19 @@ of cold portrait enhancement. The latter records intent-to-ready timing, long ta
 and GPU context without claiming a portable hardware budget. Its browser and resource caches are
 fresh; operating-system and driver caches are uncontrolled.
 
-The atlas report in `artifacts/atlas/` identifies the WebGL renderer. Desktop readiness and frame
-rate targets require hardware acceleration; positively identified software renderers record these
-measurements and target comparisons without treating them as hardware results. Readiness completion,
-idle frames, transfer size and GPU resource limits remain checked on both renderer types. Mobile
-grid budgets and all Lighthouse budgets remain enforced.
+The atlas report in `artifacts/atlas/` identifies the WebGL renderer and separately measures cold
+pointer intent to 3D readiness, including the deferred scripts and cover sheet. Desktop readiness and
+both profiles' frame-rate targets require hardware acceleration; positively identified software
+renderers record these measurements and unmet target comparisons without treating them as hardware
+results. Browser-level GPU metadata identifies mobile's compositor without creating a page WebGL
+context. Reports state readiness and frame-rate enforcement separately. Mobile's six-second readiness,
+movement completion, idle frames, transfer size, GPU resource limits and all Lighthouse budgets remain
+enforced. Unknown renderers retain every numeric assertion. The loading checks verify that an untouched
+desktop requests no renderer, and that intent prepares it without revealing or moving the printed view.
+The numeric atlas benchmark disables Playwright tracing so trace screenshots and DOM snapshots do
+not add work to the measurement. Behaviour tests retain their failure traces. Desktop movement must
+produce a render within 25 seconds independently of the fixed two-second frame-rate sample; a slow
+software renderer can complete that sample before its queued draw, and its recorded speed remains zero.
 
 The browser suite covers direct and cached routes, loading failures and CSS readiness, rapid reversals,
 metadata, native link behaviour, pre-initialization search, stable ordering, no-JavaScript use,
@@ -141,7 +149,9 @@ WebGL, context loss, hidden-tab resume, native touch scrolling, stable listener 
 recurring animation work before intent.
 
 CI builds one production artifact, runs browser behaviour and performance budgets against that
-artifact, and retains output and evidence for 14 days. Cloudflare deployment uses the same artifact
+artifact, and retains output and evidence for 14 days. Lighthouse and three browser shards run on
+separate machines; each browser shard keeps one worker so its GPU checks do not compete. Every
+check must pass. Cloudflare deployment uses the same artifact
 after successful CI on the latest `master` commit. Manual redeployment runs CI again; see
 [deployment](deployment.md) for the pipeline and recovery steps.
 

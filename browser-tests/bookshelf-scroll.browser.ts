@@ -1,5 +1,6 @@
 // cspell:ignore domcontentloaded networkidle
 import { expect, test, type Page } from "@playwright/test";
+import { warmAtlas } from "./helpers/atlas";
 
 async function ready(page: Page) {
   await page.goto("/bookshelf");
@@ -122,6 +123,7 @@ for (const { name, viewport } of [
 test("dragging a book pans the table without picking it up", async ({ page }) => {
   await ready(page);
   const atlas = page.locator("[data-atlas]");
+  await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   await zoomIntoAtlas(page);
   const book = page.locator("[data-book-open]").nth(82);
@@ -143,6 +145,7 @@ test("pickup, rotation and return preserve the selected book and browsing positi
   page,
 }) => {
   await ready(page);
+  await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
   await zoomIntoAtlas(page);
   const before = await zoomLevel(page);
@@ -182,6 +185,7 @@ test("pickup, rotation and return preserve the selected book and browsing positi
 
 test("cached room changes suspend the atlas and reset its position", async ({ page }) => {
   await ready(page);
+  await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
   await zoomIntoAtlas(page);
   await page.getByRole("link", { name: "About", exact: true }).click();
@@ -197,6 +201,7 @@ test("cached room changes suspend the atlas and reset its position", async ({ pa
 
 test("a lost WebGL context keeps the printed atlas and book details usable", async ({ page }) => {
   await ready(page);
+  await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
   await page.locator("[data-atlas-canvas]").evaluate((canvas: HTMLCanvasElement) => {
     const context = canvas.getContext("webgl2");
@@ -272,6 +277,7 @@ test("failed inspection textures retain the browsing cover and usable details", 
 }) => {
   await page.route("**/bookshelf/covers/**", (route) => route.abort());
   await ready(page);
+  await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
   await page.locator("[data-book-open]").first().click();
   await expect(page.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
@@ -282,6 +288,7 @@ test("failed inspection textures retain the browsing cover and usable details", 
 test("hidden tabs stop drawing and resume the selected atlas position", async ({ page }) => {
   await ready(page);
   const atlas = page.locator("[data-atlas]");
+  await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   await zoomIntoAtlas(page);
   await page.evaluate(() => {
@@ -324,6 +331,7 @@ test("hiding the tab during return settles the modal and allows another pickup",
   const atlas = page.locator("[data-atlas]");
   const dialog = page.locator("[data-book-inspector]");
   const book = page.locator("[data-book-open]").nth(60);
+  await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
   await book.click();
   await expect(dialog).toHaveAttribute("data-inspector-ready", "true");
@@ -350,6 +358,7 @@ test("a failed base sheet leaves a complete preview that supports zoom and immed
 }) => {
   await page.route("**/bookshelf/atlas/covers.*", (route) => route.abort());
   await ready(page);
+  await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-unavailable", "true");
   await page.mouse.move(650, 440);
   await page.mouse.wheel(0, -200);
@@ -371,6 +380,7 @@ test("late inspection textures cannot reopen a dismissed book or replace the nex
   });
   try {
     await page.goto("/bookshelf", { waitUntil: "domcontentloaded" });
+    await warmAtlas(page);
     await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
     const books = page.locator("[data-book-open]");
     const dialog = page.locator("[data-book-inspector]");

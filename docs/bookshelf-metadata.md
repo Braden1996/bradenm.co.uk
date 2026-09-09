@@ -53,6 +53,9 @@ lookups are saved too, avoiding repeated requests on every deployment; use
 `--retry` to revisit them. Commit the cache, output and report together. Ordinary
 builds never fetch descriptions in a visitor's browser: the inspector loads the
 small static `/bookshelf/details.json` payload only when a book is opened.
+The shared request fills the current inspection when it arrives; title and cover appear immediately.
+It has no short wall-clock deadline, because graphics work can delay JavaScript processing even
+after the response reaches the browser. Late responses cannot replace a different selected book.
 
 ## Note design
 

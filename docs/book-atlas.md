@@ -18,9 +18,9 @@ There is no separate row of zoom controls; `-`, `0`
 movement and Shift-wheel move sideways. Browser zoom remains native. There is no drag bar,
 miniature map or separate overview mode.
 
-The printed atlas is the stable first frame. The renderer prepares in the background, but its
-canvas stays hidden until pointer movement, zooming, dragging, keyboard navigation, selection or
-search. A stationary pointer left over a book during refresh does not trigger hover or reveal.
+The printed atlas is the stable first frame. Pointer entry or keyboard focus prepares the renderer
+in the background. Its canvas stays hidden until zooming, dragging, selection or search; warming
+alone never reveals it. A stationary pointer left over a book during refresh does not trigger hover or reveal.
 The shared 8px table inset is present in Astro markup and used by both CSS and the camera.
 
 Hover or focus a book to lift, enlarge and straighten it, with a tooltip showing title, author
@@ -63,7 +63,7 @@ loads a light 3D inspection on demand. The mobile grid itself still needs no 3D 
   light mode uses a filtered 1024px map and a
   512px contact target. There is no depth-of-field blur.
 - `atlas-sheet.ts` defines a shared cover sheet and a shared transparent preview sheet. The
-  initial desktop view needs two image requests instead of one per book. Each book retains its
+  initial desktop view uses the preview sheet; the cover sheet loads on interaction intent. Each book retains its
   canonical sheet index through filtering. Zooming loads larger textures for nearby books,
   with bounded caches of 72 entries in full mode and 36 in light mode, plus the shared sheet.
   Off-screen models and evicted textures are disposed. Inspection masters and detailed models
@@ -73,7 +73,8 @@ loads a light 3D inspection on demand. The mobile grid itself still needs no 3D 
   and return, retaining a frozen browsing frame underneath the modal. Async image callbacks
   cannot change a later inspection.
 
-The desktop renderer loads after first paint when the room becomes active. The complete printed
+The desktop renderer loads on pointer or keyboard intent in the active room. It does not create an
+invisible WebGL scene during an untouched page load. The complete printed
 spread remains visible until both the first complete 3D frame and an interaction. Details open immediately even if
 3D is still loading. Hidden tabs and inactive rooms suspend drawing. Changing rooms resets the
 camera. Resizing across the mobile breakpoint replaces the renderer and switches the browsing
@@ -151,20 +152,26 @@ produce small shadow differences.
 
 Performance samples record browser/GPU details, applied CPU/network throttling, readiness,
 movement, idle frames and bounded resources. Mobile measures grid readiness and native scrolling;
-it does not initialize a WebGL context. Desktop targets 2-second 3D readiness and 60 fps, with a
+it does not initialize a WebGL context. Desktop targets 2-second 3D readiness from cold pointer intent and 60 fps, with a
 57 fps acceptance floor. Mobile retains 6-second readiness and a 29 fps acceptance floor against
 its 30 fps target. Emulation uses the host computer, not a
 physical phone, with fresh browser contexts and uncontrolled OS/driver caches.
+The speed sample counts submitted atlas render calls on desktop and animation callbacks while
+scrolling on mobile; these are not GPU presentation counters.
 
 The recorded renderer identifies software GPUs such as SwiftShader, llvmpipe and softpipe.
-CPU-only CI records their measured readiness and frame rate, including whether each hardware
-target was met, without enforcing hardware speed targets on a software rasterizer. The report
-states the rendering mode and whether those numeric targets were enforced; an unmet target
-remains recorded as unmet. All desktop runs must still become ready within 25 seconds and pass
-the same idle, transfer, model, texture and geometry checks. Hardware and unidentified desktop
-GPUs retain the 2-second and 57 fps assertions, including local runs and CI with a GPU. Mobile
-speed assertions always apply. The renderer determines this distinction; the CI environment
-variable does not.
+CPU-only CI records measured speeds and unmet hardware targets without treating a software rasterizer
+as hardware acceleration. Mobile reads browser-level compositor metadata without creating a page
+WebGL context. The report states readiness and frame-rate enforcement separately; an unmet target
+remains recorded as unmet. All desktop runs must still become ready within 25 seconds and pass the
+same idle, transfer, model, texture and geometry checks. Hardware and unidentified desktop GPUs retain
+the 2-second and 57 fps assertions. Mobile always retains its six-second readiness, actual scroll
+movement and zero-3D-resource checks; its 29 fps assertion applies to hardware and unknown compositors.
+The renderer determines this distinction; the CI environment variable does not.
+
+Numeric samples run without trace screenshots or DOM snapshots. A separate bounded liveness check
+requires a movement render within 25 seconds; it does not substitute a positive frame rate when
+the fixed two-second speed sample ends before a queued draw on a slow software renderer.
 
 The bookshelf retains ceilings of **350 KiB gzip JavaScript** and **1.5 MiB initial transfer**.
 All paint, blocking-time, HTML, layout-shift and homepage budgets remain unchanged. Exact results
