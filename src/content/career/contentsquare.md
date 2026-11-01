@@ -11,4 +11,4 @@ website: https://contentsquare.com
 mark: CS
 ---
 
-Built and launched data analytics software as a client project through [Theodo](https://www.theodo.com/en-uk).
+I built and launched data analytics software for Contentsquare as one of my client projects at Theodo.

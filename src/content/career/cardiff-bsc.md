@@ -11,11 +11,4 @@ website: https://www.cardiff.ac.uk
 mark: CS
 ---
 
-- Graduated with **First-class Honours**, in the top 5% of my year.
-- Dissertation: a [multiplayer game](https://github.com/Braden1996/tron.io) with AI-controlled opponents acting in real time.
-- Studies included signal processing (**MATLAB**), AI, graphics (**OpenGL**) and high-performance computing (**CUDA/OpenCL**).
-
-### Research, 2016–2018
-
-- Led a research project **sponsored and funded** by [Cardiff University](https://www.cardiff.ac.uk/).
-- Co-authored [DISCO: A Web-Based Implementation of Discussion Games for Grounded and Preferred Semantics](https://doi.org/10.3233/978-1-61499-906-5-453) with Richard Booth and Martin Caminada, a **JavaScript** web demonstrator published at **COMMA 2018**.
+I graduated with a First, in the top 5% of my year. My dissertation was a [real-time multiplayer game](https://github.com/Braden1996/tron.io) with AI opponents, and my favourite modules were signal processing, AI, graphics and GPU programming. I also led a research project the university funded, which became [DISCO](https://doi.org/10.3233/978-1-61499-906-5-453), a paper I co-authored for COMMA 2018.

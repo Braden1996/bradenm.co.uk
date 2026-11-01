@@ -39,6 +39,36 @@ export function formatCareerPeriod(startDate: string, endDate?: string) {
   return `${formatCareerDate(startDate)} – ${endDate ? formatCareerDate(endDate) : "Present"}`;
 }
 
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+/**
+ * The years a margin note wears beside its name, in the letter's voice: a
+ * finished entry reads "2020 – 2026" (or one year), and the current one reads
+ * "since April 2026", the way the letter would say it.
+ */
+export function formatCareerYears(startDate: string, endDate?: string) {
+  const start = parseCareerDate(startDate);
+  if (!endDate) {
+    const month = start.precision === "year" ? "" : `${monthNames[start.month - 1]} `;
+    return `since ${month}${start.year}`;
+  }
+  const end = parseCareerDate(endDate).year;
+  return start.year === end ? String(end) : `${start.year} – ${end}`;
+}
+
 function pluraliseUnit(value: number, singular: string, plural: string) {
   return `${value} ${value === 1 ? singular : plural}`;
 }

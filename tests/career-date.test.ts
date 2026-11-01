@@ -4,6 +4,7 @@ import {
   formatCareerDate,
   formatCareerDuration,
   formatCareerPeriod,
+  formatCareerYears,
   formatCompactCareerDuration,
 } from "../src/features/about/lib/career-format";
 
@@ -73,5 +74,17 @@ describe("formatCareerDate and formatCareerPeriod", () => {
   test("write an open period as present", () => {
     expect(formatCareerPeriod("2017-08", "2019-09")).toBe("Aug 2017 – Sep 2019");
     expect(formatCareerPeriod("2026")).toBe("2026 – Present");
+  });
+});
+
+describe("formatCareerYears", () => {
+  test("names the month a current role began, as the letter would", () => {
+    expect(formatCareerYears("2026-04")).toBe("since April 2026");
+    expect(formatCareerYears("2026")).toBe("since 2026");
+  });
+
+  test("gives a finished entry its years, or one year when it began and ended in it", () => {
+    expect(formatCareerYears("2020-04", "2026-03")).toBe("2020 – 2026");
+    expect(formatCareerYears("2019-02", "2019-09")).toBe("2019");
   });
 });

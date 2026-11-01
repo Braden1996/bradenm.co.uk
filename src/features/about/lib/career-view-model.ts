@@ -5,6 +5,7 @@ import { parseCareerDate } from "./career-date";
 import {
   formatCareerDuration,
   formatCareerPeriod,
+  formatCareerYears,
   formatCompactCareerDuration,
 } from "./career-format";
 
@@ -130,7 +131,7 @@ export function createCareerEntryViewModel(
     mark: entry.data.mark,
     organisation: entry.data.organisation,
     period: formatCareerPeriod(entry.data.startDate, entry.data.endDate),
-    years: `${parseCareerDate(entry.data.startDate).year} – ${entry.data.endDate ? parseCareerDate(entry.data.endDate).year : "Present"}`,
+    years: formatCareerYears(entry.data.startDate, entry.data.endDate),
     slug: entry.id,
   };
   if (entry.data.summary) {

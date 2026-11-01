@@ -11,4 +11,4 @@ website: https://web.meetcleo.com
 mark: CL
 ---
 
-Built and launched an app as a client project through [Theodo](https://www.theodo.com/en-uk).
+I built and launched an app for Cleo as one of my client projects at Theodo.

@@ -10,7 +10,4 @@ website: https://www.isembard.com
 mark: IS
 ---
 
-- Developing frontend and backend features for **MasonOS**, an ERP/MES platform coordinating manufacturing and supply chains across hundreds of factories.
-- Built tables, Kanban boards, compound filter and sort systems, **CNC machine-utilisation telemetry** dashboards, a global factory map and a visual shop-floor layout editor.
-- Own technical direction for the **design system**, full-stack observability (**Datadog** and **OpenTelemetry**) and monorepo tooling, and strengthened code review across a flat hierarchy.
-- Interviewed dozens of candidates and helped hire several engineers.
+I’m one of the engineers building MasonOS, the software that runs manufacturing and supply chains across hundreds of factories. So far that’s meant tables, Kanban boards, filters, live machine-utilisation dashboards, a map of every factory and an editor for laying out a shop floor. I also look after our design system, observability and monorepo tooling, and I help hire the engineers who join us.

@@ -46,7 +46,7 @@ for (const viewport of [
     expect(geometry.card.bottom).toBeLessThanOrEqual(viewport.height - 64);
     expect(geometry.card.right).toBeLessThan(geometry.passage.left);
     expect(geometry.scrollHeight - geometry.clientHeight).toBeLessThanOrEqual(1);
-    expect(geometry.card.height).toBeGreaterThan(420);
+    expect(geometry.card.height).toBeGreaterThan(400);
     expect(geometry.visit.left).toBeCloseTo(geometry.heading.left, 1);
     expect(geometry.visit.left).toBeCloseTo(geometry.body.left, 1);
     expect(geometry.visit.top - geometry.body.bottom).toBeGreaterThan(0);
@@ -70,7 +70,7 @@ test("a short desktop window scrolls the note while keeping its website visible"
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
-  const trigger = page.locator('[data-career-entity][href="#career-card-garrys-mod"]');
+  const trigger = page.locator('[data-career-entity][href="#career-card-attio"]');
   await trigger.scrollIntoViewIfNeeded();
   await page.evaluate(
     () => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))),
@@ -87,7 +87,7 @@ test("a short desktop window scrolls the note while keeping its website visible"
   await body.focus();
   await page.keyboard.press("End");
   await expect.poll(() => body.evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
-  await expect(body.locator("li").last()).toBeInViewport();
+  await expect(body.locator("p").last()).toBeInViewport();
   await page.screenshot({ path: "artifacts/career-gutters/short-desktop.png" });
 });
 

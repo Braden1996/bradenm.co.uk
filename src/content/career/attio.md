@@ -10,7 +10,4 @@ website: https://attio.com
 mark: AT
 ---
 
-- Joined [Attio](https://attio.com/) pre-seed and pre-launch as a **founding engineer**; became one of two engineering leads and helped scale it to 50+ engineers, 5,000+ customer workspaces and hundreds of thousands of users through a **$52m Series B**, while ARR grew more than fourfold.
-- Led development of Attio's mobile app (**React Native**), desktop app (**Tauri**) and browser extension. Architected and built the first version of each, then hired and led the team around them. Interviewed **hundreds of candidates**.
-- Led adoption of **Nx** with custom plugins and workflows across a monorepo of 100+ packages serving 50+ engineers, untangling years of implicit dependencies without a code freeze and cutting P90 CI/CD time roughly **tenfold**.
-- Shipped dozens of product features, including Kanban boards, tables, data-scraping integrations, **CRDT-based note editing** and push notifications, with responsive real-time interactions across desktop, mobile and browser-extension clients.
+I joined Attio before it launched, as one of its founding engineers, and stayed six years: long enough to become one of two engineering leads and to see us grow to 50+ engineers and thousands of customers through a $52m Series B. I built the first versions of our mobile app, desktop app and browser extension, then hired the team that took them on. Along the way I moved a monorepo of 100+ packages onto Nx, which made CI about ten times faster, and shipped dozens of features, from Kanban boards to collaborative note editing.

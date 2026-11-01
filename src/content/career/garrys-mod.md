@@ -11,5 +11,4 @@ website: https://gmod.facepunch.com
 mark: GM
 ---
 
-- Built, marketed and sold **1,000+ copies** of over a dozen add-ons for **[Garry's Mod](https://gmod.facepunch.com/)** to 100+ server communities, reaching **hundreds of thousands of players**.
-- The add-ons ranged from scoreboards and HUDs to complete game modes and administration tools.
+I built and sold over a dozen add-ons for Garry’s Mod, from scoreboards and HUDs to admin tools and whole game modes. More than 1,000 copies went to over 100 server communities, which put my code in front of hundreds of thousands of players.

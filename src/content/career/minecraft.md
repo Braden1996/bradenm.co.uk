@@ -11,5 +11,4 @@ website: https://www.minecraft.net
 mark: MC
 ---
 
-- Ran popular server communities across many games, such as **[Minecraft](https://www.minecraft.net)**, alongside my [Garry's Mod](https://gmod.facepunch.com/) add-on work.
-- Featured by top YouTubers with **millions of subscribers**, and affiliated with Machinima.
+Alongside the mods, I ran popular server communities across many games, Minecraft among them. They were featured by YouTubers with millions of subscribers, and we were affiliated with Machinima.
