@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { BOOK_COUNT, searchMatchCount } from "./helpers/catalogue";
 import { warmAtlas } from "./helpers/atlas";
 const atlasSelector = "[data-atlas]";
 const visibleSelector = "[data-book-card]:not([hidden])";
@@ -83,7 +84,7 @@ test("rapid queries keep relevance order through inspection, clear and keyboard 
   page.on("pageerror", (error) => errors.push(error.message));
   await search.fill("wo");
   await search.fill("world");
-  await expect(page.locator(visibleSelector)).toHaveCount(9);
+  await expect(page.locator(visibleSelector)).toHaveCount(searchMatchCount("world"));
   await settled(page);
   await expect
     .poll(async () => Number(await atlas.getAttribute("data-atlas-textures")))
@@ -101,12 +102,12 @@ test("rapid queries keep relevance order through inspection, clear and keyboard 
   await page.keyboard.press("ArrowRight");
   await expect(page.locator(`${visibleSelector} [data-book-open]`).nth(1)).toBeFocused();
   await search.fill("");
-  await expect(page.locator(visibleSelector)).toHaveCount(165);
+  await expect(page.locator(visibleSelector)).toHaveCount(BOOK_COUNT);
   await expect(atlas).toHaveAttribute("data-atlas-arrangement", "rows");
   await search.fill("not-a-book-923784");
   await expect(page.locator(visibleSelector)).toHaveCount(0);
   await search.fill("world");
-  await expect(page.locator(visibleSelector)).toHaveCount(9);
+  await expect(page.locator(visibleSelector)).toHaveCount(searchMatchCount("world"));
   await settled(page);
   expect(errors).toEqual([]);
 });
@@ -128,7 +129,7 @@ test("a book picked up mid-transition returns safely before the layout continues
   await expect(book).toBeFocused();
   await expect(atlas).toHaveAttribute("data-atlas-arrangement", "scattered");
   await settled(page);
-  await expect(atlas).toHaveAttribute("data-atlas-models", "165");
+  await expect(atlas).toHaveAttribute("data-atlas-models", String(BOOK_COUNT));
   await expect(page.locator("[data-book-card][data-picked]")).toHaveCount(0);
   await expect(book).toBeInViewport();
 });
@@ -140,7 +141,7 @@ test("reduced motion ranks the printed books immediately and preserves the mobil
   await page.goto("/bookshelf");
   const atlas = page.locator(atlasSelector);
   await page.locator("[data-search-input]").fill("world");
-  await expect(page.locator(visibleSelector)).toHaveCount(9);
+  await expect(page.locator(visibleSelector)).toHaveCount(searchMatchCount("world"));
   await expect(atlas).toHaveAttribute("data-atlas-arrangement", "rows");
   await settled(page);
   await expect(atlas).not.toHaveAttribute("data-atlas-ready");
@@ -157,7 +158,7 @@ test("reduced motion ranks the printed books immediately and preserves the mobil
     .poll(async () => Number(await atlas.getAttribute("data-atlas-zoom")))
     .toBeGreaterThan(1);
   await page.locator("[data-search-input]").fill("world");
-  await expect(page.locator(visibleSelector)).toHaveCount(9);
+  await expect(page.locator(visibleSelector)).toHaveCount(searchMatchCount("world"));
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(atlas).toHaveAttribute("data-atlas-mode", "grid");
   await expect(page.locator("[data-book-grid]")).toHaveCSS("display", "grid");

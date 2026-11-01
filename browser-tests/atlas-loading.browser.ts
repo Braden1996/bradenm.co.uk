@@ -1,5 +1,6 @@
 // cspell:ignore networkidle
 import { expect, test, type Page } from "@playwright/test";
+import { BOOK_COUNT, bookButton } from "./helpers/catalogue";
 import sharp from "sharp";
 
 async function ready(page: Page) {
@@ -36,7 +37,7 @@ test("an untouched desktop keeps the printed table without loading its renderer"
   await expect(page.locator("[data-atlas]")).not.toHaveAttribute("data-atlas-ready");
   await expect(page.locator("[data-atlas-canvas]")).toHaveCSS("opacity", "0");
   await expect(page.locator(".atlas-book__preview").first()).toBeVisible();
-  await expect(page.locator("[data-book-open]")).toHaveCount(165);
+  await expect(page.locator("[data-book-open]")).toHaveCount(BOOK_COUNT);
 });
 
 for (const intent of ["pointer", "keyboard"] as const) {
@@ -135,10 +136,9 @@ for (const mobile of [false, true]) {
         await ready(page);
         expect(requests).toEqual([]);
         // Activate directly so neither pointer entry nor focus can prewarm 3D.
-        await page
-          .locator("[data-book-open]")
-          .first()
-          .evaluate((button: HTMLButtonElement) => button.click());
+        await bookButton(page, "12 Rules for Life").evaluate((button: HTMLButtonElement) =>
+          button.click(),
+        );
         const dialog = page.locator("[data-book-inspector]");
         await expect(dialog).toBeVisible();
         await expect(page.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
@@ -147,7 +147,7 @@ for (const mobile of [false, true]) {
         await expect(dialog).toHaveAttribute("data-inspector-ready", "true", { timeout: 25_000 });
         await page.keyboard.press("Escape");
         await expect(dialog).not.toBeVisible();
-        await expect(page.locator("[data-book-open]").first()).toBeFocused();
+        await expect(bookButton(page, "12 Rules for Life")).toBeFocused();
         await expect(page.locator("[data-atlas-stage] [data-atlas-canvas]")).toHaveCount(1);
       } finally {
         pending.resolve();

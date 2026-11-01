@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { BOOK_COUNT, bookButton } from "./helpers/catalogue";
 import { warmAtlas } from "./helpers/atlas";
 
 for (const profile of [
@@ -19,7 +20,7 @@ for (const profile of [
       "true",
     );
     const original = await books.first().boundingBox();
-    await page.locator("[data-book-open]").first().click();
+    await bookButton(page, "12 Rules for Life").click();
     const dialog = page.locator("[data-book-inspector]");
     await expect(dialog.locator("[data-inspect-audio]")).toBeVisible();
     await expect(dialog.getByRole("link")).toHaveCount(0);
@@ -29,7 +30,7 @@ for (const profile of [
     const clear = page.getByRole("button", { name: "Clear Psychology filter" });
     await expect(clear).toBeVisible();
     await expect(clear).toBeFocused();
-    await expect(books).toHaveCount(165);
+    await expect(books).toHaveCount(BOOK_COUNT);
     const muted = books.locator("[data-category-muted]");
     // Count from the server's compact index, independently of the filter DOM.
     const expected = await page.locator("[data-bookshelf-payload]").evaluate((element) => {
@@ -39,9 +40,11 @@ for (const profile of [
       ).length;
     });
     await expect(page.locator("[data-book-card]:not([data-category-muted])")).toHaveCount(expected);
-    await expect(page.locator("[data-book-card][data-category-muted]")).toHaveCount(165 - expected);
+    await expect(page.locator("[data-book-card][data-category-muted]")).toHaveCount(
+      BOOK_COUNT - expected,
+    );
     await expect(page.locator("[data-results-count]")).toHaveText(
-      `${expected} of 165 titles in Psychology`,
+      `${expected} of ${BOOK_COUNT} titles in Psychology`,
     );
     if (profile.width > 760) {
       const after = await books.first().boundingBox();
@@ -84,7 +87,7 @@ for (const profile of [
     await expect(page.locator("[data-category-muted]")).toHaveCount(0);
     await expect(page.locator("[data-search-input]")).toHaveValue("peterson");
     await page.locator("[data-search-input]").fill("");
-    await expect(page.locator("[data-book-card]:not([hidden])")).toHaveCount(165);
+    await expect(page.locator("[data-book-card]:not([hidden])")).toHaveCount(BOOK_COUNT);
   });
 }
 
@@ -98,7 +101,7 @@ test("tooltip metadata sits alongside the author without fetching the inspection
   await page.goto("/bookshelf");
   await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
-  await page.locator("[data-book-open]").first().hover();
+  await bookButton(page, "12 Rules for Life").hover();
   const note = page.getByRole("tooltip");
   await expect(note).toContainText("Jordan B. Peterson");
   await expect(note.locator("[data-tooltip-date]")).toHaveText("2018");

@@ -1,5 +1,6 @@
 // cspell:ignore domcontentloaded networkidle cixin describedby
 import { expect, test } from "@playwright/test";
+import { BOOK_COUNT, bookButton } from "./helpers/catalogue";
 import { mkdir } from "node:fs/promises";
 import { warmAtlas } from "./helpers/atlas";
 
@@ -174,7 +175,7 @@ test("desktop opens with every book fitted, zooms around the pointer and returns
   const atlas = page.locator("[data-atlas]");
   await warmAtlas(page);
   await expect(atlas).toHaveAttribute("data-atlas-ready", "true");
-  await expect(atlas).toHaveAttribute("data-atlas-models", "165");
+  await expect(atlas).toHaveAttribute("data-atlas-models", String(BOOK_COUNT));
   await expect(atlas).toHaveAttribute("data-atlas-zoom", "1.0000");
   expect(
     await page.locator("[data-book-open]").evaluateAll((books) => {
@@ -204,8 +205,9 @@ test("desktop opens with every book fitted, zooms around the pointer and returns
     .toBeGreaterThan(2);
   const after = await book.boundingBox();
   if (!after) throw new Error("Missing zoomed book");
-  expect(Math.abs(after.x + after.width / 2 - x)).toBeLessThan(1);
-  expect(Math.abs(after.y + after.height / 2 - y)).toBeLessThan(1);
+  // Within layout rounding of the smaller books a full shelf prints.
+  expect(Math.abs(after.x + after.width / 2 - x)).toBeLessThan(1.5);
+  expect(Math.abs(after.y + after.height / 2 - y)).toBeLessThan(1.5);
   await page.mouse.wheel(0, 2000);
   await expect(atlas).toHaveAttribute("data-atlas-zoom", "1.0000");
   await expect(atlas).toHaveAttribute("data-atlas-pan-x", "0.00");
@@ -252,7 +254,7 @@ test("hover and keyboard focus show metadata in a tooltip above the canvas", asy
   await page.goto("/bookshelf");
   await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
-  const book = page.locator("[data-book-open]").nth(82);
+  const book = bookButton(page, "London for Dogs");
   await book.hover();
   const tooltip = page.getByRole("tooltip");
   await expect(tooltip).toContainText("London for Dogs");
@@ -322,7 +324,7 @@ test("search resets zoom and resizing an inspection to mobile preserves usable f
   await expect(page.locator("[data-book-card]:not([hidden])")).toHaveCount(4);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-zoom", "1.0000");
   await page.locator("[data-search-input]").fill("");
-  await expect(page.locator("[data-book-card]:not([hidden])")).toHaveCount(165);
+  await expect(page.locator("[data-book-card]:not([hidden])")).toHaveCount(BOOK_COUNT);
   const book = page.locator("[data-book-open]").nth(80);
   await book.click();
   await expect(page.locator("[data-book-inspector]")).toHaveAttribute(

@@ -1,5 +1,6 @@
 // cspell:ignore domcontentloaded networkidle
 import { expect, test, type Page } from "@playwright/test";
+import { BOOK_COUNT, bookButton } from "./helpers/catalogue";
 import { warmAtlas } from "./helpers/atlas";
 
 async function ready(page: Page) {
@@ -239,8 +240,8 @@ test.describe("atlas without JavaScript", () => {
   test.use({ javaScriptEnabled: false });
   test("all books are present and native details still open", async ({ page }) => {
     await page.goto("/bookshelf");
-    await expect(page.locator("[data-book-open]")).toHaveCount(165);
-    await page.locator("[data-book-open]").first().click();
+    await expect(page.locator("[data-book-open]")).toHaveCount(BOOK_COUNT);
+    await bookButton(page, "12 Rules for Life").click();
     await expect(page.locator(".atlas-book__fallback:popover-open")).toBeVisible();
     await expect(page.locator(".atlas-book__fallback:popover-open")).toContainText(
       "12 Rules for Life",
@@ -259,7 +260,7 @@ test("delayed covers preserve previews and an early selection can close before 3
   try {
     await ready(page);
     await expect(page.locator(".atlas-book__preview").first()).toBeVisible();
-    await page.locator("[data-book-open]").first().click();
+    await bookButton(page, "12 Rules for Life").click();
     await expect(page.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
     await page.keyboard.press("Escape");
     await expect(page.locator("[data-book-inspector]")).not.toBeVisible();
@@ -279,7 +280,7 @@ test("failed inspection textures retain the browsing cover and usable details", 
   await ready(page);
   await warmAtlas(page);
   await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   await expect(page.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
   await page.keyboard.press("Escape");
   await expect(page.locator("[data-book-inspector]")).not.toBeVisible();
@@ -363,9 +364,22 @@ test("a failed base sheet leaves a complete preview that supports zoom and immed
   await page.mouse.move(650, 440);
   await page.mouse.wheel(0, -200);
   await expect.poll(() => zoomLevel(page)).toBeGreaterThan(1);
-  const book = page.locator("[data-book-open]").nth(82);
+  // Open whichever book the zoom brought under the pointer.
+  const books = page.locator("[data-book-open]");
+  const nearest = await books.evaluateAll((buttons) => {
+    let best = 0;
+    let distance = Number.POSITIVE_INFINITY;
+    buttons.forEach((button, index) => {
+      const box = button.getBoundingClientRect();
+      const gap = Math.hypot(box.x + box.width / 2 - 650, box.y + box.height / 2 - 440);
+      if (gap < distance) [best, distance] = [index, gap];
+    });
+    return best;
+  });
+  const book = books.nth(nearest);
+  const [title = ""] = ((await book.getAttribute("aria-label")) ?? "").split(" — ");
   await book.click();
-  await expect(page.locator("[data-inspect-title]")).toHaveText("London for Dogs");
+  await expect(page.locator("[data-inspect-title]")).toHaveText(title);
   await page.keyboard.press("Escape");
   await expect(book).toBeFocused();
 });
@@ -382,13 +396,12 @@ test("late inspection textures cannot reopen a dismissed book or replace the nex
     await page.goto("/bookshelf", { waitUntil: "domcontentloaded" });
     await warmAtlas(page);
     await expect(page.locator("[data-atlas]")).toHaveAttribute("data-atlas-ready", "true");
-    const books = page.locator("[data-book-open]");
     const dialog = page.locator("[data-book-inspector]");
-    await books.first().click();
+    await bookButton(page, "12 Rules for Life").click();
     await expect(dialog).toHaveAttribute("data-inspector-ready", "true");
     await page.keyboard.press("Escape");
     await expect(dialog).not.toBeVisible();
-    await books.nth(1).click();
+    await bookButton(page, "Age Later").click();
     await expect(dialog).toHaveAttribute("data-inspector-ready", "true");
     resolve();
     await page.waitForLoadState("networkidle");
@@ -396,7 +409,7 @@ test("late inspection textures cannot reopen a dismissed book or replace the nex
     await expect(page.locator("[data-book-card][data-picked]")).toHaveCount(1);
     await page.keyboard.press("Escape");
     await expect(dialog).not.toBeVisible();
-    await expect(books.nth(1)).toBeFocused();
+    await expect(bookButton(page, "Age Later")).toBeFocused();
   } finally {
     resolve();
   }

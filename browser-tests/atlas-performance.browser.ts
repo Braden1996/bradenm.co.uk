@@ -1,5 +1,6 @@
 // cspell:ignore domcontentloaded networkidle SwiftShader llvmpipe softpipe Adreno Mali PowerVR GeForce
 import { chromium, expect, test } from "@playwright/test";
+import { BOOK_COUNT } from "./helpers/catalogue";
 import { mkdir, writeFile } from "node:fs/promises";
 import { safeParse, string } from "valibot";
 import { warmAtlas } from "./helpers/atlas";
@@ -266,9 +267,10 @@ for (const mobile of [false, true]) {
         expect(gpuTextures).toBe(0);
       } else {
         expect(textures).toBeLessThanOrEqual(73);
-        expect(models).toBe(165);
+        expect(models).toBe(BOOK_COUNT);
         expect(gpuTextures).toBeLessThanOrEqual(81);
-        expect(gpuGeometries).toBeLessThanOrEqual(501);
+        // Three uploaded geometries per browsing model plus the shared scene.
+        expect(gpuGeometries).toBeLessThanOrEqual(3 * BOOK_COUNT + 6);
         expect(gpuGeometries).toBeGreaterThan(3);
       }
       if (readinessEnforced) expect(readiness).toBeLessThanOrEqual(targets.readinessMs);

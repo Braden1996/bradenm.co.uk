@@ -1,21 +1,7 @@
 {
   "targetHeight": 1000,
-  "coverCount": 165,
+  "coverCount": 204,
   "unresolved": [
-    {
-      "title": "The City and the Stars",
-      "author": "Arthur C. Clarke",
-      "width": 299,
-      "height": 498,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/5540971-L.jpg?default=false"
-    },
-    {
-      "title": "The Sugar Barons: Family Corruption Empire and War",
-      "author": "Matthew Parker",
-      "width": 329,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/8474290.jpg?default=false"
-    },
     {
       "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
       "author": "Adam Tooze",
@@ -31,11 +17,46 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/14658111.jpg?default=false"
     },
     {
+      "title": "The Sugar Barons: Family Corruption Empire and War",
+      "author": "Matthew Parker",
+      "width": 329,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8474290.jpg?default=false"
+    },
+    {
+      "title": "The City and the Stars",
+      "author": "Arthur C. Clarke",
+      "width": 299,
+      "height": 498,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/5540971-L.jpg?default=false"
+    },
+    {
       "title": "London for Dogs",
       "author": "Sarah Guy",
       "width": 96,
       "height": 96,
       "sourceUrl": null
+    },
+    {
+      "title": "The Moon is a Harsh Mistress",
+      "author": "Robert A. Heinlein",
+      "width": 488,
+      "height": 755,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/14631258.jpg?default=false"
+    },
+    {
+      "title": "Becoming a Supple Leopard",
+      "author": "Dr. Kelly Starrett & Glen Cordoza",
+      "width": 198,
+      "height": 254,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/7318487.jpg?default=false"
+    },
+    {
+      "title": "Principles of Economics",
+      "author": "N. Gregory Mankiw",
+      "width": 388,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/19884.jpg?default=false"
     },
     {
       "title": "Taliesin's Map: The Comparative Guide to Celtic Mythology",
@@ -59,13 +80,6 @@
       "sourceUrl": null
     },
     {
-      "title": "The Moon is a Harsh Mistress",
-      "author": "Robert A. Heinlein",
-      "width": 488,
-      "height": 755,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/14631258.jpg?default=false"
-    },
-    {
       "title": "The Curry Guy",
       "author": "Dan Toombs",
       "width": 388,
@@ -80,18 +94,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/8413583.jpg?default=false"
     },
     {
+      "title": "Anabolics 11th Edition",
+      "author": "William Llewellyn",
+      "width": 378,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10746790.jpg?default=false"
+    },
+    {
       "title": "Life on Svalbard",
       "author": "Cecilia Blomdahl",
       "width": 96,
       "height": 115,
       "sourceUrl": null
-    },
-    {
-      "title": "Becoming a Supple Leopard",
-      "author": "Dr. Kelly Starrett & Glen Cordoza",
-      "width": 198,
-      "height": 254,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/7318487.jpg?default=false"
     },
     {
       "title": "What Would Arnie Do?",
@@ -115,20 +129,6 @@
       "sourceUrl": null
     },
     {
-      "title": "Anabolics 11th Edition",
-      "author": "William Llewellyn",
-      "width": 378,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/10746790.jpg?default=false"
-    },
-    {
-      "title": "Principles of Economics",
-      "author": "N. Gregory Mankiw",
-      "width": 388,
-      "height": 475,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/19884.jpg?default=false"
-    },
-    {
       "title": "The New Encyclopedia of Modern Bodybuilding",
       "author": "Arnold Schwarzenegger",
       "width": 375,
@@ -150,11 +150,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/7321776.jpg?default=false"
     },
     {
-      "title": "Drayton and Mackenzie",
-      "author": "Alexander Starritt",
-      "width": 96,
-      "height": 147,
-      "sourceUrl": null
+      "title": "The Anarchy",
+      "author": "William Dalrymple",
+      "width": 263,
+      "height": 400,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9134924.jpg?default=false"
     },
     {
       "title": "Apple in China",
@@ -164,22 +164,8 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/15151586.jpg?default=false"
     },
     {
-      "title": "The Silmarillion",
-      "author": "J.R.R. Tolkien",
-      "width": 441,
-      "height": 689,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/14627042.jpg?default=false"
-    },
-    {
-      "title": "The Anarchy",
-      "author": "William Dalrymple",
-      "width": 263,
-      "height": 400,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/9134924.jpg?default=false"
-    },
-    {
-      "title": "My Heart & Other Black Holes",
-      "author": "Jasmine Warga",
+      "title": "Drayton and Mackenzie",
+      "author": "Alexander Starritt",
       "width": 96,
       "height": 147,
       "sourceUrl": null
@@ -192,18 +178,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/211265.jpg?default=false"
     },
     {
-      "title": "The Inventions That Will Transform Our Lives",
-      "author": "Michio Kaku",
-      "width": 96,
-      "height": 146,
-      "sourceUrl": null
-    },
-    {
-      "title": "My Dog's First Year: A Journal",
-      "author": "Pop Press",
-      "width": 96,
-      "height": 131,
-      "sourceUrl": null
+      "title": "The Silmarillion",
+      "author": "J.R.R. Tolkien",
+      "width": 441,
+      "height": 689,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/14627042.jpg?default=false"
     },
     {
       "title": "Millennium",
@@ -213,24 +192,17 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/14173331.jpg?default=false"
     },
     {
-      "title": "Time Out Country Walks: 52 Walks Near London",
-      "author": "Peter Conway & David Cooke",
+      "title": "My Heart & Other Black Holes",
+      "author": "Jasmine Warga",
       "width": 96,
-      "height": 152,
+      "height": 147,
       "sourceUrl": null
     },
     {
-      "title": "Mighty Monty",
-      "author": "M.T. Sanders",
+      "title": "The Inventions That Will Transform Our Lives",
+      "author": "Michio Kaku",
       "width": 96,
       "height": 146,
-      "sourceUrl": null
-    },
-    {
-      "title": "Rather Splendid London Walks",
-      "author": "Julian McDonnell",
-      "width": 96,
-      "height": 132,
       "sourceUrl": null
     },
     {
@@ -241,18 +213,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/895604.jpg?default=false"
     },
     {
-      "title": "The Genius of Dogs",
-      "author": "Brian Hare & Vanessa Woods",
-      "width": 252,
-      "height": 400,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/7492718.jpg?default=false"
+      "title": "My Dog's First Year: A Journal",
+      "author": "Pop Press",
+      "width": 96,
+      "height": 131,
+      "sourceUrl": null
     },
     {
-      "title": "Cracking the Coding Interview",
-      "author": "Gayle Laakmann McDowell",
-      "width": 333,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/7276811.jpg?default=false"
+      "title": "Time Out Country Walks: 52 Walks Near London",
+      "author": "Peter Conway & David Cooke",
+      "width": 96,
+      "height": 152,
+      "sourceUrl": null
     },
     {
       "title": "Inside of a Dog: What Dogs See Smell and Know",
@@ -262,10 +234,24 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/6451221.jpg?default=false"
     },
     {
-      "title": "Introduction to Magic Vol. I",
-      "author": "Julius Evola",
+      "title": "Mighty Monty",
+      "author": "M.T. Sanders",
       "width": 96,
-      "height": 142,
+      "height": 146,
+      "sourceUrl": null
+    },
+    {
+      "title": "The Genius of Dogs",
+      "author": "Brian Hare & Vanessa Woods",
+      "width": 252,
+      "height": 400,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/7492718.jpg?default=false"
+    },
+    {
+      "title": "Rather Splendid London Walks",
+      "author": "Julian McDonnell",
+      "width": 96,
+      "height": 132,
       "sourceUrl": null
     },
     {
@@ -276,11 +262,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/8055563.jpg?default=false"
     },
     {
-      "title": "The Trap",
-      "author": "James Goldsmith",
-      "width": 159,
-      "height": 240,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/7237299.jpg?default=false"
+      "title": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "width": 333,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/7276811.jpg?default=false"
     },
     {
       "title": "Influence",
@@ -290,13 +276,6 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/431011.jpg?default=false"
     },
     {
-      "title": "The Daily Stoic",
-      "author": "Ryan Holiday & Stephen Hanselman",
-      "width": 298,
-      "height": 450,
-      "sourceUrl": "https://images1.penguinrandomhouse.com/cover/9780735211735"
-    },
-    {
       "title": "The Madness of Crowds",
       "author": "Douglas Murray",
       "width": 329,
@@ -304,11 +283,32 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/9587938.jpg?default=false"
     },
     {
+      "title": "Introduction to Magic Vol. I",
+      "author": "Julius Evola",
+      "width": 96,
+      "height": 142,
+      "sourceUrl": null
+    },
+    {
+      "title": "The Trap",
+      "author": "James Goldsmith",
+      "width": 159,
+      "height": 240,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/7237299.jpg?default=false"
+    },
+    {
       "title": "The Daily Stoic Journal",
       "author": "Ryan Holiday & Stephen Hanselman",
       "width": 324,
       "height": 500,
       "sourceUrl": "https://covers.openlibrary.org/b/id/10302294.jpg?default=false"
+    },
+    {
+      "title": "The Daily Stoic",
+      "author": "Ryan Holiday & Stephen Hanselman",
+      "width": 298,
+      "height": 450,
+      "sourceUrl": "https://images1.penguinrandomhouse.com/cover/9780735211735"
     },
     {
       "title": "On the Origin of Species",
@@ -323,6 +323,13 @@
       "width": 316,
       "height": 475,
       "sourceUrl": "https://covers.openlibrary.org/b/id/367868.jpg?default=false"
+    },
+    {
+      "title": "The Wealth of Nations",
+      "author": "Adam Smith",
+      "width": 333,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12816911.jpg?default=false"
     },
     {
       "title": "The Circadian Code",
@@ -346,11 +353,11 @@
       "sourceUrl": null
     },
     {
-      "title": "The Wealth of Nations",
-      "author": "Adam Smith",
-      "width": 333,
+      "title": "Technological Slavery",
+      "author": "Theodore John Kaczynski",
+      "width": 322,
       "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/12816911.jpg?default=false"
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10098391.jpg?default=false"
     },
     {
       "title": "Death by Black Hole",
@@ -367,11 +374,11 @@
       "sourceUrl": "https://daniellamarre.ca/wp-content/uploads/2021/10/Balancing-Acts-Lamarre-Cover.jpg"
     },
     {
-      "title": "Technological Slavery",
-      "author": "Theodore John Kaczynski",
-      "width": 322,
+      "title": "Built to Move",
+      "author": "Kelly Starrett & Juliet Starrett",
+      "width": 355,
       "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/10098391.jpg?default=false"
+      "sourceUrl": "https://covers.openlibrary.org/b/id/13192840.jpg?default=false"
     },
     {
       "title": "Meditations",
@@ -381,13 +388,6 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/211529.jpg?default=false"
     },
     {
-      "title": "How to Lie with Statistics",
-      "author": "Darrell Huff",
-      "width": 256,
-      "height": 378,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/13115835.jpg?default=false"
-    },
-    {
       "title": "Superforecasting: The Art and Science of Prediction",
       "author": "Philip Tetlock & Dan Gardner",
       "width": 324,
@@ -395,25 +395,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/9142114.jpg?default=false"
     },
     {
-      "title": "Built to Move",
-      "author": "Kelly Starrett & Juliet Starrett",
-      "width": 355,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/13192840.jpg?default=false"
-    },
-    {
-      "title": "Manufacturing Consent",
-      "author": "Edward S. Herman & Noam Chomsky",
-      "width": 589,
-      "height": 895,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/7900362.jpg?default=false"
-    },
-    {
-      "title": "The Wim Hof Method",
-      "author": "Wim Hof",
-      "width": 96,
-      "height": 145,
-      "sourceUrl": null
+      "title": "How to Lie with Statistics",
+      "author": "Darrell Huff",
+      "width": 256,
+      "height": 378,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/13115835.jpg?default=false"
     },
     {
       "title": "How to Take Smart Notes",
@@ -423,11 +409,25 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/8362230.jpg?default=false"
     },
     {
-      "title": "The Bitcoin Standard",
-      "author": "Saifedean Ammous",
-      "width": 203,
-      "height": 300,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/15226011.jpg?default=false"
+      "title": "The Wim Hof Method",
+      "author": "Wim Hof",
+      "width": 96,
+      "height": 145,
+      "sourceUrl": null
+    },
+    {
+      "title": "Manufacturing Consent",
+      "author": "Edward S. Herman & Noam Chomsky",
+      "width": 589,
+      "height": 895,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/7900362.jpg?default=false"
+    },
+    {
+      "title": "Everything You Need to Know About Fat Loss",
+      "author": "Chris Aceto",
+      "width": 306,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/732167.jpg?default=false"
     },
     {
       "title": "Breath",
@@ -437,11 +437,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/10096454.jpg?default=false"
     },
     {
-      "title": "Everything You Need to Know About Fat Loss",
-      "author": "Chris Aceto",
-      "width": 306,
-      "height": 475,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/732167.jpg?default=false"
+      "title": "The Bitcoin Standard",
+      "author": "Saifedean Ammous",
+      "width": 203,
+      "height": 300,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/15226011.jpg?default=false"
+    },
+    {
+      "title": "The Psychology of Money",
+      "author": "Morgan Housel",
+      "width": 319,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10389354.jpg?default=false"
     },
     {
       "title": "Principles",
@@ -458,25 +465,18 @@
       "sourceUrl": null
     },
     {
-      "title": "The Changing World Order",
-      "author": "Ray Dalio",
-      "width": 96,
-      "height": 150,
-      "sourceUrl": null
-    },
-    {
-      "title": "The Psychology of Money",
-      "author": "Morgan Housel",
-      "width": 319,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/10389354.jpg?default=false"
-    },
-    {
       "title": "Unknown Market Wizards",
       "author": "Jack D. Schwager",
       "width": 333,
       "height": 500,
       "sourceUrl": "https://covers.openlibrary.org/b/id/10481194.jpg?default=false"
+    },
+    {
+      "title": "The Changing World Order",
+      "author": "Ray Dalio",
+      "width": 96,
+      "height": 150,
+      "sourceUrl": null
     },
     {
       "title": "Option Volatility and Pricing",
@@ -486,25 +486,11 @@
       "sourceUrl": null
     },
     {
-      "title": "BOOM",
-      "author": "Hobart & Huber",
-      "width": 96,
-      "height": 144,
-      "sourceUrl": null
-    },
-    {
       "title": "Flash Crash",
       "author": "Liam Vaughan",
       "width": 331,
       "height": 500,
       "sourceUrl": "https://covers.openlibrary.org/b/id/9424515.jpg?default=false"
-    },
-    {
-      "title": "The World: A Family History",
-      "author": "Simon Sebag Montefiore",
-      "width": 96,
-      "height": 147,
-      "sourceUrl": null
     },
     {
       "title": "Reminiscences of a Stock Operator",
@@ -521,11 +507,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/521995.jpg?default=false"
     },
     {
-      "title": "Unsettled?",
-      "author": "Steven E. Koonin",
-      "width": 335,
-      "height": 499,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/12065948.jpg?default=false"
+      "title": "BOOM",
+      "author": "Hobart & Huber",
+      "width": 96,
+      "height": 144,
+      "sourceUrl": null
+    },
+    {
+      "title": "The World: A Family History",
+      "author": "Simon Sebag Montefiore",
+      "width": 96,
+      "height": 147,
+      "sourceUrl": null
     },
     {
       "title": "A Programmer's Geometry",
@@ -535,6 +528,13 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/5299368-L.jpg?default=false"
     },
     {
+      "title": "Unsettled?",
+      "author": "Steven E. Koonin",
+      "width": 335,
+      "height": 499,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12065948.jpg?default=false"
+    },
+    {
       "title": "The Pragmatic Programmer",
       "author": "David Thomas & Andrew Hunt",
       "width": 382,
@@ -542,18 +542,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/10143650.jpg?default=false"
     },
     {
-      "title": "The Tipping Point",
-      "author": "Malcolm Gladwell",
-      "width": 424,
-      "height": 612,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/10873292.jpg?default=false"
-    },
-    {
       "title": "Maps of Meaning",
       "author": "Jordan B. Peterson",
       "width": 376,
       "height": 475,
       "sourceUrl": "https://covers.openlibrary.org/b/id/268877.jpg?default=false"
+    },
+    {
+      "title": "The Tipping Point",
+      "author": "Malcolm Gladwell",
+      "width": 424,
+      "height": 612,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10873292.jpg?default=false"
     },
     {
       "title": "The Moon",
@@ -584,18 +584,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/776820.jpg?default=false"
     },
     {
-      "title": "The Rise of Carry",
-      "author": "Tim Lee & Jamie Lee & Kevin Coldiron",
-      "width": 96,
-      "height": 143,
-      "sourceUrl": null
-    },
-    {
       "title": "An Introduction to Database Systems",
       "author": "C.J. Date",
       "width": 384,
       "height": 475,
       "sourceUrl": "https://covers.openlibrary.org/b/id/192914.jpg?default=false"
+    },
+    {
+      "title": "The Rise of Carry",
+      "author": "Tim Lee & Jamie Lee & Kevin Coldiron",
+      "width": 96,
+      "height": 143,
+      "sourceUrl": null
     },
     {
       "title": "Game Engine Architecture",
@@ -612,6 +612,13 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/14658251.jpg?default=false"
     },
     {
+      "title": "The Ride of a Lifetime",
+      "author": "Robert Iger",
+      "width": 315,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8788773.jpg?default=false"
+    },
+    {
       "title": "Sprint",
       "author": "Jake Knapp & John Zeratsky & Braden Kowitz",
       "width": 331,
@@ -624,13 +631,6 @@
       "width": 300,
       "height": 454,
       "sourceUrl": "https://cdn2.wwnorton.com/wwnproducts/TRADE/7/0/9780393239607/9780393239607_300.jpeg"
-    },
-    {
-      "title": "The Ride of a Lifetime",
-      "author": "Robert Iger",
-      "width": 315,
-      "height": 475,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/8788773.jpg?default=false"
     },
     {
       "title": "The Conscious Mind",
@@ -647,13 +647,6 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/13555875.jpg?default=false"
     },
     {
-      "title": "Poor Charlie's Almanack",
-      "author": "Peter D. Kaufman (ed.)",
-      "width": 96,
-      "height": 135,
-      "sourceUrl": null
-    },
-    {
       "title": "Where Is My Flying Car?",
       "author": "J. Storrs Hall",
       "width": 342,
@@ -661,11 +654,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/13484239.jpg?default=false"
     },
     {
-      "title": "The Big Score",
-      "author": "Michael S. Malone",
-      "width": 600,
-      "height": 888,
-      "sourceUrl": "https://images-us.bookshop.org/ingram/9781953953162.jpg?v=enc-v1&width=600"
+      "title": "Poor Charlie's Almanack",
+      "author": "Peter D. Kaufman (ed.)",
+      "width": 96,
+      "height": 135,
+      "sourceUrl": null
     },
     {
       "title": "The Dream Machine",
@@ -675,13 +668,6 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/402828.jpg?default=false"
     },
     {
-      "title": "High Growth Handbook",
-      "author": "Elad Gil",
-      "width": 338,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/9205954.jpg?default=false"
-    },
-    {
       "title": "Scientific Freedom: The Elixir of Civilization",
       "author": "Donald W. Braben",
       "width": 333,
@@ -689,11 +675,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/2424410.jpg?default=false"
     },
     {
-      "title": "Bertrand Russell Autobiography",
-      "author": "Bertrand Russell",
-      "width": 252,
-      "height": 400,
-      "sourceUrl": "https://images-us.bookshop.org/ingram/9780415473736.jpg?width=600"
+      "title": "High Growth Handbook",
+      "author": "Elad Gil",
+      "width": 338,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9205954.jpg?default=false"
+    },
+    {
+      "title": "The Big Score",
+      "author": "Michael S. Malone",
+      "width": 600,
+      "height": 888,
+      "sourceUrl": "https://images-us.bookshop.org/ingram/9781953953162.jpg?v=enc-v1&width=600"
     },
     {
       "title": "Get Together",
@@ -710,6 +703,13 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/190366.jpg?default=false"
     },
     {
+      "title": "Bertrand Russell Autobiography",
+      "author": "Bertrand Russell",
+      "width": 252,
+      "height": 400,
+      "sourceUrl": "https://images-us.bookshop.org/ingram/9780415473736.jpg?width=600"
+    },
+    {
       "title": "How to Win Friends and Influence People",
       "author": "Dale Carnegie",
       "width": 328,
@@ -724,18 +724,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/12915198.jpg?default=false"
     },
     {
-      "title": "Thinking Fast and Slow",
-      "author": "Daniel Kahneman",
-      "width": 386,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/13290711.jpg?default=false"
-    },
-    {
       "title": "Talking to Strangers",
       "author": "Malcolm Gladwell",
       "width": 336,
       "height": 499,
       "sourceUrl": "https://covers.openlibrary.org/b/id/8779682.jpg?default=false"
+    },
+    {
+      "title": "Thinking Fast and Slow",
+      "author": "Daniel Kahneman",
+      "width": 386,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/13290711.jpg?default=false"
     },
     {
       "title": "Nineteen Eighty-Four",
@@ -745,6 +745,13 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/9267242.jpg?default=false"
     },
     {
+      "title": "Fooled by Randomness",
+      "author": "Nassim Nicholas Taleb",
+      "width": 315,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/855791.jpg?default=false"
+    },
+    {
       "title": "The Three-Body Problem",
       "author": "Cixin Liu",
       "width": 96,
@@ -752,11 +759,25 @@
       "sourceUrl": null
     },
     {
+      "title": "From Third World to First",
+      "author": "Lee Kuan Yew",
+      "width": 320,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/23348.jpg?default=false"
+    },
+    {
       "title": "Death's End",
       "author": "Cixin Liu",
       "width": 96,
       "height": 147,
       "sourceUrl": null
+    },
+    {
+      "title": "The Problems of Philosophy",
+      "author": "Bertrand Russell",
+      "width": 175,
+      "height": 280,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/6947403.jpg?default=false"
     },
     {
       "title": "The Dark Forest",
@@ -773,11 +794,11 @@
       "sourceUrl": null
     },
     {
-      "title": "From Third World to First",
-      "author": "Lee Kuan Yew",
-      "width": 320,
-      "height": 475,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/23348.jpg?default=false"
+      "title": "Galaxy in Flames",
+      "author": "Ben Counter",
+      "width": 96,
+      "height": 135,
+      "sourceUrl": null
     },
     {
       "title": "Pandora's Star",
@@ -787,18 +808,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/7912438.jpg?default=false"
     },
     {
-      "title": "Galaxy in Flames",
-      "author": "Ben Counter",
-      "width": 96,
-      "height": 135,
-      "sourceUrl": null
-    },
-    {
-      "title": "Fooled by Randomness",
-      "author": "Nassim Nicholas Taleb",
-      "width": 315,
-      "height": 475,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/855791.jpg?default=false"
+      "title": "The Flight of the Eisenstein",
+      "author": "James Swallow",
+      "width": 309,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/894808.jpg?default=false"
     },
     {
       "title": "Unbreakable",
@@ -808,18 +822,11 @@
       "sourceUrl": null
     },
     {
-      "title": "The Problems of Philosophy",
-      "author": "Bertrand Russell",
-      "width": 175,
-      "height": 280,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/6947403.jpg?default=false"
-    },
-    {
-      "title": "Atlas Shrugged",
-      "author": "Ayn Rand",
-      "width": 300,
+      "title": "Horus Rising",
+      "author": "Dan Abnett",
+      "width": 310,
       "height": 500,
-      "sourceUrl": "https://cdn.penguin.co.uk/dam-assets/books/9780451191144/9780451191144-jacket-large.jpg"
+      "sourceUrl": "https://covers.openlibrary.org/b/id/894713.jpg?default=false"
     },
     {
       "title": "Blindsight",
@@ -836,18 +843,18 @@
       "sourceUrl": null
     },
     {
-      "title": "Horus Rising",
-      "author": "Dan Abnett",
-      "width": 310,
+      "title": "Redwall",
+      "author": "Brian Jacques",
+      "width": 323,
       "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/894713.jpg?default=false"
+      "sourceUrl": "https://covers.openlibrary.org/b/id/2325082.jpg?default=false"
     },
     {
-      "title": "The Flight of the Eisenstein",
-      "author": "James Swallow",
-      "width": 309,
+      "title": "Atlas Shrugged",
+      "author": "Ayn Rand",
+      "width": 300,
       "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/894808.jpg?default=false"
+      "sourceUrl": "https://cdn.penguin.co.uk/dam-assets/books/9780451191144/9780451191144-jacket-large.jpg"
     },
     {
       "title": "The Immortality Key",
@@ -857,11 +864,11 @@
       "sourceUrl": null
     },
     {
-      "title": "Redwall",
-      "author": "Brian Jacques",
-      "width": 323,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/2325082.jpg?default=false"
+      "title": "Neuromancer",
+      "author": "William Gibson",
+      "width": 297,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/283860.jpg?default=false"
     },
     {
       "title": "The Fellowship of the Ring",
@@ -869,13 +876,6 @@
       "width": 462,
       "height": 765,
       "sourceUrl": "https://covers.openlibrary.org/b/id/14627060.jpg?default=false"
-    },
-    {
-      "title": "Neuromancer",
-      "author": "William Gibson",
-      "width": 297,
-      "height": 475,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/283860.jpg?default=false"
     },
     {
       "title": "Shardlake: The Complete BBC Radio Collection",
@@ -899,18 +899,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/14627509.jpg?default=false"
     },
     {
-      "title": "Beyond Order",
-      "author": "Jordan B. Peterson",
-      "width": 326,
-      "height": 500,
-      "sourceUrl": "https://cdn.penguin.co.uk/dam-assets/books/9780141991191/9780141991191-jacket-large.jpg"
-    },
-    {
       "title": "Dominion",
       "author": "Tom Holland",
       "width": 484,
       "height": 750,
       "sourceUrl": "https://covers.openlibrary.org/b/id/9094964.jpg?default=false"
+    },
+    {
+      "title": "Pandemia",
+      "author": "Alex Berenson",
+      "width": 331,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12003730.jpg?default=false"
     },
     {
       "title": "Sapiens",
@@ -920,11 +920,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/8634250.jpg?default=false"
     },
     {
-      "title": "Pandemia",
-      "author": "Alex Berenson",
-      "width": 331,
+      "title": "Beyond Order",
+      "author": "Jordan B. Peterson",
+      "width": 326,
       "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/12003730.jpg?default=false"
+      "sourceUrl": "https://cdn.penguin.co.uk/dam-assets/books/9780141991191/9780141991191-jacket-large.jpg"
     },
     {
       "title": "Dune",
@@ -941,18 +941,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/12725620.jpg?default=false"
     },
     {
-      "title": "Heroes",
-      "author": "Stephen Fry",
-      "width": 326,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/8650334.jpg?default=false"
-    },
-    {
       "title": "Why We Sleep",
       "author": "Matthew Walker",
       "width": 328,
       "height": 500,
       "sourceUrl": "https://covers.openlibrary.org/b/id/8814155.jpg?default=false"
+    },
+    {
+      "title": "Heroes",
+      "author": "Stephen Fry",
+      "width": 326,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8650334.jpg?default=false"
     },
     {
       "title": "Sherlock Holmes: The Definitive Collection",
@@ -988,6 +988,216 @@
       "width": 372,
       "height": 605,
       "sourceUrl": "https://covers.openlibrary.org/b/id/14612610.jpg?default=false"
+    },
+    {
+      "title": "The Last Question",
+      "author": "Isaac Asimov",
+      "width": 600,
+      "height": 900,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/14414350.jpg?default=false"
+    },
+    {
+      "title": "Code: The Hidden Language of Computer Hardware and Software",
+      "author": "Charles Petzold",
+      "width": 314,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/460968.jpg?default=false"
+    },
+    {
+      "title": "Stoner",
+      "author": "John Williams",
+      "width": 315,
+      "height": 515,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8310729.jpg?default=false"
+    },
+    {
+      "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "author": "Robert C. Martin",
+      "width": 300,
+      "height": 397,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8065615.jpg?default=false"
+    },
+    {
+      "title": "Linux Bible",
+      "author": "Christopher Negus",
+      "width": 396,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8513427.jpg?default=false"
+    },
+    {
+      "title": "Head First Java",
+      "author": "Kathy Sierra & Bert Bates",
+      "width": 429,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/389102.jpg?default=false"
+    },
+    {
+      "title": "Inspired: How to Create Tech Products Customers Love",
+      "author": "Marty Cagan",
+      "width": 331,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9700654.jpg?default=false"
+    },
+    {
+      "title": "False Gods",
+      "author": "Graham McNeill",
+      "width": 310,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/894750.jpg?default=false"
+    },
+    {
+      "title": "High Performance Habits: How Extraordinary People Become That Way",
+      "author": "Brendon Burchard",
+      "width": 303,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12385574.jpg?default=false"
+    },
+    {
+      "title": "Computer Networking: A Top-Down Approach",
+      "author": "James F. Kurose & Keith W. Ross",
+      "width": 366,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/193126.jpg?default=false"
+    },
+    {
+      "title": "Dissolution",
+      "author": "C.J. Sansom",
+      "width": 329,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/400338.jpg?default=false"
+    },
+    {
+      "title": "Mathematics for 3D Game Programming and Computer Graphics",
+      "author": "Eric Lengyel",
+      "width": 398,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/848287.jpg?default=false"
+    },
+    {
+      "title": "Are Your Lights On?: How to Figure Out What the Problem Really Is",
+      "author": "Donald C. Gause & Gerald M. Weinberg",
+      "width": 316,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/711868.jpg?default=false"
+    },
+    {
+      "title": "The Last Wish",
+      "author": "Andrzej Sapkowski",
+      "width": 338,
+      "height": 500,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1181224890l/1128434.jpg"
+    },
+    {
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "width": 128,
+      "height": 192,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/4849549.jpg?default=false"
+    },
+    {
+      "title": "Stormbird",
+      "author": "Conn Iggulden",
+      "width": 329,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8497396.jpg?default=false"
+    },
+    {
+      "title": "Linear Algebra and Its Applications",
+      "author": "David C. Lay",
+      "width": 415,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/13054058-L.jpg?default=false"
+    },
+    {
+      "title": "Of Mice and Men",
+      "author": "John Steinbeck",
+      "width": 395,
+      "height": 655,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/14319003.jpg?default=false"
+    },
+    {
+      "title": "The Prince",
+      "author": "Niccolò Machiavelli",
+      "width": 397,
+      "height": 645,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12726168.jpg?default=false"
+    },
+    {
+      "title": "The System of the World",
+      "author": "Isaac Newton",
+      "width": 316,
+      "height": 475,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435904847l/25841306.jpg"
+    },
+    {
+      "title": "Zen and the Art of Motorcycle Maintenance",
+      "author": "Robert M. Pirsig",
+      "width": 481,
+      "height": 825,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10673266.jpg?default=false"
+    },
+    {
+      "title": "What Does It All Mean?",
+      "author": "Thomas Nagel",
+      "width": 325,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/126705.jpg?default=false"
+    },
+    {
+      "title": "Flash Game Programming For Dummies",
+      "author": "Andy Harris",
+      "width": 392,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/523134.jpg?default=false"
+    },
+    {
+      "title": "AS Core Maths for OCR",
+      "author": "Rosemary Emanuel",
+      "width": 403,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/1289106.jpg?default=false"
+    },
+    {
+      "title": "AQA Computing A2",
+      "author": "Sylvia Langfield",
+      "width": 294,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413131438l/5809240.jpg"
+    },
+    {
+      "title": "Faithless",
+      "author": "Graham Austin-King",
+      "width": 297,
+      "height": 475,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1496860686l/35384710.jpg"
+    },
+    {
+      "title": "AQA Additional Science Workbook",
+      "author": "Andrew Catterall",
+      "width": 318,
+      "height": 450,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394418436l/21344830.jpg"
+    },
+    {
+      "title": "3,000 Solved Problems in Linear Algebra",
+      "author": "Seymour Lipschutz",
+      "width": 298,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347284698l/309766.jpg"
+    },
+    {
+      "title": "Revision Plus GCSE AQA Additional Science",
+      "author": "Andrew Catterall",
+      "width": 283,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349050558l/5242160.jpg"
+    },
+    {
+      "title": "Essentials of AQA Additional Science Workbook Answers",
+      "author": "Sylvia Newton",
+      "width": 282,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349079194l/7038117.jpg"
     }
   ]
 }

@@ -83,6 +83,20 @@
     "categories": ["Technology"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL4802376W"],
+    "title": "Are Your Lights On?: How to Figure Out What the Problem Really Is",
+    "author": "Donald C. Gause & Gerald M. Weinberg",
+    "firstPublished": "1977",
+    "categories": ["Psychology", "Technology"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL8403743W"],
+    "title": "AS Core Maths for OCR",
+    "author": "Rosemary Emanuel",
+    "firstPublished": "2004",
+    "categories": ["Mathematics"]
+  },
+  {
     "sources": [
       "https://openlibrary.org/works/OL19095009W",
       "https://openlibrary.org/books/OL26764283M"
@@ -193,6 +207,22 @@
     "released": "2023"
   },
   {
+    "sources": ["https://openlibrary.org/works/OL17618370W"],
+    "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+    "author": "Robert C. Martin",
+    "firstPublished": "2008",
+    "categories": ["Technology"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL1972516W"],
+    "title": "Code: The Hidden Language of Computer Hardware and Software",
+    "author": "Charles Petzold",
+    "description": "What do flashlights, the British invasion, black cats, and seesaws have to do with computers? In CODE, they show us the ingenious ways we…",
+    "excerptSource": "https://openlibrary.org/works/OL1972516W",
+    "firstPublished": "1999",
+    "categories": ["Technology", "Science"]
+  },
+  {
     "sources": [
       "https://openlibrary.org/works/OL276557W",
       "https://openlibrary.org/books/OL15564492M"
@@ -206,6 +236,13 @@
     "released": "2005",
     "pages": "575",
     "categories": ["Philosophy", "History", "Nature"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL56272W"],
+    "title": "Computer Networking: A Top-Down Approach",
+    "author": "James F. Kurose & Keith W. Ross",
+    "firstPublished": "1900",
+    "categories": ["Technology", "Communication"]
   },
   {
     "sources": ["https://openlibrary.org/works/OL2172429W"],
@@ -260,6 +297,15 @@
     "categories": ["Science"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL5734168W"],
+    "title": "Dissolution",
+    "author": "C.J. Sansom",
+    "description": "The book is a great read, the audio version should be avoided at all costs.",
+    "excerptSource": "https://openlibrary.org/works/OL5734168W",
+    "firstPublished": "2001",
+    "categories": ["History", "Mystery"]
+  },
+  {
     "sources": [
       "https://openlibrary.org/works/OL20428369W",
       "https://openlibrary.org/books/OL27650194M"
@@ -295,6 +341,12 @@
     "categories": ["Science fiction", "Fantasy", "History"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL45019893W"],
+    "title": "Eat That Frog!",
+    "author": "Brian Tracy",
+    "firstPublished": "2002"
+  },
+  {
     "sources": [
       "https://openlibrary.org/works/OL5894759W",
       "https://openlibrary.org/books/OL3480215M"
@@ -318,6 +370,20 @@
     "publisher": "Nutramedia",
     "released": "June 2, 2001",
     "pages": "170"
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL19548686W"],
+    "title": "Faithless",
+    "author": "Graham Austin-King",
+    "firstPublished": "2017"
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL3990207W"],
+    "title": "False Gods",
+    "author": "Graham McNeill",
+    "description": "The Great Crusade that has taken humanity into the stars continues. The Emperor of mankind has handed the reins of command to his favoured…",
+    "excerptSource": "https://openlibrary.org/works/OL3990207W",
+    "firstPublished": "2006"
   },
   {
     "sources": [
@@ -344,6 +410,15 @@
     "released": "May 12, 2020",
     "pages": "272",
     "categories": ["Finance"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL118388W"],
+    "title": "Flatland",
+    "author": "Edwin A. Abbott",
+    "description": "Flatland: A Romance of Many Dimensions, though written in 1884, is still considered useful in thinking about multiple dimensions. It is also seen as…",
+    "excerptSource": "https://openlibrary.org/works/OL118388W",
+    "firstPublished": "1884",
+    "categories": ["Science fiction", "Fantasy", "History"]
   },
   {
     "sources": [
@@ -474,6 +549,22 @@
     "categories": ["History", "Politics"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL20600W"],
+    "title": "Gulliver's Travels",
+    "author": "Jonathan Swift",
+    "description": "A parody of traveler’s tales and a satire of human nature, “Gulliver’s Travels” is Jonathan Swift’s most famous work which was first published in…",
+    "excerptSource": "https://openlibrary.org/works/OL20600W",
+    "firstPublished": "1726",
+    "categories": ["Fantasy", "Biography", "History"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL27068106W"],
+    "title": "Head First Java",
+    "author": "Kathy Sierra & Bert Bates",
+    "firstPublished": "2005",
+    "categories": ["Technology", "Science"]
+  },
+  {
     "sources": [
       "https://openlibrary.org/works/OL19850785W",
       "https://openlibrary.org/books/OL27039418M"
@@ -499,6 +590,15 @@
     "released": "Jul 17, 2018",
     "pages": "344",
     "categories": ["History", "Business"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL19728389W"],
+    "title": "High Performance Habits: How Extraordinary People Become That Way",
+    "author": "Brendon Burchard",
+    "description": "\"THESE HABITS WILL MAKE YOU EXTRAORDINARY. Twenty years ago, author Brendon Burchard became obsessed with answering three questions: 1.Why do some individuals and teams…",
+    "excerptSource": "https://openlibrary.org/works/OL19728389W",
+    "firstPublished": "2017",
+    "categories": ["Psychology", "Business", "Personal growth"]
   },
   {
     "sources": [
@@ -599,11 +699,25 @@
     "categories": ["Psychology", "Science", "Nature"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL16803591W"],
+    "title": "Inspired: How to Create Tech Products Customers Love",
+    "author": "Marty Cagan",
+    "description": "Why do some products make the leap to greatness while others don’t? Creating inspiring products begins with discovering a product that is valuable, usable…",
+    "excerptSource": "https://openlibrary.org/works/OL16803591W",
+    "firstPublished": "2008"
+  },
+  {
     "sources": ["https://openlibrary.org/works/OL21854612W"],
     "title": "Introduction to Magic Vol. I",
     "author": "Julius Evola",
     "firstPublished": "2018",
     "categories": ["Fantasy"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL19859284W"],
+    "title": "Introduction to the Theory of Computation",
+    "author": "Michael Sipser",
+    "firstPublished": "2013"
   },
   {
     "sources": [
@@ -625,6 +739,22 @@
     "title": "Life on Svalbard",
     "author": "Cecilia Blomdahl",
     "firstPublished": "2024"
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL47604W"],
+    "title": "Linear Algebra and Its Applications",
+    "author": "David C. Lay",
+    "description": "CD-ROM contains: Study guide -- Getting started with technology -- Download data -- New MATLAB projects -- PDF files.",
+    "excerptSource": "https://openlibrary.org/works/OL47604W",
+    "firstPublished": "1994",
+    "categories": ["Mathematics", "Science", "Health"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL19547285W"],
+    "title": "Linux Bible",
+    "author": "Christopher Negus",
+    "firstPublished": "2012",
+    "categories": ["Technology"]
   },
   {
     "sources": ["https://openlibrary.org/works/OL19715366W"],
@@ -674,6 +804,13 @@
     "publisher": "Knopf Doubleday Publishing Group",
     "released": "2023",
     "categories": ["History", "Politics", "Economics"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL6030612W"],
+    "title": "Mathematics for 3D Game Programming and Computer Graphics",
+    "author": "Eric Lengyel",
+    "firstPublished": "2002",
+    "categories": ["Technology", "Mathematics"]
   },
   {
     "sources": [
@@ -763,6 +900,15 @@
     "categories": ["Science fiction", "Fantasy", "Psychology"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL17619634W"],
+    "title": "Norse Mythology",
+    "author": "Neil Gaiman",
+    "description": "Neil Gaiman has long been inspired by ancient mythology in creating the fantastical realms of his fiction. Now he turns his attention back to…",
+    "excerptSource": "https://openlibrary.org/works/OL17619634W",
+    "firstPublished": "2016",
+    "categories": ["Fantasy"]
+  },
+  {
     "sources": [
       "https://openlibrary.org/works/OL17834026W",
       "https://openlibrary.org/books/OL26421466M"
@@ -776,6 +922,15 @@
     "released": "2017",
     "pages": "1243",
     "categories": ["Fantasy"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL23204W"],
+    "title": "Of Mice and Men",
+    "author": "John Steinbeck",
+    "description": "The second book in John Steinbeck’s labor trilogy, Of Mice and Men is a touching tale of two migrant laborers in search of work…",
+    "excerptSource": "https://openlibrary.org/works/OL23204W",
+    "firstPublished": "1937",
+    "categories": ["Fantasy", "Psychology", "Travel"]
   },
   {
     "sources": [
@@ -1014,6 +1169,23 @@
     "categories": ["Business", "Art & design"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL3511459W"],
+    "title": "Stoner",
+    "author": "John Williams",
+    "description": "William Stoner is born at the end of the nineteenth century into a dirt-poor Missouri farming family. Sent to the state university to study…",
+    "excerptSource": "https://openlibrary.org/works/OL3511459W",
+    "firstPublished": "1965",
+    "categories": ["Psychology"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL21073936W"],
+    "title": "Stormbird",
+    "author": "Conn Iggulden",
+    "description": "King Henry V - the great Lion of England - is long dead. In 1437, after years of regency, the pious and gentle Henry…",
+    "excerptSource": "https://openlibrary.org/works/OL21073936W",
+    "firstPublished": "2014"
+  },
+  {
     "sources": ["https://openlibrary.org/works/OL17778974W"],
     "title": "Stuff Matters",
     "author": "Mark Miodownik",
@@ -1073,6 +1245,15 @@
     "categories": ["Psychology", "Communication"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL60357W"],
+    "title": "The Age of Reason",
+    "author": "Thomas Paine",
+    "description": "Thomas Paine who was a dynamic philosophical presence in the American Revolution of 1776 wrote his last book in 1795 on an investigation and…",
+    "excerptSource": "https://openlibrary.org/works/OL60357W",
+    "firstPublished": "1794",
+    "categories": ["Philosophy", "Politics", "Science"]
+  },
+  {
     "sources": ["https://openlibrary.org/works/OL20781447W"],
     "title": "The Alignment Problem",
     "author": "Brian Christian",
@@ -1092,6 +1273,15 @@
     "publisher": "Bloomsbury Publishing",
     "released": "2019",
     "categories": ["History", "Politics", "Economics"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL244537W"],
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "description": "The Art of War is an ancient Chinese military treatise dating from the Late Spring and Autumn Period. The work, which is attributed to…",
+    "excerptSource": "https://openlibrary.org/works/OL244537W",
+    "firstPublished": "1900",
+    "categories": ["Philosophy", "Psychology", "History"]
   },
   {
     "sources": ["https://openlibrary.org/works/OL1881367W"],
@@ -1294,6 +1484,15 @@
     "categories": ["History", "Science"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL24138848W"],
+    "title": "The Last Question",
+    "author": "Isaac Asimov",
+    "description": "\"The Last Question\" is a science fiction short story by Isaac Asimov, first published in Science Fiction Quarterly in November 1956. Asimov considered it…",
+    "excerptSource": "https://openlibrary.org/works/OL24138848W",
+    "firstPublished": "2007",
+    "categories": ["Science fiction", "Fantasy"]
+  },
+  {
     "sources": [
       "https://openlibrary.org/works/OL16086010W",
       "https://openlibrary.org/books/OL24982481M"
@@ -1368,6 +1567,15 @@
     "title": "The Price of Time",
     "author": "Edward Chancellor",
     "firstPublished": "2023"
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL1089297W"],
+    "title": "The Prince",
+    "author": "Niccolò Machiavelli",
+    "description": "The Prince (Italian: Il Principe [il ˈprintʃipe]; Latin: De Principatibus) is a 16th-century political treatise written by Italian diplomat and political theorist Niccolò Machiavelli…",
+    "excerptSource": "https://openlibrary.org/works/OL1089297W",
+    "firstPublished": "1515",
+    "categories": ["Fantasy", "Philosophy", "Psychology"]
   },
   {
     "sources": ["https://openlibrary.org/works/OL1088577W"],
@@ -1491,6 +1699,12 @@
     "released": "Aug 16, 2011",
     "pages": "464",
     "categories": ["History", "Economics"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL33145614W"],
+    "title": "The System of the World",
+    "author": "Isaac Newton",
+    "firstPublished": "1740"
   },
   {
     "sources": [
@@ -1662,6 +1876,15 @@
     "categories": ["Mathematics", "Science"]
   },
   {
+    "sources": ["https://openlibrary.org/works/OL2901922W"],
+    "title": "What Does It All Mean?",
+    "author": "Thomas Nagel",
+    "description": "Most people think about philosophical problems without realizing it. Introducing the uninitiated to the world of philosophical inquiry, this book examines nine philosophical problems…",
+    "excerptSource": "https://openlibrary.org/works/OL2901922W",
+    "firstPublished": "1987",
+    "categories": ["Philosophy"]
+  },
+  {
     "sources": ["https://openlibrary.org/works/OL25190572W"],
     "title": "Where Is My Flying Car?",
     "author": "J. Storrs Hall",
@@ -1698,5 +1921,14 @@
     "released": "2014",
     "pages": "1087",
     "categories": ["Fantasy"]
+  },
+  {
+    "sources": ["https://openlibrary.org/works/OL827357W"],
+    "title": "Zen and the Art of Motorcycle Maintenance",
+    "author": "Robert M. Pirsig",
+    "description": "\"The real cycle you're working on is a cycle called 'yourself.'\"One of the most important and influential books of the past half-century, Robert M.…",
+    "excerptSource": "https://openlibrary.org/works/OL827357W",
+    "firstPublished": "1974",
+    "categories": ["Philosophy", "Psychology", "Biography"]
   }
 ]

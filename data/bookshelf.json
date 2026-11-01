@@ -848,5 +848,200 @@
     "title": "The Moon is a Harsh Mistress",
     "author": "Robert A. Heinlein",
     "medium": "Kindle"
+  },
+  {
+    "title": "The Last Question",
+    "author": "Isaac Asimov",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "Code: The Hidden Language of Computer Hardware and Software",
+    "author": "Charles Petzold",
+    "medium": "Physical"
+  },
+  {
+    "title": "Stoner",
+    "author": "John Williams",
+    "medium": "Physical"
+  },
+  {
+    "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+    "author": "Robert C. Martin",
+    "medium": "Physical"
+  },
+  {
+    "title": "AQA Computing A2",
+    "author": "Sylvia Langfield",
+    "medium": "Physical"
+  },
+  {
+    "title": "Linux Bible",
+    "author": "Christopher Negus",
+    "medium": "Physical"
+  },
+  {
+    "title": "Introduction to the Theory of Computation",
+    "author": "Michael Sipser",
+    "medium": "Physical"
+  },
+  {
+    "title": "Head First Java",
+    "author": "Kathy Sierra & Bert Bates",
+    "medium": "Physical"
+  },
+  {
+    "title": "Inspired: How to Create Tech Products Customers Love",
+    "author": "Marty Cagan",
+    "medium": "Physical"
+  },
+  {
+    "title": "False Gods",
+    "author": "Graham McNeill",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Last Wish",
+    "author": "Andrzej Sapkowski",
+    "medium": "Physical"
+  },
+  {
+    "title": "High Performance Habits: How Extraordinary People Become That Way",
+    "author": "Brendon Burchard",
+    "medium": "Physical"
+  },
+  {
+    "title": "The System of the World",
+    "author": "Isaac Newton",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Age of Reason",
+    "author": "Thomas Paine",
+    "medium": "Physical"
+  },
+  {
+    "title": "Norse Mythology",
+    "author": "Neil Gaiman",
+    "medium": "Physical"
+  },
+  {
+    "title": "Computer Networking: A Top-Down Approach",
+    "author": "James F. Kurose & Keith W. Ross",
+    "medium": "Physical"
+  },
+  {
+    "title": "Dissolution",
+    "author": "C.J. Sansom",
+    "medium": "Physical"
+  },
+  {
+    "title": "A2 Core Mathematics for OCR",
+    "author": "John R. Wood",
+    "medium": "Physical"
+  },
+  {
+    "title": "Mathematics for 3D Game Programming and Computer Graphics",
+    "author": "Eric Lengyel",
+    "medium": "Physical"
+  },
+  {
+    "title": "Are Your Lights On?: How to Figure Out What the Problem Really Is",
+    "author": "Donald C. Gause & Gerald M. Weinberg",
+    "medium": "Physical"
+  },
+  {
+    "title": "Faithless",
+    "author": "Graham Austin-King",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "medium": "Physical"
+  },
+  {
+    "title": "Stormbird",
+    "author": "Conn Iggulden",
+    "medium": "Physical"
+  },
+  {
+    "title": "Linear Algebra and Its Applications",
+    "author": "David C. Lay",
+    "medium": "Physical"
+  },
+  {
+    "title": "Logic in Computer Science: Modelling and Reasoning about Systems",
+    "author": "Michael Huth & Mark Ryan",
+    "medium": "Physical"
+  },
+  {
+    "title": "Of Mice and Men",
+    "author": "John Steinbeck",
+    "medium": "Physical"
+  },
+  {
+    "title": "Eat That Frog!",
+    "author": "Brian Tracy",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Prince",
+    "author": "Niccolò Machiavelli",
+    "medium": "Physical"
+  },
+  {
+    "title": "3,000 Solved Problems in Linear Algebra",
+    "author": "Seymour Lipschutz",
+    "medium": "Physical"
+  },
+  {
+    "title": "Flatland",
+    "author": "Edwin A. Abbott",
+    "medium": "Physical"
+  },
+  {
+    "title": "Zen and the Art of Motorcycle Maintenance",
+    "author": "Robert M. Pirsig",
+    "medium": "Physical"
+  },
+  {
+    "title": "Decision 1 for OCR",
+    "author": "Stan Dolan",
+    "medium": "Physical"
+  },
+  {
+    "title": "What Does It All Mean?",
+    "author": "Thomas Nagel",
+    "medium": "Physical"
+  },
+  {
+    "title": "Gulliver's Travels",
+    "author": "Jonathan Swift",
+    "medium": "Physical"
+  },
+  {
+    "title": "Flash Game Programming For Dummies",
+    "author": "Andy Harris",
+    "medium": "Physical"
+  },
+  {
+    "title": "AS Core Maths for OCR",
+    "author": "Rosemary Emanuel",
+    "medium": "Physical"
+  },
+  {
+    "title": "Revision Plus GCSE AQA Additional Science",
+    "author": "Andrew Catterall",
+    "medium": "Physical"
+  },
+  {
+    "title": "Essentials of AQA Additional Science Workbook Answers",
+    "author": "Sylvia Newton",
+    "medium": "Physical"
+  },
+  {
+    "title": "AQA Additional Science Workbook",
+    "author": "Andrew Catterall",
+    "medium": "Physical"
   }
 ]

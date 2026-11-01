@@ -1,14 +1,21 @@
 {
-  "total": 165,
-  "matched": 142,
+  "total": 204,
+  "matched": 171,
   "coverage": {
-    "description": 85,
-    "categories": 113,
-    "firstPublished": 138,
+    "description": 103,
+    "categories": 135,
+    "firstPublished": 167,
     "publisher": 96,
     "pages": 86
   },
   "unresolved": [
+    {
+      "title": "3,000 Solved Problems in Linear Algebra",
+      "author": "Seymour Lipschutz",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
     {
       "title": "A Programmer's Geometry",
       "author": "Bowyer & Woodwark",
@@ -22,6 +29,13 @@
       "status": "matched",
       "missing": ["pages"],
       "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "A2 Core Mathematics for OCR",
+      "author": "John R. Wood",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
     },
     {
       "title": "Age Later",
@@ -59,11 +73,39 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "AQA Additional Science Workbook",
+      "author": "Andrew Catterall",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "AQA Computing A2",
+      "author": "Sylvia Langfield",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Are Your Lights On?: How to Figure Out What the Problem Really Is",
+      "author": "Donald C. Gause & Gerald M. Weinberg",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Aroused: The History of Hormones and How They Control Just About Everything",
       "author": "Randi Hutter Epstein",
       "status": "error",
       "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
       "reason": "The operation timed out."
+    },
+    {
+      "title": "AS Core Maths for OCR",
+      "author": "Rosemary Emanuel",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
     },
     {
       "title": "Atlas Shrugged",
@@ -129,6 +171,27 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "author": "Robert C. Martin",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Code: The Hidden Language of Computer Hardware and Software",
+      "author": "Charles Petzold",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Computer Networking: A Top-Down Approach",
+      "author": "James F. Kurose & Keith W. Ross",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Counter-Clock World",
       "author": "Philip K. Dick",
       "status": "matched",
@@ -157,6 +220,20 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "Decision 1 for OCR",
+      "author": "Stan Dolan",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Dissolution",
+      "author": "C.J. Sansom",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Dominion",
       "author": "Tom Holland",
       "status": "matched",
@@ -171,6 +248,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Eat That Frog!",
+      "author": "Brian Tracy",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Economics for Dummies",
       "author": "Sean Masaki Flynn",
       "status": "matched",
@@ -178,10 +262,31 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Essentials of AQA Additional Science Workbook Answers",
+      "author": "Sylvia Newton",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "Everything You Need to Know About Fat Loss",
       "author": "Chris Aceto",
       "status": "matched",
       "missing": ["description", "categories"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Faithless",
+      "author": "Graham Austin-King",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "False Gods",
+      "author": "Graham McNeill",
+      "status": "matched",
+      "missing": ["categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -196,6 +301,20 @@
       "author": "Liam Vaughan",
       "status": "matched",
       "missing": ["description"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Flash Game Programming For Dummies",
+      "author": "Andy Harris",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Flatland",
+      "author": "Edwin A. Abbott",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -241,10 +360,31 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Gulliver's Travels",
+      "author": "Jonathan Swift",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Head First Java",
+      "author": "Kathy Sierra & Bert Bates",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Heroes",
       "author": "Stephen Fry",
       "status": "matched",
       "missing": ["description", "categories"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "High Performance Habits: How Extraordinary People Become That Way",
+      "author": "Brendon Burchard",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -276,10 +416,24 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Inspired: How to Create Tech Products Customers Love",
+      "author": "Marty Cagan",
+      "status": "matched",
+      "missing": ["categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Introduction to Magic Vol. I",
       "author": "Julius Evola",
       "status": "matched",
       "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Introduction to the Theory of Computation",
+      "author": "Michael Sipser",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -288,6 +442,27 @@
       "status": "matched",
       "missing": ["description", "categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Linear Algebra and Its Applications",
+      "author": "David C. Lay",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Linux Bible",
+      "author": "Christopher Negus",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Logic in Computer Science: Modelling and Reasoning about Systems",
+      "author": "Michael Huth & Mark Ryan",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
     },
     {
       "title": "London for Dogs",
@@ -301,6 +476,13 @@
       "author": "Ed Conway",
       "status": "matched",
       "missing": ["description", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Mathematics for 3D Game Programming and Computer Graphics",
+      "author": "Eric Lengyel",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -343,6 +525,20 @@
       "author": "Stephen Fry",
       "status": "matched",
       "missing": ["categories"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Norse Mythology",
+      "author": "Neil Gaiman",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Of Mice and Men",
+      "author": "John Steinbeck",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -402,6 +598,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Revision Plus GCSE AQA Additional Science",
+      "author": "Andrew Catterall",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "Scaling People",
       "author": "Claire Hughes Johnson",
       "status": "matched",
@@ -437,6 +640,20 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Stoner",
+      "author": "John Williams",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Stormbird",
+      "author": "Conn Iggulden",
+      "status": "matched",
+      "missing": ["categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Stuff Matters",
       "author": "Mark Miodownik",
       "status": "matched",
@@ -465,6 +682,13 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "The Age of Reason",
+      "author": "Thomas Paine",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "The Alignment Problem",
       "author": "Brian Christian",
       "status": "matched",
@@ -476,6 +700,13 @@
       "author": "William Dalrymple",
       "status": "matched",
       "missing": ["description", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -591,6 +822,20 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "The Last Question",
+      "author": "Isaac Asimov",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The Last Wish",
+      "author": "Andrzej Sapkowski",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The Madness of Crowds",
       "author": "Douglas Murray",
       "status": "matched",
@@ -616,6 +861,13 @@
       "author": "Edward Chancellor",
       "status": "matched",
       "missing": ["description", "categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The Prince",
+      "author": "Niccolò Machiavelli",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -651,6 +903,13 @@
       "author": "Mark Manson",
       "status": "matched",
       "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The System of the World",
+      "author": "Isaac Newton",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -738,6 +997,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "What Does It All Mean?",
+      "author": "Thomas Nagel",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "What Would Arnie Do?",
       "author": "Pop Press",
       "status": "unmatched",
@@ -757,6 +1023,13 @@
       "status": "unmatched",
       "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
       "reason": "No confident title and author match"
+    },
+    {
+      "title": "Zen and the Art of Motorcycle Maintenance",
+      "author": "Robert M. Pirsig",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
     }
   ]
 }

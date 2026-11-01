@@ -140,7 +140,8 @@ describe("bookshelf browser payload", () => {
         findBookshelfMatchIndexes(original, query),
       );
     }
-    expect(JSON.stringify(payload.books).length).toBeLessThan(12000);
+    // Per book, so the guard measures the index's compactness, not the catalogue's size.
+    expect(JSON.stringify(payload.books).length / payload.books.length).toBeLessThan(72);
     expect(payload.atlas.map((book) => book.id)).toEqual(books.map((book) => book.id));
   });
 

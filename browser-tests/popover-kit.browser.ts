@@ -1,5 +1,6 @@
 // cspell:words fulfill
 import { expect, test, type Page } from "@playwright/test";
+import { bookButton } from "./helpers/catalogue";
 
 async function inspectFirst(page: Page) {
   await page.goto("/bookshelf");
@@ -7,7 +8,7 @@ async function inspectFirst(page: Page) {
     "data-bookshelf-initialized",
     "true",
   );
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   const dialog = page.locator("[data-book-inspector]");
   await expect(dialog).toHaveAttribute("data-inspector-ready", "true");
   await expect(dialog.locator("[data-inspect-description]")).not.toBeEmpty();
@@ -85,7 +86,7 @@ test("the note folds into a ball on closing, cleans up, and skips motion when re
   await expect(mesh).toHaveCount(0);
   await expect(note).not.toHaveAttribute("data-crumpling");
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   await expect(dialog).toBeVisible();
   await expect(note).toHaveCSS("visibility", "visible");
   await page.keyboard.press("Escape");
@@ -223,7 +224,7 @@ for (const mobile of [false, true]) {
     await page.keyboard.press("Escape");
     await expect(dialog).not.toBeVisible();
     await expect(page.locator(".book-note-crumple")).toHaveCount(0);
-    await expect(page.locator("[data-book-open]").first()).toBeFocused();
+    await expect(bookButton(page, "12 Rules for Life")).toBeFocused();
     await expect(page.locator("[data-book-card][data-picked]")).toHaveCount(0);
     expect(errors).toEqual([]);
     // A mobile inspection disposes its renderer; reopening must still work.
@@ -285,7 +286,7 @@ test("a full desktop inspection adapts to mobile and back without losing the boo
 test("the printed book uses the same desktop composition without motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/bookshelf");
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   const dialog = page.locator("[data-book-inspector]");
   const cover = dialog.locator("[data-inspect-cover]");
   await expect(cover).toBeVisible();
@@ -322,7 +323,7 @@ test("metadata arriving after five seconds fills the already-open inspection", a
     const request = page.waitForRequest("**/bookshelf/details.json");
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/bookshelf");
-    await page.locator("[data-book-open]").first().click();
+    await bookButton(page, "12 Rules for Life").click();
     const dialog = page.locator("[data-book-inspector]");
     await expect(dialog).toBeVisible();
     await expect(dialog.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
@@ -366,15 +367,15 @@ test("late metadata never replaces the next book and missing records stay quiet"
     "data-bookshelf-initialized",
     "true",
   );
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   await expect(page.locator("[data-inspect-title]")).toHaveText("12 Rules for Life");
   await page.keyboard.press("Escape");
-  await page.locator("[data-book-open]").nth(1).click();
+  await bookButton(page, "Age Later").click();
   release();
   await expect(page.locator("[data-inspect-title]")).toHaveText("Age Later");
   await expect(page.locator("[data-inspect-extra]")).toBeHidden();
   await page.keyboard.press("Escape");
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   await expect(page.locator("[data-inspect-description]")).toContainText("Twelve essays");
   await expect(page.locator("[data-inspect-cover]")).toBeVisible();
 });
@@ -385,7 +386,7 @@ test("failed metadata preserves usable details, and short inspections stay reada
   await page.route("**/bookshelf/details.json", (route) => route.abort());
   await page.setViewportSize({ width: 740, height: 320 });
   await page.goto("/bookshelf");
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   const dialog = page.locator("[data-book-inspector]");
   await expect(dialog).toHaveAttribute("data-inspector-ready", "true");
   await expect(page.locator("[data-inspect-extra]")).toBeHidden();
@@ -422,7 +423,7 @@ test("catalogue notes use legible ink annotations and labelled edition details",
     }),
   );
   await page.goto("/bookshelf");
-  await page.locator("[data-book-open]").first().click();
+  await bookButton(page, "12 Rules for Life").click();
   const note = page.locator("[data-inspect-details]");
   const categories = note.getByRole("list", { name: "Categories" });
   await expect(categories.getByRole("listitem")).toHaveCount(3);
