@@ -186,7 +186,9 @@ function showAboutRoom(stage: HTMLElement, room: AboutRoom, animate: boolean) {
   markMenuPath(aboutRoomPaths[room]);
   updateMetadata(room);
   const step = (now: number) => {
-    const t = duration === 0 ? 1 : Math.min(1, (now - started) / duration);
+    // A frame's timestamp can precede the clock's start; a negative t would
+    // raise the drain curve to a fractional power and write NaN.
+    const t = duration === 0 ? 1 : Math.max(0, Math.min(1, (now - started) / duration));
     write(elements, from + (to - from) * ease(t), light);
     if (t < 1) frame = requestAnimationFrame(step);
     else {

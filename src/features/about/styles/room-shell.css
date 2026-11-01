@@ -111,7 +111,11 @@
 
 .about-template__stage[data-scrub] .about-template__room--shelf {
   position: absolute;
-  inset: 0;
+  /* Clip at the paper's rails, where the atlas's negative margins end. Keep
+     the content inset so neither the books nor their visible edges jump when
+     the shelf returns to normal flow. */
+  inset: 0 calc(-1 * var(--panel-gutter));
+  padding-inline: var(--panel-gutter);
   overflow: hidden;
   /* Under the ink: no presses until the ink has gone, and it comes up only
      once the letter has started to lift. The clock writes opacity directly
@@ -332,6 +336,12 @@ body .page-wrap.page-wrap--about {
   .about-template__room--shelf {
     --bookshelf-top-gap: var(--space-8);
     --about-stage-padding-bottom: var(--space-4);
+  }
+
+  .about-template__stage[data-scrub] .about-template__room--shelf {
+    /* The desktop atlas has a fixed viewport height. Let it size this layer
+       so the letter's deeper foot padding cannot clip the bottom row. */
+    bottom: auto;
   }
 
   body .page-wrap.page-wrap--about:has([data-about-rooms][data-room="bookshelf"]) {
