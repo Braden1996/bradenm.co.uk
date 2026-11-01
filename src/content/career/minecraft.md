@@ -1,18 +1,15 @@
 ---
-title: Independent Mod Developer
+title: Server Community Owner
 organisation: Minecraft
 location: United Kingdom · Remote
-startDate: "2013"
-endDate: "2014"
+startDate: "2013-09"
+endDate: "2014-10"
 logoSrc: /career/minecraft.png
 explainerSrc: /career/minecraft-explainer.png
 explainerAlt: Minecraft creeper mark on a green ground
-summary: I built mods and ran Minecraft communities in my early days of making software.
 website: https://www.minecraft.net
 mark: MC
 ---
 
-Independent mod development during the same early period as the original Garry's Mod work.
-
-- Placeholder detail: add the best-known mods, downloads, and communities they reached.
-- Dates currently use the adjacent self-employed modding period until exact dates are added.
+- Ran popular server communities across many games, such as **[Minecraft](https://www.minecraft.net)**, alongside my [Garry's Mod](https://gmod.facepunch.com/) add-on work.
+- Featured by top YouTubers with **millions of subscribers**, and affiliated with Machinima.

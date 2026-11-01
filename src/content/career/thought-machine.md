@@ -11,6 +11,7 @@ website: https://www.thoughtmachine.net
 mark: TM
 ---
 
-- Worked on the **Workflows Team**, building out a highly configurable and powerful Operations Dashboard rolled out across many banks in the industry.
-- Helped architect and build the **Documentation site**; dynamic CMS built with **Go** which parsed API protobufs into a fast web-app.
-- Led several tech initiatives, such as transitioning away from a clunky custom form/data solution onto something built on-top of **Redux** and **Formik**.
+- Worked on a white-label, cloud-native banking platform serving several of the world's largest banks, where availability and scale are critical.
+- On the **Workflows** team, built the operations dashboard: a schema-driven **React** and **Go** app that lets banks construct their own process pages.
+- Co-architected a **Go** documentation CMS that generated its content from protobuf API definitions.
+- Led frontend-wide initiatives, including moving custom forms to **Redux** and **Formik** and hardening **TypeScript** strict mode.

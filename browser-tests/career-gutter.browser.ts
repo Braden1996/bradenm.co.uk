@@ -34,7 +34,7 @@ for (const viewport of [
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
     await page.evaluate(() => document.fonts.ready);
-    await page.locator('[data-career-entity][href="#career-card-garrys-mod"]').click();
+    await page.locator('[data-career-entity][href="#career-card-thought-machine"]').click();
     const frame = page.locator("[data-career-popover]");
     await expect(frame).toHaveAttribute("data-state", "open");
     await expect(frame).toHaveAttribute("data-placement", "left");
@@ -54,7 +54,7 @@ for (const viewport of [
     expect(geometry.visit.bottom).toBeLessThan(geometry.washTop - 12);
     await page.screenshot({ path: `artifacts/career-gutters/desktop-${viewport.width}.png` });
 
-    await page.locator('[data-career-entity][href="#career-card-isembard"]').click();
+    await page.locator('[data-career-entity][href="#career-card-minecraft"]').click();
     await expect(frame).toHaveAttribute("data-placement", "right");
     const short = await noteGeometry(frame.locator("[data-popover-layer=active]"));
     expect(short.card.height).toBeLessThan(geometry.card.height);

@@ -11,6 +11,6 @@ website: https://www.theodo.com/en-uk
 mark: TH
 ---
 
-- Built and launched **10+ web and mobile apps** for startups ([Meet Cleo](https://web.meetcleo.com)), insurance platforms ([Veygo](https://www.veygo.com/), [Admiral](https://www.admiral.com/)), data analytics ([Contentsquare](https://contentsquare.com), [Euler Hermes](https://www.allianz-trade.com/en_GB.html)), machine learning image generation ([Tarkett](https://www.tarkett-group.com/en/)).
-- Led company wide adoption of **TypeScript** throughout [Theodo](https://www.theodo.com/en-uk) through trainings, project templates, and hands-on migration work. On average team velocity increased nearly **2x** (7.5 to 13 ticket points).
-- Onboarded dozens of engineers and agile coaches and oversaw **Scrum processes**.
+- Led company-wide adoption of **TypeScript** at [Theodo](https://www.theodo.com/en-uk) through training, project templates and hands-on migrations, increasing delivery speed and reducing regressions.
+- Built and launched **10+ web and mobile products** across fintech ([Cleo](https://web.meetcleo.com)), insurance ([Veygo](https://www.veygo.com/) and [Admiral](https://www.admiral.com/)), analytics ([Contentsquare](https://contentsquare.com) and [Euler Hermes](https://www.allianz-trade.com/en_GB.html)) and machine-learning image generation ([Tarkett](https://www.tarkett-group.com/en/)).
+- Mentored dozens of junior engineers and agile coaches.
