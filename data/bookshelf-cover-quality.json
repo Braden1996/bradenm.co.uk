@@ -1,13 +1,13 @@
 {
   "targetHeight": 1000,
-  "coverCount": 204,
+  "coverCount": 250,
   "unresolved": [
     {
-      "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
-      "author": "Adam Tooze",
-      "width": 333,
+      "title": "The Sugar Barons: Family Corruption Empire and War",
+      "author": "Matthew Parker",
+      "width": 329,
       "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/400830.jpg?default=false"
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8474290.jpg?default=false"
     },
     {
       "title": "Oathbringer",
@@ -17,11 +17,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/14658111.jpg?default=false"
     },
     {
-      "title": "The Sugar Barons: Family Corruption Empire and War",
-      "author": "Matthew Parker",
-      "width": 329,
+      "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
+      "author": "Adam Tooze",
+      "width": 333,
       "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/8474290.jpg?default=false"
+      "sourceUrl": "https://covers.openlibrary.org/b/id/400830.jpg?default=false"
     },
     {
       "title": "The City and the Stars",
@@ -297,18 +297,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/7237299.jpg?default=false"
     },
     {
-      "title": "The Daily Stoic Journal",
-      "author": "Ryan Holiday & Stephen Hanselman",
-      "width": 324,
-      "height": 500,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/10302294.jpg?default=false"
-    },
-    {
       "title": "The Daily Stoic",
       "author": "Ryan Holiday & Stephen Hanselman",
       "width": 298,
       "height": 450,
       "sourceUrl": "https://images1.penguinrandomhouse.com/cover/9780735211735"
+    },
+    {
+      "title": "The Daily Stoic Journal",
+      "author": "Ryan Holiday & Stephen Hanselman",
+      "width": 324,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10302294.jpg?default=false"
     },
     {
       "title": "On the Origin of Species",
@@ -955,18 +955,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/8650334.jpg?default=false"
     },
     {
-      "title": "Sherlock Holmes: The Definitive Collection",
-      "author": "Arthur Conan Doyle (narrated by Stephen Fry)",
-      "width": 620,
-      "height": 919,
-      "sourceUrl": "https://covers.openlibrary.org/b/id/8237008.jpg?default=false"
-    },
-    {
       "title": "The X-Files: Cold Cases",
       "author": "Joe Harris & Chris Carter & Dirk Maggs",
       "width": 128,
       "height": 174,
       "sourceUrl": "https://covers.openlibrary.org/b/id/5392107.jpg?default=false"
+    },
+    {
+      "title": "Sherlock Holmes: The Definitive Collection",
+      "author": "Arthur Conan Doyle (narrated by Stephen Fry)",
+      "width": 620,
+      "height": 919,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8237008.jpg?default=false"
     },
     {
       "title": "The Subtle Art of Not Giving a F*ck",
@@ -1018,6 +1018,13 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/8065615.jpg?default=false"
     },
     {
+      "title": "AQA Computing A2",
+      "author": "Sylvia Langfield",
+      "width": 294,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413131438l/5809240.jpg"
+    },
+    {
       "title": "Linux Bible",
       "author": "Christopher Negus",
       "width": 396,
@@ -1046,11 +1053,25 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/894750.jpg?default=false"
     },
     {
+      "title": "The Last Wish",
+      "author": "Andrzej Sapkowski",
+      "width": 338,
+      "height": 500,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1181224890l/1128434.jpg"
+    },
+    {
       "title": "High Performance Habits: How Extraordinary People Become That Way",
       "author": "Brendon Burchard",
       "width": 303,
       "height": 500,
       "sourceUrl": "https://covers.openlibrary.org/b/id/12385574.jpg?default=false"
+    },
+    {
+      "title": "The System of the World",
+      "author": "Isaac Newton",
+      "width": 316,
+      "height": 475,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435904847l/25841306.jpg"
     },
     {
       "title": "Computer Networking: A Top-Down Approach",
@@ -1081,18 +1102,18 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/711868.jpg?default=false"
     },
     {
-      "title": "The Last Wish",
-      "author": "Andrzej Sapkowski",
-      "width": 338,
-      "height": 500,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1181224890l/1128434.jpg"
-    },
-    {
       "title": "The Art of War",
       "author": "Sun Tzu",
       "width": 128,
       "height": 192,
       "sourceUrl": "https://covers.openlibrary.org/b/id/4849549.jpg?default=false"
+    },
+    {
+      "title": "Faithless",
+      "author": "Graham Austin-King",
+      "width": 297,
+      "height": 475,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1496860686l/35384710.jpg"
     },
     {
       "title": "Stormbird",
@@ -1123,11 +1144,11 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/12726168.jpg?default=false"
     },
     {
-      "title": "The System of the World",
-      "author": "Isaac Newton",
-      "width": 316,
-      "height": 475,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435904847l/25841306.jpg"
+      "title": "3,000 Solved Problems in Linear Algebra",
+      "author": "Seymour Lipschutz",
+      "width": 298,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347284698l/309766.jpg"
     },
     {
       "title": "Zen and the Art of Motorcycle Maintenance",
@@ -1158,34 +1179,6 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/1289106.jpg?default=false"
     },
     {
-      "title": "AQA Computing A2",
-      "author": "Sylvia Langfield",
-      "width": 294,
-      "height": 400,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413131438l/5809240.jpg"
-    },
-    {
-      "title": "Faithless",
-      "author": "Graham Austin-King",
-      "width": 297,
-      "height": 475,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1496860686l/35384710.jpg"
-    },
-    {
-      "title": "AQA Additional Science Workbook",
-      "author": "Andrew Catterall",
-      "width": 318,
-      "height": 450,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394418436l/21344830.jpg"
-    },
-    {
-      "title": "3,000 Solved Problems in Linear Algebra",
-      "author": "Seymour Lipschutz",
-      "width": 298,
-      "height": 400,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347284698l/309766.jpg"
-    },
-    {
       "title": "Revision Plus GCSE AQA Additional Science",
       "author": "Andrew Catterall",
       "width": 283,
@@ -1198,6 +1191,251 @@
       "width": 282,
       "height": 400,
       "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349079194l/7038117.jpg"
+    },
+    {
+      "title": "AQA Additional Science Workbook",
+      "author": "Andrew Catterall",
+      "width": 318,
+      "height": 450,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394418436l/21344830.jpg"
+    },
+    {
+      "title": "Killer Bodybuilder",
+      "author": "Ana Benson",
+      "width": 324,
+      "height": 500,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1707973271i/208520438.jpg"
+    },
+    {
+      "title": "Yay! You're Gay! Now What?",
+      "author": "Riyadh Khalaf & Melissa McFeeters",
+      "width": 262,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556263208i/41717762.jpg"
+    },
+    {
+      "title": "Lord of the Flies",
+      "author": "William Golding",
+      "width": 316,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8684447.jpg?default=false"
+    },
+    {
+      "title": "Universe: The Definitive Visual Guide",
+      "author": "DK & Martin Rees",
+      "width": 336,
+      "height": 400,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12407666.jpg?default=false"
+    },
+    {
+      "title": "Ethics",
+      "author": "Benedict Spinoza",
+      "width": 350,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8941881.jpg?default=false"
+    },
+    {
+      "title": "The Art of Doing Science and Engineering",
+      "author": "Richard Hamming",
+      "width": 405,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/14153910.jpg?default=false"
+    },
+    {
+      "title": "The Gambler",
+      "author": "Fyodor Dostoyevsky",
+      "width": 454,
+      "height": 700,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751435148i/12857.jpg"
+    },
+    {
+      "title": "Best Loser Wins",
+      "author": "Tom Hougaard",
+      "width": 200,
+      "height": 300,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/15225630.jpg?default=false"
+    },
+    {
+      "title": "Destiny Disrupted",
+      "author": "Mir Tamim Ansary",
+      "width": 300,
+      "height": 456,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/6463754.jpg?default=false"
+    },
+    {
+      "title": "The Ring Legends of Tolkien",
+      "author": "David Day",
+      "width": 264,
+      "height": 400,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12411253.jpg?default=false"
+    },
+    {
+      "title": "The Wolves of Eternity",
+      "author": "Karl Ove Knausgård",
+      "width": 263,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685352835i/75293514.jpg"
+    },
+    {
+      "title": "The Morning Star",
+      "author": "Karl Ove Knausgård",
+      "width": 263,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620081368i/57799745.jpg"
+    },
+    {
+      "title": "The Trouble With Being Born",
+      "author": "Emil Michel Cioran",
+      "width": 250,
+      "height": 400,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348223420i/117564.jpg"
+    },
+    {
+      "title": "Knight's Cross",
+      "author": "David Fraser",
+      "width": 128,
+      "height": 193,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/3945592.jpg?default=false"
+    },
+    {
+      "title": "The Castle",
+      "author": "Franz Kafka",
+      "width": 444,
+      "height": 696,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746885413i/333538.jpg"
+    },
+    {
+      "title": "Notes on the Synthesis of Form",
+      "author": "Christopher Alexander",
+      "width": 302,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/6256928.jpg?default=false"
+    },
+    {
+      "title": "RuneScape: The Official Handbook",
+      "author": "Tracey West",
+      "width": 400,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/279578.jpg?default=false"
+    },
+    {
+      "title": "The Creative Act",
+      "author": "Rick Rubin",
+      "width": 149,
+      "height": 218,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/13316390.jpg?default=false"
+    },
+    {
+      "title": "A Game of Thrones",
+      "author": "George R.R. Martin",
+      "width": 496,
+      "height": 840,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9269962.jpg?default=false"
+    },
+    {
+      "title": "The Vegan Scoop",
+      "author": "Wheeler del Toro",
+      "width": 510,
+      "height": 680,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/6437608.jpg?default=false"
+    },
+    {
+      "title": "Veganomicon",
+      "author": "Isa Chandra Moskowitz & Terry Hope Romero",
+      "width": 403,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/1911733.jpg?default=false"
+    },
+    {
+      "title": "Wagamama Cookbook",
+      "author": "Hugo Arnold",
+      "width": 409,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/951837.jpg?default=false"
+    },
+    {
+      "title": "Great British Bake Off: Everyday",
+      "author": "Linda Collister",
+      "width": 387,
+      "height": 500,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1438286081i/17910651.jpg"
+    },
+    {
+      "title": "Black Hat Python",
+      "author": "Justin Seitz",
+      "width": 386,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8513526.jpg?default=false"
+    },
+    {
+      "title": "This is Not a Maths Book",
+      "author": "Anna Weltman",
+      "width": 386,
+      "height": 500,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436840373i/25244256.jpg"
+    },
+    {
+      "title": "Nib + Ink",
+      "author": "Chiara Perano",
+      "width": 367,
+      "height": 500,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1457727482i/29485383.jpg"
+    },
+    {
+      "title": "The Five Minute Journal",
+      "author": "Intelligent Change",
+      "width": 210,
+      "height": 346,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1382323072i/18692407.jpg"
+    },
+    {
+      "title": "Web Audio API",
+      "author": "Boris Smus",
+      "width": 318,
+      "height": 417,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366277540i/17381721.jpg"
+    },
+    {
+      "title": "Hitler",
+      "author": "Ian Kershaw",
+      "width": 375,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9298751.jpg?default=false"
+    },
+    {
+      "title": "The Timeless Way of Building",
+      "author": "Christopher Alexander",
+      "width": 253,
+      "height": 400,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/7564994.jpg?default=false"
+    },
+    {
+      "title": "The Vision of the Anointed",
+      "author": "Thomas Sowell",
+      "width": 311,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/299260.jpg?default=false"
+    },
+    {
+      "title": "Zero to One",
+      "author": "Peter Thiel & Blake Masters",
+      "width": 432,
+      "height": 500,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9002334.jpg?default=false"
+    },
+    {
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "width": 296,
+      "height": 475,
+      "sourceUrl": "https://covers.openlibrary.org/b/id/95742.jpg?default=false"
+    },
+    {
+      "title": "Obviously Awesome",
+      "author": "April Dunford",
+      "width": 324,
+      "height": 500,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1555591852i/45166937.jpg"
     }
   ]
 }

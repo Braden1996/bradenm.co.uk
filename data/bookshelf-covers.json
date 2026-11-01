@@ -1,42 +1,42 @@
 {
   "assetVersion": 5,
-  "updatedAt": "2026-11-01T16:43:16.542Z",
-  "coverCount": 204,
+  "updatedAt": "2026-11-03T22:54:16.660Z",
+  "coverCount": 250,
   "missingCount": 0,
   "covers": {
-    "the wages of destruction the making breaking of the nazi economy::adam tooze": {
-      "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
-      "author": "Adam Tooze",
-      "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
-      "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
-      "width": 333,
+    "the sugar barons family corruption empire and war::matthew parker": {
+      "title": "The Sugar Barons: Family Corruption Empire and War",
+      "author": "Matthew Parker",
+      "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
+      "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
+      "width": 329,
       "height": 500,
       "candidates": [
         {
-          "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.128.102c2b119fd4.webp",
-          "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.128.102c2b119fd4.webp",
+          "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.128.11e511f966eb.webp",
+          "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.128.11e511f966eb.webp",
           "width": 128,
-          "height": 192
+          "height": 195
         },
         {
-          "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.256.daf2c572bf2f.webp",
-          "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.256.daf2c572bf2f.webp",
+          "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.256.755798d0a9c4.webp",
+          "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.256.755798d0a9c4.webp",
           "width": 256,
-          "height": 384
+          "height": 389
         },
         {
-          "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
-          "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
-          "width": 333,
+          "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
+          "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
+          "width": 329,
           "height": 500
         }
       ],
       "provider": "openlibrary",
-      "matchedTitle": "The Wages of Destruction",
-      "matchedAuthor": "J. Adam Tooze",
-      "fetchedAt": "2026-09-05T09:20:04.699Z",
-      "sourceUrl": "https://covers.openlibrary.org/b/id/400830.jpg?default=false",
-      "sourceWidth": 333,
+      "matchedTitle": "The Sugar Barons: Family, Corruption, Empire, and War in the West Indies",
+      "matchedAuthor": "Matthew Parker",
+      "fetchedAt": "2026-09-05T09:20:01.817Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8474290.jpg?default=false",
+      "sourceWidth": 329,
       "sourceHeight": 500,
       "edge": "clean"
     },
@@ -82,39 +82,39 @@
       "sourceHeight": 1717,
       "edge": "clean"
     },
-    "the sugar barons family corruption empire and war::matthew parker": {
-      "title": "The Sugar Barons: Family Corruption Empire and War",
-      "author": "Matthew Parker",
-      "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
-      "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
-      "width": 329,
+    "the wages of destruction the making breaking of the nazi economy::adam tooze": {
+      "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
+      "author": "Adam Tooze",
+      "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
+      "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
+      "width": 333,
       "height": 500,
       "candidates": [
         {
-          "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.128.11e511f966eb.webp",
-          "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.128.11e511f966eb.webp",
+          "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.128.102c2b119fd4.webp",
+          "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.128.102c2b119fd4.webp",
           "width": 128,
-          "height": 195
+          "height": 192
         },
         {
-          "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.256.755798d0a9c4.webp",
-          "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.256.755798d0a9c4.webp",
+          "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.256.daf2c572bf2f.webp",
+          "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.256.daf2c572bf2f.webp",
           "width": 256,
-          "height": 389
+          "height": 384
         },
         {
-          "filename": "the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
-          "src": "/bookshelf/covers/the-sugar-barons-family-corruption-empire-and-war.matthew-parker.74492a7c24a6.webp",
-          "width": 329,
+          "filename": "the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
+          "src": "/bookshelf/covers/the-wages-of-destruction-the-making-breaking-of-the-nazi-economy.adam-tooze.c9a4cb56adfa.webp",
+          "width": 333,
           "height": 500
         }
       ],
       "provider": "openlibrary",
-      "matchedTitle": "The Sugar Barons: Family, Corruption, Empire, and War in the West Indies",
-      "matchedAuthor": "Matthew Parker",
-      "fetchedAt": "2026-09-05T09:20:01.817Z",
-      "sourceUrl": "https://covers.openlibrary.org/b/id/8474290.jpg?default=false",
-      "sourceWidth": 329,
+      "matchedTitle": "The Wages of Destruction",
+      "matchedAuthor": "J. Adam Tooze",
+      "fetchedAt": "2026-09-05T09:20:04.699Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/400830.jpg?default=false",
+      "sourceWidth": 333,
       "sourceHeight": 500,
       "edge": "clean"
     },
@@ -1648,42 +1648,6 @@
       "sourceHeight": 240,
       "edge": "clean"
     },
-    "the daily stoic journal::ryan holiday stephen hanselman": {
-      "title": "The Daily Stoic Journal",
-      "author": "Ryan Holiday & Stephen Hanselman",
-      "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
-      "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
-      "width": 324,
-      "height": 500,
-      "candidates": [
-        {
-          "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.128.f06e9bcda85f.webp",
-          "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.128.f06e9bcda85f.webp",
-          "width": 128,
-          "height": 198
-        },
-        {
-          "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.256.0be4f38e9fd0.webp",
-          "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.256.0be4f38e9fd0.webp",
-          "width": 256,
-          "height": 395
-        },
-        {
-          "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
-          "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
-          "width": 324,
-          "height": 500
-        }
-      ],
-      "provider": "openlibrary",
-      "matchedTitle": "The Daily Stoic Journal",
-      "matchedAuthor": "Ryan Holiday, Stephen Hanselman",
-      "fetchedAt": "2026-09-08T13:11:17.044Z",
-      "sourceUrl": "https://covers.openlibrary.org/b/id/10302294.jpg?default=false",
-      "sourceWidth": 324,
-      "sourceHeight": 500,
-      "edge": "clean"
-    },
     "the daily stoic::ryan holiday stephen hanselman": {
       "title": "The Daily Stoic",
       "author": "Ryan Holiday & Stephen Hanselman",
@@ -1718,6 +1682,42 @@
       "sourceUrl": "https://images1.penguinrandomhouse.com/cover/9780735211735",
       "sourceWidth": 298,
       "sourceHeight": 450,
+      "edge": "clean"
+    },
+    "the daily stoic journal::ryan holiday stephen hanselman": {
+      "title": "The Daily Stoic Journal",
+      "author": "Ryan Holiday & Stephen Hanselman",
+      "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
+      "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
+      "width": 324,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.128.f06e9bcda85f.webp",
+          "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.128.f06e9bcda85f.webp",
+          "width": 128,
+          "height": 198
+        },
+        {
+          "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.256.0be4f38e9fd0.webp",
+          "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.256.0be4f38e9fd0.webp",
+          "width": 256,
+          "height": 395
+        },
+        {
+          "filename": "the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
+          "src": "/bookshelf/covers/the-daily-stoic-journal.ryan-holiday-stephen-hanselman.4e443c4091fa.webp",
+          "width": 324,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Daily Stoic Journal",
+      "matchedAuthor": "Ryan Holiday, Stephen Hanselman",
+      "fetchedAt": "2026-09-08T13:11:17.044Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10302294.jpg?default=false",
+      "sourceWidth": 324,
+      "sourceHeight": 500,
       "edge": "clean"
     },
     "on the origin of species::charles darwin": {
@@ -5575,6 +5575,30 @@
       "sourceHeight": 500,
       "edge": "clean"
     },
+    "the x files cold cases::joe harris chris carter dirk maggs": {
+      "title": "The X-Files: Cold Cases",
+      "author": "Joe Harris & Chris Carter & Dirk Maggs",
+      "filename": "the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
+      "src": "/bookshelf/covers/the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
+      "width": 128,
+      "height": 174,
+      "candidates": [
+        {
+          "filename": "the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
+          "src": "/bookshelf/covers/the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
+          "width": 128,
+          "height": 174
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The X-files",
+      "matchedAuthor": "Chris Carter",
+      "fetchedAt": "2026-09-08T13:12:02.985Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/5392107.jpg?default=false",
+      "sourceWidth": 128,
+      "sourceHeight": 174,
+      "edge": "clean"
+    },
     "sherlock holmes the definitive collection::arthur conan doyle narrated by stephen fry": {
       "title": "Sherlock Holmes: The Definitive Collection",
       "author": "Arthur Conan Doyle (narrated by Stephen Fry)",
@@ -5621,30 +5645,6 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/8237008.jpg?default=false",
       "sourceWidth": 620,
       "sourceHeight": 919,
-      "edge": "clean"
-    },
-    "the x files cold cases::joe harris chris carter dirk maggs": {
-      "title": "The X-Files: Cold Cases",
-      "author": "Joe Harris & Chris Carter & Dirk Maggs",
-      "filename": "the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
-      "src": "/bookshelf/covers/the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
-      "width": 128,
-      "height": 174,
-      "candidates": [
-        {
-          "filename": "the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
-          "src": "/bookshelf/covers/the-x-files-cold-cases.joe-harris-chris-carter-dirk-maggs.1fddbca3fea6.webp",
-          "width": 128,
-          "height": 174
-        }
-      ],
-      "provider": "openlibrary",
-      "matchedTitle": "The X-files",
-      "matchedAuthor": "Chris Carter",
-      "fetchedAt": "2026-09-08T13:12:02.985Z",
-      "sourceUrl": "https://covers.openlibrary.org/b/id/5392107.jpg?default=false",
-      "sourceWidth": 128,
-      "sourceHeight": 174,
       "edge": "clean"
     },
     "the subtle art of not giving a f ck::mark manson": {
@@ -6013,6 +6013,42 @@
       "sourceHeight": 397,
       "edge": "clean"
     },
+    "aqa computing a2::sylvia langfield": {
+      "title": "AQA Computing A2",
+      "author": "Sylvia Langfield",
+      "filename": "aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
+      "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
+      "width": 294,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "aqa-computing-a2.sylvia-langfield.128.866a176bd11b.webp",
+          "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.128.866a176bd11b.webp",
+          "width": 128,
+          "height": 174
+        },
+        {
+          "filename": "aqa-computing-a2.sylvia-langfield.256.bd76a62fa91c.webp",
+          "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.256.bd76a62fa91c.webp",
+          "width": 256,
+          "height": 348
+        },
+        {
+          "filename": "aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
+          "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
+          "width": 294,
+          "height": 400
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "AQA Computing A2",
+      "matchedAuthor": "Sylvia Langfield",
+      "fetchedAt": "2026-11-01T16:43:11.984Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413131438l/5809240.jpg",
+      "sourceWidth": 294,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
     "linux bible::christopher negus": {
       "title": "Linux Bible",
       "author": "Christopher Negus",
@@ -6223,6 +6259,42 @@
       "sourceHeight": 500,
       "edge": "clean"
     },
+    "the last wish::andrzej sapkowski": {
+      "title": "The Last Wish",
+      "author": "Andrzej Sapkowski",
+      "filename": "the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
+      "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
+      "width": 338,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "the-last-wish.andrzej-sapkowski.128.6358488f9622.webp",
+          "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.128.6358488f9622.webp",
+          "width": 128,
+          "height": 189
+        },
+        {
+          "filename": "the-last-wish.andrzej-sapkowski.256.bc000e815151.webp",
+          "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.256.bc000e815151.webp",
+          "width": 256,
+          "height": 379
+        },
+        {
+          "filename": "the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
+          "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
+          "width": 338,
+          "height": 500
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Last Wish",
+      "matchedAuthor": "Andrzej Sapkowski",
+      "fetchedAt": "2026-11-01T16:43:07.140Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1181224890l/1128434.jpg",
+      "sourceWidth": 338,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
     "high performance habits how extraordinary people become that way::brendon burchard": {
       "title": "High Performance Habits: How Extraordinary People Become That Way",
       "author": "Brendon Burchard",
@@ -6257,6 +6329,42 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/12385574.jpg?default=false",
       "sourceWidth": 303,
       "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "the system of the world::isaac newton": {
+      "title": "The System of the World",
+      "author": "Isaac Newton",
+      "filename": "the-system-of-the-world.isaac-newton.10d2256e858f.webp",
+      "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.10d2256e858f.webp",
+      "width": 316,
+      "height": 475,
+      "candidates": [
+        {
+          "filename": "the-system-of-the-world.isaac-newton.128.ccd62928e9c1.webp",
+          "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.128.ccd62928e9c1.webp",
+          "width": 128,
+          "height": 192
+        },
+        {
+          "filename": "the-system-of-the-world.isaac-newton.256.a94ff1aa678d.webp",
+          "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.256.a94ff1aa678d.webp",
+          "width": 256,
+          "height": 385
+        },
+        {
+          "filename": "the-system-of-the-world.isaac-newton.10d2256e858f.webp",
+          "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.10d2256e858f.webp",
+          "width": 316,
+          "height": 475
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The System of the World",
+      "matchedAuthor": "Isaac Newton",
+      "fetchedAt": "2026-11-01T16:43:07.188Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435904847l/25841306.jpg",
+      "sourceWidth": 316,
+      "sourceHeight": 475,
       "edge": "clean"
     },
     "the age of reason::thomas paine": {
@@ -6571,42 +6679,6 @@
       "sourceHeight": 475,
       "edge": "clean"
     },
-    "the last wish::andrzej sapkowski": {
-      "title": "The Last Wish",
-      "author": "Andrzej Sapkowski",
-      "filename": "the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
-      "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
-      "width": 338,
-      "height": 500,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1181224890l/1128434.jpg",
-      "sourceWidth": 338,
-      "sourceHeight": 500,
-      "provider": "goodreads",
-      "matchedTitle": "The Last Wish",
-      "matchedAuthor": "Andrzej Sapkowski",
-      "fetchedAt": "2026-11-01T16:43:07.140Z",
-      "edge": "clean",
-      "candidates": [
-        {
-          "filename": "the-last-wish.andrzej-sapkowski.128.6358488f9622.webp",
-          "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.128.6358488f9622.webp",
-          "width": 128,
-          "height": 189
-        },
-        {
-          "filename": "the-last-wish.andrzej-sapkowski.256.bc000e815151.webp",
-          "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.256.bc000e815151.webp",
-          "width": 256,
-          "height": 379
-        },
-        {
-          "filename": "the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
-          "src": "/bookshelf/covers/the-last-wish.andrzej-sapkowski.87136bedbafc.webp",
-          "width": 338,
-          "height": 500
-        }
-      ]
-    },
     "the art of war::sun tzu": {
       "title": "The Art of War",
       "author": "Sun Tzu",
@@ -6629,6 +6701,42 @@
       "sourceUrl": "https://covers.openlibrary.org/b/id/4849549.jpg?default=false",
       "sourceWidth": 128,
       "sourceHeight": 192,
+      "edge": "clean"
+    },
+    "faithless::graham austin king": {
+      "title": "Faithless",
+      "author": "Graham Austin-King",
+      "filename": "faithless.graham-austin-king.0c0a619be2a2.webp",
+      "src": "/bookshelf/covers/faithless.graham-austin-king.0c0a619be2a2.webp",
+      "width": 297,
+      "height": 475,
+      "candidates": [
+        {
+          "filename": "faithless.graham-austin-king.128.bebe4391b228.webp",
+          "src": "/bookshelf/covers/faithless.graham-austin-king.128.bebe4391b228.webp",
+          "width": 128,
+          "height": 205
+        },
+        {
+          "filename": "faithless.graham-austin-king.256.9df2e1d19ae7.webp",
+          "src": "/bookshelf/covers/faithless.graham-austin-king.256.9df2e1d19ae7.webp",
+          "width": 256,
+          "height": 409
+        },
+        {
+          "filename": "faithless.graham-austin-king.0c0a619be2a2.webp",
+          "src": "/bookshelf/covers/faithless.graham-austin-king.0c0a619be2a2.webp",
+          "width": 297,
+          "height": 475
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Faithless",
+      "matchedAuthor": "Graham Austin-King",
+      "fetchedAt": "2026-11-01T16:43:12.673Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1496860686l/35384710.jpg",
+      "sourceWidth": 297,
+      "sourceHeight": 475,
       "edge": "clean"
     },
     "stormbird::conn iggulden": {
@@ -6901,41 +7009,41 @@
       "sourceHeight": 645,
       "edge": "clean"
     },
-    "the system of the world::isaac newton": {
-      "title": "The System of the World",
-      "author": "Isaac Newton",
-      "filename": "the-system-of-the-world.isaac-newton.10d2256e858f.webp",
-      "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.10d2256e858f.webp",
-      "width": 316,
-      "height": 475,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435904847l/25841306.jpg",
-      "sourceWidth": 316,
-      "sourceHeight": 475,
-      "provider": "goodreads",
-      "matchedTitle": "The System of the World",
-      "matchedAuthor": "Isaac Newton",
-      "fetchedAt": "2026-11-01T16:43:07.188Z",
-      "edge": "clean",
+    "3 000 solved problems in linear algebra::seymour lipschutz": {
+      "title": "3,000 Solved Problems in Linear Algebra",
+      "author": "Seymour Lipschutz",
+      "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
+      "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
+      "width": 298,
+      "height": 400,
       "candidates": [
         {
-          "filename": "the-system-of-the-world.isaac-newton.128.ccd62928e9c1.webp",
-          "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.128.ccd62928e9c1.webp",
+          "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.128.d8dd026f02c2.webp",
+          "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.128.d8dd026f02c2.webp",
           "width": 128,
-          "height": 192
+          "height": 172
         },
         {
-          "filename": "the-system-of-the-world.isaac-newton.256.a94ff1aa678d.webp",
-          "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.256.a94ff1aa678d.webp",
+          "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.256.334d3d9d2c4a.webp",
+          "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.256.334d3d9d2c4a.webp",
           "width": 256,
-          "height": 385
+          "height": 344
         },
         {
-          "filename": "the-system-of-the-world.isaac-newton.10d2256e858f.webp",
-          "src": "/bookshelf/covers/the-system-of-the-world.isaac-newton.10d2256e858f.webp",
-          "width": 316,
-          "height": 475
+          "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
+          "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
+          "width": 298,
+          "height": 400
         }
-      ]
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "3,000 Solved Problems in Linear Algebra",
+      "matchedAuthor": "Seymour Lipschutz",
+      "fetchedAt": "2026-11-01T16:43:13.618Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347284698l/309766.jpg",
+      "sourceWidth": 298,
+      "sourceHeight": 400,
+      "edge": "clean"
     },
     "flatland::edwin a abbott": {
       "title": "Flatland",
@@ -7255,150 +7363,6 @@
       "sourceHeight": 500,
       "edge": "clean"
     },
-    "aqa computing a2::sylvia langfield": {
-      "title": "AQA Computing A2",
-      "author": "Sylvia Langfield",
-      "filename": "aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
-      "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
-      "width": 294,
-      "height": 400,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413131438l/5809240.jpg",
-      "sourceWidth": 294,
-      "sourceHeight": 400,
-      "provider": "goodreads",
-      "matchedTitle": "AQA Computing A2",
-      "matchedAuthor": "Sylvia Langfield",
-      "fetchedAt": "2026-11-01T16:43:11.984Z",
-      "edge": "clean",
-      "candidates": [
-        {
-          "filename": "aqa-computing-a2.sylvia-langfield.128.866a176bd11b.webp",
-          "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.128.866a176bd11b.webp",
-          "width": 128,
-          "height": 174
-        },
-        {
-          "filename": "aqa-computing-a2.sylvia-langfield.256.bd76a62fa91c.webp",
-          "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.256.bd76a62fa91c.webp",
-          "width": 256,
-          "height": 348
-        },
-        {
-          "filename": "aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
-          "src": "/bookshelf/covers/aqa-computing-a2.sylvia-langfield.20cf1bfce6e0.webp",
-          "width": 294,
-          "height": 400
-        }
-      ]
-    },
-    "faithless::graham austin king": {
-      "title": "Faithless",
-      "author": "Graham Austin-King",
-      "filename": "faithless.graham-austin-king.0c0a619be2a2.webp",
-      "src": "/bookshelf/covers/faithless.graham-austin-king.0c0a619be2a2.webp",
-      "width": 297,
-      "height": 475,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1496860686l/35384710.jpg",
-      "sourceWidth": 297,
-      "sourceHeight": 475,
-      "provider": "goodreads",
-      "matchedTitle": "Faithless",
-      "matchedAuthor": "Graham Austin-King",
-      "fetchedAt": "2026-11-01T16:43:12.673Z",
-      "edge": "clean",
-      "candidates": [
-        {
-          "filename": "faithless.graham-austin-king.128.bebe4391b228.webp",
-          "src": "/bookshelf/covers/faithless.graham-austin-king.128.bebe4391b228.webp",
-          "width": 128,
-          "height": 205
-        },
-        {
-          "filename": "faithless.graham-austin-king.256.9df2e1d19ae7.webp",
-          "src": "/bookshelf/covers/faithless.graham-austin-king.256.9df2e1d19ae7.webp",
-          "width": 256,
-          "height": 409
-        },
-        {
-          "filename": "faithless.graham-austin-king.0c0a619be2a2.webp",
-          "src": "/bookshelf/covers/faithless.graham-austin-king.0c0a619be2a2.webp",
-          "width": 297,
-          "height": 475
-        }
-      ]
-    },
-    "aqa additional science workbook::andrew catterall": {
-      "title": "AQA Additional Science Workbook",
-      "author": "Andrew Catterall",
-      "filename": "aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
-      "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
-      "width": 318,
-      "height": 450,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394418436l/21344830.jpg",
-      "sourceWidth": 318,
-      "sourceHeight": 450,
-      "provider": "goodreads",
-      "matchedTitle": "AQA Additional Science Workbook",
-      "matchedAuthor": "Andrew Catterall",
-      "fetchedAt": "2026-11-01T16:43:13.162Z",
-      "edge": "clean",
-      "candidates": [
-        {
-          "filename": "aqa-additional-science-workbook.andrew-catterall.128.83b81e97f859.webp",
-          "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.128.83b81e97f859.webp",
-          "width": 128,
-          "height": 181
-        },
-        {
-          "filename": "aqa-additional-science-workbook.andrew-catterall.256.be98f8e07fcd.webp",
-          "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.256.be98f8e07fcd.webp",
-          "width": 256,
-          "height": 362
-        },
-        {
-          "filename": "aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
-          "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
-          "width": 318,
-          "height": 450
-        }
-      ]
-    },
-    "3 000 solved problems in linear algebra::seymour lipschutz": {
-      "title": "3,000 Solved Problems in Linear Algebra",
-      "author": "Seymour Lipschutz",
-      "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
-      "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
-      "width": 298,
-      "height": 400,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347284698l/309766.jpg",
-      "sourceWidth": 298,
-      "sourceHeight": 400,
-      "provider": "goodreads",
-      "matchedTitle": "3,000 Solved Problems in Linear Algebra",
-      "matchedAuthor": "Seymour Lipschutz",
-      "fetchedAt": "2026-11-01T16:43:13.618Z",
-      "edge": "clean",
-      "candidates": [
-        {
-          "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.128.d8dd026f02c2.webp",
-          "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.128.d8dd026f02c2.webp",
-          "width": 128,
-          "height": 172
-        },
-        {
-          "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.256.334d3d9d2c4a.webp",
-          "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.256.334d3d9d2c4a.webp",
-          "width": 256,
-          "height": 344
-        },
-        {
-          "filename": "3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
-          "src": "/bookshelf/covers/3-000-solved-problems-in-linear-algebra.seymour-lipschutz.484d6460f064.webp",
-          "width": 298,
-          "height": 400
-        }
-      ]
-    },
     "revision plus gcse aqa additional science::andrew catterall": {
       "title": "Revision Plus GCSE AQA Additional Science",
       "author": "Andrew Catterall",
@@ -7406,14 +7370,6 @@
       "src": "/bookshelf/covers/revision-plus-gcse-aqa-additional-science.andrew-catterall.d5d65f45addc.webp",
       "width": 283,
       "height": 400,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349050558l/5242160.jpg",
-      "sourceWidth": 283,
-      "sourceHeight": 400,
-      "provider": "goodreads",
-      "matchedTitle": "Revision Plus GCSE AQA Additional Science",
-      "matchedAuthor": "Andrew Catterall",
-      "fetchedAt": "2026-11-01T16:43:14.663Z",
-      "edge": "clean",
       "candidates": [
         {
           "filename": "revision-plus-gcse-aqa-additional-science.andrew-catterall.128.231437c92330.webp",
@@ -7433,7 +7389,15 @@
           "width": 283,
           "height": 400
         }
-      ]
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Revision Plus GCSE AQA Additional Science",
+      "matchedAuthor": "Andrew Catterall",
+      "fetchedAt": "2026-11-01T16:43:14.663Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349050558l/5242160.jpg",
+      "sourceWidth": 283,
+      "sourceHeight": 400,
+      "edge": "clean"
     },
     "essentials of aqa additional science workbook answers::sylvia newton": {
       "title": "Essentials of AQA Additional Science Workbook Answers",
@@ -7442,14 +7406,6 @@
       "src": "/bookshelf/covers/essentials-of-aqa-additional-science-workbook-answers.sylvia-newton.1b173fe524ec.webp",
       "width": 282,
       "height": 400,
-      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349079194l/7038117.jpg",
-      "sourceWidth": 282,
-      "sourceHeight": 400,
-      "provider": "goodreads",
-      "matchedTitle": "Essentials of AQA Additional Science Workbook Answers",
-      "matchedAuthor": "Sylvia Newton",
-      "fetchedAt": "2026-11-01T16:43:16.515Z",
-      "edge": "clean",
       "candidates": [
         {
           "filename": "essentials-of-aqa-additional-science-workbook-answers.sylvia-newton.128.4e5b65432352.webp",
@@ -7468,6 +7424,1946 @@
           "src": "/bookshelf/covers/essentials-of-aqa-additional-science-workbook-answers.sylvia-newton.1b173fe524ec.webp",
           "width": 282,
           "height": 400
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Essentials of AQA Additional Science Workbook Answers",
+      "matchedAuthor": "Sylvia Newton",
+      "fetchedAt": "2026-11-01T16:43:16.515Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349079194l/7038117.jpg",
+      "sourceWidth": 282,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "aqa additional science workbook::andrew catterall": {
+      "title": "AQA Additional Science Workbook",
+      "author": "Andrew Catterall",
+      "filename": "aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
+      "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
+      "width": 318,
+      "height": 450,
+      "candidates": [
+        {
+          "filename": "aqa-additional-science-workbook.andrew-catterall.128.83b81e97f859.webp",
+          "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.128.83b81e97f859.webp",
+          "width": 128,
+          "height": 181
+        },
+        {
+          "filename": "aqa-additional-science-workbook.andrew-catterall.256.be98f8e07fcd.webp",
+          "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.256.be98f8e07fcd.webp",
+          "width": 256,
+          "height": 362
+        },
+        {
+          "filename": "aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
+          "src": "/bookshelf/covers/aqa-additional-science-workbook.andrew-catterall.1ae48fc383b5.webp",
+          "width": 318,
+          "height": 450
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "AQA Additional Science Workbook",
+      "matchedAuthor": "Andrew Catterall",
+      "fetchedAt": "2026-11-01T16:43:13.162Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394418436l/21344830.jpg",
+      "sourceWidth": 318,
+      "sourceHeight": 450,
+      "edge": "clean"
+    },
+    "red notice::bill browder": {
+      "title": "Red Notice",
+      "author": "Bill Browder",
+      "filename": "red-notice.bill-browder.1934ff40856c.webp",
+      "src": "/bookshelf/covers/red-notice.bill-browder.1934ff40856c.webp",
+      "width": 987,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "red-notice.bill-browder.128.7a117970780e.webp",
+          "src": "/bookshelf/covers/red-notice.bill-browder.128.7a117970780e.webp",
+          "width": 128,
+          "height": 199
+        },
+        {
+          "filename": "red-notice.bill-browder.256.6ee3ac394172.webp",
+          "src": "/bookshelf/covers/red-notice.bill-browder.256.6ee3ac394172.webp",
+          "width": 256,
+          "height": 398
+        },
+        {
+          "filename": "red-notice.bill-browder.384.4aea7af5e83e.webp",
+          "src": "/bookshelf/covers/red-notice.bill-browder.384.4aea7af5e83e.webp",
+          "width": 384,
+          "height": 598
+        },
+        {
+          "filename": "red-notice.bill-browder.512.736189043b4e.webp",
+          "src": "/bookshelf/covers/red-notice.bill-browder.512.736189043b4e.webp",
+          "width": 512,
+          "height": 797
+        },
+        {
+          "filename": "red-notice.bill-browder.768.3c1c564b5e44.webp",
+          "src": "/bookshelf/covers/red-notice.bill-browder.768.3c1c564b5e44.webp",
+          "width": 768,
+          "height": 1195
+        },
+        {
+          "filename": "red-notice.bill-browder.1934ff40856c.webp",
+          "src": "/bookshelf/covers/red-notice.bill-browder.1934ff40856c.webp",
+          "width": 987,
+          "height": 1536
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Red Notice",
+      "matchedAuthor": "Bill Browder",
+      "fetchedAt": "2026-11-01T23:26:45.111Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/11341648.jpg?default=false",
+      "sourceWidth": 2090,
+      "sourceHeight": 3253,
+      "edge": "clean"
+    },
+    "killer bodybuilder::ana benson": {
+      "title": "Killer Bodybuilder",
+      "author": "Ana Benson",
+      "filename": "killer-bodybuilder.ana-benson.18ad0c8cafaa.webp",
+      "src": "/bookshelf/covers/killer-bodybuilder.ana-benson.18ad0c8cafaa.webp",
+      "width": 324,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "killer-bodybuilder.ana-benson.128.87b99bd0817c.webp",
+          "src": "/bookshelf/covers/killer-bodybuilder.ana-benson.128.87b99bd0817c.webp",
+          "width": 128,
+          "height": 198
+        },
+        {
+          "filename": "killer-bodybuilder.ana-benson.256.32a0a88f4b40.webp",
+          "src": "/bookshelf/covers/killer-bodybuilder.ana-benson.256.32a0a88f4b40.webp",
+          "width": 256,
+          "height": 395
+        },
+        {
+          "filename": "killer-bodybuilder.ana-benson.18ad0c8cafaa.webp",
+          "src": "/bookshelf/covers/killer-bodybuilder.ana-benson.18ad0c8cafaa.webp",
+          "width": 324,
+          "height": 500
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Killer Bodybuilder",
+      "matchedAuthor": "Ana Benson",
+      "fetchedAt": "2026-11-03T22:52:22.263Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1707973271i/208520438.jpg",
+      "sourceWidth": 324,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "yay you re gay now what::riyadh khalaf melissa mcfeeters": {
+      "title": "Yay! You're Gay! Now What?",
+      "author": "Riyadh Khalaf & Melissa McFeeters",
+      "filename": "yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.d1fee61bc32d.webp",
+      "src": "/bookshelf/covers/yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.d1fee61bc32d.webp",
+      "width": 262,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.128.108951ffd244.webp",
+          "src": "/bookshelf/covers/yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.128.108951ffd244.webp",
+          "width": 128,
+          "height": 195
+        },
+        {
+          "filename": "yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.256.e149d078671e.webp",
+          "src": "/bookshelf/covers/yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.256.e149d078671e.webp",
+          "width": 256,
+          "height": 391
+        },
+        {
+          "filename": "yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.d1fee61bc32d.webp",
+          "src": "/bookshelf/covers/yay-you-re-gay-now-what.riyadh-khalaf-melissa-mcfeeters.d1fee61bc32d.webp",
+          "width": 262,
+          "height": 400
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Yay! You're Gay! Now What?: A Gay Boy's Guide to Life",
+      "matchedAuthor": "Riyadh Khalaf",
+      "fetchedAt": "2026-11-03T22:52:32.433Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556263208i/41717762.jpg",
+      "sourceWidth": 262,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "lord of the flies::william golding": {
+      "title": "Lord of the Flies",
+      "author": "William Golding",
+      "filename": "lord-of-the-flies.william-golding.e88685977aab.webp",
+      "src": "/bookshelf/covers/lord-of-the-flies.william-golding.e88685977aab.webp",
+      "width": 316,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "lord-of-the-flies.william-golding.128.22d3b58db9cf.webp",
+          "src": "/bookshelf/covers/lord-of-the-flies.william-golding.128.22d3b58db9cf.webp",
+          "width": 128,
+          "height": 203
+        },
+        {
+          "filename": "lord-of-the-flies.william-golding.256.0a889558f5a0.webp",
+          "src": "/bookshelf/covers/lord-of-the-flies.william-golding.256.0a889558f5a0.webp",
+          "width": 256,
+          "height": 405
+        },
+        {
+          "filename": "lord-of-the-flies.william-golding.e88685977aab.webp",
+          "src": "/bookshelf/covers/lord-of-the-flies.william-golding.e88685977aab.webp",
+          "width": 316,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Lord of the Flies",
+      "matchedAuthor": "William Golding",
+      "fetchedAt": "2026-11-01T23:26:37.763Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8684447.jpg?default=false",
+      "sourceWidth": 316,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "laughing at wall street::chris camillo": {
+      "title": "Laughing at Wall Street",
+      "author": "Chris Camillo",
+      "filename": "laughing-at-wall-street.chris-camillo.2d7a3ff59e98.webp",
+      "src": "/bookshelf/covers/laughing-at-wall-street.chris-camillo.2d7a3ff59e98.webp",
+      "width": 993,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "laughing-at-wall-street.chris-camillo.128.f105d8acca06.webp",
+          "src": "/bookshelf/covers/laughing-at-wall-street.chris-camillo.128.f105d8acca06.webp",
+          "width": 128,
+          "height": 198
+        },
+        {
+          "filename": "laughing-at-wall-street.chris-camillo.256.1d979cc6dfc3.webp",
+          "src": "/bookshelf/covers/laughing-at-wall-street.chris-camillo.256.1d979cc6dfc3.webp",
+          "width": 256,
+          "height": 396
+        },
+        {
+          "filename": "laughing-at-wall-street.chris-camillo.384.4632b109cf8d.webp",
+          "src": "/bookshelf/covers/laughing-at-wall-street.chris-camillo.384.4632b109cf8d.webp",
+          "width": 384,
+          "height": 594
+        },
+        {
+          "filename": "laughing-at-wall-street.chris-camillo.512.36507af3da82.webp",
+          "src": "/bookshelf/covers/laughing-at-wall-street.chris-camillo.512.36507af3da82.webp",
+          "width": 512,
+          "height": 792
+        },
+        {
+          "filename": "laughing-at-wall-street.chris-camillo.768.0cb519187276.webp",
+          "src": "/bookshelf/covers/laughing-at-wall-street.chris-camillo.768.0cb519187276.webp",
+          "width": 768,
+          "height": 1188
+        },
+        {
+          "filename": "laughing-at-wall-street.chris-camillo.2d7a3ff59e98.webp",
+          "src": "/bookshelf/covers/laughing-at-wall-street.chris-camillo.2d7a3ff59e98.webp",
+          "width": 993,
+          "height": 1536
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Laughing at Wall Street",
+      "matchedAuthor": "Chris Camillo",
+      "fetchedAt": "2026-11-01T23:26:42.472Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10339906.jpg?default=false",
+      "sourceWidth": 2170,
+      "sourceHeight": 3357,
+      "edge": "clean"
+    },
+    "universe the definitive visual guide::dk martin rees": {
+      "title": "Universe: The Definitive Visual Guide",
+      "author": "DK & Martin Rees",
+      "filename": "universe-the-definitive-visual-guide.dk-martin-rees.09ba206bfba4.webp",
+      "src": "/bookshelf/covers/universe-the-definitive-visual-guide.dk-martin-rees.09ba206bfba4.webp",
+      "width": 336,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "universe-the-definitive-visual-guide.dk-martin-rees.128.d7e206c86dbe.webp",
+          "src": "/bookshelf/covers/universe-the-definitive-visual-guide.dk-martin-rees.128.d7e206c86dbe.webp",
+          "width": 128,
+          "height": 152
+        },
+        {
+          "filename": "universe-the-definitive-visual-guide.dk-martin-rees.256.8e0dd05bdc54.webp",
+          "src": "/bookshelf/covers/universe-the-definitive-visual-guide.dk-martin-rees.256.8e0dd05bdc54.webp",
+          "width": 256,
+          "height": 305
+        },
+        {
+          "filename": "universe-the-definitive-visual-guide.dk-martin-rees.09ba206bfba4.webp",
+          "src": "/bookshelf/covers/universe-the-definitive-visual-guide.dk-martin-rees.09ba206bfba4.webp",
+          "width": 336,
+          "height": 400
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Universe",
+      "matchedAuthor": "Martin Rees",
+      "fetchedAt": "2026-11-01T23:26:58.963Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12407666.jpg?default=false",
+      "sourceWidth": 336,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "ethics::benedict spinoza": {
+      "title": "Ethics",
+      "author": "Benedict Spinoza",
+      "filename": "ethics.benedict-spinoza.7092d8837db3.webp",
+      "src": "/bookshelf/covers/ethics.benedict-spinoza.7092d8837db3.webp",
+      "width": 350,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "ethics.benedict-spinoza.128.ae76e59fb1d1.webp",
+          "src": "/bookshelf/covers/ethics.benedict-spinoza.128.ae76e59fb1d1.webp",
+          "width": 128,
+          "height": 183
+        },
+        {
+          "filename": "ethics.benedict-spinoza.256.023398b0afd2.webp",
+          "src": "/bookshelf/covers/ethics.benedict-spinoza.256.023398b0afd2.webp",
+          "width": 256,
+          "height": 366
+        },
+        {
+          "filename": "ethics.benedict-spinoza.7092d8837db3.webp",
+          "src": "/bookshelf/covers/ethics.benedict-spinoza.7092d8837db3.webp",
+          "width": 350,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Ethics",
+      "matchedAuthor": "Benedict de Spinoza",
+      "fetchedAt": "2026-11-01T23:26:45.479Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8941881.jpg?default=false",
+      "sourceWidth": 350,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "las vegas travel guide::hungry passport": {
+      "title": "Las Vegas Travel Guide",
+      "author": "Hungry Passport",
+      "filename": "las-vegas-travel-guide.hungry-passport.8889bbbd4a2b.webp",
+      "src": "/bookshelf/covers/las-vegas-travel-guide.hungry-passport.8889bbbd4a2b.webp",
+      "width": 960,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "las-vegas-travel-guide.hungry-passport.128.74a150ed7aa2.webp",
+          "src": "/bookshelf/covers/las-vegas-travel-guide.hungry-passport.128.74a150ed7aa2.webp",
+          "width": 128,
+          "height": 205
+        },
+        {
+          "filename": "las-vegas-travel-guide.hungry-passport.256.f7b187100a9b.webp",
+          "src": "/bookshelf/covers/las-vegas-travel-guide.hungry-passport.256.f7b187100a9b.webp",
+          "width": 256,
+          "height": 410
+        },
+        {
+          "filename": "las-vegas-travel-guide.hungry-passport.384.e0cb66e7d9a7.webp",
+          "src": "/bookshelf/covers/las-vegas-travel-guide.hungry-passport.384.e0cb66e7d9a7.webp",
+          "width": 384,
+          "height": 614
+        },
+        {
+          "filename": "las-vegas-travel-guide.hungry-passport.512.80d2ffcd649a.webp",
+          "src": "/bookshelf/covers/las-vegas-travel-guide.hungry-passport.512.80d2ffcd649a.webp",
+          "width": 512,
+          "height": 819
+        },
+        {
+          "filename": "las-vegas-travel-guide.hungry-passport.768.5e31f094a233.webp",
+          "src": "/bookshelf/covers/las-vegas-travel-guide.hungry-passport.768.5e31f094a233.webp",
+          "width": 768,
+          "height": 1229
+        },
+        {
+          "filename": "las-vegas-travel-guide.hungry-passport.8889bbbd4a2b.webp",
+          "src": "/bookshelf/covers/las-vegas-travel-guide.hungry-passport.8889bbbd4a2b.webp",
+          "width": 960,
+          "height": 1536
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Las Vegas Travel Guide: Top 20 & Things to Know Before You Go",
+      "matchedAuthor": "Hungry Passport",
+      "fetchedAt": "2026-11-03T22:52:22.526Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1667796445i/63241871.jpg",
+      "sourceWidth": 1000,
+      "sourceHeight": 1600,
+      "edge": "clean"
+    },
+    "the art of doing science and engineering::richard hamming": {
+      "title": "The Art of Doing Science and Engineering",
+      "author": "Richard Hamming",
+      "filename": "the-art-of-doing-science-and-engineering.richard-hamming.5a225545e3a2.webp",
+      "src": "/bookshelf/covers/the-art-of-doing-science-and-engineering.richard-hamming.5a225545e3a2.webp",
+      "width": 405,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "the-art-of-doing-science-and-engineering.richard-hamming.128.7cb335ff4500.webp",
+          "src": "/bookshelf/covers/the-art-of-doing-science-and-engineering.richard-hamming.128.7cb335ff4500.webp",
+          "width": 128,
+          "height": 158
+        },
+        {
+          "filename": "the-art-of-doing-science-and-engineering.richard-hamming.256.e95d4a9f7963.webp",
+          "src": "/bookshelf/covers/the-art-of-doing-science-and-engineering.richard-hamming.256.e95d4a9f7963.webp",
+          "width": 256,
+          "height": 316
+        },
+        {
+          "filename": "the-art-of-doing-science-and-engineering.richard-hamming.384.c3edcf558bc4.webp",
+          "src": "/bookshelf/covers/the-art-of-doing-science-and-engineering.richard-hamming.384.c3edcf558bc4.webp",
+          "width": 384,
+          "height": 474
+        },
+        {
+          "filename": "the-art-of-doing-science-and-engineering.richard-hamming.5a225545e3a2.webp",
+          "src": "/bookshelf/covers/the-art-of-doing-science-and-engineering.richard-hamming.5a225545e3a2.webp",
+          "width": 405,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The art of doing science and engineering",
+      "matchedAuthor": "Richard Hamming, Bret Victor",
+      "fetchedAt": "2026-11-01T23:26:50.023Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/14153910.jpg?default=false",
+      "sourceWidth": 405,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "the gambler::fyodor dostoyevsky": {
+      "title": "The Gambler",
+      "author": "Fyodor Dostoyevsky",
+      "filename": "the-gambler.fyodor-dostoyevsky.f79b39620246.webp",
+      "src": "/bookshelf/covers/the-gambler.fyodor-dostoyevsky.f79b39620246.webp",
+      "width": 454,
+      "height": 700,
+      "candidates": [
+        {
+          "filename": "the-gambler.fyodor-dostoyevsky.128.45f9da8f0783.webp",
+          "src": "/bookshelf/covers/the-gambler.fyodor-dostoyevsky.128.45f9da8f0783.webp",
+          "width": 128,
+          "height": 197
+        },
+        {
+          "filename": "the-gambler.fyodor-dostoyevsky.256.d41f5590aab1.webp",
+          "src": "/bookshelf/covers/the-gambler.fyodor-dostoyevsky.256.d41f5590aab1.webp",
+          "width": 256,
+          "height": 395
+        },
+        {
+          "filename": "the-gambler.fyodor-dostoyevsky.384.7b147bb6577a.webp",
+          "src": "/bookshelf/covers/the-gambler.fyodor-dostoyevsky.384.7b147bb6577a.webp",
+          "width": 384,
+          "height": 592
+        },
+        {
+          "filename": "the-gambler.fyodor-dostoyevsky.f79b39620246.webp",
+          "src": "/bookshelf/covers/the-gambler.fyodor-dostoyevsky.f79b39620246.webp",
+          "width": 454,
+          "height": 700
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Gambler",
+      "matchedAuthor": "Fyodor Dostoevsky",
+      "fetchedAt": "2026-11-03T22:52:22.308Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751435148i/12857.jpg",
+      "sourceWidth": 454,
+      "sourceHeight": 700,
+      "edge": "clean"
+    },
+    "best loser wins::tom hougaard": {
+      "title": "Best Loser Wins",
+      "author": "Tom Hougaard",
+      "filename": "best-loser-wins.tom-hougaard.aabf76c2d5f7.webp",
+      "src": "/bookshelf/covers/best-loser-wins.tom-hougaard.aabf76c2d5f7.webp",
+      "width": 200,
+      "height": 300,
+      "candidates": [
+        {
+          "filename": "best-loser-wins.tom-hougaard.128.2c1cddfa7984.webp",
+          "src": "/bookshelf/covers/best-loser-wins.tom-hougaard.128.2c1cddfa7984.webp",
+          "width": 128,
+          "height": 192
+        },
+        {
+          "filename": "best-loser-wins.tom-hougaard.aabf76c2d5f7.webp",
+          "src": "/bookshelf/covers/best-loser-wins.tom-hougaard.aabf76c2d5f7.webp",
+          "width": 200,
+          "height": 300
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Best Loser Wins",
+      "matchedAuthor": "Tom Hougaard",
+      "fetchedAt": "2026-11-01T23:26:51.604Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/15225630.jpg?default=false",
+      "sourceWidth": 200,
+      "sourceHeight": 300,
+      "edge": "clean"
+    },
+    "destiny disrupted::mir tamim ansary": {
+      "title": "Destiny Disrupted",
+      "author": "Mir Tamim Ansary",
+      "filename": "destiny-disrupted.mir-tamim-ansary.136801f026fc.webp",
+      "src": "/bookshelf/covers/destiny-disrupted.mir-tamim-ansary.136801f026fc.webp",
+      "width": 300,
+      "height": 456,
+      "candidates": [
+        {
+          "filename": "destiny-disrupted.mir-tamim-ansary.128.ef03b24691dc.webp",
+          "src": "/bookshelf/covers/destiny-disrupted.mir-tamim-ansary.128.ef03b24691dc.webp",
+          "width": 128,
+          "height": 195
+        },
+        {
+          "filename": "destiny-disrupted.mir-tamim-ansary.256.b3ab91ff9969.webp",
+          "src": "/bookshelf/covers/destiny-disrupted.mir-tamim-ansary.256.b3ab91ff9969.webp",
+          "width": 256,
+          "height": 389
+        },
+        {
+          "filename": "destiny-disrupted.mir-tamim-ansary.136801f026fc.webp",
+          "src": "/bookshelf/covers/destiny-disrupted.mir-tamim-ansary.136801f026fc.webp",
+          "width": 300,
+          "height": 456
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Destiny disrupted",
+      "matchedAuthor": "Mir Tamim Ansary, Tamim Ansary",
+      "fetchedAt": "2026-11-01T23:26:54.564Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/6463754.jpg?default=false",
+      "sourceWidth": 300,
+      "sourceHeight": 456,
+      "edge": "clean"
+    },
+    "the ring legends of tolkien::david day": {
+      "title": "The Ring Legends of Tolkien",
+      "author": "David Day",
+      "filename": "the-ring-legends-of-tolkien.david-day.ed9ce632f033.webp",
+      "src": "/bookshelf/covers/the-ring-legends-of-tolkien.david-day.ed9ce632f033.webp",
+      "width": 264,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "the-ring-legends-of-tolkien.david-day.128.b761bd1fb6f2.webp",
+          "src": "/bookshelf/covers/the-ring-legends-of-tolkien.david-day.128.b761bd1fb6f2.webp",
+          "width": 128,
+          "height": 194
+        },
+        {
+          "filename": "the-ring-legends-of-tolkien.david-day.256.63f719eb3dd3.webp",
+          "src": "/bookshelf/covers/the-ring-legends-of-tolkien.david-day.256.63f719eb3dd3.webp",
+          "width": 256,
+          "height": 388
+        },
+        {
+          "filename": "the-ring-legends-of-tolkien.david-day.ed9ce632f033.webp",
+          "src": "/bookshelf/covers/the-ring-legends-of-tolkien.david-day.ed9ce632f033.webp",
+          "width": 264,
+          "height": 400
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Ring Legends of Tolkien",
+      "matchedAuthor": "David Day",
+      "fetchedAt": "2026-11-01T23:26:57.131Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12411253.jpg?default=false",
+      "sourceWidth": 264,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "the wolves of eternity::karl ove knausgard": {
+      "title": "The Wolves of Eternity",
+      "author": "Karl Ove Knausgård",
+      "filename": "the-wolves-of-eternity.karl-ove-knausgard.ccebc97b3dcc.webp",
+      "src": "/bookshelf/covers/the-wolves-of-eternity.karl-ove-knausgard.ccebc97b3dcc.webp",
+      "width": 263,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "the-wolves-of-eternity.karl-ove-knausgard.128.9b5bfe31fb19.webp",
+          "src": "/bookshelf/covers/the-wolves-of-eternity.karl-ove-knausgard.128.9b5bfe31fb19.webp",
+          "width": 128,
+          "height": 195
+        },
+        {
+          "filename": "the-wolves-of-eternity.karl-ove-knausgard.256.fe975dd71711.webp",
+          "src": "/bookshelf/covers/the-wolves-of-eternity.karl-ove-knausgard.256.fe975dd71711.webp",
+          "width": 256,
+          "height": 389
+        },
+        {
+          "filename": "the-wolves-of-eternity.karl-ove-knausgard.ccebc97b3dcc.webp",
+          "src": "/bookshelf/covers/the-wolves-of-eternity.karl-ove-knausgard.ccebc97b3dcc.webp",
+          "width": 263,
+          "height": 400
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Wolves of Eternity",
+      "matchedAuthor": "Karl Ove Knausgård",
+      "fetchedAt": "2026-11-03T22:52:28.288Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685352835i/75293514.jpg",
+      "sourceWidth": 263,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "the third realm::karl ove knausgard": {
+      "title": "The Third Realm",
+      "author": "Karl Ove Knausgård",
+      "filename": "the-third-realm.karl-ove-knausgard.7f4a8f1d7462.webp",
+      "src": "/bookshelf/covers/the-third-realm.karl-ove-knausgard.7f4a8f1d7462.webp",
+      "width": 987,
+      "height": 1500,
+      "candidates": [
+        {
+          "filename": "the-third-realm.karl-ove-knausgard.128.4d3adb476da1.webp",
+          "src": "/bookshelf/covers/the-third-realm.karl-ove-knausgard.128.4d3adb476da1.webp",
+          "width": 128,
+          "height": 195
+        },
+        {
+          "filename": "the-third-realm.karl-ove-knausgard.256.21d68e0a799a.webp",
+          "src": "/bookshelf/covers/the-third-realm.karl-ove-knausgard.256.21d68e0a799a.webp",
+          "width": 256,
+          "height": 389
+        },
+        {
+          "filename": "the-third-realm.karl-ove-knausgard.384.fb8960a55bbb.webp",
+          "src": "/bookshelf/covers/the-third-realm.karl-ove-knausgard.384.fb8960a55bbb.webp",
+          "width": 384,
+          "height": 584
+        },
+        {
+          "filename": "the-third-realm.karl-ove-knausgard.512.2a21ccf8c1ff.webp",
+          "src": "/bookshelf/covers/the-third-realm.karl-ove-knausgard.512.2a21ccf8c1ff.webp",
+          "width": 512,
+          "height": 778
+        },
+        {
+          "filename": "the-third-realm.karl-ove-knausgard.768.6053dff1b25f.webp",
+          "src": "/bookshelf/covers/the-third-realm.karl-ove-knausgard.768.6053dff1b25f.webp",
+          "width": 768,
+          "height": 1167
+        },
+        {
+          "filename": "the-third-realm.karl-ove-knausgard.7f4a8f1d7462.webp",
+          "src": "/bookshelf/covers/the-third-realm.karl-ove-knausgard.7f4a8f1d7462.webp",
+          "width": 987,
+          "height": 1500
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Third Realm",
+      "matchedAuthor": "Karl Ove Knausgård",
+      "fetchedAt": "2026-11-03T22:52:22.651Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1711030269i/204640602.jpg",
+      "sourceWidth": 987,
+      "sourceHeight": 1500,
+      "edge": "clean"
+    },
+    "there is no antimemetics division::qntm": {
+      "title": "There Is No Antimemetics Division",
+      "author": "qntm",
+      "filename": "there-is-no-antimemetics-division.qntm.56e4bf0b2c97.webp",
+      "src": "/bookshelf/covers/there-is-no-antimemetics-division.qntm.56e4bf0b2c97.webp",
+      "width": 923,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "there-is-no-antimemetics-division.qntm.128.58c2c18de1d6.webp",
+          "src": "/bookshelf/covers/there-is-no-antimemetics-division.qntm.128.58c2c18de1d6.webp",
+          "width": 128,
+          "height": 213
+        },
+        {
+          "filename": "there-is-no-antimemetics-division.qntm.256.78af064068cd.webp",
+          "src": "/bookshelf/covers/there-is-no-antimemetics-division.qntm.256.78af064068cd.webp",
+          "width": 256,
+          "height": 426
+        },
+        {
+          "filename": "there-is-no-antimemetics-division.qntm.384.80004105dd95.webp",
+          "src": "/bookshelf/covers/there-is-no-antimemetics-division.qntm.384.80004105dd95.webp",
+          "width": 384,
+          "height": 639
+        },
+        {
+          "filename": "there-is-no-antimemetics-division.qntm.512.a3e4eda1f715.webp",
+          "src": "/bookshelf/covers/there-is-no-antimemetics-division.qntm.512.a3e4eda1f715.webp",
+          "width": 512,
+          "height": 852
+        },
+        {
+          "filename": "there-is-no-antimemetics-division.qntm.768.443bbf48b24b.webp",
+          "src": "/bookshelf/covers/there-is-no-antimemetics-division.qntm.768.443bbf48b24b.webp",
+          "width": 768,
+          "height": 1278
+        },
+        {
+          "filename": "there-is-no-antimemetics-division.qntm.56e4bf0b2c97.webp",
+          "src": "/bookshelf/covers/there-is-no-antimemetics-division.qntm.56e4bf0b2c97.webp",
+          "width": 923,
+          "height": 1536
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "There Is No Antimemetics Division",
+      "matchedAuthor": "qntm",
+      "fetchedAt": "2026-11-01T23:27:03.162Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/11457905.jpg?default=false",
+      "sourceWidth": 2034,
+      "sourceHeight": 3386,
+      "edge": "clean"
+    },
+    "the morning star::karl ove knausgard": {
+      "title": "The Morning Star",
+      "author": "Karl Ove Knausgård",
+      "filename": "the-morning-star.karl-ove-knausgard.0e1cfec4147c.webp",
+      "src": "/bookshelf/covers/the-morning-star.karl-ove-knausgard.0e1cfec4147c.webp",
+      "width": 263,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "the-morning-star.karl-ove-knausgard.128.c71a739125b7.webp",
+          "src": "/bookshelf/covers/the-morning-star.karl-ove-knausgard.128.c71a739125b7.webp",
+          "width": 128,
+          "height": 195
+        },
+        {
+          "filename": "the-morning-star.karl-ove-knausgard.256.c75816df098b.webp",
+          "src": "/bookshelf/covers/the-morning-star.karl-ove-knausgard.256.c75816df098b.webp",
+          "width": 256,
+          "height": 389
+        },
+        {
+          "filename": "the-morning-star.karl-ove-knausgard.0e1cfec4147c.webp",
+          "src": "/bookshelf/covers/the-morning-star.karl-ove-knausgard.0e1cfec4147c.webp",
+          "width": 263,
+          "height": 400
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Morning Star",
+      "matchedAuthor": "Karl Ove Knausgård",
+      "fetchedAt": "2026-11-03T22:52:28.771Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620081368i/57799745.jpg",
+      "sourceWidth": 263,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "the trouble with being born::emil michel cioran": {
+      "title": "The Trouble With Being Born",
+      "author": "Emil Michel Cioran",
+      "filename": "the-trouble-with-being-born.emil-michel-cioran.03fc40bdf50c.webp",
+      "src": "/bookshelf/covers/the-trouble-with-being-born.emil-michel-cioran.03fc40bdf50c.webp",
+      "width": 250,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "the-trouble-with-being-born.emil-michel-cioran.128.61927baa8786.webp",
+          "src": "/bookshelf/covers/the-trouble-with-being-born.emil-michel-cioran.128.61927baa8786.webp",
+          "width": 128,
+          "height": 205
+        },
+        {
+          "filename": "the-trouble-with-being-born.emil-michel-cioran.03fc40bdf50c.webp",
+          "src": "/bookshelf/covers/the-trouble-with-being-born.emil-michel-cioran.03fc40bdf50c.webp",
+          "width": 250,
+          "height": 400
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Trouble With Being Born",
+      "matchedAuthor": "Emil M. Cioran",
+      "fetchedAt": "2026-11-03T22:52:30.564Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348223420i/117564.jpg",
+      "sourceWidth": 250,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "the glass bead game::hermann hesse": {
+      "title": "The Glass Bead Game",
+      "author": "Hermann Hesse",
+      "filename": "the-glass-bead-game.hermann-hesse.acefdbe66007.webp",
+      "src": "/bookshelf/covers/the-glass-bead-game.hermann-hesse.acefdbe66007.webp",
+      "width": 901,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "the-glass-bead-game.hermann-hesse.128.e5abc3a708b1.webp",
+          "src": "/bookshelf/covers/the-glass-bead-game.hermann-hesse.128.e5abc3a708b1.webp",
+          "width": 128,
+          "height": 218
+        },
+        {
+          "filename": "the-glass-bead-game.hermann-hesse.256.51944692269b.webp",
+          "src": "/bookshelf/covers/the-glass-bead-game.hermann-hesse.256.51944692269b.webp",
+          "width": 256,
+          "height": 436
+        },
+        {
+          "filename": "the-glass-bead-game.hermann-hesse.384.6c7bd2e70bc6.webp",
+          "src": "/bookshelf/covers/the-glass-bead-game.hermann-hesse.384.6c7bd2e70bc6.webp",
+          "width": 384,
+          "height": 655
+        },
+        {
+          "filename": "the-glass-bead-game.hermann-hesse.512.a24e45360bf6.webp",
+          "src": "/bookshelf/covers/the-glass-bead-game.hermann-hesse.512.a24e45360bf6.webp",
+          "width": 512,
+          "height": 873
+        },
+        {
+          "filename": "the-glass-bead-game.hermann-hesse.768.2ed9152d7b21.webp",
+          "src": "/bookshelf/covers/the-glass-bead-game.hermann-hesse.768.2ed9152d7b21.webp",
+          "width": 768,
+          "height": 1309
+        },
+        {
+          "filename": "the-glass-bead-game.hermann-hesse.acefdbe66007.webp",
+          "src": "/bookshelf/covers/the-glass-bead-game.hermann-hesse.acefdbe66007.webp",
+          "width": 901,
+          "height": 1536
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Magister Ludi ( the Glass Bead Game)",
+      "matchedAuthor": "Hermann Hesse",
+      "fetchedAt": "2026-11-01T23:27:05.395Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/15010279.jpg?default=false",
+      "sourceWidth": 1080,
+      "sourceHeight": 1841,
+      "edge": "clean"
+    },
+    "knight s cross::david fraser": {
+      "title": "Knight's Cross",
+      "author": "David Fraser",
+      "filename": "knight-s-cross.david-fraser.fc09e1f38b89.webp",
+      "src": "/bookshelf/covers/knight-s-cross.david-fraser.fc09e1f38b89.webp",
+      "width": 128,
+      "height": 193,
+      "candidates": [
+        {
+          "filename": "knight-s-cross.david-fraser.fc09e1f38b89.webp",
+          "src": "/bookshelf/covers/knight-s-cross.david-fraser.fc09e1f38b89.webp",
+          "width": 128,
+          "height": 193
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Knight's cross",
+      "matchedAuthor": "David Fraser",
+      "fetchedAt": "2026-11-01T23:27:10.543Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/3945592.jpg?default=false",
+      "sourceWidth": 128,
+      "sourceHeight": 193,
+      "edge": "clean"
+    },
+    "the castle::franz kafka": {
+      "title": "The Castle",
+      "author": "Franz Kafka",
+      "filename": "the-castle.franz-kafka.4df3ce28a770.webp",
+      "src": "/bookshelf/covers/the-castle.franz-kafka.4df3ce28a770.webp",
+      "width": 444,
+      "height": 696,
+      "candidates": [
+        {
+          "filename": "the-castle.franz-kafka.128.96fbfd8549f6.webp",
+          "src": "/bookshelf/covers/the-castle.franz-kafka.128.96fbfd8549f6.webp",
+          "width": 128,
+          "height": 201
+        },
+        {
+          "filename": "the-castle.franz-kafka.256.89f10f93225f.webp",
+          "src": "/bookshelf/covers/the-castle.franz-kafka.256.89f10f93225f.webp",
+          "width": 256,
+          "height": 401
+        },
+        {
+          "filename": "the-castle.franz-kafka.384.9f017ae554f9.webp",
+          "src": "/bookshelf/covers/the-castle.franz-kafka.384.9f017ae554f9.webp",
+          "width": 384,
+          "height": 602
+        },
+        {
+          "filename": "the-castle.franz-kafka.4df3ce28a770.webp",
+          "src": "/bookshelf/covers/the-castle.franz-kafka.4df3ce28a770.webp",
+          "width": 444,
+          "height": 696
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Castle",
+      "matchedAuthor": "Franz Kafka",
+      "fetchedAt": "2026-11-03T22:52:28.558Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746885413i/333538.jpg",
+      "sourceWidth": 444,
+      "sourceHeight": 696,
+      "edge": "clean"
+    },
+    "infantry attacks::erwin rommel": {
+      "title": "Infantry Attacks",
+      "author": "Erwin Rommel",
+      "filename": "infantry-attacks.erwin-rommel.429e055b6480.webp",
+      "src": "/bookshelf/covers/infantry-attacks.erwin-rommel.429e055b6480.webp",
+      "width": 864,
+      "height": 1348,
+      "candidates": [
+        {
+          "filename": "infantry-attacks.erwin-rommel.128.32cd485c8e92.webp",
+          "src": "/bookshelf/covers/infantry-attacks.erwin-rommel.128.32cd485c8e92.webp",
+          "width": 128,
+          "height": 200
+        },
+        {
+          "filename": "infantry-attacks.erwin-rommel.256.12ab19600d9f.webp",
+          "src": "/bookshelf/covers/infantry-attacks.erwin-rommel.256.12ab19600d9f.webp",
+          "width": 256,
+          "height": 399
+        },
+        {
+          "filename": "infantry-attacks.erwin-rommel.384.b39dc3260baf.webp",
+          "src": "/bookshelf/covers/infantry-attacks.erwin-rommel.384.b39dc3260baf.webp",
+          "width": 384,
+          "height": 599
+        },
+        {
+          "filename": "infantry-attacks.erwin-rommel.512.66b95cd9c314.webp",
+          "src": "/bookshelf/covers/infantry-attacks.erwin-rommel.512.66b95cd9c314.webp",
+          "width": 512,
+          "height": 799
+        },
+        {
+          "filename": "infantry-attacks.erwin-rommel.768.a2d83e817a28.webp",
+          "src": "/bookshelf/covers/infantry-attacks.erwin-rommel.768.a2d83e817a28.webp",
+          "width": 768,
+          "height": 1198
+        },
+        {
+          "filename": "infantry-attacks.erwin-rommel.429e055b6480.webp",
+          "src": "/bookshelf/covers/infantry-attacks.erwin-rommel.429e055b6480.webp",
+          "width": 864,
+          "height": 1348
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Infantry attacks",
+      "matchedAuthor": "Erwin Rommel",
+      "fetchedAt": "2026-11-01T23:27:10.062Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9995485.jpg?default=false",
+      "sourceWidth": 864,
+      "sourceHeight": 1348,
+      "edge": "clean"
+    },
+    "notes on the synthesis of form::christopher alexander": {
+      "title": "Notes on the Synthesis of Form",
+      "author": "Christopher Alexander",
+      "filename": "notes-on-the-synthesis-of-form.christopher-alexander.2c78503296dd.webp",
+      "src": "/bookshelf/covers/notes-on-the-synthesis-of-form.christopher-alexander.2c78503296dd.webp",
+      "width": 302,
+      "height": 475,
+      "candidates": [
+        {
+          "filename": "notes-on-the-synthesis-of-form.christopher-alexander.128.fcff93dbc2bb.webp",
+          "src": "/bookshelf/covers/notes-on-the-synthesis-of-form.christopher-alexander.128.fcff93dbc2bb.webp",
+          "width": 128,
+          "height": 201
+        },
+        {
+          "filename": "notes-on-the-synthesis-of-form.christopher-alexander.256.0ccd5bb9799d.webp",
+          "src": "/bookshelf/covers/notes-on-the-synthesis-of-form.christopher-alexander.256.0ccd5bb9799d.webp",
+          "width": 256,
+          "height": 403
+        },
+        {
+          "filename": "notes-on-the-synthesis-of-form.christopher-alexander.2c78503296dd.webp",
+          "src": "/bookshelf/covers/notes-on-the-synthesis-of-form.christopher-alexander.2c78503296dd.webp",
+          "width": 302,
+          "height": 475
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Notes on the synthesis of form",
+      "matchedAuthor": "Christopher Alexander",
+      "fetchedAt": "2026-11-01T23:27:12.584Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/6256928.jpg?default=false",
+      "sourceWidth": 302,
+      "sourceHeight": 475,
+      "edge": "clean"
+    },
+    "the book of tea::okakura kakuzo": {
+      "title": "The Book of Tea",
+      "author": "Okakura Kakuzō",
+      "filename": "the-book-of-tea.okakura-kakuzo.68ca7c120798.webp",
+      "src": "/bookshelf/covers/the-book-of-tea.okakura-kakuzo.68ca7c120798.webp",
+      "width": 890,
+      "height": 1402,
+      "candidates": [
+        {
+          "filename": "the-book-of-tea.okakura-kakuzo.128.3ad186c52236.webp",
+          "src": "/bookshelf/covers/the-book-of-tea.okakura-kakuzo.128.3ad186c52236.webp",
+          "width": 128,
+          "height": 202
+        },
+        {
+          "filename": "the-book-of-tea.okakura-kakuzo.256.ad67ba5b3508.webp",
+          "src": "/bookshelf/covers/the-book-of-tea.okakura-kakuzo.256.ad67ba5b3508.webp",
+          "width": 256,
+          "height": 403
+        },
+        {
+          "filename": "the-book-of-tea.okakura-kakuzo.384.3d186c709adb.webp",
+          "src": "/bookshelf/covers/the-book-of-tea.okakura-kakuzo.384.3d186c709adb.webp",
+          "width": 384,
+          "height": 605
+        },
+        {
+          "filename": "the-book-of-tea.okakura-kakuzo.512.75b5077e156b.webp",
+          "src": "/bookshelf/covers/the-book-of-tea.okakura-kakuzo.512.75b5077e156b.webp",
+          "width": 512,
+          "height": 807
+        },
+        {
+          "filename": "the-book-of-tea.okakura-kakuzo.768.35eda39f51cc.webp",
+          "src": "/bookshelf/covers/the-book-of-tea.okakura-kakuzo.768.35eda39f51cc.webp",
+          "width": 768,
+          "height": 1210
+        },
+        {
+          "filename": "the-book-of-tea.okakura-kakuzo.68ca7c120798.webp",
+          "src": "/bookshelf/covers/the-book-of-tea.okakura-kakuzo.68ca7c120798.webp",
+          "width": 890,
+          "height": 1402
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Book of Tea",
+      "matchedAuthor": "Okakura Kakuzō",
+      "fetchedAt": "2026-11-01T23:27:15.786Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8245415.jpg?default=false",
+      "sourceWidth": 890,
+      "sourceHeight": 1402,
+      "edge": "clean"
+    },
+    "runescape the official handbook::tracey west": {
+      "title": "RuneScape: The Official Handbook",
+      "author": "Tracey West",
+      "filename": "runescape-the-official-handbook.tracey-west.81f8b6b87f21.webp",
+      "src": "/bookshelf/covers/runescape-the-official-handbook.tracey-west.81f8b6b87f21.webp",
+      "width": 400,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "runescape-the-official-handbook.tracey-west.128.b140d3964ac3.webp",
+          "src": "/bookshelf/covers/runescape-the-official-handbook.tracey-west.128.b140d3964ac3.webp",
+          "width": 128,
+          "height": 160
+        },
+        {
+          "filename": "runescape-the-official-handbook.tracey-west.256.d4d33d564c2a.webp",
+          "src": "/bookshelf/covers/runescape-the-official-handbook.tracey-west.256.d4d33d564c2a.webp",
+          "width": 256,
+          "height": 320
+        },
+        {
+          "filename": "runescape-the-official-handbook.tracey-west.384.dbaf89342684.webp",
+          "src": "/bookshelf/covers/runescape-the-official-handbook.tracey-west.384.dbaf89342684.webp",
+          "width": 384,
+          "height": 480
+        },
+        {
+          "filename": "runescape-the-official-handbook.tracey-west.81f8b6b87f21.webp",
+          "src": "/bookshelf/covers/runescape-the-official-handbook.tracey-west.81f8b6b87f21.webp",
+          "width": 400,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "RuneScape",
+      "matchedAuthor": "Tracey West",
+      "fetchedAt": "2026-11-01T23:27:20.787Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/279578.jpg?default=false",
+      "sourceWidth": 400,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "the creative act::rick rubin": {
+      "title": "The Creative Act",
+      "author": "Rick Rubin",
+      "filename": "the-creative-act.rick-rubin.4aa0c1e2c158.webp",
+      "src": "/bookshelf/covers/the-creative-act.rick-rubin.4aa0c1e2c158.webp",
+      "width": 149,
+      "height": 218,
+      "candidates": [
+        {
+          "filename": "the-creative-act.rick-rubin.128.48935fdb033b.webp",
+          "src": "/bookshelf/covers/the-creative-act.rick-rubin.128.48935fdb033b.webp",
+          "width": 128,
+          "height": 187
+        },
+        {
+          "filename": "the-creative-act.rick-rubin.4aa0c1e2c158.webp",
+          "src": "/bookshelf/covers/the-creative-act.rick-rubin.4aa0c1e2c158.webp",
+          "width": 149,
+          "height": 218
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Creative Act",
+      "matchedAuthor": "Rick Rubin",
+      "fetchedAt": "2026-11-01T23:27:15.916Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/13316390.jpg?default=false",
+      "sourceWidth": 149,
+      "sourceHeight": 218,
+      "edge": "clean"
+    },
+    "a game of thrones::george r r martin": {
+      "title": "A Game of Thrones",
+      "author": "George R.R. Martin",
+      "filename": "a-game-of-thrones.george-r-r-martin.126d5b8dc45d.webp",
+      "src": "/bookshelf/covers/a-game-of-thrones.george-r-r-martin.126d5b8dc45d.webp",
+      "width": 496,
+      "height": 840,
+      "candidates": [
+        {
+          "filename": "a-game-of-thrones.george-r-r-martin.128.40d3770c70d8.webp",
+          "src": "/bookshelf/covers/a-game-of-thrones.george-r-r-martin.128.40d3770c70d8.webp",
+          "width": 128,
+          "height": 217
+        },
+        {
+          "filename": "a-game-of-thrones.george-r-r-martin.256.85522e9d7bcb.webp",
+          "src": "/bookshelf/covers/a-game-of-thrones.george-r-r-martin.256.85522e9d7bcb.webp",
+          "width": 256,
+          "height": 434
+        },
+        {
+          "filename": "a-game-of-thrones.george-r-r-martin.384.087a077ae1c6.webp",
+          "src": "/bookshelf/covers/a-game-of-thrones.george-r-r-martin.384.087a077ae1c6.webp",
+          "width": 384,
+          "height": 650
+        },
+        {
+          "filename": "a-game-of-thrones.george-r-r-martin.126d5b8dc45d.webp",
+          "src": "/bookshelf/covers/a-game-of-thrones.george-r-r-martin.126d5b8dc45d.webp",
+          "width": 496,
+          "height": 840
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "A Game of Thrones",
+      "matchedAuthor": "George R. R. Martin",
+      "fetchedAt": "2026-11-01T23:27:17.249Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9269962.jpg?default=false",
+      "sourceWidth": 496,
+      "sourceHeight": 840,
+      "edge": "clean"
+    },
+    "the vegan scoop::wheeler del toro": {
+      "title": "The Vegan Scoop",
+      "author": "Wheeler del Toro",
+      "filename": "the-vegan-scoop.wheeler-del-toro.1b08a32b2de4.webp",
+      "src": "/bookshelf/covers/the-vegan-scoop.wheeler-del-toro.1b08a32b2de4.webp",
+      "width": 510,
+      "height": 680,
+      "candidates": [
+        {
+          "filename": "the-vegan-scoop.wheeler-del-toro.128.5b244726a0f8.webp",
+          "src": "/bookshelf/covers/the-vegan-scoop.wheeler-del-toro.128.5b244726a0f8.webp",
+          "width": 128,
+          "height": 171
+        },
+        {
+          "filename": "the-vegan-scoop.wheeler-del-toro.256.eff6bedf3fa5.webp",
+          "src": "/bookshelf/covers/the-vegan-scoop.wheeler-del-toro.256.eff6bedf3fa5.webp",
+          "width": 256,
+          "height": 341
+        },
+        {
+          "filename": "the-vegan-scoop.wheeler-del-toro.384.f08ee5a607f0.webp",
+          "src": "/bookshelf/covers/the-vegan-scoop.wheeler-del-toro.384.f08ee5a607f0.webp",
+          "width": 384,
+          "height": 512
+        },
+        {
+          "filename": "the-vegan-scoop.wheeler-del-toro.1b08a32b2de4.webp",
+          "src": "/bookshelf/covers/the-vegan-scoop.wheeler-del-toro.1b08a32b2de4.webp",
+          "width": 510,
+          "height": 680
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Vegan Scoop",
+      "matchedAuthor": "Wheeler del Torro",
+      "fetchedAt": "2026-11-01T23:27:30.081Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/6437608.jpg?default=false",
+      "sourceWidth": 510,
+      "sourceHeight": 680,
+      "edge": "clean"
+    },
+    "2015 guide to the night sky::storm dunlop wil tirion": {
+      "title": "2015 Guide to the Night Sky",
+      "author": "Storm Dunlop & Wil Tirion",
+      "filename": "2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.0f371809cb8c.webp",
+      "src": "/bookshelf/covers/2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.0f371809cb8c.webp",
+      "width": 1052,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.128.57f0a3eb9a9b.webp",
+          "src": "/bookshelf/covers/2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.128.57f0a3eb9a9b.webp",
+          "width": 128,
+          "height": 187
+        },
+        {
+          "filename": "2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.256.67153a38078a.webp",
+          "src": "/bookshelf/covers/2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.256.67153a38078a.webp",
+          "width": 256,
+          "height": 374
+        },
+        {
+          "filename": "2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.384.fae9b27efb80.webp",
+          "src": "/bookshelf/covers/2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.384.fae9b27efb80.webp",
+          "width": 384,
+          "height": 561
+        },
+        {
+          "filename": "2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.512.b88b3c1a6fa7.webp",
+          "src": "/bookshelf/covers/2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.512.b88b3c1a6fa7.webp",
+          "width": 512,
+          "height": 748
+        },
+        {
+          "filename": "2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.768.280547e9c5ac.webp",
+          "src": "/bookshelf/covers/2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.768.280547e9c5ac.webp",
+          "width": 768,
+          "height": 1121
+        },
+        {
+          "filename": "2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.0f371809cb8c.webp",
+          "src": "/bookshelf/covers/2015-guide-to-the-night-sky.storm-dunlop-wil-tirion.0f371809cb8c.webp",
+          "width": 1052,
+          "height": 1536
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "2015 guide to the night sky",
+      "matchedAuthor": "Storm Dunlop",
+      "fetchedAt": "2026-11-01T23:27:30.209Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/10726292.jpg?default=false",
+      "sourceWidth": 1974,
+      "sourceHeight": 2881,
+      "edge": "clean"
+    },
+    "veganomicon::isa chandra moskowitz terry hope romero": {
+      "title": "Veganomicon",
+      "author": "Isa Chandra Moskowitz & Terry Hope Romero",
+      "filename": "veganomicon.isa-chandra-moskowitz-terry-hope-romero.26c1b62aed3f.webp",
+      "src": "/bookshelf/covers/veganomicon.isa-chandra-moskowitz-terry-hope-romero.26c1b62aed3f.webp",
+      "width": 403,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "veganomicon.isa-chandra-moskowitz-terry-hope-romero.128.5d777ca0f681.webp",
+          "src": "/bookshelf/covers/veganomicon.isa-chandra-moskowitz-terry-hope-romero.128.5d777ca0f681.webp",
+          "width": 128,
+          "height": 159
+        },
+        {
+          "filename": "veganomicon.isa-chandra-moskowitz-terry-hope-romero.256.0a962aa59fda.webp",
+          "src": "/bookshelf/covers/veganomicon.isa-chandra-moskowitz-terry-hope-romero.256.0a962aa59fda.webp",
+          "width": 256,
+          "height": 318
+        },
+        {
+          "filename": "veganomicon.isa-chandra-moskowitz-terry-hope-romero.384.cb6eeebd554a.webp",
+          "src": "/bookshelf/covers/veganomicon.isa-chandra-moskowitz-terry-hope-romero.384.cb6eeebd554a.webp",
+          "width": 384,
+          "height": 476
+        },
+        {
+          "filename": "veganomicon.isa-chandra-moskowitz-terry-hope-romero.26c1b62aed3f.webp",
+          "src": "/bookshelf/covers/veganomicon.isa-chandra-moskowitz-terry-hope-romero.26c1b62aed3f.webp",
+          "width": 403,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Veganomicon",
+      "matchedAuthor": "Isa Chandra Moskowitz, Terry Hope Romero, Isabel Ginés Iglesias",
+      "fetchedAt": "2026-11-01T23:27:26.742Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/1911733.jpg?default=false",
+      "sourceWidth": 403,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "wagamama cookbook::hugo arnold": {
+      "title": "Wagamama Cookbook",
+      "author": "Hugo Arnold",
+      "filename": "wagamama-cookbook.hugo-arnold.9a9a23419d64.webp",
+      "src": "/bookshelf/covers/wagamama-cookbook.hugo-arnold.9a9a23419d64.webp",
+      "width": 409,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "wagamama-cookbook.hugo-arnold.128.6047604d50b4.webp",
+          "src": "/bookshelf/covers/wagamama-cookbook.hugo-arnold.128.6047604d50b4.webp",
+          "width": 128,
+          "height": 156
+        },
+        {
+          "filename": "wagamama-cookbook.hugo-arnold.256.515b6727d581.webp",
+          "src": "/bookshelf/covers/wagamama-cookbook.hugo-arnold.256.515b6727d581.webp",
+          "width": 256,
+          "height": 313
+        },
+        {
+          "filename": "wagamama-cookbook.hugo-arnold.384.b12bab18c49c.webp",
+          "src": "/bookshelf/covers/wagamama-cookbook.hugo-arnold.384.b12bab18c49c.webp",
+          "width": 384,
+          "height": 469
+        },
+        {
+          "filename": "wagamama-cookbook.hugo-arnold.9a9a23419d64.webp",
+          "src": "/bookshelf/covers/wagamama-cookbook.hugo-arnold.9a9a23419d64.webp",
+          "width": 409,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Wagamama Cookbook",
+      "matchedAuthor": "Hugo Arnold",
+      "fetchedAt": "2026-11-01T23:27:29.983Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/951837.jpg?default=false",
+      "sourceWidth": 409,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "great british bake off everyday::linda collister": {
+      "title": "Great British Bake Off: Everyday",
+      "author": "Linda Collister",
+      "filename": "great-british-bake-off-everyday.linda-collister.57db8071cdfe.webp",
+      "src": "/bookshelf/covers/great-british-bake-off-everyday.linda-collister.57db8071cdfe.webp",
+      "width": 387,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "great-british-bake-off-everyday.linda-collister.128.cfad5ed0e134.webp",
+          "src": "/bookshelf/covers/great-british-bake-off-everyday.linda-collister.128.cfad5ed0e134.webp",
+          "width": 128,
+          "height": 165
+        },
+        {
+          "filename": "great-british-bake-off-everyday.linda-collister.256.f99b12068d2f.webp",
+          "src": "/bookshelf/covers/great-british-bake-off-everyday.linda-collister.256.f99b12068d2f.webp",
+          "width": 256,
+          "height": 331
+        },
+        {
+          "filename": "great-british-bake-off-everyday.linda-collister.384.0aa87c347802.webp",
+          "src": "/bookshelf/covers/great-british-bake-off-everyday.linda-collister.384.0aa87c347802.webp",
+          "width": 384,
+          "height": 496
+        },
+        {
+          "filename": "great-british-bake-off-everyday.linda-collister.57db8071cdfe.webp",
+          "src": "/bookshelf/covers/great-british-bake-off-everyday.linda-collister.57db8071cdfe.webp",
+          "width": 387,
+          "height": 500
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Great British Bake Off: Everyday: 100 Foolproof Bakes",
+      "matchedAuthor": "Linda Collister",
+      "fetchedAt": "2026-11-03T22:52:29.034Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1438286081i/17910651.jpg",
+      "sourceWidth": 387,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "black hat python::justin seitz": {
+      "title": "Black Hat Python",
+      "author": "Justin Seitz",
+      "filename": "black-hat-python.justin-seitz.75cffb1ac3ed.webp",
+      "src": "/bookshelf/covers/black-hat-python.justin-seitz.75cffb1ac3ed.webp",
+      "width": 386,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "black-hat-python.justin-seitz.128.009eb5a87769.webp",
+          "src": "/bookshelf/covers/black-hat-python.justin-seitz.128.009eb5a87769.webp",
+          "width": 128,
+          "height": 166
+        },
+        {
+          "filename": "black-hat-python.justin-seitz.256.c99f52d292a8.webp",
+          "src": "/bookshelf/covers/black-hat-python.justin-seitz.256.c99f52d292a8.webp",
+          "width": 256,
+          "height": 332
+        },
+        {
+          "filename": "black-hat-python.justin-seitz.384.7eca6732bfd3.webp",
+          "src": "/bookshelf/covers/black-hat-python.justin-seitz.384.7eca6732bfd3.webp",
+          "width": 384,
+          "height": 497
+        },
+        {
+          "filename": "black-hat-python.justin-seitz.75cffb1ac3ed.webp",
+          "src": "/bookshelf/covers/black-hat-python.justin-seitz.75cffb1ac3ed.webp",
+          "width": 386,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Black Hat Python",
+      "matchedAuthor": "Justin Seitz, Tim Arnold",
+      "fetchedAt": "2026-11-01T23:27:40.739Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/8513526.jpg?default=false",
+      "sourceWidth": 386,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "this is not a maths book::anna weltman": {
+      "title": "This is Not a Maths Book",
+      "author": "Anna Weltman",
+      "filename": "this-is-not-a-maths-book.anna-weltman.585336ba2b6c.webp",
+      "src": "/bookshelf/covers/this-is-not-a-maths-book.anna-weltman.585336ba2b6c.webp",
+      "width": 386,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "this-is-not-a-maths-book.anna-weltman.128.2597f7e91993.webp",
+          "src": "/bookshelf/covers/this-is-not-a-maths-book.anna-weltman.128.2597f7e91993.webp",
+          "width": 128,
+          "height": 166
+        },
+        {
+          "filename": "this-is-not-a-maths-book.anna-weltman.256.e7766a081225.webp",
+          "src": "/bookshelf/covers/this-is-not-a-maths-book.anna-weltman.256.e7766a081225.webp",
+          "width": 256,
+          "height": 332
+        },
+        {
+          "filename": "this-is-not-a-maths-book.anna-weltman.384.a7a53b57d04b.webp",
+          "src": "/bookshelf/covers/this-is-not-a-maths-book.anna-weltman.384.a7a53b57d04b.webp",
+          "width": 384,
+          "height": 497
+        },
+        {
+          "filename": "this-is-not-a-maths-book.anna-weltman.585336ba2b6c.webp",
+          "src": "/bookshelf/covers/this-is-not-a-maths-book.anna-weltman.585336ba2b6c.webp",
+          "width": 386,
+          "height": 500
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "This is Not a Maths Book",
+      "matchedAuthor": "Anna Weltman",
+      "fetchedAt": "2026-11-03T22:52:29.222Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436840373i/25244256.jpg",
+      "sourceWidth": 386,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "nib ink::chiara perano": {
+      "title": "Nib + Ink",
+      "author": "Chiara Perano",
+      "filename": "nib-ink.chiara-perano.bce9ff047e53.webp",
+      "src": "/bookshelf/covers/nib-ink.chiara-perano.bce9ff047e53.webp",
+      "width": 367,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "nib-ink.chiara-perano.128.752b69ec9caf.webp",
+          "src": "/bookshelf/covers/nib-ink.chiara-perano.128.752b69ec9caf.webp",
+          "width": 128,
+          "height": 174
+        },
+        {
+          "filename": "nib-ink.chiara-perano.256.4cab343fb1a2.webp",
+          "src": "/bookshelf/covers/nib-ink.chiara-perano.256.4cab343fb1a2.webp",
+          "width": 256,
+          "height": 349
+        },
+        {
+          "filename": "nib-ink.chiara-perano.bce9ff047e53.webp",
+          "src": "/bookshelf/covers/nib-ink.chiara-perano.bce9ff047e53.webp",
+          "width": 367,
+          "height": 500
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Nib + Ink: The New Art of Modern Calligraphy",
+      "matchedAuthor": "Chiara Perano",
+      "fetchedAt": "2026-11-03T22:52:29.674Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1457727482i/29485383.jpg",
+      "sourceWidth": 367,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "universal a guide to the cosmos::brian cox jeff forshaw": {
+      "title": "Universal: A Guide to the Cosmos",
+      "author": "Brian Cox & Jeff Forshaw",
+      "filename": "universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.3dca92d4796b.webp",
+      "src": "/bookshelf/covers/universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.3dca92d4796b.webp",
+      "width": 970,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.128.2895c4aae53c.webp",
+          "src": "/bookshelf/covers/universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.128.2895c4aae53c.webp",
+          "width": 128,
+          "height": 203
+        },
+        {
+          "filename": "universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.256.4c51263fc0a0.webp",
+          "src": "/bookshelf/covers/universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.256.4c51263fc0a0.webp",
+          "width": 256,
+          "height": 405
+        },
+        {
+          "filename": "universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.384.72cd02f9bce0.webp",
+          "src": "/bookshelf/covers/universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.384.72cd02f9bce0.webp",
+          "width": 384,
+          "height": 608
+        },
+        {
+          "filename": "universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.512.96c04c52987e.webp",
+          "src": "/bookshelf/covers/universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.512.96c04c52987e.webp",
+          "width": 512,
+          "height": 811
+        },
+        {
+          "filename": "universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.768.af291b3589b2.webp",
+          "src": "/bookshelf/covers/universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.768.af291b3589b2.webp",
+          "width": 768,
+          "height": 1216
+        },
+        {
+          "filename": "universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.3dca92d4796b.webp",
+          "src": "/bookshelf/covers/universal-a-guide-to-the-cosmos.brian-cox-jeff-forshaw.3dca92d4796b.webp",
+          "width": 970,
+          "height": 1536
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Universal",
+      "matchedAuthor": "Brian Cox, Jeff Forshaw",
+      "fetchedAt": "2026-11-01T23:28:14.329Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/13259838.jpg?default=false",
+      "sourceWidth": 2259,
+      "sourceHeight": 3576,
+      "edge": "clean"
+    },
+    "the five minute journal::intelligent change": {
+      "title": "The Five Minute Journal",
+      "author": "Intelligent Change",
+      "filename": "the-five-minute-journal.intelligent-change.274178b3565e.webp",
+      "src": "/bookshelf/covers/the-five-minute-journal.intelligent-change.274178b3565e.webp",
+      "width": 210,
+      "height": 346,
+      "candidates": [
+        {
+          "filename": "the-five-minute-journal.intelligent-change.128.76f38fe0bd4e.webp",
+          "src": "/bookshelf/covers/the-five-minute-journal.intelligent-change.128.76f38fe0bd4e.webp",
+          "width": 128,
+          "height": 211
+        },
+        {
+          "filename": "the-five-minute-journal.intelligent-change.274178b3565e.webp",
+          "src": "/bookshelf/covers/the-five-minute-journal.intelligent-change.274178b3565e.webp",
+          "width": 210,
+          "height": 346
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "The Five Minute Journal: A Happier You in 5 Minutes a Day",
+      "matchedAuthor": "Alex Ikonn",
+      "fetchedAt": "2026-11-03T22:52:36.510Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1382323072i/18692407.jpg",
+      "sourceWidth": 210,
+      "sourceHeight": 346,
+      "edge": "clean"
+    },
+    "web audio api::boris smus": {
+      "title": "Web Audio API",
+      "author": "Boris Smus",
+      "filename": "web-audio-api.boris-smus.7177cd6a4a07.webp",
+      "src": "/bookshelf/covers/web-audio-api.boris-smus.7177cd6a4a07.webp",
+      "width": 318,
+      "height": 417,
+      "candidates": [
+        {
+          "filename": "web-audio-api.boris-smus.128.a9b079c052f2.webp",
+          "src": "/bookshelf/covers/web-audio-api.boris-smus.128.a9b079c052f2.webp",
+          "width": 128,
+          "height": 168
+        },
+        {
+          "filename": "web-audio-api.boris-smus.256.31b8e75df967.webp",
+          "src": "/bookshelf/covers/web-audio-api.boris-smus.256.31b8e75df967.webp",
+          "width": 256,
+          "height": 336
+        },
+        {
+          "filename": "web-audio-api.boris-smus.7177cd6a4a07.webp",
+          "src": "/bookshelf/covers/web-audio-api.boris-smus.7177cd6a4a07.webp",
+          "width": 318,
+          "height": 417
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Web Audio API: Advanced Sound for Games and Interactive Apps",
+      "matchedAuthor": "Boris Smus",
+      "fetchedAt": "2026-11-03T22:52:32.707Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366277540i/17381721.jpg",
+      "sourceWidth": 318,
+      "sourceHeight": 417,
+      "edge": "clean"
+    },
+    "everything that remains::joshua fields millburn": {
+      "title": "Everything That Remains",
+      "author": "Joshua Fields Millburn",
+      "filename": "everything-that-remains.joshua-fields-millburn.ce68ea4c4294.webp",
+      "src": "/bookshelf/covers/everything-that-remains.joshua-fields-millburn.ce68ea4c4294.webp",
+      "width": 910,
+      "height": 1536,
+      "candidates": [
+        {
+          "filename": "everything-that-remains.joshua-fields-millburn.128.db136d0b81fe.webp",
+          "src": "/bookshelf/covers/everything-that-remains.joshua-fields-millburn.128.db136d0b81fe.webp",
+          "width": 128,
+          "height": 216
+        },
+        {
+          "filename": "everything-that-remains.joshua-fields-millburn.256.7767858df892.webp",
+          "src": "/bookshelf/covers/everything-that-remains.joshua-fields-millburn.256.7767858df892.webp",
+          "width": 256,
+          "height": 432
+        },
+        {
+          "filename": "everything-that-remains.joshua-fields-millburn.384.e709f55bb31d.webp",
+          "src": "/bookshelf/covers/everything-that-remains.joshua-fields-millburn.384.e709f55bb31d.webp",
+          "width": 384,
+          "height": 648
+        },
+        {
+          "filename": "everything-that-remains.joshua-fields-millburn.512.4e6059dab1a0.webp",
+          "src": "/bookshelf/covers/everything-that-remains.joshua-fields-millburn.512.4e6059dab1a0.webp",
+          "width": 512,
+          "height": 864
+        },
+        {
+          "filename": "everything-that-remains.joshua-fields-millburn.768.4dc6dc116a14.webp",
+          "src": "/bookshelf/covers/everything-that-remains.joshua-fields-millburn.768.4dc6dc116a14.webp",
+          "width": 768,
+          "height": 1296
+        },
+        {
+          "filename": "everything-that-remains.joshua-fields-millburn.ce68ea4c4294.webp",
+          "src": "/bookshelf/covers/everything-that-remains.joshua-fields-millburn.ce68ea4c4294.webp",
+          "width": 910,
+          "height": 1536
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Everything that remains",
+      "matchedAuthor": "Joshua Fields Millburn",
+      "fetchedAt": "2026-11-01T23:28:12.598Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/12178360.jpg?default=false",
+      "sourceWidth": 1652,
+      "sourceHeight": 2787,
+      "edge": "clean"
+    },
+    "hitler::ian kershaw": {
+      "title": "Hitler",
+      "author": "Ian Kershaw",
+      "filename": "hitler.ian-kershaw.22f1b4d10cc1.webp",
+      "src": "/bookshelf/covers/hitler.ian-kershaw.22f1b4d10cc1.webp",
+      "width": 375,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "hitler.ian-kershaw.128.e68877b0d927.webp",
+          "src": "/bookshelf/covers/hitler.ian-kershaw.128.e68877b0d927.webp",
+          "width": 128,
+          "height": 171
+        },
+        {
+          "filename": "hitler.ian-kershaw.256.45653a147033.webp",
+          "src": "/bookshelf/covers/hitler.ian-kershaw.256.45653a147033.webp",
+          "width": 256,
+          "height": 341
+        },
+        {
+          "filename": "hitler.ian-kershaw.22f1b4d10cc1.webp",
+          "src": "/bookshelf/covers/hitler.ian-kershaw.22f1b4d10cc1.webp",
+          "width": 375,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Hitler",
+      "matchedAuthor": "Ian Kershaw",
+      "fetchedAt": "2026-11-01T23:28:13.235Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9298751.jpg?default=false",
+      "sourceWidth": 375,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "the timeless way of building::christopher alexander": {
+      "title": "The Timeless Way of Building",
+      "author": "Christopher Alexander",
+      "filename": "the-timeless-way-of-building.christopher-alexander.a0253af535f2.webp",
+      "src": "/bookshelf/covers/the-timeless-way-of-building.christopher-alexander.a0253af535f2.webp",
+      "width": 253,
+      "height": 400,
+      "candidates": [
+        {
+          "filename": "the-timeless-way-of-building.christopher-alexander.128.c8e68c1e5444.webp",
+          "src": "/bookshelf/covers/the-timeless-way-of-building.christopher-alexander.128.c8e68c1e5444.webp",
+          "width": 128,
+          "height": 202
+        },
+        {
+          "filename": "the-timeless-way-of-building.christopher-alexander.a0253af535f2.webp",
+          "src": "/bookshelf/covers/the-timeless-way-of-building.christopher-alexander.a0253af535f2.webp",
+          "width": 253,
+          "height": 400
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Timeless Way of Building",
+      "matchedAuthor": "Christopher Alexander",
+      "fetchedAt": "2026-11-01T23:28:14.163Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/7564994.jpg?default=false",
+      "sourceWidth": 253,
+      "sourceHeight": 400,
+      "edge": "clean"
+    },
+    "the vision of the anointed::thomas sowell": {
+      "title": "The Vision of the Anointed",
+      "author": "Thomas Sowell",
+      "filename": "the-vision-of-the-anointed.thomas-sowell.8a5ec2be41f9.webp",
+      "src": "/bookshelf/covers/the-vision-of-the-anointed.thomas-sowell.8a5ec2be41f9.webp",
+      "width": 311,
+      "height": 475,
+      "candidates": [
+        {
+          "filename": "the-vision-of-the-anointed.thomas-sowell.128.dd59a6259cbc.webp",
+          "src": "/bookshelf/covers/the-vision-of-the-anointed.thomas-sowell.128.dd59a6259cbc.webp",
+          "width": 128,
+          "height": 195
+        },
+        {
+          "filename": "the-vision-of-the-anointed.thomas-sowell.256.ce0706b5064e.webp",
+          "src": "/bookshelf/covers/the-vision-of-the-anointed.thomas-sowell.256.ce0706b5064e.webp",
+          "width": 256,
+          "height": 391
+        },
+        {
+          "filename": "the-vision-of-the-anointed.thomas-sowell.8a5ec2be41f9.webp",
+          "src": "/bookshelf/covers/the-vision-of-the-anointed.thomas-sowell.8a5ec2be41f9.webp",
+          "width": 311,
+          "height": 475
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Vision of the Anointed",
+      "matchedAuthor": "Thomas Sowell",
+      "fetchedAt": "2026-11-01T23:28:17.501Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/299260.jpg?default=false",
+      "sourceWidth": 311,
+      "sourceHeight": 475,
+      "edge": "clean"
+    },
+    "zero to one::peter thiel blake masters": {
+      "title": "Zero to One",
+      "author": "Peter Thiel & Blake Masters",
+      "filename": "zero-to-one.peter-thiel-blake-masters.1931000e21e7.webp",
+      "src": "/bookshelf/covers/zero-to-one.peter-thiel-blake-masters.1931000e21e7.webp",
+      "width": 432,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "zero-to-one.peter-thiel-blake-masters.128.51aafb8d5355.webp",
+          "src": "/bookshelf/covers/zero-to-one.peter-thiel-blake-masters.128.51aafb8d5355.webp",
+          "width": 128,
+          "height": 148
+        },
+        {
+          "filename": "zero-to-one.peter-thiel-blake-masters.256.5f66ac0440d4.webp",
+          "src": "/bookshelf/covers/zero-to-one.peter-thiel-blake-masters.256.5f66ac0440d4.webp",
+          "width": 256,
+          "height": 296
+        },
+        {
+          "filename": "zero-to-one.peter-thiel-blake-masters.384.bbc4449c5f99.webp",
+          "src": "/bookshelf/covers/zero-to-one.peter-thiel-blake-masters.384.bbc4449c5f99.webp",
+          "width": 384,
+          "height": 444
+        },
+        {
+          "filename": "zero-to-one.peter-thiel-blake-masters.1931000e21e7.webp",
+          "src": "/bookshelf/covers/zero-to-one.peter-thiel-blake-masters.1931000e21e7.webp",
+          "width": 432,
+          "height": 500
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "Zero to One",
+      "matchedAuthor": "Peter A. Thiel, Blake Masters",
+      "fetchedAt": "2026-11-01T23:28:17.918Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/9002334.jpg?default=false",
+      "sourceWidth": 432,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "the remains of the day::kazuo ishiguro": {
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "filename": "the-remains-of-the-day.kazuo-ishiguro.4fb4b435d710.webp",
+      "src": "/bookshelf/covers/the-remains-of-the-day.kazuo-ishiguro.4fb4b435d710.webp",
+      "width": 296,
+      "height": 475,
+      "candidates": [
+        {
+          "filename": "the-remains-of-the-day.kazuo-ishiguro.128.688f739b413b.webp",
+          "src": "/bookshelf/covers/the-remains-of-the-day.kazuo-ishiguro.128.688f739b413b.webp",
+          "width": 128,
+          "height": 205
+        },
+        {
+          "filename": "the-remains-of-the-day.kazuo-ishiguro.256.d5ac3ff8ea05.webp",
+          "src": "/bookshelf/covers/the-remains-of-the-day.kazuo-ishiguro.256.d5ac3ff8ea05.webp",
+          "width": 256,
+          "height": 411
+        },
+        {
+          "filename": "the-remains-of-the-day.kazuo-ishiguro.4fb4b435d710.webp",
+          "src": "/bookshelf/covers/the-remains-of-the-day.kazuo-ishiguro.4fb4b435d710.webp",
+          "width": 296,
+          "height": 475
+        }
+      ],
+      "provider": "openlibrary",
+      "matchedTitle": "The Remains of the Day",
+      "matchedAuthor": "Kazuo Ishiguro",
+      "fetchedAt": "2026-11-01T23:28:18.803Z",
+      "sourceUrl": "https://covers.openlibrary.org/b/id/95742.jpg?default=false",
+      "sourceWidth": 296,
+      "sourceHeight": 475,
+      "edge": "clean"
+    },
+    "obviously awesome::april dunford": {
+      "title": "Obviously Awesome",
+      "author": "April Dunford",
+      "filename": "obviously-awesome.april-dunford.7267211c43c2.webp",
+      "src": "/bookshelf/covers/obviously-awesome.april-dunford.7267211c43c2.webp",
+      "width": 324,
+      "height": 500,
+      "candidates": [
+        {
+          "filename": "obviously-awesome.april-dunford.128.07ac2422871f.webp",
+          "src": "/bookshelf/covers/obviously-awesome.april-dunford.128.07ac2422871f.webp",
+          "width": 128,
+          "height": 198
+        },
+        {
+          "filename": "obviously-awesome.april-dunford.256.aa33794d0ccf.webp",
+          "src": "/bookshelf/covers/obviously-awesome.april-dunford.256.aa33794d0ccf.webp",
+          "width": 256,
+          "height": 395
+        },
+        {
+          "filename": "obviously-awesome.april-dunford.7267211c43c2.webp",
+          "src": "/bookshelf/covers/obviously-awesome.april-dunford.7267211c43c2.webp",
+          "width": 324,
+          "height": 500
+        }
+      ],
+      "provider": "goodreads",
+      "matchedTitle": "Obviously Awesome",
+      "matchedAuthor": "April Dunford",
+      "fetchedAt": "2026-11-03T22:52:32.829Z",
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1555591852i/45166937.jpg",
+      "sourceWidth": 324,
+      "sourceHeight": 500,
+      "edge": "clean"
+    },
+    "sketching for architecture and interior design::stephanie travis": {
+      "title": "Sketching for Architecture and Interior Design",
+      "author": "Stephanie Travis",
+      "filename": "sketching-for-architecture-and-interior-design.stephanie-travis.5774a9b9aac3.webp",
+      "src": "/bookshelf/covers/sketching-for-architecture-and-interior-design.stephanie-travis.5774a9b9aac3.webp",
+      "width": 625,
+      "height": 1000,
+      "sourceUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1676853443i/122768049.jpg",
+      "sourceWidth": 625,
+      "sourceHeight": 1000,
+      "provider": "goodreads",
+      "matchedTitle": "Sketching for Architecture + Interior Design: A practical guide for designers",
+      "matchedAuthor": "Stephanie Travis",
+      "fetchedAt": "2026-11-03T22:54:16.605Z",
+      "edge": "clean",
+      "candidates": [
+        {
+          "filename": "sketching-for-architecture-and-interior-design.stephanie-travis.128.76a547069918.webp",
+          "src": "/bookshelf/covers/sketching-for-architecture-and-interior-design.stephanie-travis.128.76a547069918.webp",
+          "width": 128,
+          "height": 205
+        },
+        {
+          "filename": "sketching-for-architecture-and-interior-design.stephanie-travis.256.23ecaea8a3d2.webp",
+          "src": "/bookshelf/covers/sketching-for-architecture-and-interior-design.stephanie-travis.256.23ecaea8a3d2.webp",
+          "width": 256,
+          "height": 410
+        },
+        {
+          "filename": "sketching-for-architecture-and-interior-design.stephanie-travis.384.a5cd53fe03d2.webp",
+          "src": "/bookshelf/covers/sketching-for-architecture-and-interior-design.stephanie-travis.384.a5cd53fe03d2.webp",
+          "width": 384,
+          "height": 614
+        },
+        {
+          "filename": "sketching-for-architecture-and-interior-design.stephanie-travis.512.2c11b44ee522.webp",
+          "src": "/bookshelf/covers/sketching-for-architecture-and-interior-design.stephanie-travis.512.2c11b44ee522.webp",
+          "width": 512,
+          "height": 819
+        },
+        {
+          "filename": "sketching-for-architecture-and-interior-design.stephanie-travis.5774a9b9aac3.webp",
+          "src": "/bookshelf/covers/sketching-for-architecture-and-interior-design.stephanie-travis.5774a9b9aac3.webp",
+          "width": 625,
+          "height": 1000
         }
       ]
     }

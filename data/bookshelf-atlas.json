@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "fingerprint": "eaa1a9e56673ad87c66e92a1f548e70981e03b0de2557392ad31aadfd8107998",
+  "fingerprint": "7dd31524b12542d13966354365a85014fbd315213940e488b48e21ba7da89c3d",
   "books": [
     {
       "id": "book-194",
@@ -11,6 +11,12 @@
     {
       "id": "book-163",
       "src": "/bookshelf/atlas/book-163.2e3ad58d7ab4.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-233",
+      "src": "/bookshelf/atlas/book-233.ed6b790de009.webp",
       "width": 640,
       "height": 640
     },
@@ -87,6 +93,12 @@
       "height": 640
     },
     {
+      "id": "book-213",
+      "src": "/bookshelf/atlas/book-213.07b15095071c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-187",
       "src": "/bookshelf/atlas/book-187.f5c9284822b2.webp",
       "width": 640,
@@ -129,6 +141,12 @@
       "height": 640
     },
     {
+      "id": "book-215",
+      "src": "/bookshelf/atlas/book-215.0ece8996bf15.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-152",
       "src": "/bookshelf/atlas/book-152.cb2e1c78d33d.webp",
       "width": 640,
@@ -153,8 +171,20 @@
       "height": 640
     },
     {
+      "id": "book-237",
+      "src": "/bookshelf/atlas/book-237.8301ea749250.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-138",
       "src": "/bookshelf/atlas/book-138.6a69576a0067.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-228",
+      "src": "/bookshelf/atlas/book-228.0bca55f97aef.webp",
       "width": 640,
       "height": 640
     },
@@ -185,6 +215,12 @@
     {
       "id": "book-63",
       "src": "/bookshelf/atlas/book-63.18d4dc4a7da8.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-224",
+      "src": "/bookshelf/atlas/book-224.7cd58624958e.webp",
       "width": 640,
       "height": 640
     },
@@ -255,6 +291,12 @@
       "height": 640
     },
     {
+      "id": "book-230",
+      "src": "/bookshelf/atlas/book-230.463c054a808e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-12",
       "src": "/bookshelf/atlas/book-12.908ce3c9eb95.webp",
       "width": 640,
@@ -305,6 +347,12 @@
     {
       "id": "book-197",
       "src": "/bookshelf/atlas/book-197.1c475248881f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-216",
+      "src": "/bookshelf/atlas/book-216.77600fc6fdd7.webp",
       "width": 640,
       "height": 640
     },
@@ -369,6 +417,18 @@
       "height": 640
     },
     {
+      "id": "book-211",
+      "src": "/bookshelf/atlas/book-211.9c04c2f60032.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-244",
+      "src": "/bookshelf/atlas/book-244.8e6a919cc600.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-70",
       "src": "/bookshelf/atlas/book-70.23640649b850.webp",
       "width": 640,
@@ -395,6 +455,12 @@
     {
       "id": "book-143",
       "src": "/bookshelf/atlas/book-143.7f4359fb4af5.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-241",
+      "src": "/bookshelf/atlas/book-241.a7a11dee291e.webp",
       "width": 640,
       "height": 640
     },
@@ -471,8 +537,20 @@
       "height": 640
     },
     {
+      "id": "book-214",
+      "src": "/bookshelf/atlas/book-214.a136d878e0cb.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-98",
       "src": "/bookshelf/atlas/book-98.e2825340de26.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-231",
+      "src": "/bookshelf/atlas/book-231.0eaca73920e1.webp",
       "width": 640,
       "height": 640
     },
@@ -489,8 +567,20 @@
       "height": 640
     },
     {
+      "id": "book-223",
+      "src": "/bookshelf/atlas/book-223.dcd362496d0c.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-34",
       "src": "/bookshelf/atlas/book-34.2d1ec2745ff6.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-236",
+      "src": "/bookshelf/atlas/book-236.9251812b2ebf.webp",
       "width": 640,
       "height": 640
     },
@@ -537,6 +627,12 @@
       "height": 640
     },
     {
+      "id": "book-245",
+      "src": "/bookshelf/atlas/book-245.6d3b56213287.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-148",
       "src": "/bookshelf/atlas/book-148.647a6d09c6a8.webp",
       "width": 640,
@@ -575,6 +671,12 @@
     {
       "id": "book-142",
       "src": "/bookshelf/atlas/book-142.9ebddcf03167.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-225",
+      "src": "/bookshelf/atlas/book-225.482894ce42be.webp",
       "width": 640,
       "height": 640
     },
@@ -627,6 +729,18 @@
       "height": 640
     },
     {
+      "id": "book-206",
+      "src": "/bookshelf/atlas/book-206.b7bb04e25c61.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-226",
+      "src": "/bookshelf/atlas/book-226.d1ed7eb16595.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-166",
       "src": "/bookshelf/atlas/book-166.bb26aaeed9ce.webp",
       "width": 640,
@@ -635,6 +749,18 @@
     {
       "id": "book-176",
       "src": "/bookshelf/atlas/book-176.3720e4d84883.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-212",
+      "src": "/bookshelf/atlas/book-212.534ff88220d0.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-209",
+      "src": "/bookshelf/atlas/book-209.4e24c5ef0476.webp",
       "width": 640,
       "height": 640
     },
@@ -671,6 +797,12 @@
     {
       "id": "book-8",
       "src": "/bookshelf/atlas/book-8.c842ec1404fb.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-208",
+      "src": "/bookshelf/atlas/book-208.13719e116a07.webp",
       "width": 640,
       "height": 640
     },
@@ -735,6 +867,12 @@
       "height": 640
     },
     {
+      "id": "book-221",
+      "src": "/bookshelf/atlas/book-221.26551c9889fd.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-38",
       "src": "/bookshelf/atlas/book-38.34d8b3587ae3.webp",
       "width": 640,
@@ -765,6 +903,12 @@
       "height": 640
     },
     {
+      "id": "book-239",
+      "src": "/bookshelf/atlas/book-239.a24d687dd54a.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-123",
       "src": "/bookshelf/atlas/book-123.d2f9860533b0.webp",
       "width": 640,
@@ -777,8 +921,20 @@
       "height": 640
     },
     {
+      "id": "book-227",
+      "src": "/bookshelf/atlas/book-227.e5d7f4ca870e.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-2",
       "src": "/bookshelf/atlas/book-2.c75fb5ca6689.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-250",
+      "src": "/bookshelf/atlas/book-250.fc78cb6dd351.webp",
       "width": 640,
       "height": 640
     },
@@ -885,8 +1041,20 @@
       "height": 640
     },
     {
+      "id": "book-205",
+      "src": "/bookshelf/atlas/book-205.dff635898960.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-136",
       "src": "/bookshelf/atlas/book-136.eab1fbacb0d2.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-249",
+      "src": "/bookshelf/atlas/book-249.022a5d5c4a81.webp",
       "width": 640,
       "height": 640
     },
@@ -927,6 +1095,12 @@
       "height": 640
     },
     {
+      "id": "book-217",
+      "src": "/bookshelf/atlas/book-217.dbe34a0dee7b.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-154",
       "src": "/bookshelf/atlas/book-154.ea224c8421ac.webp",
       "width": 640,
@@ -935,6 +1109,12 @@
     {
       "id": "book-100",
       "src": "/bookshelf/atlas/book-100.4d25cb96eac4.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-229",
+      "src": "/bookshelf/atlas/book-229.43a99637f5d4.webp",
       "width": 640,
       "height": 640
     },
@@ -977,6 +1157,12 @@
     {
       "id": "book-32",
       "src": "/bookshelf/atlas/book-32.f05dc4db7bcd.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-242",
+      "src": "/bookshelf/atlas/book-242.0daa83ee32d8.webp",
       "width": 640,
       "height": 640
     },
@@ -1071,14 +1257,38 @@
       "height": 640
     },
     {
+      "id": "book-220",
+      "src": "/bookshelf/atlas/book-220.6deebfe41be5.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-122",
       "src": "/bookshelf/atlas/book-122.afd3aa4a13ef.webp",
       "width": 640,
       "height": 640
     },
     {
+      "id": "book-219",
+      "src": "/bookshelf/atlas/book-219.42bbab8e29a4.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-238",
+      "src": "/bookshelf/atlas/book-238.8d558f92394f.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-127",
       "src": "/bookshelf/atlas/book-127.c76317c1f60d.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-246",
+      "src": "/bookshelf/atlas/book-246.f692fecc3ecc.webp",
       "width": 640,
       "height": 640
     },
@@ -1107,6 +1317,12 @@
       "height": 640
     },
     {
+      "id": "book-222",
+      "src": "/bookshelf/atlas/book-222.2be1f5f813ee.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-59",
       "src": "/bookshelf/atlas/book-59.bde7f05bc3f2.webp",
       "width": 640,
@@ -1131,6 +1347,18 @@
       "height": 640
     },
     {
+      "id": "book-240",
+      "src": "/bookshelf/atlas/book-240.141eef4cb668.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-210",
+      "src": "/bookshelf/atlas/book-210.39ed2c9e7353.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-76",
       "src": "/bookshelf/atlas/book-76.555ba41bd21b.webp",
       "width": 640,
@@ -1139,6 +1367,30 @@
     {
       "id": "book-86",
       "src": "/bookshelf/atlas/book-86.0ae3d724e423.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-234",
+      "src": "/bookshelf/atlas/book-234.595f4437ca14.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-232",
+      "src": "/bookshelf/atlas/book-232.679167be2136.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-247",
+      "src": "/bookshelf/atlas/book-247.3da41e1f39a6.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-235",
+      "src": "/bookshelf/atlas/book-235.0de041b8b35d.webp",
       "width": 640,
       "height": 640
     },
@@ -1163,6 +1415,12 @@
     {
       "id": "book-55",
       "src": "/bookshelf/atlas/book-55.ed108ff96584.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-243",
+      "src": "/bookshelf/atlas/book-243.a0ede346f23b.webp",
       "width": 640,
       "height": 640
     },
@@ -1203,6 +1461,12 @@
       "height": 640
     },
     {
+      "id": "book-218",
+      "src": "/bookshelf/atlas/book-218.62753fb90b9d.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-22",
       "src": "/bookshelf/atlas/book-22.7e002b3699fb.webp",
       "width": 640,
@@ -1221,15 +1485,27 @@
       "height": 640
     },
     {
+      "id": "book-207",
+      "src": "/bookshelf/atlas/book-207.2c3810d07f85.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
       "id": "book-196",
       "src": "/bookshelf/atlas/book-196.4ac907f70f36.webp",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "id": "book-248",
+      "src": "/bookshelf/atlas/book-248.ba22e577cc74.webp",
       "width": 640,
       "height": 640
     }
   ],
   "sheets": {
-    "covers": "/bookshelf/atlas/covers.b0c7d69a5cbe.webp",
-    "previews": "/bookshelf/atlas/previews.aac8762351d1.webp",
-    "count": 204
+    "covers": "/bookshelf/atlas/covers.98c01f2a22f2.webp",
+    "previews": "/bookshelf/atlas/previews.26e21d8a2d1f.webp",
+    "count": 250
   }
 }
