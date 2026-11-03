@@ -1,14 +1,21 @@
 {
-  "total": 204,
-  "matched": 171,
+  "total": 250,
+  "matched": 206,
   "coverage": {
-    "description": 103,
-    "categories": 135,
-    "firstPublished": 167,
-    "publisher": 96,
-    "pages": 86
+    "description": 120,
+    "categories": 158,
+    "firstPublished": 201,
+    "publisher": 119,
+    "pages": 109
   },
   "unresolved": [
+    {
+      "title": "2015 Guide to the Night Sky",
+      "author": "Storm Dunlop & Wil Tirion",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
     {
       "title": "3,000 Solved Problems in Linear Algebra",
       "author": "Seymour Lipschutz",
@@ -129,6 +136,13 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "Best Loser Wins",
+      "author": "Tom Hougaard",
+      "status": "matched",
+      "missing": ["description", "categories"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Beyond Order",
       "author": "Jordan B. Peterson",
       "status": "matched",
@@ -140,6 +154,13 @@
       "author": "Les Beletsky",
       "status": "matched",
       "missing": ["description", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Black Hat Python",
+      "author": "Justin Seitz",
+      "status": "matched",
+      "missing": ["description"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -227,6 +248,13 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "Destiny Disrupted",
+      "author": "Mir Tamim Ansary",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Dissolution",
       "author": "C.J. Sansom",
       "status": "matched",
@@ -267,6 +295,20 @@
       "status": "unmatched",
       "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
       "reason": "No confident title and author match"
+    },
+    {
+      "title": "Ethics",
+      "author": "Benedict Spinoza",
+      "status": "matched",
+      "missing": ["description", "firstPublished"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Everything That Remains",
+      "author": "Joshua Fields Millburn",
+      "status": "matched",
+      "missing": ["categories", "publisher"],
+      "reason": "Not provided by the matched catalogue record"
     },
     {
       "title": "Everything You Need to Know About Fat Loss",
@@ -360,6 +402,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Great British Bake Off: Everyday",
+      "author": "Linda Collister",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "Gulliver's Travels",
       "author": "Jonathan Swift",
       "status": "matched",
@@ -435,6 +484,20 @@
       "status": "matched",
       "missing": ["description", "categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Killer Bodybuilder",
+      "author": "Ana Benson",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Las Vegas Travel Guide",
+      "author": "Hungry Passport",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
     },
     {
       "title": "Life on Svalbard",
@@ -528,10 +591,31 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Nib + Ink",
+      "author": "Chiara Perano",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Norse Mythology",
       "author": "Neil Gaiman",
       "status": "matched",
       "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Notes on the Synthesis of Form",
+      "author": "Christopher Alexander",
+      "status": "matched",
+      "missing": ["description"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Obviously Awesome",
+      "author": "April Dunford",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -605,6 +689,13 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "RuneScape: The Official Handbook",
+      "author": "Tracey West",
+      "status": "matched",
+      "missing": ["description"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Scaling People",
       "author": "Claire Hughes Johnson",
       "status": "matched",
@@ -630,6 +721,13 @@
       "author": "Arthur Conan Doyle (narrated by Stephen Fry)",
       "status": "matched",
       "missing": ["description", "firstPublished"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Sketching for Architecture and Interior Design",
+      "author": "Stephanie Travis",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -703,6 +801,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "The Art of Doing Science and Engineering",
+      "author": "Richard Hamming",
+      "status": "matched",
+      "missing": ["description"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "The Art of War",
       "author": "Sun Tzu",
       "status": "matched",
@@ -714,6 +819,13 @@
       "author": "Michael S. Malone",
       "status": "matched",
       "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The Castle",
+      "author": "Franz Kafka",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -735,6 +847,13 @@
       "author": "Arthur C. Clarke",
       "status": "matched",
       "missing": ["description"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The Creative Act",
+      "author": "Rick Rubin",
+      "status": "matched",
+      "missing": ["categories"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -787,6 +906,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "The Five Minute Journal",
+      "author": "Intelligent Change",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "The Flight of the Eisenstein",
       "author": "James Swallow",
       "status": "matched",
@@ -794,11 +920,25 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "The Gambler",
+      "author": "Fyodor Dostoyevsky",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The Genius of Dogs",
       "author": "Brian Hare & Vanessa Woods",
       "status": "error",
       "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
       "reason": "The operation timed out."
+    },
+    {
+      "title": "The Glass Bead Game",
+      "author": "Hermann Hesse",
+      "status": "matched",
+      "missing": ["description", "categories"],
+      "reason": "Not provided by the matched catalogue record"
     },
     {
       "title": "The Gulag Archipelago",
@@ -850,6 +990,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "The Morning Star",
+      "author": "Karl Ove Knausgård",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The Pragmatic Programmer",
       "author": "David Thomas & Andrew Hunt",
       "status": "unmatched",
@@ -878,10 +1025,24 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "The Righteous Mind",
       "author": "Jonathan Haidt",
       "status": "matched",
       "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The Ring Legends of Tolkien",
+      "author": "David Day",
+      "status": "matched",
+      "missing": ["description", "categories"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -920,6 +1081,13 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "The Third Realm",
+      "author": "Karl Ove Knausgård",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The Three-Body Problem",
       "author": "Cixin Liu",
       "status": "unmatched",
@@ -927,10 +1095,31 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "The Timeless Way of Building",
+      "author": "Christopher Alexander",
+      "status": "matched",
+      "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "The Trap",
       "author": "James Goldsmith",
       "status": "matched",
       "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "The Trouble With Being Born",
+      "author": "Emil Michel Cioran",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Vegan Scoop",
+      "author": "Wheeler del Toro",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -948,6 +1137,13 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "The Wolves of Eternity",
+      "author": "Karl Ove Knausgård",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The World: A Family History",
       "author": "Simon Sebag Montefiore",
       "status": "unmatched",
@@ -957,6 +1153,20 @@
     {
       "title": "The X-Files: Cold Cases",
       "author": "Joe Harris & Chris Carter & Dirk Maggs",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "There Is No Antimemetics Division",
+      "author": "qntm",
+      "status": "matched",
+      "missing": ["categories"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "This is Not a Maths Book",
+      "author": "Anna Weltman",
       "status": "unmatched",
       "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
       "reason": "No confident title and author match"
@@ -990,10 +1200,38 @@
       "reason": "Not provided by the matched catalogue record"
     },
     {
+      "title": "Universe: The Definitive Visual Guide",
+      "author": "DK & Martin Rees",
+      "status": "unmatched",
+      "missing": ["description", "categories", "firstPublished", "publisher", "pages"],
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "Unknown Market Wizards",
       "author": "Jack D. Schwager",
       "status": "matched",
       "missing": ["description", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Veganomicon",
+      "author": "Isa Chandra Moskowitz & Terry Hope Romero",
+      "status": "matched",
+      "missing": ["description"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Wagamama Cookbook",
+      "author": "Hugo Arnold",
+      "status": "matched",
+      "missing": ["description"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Web Audio API",
+      "author": "Boris Smus",
+      "status": "matched",
+      "missing": ["description", "publisher", "pages"],
       "reason": "Not provided by the matched catalogue record"
     },
     {
@@ -1025,10 +1263,24 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "Yay! You're Gay! Now What?",
+      "author": "Riyadh Khalaf & Melissa McFeeters",
+      "status": "matched",
+      "missing": ["description", "categories", "publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
       "title": "Zen and the Art of Motorcycle Maintenance",
       "author": "Robert M. Pirsig",
       "status": "matched",
       "missing": ["publisher", "pages"],
+      "reason": "Not provided by the matched catalogue record"
+    },
+    {
+      "title": "Zero to One",
+      "author": "Peter Thiel & Blake Masters",
+      "status": "matched",
+      "missing": ["pages"],
       "reason": "Not provided by the matched catalogue record"
     }
   ]

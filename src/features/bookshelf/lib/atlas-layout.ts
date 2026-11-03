@@ -40,20 +40,28 @@ export const ATLAS = {
   pickupDuration: 600,
 };
 
+/**
+ * Four decimals stay well under a pixel on any table, and every printed and live copy of
+ * the shelf rounds the same way, so the inline markup and payload carry no float noise.
+ */
+export function atlasFixed(value: number) {
+  return Math.round(value * 10_000) / 10_000;
+}
+
 export function atlasProfile(title: string, author: string, width: number, height: number) {
   let seed = 2_166_136_261;
   for (const letter of `${title.toLowerCase()}::${author.toLowerCase()}`) {
     seed = Math.imul(seed ^ letter.charCodeAt(0), 16_777_619) >>> 0;
   }
   const unit = (offset: number) => ((seed >>> offset) & 255) / 255;
-  const bookHeight = 2.95 + unit(0) * 0.85;
+  const bookHeight = atlasFixed(2.95 + unit(0) * 0.85);
   return {
-    width: bookHeight * bookCoverAspect(width, height),
+    width: atlasFixed(bookHeight * bookCoverAspect(width, height)),
     height: bookHeight,
-    depth: 0.22 + unit(8) * 0.24,
-    rotation: (unit(16) - 0.5) * 0.66,
-    offsetX: (unit(8) - 0.5) * 0.32,
-    offsetZ: (unit(0) - 0.5) * 0.3,
+    depth: atlasFixed(0.22 + unit(8) * 0.24),
+    rotation: atlasFixed((unit(16) - 0.5) * 0.66),
+    offsetX: atlasFixed((unit(8) - 0.5) * 0.32),
+    offsetZ: atlasFixed((unit(0) - 0.5) * 0.3),
     hardback: seed % 4 === 0,
     coated: seed % 3 === 0,
     seed,

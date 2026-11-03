@@ -1,7 +1,10 @@
 import type { Page } from "@playwright/test";
 import bookshelfCoverManifest from "../../data/bookshelf-covers.json";
 import bookshelfData from "../../data/bookshelf.json";
-import { buildBookshelfViewModel } from "../../src/features/bookshelf/lib/bookshelf-data";
+import {
+  buildBookshelfViewModel,
+  buildHaystackValue,
+} from "../../src/features/bookshelf/lib/bookshelf-data";
 import { findBookshelfMatchIndexes } from "../../src/features/bookshelf/lib/bookshelf-search";
 
 // The shelf grows whenever a book is added. Tests read its size, its search
@@ -14,10 +17,7 @@ export const BOOK_COUNT = shelf.books.length;
 
 /** How many books the shelf's own search finds for a query. */
 export function searchMatchCount(query: string) {
-  return findBookshelfMatchIndexes(
-    shelf.payload.books.map((book) => book.text),
-    query,
-  ).length;
+  return findBookshelfMatchIndexes(shelf.payload.atlas.map(buildHaystackValue), query).length;
 }
 
 /** A book's button by its title, wherever that title now sorts. */

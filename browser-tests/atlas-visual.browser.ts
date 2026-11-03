@@ -2,7 +2,7 @@
 import { expect, test } from "@playwright/test";
 import { BOOK_COUNT, bookButton } from "./helpers/catalogue";
 import { mkdir } from "node:fs/promises";
-import { warmAtlas } from "./helpers/atlas";
+import { largestChannelDifference, warmAtlas } from "./helpers/atlas";
 
 for (const viewport of [
   { width: 1350, height: 940 },
@@ -236,16 +236,24 @@ for (const live of [false, true]) {
         style: "[role=tooltip], [data-atlas-tooltip-arrow] { visibility: hidden; }",
       });
     const before = await capture("before");
+    const unchanged = async (state: string) => {
+      const after = await capture(state);
+      if (!live) return expect(after.equals(before)).toBe(true);
+      // A tooltip over the live table can make Chrome re-raster a tile of the paper beneath the
+      // canvas, rounding channels by up to two levels. A moved book or shadow differs far more,
+      // and the unchanged frame count below proves the table itself never redrew.
+      expect(await largestChannelDifference(before, after)).toBeLessThanOrEqual(2);
+    };
     await page.locator("[data-book-open]").nth(82).hover();
     await expect(page.getByRole("tooltip")).toBeVisible();
     await page.waitForTimeout(350);
-    expect((await capture("first")).equals(before)).toBe(true);
+    await unchanged("first");
     await page.locator("[data-book-open]").nth(81).hover();
     await expect(page.getByRole("tooltip")).toBeVisible();
-    expect((await capture("next")).equals(before)).toBe(true);
+    await unchanged("next");
     await page.mouse.move(0, 0);
     await expect(page.getByRole("tooltip")).not.toBeVisible();
-    expect((await capture("leave")).equals(before)).toBe(true);
+    await unchanged("leave");
     await expect(atlas).toHaveAttribute("data-atlas-frames", frames ?? "");
   });
 }

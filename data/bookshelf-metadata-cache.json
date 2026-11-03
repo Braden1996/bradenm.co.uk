@@ -23,11 +23,110 @@
       }
     },
     {
+      "title": "2015 Guide to the Night Sky",
+      "author": "Storm Dunlop & Wil Tirion",
+      "checkedAt": "2026-11-01T23:30:03.897Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "3,000 Solved Problems in Linear Algebra",
       "author": "Seymour Lipschutz",
       "checkedAt": "2026-11-01T16:38:53.295Z",
       "status": "unmatched",
       "reason": "No confident title and author match"
+    },
+    {
+      "title": "A Game of Thrones",
+      "author": "George R.R. Martin",
+      "checkedAt": "2026-11-01T23:30:06.030Z",
+      "status": "matched",
+      "work": "/works/OL257943W",
+      "edition": "/books/OL7829767M",
+      "details": {
+        "title": "A Game of Thrones",
+        "author": "George R.R. Martin",
+        "description": "A Game of Thrones is the inaugural novel in A Song of Ice and Fire, an epic series of fantasy novels crafted by the…",
+        "excerptSource": "https://openlibrary.org/works/OL257943W",
+        "firstPublished": "1996",
+        "publisher": "Spectra",
+        "released": "1997-09",
+        "pages": "864",
+        "categories": ["Science fiction", "Fantasy", "Politics"],
+        "sources": [
+          "https://openlibrary.org/works/OL257943W",
+          "https://openlibrary.org/books/OL7829767M"
+        ]
+      },
+      "subjects": [
+        "Adult",
+        "Action & Adventure",
+        "Fantasy",
+        "High Fantasy",
+        "Epic",
+        "Epic Fantasy",
+        "Epic Fiction",
+        "Epic Literature",
+        "Fiction, fantasy, epic",
+        "Fiction, fantasy, general",
+        "Science Fiction",
+        "Fantastic Fiction",
+        "Fiction",
+        "Ficción",
+        "Moral Ambiguity",
+        "Betrayal",
+        "Loyalty",
+        "Family",
+        "Revenge",
+        "Vengeance",
+        "Bien y mal",
+        "Civil War",
+        "War and Conflict",
+        "Imaginary Wars and Battles",
+        "Guerras imaginarias",
+        "Politics",
+        "Intrigue",
+        "Feudalism",
+        "Royalty and Nobility",
+        "Kings and Rulers",
+        "Knights",
+        "Courts and Courtiers",
+        "Seasons",
+        "Invierno",
+        "Trial by Combat",
+        "Voyages and Travels",
+        "Walls",
+        "Penal Colonies",
+        "Magic",
+        "Dragons",
+        "Supernatural",
+        "Wights",
+        "Folk Healers",
+        "Incest",
+        "Forced Marriage",
+        "Persistent Vegetative States",
+        "Imaginary Places",
+        "Seven Kingdoms (Imaginary Place)",
+        "Hugo Award Winner",
+        "Ignotus Award Winner",
+        "Locus Award Winner",
+        "New York Times Bestseller",
+        "Fantasy fiction",
+        "Novela",
+        "Reyes y soberanos",
+        "Guerra civil",
+        "nyt:trade_fiction_paperback=2011-09-10",
+        "Accessible book",
+        "Protected DAISY",
+        "OverDrive",
+        "nyt:mass-market-paperback=2011-04-10",
+        "Seven kingdoms (imaginary place), fiction",
+        "American Fantasy fiction",
+        "general",
+        "good and evil",
+        "winter",
+        "series:A Song of Ice and Fire"
+      ]
     },
     {
       "title": "A Programmer's Geometry",
@@ -287,6 +386,27 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "Best Loser Wins",
+      "author": "Tom Hougaard",
+      "checkedAt": "2026-11-01T23:30:09.356Z",
+      "status": "matched",
+      "work": "/works/OL27938101W",
+      "edition": "/books/OL38184258M",
+      "details": {
+        "title": "Best Loser Wins",
+        "author": "Tom Hougaard",
+        "firstPublished": "2022",
+        "publisher": "Harriman House Publishing",
+        "released": "2022",
+        "pages": "264",
+        "sources": [
+          "https://openlibrary.org/works/OL27938101W",
+          "https://openlibrary.org/books/OL38184258M"
+        ]
+      },
+      "subjects": []
+    },
+    {
       "title": "Beyond Order",
       "author": "Jordan B. Peterson",
       "checkedAt": "2026-09-08T20:31:16.465Z",
@@ -312,6 +432,36 @@
         "categories": ["Nature"],
         "sources": ["https://openlibrary.org/works/OL20191905W"]
       }
+    },
+    {
+      "title": "Black Hat Python",
+      "author": "Justin Seitz",
+      "checkedAt": "2026-11-01T23:30:12.525Z",
+      "status": "matched",
+      "work": "/works/OL19547345W",
+      "edition": "/books/OL26837925M",
+      "details": {
+        "title": "Black Hat Python",
+        "author": "Justin Seitz",
+        "firstPublished": "2014",
+        "publisher": "No Starch Press",
+        "released": "Dec 21, 2014",
+        "pages": "192",
+        "categories": ["Technology"],
+        "sources": [
+          "https://openlibrary.org/works/OL19547345W",
+          "https://openlibrary.org/books/OL26837925M"
+        ]
+      },
+      "subjects": [
+        "Python (Computer program language)",
+        "Computer security",
+        "Python (język programowania)",
+        "Sieci komputerowe",
+        "Dostęp",
+        "Kontrola",
+        "Komputery"
+      ]
     },
     {
       "title": "Blindsight",
@@ -624,6 +774,39 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "Destiny Disrupted",
+      "author": "Mir Tamim Ansary",
+      "checkedAt": "2026-11-01T23:30:15.774Z",
+      "status": "matched",
+      "work": "/works/OL1856493W",
+      "details": {
+        "title": "Destiny Disrupted",
+        "author": "Mir Tamim Ansary",
+        "description": "We in the west share a common narrative of world history—that runs from the Nile Valley and Mesopotomia, through Greece and Rome and the…",
+        "excerptSource": "https://openlibrary.org/works/OL1856493W",
+        "firstPublished": "2009",
+        "categories": ["History"],
+        "sources": ["https://openlibrary.org/works/OL1856493W"]
+      },
+      "subjects": [
+        "History",
+        "Nonfiction",
+        "World history",
+        "Islamic civilization",
+        "East and West",
+        "Historia",
+        "East-West relations",
+        "Civilization",
+        "Islam",
+        "Islamic Civilization",
+        "Islamic Empire",
+        "Islamic countries",
+        "Civilization, history",
+        "HISTORY",
+        "World"
+      ]
+    },
+    {
       "title": "Dissolution",
       "author": "C.J. Sansom",
       "checkedAt": "2026-11-01T16:38:58.930Z",
@@ -757,6 +940,49 @@
       "checkedAt": "2026-11-01T16:39:00.412Z",
       "status": "unmatched",
       "reason": "No confident title and author match"
+    },
+    {
+      "title": "Ethics",
+      "author": "Benedict Spinoza",
+      "checkedAt": "2026-11-01T23:30:18.696Z",
+      "status": "matched",
+      "work": "/works/OL20283931W",
+      "edition": "/books/OL27484200M",
+      "details": {
+        "title": "Ethics",
+        "author": "Benedict Spinoza",
+        "publisher": "Simon & Brown",
+        "released": "Feb 21, 2013",
+        "pages": "236",
+        "categories": ["Philosophy"],
+        "sources": [
+          "https://openlibrary.org/works/OL20283931W",
+          "https://openlibrary.org/books/OL27484200M"
+        ]
+      },
+      "subjects": ["Philosophy"]
+    },
+    {
+      "title": "Everything That Remains",
+      "author": "Joshua Fields Millburn",
+      "checkedAt": "2026-11-01T23:30:21.485Z",
+      "status": "matched",
+      "work": "/works/OL19975602W",
+      "edition": "/books/OL27155771M",
+      "details": {
+        "title": "Everything That Remains",
+        "author": "Joshua Fields Millburn",
+        "description": "What if everything you ever wanted isn't what you actually want? Twenty-something, suit-clad, and upwardly mobile, Joshua Fields Millburn thought he had everything anyone…",
+        "excerptSource": "https://openlibrary.org/works/OL19975602W",
+        "firstPublished": "2014",
+        "released": "2014",
+        "pages": "216",
+        "sources": [
+          "https://openlibrary.org/works/OL19975602W",
+          "https://openlibrary.org/books/OL27155771M"
+        ]
+      },
+      "subjects": ["Simplicity", "Conduct of life", "Happiness", "Voluntary simplicity movement"]
     },
     {
       "title": "Everything You Need to Know About Fat Loss",
@@ -1129,6 +1355,13 @@
       }
     },
     {
+      "title": "Great British Bake Off: Everyday",
+      "author": "Linda Collister",
+      "checkedAt": "2026-11-01T23:30:25.356Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "Gulliver's Travels",
       "author": "Jonathan Swift",
       "checkedAt": "2026-11-01T16:39:03.270Z",
@@ -1385,6 +1618,39 @@
       ]
     },
     {
+      "title": "Hitler",
+      "author": "Ian Kershaw",
+      "checkedAt": "2026-11-01T23:30:29.402Z",
+      "status": "matched",
+      "work": "/works/OL20653283W",
+      "edition": "/books/OL22551194M",
+      "details": {
+        "title": "Hitler",
+        "author": "Ian Kershaw",
+        "description": "Abridgement of: - Hitler 1889-1936: Hubris - Hitler 1936-1945: Nemesis",
+        "excerptSource": "https://openlibrary.org/works/OL20653283W",
+        "firstPublished": "2008",
+        "publisher": "W.W. Norton",
+        "released": "2008",
+        "pages": "1029",
+        "categories": ["Biography", "History", "Politics"],
+        "sources": [
+          "https://openlibrary.org/works/OL20653283W",
+          "https://openlibrary.org/books/OL22551194M"
+        ]
+      },
+      "subjects": [
+        "Politics and government",
+        "Heads of state",
+        "Nonfiction",
+        "Antisemitism",
+        "Childhood and youth",
+        "Biography",
+        "History",
+        "Germany, biography"
+      ]
+    },
+    {
       "title": "Horus Rising",
       "author": "Dan Abnett",
       "checkedAt": "2026-09-08T20:32:04.427Z",
@@ -1489,6 +1755,41 @@
         "categories": ["Philosophy", "Psychology", "History"],
         "sources": ["https://openlibrary.org/works/OL1063267W"]
       }
+    },
+    {
+      "title": "Infantry Attacks",
+      "author": "Erwin Rommel",
+      "checkedAt": "2026-11-01T23:30:30.636Z",
+      "status": "matched",
+      "work": "/works/OL16993139W",
+      "edition": "/books/OL25570563M",
+      "details": {
+        "title": "Infantry Attacks",
+        "author": "Erwin Rommel",
+        "description": "\"Based on his own experiences in the First World War, Rommel discusses and analyses the tactics that lay behind his success ... As a…",
+        "excerptSource": "https://openlibrary.org/works/OL16993139W",
+        "firstPublished": "1990",
+        "publisher": "Greenhill",
+        "released": "1990",
+        "pages": "265",
+        "categories": ["History", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL16993139W",
+          "https://openlibrary.org/books/OL25570563M"
+        ]
+      },
+      "subjects": [
+        "Rommel, erwin, 1891-1944",
+        "World war, 1939-1945, campaigns, africa",
+        "Military art and science",
+        "World war, 1914-1918, campaigns",
+        "World war, 1914-1918, personal narratives",
+        "World war, 1914-1918, germany",
+        "World War, 1914-1918",
+        "Campaigns",
+        "Infantry drill and tactics",
+        "German Personal narratives"
+      ]
     },
     {
       "title": "Influence",
@@ -1614,6 +1915,93 @@
       }
     },
     {
+      "title": "Killer Bodybuilder",
+      "author": "Ana Benson",
+      "checkedAt": "2026-11-01T23:30:35.790Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Knight's Cross",
+      "author": "David Fraser",
+      "checkedAt": "2026-11-01T23:30:36.659Z",
+      "status": "matched",
+      "work": "/works/OL2463015W",
+      "edition": "/books/OL1432309M",
+      "details": {
+        "title": "Knight's Cross",
+        "author": "David Fraser",
+        "description": "In any numbering of the great captains of history, the name of Erwin Rommel must stand in the first rank. He was the outstanding…",
+        "excerptSource": "https://openlibrary.org/works/OL2463015W",
+        "firstPublished": "1994",
+        "publisher": "HarperCollins",
+        "released": "1994",
+        "pages": "601",
+        "categories": ["Biography", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL2463015W",
+          "https://openlibrary.org/books/OL1432309M"
+        ]
+      },
+      "subjects": [
+        "Biography",
+        "Campaigns",
+        "Germany",
+        "Germany. Heer",
+        "History, Military",
+        "Marshals",
+        "Military History",
+        "World War, 1939-1945",
+        "Weltkrieg (1939-1945)",
+        "Widerstand",
+        "Afrikafeldzug (1940-1943)",
+        "Military campaigns",
+        "Biografie",
+        "Afrikafeldzug",
+        "Weltkrieg",
+        "Rommel, erwin, 1891-1944",
+        "World war, 1939-1945, germany"
+      ]
+    },
+    {
+      "title": "Las Vegas Travel Guide",
+      "author": "Hungry Passport",
+      "checkedAt": "2026-11-01T23:30:36.969Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
+      "title": "Laughing at Wall Street",
+      "author": "Chris Camillo",
+      "checkedAt": "2026-11-01T23:30:37.811Z",
+      "status": "matched",
+      "work": "/works/OL15981107W",
+      "edition": "/books/OL24886191M",
+      "details": {
+        "title": "Laughing at Wall Street",
+        "author": "Chris Camillo",
+        "description": "\"Chris Camillo is not a stockbroker, financial analyst, or hedge fund manager. He is an ordinary person with a knack for identifying trends and…",
+        "excerptSource": "https://openlibrary.org/works/OL15981107W",
+        "firstPublished": "2011",
+        "publisher": "St. Martin's Press",
+        "released": "2011",
+        "pages": "222",
+        "categories": ["Economics", "Finance", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL15981107W",
+          "https://openlibrary.org/books/OL24886191M"
+        ]
+      },
+      "subjects": [
+        "Investment analysis",
+        "BUSINESS & ECONOMICS / Investments & Securities",
+        "Stocks",
+        "Investments",
+        "BUSINESS & ECONOMICS",
+        "Investments & Securities"
+      ]
+    },
+    {
       "title": "Life on Svalbard",
       "author": "Cecilia Blomdahl",
       "checkedAt": "2026-09-08T20:32:17.760Z",
@@ -1722,6 +2110,73 @@
         "categories": ["Nature", "Travel"],
         "sources": ["https://openlibrary.org/works/OL19715366W"]
       }
+    },
+    {
+      "title": "Lord of the Flies",
+      "author": "William Golding",
+      "checkedAt": "2026-11-01T23:30:44.350Z",
+      "status": "matched",
+      "work": "/works/OL455327W",
+      "edition": "/books/OL22050848M",
+      "details": {
+        "title": "Lord of the Flies",
+        "author": "William Golding",
+        "description": "Lord of the Flies is a 1954 novel by Nobel Prize–winning British author William Golding. The book focuses on a group of British boys…",
+        "excerptSource": "https://openlibrary.org/works/OL455327W",
+        "firstPublished": "1954",
+        "publisher": "Faber and Faber",
+        "released": "2001",
+        "pages": "264",
+        "categories": ["Philosophy", "Psychology", "History"],
+        "sources": [
+          "https://openlibrary.org/works/OL455327W",
+          "https://openlibrary.org/books/OL22050848M"
+        ]
+      },
+      "subjects": [
+        "fiction",
+        "relationships",
+        "adventure",
+        "morality",
+        "survival",
+        "childhood",
+        "children",
+        "boys",
+        "ethics",
+        "castaway",
+        "shipwreck",
+        "regression",
+        "British and irish fiction (fictional works by one author)",
+        "Fiction, psychological",
+        "Literature and fiction (general)",
+        "English literature",
+        "Death",
+        "thriller",
+        "Interpersonal relations",
+        "Islands",
+        "Castaways",
+        "Good and evil",
+        "Survival after airplane accidents, shipwrecks",
+        "Leadership",
+        "Regression (Psychology)",
+        "Interpersonal relations in children",
+        "Zhang pian xiao shuo",
+        "Moral conditions",
+        "Golding, william, 1911-1993",
+        "English literature, outlines, syllabi, etc.",
+        "History and criticism",
+        "Airplane crash survival",
+        "Allegories",
+        "Psychological fiction",
+        "Shipwreck survival",
+        "Adventure stories",
+        "Human relations",
+        "Adventure and adventurers",
+        "Psychological aspects",
+        "FICTION / Classics",
+        "FICTION / Psychological",
+        "FICTION / Action & Adventure"
+      ]
     },
     {
       "title": "Manufacturing Consent",
@@ -1937,6 +2392,20 @@
       }
     },
     {
+      "title": "Nib + Ink",
+      "author": "Chiara Perano",
+      "checkedAt": "2026-11-01T23:30:47.352Z",
+      "status": "matched",
+      "work": "/works/OL27413748W",
+      "details": {
+        "title": "Nib + Ink",
+        "author": "Chiara Perano",
+        "firstPublished": "2016",
+        "sources": ["https://openlibrary.org/works/OL27413748W"]
+      },
+      "subjects": []
+    },
+    {
       "title": "Nineteen Eighty-Four",
       "author": "George Orwell",
       "checkedAt": "2026-09-08T20:32:34.153Z",
@@ -1987,6 +2456,28 @@
       ]
     },
     {
+      "title": "Notes on the Synthesis of Form",
+      "author": "Christopher Alexander",
+      "checkedAt": "2026-11-01T23:30:47.757Z",
+      "status": "matched",
+      "work": "/works/OL3923609W",
+      "edition": "/books/OL22145356M",
+      "details": {
+        "title": "Notes on the Synthesis of Form",
+        "author": "Christopher Alexander",
+        "firstPublished": "1964",
+        "publisher": "Harvard University Press",
+        "released": "1971",
+        "pages": "216",
+        "categories": ["Philosophy", "Art & design"],
+        "sources": [
+          "https://openlibrary.org/works/OL3923609W",
+          "https://openlibrary.org/books/OL22145356M"
+        ]
+      },
+      "subjects": ["City planning", "Design", "Form (Aesthetics)", "Philosophy"]
+    },
+    {
       "title": "Oathbringer",
       "author": "Brandon Sanderson",
       "checkedAt": "2026-09-08T20:32:34.453Z",
@@ -2008,6 +2499,20 @@
           "https://openlibrary.org/books/OL26421466M"
         ]
       }
+    },
+    {
+      "title": "Obviously Awesome",
+      "author": "April Dunford",
+      "checkedAt": "2026-11-01T23:30:49.037Z",
+      "status": "matched",
+      "work": "/works/OL20873429W",
+      "details": {
+        "title": "Obviously Awesome",
+        "author": "April Dunford",
+        "firstPublished": "2019",
+        "sources": ["https://openlibrary.org/works/OL20873429W"]
+      },
+      "subjects": ["Commerce"]
     },
     {
       "title": "Of Mice and Men",
@@ -2301,6 +2806,43 @@
       }
     },
     {
+      "title": "Red Notice",
+      "author": "Bill Browder",
+      "checkedAt": "2026-11-01T23:30:50.979Z",
+      "status": "matched",
+      "work": "/works/OL19999600W",
+      "edition": "/books/OL27179699M",
+      "details": {
+        "title": "Red Notice",
+        "author": "Bill Browder",
+        "description": "Bill Browder's journey started on the South Side of Chicago and moved through Stanford Business School to the dog-eat-dog world of hedge fund investing…",
+        "excerptSource": "https://openlibrary.org/works/OL19999600W",
+        "firstPublished": "2015",
+        "publisher": "Simon & Schuster",
+        "released": "2015",
+        "pages": "396",
+        "categories": ["Biography", "Politics", "Finance"],
+        "sources": [
+          "https://openlibrary.org/works/OL19999600W",
+          "https://openlibrary.org/books/OL27179699M"
+        ]
+      },
+      "subjects": [
+        "Political corruption",
+        "Capitalists and financiers",
+        "Foreign Investments",
+        "Biography",
+        "Finance",
+        "nyt:hardcover-nonfiction=2015-02-22",
+        "New York Times bestseller",
+        "New York Times reviewed",
+        "Investments, foreign, russia (federation)",
+        "Finance, russia (federation)",
+        "Korruption",
+        "Politischer Mord"
+      ]
+    },
+    {
       "title": "Redwall",
       "author": "Brian Jacques",
       "checkedAt": "2026-09-08T20:32:53.010Z",
@@ -2368,6 +2910,28 @@
           "https://openlibrary.org/books/OL28217699M"
         ]
       }
+    },
+    {
+      "title": "RuneScape: The Official Handbook",
+      "author": "Tracey West",
+      "checkedAt": "2026-11-01T23:30:53.859Z",
+      "status": "matched",
+      "work": "/works/OL6085847W",
+      "edition": "/books/OL7516078M",
+      "details": {
+        "title": "RuneScape: The Official Handbook",
+        "author": "Tracey West",
+        "firstPublished": "2007",
+        "publisher": "Scholastic Inc.",
+        "released": "January 1, 2007",
+        "pages": "96",
+        "categories": ["Technology"],
+        "sources": [
+          "https://openlibrary.org/works/OL6085847W",
+          "https://openlibrary.org/books/OL7516078M"
+        ]
+      },
+      "subjects": ["RuneScape (Game)", "Computer games", "Games, juvenile literature"]
     },
     {
       "title": "Sapiens",
@@ -2466,6 +3030,20 @@
           "https://openlibrary.org/books/OL24964988M"
         ]
       }
+    },
+    {
+      "title": "Sketching for Architecture and Interior Design",
+      "author": "Stephanie Travis",
+      "checkedAt": "2026-11-01T23:30:54.131Z",
+      "status": "matched",
+      "work": "/works/OL26486437W",
+      "details": {
+        "title": "Sketching for Architecture and Interior Design",
+        "author": "Stephanie Travis",
+        "firstPublished": "2015",
+        "sources": ["https://openlibrary.org/works/OL26486437W"]
+      },
+      "subjects": ["Architectural drawing"]
     },
     {
       "title": "Skunk Works",
@@ -2774,6 +3352,38 @@
       }
     },
     {
+      "title": "The Art of Doing Science and Engineering",
+      "author": "Richard Hamming",
+      "checkedAt": "2026-11-01T23:30:58.946Z",
+      "status": "matched",
+      "work": "/works/OL1185120W",
+      "edition": "/books/OL19020228M",
+      "details": {
+        "title": "The Art of Doing Science and Engineering",
+        "author": "Richard Hamming",
+        "firstPublished": "1996",
+        "publisher": "Gordon and Breach",
+        "released": "1997",
+        "pages": "364",
+        "categories": ["Philosophy", "History", "Technology"],
+        "sources": [
+          "https://openlibrary.org/works/OL1185120W",
+          "https://openlibrary.org/books/OL19020228M"
+        ]
+      },
+      "subjects": [
+        "Science",
+        "Engineering",
+        "Science, popular works",
+        "Engineering, popular works",
+        "Sciences",
+        "Ingénierie",
+        "Sciences (philosophy)",
+        "Computers",
+        "Long Now Manual for Civilization"
+      ]
+    },
+    {
       "title": "The Art of War",
       "author": "Sun Tzu",
       "checkedAt": "2026-11-01T16:39:14.306Z",
@@ -2998,6 +3608,72 @@
       }
     },
     {
+      "title": "The Book of Tea",
+      "author": "Okakura Kakuzō",
+      "checkedAt": "2026-11-01T23:31:01.836Z",
+      "status": "matched",
+      "work": "/works/OL7095112W",
+      "edition": "/books/OL13996955M",
+      "details": {
+        "title": "The Book of Tea",
+        "author": "Okakura Kakuzō",
+        "description": "Tea began as a medicine and grew into a beverage. In China, in the eighth century, it entered the realm of poetry as one…",
+        "excerptSource": "https://openlibrary.org/works/OL7095112W",
+        "firstPublished": "1900",
+        "publisher": "Duffield & Co.",
+        "released": "1919",
+        "pages": "160",
+        "categories": ["Philosophy", "History", "Food & cooking"],
+        "sources": [
+          "https://openlibrary.org/works/OL7095112W",
+          "https://openlibrary.org/books/OL13996955M"
+        ]
+      },
+      "subjects": [
+        "Japanese tea ceremony",
+        "Social life and customs",
+        "Tea",
+        "Philosophy",
+        "Chadō",
+        "Fiction",
+        "Cooking & Food",
+        "New Age",
+        "Classic Literature",
+        "Nonfiction",
+        "Manners and customs",
+        "Theeceremonie",
+        "Japan, social life and customs",
+        "Eastern",
+        "Culture traditionnelle",
+        "Philosophie",
+        "Thé",
+        "Cérémonie japonaise du thé",
+        "Cérémonie du thé",
+        "Mœurs et coutumes",
+        "Boissons",
+        "Fonctions sociales",
+        "Maîtres du thé",
+        "Civilisation",
+        "Japan -- Social life and customs",
+        "History",
+        "Correspondence"
+      ]
+    },
+    {
+      "title": "The Castle",
+      "author": "Franz Kafka",
+      "checkedAt": "2026-11-01T23:31:03.846Z",
+      "status": "matched",
+      "work": "/works/OL43085192W",
+      "details": {
+        "title": "The Castle",
+        "author": "Franz Kafka",
+        "firstPublished": "1946",
+        "sources": ["https://openlibrary.org/works/OL43085192W"]
+      },
+      "subjects": []
+    },
+    {
       "title": "The Changing World Order",
       "author": "Ray Dalio",
       "checkedAt": "2026-09-08T20:35:49.464Z",
@@ -3060,6 +3736,29 @@
           "https://openlibrary.org/books/OL799767M"
         ]
       }
+    },
+    {
+      "title": "The Creative Act",
+      "author": "Rick Rubin",
+      "checkedAt": "2026-11-01T23:31:05.147Z",
+      "status": "matched",
+      "work": "/works/OL27955361W",
+      "edition": "/books/OL38208363M",
+      "details": {
+        "title": "The Creative Act",
+        "author": "Rick Rubin",
+        "description": "“I set out to write a book about what to do to make a great work of art. Instead, it revealed itself to be…",
+        "excerptSource": "https://openlibrary.org/works/OL27955361W",
+        "firstPublished": "2023",
+        "publisher": "Penguin Publishing Group",
+        "released": "Jan 17 2023",
+        "pages": "432",
+        "sources": [
+          "https://openlibrary.org/works/OL27955361W",
+          "https://openlibrary.org/books/OL38208363M"
+        ]
+      },
+      "subjects": ["New York Times Bestseller", "creativity", "Artists"]
     },
     {
       "title": "The Curry Guy Easy",
@@ -3284,6 +3983,20 @@
       ]
     },
     {
+      "title": "The Five Minute Journal",
+      "author": "Intelligent Change",
+      "checkedAt": "2026-11-01T23:31:05.350Z",
+      "status": "matched",
+      "work": "/works/OL31597577W",
+      "details": {
+        "title": "The Five Minute Journal",
+        "author": "Intelligent Change",
+        "firstPublished": "2013",
+        "sources": ["https://openlibrary.org/works/OL31597577W"]
+      },
+      "subjects": []
+    },
+    {
       "title": "The Flight of the Eisenstein",
       "author": "James Swallow",
       "checkedAt": "2026-09-08T20:33:35.670Z",
@@ -3305,11 +4018,39 @@
       }
     },
     {
+      "title": "The Gambler",
+      "author": "Fyodor Dostoyevsky",
+      "checkedAt": "2026-11-01T23:31:07.118Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The Genius of Dogs",
       "author": "Brian Hare & Vanessa Woods",
       "checkedAt": "2026-09-08T20:35:59.482Z",
       "status": "error",
       "reason": "The operation timed out."
+    },
+    {
+      "title": "The Glass Bead Game",
+      "author": "Hermann Hesse",
+      "checkedAt": "2026-11-01T23:31:08.125Z",
+      "status": "matched",
+      "work": "/works/OL36435470W",
+      "edition": "/books/OL49229719M",
+      "details": {
+        "title": "The Glass Bead Game",
+        "author": "Hermann Hesse",
+        "firstPublished": "1972",
+        "publisher": "Bantam",
+        "released": "1972-01-01",
+        "pages": "546",
+        "sources": [
+          "https://openlibrary.org/works/OL36435470W",
+          "https://openlibrary.org/books/OL49229719M"
+        ]
+      },
+      "subjects": []
     },
     {
       "title": "The Gulag Archipelago",
@@ -3592,6 +4333,13 @@
       }
     },
     {
+      "title": "The Morning Star",
+      "author": "Karl Ove Knausgård",
+      "checkedAt": "2026-11-01T23:31:08.163Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The New Encyclopedia of Modern Bodybuilding",
       "author": "Arnold Schwarzenegger",
       "checkedAt": "2026-09-08T20:33:49.991Z",
@@ -3806,6 +4554,52 @@
       }
     },
     {
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "checkedAt": "2026-11-01T23:31:10.933Z",
+      "status": "matched",
+      "work": "/works/OL59048W",
+      "details": {
+        "title": "The Remains of the Day",
+        "author": "Kazuo Ishiguro",
+        "description": "In the summer of 1956, Stevens, the ageing butler of Darlington Hall, embarks on a leisurely holiday that will take him deep into the…",
+        "excerptSource": "https://openlibrary.org/works/OL59048W",
+        "firstPublished": "1989",
+        "categories": ["History"],
+        "sources": ["https://openlibrary.org/works/OL59048W"]
+      },
+      "subjects": [
+        "Man Booker Prize Winner",
+        "award:man_booker_prize=1989",
+        "Literature",
+        "Household employees",
+        "Butlers",
+        "Country homes",
+        "Domestics",
+        "Fiction",
+        "Country homes -- Fiction",
+        "Man-woman relationships",
+        "History",
+        "Historical fiction",
+        "Man-woman relationships, fiction",
+        "Fiction, historical",
+        "British and irish fiction (fictional works by one author)",
+        "England, fiction",
+        "Readers",
+        "Diener",
+        "Fiction, historical, general",
+        "Social classes",
+        "Country homes--history",
+        "Country homes--england--history--20th century--fiction",
+        "Man-woman relationships--england--fiction",
+        "Household employees--england--fiction",
+        "Pr6059.s5 r46 1993x",
+        "Samfundsskildringer",
+        "Employés de maison",
+        "Romans, nouvelles"
+      ]
+    },
+    {
       "title": "The Return of the King",
       "author": "J.R.R. Tolkien",
       "checkedAt": "2026-09-08T20:33:55.729Z",
@@ -3913,6 +4707,27 @@
         "categories": ["Philosophy", "Psychology", "Politics"],
         "sources": ["https://openlibrary.org/works/OL16568840W"]
       }
+    },
+    {
+      "title": "The Ring Legends of Tolkien",
+      "author": "David Day",
+      "checkedAt": "2026-11-01T23:31:12.262Z",
+      "status": "matched",
+      "work": "/works/OL21683252W",
+      "edition": "/books/OL29496711M",
+      "details": {
+        "title": "The Ring Legends of Tolkien",
+        "author": "David Day",
+        "firstPublished": "2020",
+        "publisher": "Octopus Publishing Group",
+        "released": "2020",
+        "pages": "304",
+        "sources": [
+          "https://openlibrary.org/works/OL21683252W",
+          "https://openlibrary.org/books/OL29496711M"
+        ]
+      },
+      "subjects": ["English literature"]
     },
     {
       "title": "The Rise and Fall of the Third Reich",
@@ -4061,11 +4876,49 @@
       "reason": "No confident title and author match"
     },
     {
+      "title": "The Third Realm",
+      "author": "Karl Ove Knausgård",
+      "checkedAt": "2026-11-01T23:31:15.343Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The Three-Body Problem",
       "author": "Cixin Liu",
       "checkedAt": "2026-09-08T20:35:56.108Z",
       "status": "unmatched",
       "reason": "No confident title and author match"
+    },
+    {
+      "title": "The Timeless Way of Building",
+      "author": "Christopher Alexander",
+      "checkedAt": "2026-11-01T23:31:15.873Z",
+      "status": "matched",
+      "work": "/works/OL17431345W",
+      "details": {
+        "title": "The Timeless Way of Building",
+        "author": "Christopher Alexander",
+        "description": "The theory of architecture implicit in our world today, Christopher Alexander believes, is bankrupt. More and more people are aware that something is deeply…",
+        "excerptSource": "https://openlibrary.org/works/OL17431345W",
+        "firstPublished": "1979",
+        "categories": ["History", "Art & design"],
+        "sources": ["https://openlibrary.org/works/OL17431345W"]
+      },
+      "subjects": [
+        "Long Now Manual for Civilization",
+        "Pattern perception",
+        "Architecture",
+        "Linguistics",
+        "the quality with no name",
+        "languages",
+        "Arquitetura (Teoria)",
+        "Perception des structures",
+        "Architekturtheorie",
+        "Architectuurtheorieën",
+        "Kwaliteit",
+        "Patronen (decoratie's)",
+        "Architecture, history"
+      ]
     },
     {
       "title": "The Tipping Point",
@@ -4105,6 +4958,13 @@
         "categories": ["Economics"],
         "sources": ["https://openlibrary.org/works/OL2350186W"]
       }
+    },
+    {
+      "title": "The Trouble With Being Born",
+      "author": "Emil Michel Cioran",
+      "checkedAt": "2026-11-01T23:31:16.391Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
     },
     {
       "title": "The Two Towers",
@@ -4187,6 +5047,45 @@
         "Mythology",
         "Wizards"
       ]
+    },
+    {
+      "title": "The Vegan Scoop",
+      "author": "Wheeler del Toro",
+      "checkedAt": "2026-11-01T23:31:17.315Z",
+      "status": "matched",
+      "work": "/works/OL13718741W",
+      "details": {
+        "title": "The Vegan Scoop",
+        "author": "Wheeler del Toro",
+        "firstPublished": "2010",
+        "categories": ["Food & cooking"],
+        "sources": ["https://openlibrary.org/works/OL13718741W"]
+      },
+      "subjects": ["Non-dairy frozen desserts", "Frozen foods", "Vegan cooking", "Desserts"]
+    },
+    {
+      "title": "The Vision of the Anointed",
+      "author": "Thomas Sowell",
+      "checkedAt": "2026-11-01T23:31:18.112Z",
+      "status": "matched",
+      "work": "/works/OL1935782W",
+      "edition": "/books/OL7594138M",
+      "details": {
+        "title": "The Vision of the Anointed",
+        "author": "Thomas Sowell",
+        "description": "This critique of failed social policies of the past 30 years sees what has happened not as isolated mistakes, but as the consequence of…",
+        "excerptSource": "https://openlibrary.org/works/OL1935782W",
+        "firstPublished": "1995",
+        "publisher": "Basic Books",
+        "released": "2000",
+        "pages": "305",
+        "categories": ["Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL1935782W",
+          "https://openlibrary.org/books/OL7594138M"
+        ]
+      },
+      "subjects": ["Elite (Social sciences)", "Social policy"]
     },
     {
       "title": "The Wages of Destruction: The Making & Breaking of the Nazi Economy",
@@ -4279,6 +5178,13 @@
       }
     },
     {
+      "title": "The Wolves of Eternity",
+      "author": "Karl Ove Knausgård",
+      "checkedAt": "2026-11-01T23:31:18.606Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "The World: A Family History",
       "author": "Simon Sebag Montefiore",
       "checkedAt": "2026-09-08T20:35:57.399Z",
@@ -4291,6 +5197,36 @@
       "checkedAt": "2026-09-08T20:35:58.416Z",
       "status": "unmatched",
       "reason": "No confident title and author match"
+    },
+    {
+      "title": "There Is No Antimemetics Division",
+      "author": "qntm",
+      "checkedAt": "2026-11-01T23:31:19.428Z",
+      "status": "matched",
+      "work": "/works/OL24726867W",
+      "edition": "/books/OL32825888M",
+      "details": {
+        "title": "There Is No Antimemetics Division",
+        "author": "qntm",
+        "description": "(from back cover) An antimeme is an idea with self-censoring properties; an idea which, by its intrinsic nature, discourages or prevents people from spreading…",
+        "excerptSource": "https://openlibrary.org/works/OL24726867W",
+        "firstPublished": "2008",
+        "publisher": "Independently published",
+        "released": "Mar 26, 2021",
+        "pages": "234",
+        "sources": [
+          "https://openlibrary.org/works/OL24726867W",
+          "https://openlibrary.org/books/OL32825888M"
+        ]
+      },
+      "subjects": [
+        "SCP Foundation",
+        "antimemetics",
+        "postapocalypse",
+        "dystopia",
+        "body horror",
+        "mindbending"
+      ]
     },
     {
       "title": "Thinking Fast and Slow",
@@ -4314,6 +5250,13 @@
           "https://openlibrary.org/books/OL38090969M"
         ]
       }
+    },
+    {
+      "title": "This is Not a Maths Book",
+      "author": "Anna Weltman",
+      "checkedAt": "2026-11-01T23:31:21.381Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
     },
     {
       "title": "Time Out Country Walks: 52 Walks Near London",
@@ -4388,6 +5331,46 @@
       }
     },
     {
+      "title": "Universal: A Guide to the Cosmos",
+      "author": "Brian Cox & Jeff Forshaw",
+      "checkedAt": "2026-11-01T23:31:22.303Z",
+      "status": "matched",
+      "work": "/works/OL21109518W",
+      "edition": "/books/OL28574505M",
+      "details": {
+        "title": "Universal: A Guide to the Cosmos",
+        "author": "Brian Cox & Jeff Forshaw",
+        "description": "ix, 277 pages, [32] pages of plates : 20 cm",
+        "excerptSource": "https://openlibrary.org/works/OL21109518W",
+        "firstPublished": "2016",
+        "publisher": "Penguin Books, Limited",
+        "released": "2016",
+        "pages": "256",
+        "categories": ["History", "Science"],
+        "sources": [
+          "https://openlibrary.org/works/OL21109518W",
+          "https://openlibrary.org/books/OL28574505M"
+        ]
+      },
+      "subjects": [
+        "Cosmology",
+        "Physics",
+        "Universe",
+        "Cosmology -- Popular works",
+        "Science -- History -- Popular works",
+        "Cosmologie -- Ouvrages de vulgarisation",
+        "Sciences -- Histoire -- Ouvrages de vulgarisation",
+        "Science"
+      ]
+    },
+    {
+      "title": "Universe: The Definitive Visual Guide",
+      "author": "DK & Martin Rees",
+      "checkedAt": "2026-11-01T23:31:22.574Z",
+      "status": "unmatched",
+      "reason": "No confident title and author match"
+    },
+    {
       "title": "Unknown Market Wizards",
       "author": "Jack D. Schwager",
       "checkedAt": "2026-09-08T20:34:28.207Z",
@@ -4442,6 +5425,80 @@
         "Climatic changes",
         "Global warming"
       ]
+    },
+    {
+      "title": "Veganomicon",
+      "author": "Isa Chandra Moskowitz & Terry Hope Romero",
+      "checkedAt": "2026-11-01T23:31:24.266Z",
+      "status": "matched",
+      "work": "/works/OL26568929W",
+      "edition": "/books/OL9631625M",
+      "details": {
+        "title": "Veganomicon",
+        "author": "Isa Chandra Moskowitz & Terry Hope Romero",
+        "firstPublished": "2007",
+        "publisher": "Marlowe & Company",
+        "released": "2007-10-28",
+        "pages": "256",
+        "categories": ["Food & cooking"],
+        "sources": [
+          "https://openlibrary.org/works/OL26568929W",
+          "https://openlibrary.org/books/OL9631625M"
+        ]
+      },
+      "subjects": [
+        "Vegan cooking",
+        "Recipes",
+        "Vegetarian cookery",
+        "Low-fat diet",
+        "Vegan cookery",
+        "Milk-free diet",
+        "Gluten-free diet",
+        "Vegetarian cooking"
+      ]
+    },
+    {
+      "title": "Wagamama Cookbook",
+      "author": "Hugo Arnold",
+      "checkedAt": "2026-11-01T23:31:25.389Z",
+      "status": "matched",
+      "work": "/works/OL6068880W",
+      "edition": "/books/OL8774187M",
+      "details": {
+        "title": "Wagamama Cookbook",
+        "author": "Hugo Arnold",
+        "firstPublished": "2005",
+        "publisher": "Kyle Books",
+        "released": "May 25, 2007",
+        "pages": "192",
+        "categories": ["Food & cooking"],
+        "sources": [
+          "https://openlibrary.org/works/OL6068880W",
+          "https://openlibrary.org/books/OL8774187M"
+        ]
+      },
+      "subjects": [
+        "Cooking, japanese",
+        "Noodles",
+        "Japanese Cooking",
+        "Cooking (Pasta)",
+        "Wagamama (Restaurant)"
+      ]
+    },
+    {
+      "title": "Web Audio API",
+      "author": "Boris Smus",
+      "checkedAt": "2026-11-01T23:31:27.036Z",
+      "status": "matched",
+      "work": "/works/OL21508851W",
+      "details": {
+        "title": "Web Audio API",
+        "author": "Boris Smus",
+        "firstPublished": "2013",
+        "categories": ["Technology"],
+        "sources": ["https://openlibrary.org/works/OL21508851W"]
+      },
+      "subjects": ["Computer sound processing", "Sound, recording and reproducing"]
     },
     {
       "title": "What Does It All Mean?",
@@ -4544,6 +5601,20 @@
       }
     },
     {
+      "title": "Yay! You're Gay! Now What?",
+      "author": "Riyadh Khalaf & Melissa McFeeters",
+      "checkedAt": "2026-11-01T23:31:28.959Z",
+      "status": "matched",
+      "work": "/works/OL21193082W",
+      "details": {
+        "title": "Yay! You're Gay! Now What?",
+        "author": "Riyadh Khalaf & Melissa McFeeters",
+        "firstPublished": "2019",
+        "sources": ["https://openlibrary.org/works/OL21193082W"]
+      },
+      "subjects": []
+    },
+    {
       "title": "Zen and the Art of Motorcycle Maintenance",
       "author": "Robert M. Pirsig",
       "checkedAt": "2026-11-01T16:39:18.759Z",
@@ -4593,6 +5664,54 @@
         "Fathers and sons--united states",
         "Ct275.p648 a3 1974",
         "917.3/04/920924 b"
+      ]
+    },
+    {
+      "title": "Zero to One",
+      "author": "Peter Thiel & Blake Masters",
+      "checkedAt": "2026-11-01T23:31:31.778Z",
+      "status": "matched",
+      "work": "/works/OL17078706W",
+      "edition": "/books/OL27546580M",
+      "details": {
+        "title": "Zero to One",
+        "author": "Peter Thiel & Blake Masters",
+        "description": "If you want to build a better future, you must believe in secrets. The great secret of our time is that there are still…",
+        "excerptSource": "https://openlibrary.org/works/OL17078706W",
+        "firstPublished": "2001",
+        "publisher": "Random House Audio",
+        "released": "Sep 16, 2014",
+        "categories": ["Politics", "Economics", "Business"],
+        "sources": [
+          "https://openlibrary.org/works/OL17078706W",
+          "https://openlibrary.org/books/OL27546580M"
+        ]
+      },
+      "subjects": [
+        "Diffusion of innovations",
+        "New business enterprises",
+        "New products",
+        "Entrepreneurship",
+        "BUSINESS & ECONOMICS / Entrepreneurship",
+        "BUSINESS & ECONOMICS / Small Business",
+        "POLITICAL SCIENCE / Public Policy / Economic Policy",
+        "BUSINESS & ECONOMICS",
+        "Small Business",
+        "POLITICAL SCIENCE",
+        "Public Policy",
+        "Economic Policy",
+        "Unternehmensgründung",
+        "Geschäftsidee",
+        "Produktinnovation",
+        "Pionierunternehmen",
+        "Företagsetablering",
+        "Entreprenörskap",
+        "Innovationsspridning",
+        "nyt:advice-how-to-and-miscellaneous=2014-10-05",
+        "New York Times bestseller",
+        "Hd62.5 .t525 2014",
+        "658.1/1",
+        "Bus025000 bus060000 pol024000"
       ]
     }
   ]

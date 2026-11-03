@@ -1,4 +1,4 @@
-import { ATLAS, atlasLayout, type AtlasBook, type AtlasLayout } from "./atlas-layout";
+import { ATLAS, atlasFixed, atlasLayout, type AtlasBook, type AtlasLayout } from "./atlas-layout";
 
 export type AtlasCamera = { zoom: number; x: number; y: number };
 type ViewPlacement = AtlasLayout["positions"][number] & { rotation?: number; scale?: number };
@@ -107,5 +107,6 @@ export function atlasTableStyle(layout: AtlasLayout) {
 export function atlasBookStyle(layout: AtlasLayout, index: number) {
   const position = layout.positions[index];
   if (!position) return "";
-  return `--book-x:${position.x / layout.width};--book-y:${(ATLAS.insetY + position.z * Math.sin(ATLAS.pitch)) / layout.height};--book-footprint-width:${position.width};--book-footprint-height:${position.length * Math.sin(ATLAS.pitch)}`;
+  const projection = Math.sin(ATLAS.pitch);
+  return `--book-x:${atlasFixed(position.x / layout.width)};--book-y:${atlasFixed((ATLAS.insetY + position.z * projection) / layout.height)};--book-footprint-width:${atlasFixed(position.width)};--book-footprint-height:${atlasFixed(position.length * projection)}`;
 }

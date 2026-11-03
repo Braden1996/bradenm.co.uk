@@ -2,7 +2,7 @@
 
 # Book Atlas
 
-The desktop bookshelf opens with all 165 books scattered across the available viewport. Mobile
+The desktop bookshelf opens with every book scattered across the available viewport. Mobile
 screens at or below 760px use a vertical grid of upright covers with title and author labels.
 Both views retain the site's paper, typography, search and native navigation.
 

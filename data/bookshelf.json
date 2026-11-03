@@ -840,16 +840,6 @@
     "medium": "Kindle"
   },
   {
-    "title": "Galaxy in Flames",
-    "author": "Ben Counter",
-    "medium": "Kindle"
-  },
-  {
-    "title": "The Moon is a Harsh Mistress",
-    "author": "Robert A. Heinlein",
-    "medium": "Kindle"
-  },
-  {
     "title": "The Last Question",
     "author": "Isaac Asimov",
     "medium": "Audiobook"
@@ -1043,5 +1033,250 @@
     "title": "AQA Additional Science Workbook",
     "author": "Andrew Catterall",
     "medium": "Physical"
+  },
+  {
+    "title": "12 Rules for Life",
+    "author": "Jordan B. Peterson",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Flight of the Eisenstein",
+    "author": "James Swallow",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "Stoner",
+    "author": "John Williams",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "Red Notice",
+    "author": "Bill Browder",
+    "medium": "Physical"
+  },
+  {
+    "title": "Killer Bodybuilder",
+    "author": "Ana Benson",
+    "medium": "Physical"
+  },
+  {
+    "title": "Yay! You're Gay! Now What?",
+    "author": "Riyadh Khalaf & Melissa McFeeters",
+    "medium": "Physical"
+  },
+  {
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "medium": "Physical"
+  },
+  {
+    "title": "Laughing at Wall Street",
+    "author": "Chris Camillo",
+    "medium": "Physical"
+  },
+  {
+    "title": "Universe: The Definitive Visual Guide",
+    "author": "DK & Martin Rees",
+    "medium": "Physical"
+  },
+  {
+    "title": "Ethics",
+    "author": "Benedict Spinoza",
+    "medium": "Physical"
+  },
+  {
+    "title": "Las Vegas Travel Guide",
+    "author": "Hungry Passport",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Art of Doing Science and Engineering",
+    "author": "Richard Hamming",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Gambler",
+    "author": "Fyodor Dostoyevsky",
+    "medium": "Physical"
+  },
+  {
+    "title": "Best Loser Wins",
+    "author": "Tom Hougaard",
+    "medium": "Physical"
+  },
+  {
+    "title": "Destiny Disrupted",
+    "author": "Mir Tamim Ansary",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Ring Legends of Tolkien",
+    "author": "David Day",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Wolves of Eternity",
+    "author": "Karl Ove Knausgård",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Third Realm",
+    "author": "Karl Ove Knausgård",
+    "medium": "Physical"
+  },
+  {
+    "title": "There Is No Antimemetics Division",
+    "author": "qntm",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Morning Star",
+    "author": "Karl Ove Knausgård",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Trouble With Being Born",
+    "author": "Emil Michel Cioran",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Glass Bead Game",
+    "author": "Hermann Hesse",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Castle",
+    "author": "Franz Kafka",
+    "medium": "Physical"
+  },
+  {
+    "title": "Infantry Attacks",
+    "author": "Erwin Rommel",
+    "medium": "Physical"
+  },
+  {
+    "title": "Knight's Cross",
+    "author": "David Fraser",
+    "medium": "Physical"
+  },
+  {
+    "title": "Notes on the Synthesis of Form",
+    "author": "Christopher Alexander",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Book of Tea",
+    "author": "Okakura Kakuzō",
+    "medium": "Physical"
+  },
+  {
+    "title": "RuneScape: The Official Handbook",
+    "author": "Tracey West",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Creative Act",
+    "author": "Rick Rubin",
+    "medium": "Physical"
+  },
+  {
+    "title": "A Game of Thrones",
+    "author": "George R.R. Martin",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Vegan Scoop",
+    "author": "Wheeler del Toro",
+    "medium": "Physical"
+  },
+  {
+    "title": "2015 Guide to the Night Sky",
+    "author": "Storm Dunlop & Wil Tirion",
+    "medium": "Physical"
+  },
+  {
+    "title": "Veganomicon",
+    "author": "Isa Chandra Moskowitz & Terry Hope Romero",
+    "medium": "Physical"
+  },
+  {
+    "title": "Wagamama Cookbook",
+    "author": "Hugo Arnold",
+    "medium": "Physical"
+  },
+  {
+    "title": "Great British Bake Off: Everyday",
+    "author": "Linda Collister",
+    "medium": "Physical"
+  },
+  {
+    "title": "Black Hat Python",
+    "author": "Justin Seitz",
+    "medium": "Physical"
+  },
+  {
+    "title": "This is Not a Maths Book",
+    "author": "Anna Weltman",
+    "medium": "Physical"
+  },
+  {
+    "title": "Nib + Ink",
+    "author": "Chiara Perano",
+    "medium": "Physical"
+  },
+  {
+    "title": "Universal: A Guide to the Cosmos",
+    "author": "Brian Cox & Jeff Forshaw",
+    "medium": "Physical"
+  },
+  {
+    "title": "The Five Minute Journal",
+    "author": "Intelligent Change",
+    "medium": "Physical"
+  },
+  {
+    "title": "Sketching for Architecture and Interior Design",
+    "author": "Stephanie Travis",
+    "medium": "Physical"
+  },
+  {
+    "title": "Web Audio API",
+    "author": "Boris Smus",
+    "medium": "Physical"
+  },
+  {
+    "title": "Everything That Remains",
+    "author": "Joshua Fields Millburn",
+    "medium": "Physical"
+  },
+  {
+    "title": "Hitler",
+    "author": "Ian Kershaw",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "The Timeless Way of Building",
+    "author": "Christopher Alexander",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "The Vision of the Anointed",
+    "author": "Thomas Sowell",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "Zero to One",
+    "author": "Peter Thiel & Blake Masters",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "The Remains of the Day",
+    "author": "Kazuo Ishiguro",
+    "medium": "Audiobook"
+  },
+  {
+    "title": "Obviously Awesome",
+    "author": "April Dunford",
+    "medium": "Audiobook"
   }
 ]
