@@ -15,9 +15,10 @@ export type BookPayloadRecord = {
   title: string;
 };
 
-type BookshelfSearchRecord = {
+// Search text is rebuilt in the browser from each atlas title and author, so the inline
+// payload does not print every name twice.
+type BookshelfDetailsRecord = {
   id: string;
-  text: string;
   details?:
     | {
         firstPublished?: string | undefined;
@@ -28,7 +29,7 @@ type BookshelfSearchRecord = {
 };
 
 export type BookshelfPayload = {
-  books: BookshelfSearchRecord[];
+  books: BookshelfDetailsRecord[];
   atlas: AtlasBook[];
 };
 
@@ -241,7 +242,12 @@ export function buildBookshelfViewModel(
         .map((candidate) => `${candidate.src} ${candidate.width}w`)
         .join(", "),
       coverWidth: coverMap[key]?.width ?? 0,
-      coverCandidates: coverMap[key]?.candidates ?? [],
+      // The manifest also records each file's name; the page only needs what an image needs.
+      coverCandidates: (coverMap[key]?.candidates ?? []).map(({ src, width, height }) => ({
+        src,
+        width,
+        height,
+      })),
     });
   });
 
@@ -293,10 +299,7 @@ export function buildBookshelfViewModel(
         },
         profile: atlasProfile(book.title, book.author, book.coverWidth, book.coverHeight),
       })),
-      books: books.map((book) => ({
-        id: book.id,
-        text: buildHaystackValue(book),
-      })),
+      books: books.map((book) => ({ id: book.id })),
     },
   };
 }

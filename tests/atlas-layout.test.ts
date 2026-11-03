@@ -28,10 +28,11 @@ describe("atlas collection", () => {
       expect(book.profile).toEqual(
         atlasProfile(book.title, book.author, book.cover.width, book.cover.height),
       );
+      // Widths are printed to four decimals, which moves the proportion by under 2e-5.
       if (book.cover.height / book.cover.width >= 1.15)
         expect(book.profile.width / book.profile.height).toBeCloseTo(
           book.cover.width / book.cover.height,
-          6,
+          4,
         );
     }
   });

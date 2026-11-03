@@ -1,5 +1,6 @@
 // cspell:ignore describedby
 import {
+  buildHaystackValue,
   formatBookshelfResultsCount,
   normalizeNeedle,
   type BookshelfPayload,
@@ -16,7 +17,7 @@ import {
   type AtlasCamera,
   type AtlasView,
 } from "../lib/atlas-camera";
-import { ATLAS, type AtlasBook } from "../lib/atlas-layout";
+import { ATLAS, atlasFixed, type AtlasBook } from "../lib/atlas-layout";
 import { atlasTransition } from "../lib/atlas-transition";
 import { findBookshelfMatchIndexes } from "../lib/bookshelf-search";
 import {
@@ -110,7 +111,6 @@ export function mountBookshelf(root: HTMLElement) {
   );
   const cards: BookCard[] = [];
   const bookById = new Map(payload.atlas.map((book) => [book.id, book]));
-  const textById = new Map(payload.books.map((book) => [book.id, book.text]));
   const detailsById = new Map(payload.books.map((book) => [book.id, book.details]));
   for (const card of root.querySelectorAll<HTMLElement>("[data-book-card]")) {
     const book = bookById.get(card.dataset.bookId ?? "");
@@ -120,7 +120,7 @@ export function mountBookshelf(root: HTMLElement) {
         card,
         button,
         book,
-        text: textById.get(book.id) ?? "",
+        text: buildHaystackValue(book),
         details: detailsById.get(book.id),
       });
   }
@@ -168,16 +168,20 @@ export function mountBookshelf(root: HTMLElement) {
       if (!position) continue;
       const x = position.x * view.unit;
       const y = (ATLAS.insetY + position.z * projection) * view.unit;
+      // Rounded like the printed table, so a repaint of the resting view lands on the same pixels.
       entry.card.style.setProperty(
         "--book-x",
-        String((x - ATLAS_PADDING) / Math.max(1, view.width - ATLAS_PADDING * 2)),
+        String(atlasFixed((x - ATLAS_PADDING) / Math.max(1, view.width - ATLAS_PADDING * 2))),
       );
       entry.card.style.setProperty(
         "--book-y",
-        String((y - ATLAS_PADDING) / Math.max(1, view.height - ATLAS_PADDING * 2)),
+        String(atlasFixed((y - ATLAS_PADDING) / Math.max(1, view.height - ATLAS_PADDING * 2))),
       );
-      entry.card.style.setProperty("--book-footprint-width", String(position.width));
-      entry.card.style.setProperty("--book-footprint-height", String(position.length * projection));
+      entry.card.style.setProperty("--book-footprint-width", String(atlasFixed(position.width)));
+      entry.card.style.setProperty(
+        "--book-footprint-height",
+        String(atlasFixed(position.length * projection)),
+      );
       // Undo the baked cover's table rotation in the same oblique projection as the live model.
       const angle =
         entry.book.profile.rotation - (position.rotation ?? entry.book.profile.rotation);

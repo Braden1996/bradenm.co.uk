@@ -121,14 +121,15 @@ describe("bookshelf sorting", () => {
 });
 
 describe("bookshelf browser payload", () => {
-  test("compact pre-normalized index preserves matches and server order", () => {
+  test("the atlas alone rebuilds the search index in server order", () => {
     const { books, payload } = buildBookshelfViewModel(
       bookshelfData,
       bookshelfCoverManifest.covers,
     );
     const original = books.map(buildHaystackValue);
-    const compact = payload.books.map((book) => book.text);
+    const rebuilt = payload.atlas.map(buildHaystackValue);
     expect(payload.books.map((book) => book.id)).toEqual(books.map((book) => book.id));
+    expect(payload.atlas.map((book) => book.id)).toEqual(books.map((book) => book.id));
     for (const query of [
       "",
       "foundation",
@@ -136,13 +137,24 @@ describe("bookshelf browser payload", () => {
       "  jordan  ",
       "no-such-title-123",
     ]) {
-      expect(findBookshelfMatchIndexes(compact, query)).toEqual(
+      expect(findBookshelfMatchIndexes(rebuilt, query)).toEqual(
         findBookshelfMatchIndexes(original, query),
       );
     }
-    // Per book, so the guard measures the index's compactness, not the catalogue's size.
-    expect(JSON.stringify(payload.books).length / payload.books.length).toBeLessThan(72);
-    expect(payload.atlas.map((book) => book.id)).toEqual(books.map((book) => book.id));
+  });
+
+  test("the inline payload prints each name once and no float noise", () => {
+    const { payload } = buildBookshelfViewModel(bookshelfData, bookshelfCoverManifest.covers);
+    expect(payload.books.every((book) => Object.keys(book).join() === "id")).toBe(true);
+    for (const book of payload.atlas) {
+      for (const candidate of book.cover.candidates) {
+        expect(Object.keys(candidate)).toEqual(["src", "width", "height"]);
+      }
+      const { width, height, depth, rotation, offsetX, offsetZ } = book.profile;
+      for (const value of [width, height, depth, rotation, offsetX, offsetZ]) {
+        expect(value).toBe(Math.round(value * 10_000) / 10_000);
+      }
+    }
   });
 
   test("responsive covers include the original and never upscale", () => {

@@ -1,6 +1,6 @@
 ---
 import type { BookViewModel } from "../lib/bookshelf-data";
-import { atlasProfile, atlasCoverSource } from "../lib/atlas-layout";
+import { atlasFixed, atlasProfile, atlasCoverSource } from "../lib/atlas-layout";
 import { atlasSheets } from "../lib/atlas-previews";
 import { ATLAS_SHEET } from "../lib/atlas-sheet";
 import PopoverKit from "../../../components/popover-kit/popover-kit.astro";
@@ -35,7 +35,7 @@ const blank = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
   class="book atlas-book"
   data-book-card
   data-book-id={book.id}
-  style={`--book-width:${profile.width};--book-height:${profile.height};--book-angle:${profile.rotation}rad;--sprite-x:${((index % columns) / (columns - 1)) * 100}%;--sprite-y:${(Math.floor(index / columns) / (rows - 1)) * 100}%;${placement}`}
+  style={`--book-width:${profile.width};--book-height:${profile.height};--book-angle:${profile.rotation}rad;--sprite-x:${atlasFixed(((index % columns) / (columns - 1)) * 100)}%;--sprite-y:${atlasFixed((Math.floor(index / columns) / (rows - 1)) * 100)}%;${placement}`}
 >
   <button
     class="book__volume atlas-book__button"

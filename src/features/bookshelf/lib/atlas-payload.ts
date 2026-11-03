@@ -6,7 +6,6 @@ const payloadSchema = object({
   books: array(
     object({
       id: string(),
-      text: string(),
       details: optional(
         object({
           firstPublished: optional(string()),
